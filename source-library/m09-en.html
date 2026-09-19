@@ -1,0 +1,1064 @@
+<!doctype html>
+<html lang="ru" data-ru-title="M09 · Динамика жёстких тел · EN — Robotics &amp; AI" data-en-title="M09 · Rigid-body dynamics · EN — Robotics &amp; AI">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>M09 · Динамика жёстких тел · EN — Robotics &amp; AI</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body class="source-reader">
+<a class="skip-link" href="#main"><span lang="ru">К тексту источника</span><span lang="en">Skip to source text</span></a>
+<header class="topbar"><a class="brand" href="../index.html">Robotics &amp; AI</a><nav><a href="../library.html"><span lang="ru">Библиотека источников</span><span lang="en">Source library</span></a><a href="../index.html"><span lang="ru">Новый план</span><span lang="en">Revised plan</span></a></nav><div class="lang-switch" aria-label="Language"><button type="button" data-lang="ru">RU</button><button type="button" data-lang="en">EN</button></div></header>
+<main class="wrap" id="main">
+<p class="eyebrow"><span lang="ru">Архив · исходный документ</span><span lang="en">Archive · original document</span></p>
+<h1><span lang="ru">M09 · Динамика жёстких тел · EN</span><span lang="en">M09 · Rigid-body dynamics · EN</span></h1>
+<div class="notice source-notice"><strong><span lang="ru">Архивные даты и часы не действуют.</span><span lang="en">Original dates and hours are superseded.</span></strong><p><span lang="ru">Это полный текст исходного документа. Старый календарь, отпуска и бюджеты часов сохранены для проверки исходной информации. Рабочее расписание находится в новом плане: 50 часов в неделю, без отпусков.</span><span lang="en">This is the complete extracted text of the original document. Its historical calendar, vacations and hour budgets are preserved for source verification. Use the revised plan for the current schedule: 50 hours per week, with no vacations.</span></p></div>
+<p><span lang="ru">Язык исходника: английский.</span><span lang="en">Source language: English.</span> <span lang="ru">Переключатель RU/EN меняет язык интерфейса; исходный текст не переводится автоматически.</span><span lang="en">The RU/EN switch changes the interface; original source text is not automatically translated.</span></p>
+<p class="source-actions"><a href="../originals/detailed/English/Monthly/M09_Robotics_Plan_EN.pdf"><span lang="ru">Открыть исходный PDF без изменений</span><span lang="en">Open the unchanged original PDF</span></a> · <a href="m09-ru.html"><span lang="ru">Открыть другую языковую редакцию</span><span lang="en">Open the other language edition</span></a></p>
+<p><span lang="ru">Страниц</span><span lang="en">Pages</span>: 15 · <span lang="ru">Ссылок из PDF</span><span lang="en">PDF links</span>: 14</p>
+<details class="source-page source-toc"><summary><span lang="ru">Перейти к странице</span><span lang="en">Jump to a page</span></summary><nav class="page-links" aria-label="Pages"><a href="#page-1">1</a> <a href="#page-2">2</a> <a href="#page-3">3</a> <a href="#page-4">4</a> <a href="#page-5">5</a> <a href="#page-6">6</a> <a href="#page-7">7</a> <a href="#page-8">8</a> <a href="#page-9">9</a> <a href="#page-10">10</a> <a href="#page-11">11</a> <a href="#page-12">12</a> <a href="#page-13">13</a> <a href="#page-14">14</a> <a href="#page-15">15</a> </nav></details>
+<p class="source-controls"><button type="button" id="expand-pages"><span lang="ru">Развернуть все страницы</span><span lang="en">Expand all pages</span></button> <button type="button" id="collapse-pages"><span lang="ru">Свернуть все страницы</span><span lang="en">Collapse all pages</span></button></p>
+<p><span lang="ru">Извлечение PDF может сохранять переносы строк и наложенные редакции. Формулы, иллюстрации и исходное оформление доступны в неизменённом PDF. Все встроенные ссылки вынесены под текст соответствующей страницы.</span><span lang="en">PDF extraction may retain line breaks and overlapping revisions. Equations, illustrations and original formatting remain available in the unchanged PDF. Every embedded link is listed below its corresponding page.</span></p>
+<section class="source-pages" aria-label="Original document pages">
+<details class="source-page" id="page-1"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 1 · From link position to the physics of motion</summary><pre class="source-text">ROBOTICS AND AI  /  M09  /  DETAILED STUDY PLAN
+
+From link position to the physics of motion
+
+M9 • 03 Jun 2027 - 06 Jul 2027 • 75 hours
+
+What you will produce by the end of the month
+The deliverable for this month is a joint model using the parameters identified in M7, together with
+a dynamics simulation of a two-link mechanism or leg. Check dimensions, the energy balance and
+agreement between calculations and measurements. The kinematics from M8 finds the angles that
+place a link endpoint at a specified point; dynamics relates motion to the required torque and
+actuator limits. For a leg, it describes the effects of link masses, body motion and foot contact; for a
+finger, it describes phalange acceleration, load holding and the reaction when touching an object.
+Begin with one link, then add a second link and contact.
+
+Inputs
+Bring the geometry, coordinate frames, FK and Jacobians from M8. From M7, bring angle, command
+and current measurements and the available actuator model, including friction, delay and the
+limits of identification. From M5, bring CAD-part masses and centres of mass, provided they were
+determined correctly. Label each quantity as measured, calculated in CAD, taken from
+manufacturer documentation or specified for an illustrative example. Inertia calculated in CAD
+using a default density is not the measured inertia of a printed part. Account for fasteners, wiring
+and actual infill; if data are unavailable, state the uncertainty of the estimate.
+Initial self-check: distinguish kg from N, N from N·m, velocity from acceleration, and inertia about
+the centre of mass from inertia about the joint axis. Check the work done by a force through a
+small displacement and calculate the energy of a load at a known height. Make sure you know the
+axis from which q is measured and the direction of gravity. An incorrect potential-energy sign can
+produce smooth simulated motion that contradicts physics.
+
+Scope and evidence
+M9 does not require the dynamics of a complete multi-legged platform with gait control. The basic
+model has a fixed base, two links and explicitly selected contacts. Increase complexity only after
+checking simple limiting cases. Simulation can confirm the correctness of the equations and
+numerical method, but agreement with a real actuator requires comparison against a separate
+measured run. If M7 did not produce physical measurements, complete the computational work
+and mark the comparison with the real actuator as unfinished.
+Prepare a working integrator and a description of the model’s limits of applicability. State the
+angle, velocity and load ranges and contact modes that you have checked. Separately describe the
+conditions under which backlash, saturation, compliance, heating or an unknown internal actuator
+controller become significant. Subsequent modules will use this information to choose control laws
+that account for model accuracy.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M9 • 03 Jun 2027 - 06 Jul 2027 • 75 hours                                                                          1 / 15
+
+</pre></details><details class="source-page" id="page-2"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 2 · 75 hours: from simple models to complex</summary><pre class="source-text">ROBOTICS AND AI  /  M09  /  DETAILED STUDY PLAN
+
+75 hours: from simple models to complex
+ones
+
+Four blocks
+Hours 1-20: Newton’s and Euler’s equations, mass, centre of mass, inertia, forces and energy; 10
+hours of theory and 10 hours of practice. Hours 21-40: Lagrange’s equations, equation structure
+and two-link dynamics; 10+10. Hours 41-60: normal contact, friction, impact and static support;
+10+10. Hours 61-75: use of the M7 identification results, model validation, sensitivity and error
+assessment; 5+10. This totals 35 hours of study and analysis and 40 hours of implementation and
+experiments. The allocation includes documenting results rather than leaving the report to
+uncounted time.
+Divide each of the first three 10-hour theory blocks into 2-hour sessions: reading a section, deriving
+equations by hand, checking units and preparing an experiment. Schedule the 10-hour practical
+blocks on Sundays, allowing breaks between stages. Split the final 5 hours of theory as 2+2+1. The
+module dates establish its place in the overall calendar; retain the boundary dates, rest days,
+holidays and separate integration checks. Hour numbers express the workload: do not count the
+same time twice when placing sessions in the calendar.
+
+The dynamics-lab project structure
+parameters/ contains masses, lengths, centres of mass, inertias and their provenance. models/
+contains the single-link, 2R-mechanism and contact models. experiments/ stores inputs, initial
+states and integration settings. data/measured/ preserves the M7 data unchanged; data/simulated/
+stores computational results. validation/ contains comparison results and runs for independent
+validation; reports/ contains energy balances and model limits. Each simulation records the
+equation version, solver step size or tolerances, duration, input signals and termination reason.
+
+When to increase complexity
+First, check the energy of one link without friction or external input. Second, add a known torque
+and compare its work with the energy change. Third, introduce viscous friction and check that
+energy decreases. Fourth, repeat these checks for two links. Fifth, add contact and account for
+energy losses. Sixth, use the real actuator model from M7 and an independent measurement
+recording. If a basic check fails, find the cause first; do not try to remove the discrepancy by
+increasing damping or fitting a physical parameter.
+Separate measurement uncertainty from numerical error. Changing mass explores sensitivity to a
+physical parameter; reducing the integrator step explores numerical error. Include both
+experiments in the report; one cannot replace the other. At the outset, choose several simple
+motions that you can explain without a computer, and revisit them after adding each new equation
+term.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M9 • 03 Jun 2027 - 06 Jul 2027 • 75 hours                                                                          2 / 15
+
+</pre></details><details class="source-page" id="page-3"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 3 · Newton and Euler: forces, torques and inertia</summary><pre class="source-text">ROBOTICS AND AI  /  M09  /  DETAILED STUDY PLAN
+
+Newton and Euler: forces, torques and inertia
+
+How to draw a force and torque diagram
+For translation of the centre of mass, the sum of external forces equals m·a_COM. For planar
+rotation of a rigid link about a fixed axis, sum torques about that axis and use the moment of
+inertia about the same axis. In general spatial motion, the rotational equation includes I·ω̇ and the
+gyroscopic term ω×(Iω), expressed in a consistent basis. Do not automatically apply the planar
+relation τ=Iα to an arbitrary rotating system. The centre of mass is the point whose motion
+describes the translational part of the body’s motion; the mass distribution relative to the axes
+determines its inertia.
+
+Task 1. Physical parameters of a link
+The inputs are the M5 CAD link and available mass measurements. 1. Separate geometry from
+material and list the contributions of fasteners and the actuator. 2. Determine mass, COM position
+in the local coordinate frame and inertia about the COM. 3. Transfer the inertia to the joint axis
+using the parallel-axis theorem; in the planar case, I_joint=I_COM+m·d². 4. Compare with a rod or
+point-mass approximation. Deliverable: a parameter table with units and sources. Check: shifting
+the axis away from the COM increases inertia by a non-negative amount. Edge case: an incorrect
+CAD scale changes inertia more strongly than it changes a linear dimension.
+
+Task 2. Forces and torques on a leg or finger link
+Draw one link showing its weight, joint reaction force, actuator torque and an external force at its
+endpoint. 1. Choose the point about which you calculate torques. 2. Write down lever arms and
+signs. 3. Calculate the holding torque in several known configurations. 4. Check the external-force
+torque using τ=JᵀF from M8; calculate the gravitational contribution separately. Deliverable: three
+labelled drawings and a torque table. Check: if a force’s line of action passes through the axis, its
+torque about that axis is zero. Error to avoid: a link’s mass cannot be added as a force without
+multiplying by g.
+
+Energy and units
+A single link’s kinetic energy is the sum of 0.5m·v_COM² and 0.5ωᵀI_COMω. Potential energy in a
+uniform gravitational field depends on COM height. For two links, add their energies; obtain COM
+velocities from the geometry and Jacobians in M8. Prepare a table: length m, mass kg, time s, force
+N, torque N·m, energy J, inertia kg·m². Check the dimensions of every term before running a
+numerical calculation. Using I for both inertia and electric current in different files is acceptable
+only when the context is clear; separate names such as inertia and current are preferable.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M9 • 03 Jun 2027 - 06 Jul 2027 • 75 hours                                                                          3 / 15
+
+</pre></details><details class="source-page" id="page-4"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 4 · One link: its equation and an energy test</summary><pre class="source-text">ROBOTICS AND AI  /  M09  /  DETAILED STUDY PLAN
+
+One link: its equation and an energy test
+
+Task 3. A single-joint pendulum
+For clarity, measure θ from the downward vertical. With moment of inertia J about the axis, mass m
+and distance c to the COM, a simple model is J·θ̈+b·θ̇+m·g·c·sin(θ)=τ. A convenient zero for
+potential energy is the lowest point: V=m·g·c·(1-cosθ). If you use an angle q measured from the
+horizontal axis, the gravitational term changes; do not switch conventions without transforming the
+coordinates. 1. Derive the gravitational torque from a drawing. 2. Write the state [θ,ω] and its
+derivative [ω,α]. 3. Solve the equation for α, then integrate. 4. Compare the initial acceleration
+direction with a hand calculation.
+Deliverable: angle, velocity and energy plots, plus a configuration that reproduces the calculation.
+Check without friction or torque: total energy should be conserved within numerical error, which
+you investigate by reducing the step size or tolerances. For a small angle, compare the period with
+2π·sqrt(J/(m·g·c)) for positive parameters. Edge cases: the lowest point with zero initial velocity
+remains an equilibrium; reject negative mass or zero inertia as an invalid model.
+
+Task 4. Work and dissipation
+First disable gravity and apply a constant torque to a link with known inertia J: acceleration should
+be τ/J. Then restore gravity and apply a bounded torque pulse. Numerically integrate power P=τ·ω
+and compare work with the energy change. Add viscous friction b·ω with b≥0: the dissipated power
+b·ω² is non-negative. Save the balance E(t)-E(0)-actuator_work+losses, as well as the q plot. Check:
+with zero actuator torque and positive damping, mechanical energy must not systematically
+increase. Negative b is a separate artificial test that the validator must reject in a passive model.
+
+The numerical method is part of the experiment
+Compare fixed-step integration with the adaptive solve_ivp solver. Record duration, step size,
+relative and absolute tolerances, and termination status. Run an experiment with successive
+step-size reductions while keeping physical parameters unchanged. Assess both the trajectory and
+the energy-balance residual. Similar position plots do not yet establish convergence of force or
+acceleration. High velocities and stiff contact will change the integrator requirements; preserve this
+basic model without contact for subsequent comparisons.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M9 • 03 Jun 2027 - 06 Jul 2027 • 75 hours                                                                           4 / 15
+
+</pre></details><details class="source-page" id="page-5"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 5 · Lagrange’s equations and the structure of</summary><pre class="source-text">ROBOTICS AND AI  /  M09  /  DETAILED STUDY PLAN
+
+Lagrange’s equations and the structure of
+two-link dynamics
+
+What to derive
+The generalised coordinates q=[q1,q2] uniquely specify the 2R configuration. Measure q1 from the
+horizontal x-axis and q2 relative to the first link; use the x-y plane with y upward. Construct the
+centre-of-mass positions, differentiate them with respect to time, and calculate kinetic energy K
+and potential energy V. The Lagrangian is L=K-V. For each q_i, write d/dt(∂L/∂q̇_i)-∂L/∂q_i=τ_i,
+adding external forces and losses separately. A symbolic algebra system can help with derivatives,
+but you must be able to explain every energy expression and the choice of signs.
+
+Task 5. Mass matrix and gravity
+Use l1,l2 for lengths, c1,c2 for distances from the corresponding joints to the COMs, m1,m2 for
+masses, and I1,I2 for planar inertias about the COMs. Extract the structure M(q)·q̈+h(q,q̇)+g(q)=τ
+from the equations. For checking: M22=I2+m2·c2², M12=M21=I2+m2·(c2²+l1·c2·cosq2),
+M11=I1+I2+m1·c1²+m2·(l1²+c2²+2l1·c2·cosq2). Here h combines the velocity-dependent terms;
+an individual matrix C is not unique, so check the vector h first.
+1. Obtain M and g from your own derivation. 2. Compare M against an independent implementation
+or the structure given above. 3. Check symmetry and positive definiteness in admissible
+configurations. 4. Compare gravitational torque with the numerical derivative of V with respect to
+q. Deliverable: a computational notebook with the derivation, a numerical function and tests. For
+the chosen coordinates, g2=m2·g·c2·cos(q1+q2), while g1 additionally contains
+g·(m1·c1+m2·l1)·cosq1. Edge case: all h terms must vanish when q̇=0.
+
+Task 6. Forward and inverse dynamics
+The inverse problem takes q,q̇,q̈ and returns the required τ; the forward problem takes q,q̇,τ and
+solves a linear system for q̈. 1. Choose several states. 2. Calculate τ using inverse dynamics. 3.
+Feed it into forward dynamics and compare the reconstructed acceleration. 4. Repeat with
+endpoint forces added through JᵀF in a consistent basis. Save the acceleration reconstruction errors
+after the inverse-then-forward calculation. Use solve(M,rhs), not an explicit matrix inverse. This test
+does not replace an independent physical check: both functions may contain the same model error.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M9 • 03 Jun 2027 - 06 Jul 2027 • 75 hours                                                                        5 / 15
+
+</pre></details><details class="source-page" id="page-6"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 6 · 2R simulation and checks of physical</summary><pre class="source-text">ROBOTICS AND AI  /  M09  /  DETAILED STUDY PLAN
+
+2R simulation and checks of physical
+behaviour
+
+Task 7. Two links without contact
+Inputs: validated M,h,g, the M8 geometry, and physically admissible masses and inertias. 1. Run
+free motion from a non-zero initial configuration without friction. 2. Plot angles, velocities, the
+endpoint path and total energy. 3. Repeat with half the step size or tighter tolerances. 4. Add
+damping and bounded torque, checking the work balance. Deliverable: four comparable runs and a
+numerical-convergence report. Edge case: with horizontal links and no holding torque, acceleration
+must not be zero merely because the initial velocities are zero.
+
+Checking velocity-dependent terms
+For the 2R model described above, define a=m2·l1·c2·sin(q2). Then h1=-a·(2q̇1q̇2+q̇2²), h2=a·q̇1².
+Compare this with your own derivation and check reversal of velocity direction. Do not remove h
+simply because calculations agree with an experiment at low velocity: the error will change as
+velocities change. However, a slow-motion model may deliberately neglect some dynamics if this is
+an explicit approximation and its error has been checked. Record the velocity range in which the
+approximation remains useful.
+
+Application to a leg and hand
+Use the 2R model as a planar section of a leg or as two phalanges. For the leg, add the masses of
+the relevant parts and actuators mounted on the links; for the finger, specify a different length
+scale and fingertip load. Compare gravitational torque and inertial effects for the same normalised
+motion. Do not transfer planar-model equations to a complete spatial leg without a new derivation:
+the first axis, COM offsets and inertia tensors change the equations. It is sufficient to specify the
+interface through which a multibody library will later connect.
+
+An independent numerical reference
+Build the same simple mechanism in one tool, such as Drake, MuJoCo or Featherstone’s reference
+library. First disable contact and default actuators, and align gravity, masses, COMs, inertias and
+initial coordinates. Compare acceleration in one pose before comparing a long trajectory; then
+compare energies and a short motion. Disagreement may result from built-in damping, limit stops
+or a different coordinate frame. In the comparison report, list the effects that are enabled and
+disabled. You need not install several heavyweight simulators for one plot: one independent
+reference is enough.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M9 • 03 Jun 2027 - 06 Jul 2027 • 75 hours                                                                         6 / 15
+
+</pre></details><details class="source-page" id="page-7"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 7 · Contact, friction and body support</summary><pre class="source-text">ROBOTICS AND AI  /  M09  /  DETAILED STUDY PLAN
+
+Contact, friction and body support
+
+Task 8. Unilateral normal contact
+A horizontal surface can exert an upward force on a foot, but cannot attract it towards the floor.
+Begin with a vertical mass and a spring-damper model of penetration δ≥0. An illustrative model
+force N=max(0,k·δ+c·δ̇) acts only during contact; δ̇ is positive when penetration increases. 1.
+Check free fall before touchdown. 2. Add contact and measure maximum penetration. 3. Check the
+force sign and absence of tension during lift-off. 4. Compare several k,c values and integrator step
+sizes. Deliverable: height, force, energy and the region of numerical stability. These parameters do
+not automatically represent the properties of a real foot.
+
+Task 9. Sticking and sliding
+In a simple Coulomb description, static tangential force is bounded by |F_t|≤μ_sN; during sliding it
+opposes velocity, with a magnitude determined by μ_kN. 1. Place a body on a horizontal plane. 2.
+Gradually increase the prescribed horizontal force. 3. Show the transition from sticking to sliding. 4.
+Repeat with a different normal load. Deliverable: plots of tangential force, velocity and contact
+mode. Check: tangential friction must not systematically add mechanical energy. Edge case N=0:
+the contact friction force also vanishes. Smoothing near zero velocity changes the model and must
+be explicitly identified.
+
+Impact and discrete time
+Compare elastic and inelastic impact with a continuous compliant model. The coefficient of
+restitution describes the ratio of normal velocities after and before impact under specified
+conditions; it is not a universal material coefficient for every velocity. Do not combine a rigid
+impulsive impact with the same energy loss in a damper without checking for double counting. For
+the first implementation, explain the two approaches and implement one, then investigate
+sensitivity. Force, penetration and energy matter in contact; smooth animation can hide
+non-physical high-frequency oscillations.
+
+Task 10. Support polygon
+Take known contact points on a horizontal plane and the projection of the body COM. Construct the
+convex hull of active contacts and the signed distance from the projection to its boundary: positive
+inside and negative outside. Repeat after removing one support and shifting the COM. Deliverable:
+support diagrams and the static margin in metres. Check: a point on an edge has zero margin; two
+contacts do not form a polygon with non-zero area. This is a quasi-static geometric check under
+stated force and friction assumptions, not proof of the dynamic stability of a walking robot.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M9 • 03 Jun 2027 - 06 Jul 2027 • 75 hours                                                                           7 / 15
+
+</pre></details><details class="source-page" id="page-8"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 8 · Validating the M7 model and assessing its</summary><pre class="source-text">ROBOTICS AND AI  /  M09  /  DETAILED STUDY PLAN
+
+Validating the M7 model and assessing its
+accuracy
+
+Task 11. A joint with real actuator parameters
+First establish what M7 identified: mechanics under a known torque, or the response of a servo with
+an internal controller to a position command. 1. Import parameters with units, signs and operating
+ranges. 2. Check gearing and inertia: do not count the load twice. 3. Replay the measured input in
+simulation with the same initial state. 4. Compare q(t) and the available velocities and currents on
+a common time axis. Deliverable: overlaid plots, a residual and an explanation of the most
+prominent discrepancy. Do not connect a position-command response model as an ideal torque
+source: these are different physical interfaces.
+If torque is not directly known, validate the available command-to-angle model and state
+separately which mechanical properties remain unconfirmed. Current telemetry can support an
+explanation of saturation, but does not become an accurate torque measurement without a
+coefficient and a definition of the current type. Add heating, friction, backlash and delay from M7
+only where their meaning is consistent with the new equation. For each effect, first show a
+comparison against the model without it; otherwise you cannot determine what improved the
+result.
+
+Task 12. An independent recording and sensitivity
+Before fitting parameters, set aside recordings of separate runs for independent validation. 1. Fit
+the model on the first group. 2. Freeze the parameters. 3. Predict a new run with a different
+admissible command waveform or load. 4. Calculate angle RMSE, maximum residual and
+characteristic-time error. Then vary one parameter at a time within its justified uncertainty range
+and compare the effects. Deliverable: a sensitivity table and independent-validation plots. If no
+new real data are available, perform a software test, but leave physical validation open.
+
+Assessing model errors
+Prepare a table of error source, observed effect, required accuracy and refinement method. For
+example: COM affects gravitational torque; J affects acceleration; delay shifts the response; friction
+affects low velocities; contact k affects penetration and peak force. Allocate time to the parameters
+that most strongly affect the result of interest. State numerical integration error and measurement
+noise separately. The aim is the smallest model adequate for the chosen experiment, rather than
+the largest number of parameters. The report must identify admissible operating conditions and
+specific examples where the model ceases to be reliable.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M9 • 03 Jun 2027 - 06 Jul 2027 • 75 hours                                                                         8 / 15
+
+</pre></details><details class="source-page" id="page-9"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 9 · Step by step: hours 1-40</summary><pre class="source-text">ROBOTICS AND AI  /  M09  /  DETAILED STUDY PLAN
+
+Step by step: hours 1-40
+
+Hours 1-10: physical terminology and diagrams
+1-2: check units, gravity and the coordinate frame, and assemble the parameter table from M5-M8.
+3-4: study mass, COM and inertia, and transfer inertia to a joint axis for a simple body. 5-6: draw
+force and torque diagrams for a link and leg, and calculate static torques. 7-8: work through kinetic
+and potential energy and the work done by torque. 9-10: derive the pendulum equation for the
+chosen angle and define states and initial conditions. These ten hours do not require a complex
+simulation: their outputs are checkable equations and physically expected relationships.
+
+Hours 11-20: one link as a test system
+11-12: finish the parameter table for task 1 and check the provenance of CAD mass and inertia.
+13-14: complete the drawings and calculations for task 2 and compare against JᵀF. 15-16:
+implement the pendulum in task 3 and plot q,ω,E. 17-18: complete the energy balance in task 4
+with torque and friction. 19-20: investigate the integrator step size and compare small oscillations
+against the analytical period. Freeze baseline-one-link with its inputs, method and achieved
+accuracy. If energy grows without a source, fix the model before moving to the second link.
+
+Hours 21-30: the two-link system
+21-22: write the 2R centre-of-mass coordinates and their velocities using the M8 geometry. 23-24:
+construct K,V,L and derive Lagrange’s equations. 25-26: extract the mass matrix,
+velocity-dependent terms and gravity. 27-28: study the meaning of forward and inverse dynamics
+and work through adding an external force. 29-30: prepare checks of M symmetry, positive energy,
+the derivative of V and limiting cases. If using a symbolic tool, preserve the original energy
+expressions and the meanings of variables, as well as the final long formula.
+
+Hours 31-40: validated 2R dynamics
+31-32: implement M,h,g for task 5 and compare with your own derivation. 33-34: check the
+inverse-then-forward dynamics calculation in task 6 using fixed and random admissible states.
+35-36: run the contact-free simulation in task 7 and its energy checks. 37-38: add bounded torque
+and friction, and repeat the convergence check. 39-40: compare instantaneous acceleration and a
+short trajectory with one independent library. If installation is taking too long, use an available
+reference implementation; do not reduce unit and energy checks to accommodate a simulator
+interface.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M9 • 03 Jun 2027 - 06 Jul 2027 • 75 hours                                                                          9 / 15
+
+</pre></details><details class="source-page" id="page-10"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 10 · Step by step: hours 41-75</summary><pre class="source-text">ROBOTICS AND AI  /  M09  /  DETAILED STUDY PLAN
+
+Step by step: hours 41-75
+
+Hours 41-50: contact physics
+41-42: study unilateral normal force, penetration, and the difference between rigid and compliant
+contact. 43-44: work through the friction cone and the transition from sticking to sliding, and draw
+admissible forces. 45-46: study impact, the coefficient of restitution and energy losses. 47-48:
+assess the effects of contact stiffness, damping and integration step separately; prepare a
+parameter grid for comparison. 49-50: study the support polygon and static margin, and record
+their conditions of applicability. Relate every concept to an observable force, velocity or energy.
+
+Hours 51-60: contact experiments
+51-52: implement the vertical contact in task 8; check the absence of force before touchdown and
+at lift-off. 53-54: vary k,c and the numerical step, recording penetration and energy. 55-56:
+complete the sticking-to-sliding transition in task 9 and check the sign of frictional power. 57-58:
+construct several support configurations for task 10, remove a contact and move the COM. 59-60:
+add simple endpoint contact to the 2R mechanism or leg in the chosen simulator and explain how it
+differs from a geometric check. If time is limited, retain point contact, while preserving the
+unilaterality and sensitivity checks.
+
+Hours 61-65: model validation plan
+61-62: revisit M7 identification and align the input type, delay, gearing and load inertia with the M9
+model. 63-64: select separate measured runs and metrics, estimate errors and list parameters for
+sensitivity analysis. 65: finalise the table of validity regions and the final report format. These 5
+hours are split into 2+2+1 without adding time to the original programme. Do not revise the
+quality criterion after seeing validation results in a way that makes every outcome a success.
+
+Hours 66-75: compare calculation with experiment
+66-67: complete the transfer in task 11 and reproduce the measured input and initial conditions.
+68-69: compare trajectories, fix unit, timing and interface errors, then freeze the parameters.
+70-71: perform the independent validation in task 12 and calculate errors using the predefined
+metrics. 72-73: conduct sensitivity analysis and separate numerical problems from physical
+disagreement. 74-75: assemble supporting results, limitations, a reproducible run and a brief
+analysis of one failed model. If time is short, reduce contact-geometry complexity and additional
+tools; the identified joint, 2R or leg dynamics, energy checks and independent model validation
+remain mandatory.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M9 • 03 Jun 2027 - 06 Jul 2027 • 75 hours                                                                          10 / 15
+
+</pre></details><details class="source-page" id="page-11"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 11 · Acceptance checks: detecting physical errors</summary><pre class="source-text">ROBOTICS AND AI  /  M09  /  DETAILED STUDY PLAN
+
+Acceptance checks: detecting physical errors
+
+Test scenarios
+F1: no gravity, friction or external torque. Rest is maintained; with an initial velocity, the
+corresponding energy balance holds. F2: one link under constant torque without gravity.
+Acceleration agrees with τ/J. F3: positive viscous friction without actuation. Energy decreases
+within integration error. F4: geometry is scaled incorrectly. The unit table and comparison against
+the analytical period reveal the error; visual similarity of the trajectory alone is insufficient to
+accept the simulation. F5: the mass matrix is asymmetric or not positive definite for a physical
+configuration. The test rejects the model before integration.
+F6: contact without penetration and during lift-off. No attractive normal force occurs. F7: tangential
+sliding. Frictional work does not create energy; contact force vanishes when N=0. F8: integration
+step size is reduced without changing physical parameters. The result must show convergence of
+the metrics of interest; otherwise conclusions about mechanics are premature. F9: the COM moves
+outside the horizontal static support polygon. The margin changes sign; the test does not
+automatically conclude that dynamic falling occurs. F10: parameters are fitted to one run, but do
+not reproduce a new one. Narrow the validity region or improve the model and repeat independent
+validation.
+
+Evidence that the module is complete
+Provide dimensional and energy tests; checks of M,h,g; input parameters with provenance; a
+two-link or leg simulation; contact sensitivity analysis; transfer of the M7 identification results; and
+comparison of a measured trend with calculation. The measured trend may be delay, characteristic
+time, load dependence or decay; choose the metric in advance. The report must explicitly identify
+conditions under which the model fails. Without a physical recording, the corresponding item
+remains open even if every mathematical test passes.
+
+Questions and handover to the next module
+Explain why moment of inertia depends on the axis; where velocity-dependent terms come from;
+how to check the gravity sign; why to solve a system with M rather than calculate its inverse; why
+excessively stiff contact complicates integration; how the friction cone differs from the static
+support-polygon rule; why a servo model with an internal controller cannot be treated as an ideal
+torque actuator; and how to distinguish noise, numerical error and incorrect physics. Pass on
+parameters, original measurements, dynamics functions and accuracy limitations. When designing
+the controller next month, account for model validity limits and actuator saturation; calling a
+simulation function alone is insufficient.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M9 • 03 Jun 2027 - 06 Jul 2027 • 75 hours                                                                          11 / 15
+
+</pre></details><details class="source-page" id="page-12"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 12 · Assigned reading: a focused reading route</summary><pre class="source-text">ROBOTICS AND AI  /  M09  /  DETAILED STUDY PLAN
+
+Assigned reading: a focused reading route
+
+Books and lecture notes may be in English; keep the plan, definitions and your own explanations in
+English. Read only the specified sections within the existing 75 hours.
+
+Core reading and one reference route
+1. Core: K. Lynch, F. Park, Modern Robotics, Chapter 8. §8.1.3 - the mass matrix; §8.3 -
+Newton-Euler; §8.5 - forward dynamics. Tasks 1-7 require force diagrams, the meaning of M(q) and
+an independent check of the forward and inverse problems.
+2. Core: R. Tedrake, Underactuated Robotics. The Simple Pendulum: Equations of Motion;
+Multi-Body Dynamics: Lagrangian Dynamics and Manipulator Equations; Planning and Control
+through Contact: physical models of contact and friction. Read for tasks 3-10, without trajectory
+optimisation.
+3. Reference: R. Featherstone, Rigid Body Dynamics Algorithms. Chapters Modelling Rigid Body
+Systems and Inverse Dynamics: establish the definitions of inertia and external force used, and the
+directions of recursive calculations. The relevant example is sufficient for checking task 6; the
+complete set of algorithms is not yet required.
+
+Documentation for specific practical work
+SciPy solve_ivp - method, rtol and atol parameters, the events mechanism and the success flag for
+tasks 3-7. Featherstone spatial_v2 - mcI, HandC, ID and FDab as reference implementations of
+dynamics.
+MuJoCo Computation - Contact and Numerical Integration if comparing simulators; installing
+MuJoCo is not required for your own numerical experiment.
+
+After reading
+After the derivation, check units, the gravity sign and the energy balance. Compare two integration
+step sizes, then change one physical parameter. For tasks 11-12, return to the actuator model and
+validation data from M7. The presence of contact alone does not imply the absence of sliding.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M9 • 03 Jun 2027 - 06 Jul 2027 • 75 hours                                                                       12 / 15
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://modernrobotics.northwestern.edu/chapters/chapter8/" target="_blank" rel="noopener noreferrer">https://modernrobotics.northwestern.edu/chapters/chapter8/</a></li><li><a href="https://underactuated.mit.edu/pend.html" target="_blank" rel="noopener noreferrer">https://underactuated.mit.edu/pend.html</a></li><li><a href="https://underactuated.mit.edu/multibody.html" target="_blank" rel="noopener noreferrer">https://underactuated.mit.edu/multibody.html</a></li><li><a href="https://underactuated.mit.edu/contact.html" target="_blank" rel="noopener noreferrer">https://underactuated.mit.edu/contact.html</a></li><li><a href="https://underactuated.mit.edu/contact.html" target="_blank" rel="noopener noreferrer">https://underactuated.mit.edu/contact.html</a></li><li><a href="https://link.springer.com/book/10.1007/978-1-4899-7560-7" target="_blank" rel="noopener noreferrer">https://link.springer.com/book/10.1007/978-1-4899-7560-7</a></li><li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html" target="_blank" rel="noopener noreferrer">https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html</a></li><li><a href="https://royfeatherstone.org/spatial/v2/index.html" target="_blank" rel="noopener noreferrer">https://royfeatherstone.org/spatial/v2/index.html</a></li><li><a href="https://mujoco.readthedocs.io/en/stable/computation/index.html" target="_blank" rel="noopener noreferrer">https://mujoco.readthedocs.io/en/stable/computation/index.html</a></li></ol></div></details><details class="source-page" id="page-13"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 13 · Key terms and definitions</summary><pre class="source-text">ROBOTICS AND AI  /  M09  /  DETAILED STUDY PLAN
+
+Key terms and definitions
+
+Rigid body. An idealisation in which the distances between any two points of a body remain
+constant during motion and loading.
+Centre of mass. The point whose position is the average position of all body elements, weighted
+by their masses.
+Inertia tensor. A matrix describing mass distribution about a selected point; it determines the
+rotational contribution to kinetic energy and has units kg·m².
+Free-body diagram. A diagram of an isolated body showing all external forces and torques,
+including reactions from removed constraints.
+Generalised coordinates. Independent configuration parameters sufficient to describe the
+system’s position under its geometric constraints.
+Lagrangian. The difference between kinetic and potential energy, used in Lagrange’s equations to
+obtain system dynamics.
+Mass matrix. The configuration-dependent matrix M(q), which determines kinetic energy and
+relates generalised accelerations to forces.
+Velocity-dependent terms. The part of the dynamics arising from coordinate motion, including
+Coriolis and centrifugal effects; the representation of matrix C is not unique.
+Gravity vector. Generalised torques or forces corresponding to the potential-energy gradient
+under the chosen equation-of-motion convention.
+Forward dynamics. Calculation of accelerations from current coordinates, velocities, applied
+forces and the chosen constraint model.
+Inverse dynamics. Calculation of required generalised forces from specified coordinates,
+velocities and accelerations with known external inputs.
+Dissipation. Irreversible conversion of mechanical energy into other forms, such as heat, through
+friction or damping.
+Unilateral contact. A constraint that permits bodies to separate and contact to be compressed,
+but does not permit an attractive normal force between surfaces.
+Normal force. The component of contact force along the surface normal; in a model without
+adhesion it points away from the surface.
+Friction cone. The set of admissible contact forces in the Coulomb model: tangential force
+magnitude is bounded by μ times the normal force.
+Sticking. A contact mode with zero relative tangential velocity, possible while the required force
+remains within the friction limit.
+Impulse. The time integral of force, which changes momentum; it approximates a short impact
+without detailed calculation of peak force.
+Support polygon. The convex hull of support points on a plane; the centre-of-mass projection
+provides only a quasi-static criterion.
+Check the relationships: M(q)q̈+c(q,q̇)+g(q)=τ+Jᵀf. All forces must have consistent signs, bases
+and points of application.
+
+
+
+
+
+
+
+
+
+
+
+M9 • 03 Jun 2027 - 06 Jul 2027 • 75 hours                                                                         13 / 15
+
+</pre></details><details class="source-page" id="page-14"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 14 · Preparation for dynamics experiments</summary><pre class="source-text">ROBOTICS AND AI  /  M09  /  DETAILED STUDY PLAN
+
+Preparation for dynamics experiments
+
+NEW PURCHASES: NONE REQUIRED
+Use the existing MacBook Pro M4, CAD link models from M5, IMU and controller from M6, and the
+secured actuator and current and temperature measurement equipment from M7. Investigate 2R
+dynamics and contact numerically. The 3D printer is needed only if the fixtures change; choose a
+printing profile for the exact printer model.
+
+PREPARE BEFORE HOURS 1-20
+Create a parameter table for each link: mass in kg, centre-of-mass position in m, inertia in kg·m²,
+coordinate frame and value source. Distinguish inertia about the centre of mass from inertia about
+the joint axis. Mark estimated parameters and their uncertainty ranges.
+Before repeating a physical experiment, check mounting, stopping, the M7 limits, angle direction
+and consistency of measurement timestamps. Use loads and levers from the existing fixtures;
+increase the load only within the previously justified operating range.
+
+INSTALL NOW
+No new packages are mandatory. On macOS ARM, use the Python, NumPy, SciPy, Matplotlib and
+pytest installations from M8; use SymPy if you already selected it for your own symbolic derivation.
+SciPy solve_ivp integrates your own equation system on the CPU.
+
+OPTIONAL: INDEPENDENT COMPARISON
+An external engine is needed only for the chosen independent comparison. This month, you can
+compare equations and values with the author’s spatial_v2 library without installing
+MATLAB/Simulink. MuJoCo and other engines are not new mandatory purchases or prerequisites for
+completing M9.
+
+CHECK THE ENVIRONMENT AND PHYSICAL MODEL
+Reproduce pendulum motion: without friction, check energy drift as the step size decreases; with
+friction, check that energy decreases. For 2R, check symmetry and positive definiteness of M, and
+consistency between forward and inverse dynamics. In the contact model, check the absence of
+attraction to the surface and the distinction between sticking and sliding.
+Save versions, integrator configuration, initial conditions, an energy plot and an independent
+validation recording. A successful simulation confirms only the model properties tested; physical
+robot readiness requires its own experiments. Preparation is included in the existing 75 hours.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M9 • 03 Jun 2027 - 06 Jul 2027 • 75 hours                                                                     14 / 15
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html" target="_blank" rel="noopener noreferrer">https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html</a></li><li><a href="https://royfeatherstone.org/spatial/v2/index.html" target="_blank" rel="noopener noreferrer">https://royfeatherstone.org/spatial/v2/index.html</a></li></ol></div></details><details class="source-page" id="page-15"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 15 · Motion fundamentals: why torque is needed</summary><pre class="source-text">ROBOTICS AND AI  /  M09  /  DETAILED STUDY PLAN
+
+Motion fundamentals: why torque is needed
+
+Required: derive the equation of motion in two ways
+The kinematics in M8 relates angles to endpoint position. Dynamics determines which torque
+produces a chosen acceleration and what happens with a limited actuator. Before deriving the
+equations, clarify the distinction between mass m in kg, moment of inertia I in kg·m² and torque τ
+in N·m. A geometrically admissible leg or finger trajectory may demand unavailable torque.
+
+One joint: geometry, energy and equation
+Example pendulum: a point mass m=0.5 kg at the end of a massless rod l=0.2 m; the pivot is fixed.
+In the x-y plane, y points upward and q is measured from the downward vertical towards +x. Then
+p=(l sinq;-l cosq), v=q̇ in rad/s, I=ml²=0.02 kg·m². There is no friction or contact; positive τ_act
+increases q.
+Newton and Euler: the torque of weight about the pivot is -mgl sinq, so Iq̈=τ_act-mgl sinq.
+Lagrange: K=Iv²/2, U=mgl(1-cosq), L=K-U. Substitution into d/dt(∂L/∂v)-∂L/∂q=τ_act gives the same
+equation, Iq̈+mgl sinq=τ_act. These are two descriptions of the same mechanics; their agreement
+helps check the signs.
+At q=π/6, an acceleration q̈=1 rad/s² requires, by inverse dynamics,
+τ_act=0.02·1+0.5·9.81·0.2·0.5=0.5105 N·m. Of this, 0.4905 N·m compensates for weight and
+0.0200 N·m accelerates the mass. Forward dynamics calculates q̈=(τ_act-mgl sinq)/I. With τ_act=0
+at this position, q̈=-24.525 rad/s²: the link accelerates towards the downward vertical, even when
+starting from rest.
+
+From a pendulum to two links
+For a fixed-base chain of revolute joints: M(q)v̇+h(q,v)+g(q)=τ_act+Jᵀf_ext. Here v=q̇; M relates
+accelerations to torques, h contains velocity effects, and g contains gravitational torques; f_ext is
+the force exerted by the environment on the endpoint, expressed in the same basis as the
+positional Jacobian J. Geometry determines centre-of-mass velocities, from which energy and M are
+calculated. At rest, τ_act=g-Jᵀf_ext; motion adds inertial and velocity-dependent terms.
+An actuator with a position interface does not become a source of known torque: use the validated
+M7 model. A moving body, distributed contacts and spatial tensors require a more detailed model;
+this module requires a clear pendulum calculation and the specified 2R dynamics.
+
+Check torque, acceleration and energy calculations
+In tasks 3-6, save both derivations and the numerical example. Independently estimate dU/dq
+using a central difference: at q=π/6, expect 0.4905 N·m. Apply 0.5105 N·m to forward dynamics
+and recover 1 rad/s². Then, without actuation or friction, compare energy E=K+U at two integrator
+step sizes; reducing the step should reduce numerical drift. Agreement between inverse and
+forward dynamics does not rule out an error shared by both functions.
+Included in the 75 hours: 1 hour from 9-10 for the two derivations; 1 hour from 15-16 for the
+pendulum; 1 hour from 33-34 for the forward and inverse dynamics check. This is a required
+reference example within the existing tasks. Calculations run on the CPU; no additional equipment,
+software or hours are required.
+References: Tedrake, The Simple Pendulum: equation of motion and the Undamped Pendulum
+section; Lynch/Park, Modern Robotics, §8.1.1 and §8.1.4: Lagrange, Newton and Euler methods.
+
+
+
+
+
+
+
+
+
+M9 • 03 Jun 2027 - 06 Jul 2027 • 75 hours                                                                       15 / 15</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://underactuated.mit.edu/pend.html" target="_blank" rel="noopener noreferrer">https://underactuated.mit.edu/pend.html</a></li><li><a href="https://underactuated.mit.edu/pend.html" target="_blank" rel="noopener noreferrer">https://underactuated.mit.edu/pend.html</a></li><li><a href="https://hades.mech.northwestern.edu/images/2/2e/MR-largefont-v2.pdf" target="_blank" rel="noopener noreferrer">https://hades.mech.northwestern.edu/images/2/2e/MR-largefont-v2.pdf</a></li></ol></div></details>
+</section>
+<footer><p><a href="../library.html"><span lang="ru">Вернуться в библиотеку</span><span lang="en">Back to source library</span></a> · <a href="../index.html"><span lang="ru">Вернуться к новому плану</span><span lang="en">Back to revised plan</span></a></p><p class="checksum">SHA-256: 9b7a243a006728eebb61da8f4544e9376599f8517c6066362c8f900752a3bf15</p></footer>
+</main>
+<script>
+(function() {
+  function openPage() {
+    if (!/^#page-\d+$/.test(location.hash)) return;
+    var page=document.getElementById(location.hash.slice(1));
+    if(page) {page.open=true; page.scrollIntoView({block:'start'});}
+  }
+  window.addEventListener('hashchange',openPage);
+  document.addEventListener('DOMContentLoaded',openPage);
+  document.getElementById('expand-pages').addEventListener('click',function(){document.querySelectorAll('details[id^="page-"]').forEach(function(el){el.open=true;});});
+  document.getElementById('collapse-pages').addEventListener('click',function(){document.querySelectorAll('details[id^="page-"]').forEach(function(el){el.open=false;});});
+})();
+</script>
+</body>
+</html>

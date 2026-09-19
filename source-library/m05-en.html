@@ -1,0 +1,1033 @@
+<!doctype html>
+<html lang="ru" data-ru-title="M05 · CAD, механика и изготовление ноги · EN — Robotics &amp; AI" data-en-title="M05 · CAD, mechanics and leg manufacture · EN — Robotics &amp; AI">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>M05 · CAD, механика и изготовление ноги · EN — Robotics &amp; AI</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body class="source-reader">
+<a class="skip-link" href="#main"><span lang="ru">К тексту источника</span><span lang="en">Skip to source text</span></a>
+<header class="topbar"><a class="brand" href="../index.html">Robotics &amp; AI</a><nav><a href="../library.html"><span lang="ru">Библиотека источников</span><span lang="en">Source library</span></a><a href="../index.html"><span lang="ru">Новый план</span><span lang="en">Revised plan</span></a></nav><div class="lang-switch" aria-label="Language"><button type="button" data-lang="ru">RU</button><button type="button" data-lang="en">EN</button></div></header>
+<main class="wrap" id="main">
+<p class="eyebrow"><span lang="ru">Архив · исходный документ</span><span lang="en">Archive · original document</span></p>
+<h1><span lang="ru">M05 · CAD, механика и изготовление ноги · EN</span><span lang="en">M05 · CAD, mechanics and leg manufacture · EN</span></h1>
+<div class="notice source-notice"><strong><span lang="ru">Архивные даты и часы не действуют.</span><span lang="en">Original dates and hours are superseded.</span></strong><p><span lang="ru">Это полный текст исходного документа. Старый календарь, отпуска и бюджеты часов сохранены для проверки исходной информации. Рабочее расписание находится в новом плане: 50 часов в неделю, без отпусков.</span><span lang="en">This is the complete extracted text of the original document. Its historical calendar, vacations and hour budgets are preserved for source verification. Use the revised plan for the current schedule: 50 hours per week, with no vacations.</span></p></div>
+<p><span lang="ru">Язык исходника: английский.</span><span lang="en">Source language: English.</span> <span lang="ru">Переключатель RU/EN меняет язык интерфейса; исходный текст не переводится автоматически.</span><span lang="en">The RU/EN switch changes the interface; original source text is not automatically translated.</span></p>
+<p class="source-actions"><a href="../originals/detailed/English/Monthly/M05_Robotics_Plan_EN.pdf"><span lang="ru">Открыть исходный PDF без изменений</span><span lang="en">Open the unchanged original PDF</span></a> · <a href="m05-ru.html"><span lang="ru">Открыть другую языковую редакцию</span><span lang="en">Open the other language edition</span></a></p>
+<p><span lang="ru">Страниц</span><span lang="en">Pages</span>: 15 · <span lang="ru">Ссылок из PDF</span><span lang="en">PDF links</span>: 19</p>
+<details class="source-page source-toc"><summary><span lang="ru">Перейти к странице</span><span lang="en">Jump to a page</span></summary><nav class="page-links" aria-label="Pages"><a href="#page-1">1</a> <a href="#page-2">2</a> <a href="#page-3">3</a> <a href="#page-4">4</a> <a href="#page-5">5</a> <a href="#page-6">6</a> <a href="#page-7">7</a> <a href="#page-8">8</a> <a href="#page-9">9</a> <a href="#page-10">10</a> <a href="#page-11">11</a> <a href="#page-12">12</a> <a href="#page-13">13</a> <a href="#page-14">14</a> <a href="#page-15">15</a> </nav></details>
+<p class="source-controls"><button type="button" id="expand-pages"><span lang="ru">Развернуть все страницы</span><span lang="en">Expand all pages</span></button> <button type="button" id="collapse-pages"><span lang="ru">Свернуть все страницы</span><span lang="en">Collapse all pages</span></button></p>
+<p><span lang="ru">Извлечение PDF может сохранять переносы строк и наложенные редакции. Формулы, иллюстрации и исходное оформление доступны в неизменённом PDF. Все встроенные ссылки вынесены под текст соответствующей страницы.</span><span lang="en">PDF extraction may retain line breaks and overlapping revisions. Equations, illustrations and original formatting remain available in the unchanged PDF. Every embedded link is listed below its corresponding page.</span></p>
+<section class="source-pages" aria-label="Original document pages">
+<details class="source-page" id="page-1"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 1 · A parametric leg: from sketch to measured</summary><pre class="source-text">ROBOTICS AND AI  /  M05  /  DETAILED STUDY PLAN
+
+A parametric leg: from sketch to measured
+part
+
+M5 • 31 Jan 2027 - 24 Feb 2027 • 75 hours
+
+M05 outcome
+During this month, create a parametric CAD assembly of a leg with three degrees of
+freedom, drawings, a bill of materials and test specimens. This is the first physical part of
+the future walking robot: links, brackets, shafts, fasteners and the cable route. At this stage the leg
+may be passive, with joints moved by hand; the actuator test rig and force control belong to later
+modules.
+The tasks require you to justify the design: how link length determines part dimensions, which
+components transfer the load to the body, how to provide access to a screw, how tolerances affect
+backlash, and why print orientation changes a part&#x27;s properties. The same approach will later apply
+to robotic fingers, but designing the complete hand is outside M05.
+
+Learning object and model boundaries
+Use three consecutive revolute joints: the first turns the leg in the horizontal plane, and the second
+and third bend it. In the zero configuration, align the first joint axis with z and the next two axes
+with y; label the local coordinate frames. Initial link lengths, for example 35/80/100 mm, are only
+starting geometry. You may change them after checking the layout; these are not the final
+dimensions of the future robot.
+Until a motor is selected, create a separate parametric component representing its envelope.
+Explicitly mark mounting dimensions that still need confirmation. If the actual actuator has already
+been selected, use dimensions from its drawing. A provisional motor model does not establish
+mounting compatibility. A physical passive assembly can use separate shafts and bushings without
+applying power.
+
+Tools and organisation
+Choose one CAD environment: FreeCAD or Fusion if you already know it. Do not learn both
+simultaneously. Prepare callipers or a ruler, your existing FDM printer, available material, suitable
+fasteners and a simple fixture for small static loads. Use a validated profile for your printer; the
+printer model does not automatically determine hole accuracy.
+Create cad/native, cad/export, drawings, bom, calculations, coupons and tests. For every print,
+record the CAD revision, material, orientation, profile, mass and date. M02 covered forces, torques
+and units; M03 covered ways to describe measurement variability; M04 covered cable-routing
+requirements. Full kinematics, dynamic walking and actuator operation are not required here.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M5 • 31 Jan 2027 - 24 Feb 2027 • 75 hours                                                                          1 / 15
+
+</pre></details><details class="source-page" id="page-2"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 2 · 75 hours and a design strategy</summary><pre class="source-text">ROBOTICS AND AI  /  M05  /  DETAILED STUDY PLAN
+
+75 hours and a design strategy
+
+Four blocks from the original programme
+A, hours 1-20: 10 h theory + 10 h practice. Sketches, constraints, dimensions and parameters;
+extrusions, revolutions, patterns, holes and fillets; parts, assemblies, revolute joints and
+intersections. Deliverable: a link, a bracket and a joint assembly with three labelled axes.
+B, hours 21-40: 10+10 h. Fasteners, inserts, bearings, shafts and couplings; fits, datums,
+tolerance stacks and GD&amp;T fundamentals; cables and maintenance access. Deliverable: drawings,
+an exploded view, a bill of materials (BOM) and specimens for checking fits.
+C, hours 41-60: 10+10 h. Free-body diagrams, equilibrium, load transfer, stress and strain,
+shear, beam deflection, factor of safety and load uncertainty. Deliverable: a hand calculation for an
+unfavourable configuration and a comparison of two link versions.
+D, hours 61-75: 5+10 h. FEA: restraints, mesh and convergence; FDM anisotropy, orientation
+and layers; PLA, PETG and TPU; printing and a static test of one assembled leg. Deliverable: a
+comparison of hand calculations, FEA and measurements, with limitations stated. Total: 35 h of
+study and analysis and 40 h of practice.
+
+Study rhythm and production
+Study the theory in two-hour sessions; split the final 5 h into 2+2+1. Divide each ten-hour practical
+block into five two-hour sessions. Print small test specimens first, then the critical assembly, and
+print the entire leg only after checking the fits. Waiting for a print to finish does not count towards
+study hours; prepare drawings, calculations or the log while the printer runs.
+Dates come from the overall plan. Sessions from an adjacent module may occur at the M05
+boundary; rest days, holidays and integration stages remain in place. Allocate work hours
+sequentially across available sessions, without counting hours twice or adding hours. Plan printing
+in advance so that verification does not depend on the final night of the month.
+
+Priorities when time is limited
+First ensure that geometry rebuilds reliably and that connections are justified, then address
+strength and maintenance access, and finally appearance. If you fall behind, omit photorealistic
+images, elaborate enclosure styling and a second CAD environment. Retain the three-joint
+assembly, critical drawings, BOM, hand calculation, a simple FEA check and physical specimens.
+Before testing, record the calculated load range and the fixture&#x27;s permissible loads; a previous
+result does not automatically carry over after a change in material, layer direction or geometry. No
+factor of safety in this plan is a universal approval: select it for a specific scenario and support it
+with data. Conduct a static test on a restrained specimen, without an operating actuator.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M5 • 31 Jan 2027 - 24 Feb 2027 • 75 hours                                                                           2 / 15
+
+</pre></details><details class="source-page" id="page-3"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 3 · Sketches and parameters: build an</summary><pre class="source-text">ROBOTICS AND AI  /  M05  /  DETAILED STUDY PLAN
+
+Sketches and parameters: build an
+adjustable link
+
+What to study in CAD
+Study the sketch plane, origin, construction geometry and constraints: coincidence, horizontal and
+vertical alignment, parallelism, perpendicularity, tangency, symmetry and dimensions. Identify the
+degrees of freedom that remain. A fully constrained sketch should express design intent; fixing
+every point indiscriminately conceals relationships and makes changes difficult.
+Separate driving dimensions from reference dimensions. Use the names L_link, wall, shaft_d,
+bearing_d, bolt_pitch and cable_clearance. Store units and comments. Practise extrusion
+(extrude/pad), revolution (revolve), pattern, hole and fillet operations on features of the intended
+part. Build the main volumes and holes first, then secondary fillets, so the cause of errors is easier
+to locate when the shape changes.
+
+Task 1. Parametric link
+Inputs: the distance between axes, the envelope of the future mount and the selected printing
+process. Sketch a link with two joint centres, a symmetrical outline and parametric thickness.
+Extrude the body, add holes and one lightening cavity. Create three length variants by changing
+only the parameter, rather than stretching faces manually.
+Save the model in its native CAD format and a table of variants. Check that centre distances match
+the specification, the sketch is fully constrained and geometry rebuilds without errors after a length
+change. Edge case: the minimum length makes holes intersect the cavity. Provide a way to detect
+this error in the model or checklist, and explicitly state the permitted parameter range.
+
+Task 2. Bracket and a revolved part
+Model a U-shaped bracket and a spacer bushing. Use a revolved profile for the bushing and a
+pattern for repeated fastener holes. Identify mating surfaces, where a flat seat is needed under a
+screw head, and which tool must reach the fastener. Do not make a wall thin simply because CAD
+can construct it.
+Save both parts in native CAD format, a bracket section view and the results of checking the main
+dimensions. Change wall thickness and shaft diameter, then verify that symmetry is retained.
+Deliberate error: a sketch references a face that disappears after a fillet change. Move the
+reference to a stable datum plane or axis and explain why the revised model tolerates edits better.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M5 • 31 Jan 2027 - 24 Feb 2027 • 75 hours                                                                          3 / 15
+
+</pre></details><details class="source-page" id="page-4"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 4 · Three joints, assembly and maintenance</summary><pre class="source-text">ROBOTICS AND AI  /  M05  /  DETAILED STUDY PLAN
+
+Three joints, assembly and maintenance
+
+A component differs from a body
+Understand the difference between a part, a component, an instance and an assembly. Two
+identical bushings in an assembly should reference one model unless one needs a separate
+revision. Define a fixed base and three revolute joints. Each joint has an axis, a zero position, a
+positive angular direction and geometric motion limits.
+Do not infer mechanical feasibility from a single chosen configuration. Collisions can appear during
+combined rotations, and the motor housing and screw heads occupy space. Add simple envelopes
+for the tool, cable and connector as separate reference components; include them in access
+checks, but exclude them from the printed part&#x27;s mass.
+
+Task 3. Passive 3-DOF leg
+Assemble the base bracket, three joint units and links. Name the joints J1/J2/J3 and label their local
+axes and initial angles. Check each joint&#x27;s motion separately, then combinations of extreme
+positions with intermediate points. Initially, geometry determines the learning model&#x27;s ranges; the
+real actuator&#x27;s limits must be reconciled later.
+Save the assembly, a configuration table and screenshots of intersections before and after
+correction. Check for exactly three intended degrees of freedom, a fixed base and no unintended
+motion in rigid groups. A discrete set of poses does not prove there are no collisions between them;
+state the checking increment and investigate suspicious intervals in greater detail.
+
+Task 4. Cable routing and replacement of one joint
+Route a provisional cable from the base to the distal joint, allowing extra length for motion,
+securing it and providing connector access. Check extreme poses: the cable must not become taut,
+enter a joint gap or rub against a sharp edge. Take the minimum bend radius from the actual cable;
+for an envelope sketch, mark it as an assumption requiring confirmation.
+Describe disassembly in the reverse order of assembly: which screw is removed first, and whether
+the shaft can be withdrawn and the bushing replaced without dismantling the whole link. Save five
+maintenance steps and an exploded view. Edge case: the screw head is accessible, but a hex key
+cannot be inserted along its axis. Add the tool envelope and modify the mounting. For the future
+hand, this exercise will recur within the smaller space of a finger.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M5 • 31 Jan 2027 - 24 Feb 2027 • 75 hours                                                                          4 / 15
+
+</pre></details><details class="source-page" id="page-5"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 5 · Fits, datums, fasteners and tolerance stacks</summary><pre class="source-text">ROBOTICS AND AI  /  M05  /  DETAILED STUDY PLAN
+
+Fits, datums, fasteners and tolerance stacks
+
+Basic machine elements
+Study the functions of screws, nuts, washers, threaded inserts in plastic, bearings, bushings, shafts
+and couplings. Separate their functions: a screw clamps, a shaft defines rotation, and a bearing
+transfers load while allowing specified motion. The thread of an ordinary screw is generally
+unsuitable as a precision rotational bearing surface. Select fits to suit the assembly method and
+actual part tolerances.
+A datum is a surface or axis from which important dimensions are specified. GD&amp;T fundamentals
+explain why axis position and surface perpendicularity differ from a single linear tolerance. Choose
+one clear set of datums A/B/C, identify the controlled axis and explain how to measure it. Studying
+the complete geometric tolerancing standard is outside the month&#x27;s scope.
+
+Task 5. Specimen for checking holes and inserts
+Build a small specimen containing a series of fit holes with sizes close to the nominal size of the
+selected shaft or insert. Choose the increment relative to the expected accuracy of the printer and
+measuring tool; for example, 0.1 mm may serve as an exercise increment, rather than a promised
+FDM accuracy. Print the specimen in two orientations with the same material and profile.
+Measure the holes using an available method, then check the fit of the actual mating part. For
+small internal diameters, assess the limitations of calliper measurements and use a known shaft as
+a functional gauge. Save nominal/measured/fit_result. Edge cases: a hole becomes oval because of
+layer direction, an insert splits the wall, or a part fits only after undocumented reworking. Record
+any machining or finishing separately.
+
+Task 6. Axial clearance and drawing
+Build a tolerance stack for the assembly: bracket width, two walls, bushings, the rotating link and
+washers. Calculate minimum and maximum axial clearance for unfavourable tolerance
+combinations. Do not add standard deviations as though they were guaranteed dimensional limits:
+the probabilistic estimate in M03 and a worst-case tolerance check answer different questions.
+Prepare a drawing of the critical link with views, a section, datums, hole dimensions, material, print
+orientation and revision. Acceptance check: another person understands what to manufacture and
+measure. Deliberate error: the dimension chain permits negative clearance and binding after
+tightening. Correct the spacer bushing or geometry; simply loosening the screw without a
+controlled fastening arrangement is not a solution.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M5 • 31 Jan 2027 - 24 Feb 2027 • 75 hours                                                                          5 / 15
+
+</pre></details><details class="source-page" id="page-6"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 6 · Statics and strength: how loads are</summary><pre class="source-text">ROBOTICS AND AI  /  M05  /  DETAILED STUDY PLAN
+
+Statics and strength: how loads are
+transferred
+
+Essential mechanics
+Obtain a free body by mentally separating a part and replacing constraints with reactions. In a
+static case, the sums of forces and moments are zero. Show how the load passes from the foot
+through links, shafts and the bracket to the body. Stress is internal force per unit area, and strain is
+relative dimensional change; modulus E relates them in a simple linear elastic model.
+Study tension, compression, shear, bending and deflection. For an ideal cantilever beam with end
+force F, M=F·L, σ_max=M·c/I and δ=F·L³/(3EI). Here c is the distance to the outermost fibre, and I is
+the second moment of area of the section, not a mass moment of inertia. These equations apply for
+small deflections, the stated supports and an appropriate material model.
+In a simple case, factor of safety n is the ratio of a selected material limit to calculated stress. First
+state the failure mode and the source of the limiting value. For printed plastic, parameters must
+correspond to layer direction, temperature and loading conditions; an unknown value cannot be
+replaced by an arbitrarily generous safety factor.
+
+Task 7. An unfavourable leg pose
+Choose an assumed future body mass and a load-distribution scenario, marking them as design
+assumptions. Do not automatically divide the weight by the total number of legs: some supports
+may carry no load. For three different poses, calculate the force lever arm about each joint and the
+base-mount reaction. Include the links&#x27; own weight if it is already known from the model or
+weighing.
+Save three free-body diagrams, a force and torque table and the selected design load case. Check
+force and moment balance, dimensions and sensitivity to a load change. This provides a static
+reference; foot-strike impact and dynamic accelerations need a separate model. Reflect their
+uncertainty in the selected scenario and safety factor, rather than concealing it behind a claim of
+reliability.
+
+Task 8. Two link versions
+Simplify the critical part of the link to a beam with a known cross-section. Compare versions A and
+B: change section height or add a rib while retaining a clear load path. Calculate expected
+deflection, stress and mass; for a rectangle, I=b·h³/12, so the orientation of its height relative to
+bending matters.
+Prepare a calculation note and two CAD model variants. Verify the prediction: doubling the force
+doubles deflection in a linear model, while changing height has a nonlinear effect. Edge case: a thin
+wall beside a hole is not represented by the beam idealisation. Mark this region for local FEA and
+inspection of the tested specimen. A material&#x27;s catalogue strength is not yet the allowable strength
+of the printed assembly.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M5 • 31 Jan 2027 - 24 Feb 2027 • 75 hours                                                                           6 / 15
+
+</pre></details><details class="source-page" id="page-7"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 7 · FEA: formulation, mesh and independent</summary><pre class="source-text">ROBOTICS AND AI  /  M05  /  DETAILED STUDY PLAN
+
+FEA: formulation, mesh and independent
+verification
+
+Avoiding unjustified confidence
+FEA divides geometry into finite elements and approximately solves the equations of the chosen
+model. Before running it, record the material, constitutive law, loads and restraints. Fully clamping
+a large surface is usually stiffer than a real bolted or bushed connection; compare one restraint
+arrangement with a physically plausible alternative.
+For the first exercise, use one simple part and a linear elastic model. Confirm the units of E, loads
+and dimensions. An isotropic approximation of FDM is a limited model suitable for comparing
+trends; it does not automatically describe interlayer failure or TPU nonlinearity. Do not reach a final
+conclusion about a plastic part&#x27;s failure solely from a coloured equivalent-stress map.
+
+Task 9. A beam, then the actual link
+First perform FEA on the same cantilever as in task 8, with the same L, section, E, force and
+support. Compare deflection at a selected point with the hand calculation. If the discrepancy is
+large, check units, boundary conditions and geometry before complicating the model. Then apply
+the approach to the actual link and name the metrics in advance: point deflection, support reaction
+and stress away from an artificial singularity.
+Build three mesh refinement levels while retaining the same problem formulation. For each, record
+element count, mesh size, solution time and metrics. An exercise target is a change of less than 5%
+in the selected deflection between the final two meshes; this is a convergence criterion for this
+experiment, not a universal accuracy or permission to operate.
+
+What to save
+Save the original analysis model, material parameters, a list of loaded and restrained surfaces,
+mesh characteristics and the comparison with the hand calculation. Show the exaggerated
+deformed shape with its scale labelled; without a label, a viewer may mistake visual magnification
+for actual deflection.
+Edge cases: an unrestrained rigid body, incorrect force units, a load applied to a single vertex and
+excessive local stress at an ideal sharp edge. A stress maximum that grows without converging
+needs investigation. Do not simply refine the mesh and declare the latest peak a reliable part
+stress. For M05, recognising the limitation and checking overall deflection and support reactions is
+sufficient.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M5 • 31 Jan 2027 - 24 Feb 2027 • 75 hours                                                                           7 / 15
+
+</pre></details><details class="source-page" id="page-8"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 8 · Printing, materials and testing the passive</summary><pre class="source-text">ROBOTICS AND AI  /  M05  /  DETAILED STUDY PLAN
+
+Printing, materials and testing the passive
+leg
+
+PLA, PETG and TPU according to part function
+Compare materials in terms of stiffness, temperature response, creep, impact behaviour, layer
+adhesion and ease of processing. PLA is useful for initial dimensional prototypes; PETG is often
+used for tougher parts; TPU suits a flexible foot or pad. These are directions for selection, not
+guaranteed properties of a particular spool. Consult the manufacturer&#x27;s data and test your own
+specimens.
+FDM orientation affects interlayer bonding, holes, overhangs and the quality of bearing surfaces.
+Record layer direction relative to expected tension and bending. Infill density is only one
+parameter: wall thickness, perimeter count, top and bottom layers, and load transfer may have a
+stronger influence. Do not compare two materials while simultaneously changing the entire
+geometry and profile.
+
+Task 10. Specimens and a static check
+Prepare two identical beam specimens in different orientations. Measure actual dimensions and
+mass. Place a specimen in a simple fixture, apply a small known force using a weight or force
+gauge, and measure deflection at one point. Choose the load range from the preliminary
+calculation and the fixture&#x27;s and instrument&#x27;s capabilities; increase load in steps recorded in
+advance.
+At each level, save load, deflection, hold time and residual deformation after unloading. The fixture
+must retain the part and weight, and the possible drop area must be clear. Stop testing if the
+fixture shifts, cracking is heard, a crack appears or deflection becomes unexpectedly large.
+Destroying the finished leg is not required to pass: a measured range and a description of any first
+signs of damage or unacceptable deformation are sufficient.
+
+From a test specimen to an assembled leg
+Choose orientation and profile from the specimen tests, print the critical links and assemble the
+passive leg. For the static experiment, use a fixture to lock the joints in one calculated pose; do not
+rely on the resistance of an unpowered motor. Apply a known, limited foot load and measure total
+deflection, play before loading and recovery after unloading.
+Compare the direction and order of magnitude of deflection with the hand calculation and FEA,
+explaining the contribution of joints and mountings. Prepare CAD revision B to address one
+observed defect: a fit, access, a rib or cable clearance. Save photographs, the raw measurement
+table, a force-deflection plot, observations and the decision on the next revision. A successful static
+test does not establish walking fatigue life or impact strength.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M5 • 31 Jan 2027 - 24 Feb 2027 • 75 hours                                                                          8 / 15
+
+</pre></details><details class="source-page" id="page-9"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 9 · Work sequence: hours 1-40</summary><pre class="source-text">ROBOTICS AND AI  /  M05  /  DETAILED STUDY PLAN
+
+Work sequence: hours 1-40
+
+Block A: a model that can be changed
+Hours 1-2. Choose CAD, create the project structure and a three-axis diagram. Hours 3-4. Study
+geometric and dimensional constraints and fully constrain a link sketch. Hours 5-6. Study
+parameters, expressions and units. Hours 7-8. Practise extrusion, revolution, patterns, holes and
+fillets (extrude/revolve/pattern/hole/fillet) on your own parts. Hours 9-10. Study components,
+instances, assemblies and revolute joints.
+Hours 11-20 - practice. 2 h: task 1 and three link lengths. 2 h: bracket and bushing. 2 h: 3-DOF
+assembly. 2 h: extreme poses and intersections. 2 h: cable, tool and saving revision A. Prepare a
+short dimensional-specimen print at the end if helpful, so it does not delay the next practical
+session.
+Checkpoint at hour 20: change one link&#x27;s length and wall thickness. The assembly must rebuild, the
+axes must remain connected, and the unconfirmed motor envelope must retain its provisional
+status. If rebuilding fails, correct model dependencies first: adding decorative parts only increases
+the work needed for revision.
+
+Block B: manufacture and maintenance
+Hours 21-22. Study fasteners, inserts and the functions of connections. Hours 23-24. Study
+shafts, bearings, bushings, couplings and fit requirements. Hours 25-26. Cover datums and
+tolerance stacks. Hours 27-28. Study how to prepare a clear drawing and the basics of geometric
+tolerances. Hours 29-30. Check cables, tool access and the repair sequence.
+Hours 31-40 - practice. 2 h: fit specimens and print preparation. 2 h: measurement and
+functional trial fitting. 2 h: axial tolerance stack and clearance correction. 2 h: drawings and
+exploded view. 2 h: BOM, assembly sequence and revision control. If specimen printing takes
+longer, prepare drawings while it runs; do not change fit criteria after seeing the result.
+In the BOM, include part_id, revision, quantity, material or product type, dimensional source and
+method of obtaining the part. Separate printed parts, standard fasteners and provisional
+components. Totals by item must match the assembly. For every important item, make clear
+whether it can be manufactured now or requires selection of the actual actuator.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M5 • 31 Jan 2027 - 24 Feb 2027 • 75 hours                                                                          9 / 15
+
+</pre></details><details class="source-page" id="page-10"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 10 · Work sequence: hours 41-75</summary><pre class="source-text">ROBOTICS AND AI  /  M05  /  DETAILED STUDY PLAN
+
+Work sequence: hours 41-75
+
+Block C: calculate before loading
+Hours 41-42. Draw free bodies of the links and their reactions. Hours 43-44. Calculate moments
+for three leg poses. Hours 45-46. Study stress, strain, shear and modulus E. Hours 47-48. Study
+a cantilever beam and the influence of cross-section. Hours 49-50. Describe uncertainties in load
+and material properties and justify the design safety factor.
+Hours 51-60 - practice. 2 h: leg design load case. 2 h: simplified beam and unit checks. 2 h:
+versions A and B, comparing mass and deflection. 2 h: prototype test fixture and measurement
+plan. 2 h: preparation for printing critical parts and the calculation package. State the limits of
+available fixtures before choosing loads.
+At hour 60, explain where the most heavily loaded region lies and why. If the answer rests only on
+a sense that a region looks thin, return to force lever arms and the load path. If geometry is too
+complex for a hand calculation, choose a clear idealisation and explicitly identify what it omits.
+
+Block D: compare calculation, simulation and measurement
+Hours 61-62. Cover FEA boundary conditions, units and material selection. Hours 63-64. Study
+mesh, convergence and limitations of local peaks. Hour 65. Compare PLA, PETG and TPU, layer
+orientation and the static verification plan.
+Hours 66-75 - practice. 2 h: FEA of a simple beam and a hand-calculation comparison. 2 h: actual
+link and three meshes. 2 h: measured specimens, fits and joint locking. 2 h: static experiment on
+one assembled leg, table and photographs. 2 h: revision B, final drawings, BOM and presentation.
+Prepare final parts and specimens before these sessions.
+If the available FEA environment requires lengthy setup, retain a minimal analysis of one simple
+part in an available solver and do not move to a full assembly contact model. Measuring one leg
+and making a justified comparison with a simple model is more useful than an unfinished complex
+simulation. The three meshes serve the chosen metric, rather than a target number of analyses.
+Final independent check: double the assumed load or rotate a rectangular section by 90°. Predict
+the change in deflection and the most critical region before running the analysis. Then verify the
+result by hand and with FEA; increase the physical load only if the new range is justified and stays
+within the prepared test limits.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M5 • 31 Jan 2027 - 24 Feb 2027 • 75 hours                                                                         10 / 15
+
+</pre></details><details class="source-page" id="page-11"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 11 · Acceptance checks: model, documentation</summary><pre class="source-text">ROBOTICS AND AI  /  M05  /  DETAILED STUDY PLAN
+
+Acceptance checks: model, documentation
+and observations
+
+Six required checks of errors and limitations
+1. Rebuilding. Changing length or thickness does not break the main geometry. 2. Collision. An
+extreme combined pose has been checked with fasteners and tools included. 3. Fit. An
+unfavourable tolerance stack does not conceal binding; retain an unsuitable specimen with the
+recorded observation.
+4. FEA units and supports. Incorrect scale or an unrestrained body is detected through
+independent verification. 5. Mesh. A growing local peak is not automatically accepted as a reliable
+physical result; the selected deflection has been checked for convergence. 6. Physical specimen.
+Residual deformation, play or a crack is recorded and influences the next revision, rather than
+disappearing from the report.
+
+What to prepare
+Save the leg assembly in native CAD format, a STEP export and print files with units and revision;
+critical-part drawings; an exploded view; BOM; parameter table; force, moment and beam
+calculations; FEA file and settings; mesh table; print profiles; specimens and actual measurements.
+Photographs must make it possible to identify the physical part by its part_id and layer direction.
+Check that all driving sketches are constrained, the assembly has three intended degrees of
+freedom, the assembly and maintenance sequence is known, and calculation assumptions are not
+presented as properties of the finished robot. For every deflection or load value, identify its source:
+hand calculation, simulation or experiment. Compare trends and scale under identical conditions
+and explain discrepancies.
+
+Self-check questions and handover
+How does a geometric constraint differ from a dimension? Why is a part instance preferable to a
+copied independent body? Where are the datums for the critical hole? What happens to clearance
+during tightening? Why does support on a threaded surface fail to provide precise rotation? How
+does the foot load reach the body? Why does section height enter I to the third power?
+What does a factor of safety mean when printed strength is unknown? Why does isotropic FEA not
+establish interlayer strength? How do you distinguish a singularity from a real stress concentration?
+What did the specimen reveal that CAD did not? Which conclusions cannot be carried over from a
+static test to walking?
+Pass mounting dimensions, envelopes, cable route, mass, maintenance constraints and the test
+fixture to M06-M07. Once the actual actuator is selected, its mounting must be checked and its
+loads recalculated. For the future hand, retain the parametric bushing, bracket and fit-checking
+method; the complete hand and tactile elements will appear in the relevant module and a separate
+optional block.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M5 • 31 Jan 2027 - 24 Feb 2027 • 75 hours                                                                       11 / 15
+
+</pre></details><details class="source-page" id="page-12"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 12 · Assigned reading: a focused reading route</summary><pre class="source-text">ROBOTICS AND AI  /  M05  /  DETAILED STUDY PLAN
+
+Assigned reading: a focused reading route
+
+Read only the specified sections before the corresponding experiment. Most literature is in English;
+keep explanations, the glossary and the report in English for this edition. Reading and preparation
+are included in the existing 75 hours; you do not need to work through entire books.
+
+Core reading
+1. David Roylance, Mechanics of Materials, open MIT modules. Introduction to Elastic
+Response; Stresses in Beams; Beam Displacements. For tasks 7-8, derive the relationship between
+load, stress and deflection. Then read selected parts of Finite Element Analysis for task 9: a mesh
+approximates a model, so comparison with the beam is compulsory.
+2. Alexander Slocum, FUNdaMENTALS of Design. Chapters 4, 8-10: Linkages; Structures;
+Structural Conn. &amp; Interfaces; Bearings. For tasks 3-5, study only diagrams relevant to your joint,
+load transfer and part connections. Record which motions the support allows and which reactions it
+transmits.
+3. Yorik van Havre, A FreeCAD Manual. Modeling for product design; Preparing models for 3D
+printing; Creating FEM analyses. For tasks 1 and 9 and specimen printing, study the parametric
+model, mesh export and analysis setup. This is an introductory book; check current commands
+against the help for your version. If using Fusion, read only the general principles of models and
+meshes.
+
+Three references for the chosen tools
+CAD commands. FreeCAD: Sketcher: Constraints, PartDesign: Body, Tools, TechDraw: Views,
+Dimensions. Alternative: Fusion Parameters and Joints, Limits.
+FEA. FreeCAD FEM: Workflow; SimScale Static: materials, boundary conditions, mesh as an
+alternative reference. In task 9, record the actual restraints and check mesh refinement.
+Print material. Prusa Filament Material Guide: PLA, PETG, FLEX. This compares materials; it is not
+a ready-made profile for your printer. Establish temperature and operating settings from filament
+manufacturer data and specimen test results.
+Reading deliverables. Prepare one load-transfer sketch, one beam calculation, a table of fit
+dimensions and a justification of print orientation. Connect these results to the decisions in your
+CAD revision.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M5 • 31 Jan 2027 - 24 Feb 2027 • 75 hours                                                                        12 / 15
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://ocw.mit.edu/courses/3-11-mechanics-of-materials-fall-1999/pages/modules/" target="_blank" rel="noopener noreferrer">https://ocw.mit.edu/courses/3-11-mechanics-of-materials-fall-1999/pages/modules/</a></li><li><a href="https://ocw.mit.edu/courses/3-11-mechanics-of-materials-fall-1999/pages/modules/" target="_blank" rel="noopener noreferrer">https://ocw.mit.edu/courses/3-11-mechanics-of-materials-fall-1999/pages/modules/</a></li><li><a href="https://pergatory.mit.edu/resources/FUNdaMENTALS.html" target="_blank" rel="noopener noreferrer">https://pergatory.mit.edu/resources/FUNdaMENTALS.html</a></li><li><a href="https://github.com/yorikvanhavre/FreeCAD-manual/blob/master/SUMMARY.md" target="_blank" rel="noopener noreferrer">https://github.com/yorikvanhavre/FreeCAD-manual/blob/master/SUMMARY.md</a></li><li><a href="https://github.com/yorikvanhavre/FreeCAD-manual/blob/master/SUMMARY.md" target="_blank" rel="noopener noreferrer">https://github.com/yorikvanhavre/FreeCAD-manual/blob/master/SUMMARY.md</a></li><li><a href="https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/Sketcher_Workbench.md" target="_blank" rel="noopener noreferrer">https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/Sketcher_Workbench.md</a></li><li><a href="https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/PartDesign_Workbench.md" target="_blank" rel="noopener noreferrer">https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/PartDesign_Workbench.md</a></li><li><a href="https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/TechDraw_Workbench.md" target="_blank" rel="noopener noreferrer">https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/TechDraw_Workbench.md</a></li><li><a href="https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/TechDraw_Workbench.md" target="_blank" rel="noopener noreferrer">https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/TechDraw_Workbench.md</a></li><li><a href="https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-76272551-3275-46C4-AE4D-10D58B408C20" target="_blank" rel="noopener noreferrer">https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-76272551-3275-46C4-AE4D-10D58B408C20</a></li><li><a href="https://help.autodesk.com/view/fusion360/ENU/?guid=ASM-JOINTS" target="_blank" rel="noopener noreferrer">https://help.autodesk.com/view/fusion360/ENU/?guid=ASM-JOINTS</a></li><li><a href="https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/FEM_Workbench.md" target="_blank" rel="noopener noreferrer">https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/FEM_Workbench.md</a></li><li><a href="https://www.simscale.com/docs/analysis-types/static/" target="_blank" rel="noopener noreferrer">https://www.simscale.com/docs/analysis-types/static/</a></li><li><a href="https://help.prusa3d.com/filament-material-guide" target="_blank" rel="noopener noreferrer">https://help.prusa3d.com/filament-material-guide</a></li></ol></div></details><details class="source-page" id="page-13"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 13 · Glossary: terms and definitions</summary><pre class="source-text">ROBOTICS AND AI  /  M05  /  DETAILED STUDY PLAN
+
+Glossary: terms and definitions
+
+Parametric model. Geometry defined by dimensions, relationships and a history of operations;
+changing a driving parameter rebuilds dependent features.
+Sketch constraint. A geometric or dimensional condition that reduces the independent motions
+of sketch elements, such as coincident points or parallel lines.
+Degree of freedom. An independent coordinate needed to specify an admissible mechanism
+configuration; the number is determined by joints and imposed constraints.
+Tolerance. The permitted variation in a specified dimension or geometric parameter, selected
+according to function and manufacturing method.
+Fit. The nature of a connection between mating parts, determined by the combination of their
+limiting dimensions; a fit may be clearance, interference or transition.
+Backlash. Free relative motion when the load direction reverses; it arises from clearances and
+affects motion transmission accuracy.
+Tolerance stack. The relationship between several dimensions that jointly determine a final
+clearance or position; each deviation&#x27;s contribution depends on assembly geometry.
+Load path. The sequence of components and connections through which a load passes from its
+application point to the structure&#x27;s supports.
+Stress. Internal force per unit cross-sectional area, measured in pascals. Normal and shear
+components are distinguished.
+Strain. Relative change in material geometry; for uniaxial tension, ε=ΔL/L, a dimensionless
+quantity.
+Young&#x27;s modulus. The coefficient relating normal stress and strain in the linear elastic region,
+measured in pascals.
+Stiffness. The ratio of load to the corresponding displacement in a linear model; it depends on
+material, shape and support conditions.
+Strength. A material&#x27;s or part&#x27;s ability to sustain load without failure through the mechanism
+considered; it differs from resistance to elastic deflection.
+Second moment of area. A geometric integral describing the distribution of area about an axis;
+measured in m⁴, it influences flexural rigidity E·I.
+Factor of safety. The ratio of a selected limiting value to an operating value for a specified failure
+mechanism; it cannot correct an incorrect load model.
+Anisotropy. The dependence of material properties on direction; a printed part&#x27;s strength
+between layers may differ from its strength along them.
+Finite element analysis (FEA). Numerical analysis of a model divided into finite elements; the
+result depends on material, loads, constraints, mesh and problem formulation.
+Mesh convergence. Stabilisation of a selected result as the mesh is progressively refined; it does
+not establish the correctness of the analysis&#x27;s physical assumptions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M5 • 31 Jan 2027 - 24 Feb 2027 • 75 hours                                                                          13 / 15
+
+</pre></details><details class="source-page" id="page-14"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 14 · Equipment, installation and readiness checks</summary><pre class="source-text">ROBOTICS AND AI  /  M05  /  DETAILED STUDY PLAN
+
+Equipment, installation and readiness checks
+
+Complete preparation within the first study blocks in place of a repeated general overview. The
+total remains 75 hours; waiting for delivery is excluded. The statuses below identify actions for you
+to take, rather than purchases or installations already completed.
+
+USE EXISTING EQUIPMENT
+MacBook Pro M4, your existing 3D printer with a profile for its exact model, hand tools and
+a measurement log. There is no need to buy another printer. M05 ends with a passive leg and
+specimens; the future actuator envelope may still be explicitly provisional.
+
+BUY BEFORE MEASUREMENT AND PRINTING
+1 pair of 150 mm callipers with external and internal jaws, a depth gauge and specified
+measurement error appropriate to the part tolerances. Digital display resolution is not accuracy.
+Check zero and repeatability on one specimen before inspecting fits.
+Material: if supplies are unavailable, 1 spool of PLA for specimens and geometry; PETG if selected;
+a small amount of TPU only for a flexible part or pad. Filament diameter and settings must suit the
+printer; calculate the required mass with the slicer, allowing a reserve for repeat specimens.
+Fasteners and supports: one set for one passive leg and specimens, according to the released
+BOM: screws, nuts, washers, threaded inserts, shafts, bushings or bearings. Specify exact
+diameters and quantities from your CAD model, ensuring that tools can reach the fasteners. Do not
+order final actuators or a set of parts for the entire robot here.
+
+INSTALL NOW - ONE CAD ENVIRONMENT
+macOS ARM: FreeCAD, official macOS arm64 release or Fusion if already familiar. FreeCAD
+requires Sketcher, PartDesign, assembly, TechDraw and FEM; analysis needs CalculiX and Gmsh.
+Check whether these are included, configure their FEM paths and add missing components
+following the instructions for your version. FEM Workflow describes the workflow; included
+components depend on the chosen version&#x27;s installer.
+Install or update only the appropriate slicer and profile for the printer&#x27;s exact model, following its
+manufacturer&#x27;s instructions. If choosing Fusion, check access to static FEA beforehand; if
+unavailable, use a separate simple beam in FreeCAD FEM instead of buying an unnecessary
+package. Save the CAD, solver and slicer versions and the profile in the project.
+
+INSTALLATION AND READINESS CHECKS
+1. Fully constrain a rectangular sketch, extrude it and change a dimension. 2. Export STEP and STL,
+reopen them and check scale. 3. Create a PDF drawing with a dimension. 4. Analyse a static beam
+with a known force and compare deflection with the hand formula. 5. Check dimensions and print
+paths in the slicer, then manufacture one specimen; measure it before printing the whole leg.
+Act on the checks: if the specimen does not achieve the required fit or sustain load across the
+layers, change the print profile or CAD model and produce another specimen. Order subsequent
+parts from the verified model revision; this result does not automatically call for a different printer
+or a bulk parts order.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M5 • 31 Jan 2027 - 24 Feb 2027 • 75 hours                                                                       14 / 15
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="noopener noreferrer">https://github.com/FreeCAD/FreeCAD/releases</a></li><li><a href="https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/FEM_Workbench.md" target="_blank" rel="noopener noreferrer">https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/FEM_Workbench.md</a></li></ol></div></details><details class="source-page" id="page-15"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 15 · Motion fundamentals: leg constraints and</summary><pre class="source-text">ROBOTICS AND AI  /  M05  /  DETAILED STUDY PLAN
+
+Motion fundamentals: leg constraints and
+equilibrium
+
+Required, within the 75 hours. Use 1 h from hours 41-42 and 2 h of the hours 51-60 practical
+work on the leg design load case. Use the existing task 3 assembly and task 7 diagrams. No new
+equipment or motor experiment is required. Before starting, check yourself: identify the three joint
+axes and convert mass 0.20 kg into weight 1.962 N at g=9.81 m/s².
+
+Freedom of motion requires correctly specified constraints
+An open chain of three independent revolute joints with a fixed base has three degrees of freedom.
+Its configuration is q=(q₁,q₂,q₃). Constraining a part sketch does not immobilise the assembly. If
+joints are locked by a fixture in a static test, additional constraints and their reactions are
+introduced. This is a different mechanical problem from a free leg; friction in an unpowered
+actuator is no substitute for a specified constraint.
+
+Free-body model of one link
+For an illustrative special case of task 7, use one horizontal rigid link with L=0.12 m, m=0.20 kg
+and its centre of mass at L/2. The fixed coordinate frame originates at the left joint; x points right, y
+up, and positive moments are anticlockwise. Friction and acceleration are absent. The environment
+applies an upward force f_ext=(0;2) N at the right end; weight acts downward. These are exercise
+values, not a test load for a printed specimen.
+Mentally isolate the link. Replace the base with reactions R_x,R_y and the fixture&#x27;s holding torque
+τ_hold. The environmental force produces moment +L·2=+0.240 N·m; weight produces moment
+−(L/2)mg=−0.11772 N·m. The sum of moments without the fixture is positive, so the free link will
+not remain horizontal.
+Equilibrium requires τ_hold+0.240−0.11772=0, giving τ_hold=−0.12228 N·m. Force balance gives
+R_x=0 and R_y+2−1.962=0: R_y=−0.038 N. Here a negative reaction is admissible for a bilateral
+attachment to the rig; unilateral floor contact cannot realise every calculated force.
+
+Why the Jacobian also appears in statics
+For this link at q=0, J=(0,L)ᵀ. Work done by the external force during a small rotation is
+f_extᵀδp=f_extᵀJδq, so the corresponding generalised torque is Jᵀf_ext=+0.240 N·m. Holding torque
+balances it together with the moment of weight. In M05 this is a fixture reaction; in an
+actuated-joint model, an actuator may fulfil this role. Here f_ext is the environment&#x27;s force on the
+robot; its sign cannot change while its definition remains the same.
+
+Two deliverables for CAD and the test fixture
+1. Mark on the assembly which motions each joint permits and which the fixture prevents. Save
+two diagrams: the free 3-DOF leg and the restrained test pose. For task 7, identify the physical
+component that transmits each holding torque.
+2. Repeat force and moment balance for the three poses already selected, expressing lever arms
+and forces in one coordinate frame. Check the moment using both r×f and Jᵀf for a simple link.
+Save a reaction table with units and a load-transfer sketch. A geometrically admissible pose does
+not establish the structure&#x27;s ability to sustain load; deflection, strength and dynamics require
+separate checks.
+Assigned reading: Lynch, Park, Modern Robotics: §2.2, Degrees of Freedom of a Robot; §5.2,
+Statics of Open Chains. Compare the book&#x27;s sign for force acting on the environment with the f_ext
+convention used here.
+
+
+
+
+M5 • 31 Jan 2027 - 24 Feb 2027 • 75 hours                                                                         15 / 15</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://modernrobotics.northwestern.edu/nu-gm-book-resource/2-2-degrees-of-freedom-of-a-robot/" target="_blank" rel="noopener noreferrer">https://modernrobotics.northwestern.edu/nu-gm-book-resource/2-2-degrees-of-freedom-of-a-robot/</a></li><li><a href="https://modernrobotics.northwestern.edu/nu-gm-book-resource/5-2-statics-of-open-chains/" target="_blank" rel="noopener noreferrer">https://modernrobotics.northwestern.edu/nu-gm-book-resource/5-2-statics-of-open-chains/</a></li><li><a href="https://modernrobotics.northwestern.edu/nu-gm-book-resource/5-2-statics-of-open-chains/" target="_blank" rel="noopener noreferrer">https://modernrobotics.northwestern.edu/nu-gm-book-resource/5-2-statics-of-open-chains/</a></li></ol></div></details>
+</section>
+<footer><p><a href="../library.html"><span lang="ru">Вернуться в библиотеку</span><span lang="en">Back to source library</span></a> · <a href="../index.html"><span lang="ru">Вернуться к новому плану</span><span lang="en">Back to revised plan</span></a></p><p class="checksum">SHA-256: f34ec20e3cb586212d378cf667641466ea2141a9d8ee8a9482cb9ff3a0295919</p></footer>
+</main>
+<script>
+(function() {
+  function openPage() {
+    if (!/^#page-\d+$/.test(location.hash)) return;
+    var page=document.getElementById(location.hash.slice(1));
+    if(page) {page.open=true; page.scrollIntoView({block:'start'});}
+  }
+  window.addEventListener('hashchange',openPage);
+  document.addEventListener('DOMContentLoaded',openPage);
+  document.getElementById('expand-pages').addEventListener('click',function(){document.querySelectorAll('details[id^="page-"]').forEach(function(el){el.open=true;});});
+  document.getElementById('collapse-pages').addEventListener('click',function(){document.querySelectorAll('details[id^="page-"]').forEach(function(el){el.open=false;});});
+})();
+</script>
+</body>
+</html>

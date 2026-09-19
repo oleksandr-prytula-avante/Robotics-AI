@@ -1,0 +1,1034 @@
+<!doctype html>
+<html lang="ru" data-ru-title="M24 · Верификация, системная инженерия и выпуск · EN — Robotics &amp; AI" data-en-title="M24 · Verification, systems engineering and release · EN — Robotics &amp; AI">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>M24 · Верификация, системная инженерия и выпуск · EN — Robotics &amp; AI</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body class="source-reader">
+<a class="skip-link" href="#main"><span lang="ru">К тексту источника</span><span lang="en">Skip to source text</span></a>
+<header class="topbar"><a class="brand" href="../index.html">Robotics &amp; AI</a><nav><a href="../library.html"><span lang="ru">Библиотека источников</span><span lang="en">Source library</span></a><a href="../index.html"><span lang="ru">Новый план</span><span lang="en">Revised plan</span></a></nav><div class="lang-switch" aria-label="Language"><button type="button" data-lang="ru">RU</button><button type="button" data-lang="en">EN</button></div></header>
+<main class="wrap" id="main">
+<p class="eyebrow"><span lang="ru">Архив · исходный документ</span><span lang="en">Archive · original document</span></p>
+<h1><span lang="ru">M24 · Верификация, системная инженерия и выпуск · EN</span><span lang="en">M24 · Verification, systems engineering and release · EN</span></h1>
+<div class="notice source-notice"><strong><span lang="ru">Архивные даты и часы не действуют.</span><span lang="en">Original dates and hours are superseded.</span></strong><p><span lang="ru">Это полный текст исходного документа. Старый календарь, отпуска и бюджеты часов сохранены для проверки исходной информации. Рабочее расписание находится в новом плане: 50 часов в неделю, без отпусков.</span><span lang="en">This is the complete extracted text of the original document. Its historical calendar, vacations and hour budgets are preserved for source verification. Use the revised plan for the current schedule: 50 hours per week, with no vacations.</span></p></div>
+<p><span lang="ru">Язык исходника: английский.</span><span lang="en">Source language: English.</span> <span lang="ru">Переключатель RU/EN меняет язык интерфейса; исходный текст не переводится автоматически.</span><span lang="en">The RU/EN switch changes the interface; original source text is not automatically translated.</span></p>
+<p class="source-actions"><a href="../originals/detailed/English/Monthly/M24_Robotics_Plan_EN.pdf"><span lang="ru">Открыть исходный PDF без изменений</span><span lang="en">Open the unchanged original PDF</span></a> · <a href="m24-ru.html"><span lang="ru">Открыть другую языковую редакцию</span><span lang="en">Open the other language edition</span></a></p>
+<p><span lang="ru">Страниц</span><span lang="en">Pages</span>: 15 · <span lang="ru">Ссылок из PDF</span><span lang="en">PDF links</span>: 13</p>
+<details class="source-page source-toc"><summary><span lang="ru">Перейти к странице</span><span lang="en">Jump to a page</span></summary><nav class="page-links" aria-label="Pages"><a href="#page-1">1</a> <a href="#page-2">2</a> <a href="#page-3">3</a> <a href="#page-4">4</a> <a href="#page-5">5</a> <a href="#page-6">6</a> <a href="#page-7">7</a> <a href="#page-8">8</a> <a href="#page-9">9</a> <a href="#page-10">10</a> <a href="#page-11">11</a> <a href="#page-12">12</a> <a href="#page-13">13</a> <a href="#page-14">14</a> <a href="#page-15">15</a> </nav></details>
+<p class="source-controls"><button type="button" id="expand-pages"><span lang="ru">Развернуть все страницы</span><span lang="en">Expand all pages</span></button> <button type="button" id="collapse-pages"><span lang="ru">Свернуть все страницы</span><span lang="en">Collapse all pages</span></button></p>
+<p><span lang="ru">Извлечение PDF может сохранять переносы строк и наложенные редакции. Формулы, иллюстрации и исходное оформление доступны в неизменённом PDF. Все встроенные ссылки вынесены под текст соответствующей страницы.</span><span lang="en">PDF extraction may retain line breaks and overlapping revisions. Equations, illustrations and original formatting remain available in the unchanged PDF. Every embedded link is listed below its corresponding page.</span></p>
+<section class="source-pages" aria-label="Original document pages">
+<details class="source-page" id="page-1"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 1 · Completing the programme: verified results</summary><pre class="source-text">ROBOTICS AND AI  /  M24  /  DETAILED STUDY PLAN
+
+Completing the programme: verified results
+and release
+
+M24 • 02 Nov 2028 - 27 Nov 2028 • 75 hours
+
+The M24 objective
+Bring the learning outputs together into an engineering project: verified requirements, reproducible
+data, versioned code, CAD and configurations, a technical report and a defence. The original plan&#x27;s
+outcome is open release v1.0, a technical report and project defence. This month, prepare a
+release candidate whose results can all be checked. The owner decides on public publication
+separately after reviewing the contents and comments.
+The principal devices are the M23 six-legged robot and the robotic hand from the separate
+workstream after M17. Each retains its own requirements, limits, calibrations and evidence. A
+shared portfolio index links their software components but does not substitute one project for the
+other. If either device has not passed mandatory acceptance, state its exact status and completion
+blockers; presentation does not turn an unfinished device into a finished one.
+
+What to gather before the first session
+Prepare M1-M23 outputs: source code, CAD, drawings, circuits, calibrations, configurations,
+simulators, tests, datasets, failure logs and alternative solutions. Verify that files exist, rather than
+relying on links in an old report. For the six-legged robot, obtain standing, wave and ripple, slope,
+failure-response and energy data. For the hand, obtain evidence for the grasps, force and current
+limits, sensors and responses actually included in its OPT project.
+Do not begin the month by rewriting the entire architecture or changing documentation tools.
+Select a pinned working version, describe its boundaries and fix problems that prevent verification
+of claimed functions. Your software-development experience helps with automation, but the
+number of unit tests cannot replace physical validity.
+
+What constitutes a professional result
+Every important claim traces to a requirement, procedure, configuration, raw measurement and
+reproducible calculation. State separately what simulation, rig tests, the physical machine and
+external review establish. Include unsuccessful approaches and limitations in the report: when
+causes and conclusions are justified, they demonstrate engineering judgement.
+M24 ends on 27.11.2028; the original calendar then schedules G3 for 27.11-10.12.2028 and G4 for
+10-22.12.2028, 35 hours each. These hours and the hand&#x27;s separate 120 OPT hours are outside
+M24&#x27;s 75 hours. By 22 December 2028, both systems must have an explicit final status. Study
+hours and a portfolio alone do not confer a degree, senior-engineer qualification or research
+mastery.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M24 • 02 Nov 2028 - 27 Nov 2028 • 75 hours                                                                        1 / 15
+
+</pre></details><details class="source-page" id="page-2"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 2 · 75 hours: verification campaign,</summary><pre class="source-text">ROBOTICS AND AI  /  M24  /  DETAILED STUDY PLAN
+
+75 hours: verification campaign,
+documentation and defence
+
+Time allocation
+Hours 1-20: 10 hours on requirements, metrics and the verification plan; 10 hours auditing data
+and conducting the first reproducible runs. 21-40: 10 hours on safe states, failures and release
+contents; 10 hours on repeated checks, versioning and clean reproduction. 41-60: 10 hours on
+technical explanation and external-review preparation; 10 hours on the report, diagrams, defence
+and review comments. 61-75: 5 hours choosing a professional focus and final criteria; 10 hours
+closing comments, checking the portfolio and preparing the G4 handoff.
+Total: 35 hours of theory and analysis and 40 of practice. The first three theory blocks each contain
+five 2-hour sessions; the last is 2 + 2 + 1. Each 10-study-hour practice block includes setup,
+testing, processing, corrections and evidence recording. The 30-45-minute external meeting is
+included in the third practical, not added to the budget.
+
+Organising the package
+Create one index covering requirements, configurations, tests, raw data, calculations, report,
+instructions, comments, release and portfolio. Give requirements stable IDs, such as HEX-STANCE
+and HAND-GRASP, and configurations unique revisions. Do not link evidence only to a filename
+such as final.csv: include run_id, file hash and system version. Large data need suitable storage
+with integrity checks; DVC is useful if it already fits the project.
+The first-page dates define the original plan&#x27;s window. Shared boundary dates, holidays and
+separate G blocks do not create extra hours. Place numbered work within available sessions
+without double-counting. Use time awaiting a reviewer&#x27;s response for independent tasks; external
+review is incomplete until a response arrives.
+
+Priorities when time is short
+First resolve invalid measurements and untested mandatory functions, then an unreproducible
+build, then ambiguous instructions and reviewer comments. Website design, complex animation
+and an additional demonstration video come last. A narrower verified feature set may be released
+with explicit limitations; lowering a mandatory criterion after failure requires declaring the
+requirement change.
+Keep two lists: v1.0 release blockers and development after the programme. For each new feature,
+determine whether it is needed to verify behaviour already claimed. If not, add it to the future
+specialisation. This preserves time for both physical projects and final integration.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M24 • 02 Nov 2028 - 27 Nov 2028 • 75 hours                                                                        2 / 15
+
+</pre></details><details class="source-page" id="page-3"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 3 · Requirements, metrics and links to</summary><pre class="source-text">ROBOTICS AND AI  /  M24  /  DETAILED STUDY PLAN
+
+Requirements, metrics and links to
+measurements
+
+What to study
+Distinguish verification, checking fulfilment of a stated requirement, from validation, checking that
+the system solves the intended task under real conditions of use. A specific trial checks 120
+seconds of standing; assessing whether the robot makes repeatable experiments convenient also
+requires instructions, preparation and user evaluation. Select a method for each requirement:
+analysis, inspection, demonstration or testing, sometimes in combination.
+A good requirement identifies the object, action, conditions and criterion. Replace low latency with
+the events between which the interval is measured, the clocks used, the load and the limit. Derive
+the limit from project dynamics, frequency and loading; a round number alone is not justification. A
+specification citation identifies the page, units and applicable conditions.
+
+Task 1. A requirements matrix for both systems
+Inputs are the six-legged-robot objectives, hand objectives and actual release candidates. 1) Break
+broad claims into verifiable requirements with stable IDs. 2) For each, specify origin, method,
+criterion, admissible configuration and required log. 3) Assign PASS/FAIL/NOT TESTED/NOT
+APPLICABLE with an explanation. 4) Verify that every feature on the portfolio homepage appears in
+the matrix.
+Save requirements_traceability.csv. Check that every mandatory requirement has a specific
+procedure and result source; NOT TESTED is not a pass. Boundary case: after actuator
+replacement, an old calibration and test remain linked to the new assembly. Update links and
+repeat affected checks. There is no need to retest an unchanged M1 parser merely to increase the
+test count.
+
+Task 2. Audit metrics and units
+Calculate latency as t_end − t_start only after establishing clock relationships. Define jitter
+explicitly, for example as deviation of cycle period from its target; show its distribution, p50, p95,
+p99 and observed maximum with sample count. For angular error, state conventions and units.
+Obtain energy by integrating U·I over time; use E/d in J/m only for a valid non-zero distance. For the
+hand, define grasp, holding and release success separately.
+Save metrics_spec.md and a calculation script applied to one reference dataset with a known
+answer. Check that values and units agree across code, table and plot; do not present
+small-sample quantiles as precise estimates of rare extremes. Boundary case: a current-recording
+interval is missing. Mark energy incomplete or use an explicitly justified estimate with an interval;
+do not fill the gap with zero.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M24 • 02 Nov 2028 - 27 Nov 2028 • 75 hours                                                                         3 / 15
+
+</pre></details><details class="source-page" id="page-4"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 4 · Independent stopping, failures and recovery</summary><pre class="source-text">ROBOTICS AND AI  /  M24  /  DETAILED STUDY PLAN
+
+Independent stopping, failures and recovery
+
+What to verify
+Verify the final physical state, not only a software enumeration changing to STOPPED. Removing
+torque may make a walking robot fall; for a hand, it may release or trap the object depending on
+mechanics. Each system needs a described path for normal stopping, emergency termination of
+force or torque application, and recovery. Support and motion restraint come from the design
+verified on earlier rigs.
+Independence applies to specific failures. If a hardware path depends on the same board&#x27;s power
+or firmware, show that in the circuit. A second thread in the same process does not make stopping
+independent of process failure. Test in the intended protected configuration with an observable
+physical indication of the result and a criterion established in advance.
+
+Task 3. Reconfirm the final state
+Use the final six-legged-robot and hand revisions. 1) Trace command and power paths on the
+circuit. 2) Prepare robot support and a safe test object or fixture for the hand. 3) Repeat normal
+stopping and the independent emergency path with the programme operating normally. 4) Repeat
+the permitted rig case with the control process stopped. 5) Check button release and restored
+communication: the previous command must not resume automatically.
+Save safe_state_evidence for both devices with a timeline and observation of the mechanism.
+Acceptance: each claimed path actually reaches the described state within justified time and
+displacement limits. Boundary case: the log reports deactivation but the actuator still applies force
+or torque. The test is FAIL; investigate the hardware path and repeat. Software confirmation does
+not replace measurement.
+
+Task 4. Failure, diagnostics and recovery
+From the risk register, choose sensor loss, stale telemetry, a stopped node and a configuration
+error. Check them first in replay or HIL. For each, record stimulus time, detection, restricted
+behaviour and operator action. Physically reproduce only permissible variants using the established
+procedure; destructive battery failure and short circuits are unnecessary for verifying software
+responses.
+Save fault_recovery_matrix and a minimal regression set. Check that after a node recovers, the
+system rechecks calibration, mode and data freshness before authorising motion. Boundary case:
+different errors need different responses, but one reset button hides both. Separate confirmation
+that the cause is resolved from permission for new motion. Retain failed cases and the rationale for
+protective behaviour.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M24 • 02 Nov 2028 - 27 Nov 2028 • 75 hours                                                                         4 / 15
+
+</pre></details><details class="source-page" id="page-5"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 5 · A reproducible code, CAD and data package</summary><pre class="source-text">ROBOTICS AND AI  /  M24  /  DETAILED STUDY PLAN
+
+A reproducible code, CAD and data package
+
+What reproducible means
+Another engineer must receive consistent source code, hardware documentation, configuration
+and sufficient data to reproduce the main results. Code, CAD, circuit and calibration have separate
+versions linked by a shared release manifest. An STL without its source parametric model and
+dimensions does not explain the design; a binary without its configuration version does not define
+controller operation.
+Distinguish reproducing calculations from saved data from conducting a new physical experiment.
+The former can be checked in a clean environment without the robot. The latter requires an
+assembly, equipment, calibration and admissible conditions. Instructions must state which results
+readers can obtain without hardware and which are confirmed only on your unit.
+
+Task 5. The v1.0 candidate manifest
+Inputs are the pinned revisions of both systems. 1) List source code, CAD, circuits, BOM,
+calibrations, dependencies, tests, data, documentation and demonstrations. 2) State each item&#x27;s
+version or hash and purpose. 3) Separate raw data from derived plots. 4) Check for dependencies
+on local paths and ensure required external files are accessible through the instructions.
+Save release_manifest.json and a local candidate archive. Check that every link resolves,
+checksums match and release notes describe this exact version. Boundary case: calibration comes
+from a different hand despite matching file format. Include the physical unit&#x27;s serial identifier and
+revision and add a compatibility check. A filename does not establish correct configuration.
+
+Task 6. Reproduce in a clean environment
+Create a separate working copy or isolated environment, restore pinned dependencies and only the
+dataset included in the candidate. Follow the instructions from the start: build, software tests,
+selected-log processing, table and plot generation. Documentation scripts must not automatically
+connect powered hardware. Hardware instructions require a deliberate mode choice and entry
+checks.
+Save reproduction_log.md with commands, environment, runtime and omissions found in the
+instructions. Check that at least one key plot for each of the six-legged robot and hand reproduces
+the same substantive result within the stated tolerance. Boundary case: a notebook displays an old
+saved-cell plot while calculation fails. Clear saved outputs, run from scratch and fix the
+dependency. A missing raw-data file blocks the claim that relies on it.
+For M20-M21 results, include the QP configuration, solver-failure check, unchanged classical
+baseline, random-number generator seeds and the OOD/fallback report. Identify learned
+components investigated only in simulation. Increased reward does not verify physical operation;
+explicitly record lack of hardware authorisation in the report and portfolio.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M24 • 02 Nov 2028 - 27 Nov 2028 • 75 hours                                                                         5 / 15
+
+</pre></details><details class="source-page" id="page-6"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 6 · Technical report and external project</summary><pre class="source-text">ROBOTICS AND AI  /  M24  /  DETAILED STUDY PLAN
+
+Technical report and external project
+defence
+
+What you must be able to explain
+Organise the report around the problem each system solves: objective, requirements, architecture,
+methods, experiments, results, limitations and future work. In the architecture, show physical
+components, command flow, measurement flow and power circuit. A separate timing diagram
+explains the measurement-to-action path; a state diagram explains motion authorisation, stopping,
+failure and recovery. Do not combine everything into one unreadable diagram.
+In methods, describe procedure, instruments, calibrations, initial conditions and processing. In
+results, separate measured facts from hypotheses. Each plot has units, a caption, version and
+attempt count; photographs show the fixture. Limitations must name surfaces, loads, durations,
+uncertainties and untested modes rather than offer a generic paragraph about future potential.
+
+Task 7. A report that stands on its own
+1) Write a half-page account of each system&#x27;s result. 2) Draw three diagrams: architecture; timing;
+states and stopping. 3) Select 4-6 main plots that substantiate requirements. 4) Trace each back to
+the raw file. 5) Analyse one unsuccessful design choice and one trade-off, such as speed versus
+heating or grip force versus protecting the object.
+Save technical_report and diagram source files. Check that a reader can identify the operating
+envelope and locate data supporting the main claim within a few minutes. Boundary case: body-tilt
+and surface-slope plot axes share the same label. Correct notation and caption, then recheck the
+text. Every plotted quantity must have an unambiguous meaning.
+
+Task 8. A 30-45-minute external review
+Prepare a compact package in advance: objectives, diagrams, requirements matrix, one successful
+trial and one failed trial. Choose someone able to assess at least part of the mechanics, control or
+software system. During the meeting, allow 5 minutes for context, 10 for architecture and
+limitations, 10 for evidence and 5-15 for questions. Record each objection, affected requirement,
+required action and closure method.
+Save design_review_minutes with the comments actually received. Check that at least one
+technical objection is addressed substantively and the response is supported by data or an explicit
+limitation. Polite praise does not replace engineering review. If the person has not replied, status is
+pending; you may rehearse independently, but cannot call it an external defence. The owner
+deliberately sends invitations and grants access; no automatic mailing is required.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M24 • 02 Nov 2028 - 27 Nov 2028 • 75 hours                                                                        6 / 15
+
+</pre></details><details class="source-page" id="page-7"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 7 · A shared test campaign for two devices</summary><pre class="source-text">ROBOTICS AND AI  /  M24  /  DETAILED STUDY PLAN
+
+A shared test campaign for two devices
+
+Specification of the integrated work
+Create campaign.yaml with conditions and run_id values. For the six-legged robot, test standing,
+wave and ripple, levelling, restricted operation without a camera and stopping. For the hand, test
+the project&#x27;s intended grasps, holding, release, detection of an unreliable sensor and failure
+response. If the hand is not mounted on the body, do not claim integrated mobile manipulation:
+these are two completed devices sharing a verification method.
+Freeze version, success definition and trial unit first. For the walking robot, the unit is a complete
+bounded scenario with restored initial conditions; for the hand, a specified cycle on a known object
+with defined position and load. Reprocessing one file checks calculation reproducibility; it does not
+add physical trials. A different hardware revision starts a separate result group.
+
+The 30-50+ series and limits of inference
+The overall plan suggests 30-50+ tests or a justified sample size. Plan the sample around the
+claim: comparable attempts to estimate success rate and separate boundary conditions for
+coverage. M23 data may count if configuration, procedure, conditions and criteria match the final
+ones; this reuses evidence rather than adding newly conducted experiments. Define the hand&#x27;s
+series separately, without pooling grasp successes with walking.
+An example arrangement is 40 attempts for one frozen six-legged-robot task and a separately
+agreed grasp series. If time is insufficient, narrow the claim and justify N, or move the open block
+to G4 within the overall schedule. Do not promise a reliability percentage from an arbitrarily small
+sample. Every mandatory mode retains its test status even if excluded from the main
+homogeneous series.
+
+Execution and calculation
+First check instruments on a known signal and run a pilot trial. Then follow a fixed order or
+alternate modes to control for discharge and heating. After every attempt, record outcome, initial
+conditions and interventions. Classify failures as mechanics, power, communication timing and bus,
+perception, control, procedure or data. Categories support repair but do not remove failures from
+the final table.
+For success rate, report k/N, the confidence-interval method and applicability conditions. If heating
+creates serial dependence, do not call individual cycles independent; analyse blocks or restrict
+conclusions to descriptive statistics. For continuous metrics, show the distribution across attempts,
+units and actual observation duration. Observed maximum current and the hardware&#x27;s admissible
+maximum are different numbers from different sources.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M24 • 02 Nov 2028 - 27 Nov 2028 • 75 hours                                                                          7 / 15
+
+</pre></details><details class="source-page" id="page-8"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 8 · Tests of the evidence package itself</summary><pre class="source-text">ROBOTICS AND AI  /  M24  /  DETAILED STUDY PLAN
+
+Tests of the evidence package itself
+
+Six required scenarios
+T1 - a different configuration. In a test copy, substitute calibration from another unit: hardware
+activation must be refused or the report must flag incompatibility. T2 - corrupted raw data.
+Change one byte or row in a copy: integrity checks or the parser must detect the problem and must
+not present the result as unchanged.
+T3 - a missing time interval. Delete part of a log copy: duration, energy or latency calculations
+must indicate incompleteness. T4 - an old notebook plot. Generate the report after clearing
+saved cell outputs: the plot must be regenerated from data rather than retained from a previous
+version. T5 - control-process failure. On an admissible rig, repeat independent stopping and
+prevention of automatic resumption.
+T6 - reproduction without undocumented local dependencies. In a clean copy, run the
+claimed recorded-data analysis without hardware: instructions must work with the specified files
+rather than an undocumented author directory. Explicitly identify any access requirement and
+provide an accessible example dataset. Save expected outcome, actual result and package version
+for each test.
+
+Checking whether claims are justified
+Take five main claims from the README and CV. Trace each chain: claim → requirement → test →
+configuration → raw data → calculation. If a link is missing, restore evidence, narrow the claim or
+remove it. A matching trial supports 120-second standing in this configuration; it does not support
+stable operation in every condition. A claim to have developed a controller and compared it with a
+baseline must identify your own contribution and comparison conditions.
+Distinguish certification, educational verification and operational authorisation. Your tests establish
+specific project requirements; mentioning safety does not make them official certification. Name
+completed checks directly: independent disconnection, command limiting and response to data
+loss. Do not claim more than the methods support.
+
+Closing defects
+For every defect, record reproduction, consequences, correction and affected requirements. After
+changing the system, repeat the smallest set that demonstrates the correction and absence of
+related regressions. A caption edit does not require rerunning the entire two-year plan; a
+power-circuit or calibration change requires the corresponding physical check.
+The change log identifies results belonging to rc1, rc2 and the final version. Label earlier-version
+data retained as comparisons. Release with a known limitation is acceptable only when it does not
+conceal an unmet mandatory requirement for a claimed function and is clearly documented in the
+instructions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M24 • 02 Nov 2028 - 27 Nov 2028 • 75 hours                                                                         8 / 15
+
+</pre></details><details class="source-page" id="page-9"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 9 · Hours 1-40: requirements, testing and</summary><pre class="source-text">ROBOTICS AND AI  /  M24  /  DETAILED STUDY PLAN
+
+Hours 1-40: requirements, testing and
+reproduction
+
+Hours 1-10: analytical preparation
+1-2: inventory results, check both devices&#x27; status and choose test candidates. 3-4: requirements,
+verification versus validation and the start of task 1. 5-6: definitions of latency, jitter, energy, errors
+and grasp success from task 2. 7-8: sampling plan, failure classification and compatibility of earlier
+data. 9-10: trial order, stopping criteria, instruments and run-description fields.
+By the end of hour ten, prepare campaign.yaml and the requirements-status table. Assess
+remaining work by open rows rather than plot count. If the physical hand is missing, this is a
+separate blocker to overall programme completion: M24&#x27;s 75 hours are for verification and
+presentation, not an unannounced replacement of its 120-hour construction work.
+
+Hours 11-20: the first practical
+11-13: task 1, traceability checks and raw-file audit. 14-15: task 2, reference inputs and
+reproduction of main metrics. 16-18: pilot trials and planned campaign repeats on verified
+configurations. 19-20: failure classification, observation register and a decision on remaining data
+needs. Do not run a new physical mode merely because old data are incomplete; prepare its
+procedure first.
+Some earlier-module results may be unusable because timestamps are absent or configuration
+changed. Do not retrospectively alter raw data. Retain the original, state the reason and collect
+new measurements or narrow the claim. Synthetic test data are useful for checking calculations
+but do not replace physical evidence.
+
+Hours 21-40: stopping and the package
+21-22: paths to final states for both systems and independence from specific failures. 23-24:
+recovery, stale commands and reactivation. 25-26: release contents and the links between code,
+CAD, firmware and calibrations. 27-28: data versions, checksums and a clean environment. 29-30:
+release notes and reproduction instructions without undocumented assumptions about the author&#x27;s
+environment.
+31-33: task 3, verify stopping of both systems in suitable fixtures. 34-35: task 4, failure and
+recovery in HIL or on the rig. 36-37: task 5, manifest and local rc1 archive. 38-40: task 6, clean
+reproduction and instruction fixes. The deliverable is a package a reviewer can use without spoken
+guidance at every step. Grant others access deliberately after selecting the package contents.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M24 • 02 Nov 2028 - 27 Nov 2028 • 75 hours                                                                         9 / 15
+
+</pre></details><details class="source-page" id="page-10"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 10 · Hours 41-75: defence, corrections and</summary><pre class="source-text">ROBOTICS AND AI  /  M24  /  DETAILED STUDY PLAN
+
+Hours 41-75: defence, corrections and
+release readiness
+
+Hours 41-50: explaining the engineering result
+41-42: report structure and each system&#x27;s main claim. 43-44: architecture and paths for energy,
+commands and measurements. 45-46: timing diagram and failure/recovery states. 47-48:
+presenting results, uncertainties and unsuccessful approaches. 49-50: questions for the external
+reviewer and defence rehearsal. Each session must improve a specific part of task 7, not merely
+increase text length.
+Arrange the external review with the chosen person in advance. Prepare a small package and a
+precise question in their area of competence. If the meeting moves, continue the report and
+independent tests; external-review status remains open. Correspondence and invitations are
+deliberate actions by the project owner; the plan does not generate them automatically.
+
+Hours 51-60: report and review
+51-54: task 7, report, plot captions and three diagrams. 55-56: task 8, the 30-45-minute meeting,
+comments and clarified actions. 57-58: reproduce one review issue from data, fix a significant
+problem or document a limitation. 59-60: repeat affected tests and update rc2. If the reviewer is
+unavailable, use these hours for independent preparation and rehearsal; move the actual external
+review to available time in the overall plan with explicit hour accounting.
+Distinguish correction from response: saying addressed does not close an issue if the matrix lacks a
+new result. A comment may change a requirement, but retain the previous wording, reason and
+new status. This matters particularly for hand loading, admissible slope and claimed autonomous
+runtime.
+
+Hours 61-75: presenting professional results
+61-62: choose a work direction and map competencies to completed work. 63-64: select strong CV
+evidence, interview questions and the next technical gap. 65: check exit criteria and the G4 list.
+These 5 analysis hours are split into 2 + 2 + 1.
+66-68: task 9 on page 11, portfolio index and CV adaptation. 69-70: task 10, professional feedback
+or a prepared open-source change with a test. 71-72: final rc2 reproduction and link/package
+checks. 73-74: close objections, agree limitations and plan G4. 75: decide RELEASE READY/HOLD
+and prepare the publication package. Public publication is a separate deliberate action after
+contents review; automatic deployment from a study script is unnecessary.
+G3 after M24 is a separate final audit of perception and SLAM, planning recovery, manipulation, ML
+data and learned-model deployment. Its late date does not retroactively authorise learned-policy
+hardware control or a Jetson purchase. Retain the classical controller until technical checks pass,
+and explicitly identify learning tested only in simulation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M24 • 02 Nov 2028 - 27 Nov 2028 • 75 hours                                                                       10 / 15
+
+</pre></details><details class="source-page" id="page-11"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 11 · Acceptance, professional results and the</summary><pre class="source-text">ROBOTICS AND AI  /  M24  /  DETAILED STUDY PLAN
+
+Acceptance, professional results and the
+separate G4
+
+Task 9. A portfolio for the chosen role
+Choose one direction: robotics software, embedded-systems and control integration, or machine
+perception. Match typical work in that direction to your own contributions: driver, estimator,
+controller, experiment, CAD integration or data processing. For each strong CV point, state a
+concrete action, conditions, measured result and link to the work. If a result is not yet available, do
+not invent an improvement percentage; describe the implemented and verified function.
+Save portfolio_index and a CV version with 3-5 substantiated technical points. Check that every
+point has a file, test or documented decision behind it and makes your own contribution clear.
+Boundary case: a ready-made ROS package was used, but the wording credits you with its whole
+algorithm. Separate integration, your modifications and the third-party component. Prepare 10
+interview questions from actual project difficulties and answer them using data.
+
+Task 10. Feedback and the next focus
+Choose one small useful change to an open-source project you use, or obtain additional
+professional feedback on your result. For a change, prepare issue reproduction, the change and a
+suitable test or documentation; submit separately after owner review. For feedback, save technical
+comments and actions. Do not make completion of the month depend on a maintainer accepting
+the contribution; state its actual status.
+Save contribution_or_feedback.md and an 8-12-week specialisation plan: one gap, one project, a
+result criterion and time limits. Check that the direction follows an identified weakness or the
+chosen role. Boundary case: ten new technologies are listed without a practical question. Reduce
+this to one next verifiable result, such as improved contact observability or hand-force calibration.
+
+M24 exit criteria
+Complete the requirements matrix, valid metrics, raw-data package, failure regression checks,
+setup and maintenance instructions, versioned candidate, technical report and comments actually
+received from an external reviewer. Label the release READY only when mandatory requirements
+for the claimed operating scope are closed. Otherwise retain HOLD with a concrete action list. The
+release draft and index can be fully prepared before public publication.
+Pass to the separate G4 the completion of test tables and statistical analysis, independent E-stop
+and final-state verification, external review with corrections, release archive and future plan. Its 35
+hours comprise 7 for diagnostics, 12 for integration, 9 for failure checks and corrections, and 7 for
+review and decision. PASS permits continuation; CONDITIONAL requires a named correction and
+responsible person; FAIL means repeating failed work and revising the calendar. Do not silently
+transfer the hand&#x27;s OPT work here. The final target for both systems is 22.12.2028; a date does not
+replace evidence.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M24 • 02 Nov 2028 - 27 Nov 2028 • 75 hours                                                                        11 / 15
+
+</pre></details><details class="source-page" id="page-12"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 12 · Assigned reading: engineering release</summary><pre class="source-text">ROBOTICS AND AI  /  M24  /  DETAILED STUDY PLAN
+
+Assigned reading: engineering release
+
+The references may be in English; the exercises and definitions are presented here in English. Read
+only the named sections before the associated work, within the existing 75 hours.
+
+Core reading: three guides
+1. NASA - Systems Engineering Handbook. Appendices C, D, E: requirement wording,
+verification and validation matrices. Then 5.3-5.5: Verification, Validation, Transition. For tasks 1
+and 3-6, link requirements, procedures, results and the handoff package for both devices.
+2. S. Chacon, B. Straub - Pro Git, 2nd ed. 2.6 Tagging; 7.12 Bundling. For task 5, freeze the
+exact version and verify repository restoration. Reference: 7.4 Signing Your Work; a signature and
+verifiable identity differ from a matching hash alone.
+3. NIST/SEMATECH - e-Handbook of Statistical Methods. 7.2.4.1 Confidence intervals. For the
+test campaign, study a success-proportion interval, small samples and the edge cases 0/N, N/N.
+Record assumptions and check the calculation against the log of all attempts.
+
+Documentation for the selected tool
+pytest. How to use fixtures: teardown/cleanup. For package checks, eliminate dependence on test
+order and leftover files. Automated reproduction tests must not energise physical motors.
+Sphinx. Getting started: sources, document structure. For the report, connect the index,
+instructions and API. Use only if it is already the chosen generator; changing a working stack at
+programme end is unnecessary.
+DVC. Get Started: Tracking data, Retrieving data, Switching between versions. Reference for task 5
+if using this data-storage method: restore the correct-version raw data into an empty directory. A
+.dvc file without accessible data does not complete the archive.
+
+Reading deliverable
+Create one matrix: claim → requirement → procedure → raw data → calculation → decision, and
+reproduce a selected result using the instructions without the old environment. Tests of your
+assembly establish physical limits; the v1.0 label does not.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M24 • 02 Nov 2028 - 27 Nov 2028 • 75 hours                                                                       12 / 15
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://www.nasa.gov/reference/system-engineering-handbook-appendix/" target="_blank" rel="noopener noreferrer">https://www.nasa.gov/reference/system-engineering-handbook-appendix/</a></li><li><a href="https://www.nasa.gov/reference/5-0-product-realization/" target="_blank" rel="noopener noreferrer">https://www.nasa.gov/reference/5-0-product-realization/</a></li><li><a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener noreferrer">https://git-scm.com/book/en/v2</a></li><li><a href="https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm" target="_blank" rel="noopener noreferrer">https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm</a></li><li><a href="https://docs.pytest.org/en/stable/how-to/fixtures.html" target="_blank" rel="noopener noreferrer">https://docs.pytest.org/en/stable/how-to/fixtures.html</a></li><li><a href="https://www.sphinx-doc.org/en/master/usage/quickstart.html" target="_blank" rel="noopener noreferrer">https://www.sphinx-doc.org/en/master/usage/quickstart.html</a></li><li><a href="https://doc.dvc.org/start" target="_blank" rel="noopener noreferrer">https://doc.dvc.org/start</a></li></ol></div></details><details class="source-page" id="page-13"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 13 · Terms and definitions</summary><pre class="source-text">ROBOTICS AND AI  /  M24  /  DETAILED STUDY PLAN
+
+Terms and definitions
+
+Requirement. A verifiable mandatory system property with unambiguous conditions and a
+criterion; a wish without an evaluation method is not a complete requirement.
+Acceptance criterion. A predefined PASS/HOLD/FAIL rule for a requirement, including limit,
+conditions, procedure and required evidence volume.
+Verification. Obtaining evidence that a stated requirement is met; methods may include analysis,
+inspection, demonstration or testing of a specific configuration.
+Validation. Obtaining evidence that a system suits the declared application under expected
+conditions; distinct from compliance with an internal specification.
+Traceability. Linking a claim to a requirement, implementation, procedure and result, allowing the
+effects of changes and the source of conclusions to be checked.
+Evidence package. A consistent set of requirements, configurations, procedures, raw data and
+calculations sufficient to verify specific project claims.
+Calculation reproduction. Obtaining a result again from specified data, code and parameters in
+a documented environment; allowable numerical differences are declared in advance.
+Raw data. Primary saved measurements before subsequent processing; they must include units,
+time, source and recording conditions.
+Data provenance. A record of data sources, acquisition conditions and transformations, linking a
+final metric to the original measurement and processing versions.
+Release manifest. A machine-readable list of files with purposes, versions or checksums, used to
+verify that release contents are complete.
+Content hash. A deterministically computed data fingerprint for detecting change against a
+trusted value; it does not by itself establish authorship or measurement validity.
+Digital signature. A cryptographic link between a message and a private key; attribution to an
+author also requires a trusted association between the public key and identity.
+Regression check. Rechecking previously verified behaviour after a change to detect unintended
+deterioration in the covered scenarios.
+Fault injection. Deliberately reproducing a specified fault in a controlled test to check detection,
+response and the system&#x27;s final state.
+Confidence level. The proportion of intervals covering the true parameter when the procedure is
+repeated under its assumptions; not the probability that the parameter lies inside an already
+computed interval.
+Selection bias. A systematic difference between attempts included in analysis and the target
+population, such as excluding failures; increasing N does not automatically remove it.
+
+Relationship: estimated success proportion p̂ = k/N; also report N, interval method and trial conditions. READY
+status does not replace this information.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M24 • 02 Nov 2028 - 27 Nov 2028 • 75 hours                                                                          13 / 15
+
+</pre></details><details class="source-page" id="page-14"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 14 · Preparing for release and G4</summary><pre class="source-text">ROBOTICS AND AI  /  M24  /  DETAILED STUDY PLAN
+
+Preparing for release and G4
+
+USE EXISTING EQUIPMENT
+Use the MacBook Pro M4, working Ubuntu 24.04 environment with ROS 2 Jazzy, onboard computer,
+M23 six-legged robot, tools and instruments. For the hand, use the assembly actually built and data
+from the separate OPT 120 workstream; record their status independently of leg success.
+
+PURCHASES NOW
+No new mandatory equipment. Consumables and replacements for defective parts may follow
+the fault log and existing BOM; additional actuators, a new camera or GPU are unnecessary for
+release. Use existing storage with verified restoration for the archive.
+
+INSTALL NOW
+No new mandatory stack: restore pinned Git, Python, pytest, SciPy and the selected documentation
+generator. Prepare the report on macOS ARM; run ROS tests in the existing Ubuntu ARM64
+environment or on the agreed onboard x86 platform. Record the architecture for every
+reproducible result.
+If the report already uses Jupyter Book, install the pinned version and follow Execute &amp; Compute
+and Export in the matching documentation without mixing generations. DVC and Sphinx remain
+conditional components of the chosen workflow; the existing storage and build methods may be
+retained.
+
+INSTALLATION AND RESTORATION CHECK
+In a clean directory, restore the Git-tagged version and data, install dependencies from the lock
+file, and run regression checks and replay with hardware-command output disabled. Recreate a
+key table and plot without saved cell outputs. Check SciPy: proportion_ci, manifest contents,
+raw-data availability and checksums against the trusted manifest.
+Open the final PDF, CAD and instructions in another viewer; check links and units. For substantive
+review, use Google: Design, Functionality, Complexity, Tests. Prepare a GitHub Release draft with
+attachments and limitations; publication is a separate owner decision.
+
+HOUR BOUNDARIES AND FINAL CHECKPOINTS
+M24 ends on 27.11.2028 and contains 75 hours. It is followed separately by G3,
+27.11-10.12.2028 - 35 hours, and G4, 10-22.12.2028 - 35 hours. G4 receives verification of
+both systems, independent stopping, comments and the archive. The hand&#x27;s OPT has another
+separate 120 hours; software installation and presentation do not close failed physical acceptance.
+
+Preparation and checks fit within the existing 75 hours, replacing repeated reading and setup. Delivery waiting
+time does not count as study time.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M24 • 02 Nov 2028 - 27 Nov 2028 • 75 hours                                                                     14 / 15
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://jupyterbook.org/stable/" target="_blank" rel="noopener noreferrer">https://jupyterbook.org/stable/</a></li><li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats._result_classes.BinomTestResult.proportion_ci.html" target="_blank" rel="noopener noreferrer">https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats._result_classes.BinomTestResult.proportion_ci.html</a></li><li><a href="https://google.github.io/eng-practices/review/reviewer/looking-for.html" target="_blank" rel="noopener noreferrer">https://google.github.io/eng-practices/review/reviewer/looking-for.html</a></li><li><a href="https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository" target="_blank" rel="noopener noreferrer">https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository</a></li></ol></div></details><details class="source-page" id="page-15"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 15 · Motion fundamentals: justifying the robot</summary><pre class="source-text">ROBOTICS AND AI  /  M24  /  DETAILED STUDY PLAN
+
+Motion fundamentals: justifying the robot
+model
+
+Required synthesis: explain geometry, forces, motion and measurement
+
+By programme end, you should independently reconstruct the calculation chain: foot or finger
+target → admissible joint coordinates → trajectory over time → required torques → actual actuation
+→ measured motion. Include one such analysis using leg data and one using finger data in the
+report; reuse completed experiments without creating a new test programme.
+
+A reference example without a robotics library
+A planar mechanism&#x27;s revolute joint is at the origin, with x rightwards and y upwards. A point mass
+m=0.40 kg is attached to the end of a massless link L=0.30 m. Angle q is measured from the
+downward vertical towards +x; neglect friction. For q=π/6, q_dot=0.40 rad/s and q_ddot=0.80
+rad/s²: p=(L sin q, -L cos q)=(0.15000; -0.25981) m.
+Differentiate the geometry: p_dot=(L cos q, L sin q)·q_dot=(0.10392; 0.06000) m/s. Moment of
+inertia about the joint is I=mL²=0.036 kg·m². Dynamics I·q_ddot+m·g·L·sin q=τ_act with g=9.81
+give 0.0288+0.5886=0.6174 N·m. The first term accelerates the mass; the second compensates
+gravity. A link with distributed mass has different I and gravity terms.
+Add a vertical environmental force F_ext=(0;2) N at the end. Its torque about the joint is
+τ_ext=p_x·F_y=0.30 N·m. The equation I·q_ddot+m·g·L·sin q=τ_act+τ_ext now requires
+τ_act=0.3174 N·m. The environment assists motion; do not choose the sign of JᵀF_ext from
+memory without defining force direction.
+
+Four defence questions
+Geometry: where do FK/IK and the solution branch come from, and what does the Jacobian lose at
+a singularity? Dynamics: which forces are included, and what changes with mass or speed?
+Control: which signal does the actuator actually accept, and why might the requested trajectory
+be infeasible? Contact: what confirms support and grasp, and when does a static model cease to
+describe the experiment?
+Prepare movement_defense.md: an axis diagram, notation and units, derivation, numerical
+hand-calculation results, an independent software calculation, one real log and model limits.
+Recheck velocity using a central difference of FK, the external-force sign using r×F and substitution
+of torque into forward dynamics. This examines connections between modules rather than
+memorised formulas.
+
+Within 75 hours: 1 hour from 43-44 for the model diagram, 1 hour from 49-50 for rehearsal, and 1 hour from
+report work in 51-54 for calculation and evidence (task 7). G3, G4 and OPT retain separate hours. Review
+Lynch, Park, Modern Robotics §5.2 and Tedrake: Definitions; derive this example&#x27;s equations independently
+from the sum of torques.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M24 • 02 Nov 2028 - 27 Nov 2028 • 75 hours                                                                       15 / 15</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://modernrobotics.northwestern.edu/nu-gm-book-resource/5-2-statics-of-open-chains/" target="_blank" rel="noopener noreferrer">https://modernrobotics.northwestern.edu/nu-gm-book-resource/5-2-statics-of-open-chains/</a></li><li><a href="https://underactuated.mit.edu/intro.html" target="_blank" rel="noopener noreferrer">https://underactuated.mit.edu/intro.html</a></li></ol></div></details>
+</section>
+<footer><p><a href="../library.html"><span lang="ru">Вернуться в библиотеку</span><span lang="en">Back to source library</span></a> · <a href="../index.html"><span lang="ru">Вернуться к новому плану</span><span lang="en">Back to revised plan</span></a></p><p class="checksum">SHA-256: da2e83e7283877408bc109a67d67195f02324eb4934e5c901f103ed3a4b8f412</p></footer>
+</main>
+<script>
+(function() {
+  function openPage() {
+    if (!/^#page-\d+$/.test(location.hash)) return;
+    var page=document.getElementById(location.hash.slice(1));
+    if(page) {page.open=true; page.scrollIntoView({block:'start'});}
+  }
+  window.addEventListener('hashchange',openPage);
+  document.addEventListener('DOMContentLoaded',openPage);
+  document.getElementById('expand-pages').addEventListener('click',function(){document.querySelectorAll('details[id^="page-"]').forEach(function(el){el.open=true;});});
+  document.getElementById('collapse-pages').addEventListener('click',function(){document.querySelectorAll('details[id^="page-"]').forEach(function(el){el.open=false;});});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1062 @@
+<!doctype html>
+<html lang="ru" data-ru-title="M03 · Вероятность, статистика и неопределённость · EN — Robotics &amp; AI" data-en-title="M03 · Probability, statistics and uncertainty · EN — Robotics &amp; AI">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>M03 · Вероятность, статистика и неопределённость · EN — Robotics &amp; AI</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body class="source-reader">
+<a class="skip-link" href="#main"><span lang="ru">К тексту источника</span><span lang="en">Skip to source text</span></a>
+<header class="topbar"><a class="brand" href="../index.html">Robotics &amp; AI</a><nav><a href="../library.html"><span lang="ru">Библиотека источников</span><span lang="en">Source library</span></a><a href="../index.html"><span lang="ru">Новый план</span><span lang="en">Revised plan</span></a></nav><div class="lang-switch" aria-label="Language"><button type="button" data-lang="ru">RU</button><button type="button" data-lang="en">EN</button></div></header>
+<main class="wrap" id="main">
+<p class="eyebrow"><span lang="ru">Архив · исходный документ</span><span lang="en">Archive · original document</span></p>
+<h1><span lang="ru">M03 · Вероятность, статистика и неопределённость · EN</span><span lang="en">M03 · Probability, statistics and uncertainty · EN</span></h1>
+<div class="notice source-notice"><strong><span lang="ru">Архивные даты и часы не действуют.</span><span lang="en">Original dates and hours are superseded.</span></strong><p><span lang="ru">Это полный текст исходного документа. Старый календарь, отпуска и бюджеты часов сохранены для проверки исходной информации. Рабочее расписание находится в новом плане: 50 часов в неделю, без отпусков.</span><span lang="en">This is the complete extracted text of the original document. Its historical calendar, vacations and hour budgets are preserved for source verification. Use the revised plan for the current schedule: 50 hours per week, with no vacations.</span></p></div>
+<p><span lang="ru">Язык исходника: английский.</span><span lang="en">Source language: English.</span> <span lang="ru">Переключатель RU/EN меняет язык интерфейса; исходный текст не переводится автоматически.</span><span lang="en">The RU/EN switch changes the interface; original source text is not automatically translated.</span></p>
+<p class="source-actions"><a href="../originals/detailed/English/Monthly/M03_Robotics_Plan_EN.pdf"><span lang="ru">Открыть исходный PDF без изменений</span><span lang="en">Open the unchanged original PDF</span></a> · <a href="m03-ru.html"><span lang="ru">Открыть другую языковую редакцию</span><span lang="en">Open the other language edition</span></a></p>
+<p><span lang="ru">Страниц</span><span lang="en">Pages</span>: 15 · <span lang="ru">Ссылок из PDF</span><span lang="en">PDF links</span>: 13</p>
+<details class="source-page source-toc"><summary><span lang="ru">Перейти к странице</span><span lang="en">Jump to a page</span></summary><nav class="page-links" aria-label="Pages"><a href="#page-1">1</a> <a href="#page-2">2</a> <a href="#page-3">3</a> <a href="#page-4">4</a> <a href="#page-5">5</a> <a href="#page-6">6</a> <a href="#page-7">7</a> <a href="#page-8">8</a> <a href="#page-9">9</a> <a href="#page-10">10</a> <a href="#page-11">11</a> <a href="#page-12">12</a> <a href="#page-13">13</a> <a href="#page-14">14</a> <a href="#page-15">15</a> </nav></details>
+<p class="source-controls"><button type="button" id="expand-pages"><span lang="ru">Развернуть все страницы</span><span lang="en">Expand all pages</span></button> <button type="button" id="collapse-pages"><span lang="ru">Свернуть все страницы</span><span lang="en">Collapse all pages</span></button></p>
+<p><span lang="ru">Извлечение PDF может сохранять переносы строк и наложенные редакции. Формулы, иллюстрации и исходное оформление доступны в неизменённом PDF. Все встроенные ссылки вынесены под текст соответствующей страницы.</span><span lang="en">PDF extraction may retain line breaks and overlapping revisions. Equations, illustrations and original formatting remain available in the unchanged PDF. Every embedded link is listed below its corresponding page.</span></p>
+<section class="source-pages" aria-label="Original document pages">
+<details class="source-page" id="page-1"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 1 · Uncertainty: how much to trust a sensor</summary><pre class="source-text">ROBOTICS AND AI  /  M03  /  DETAILED STUDY PLAN
+
+Uncertainty: how much to trust a sensor
+
+M3 • 29 Nov 2026 - 27 Dec 2026 • 75 hours
+
+This month&#x27;s deliverable
+In M02, you obtained an angle, force or position as a number. M03 adds variability, error sources
+and conditions under which a conclusion remains valid. Deliver a portfolio of uncertainty and
+optimisation work: a 30-repeat measurement experiment, encoder and IMU noise models,
+calibration through optimisation, poor-conditioning diagnostics and a report on link-endpoint
+position uncertainty.
+This month&#x27;s questions are practical: does encoder jitter differ from actual motion; how should two
+angle estimators be compared; how much independent information does a long recording contain;
+why did an optimiser produce a plausible but incorrect scale; how far does joint error move a foot
+or fingertip? Do not yet build a Kalman filter, machine-learning model or QP controller: first learn to
+check the assumptions they will require.
+
+Shared object and data
+Continue with the M02 link L=0.12 m, p(q)=(L cos q,L sin q) and calibration q=a·u+b. Create
+data/synthetic, data/measured, experiments, calibration, uncertainty and report. In the data
+manifest, record each file&#x27;s source, units, random-number generator seed, date, independent-run
+identifier and how ground truth was obtained. Keep synthetic ground truth separate from algorithm
+inputs.
+The physical experiment needs no actuator: place a stationary IMU in the same fixture thirty times.
+An existing phone that exports raw readings also works. If no sensor is available, first practise the
+procedure with synthetic data; the real-measurement section remains incomplete until the
+experiment is done. Generated noise does not replace measured device repeatability.
+
+Prerequisites and scope
+You need array means, matrices, least squares, derivatives and the meaning of the Jacobian from
+M02. In the first two hours, explain the differences between true value, measurement, model
+residual and numerical error. Review why the calculated &#x27;velocity&#x27; of a stationary encoder can
+fluctuate. M03 adds ways to describe these fluctuations and assess the robustness of conclusions.
+Begin with definitions: a random variable models possible outcomes; a sample is the data actually
+obtained; a parameter is an unknown distribution characteristic; an estimator is a rule for
+computing from a sample. One distribution plot does not prove normality, and optimiser success
+does not establish physically correct calibration. Both distinctions must appear in your checks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M3 • 29 Nov 2026 - 27 Dec 2026 • 75 hours                                                                          1 / 15
+
+</pre></details><details class="source-page" id="page-2"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 2 · 75 hours: experiments, analysis and</summary><pre class="source-text">ROBOTICS AND AI  /  M03  /  DETAILED STUDY PLAN
+
+75 hours: experiments, analysis and
+reproducibility
+
+Four work blocks
+A, hours 1-20: 10 h theory + 10 h practice. Random variables, distributions, expectation,
+variance, covariance, correlation, independence, conditional probability and Bayes&#x27; rule. Practical
+deliverables: encoder quantisation and IMU noise models, and diagnosis involving a rare event.
+B, hours 21-40: 10+10 h. Sampling plans, confidence intervals, effect size, outliers, robust
+summaries, hypotheses, repeatability and data leakage. Deliverables: a 30-repeat protocol, raw
+recordings and a comparison of two estimators across independent runs.
+C, hours 41-60: 10+10 h. Objective functions, constraints, gradients, Hessian meaning, gradient
+descent, line search, local minima, least squares and regularisation. Deliverables: calibration with
+scipy.optimize, held-out validation and residual analysis.
+D, hours 61-75: 5+10 h. SVD, pseudoinverse, poor conditioning, covariance propagation through
+a Jacobian, Monte Carlo and bootstrap. Deliverable: an endpoint uncertainty region and checks of
+linear-approximation limits. Total: 35 h of theory and analysis plus 40 h of practice.
+
+Organising short and long sessions
+Divide each 10 h of theory into five two-hour sessions and the final 5 h into 2+2+1. Each 2 h
+session should cover one concept, one hand-worked example and one decision about the
+forthcoming experiment. Schedule 10 h practical blocks in available Sunday or holiday sessions
+from the original plan; divide each into five 2 h segments and count breaks separately.
+The calendar window follows the original plan. A boundary date may coincide with a neighbouring
+module; holidays, rest and integration stages are preserved. Allocate step hours sequentially to
+available sessions, without double counting or adding another &#x27;compensation&#x27; hour.
+
+Experiment log
+Before collecting data, record the question, primary metric, unit of independent repetition,
+recording-exclusion criterion and stopping rule. Afterwards, add actual deviations from the
+protocol. Do not delete an inconvenient recording because it worsens the mean: retain it with a
+reason and, if necessary, present analysis with and without exclusion.
+If time is short, remove optional CVXPY comparison and complex interactive plots. Retain 30
+repeats, basic calibration, splitting data by run, SVD diagnostics and Monte Carlo calculation.
+Another book cannot replace the measurement work. Being able to say &#x27;these data do not yet
+establish the claim&#x27; is a valid laboratory outcome.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M3 • 29 Nov 2026 - 27 Dec 2026 • 75 hours                                                                         2 / 15
+
+</pre></details><details class="source-page" id="page-3"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 3 · Probability and sensor-noise models</summary><pre class="source-text">ROBOTICS AND AI  /  M03  /  DETAILED STUDY PLAN
+
+Probability and sensor-noise models
+
+Topics to study
+Study discrete and continuous random variables, interval probabilities, probability density and
+cumulative distribution functions. For sensors, use a normal distribution as a working model of
+small disturbances, a uniform distribution as a quantisation simplification, and a Bernoulli
+distribution for &#x27;packet lost&#x27;. Expectation describes the centre; variance is the mean squared
+deviation; standard deviation has the same units as the measurement.
+Covariance describes joint variation of two channels; correlation normalises it by their standard
+deviations. Zero correlation alone does not establish independence. Consecutive stationary-IMU
+samples can be dependent because of internal filters and drift. A thousand samples therefore need
+not equal a thousand independent experiment repeats.
+
+Task 1. Encoder quantisation
+Input: true angle q within −0.5…0.5 rad and quantisation step Δ=0.001 rad. Compute rounded
+q_meas, error e=q_meas−q, a histogram and empirical cumulative distribution function. For
+uniform coverage of quantisation intervals, compare variance with Δ²/12. Then take a stationary
+angle exactly between two codes and explain why this distribution model need no longer describe
+the observations.
+Deliverables: generator, two different input trajectories and a table of mean, standard deviation
+(SD) and maximum error. Check |e|≤Δ/2 under the chosen rounding convention, apart from stated
+numerical tolerances. Failure case: the model saturates beyond range; an error does not become
+uniform merely because the data came from an encoder.
+
+Task 2. Shared noise on two IMU axes
+Generate 5000 synthetic error pairs by adding each axis&#x27;s independent noise to a shared
+component. Record the covariance matrix and explain its units: for acceleration, (m/s²)². Plot the
+point cloud and compare it with independent data having the same per-channel variance. Equal
+axis standard deviations do not imply equal uncertainty in their sum.
+Check covariance symmetry and nonnegative eigenvalues, allowing for rounding. Add slow shared
+drift and compare the recording&#x27;s first and second halves. Deliver three point clouds and explain
+the effect shown by each. The aim is to recognise when constant-noise assumptions fail, rather
+than force a &#x27;correct&#x27; distribution onto the data.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M3 • 29 Nov 2026 - 27 Dec 2026 • 75 hours                                                                         3 / 15
+
+</pre></details><details class="source-page" id="page-4"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 4 · Conditional probability and diagnostic</summary><pre class="source-text">ROBOTICS AND AI  /  M03  /  DETAILED STUDY PLAN
+
+Conditional probability and diagnostic
+reliability
+
+Bayes&#x27; rule for a clear robot event
+Study P(A|B), the law of total probability and Bayes&#x27; rule using a frequency table. Example: A is a
+genuine foot-contact failure; B is a threshold diagnostic trigger. Sensitivity P(B|A) and the
+probability of a real failure after a trigger P(A|B) answer different questions. The latter also depends
+on event prevalence.
+For the teaching example, use failure probability 1%, sensitivity 95% and a 5% false-trigger
+probability without failure. These are illustrative calculation values, not properties of an actual
+sensor. Among 10 000 virtual episodes, expect 95 true and 495 false triggers; about 16.1% of all
+alerts are true. Check using a probability tree or table.
+
+Task 3. Rare events and thresholds
+Create an episode generator with a known label and diagnostic feature. Calculate TP, FP, FN, TN,
+then precision=TP/(TP+FP) and recall=TP/(TP+FN). Show how both metrics and trigger frequency
+change across several thresholds. If a denominator is zero, return &#x27;undefined&#x27; rather than silently
+assign a perfect score.
+Repeat with event probabilities 0.1%, 1% and 10%, retaining the feature&#x27;s conditional distributions.
+Deliver a table and short note identifying the more consequential error type for this test bench.
+Here, diagnostics only create log events; this model does not verify a robot&#x27;s actual protective
+functions.
+
+Task 4. Why independence needs checking
+Generate white noise and a correlated series e_t=0.95·e_(t−1)+η_t. Scale them to approximately
+equal SD; compare time plots and adjacent-sample correlation. Average over equal-length windows
+and measure variation of means across non-overlapping windows. Equal sample counts do not
+guarantee equal improvement.
+Control check: shuffle the correlated series and repeat. Shuffling preserves the marginal
+distribution but destroys temporal structure. Save two plots and explain why randomly splitting
+rows of one recording can yield an overly optimistic algorithm evaluation. Exact
+effective-sample-size theory is optional; the meaning of an independent run must be understood
+now.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M3 • 29 Nov 2026 - 27 Dec 2026 • 75 hours                                                                         4 / 15
+
+</pre></details><details class="source-page" id="page-5"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 5 · Statistics: a real 30-repeat experiment</summary><pre class="source-text">ROBOTICS AND AI  /  M03  /  DETAILED STUDY PLAN
+
+Statistics: a real 30-repeat experiment
+
+Write the protocol before recording
+Task 5 assesses the repeatability of a stationary IMU repositioned in the same fixture. Choose a
+device that exports timestamps and raw accelerometer and gyroscope readings; record its settings
+and available rate. Perform 30 separate placements, keeping the device still each time, waiting the
+same predetermined settling interval and recording for the same duration. Choose a duration
+supported by export; the teaching guideline is 2 s after settling.
+The repeat unit is one independent run after repositioning, not one CSV row. Record run_id, fixture
+orientation, time, temperature if available, observed interference and setting changes. Within each
+run, calculate the axis mean and SD; across 30 runs, examine variation of these means.
+Repositioning adds geometric uncertainty, so describe the result as repeatability of the whole
+procedure.
+
+Calculations and interpretation
+For the 30 means, find the mean, median, SD and interquartile range. If assumptions are
+reasonable, construct a 95% t-confidence interval for the mean: mean ± t·s/sqrt(n). This interval
+concerns the procedure&#x27;s mean; it is neither a range covering 95% of future individual readings nor
+a promise to cover a particular sensor&#x27;s true angle.
+If run independence or stability fails, show a time plot and limit the conclusion. Do not treat 30 as
+universally sufficient: justify this pilot sample size using available time and desired interval width,
+then estimate the additional independent repeats needed to halve the interval width under the
+same assumptions.
+
+Task 6. Outlier robustness and effect size
+Compare two constant-level estimates on the same 30 runs: within-recording arithmetic mean and
+median. Add labelled individual outliers to copies of several recordings. Calculate the change in
+error relative to the clean copy and paired estimate differences, rather than choose an algorithm
+from histogram appearance. Express effects in physical units and relate them to the robot task.
+Deliverables: protocol.md, 30 raw-data files or one CSV with run_id, a summary table and a plot in
+test order. Edge cases: empty run, gaps, changed sampling rate and noticeable device motion.
+Define exclusion criteria before viewing results. Without independent ground truth, compare
+robustness and repeatability without claiming absolute IMU accuracy.
+To introduce hypothesis testing, state H0: the mean paired difference between the two estimates is
+zero. Discuss false rejection of H0 and missing a real effect; statistical significance does not say
+whether an effect is useful to the robot. Report the difference in physical units and its interval in
+the main conclusion, rather than a p-value alone.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M3 • 29 Nov 2026 - 27 Dec 2026 • 75 hours                                                                           5 / 15
+
+</pre></details><details class="source-page" id="page-6"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 6 · Calibration optimisation: from error to</summary><pre class="source-text">ROBOTICS AND AI  /  M03  /  DETAILED STUDY PLAN
+
+Calibration optimisation: from error to
+parameters
+
+Minimum theory
+A loss function answers a specific question: how far do model predictions differ from
+measurements? Parameters θ may include encoder scale and zero; constraints express meaningful
+admissible values. The gradient gives the local direction of increasing loss; the Hessian describes
+local curvature. Begin with a two-variable quadratic bowl that can be drawn and whose derivatives
+can be checked by hand.
+Gradient descent updates θ_new=θ−α·grad. Excessive α can increase error; too small an α slows
+progress. Learn backtracking line search: reduce the step until the objective decreases by the
+required amount. Distinguish stopping criteria based on step, gradient and loss; a small step may
+indicate poor scaling rather than a good minimum.
+
+Task 7. Implement descent for scale and zero
+Using M02 calibration, scale u to a comparable magnitude and derive the sum-of-squares gradient
+with respect to a and b. Check it with central finite differences at five parameter points. Run
+descent from three initial guesses with two step strategies; save the loss curve, iteration count and
+final coefficients.
+On noise-free data, compare with linear lstsq. For poorly scaled u, explain elongated contours and
+slow convergence. Deliverables: short implementation, contour plot and table. Edge case: wrong
+gradient sign; a test must detect increasing loss and stop the run. Choose the gradient-check
+threshold relative to function scale and finite-difference step.
+
+Task 8. Constrained nonlinear model
+Use the teaching model q=a·u+b+c·u² with normalised u. Prepare independent calibration and
+verification series; generate a small known nonlinear component. Pass the residuals vector, not
+total loss, to scipy.optimize.least_squares. Specify bounds, initial guess and parameter scales;
+compare ordinary least squares and robust loss with labelled outliers.
+Regularise c by adding residual sqrt(λ)·c after choosing a dimensionless scale. Compare several λ
+values on the validation set, then evaluate the result once on the test set. Show a case where the
+linear model performs better on held-out data despite greater training error. The optimum is an
+estimate within the chosen model; still check residual dependence on position and motion
+direction.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M3 • 29 Nov 2026 - 27 Dec 2026 • 75 hours                                                                         6 / 15
+
+</pre></details><details class="source-page" id="page-7"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 7 · SVD, pseudoinverses and uncertainty</summary><pre class="source-text">ROBOTICS AND AI  /  M03  /  DETAILED STUDY PLAN
+
+SVD, pseudoinverses and uncertainty
+propagation
+
+Core concepts
+SVD factors A=U·Σ·Vᵀ into orthogonal input/output directions and stretch factors. A very small
+singular value indicates a parameter direction weakly represented in the data. A pseudoinverse
+selects a solution of a singular problem according to a defined rule; it cannot recover information
+the experiment never measured.
+For p=f(x) and small uncertainties near x̄, use Σ_p≈J·Σ_x·Jᵀ. Σ_x is input covariance; evaluate J
+specifically at x̄. Covariance has squared units of the corresponding output quantities. This is a
+local approximation, so compare with nonlinear Monte Carlo calculation, especially near geometric
+singularities or with large variability.
+
+Task 9. Weakly determined calibration
+Take the calibration matrix for a wide u range and the same matrix with inputs restricted to a
+narrow band. After applying the same scaling, compare singular values, cond and parameter
+changes under a small q perturbation. Find the right singular vector for the smallest singular value:
+it identifies the parameter combination least distinguishable in the data.
+Save a plot of the uncertain parameter direction and predict which u values a new experiment
+should add. Then add extreme positions to the synthetic data and verify improvement. Test: all u
+values identical; pinv may return a solution, but the report must identify insufficient rank and
+nonunique physical calibration.
+
+Task 10. Foot-position variability
+Use L=0.12 m, q=30° and teaching standard uncertainties σ_L=0.0005 m and σ_q=0.005 rad.
+Repeat with large noise σ_q=0.3 rad; set nonzero correlation ρ=0.6 while keeping covariance
+positive semidefinite. Let x=(L,q), and derive J for p=(L cos q,L sin q). First assume independent
+errors, then add admissible nonzero covariance. Compute Σ_p, its eigenvector directions and a 10
+000-point Monte Carlo cloud.
+Compare coordinate SDs and covariance from the linear prediction with sample estimates. Repeat
+for small and large angle noise; record relative discrepancies while avoiding division by nearly zero
+covariance. The ellipse visualises the assumed uncertainty model, not a guaranteed real-robot
+position region. Negative sampled length requires revising the distribution model rather than
+silently deleting inconvenient points.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M3 • 29 Nov 2026 - 27 Dec 2026 • 75 hours                                                                          7 / 15
+
+</pre></details><details class="source-page" id="page-8"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 8 · Integrated laboratory and six validity checks</summary><pre class="source-text">ROBOTICS AND AI  /  M03  /  DETAILED STUDY PLAN
+
+Integrated laboratory and six validity checks
+
+Assemble the final package
+Combine calibration and uncertainty: input encoder_count passes through the chosen q(u,θ) model,
+then geometry p(L,q). For each validation run, save predicted position, estimated variability and
+actual error if independent ground truth exists. Synthetic experiments have known ground truth;
+the real stationary-IMU experiment usually establishes only repeatability.
+Create three scenarios: nominal noise, correlated drift and outliers. Split independent series into
+training (train), validation and test sets. Choose the model, λ and threshold using train and
+validation; open test only after fixing settings. If you subsequently change the solution, mark the
+test set as used and prepare a new independent check: repeated tuning removes test
+independence.
+
+Required error checks
+1. Leakage. Compare random row splits with whole-run splits under slow drift; show why the
+former appears better. 2. Pseudoreplication. Duplicate each row 100 times; the reporting
+algorithm must not count these as new independent experiments. 3. Outlier. Add one large spike
+and compare mean, median and robust loss without deleting the original.
+4. Singularity. Nearly constant u must trigger a weak-identifiability warning regardless of solver
+success. 5. Nonlinearity. Large q noise invalidates linear covariance propagation; Monte Carlo
+must reveal the discrepancy. 6. Nonstationarity. Different means at the start and end require a
+separate drift discussion rather than one &#x27;sensor σ&#x27;.
+
+Bootstrap: an additional interval check
+Resample with replacement from the 30 independent run results and estimate intervals for the
+median or paired difference. Record resample count and seed; repeat with another seed to observe
+computational variation. Do not resample correlated individual rows as independent observations.
+Temporal dependence requires another scheme, such as block bootstrap, which is sufficient to
+identify as a later topic.
+Distinguish observation and interpretation on every report page. A useful format is: &#x27;between-run
+SD is … under these conditions; it includes repositioning; no independent absolute reference is
+available&#x27;. Do not fill numerical fields in advance. Save metrics with units, interval bounds,
+independent-repeat count and specific applicability limits.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M3 • 29 Nov 2026 - 27 Dec 2026 • 75 hours                                                                         8 / 15
+
+</pre></details><details class="source-page" id="page-9"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 9 · Session sequence: hours 1-40</summary><pre class="source-text">ROBOTICS AND AI  /  M03  /  DETAILED STUDY PLAN
+
+Session sequence: hours 1-40
+
+Block A - build a noise model and identify its limits
+Hours 1-2. Review error, true value and estimator definitions; prepare the data structure. Hours
+3-4. Study distributions, expectation and variance; calculate probabilities of three discrete-encoder
+outcomes by hand. Hours 5-6. Study covariance and correlation with two channels. Hours 7-8.
+Study conditional probability and Bayes&#x27; rule through a diagnostic table. Hours 9-10. Study
+independence, temporal dependence and the experimental unit.
+Hours 11-20 - practice. 2 h: quantisation and Δ/2 check. 2 h: independent and shared IMU noise.
+2 h: rare event, TP/FP/FN/TN. 2 h: white and correlated series. 2 h: plots, generator tests and
+conclusions. For each plot, state the sensor assumption built into the generator and a real effect it
+does not yet describe.
+Hour 20 checkpoint: explain to someone without statistics training why high diagnostic sensitivity
+can coexist with many false alarms, and why 5000 adjacent samples do not equal 5000
+repositionings. If you cannot, revisit the frequency table and temporal-dependence plot.
+
+Block B - make a justified comparison
+Hours 21-22. Study sampling and estimation; choose the measured quantity. Hours 23-24. Write
+the 30-repeat protocol and exclusion criteria. Hours 25-26. Study SD, standard error and a
+t-confidence interval for the mean. Hours 27-28. Study outliers, median, IQR and effect size.
+Hours 29-30. Study training, validation and test sets, paired comparison and repeatability.
+Hours 31-40 - practice. 2 h: fixture preparation and pilot export; 2 h: 30 measurement runs with
+metadata; 2 h: integrity checks and individual-run summaries; 2 h: intervals and estimator
+comparison; 2 h: report and excluded-recording review. If longer recordings are necessary, reduce
+styling and use prepared summary scripts while retaining the independent-repeat count.
+Checkpoint: another person can understand the dataset&#x27;s experiment boundaries, what remained
+stationary, the coordinate frame used and why some recordings are marked doubtful. Without this
+information, measurements cannot support rigorous calibration comparisons in later months.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M3 • 29 Nov 2026 - 27 Dec 2026 • 75 hours                                                                         9 / 15
+
+</pre></details><details class="source-page" id="page-10"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 10 · Session sequence: hours 41-75</summary><pre class="source-text">ROBOTICS AND AI  /  M03  /  DETAILED STUDY PLAN
+
+Session sequence: hours 41-75
+
+Block C - optimise and verify calibration
+Hours 41-42. Write the loss function for q=a·u+b and check dimensions. Hours 43-44. Derive
+and numerically check the gradient; draw curvature in two parameters. Hours 45-46. Study fixed
+steps and backtracking. Hours 47-48. Study nonlinear-model residuals, constraints and initial
+guesses. Hours 49-50. Study regularisation and model selection using validation data.
+Hours 51-60 - practice. 2 h: implement descent and compare with lstsq; 2 h: least_squares with
+bounds; 2 h: outliers and robust losses; 2 h: several λ values and independent series; 2 h: gradient
+checks, model saving and residual analysis. For every run, retain status, evaluation count, initial
+guess, objective value and physical coefficients.
+In the last two-hour segment, deliberately create a problem with local minima, such as periodic
+zero-offset ambiguity in sin(u+b), and start from different b values. This briefly introduces local
+minima and period ambiguity; do not add this complexity to the main calibrator. Conclude that
+results depend on the model and observational information, not merely the algorithm&#x27;s name.
+
+Block D - uncertainty in the result
+Hours 61-62. Study SVD geometry and truncation of small singular values; check a diagonal
+example by hand. Hours 63-64. Derive J with respect to L and q, and propagate Σ. Hour 65. Study
+Monte Carlo, bootstrap, and measurement uncertainty versus computational variation in an
+estimate.
+Hours 66-75 - practice. 2 h: poor calibration, SVD and a revised measurement plan. 2 h:
+analytical endpoint covariance. 2 h: Monte Carlo and large noise. 2 h: bootstrap by run and
+consolidated report. 2 h: six error checks, a fresh run and defending conclusions.
+Final half-hour task without copying: specify two noise models with equal SD but different
+cross-axis dependence. Before running, predict which gives greater variation in a chosen
+foot-position projection. Check using the covariance formula and simulation. If the prediction was
+wrong, correct the explanation and preserve the mistake as a useful finding.
+Do not measure success by method count. The required minimum is one explainable calibrator,
+one real experiment with justified conclusions, one poor-identifiability example and one
+error-propagation check. Rust/C++ may read M01 logs, but reimplementing all statistics in three
+languages is outside the 75 h.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M3 • 29 Nov 2026 - 27 Dec 2026 • 75 hours                                                                         10 / 15
+
+</pre></details><details class="source-page" id="page-11"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 11 · Laboratory acceptance and the future robot</summary><pre class="source-text">ROBOTICS AND AI  /  M03  /  DETAILED STUDY PLAN
+
+Laboratory acceptance and the future robot
+
+Verifiable deliverables
+The package must include ten tasks with initial conditions, a 30-repeat protocol, labelled real and
+synthetic data, distribution models with limitations, calibration configurations, splits by series,
+residual plots, SVD diagnostics, covariance and Monte Carlo calculations. Record commands,
+library versions and report-reproduction order in README.
+Every substantial number must answer: &#x27;which data?&#x27;, &#x27;what unit of repetition?&#x27;, &#x27;what physical
+units?&#x27; and &#x27;which metric?&#x27;. A mean without run count or an interval without a calculation method
+fails acceptance. Do not report more significant figures than uncertainty supports; preserve full
+machine precision separately for reproduction.
+
+Check your understanding
+Explain variance versus SD; independence versus zero correlation; random spread versus
+systematic bias; repeatability versus absolute accuracy. Use a table to distinguish P(failure|alarm)
+from P(alarm|failure). Why can you not narrow a confidence interval simply by copying rows?
+For optimisation: what goes into residuals; why normalise parameters; why is success insufficient;
+what does a small singular value reveal; what does regularisation change, and what does it not
+know about the robot? For uncertainty: where is J evaluated; what are Σ&#x27;s units; when does linear
+propagation fail; which units should bootstrap resample?
+Practical assessment: take a new independent synthetic series with a seed unknown to you,
+calibrate and compare estimates with saved ground truth. Add drift and state which assumptions
+fail. For real data, show one supported conclusion and one requiring a different reference or
+experiment.
+
+Handover
+Pass M04 the actual sampling rates, gaps, noise summaries, original recordings and corrupted
+copies for filtering work. Pass M05 length-and-angle error propagation as an example connecting
+tolerances to foot position. Later filters and multi-joint calibration can reuse these functions, but a
+sensor&#x27;s numerical covariance must be remeasured after mounting or settings change.
+Keep open questions about temperature drift, vibration dependence, axis correlation, reverse
+mechanism travel and reference accuracy. For each, describe the smallest future experiment that
+could test it. This makes the laboratory a foundation for later hardware tests, beyond a collection of
+one-off plots.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M3 • 29 Nov 2026 - 27 Dec 2026 • 75 hours                                                                         11 / 15
+
+</pre></details><details class="source-page" id="page-12"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 12 · Assigned reading: a short route</summary><pre class="source-text">ROBOTICS AND AI  /  M03  /  DETAILED STUDY PLAN
+
+Assigned reading: a short route
+
+Read only the specified passages before the corresponding experiment. References are mainly in
+English; keep explanations, glossary and report in English. Reading and preparation fit within the
+existing 75 hours; whole books are not required.
+
+Core reading
+1. Allen B. Downey, Think Stats, 3rd online edition. Chapters 2, 4, 7, 8: Distributions;
+Cumulative Distribution Functions; Relationships between variables; Estimation. Tasks 1-6 need
+distributions, relationships and estimation uncertainty; adapt the examples to your measurements.
+2. NIST/SEMATECH, e-Handbook of Statistical Methods. §1.3.5.2 Confidence Limits for the
+Mean: interval from 30 independent runs; §1.3.5.11, skewness and kurtosis: noise-shape reference.
+Write interval assumptions before inserting numbers.
+3. Stephen Boyd, Lieven Vandenberghe, Convex Optimization (2004). §4.1, §6.1, §6.3,
+§9.2-9.3. Problem formulation; norm approximation; regularisation; descent and gradient methods.
+In tasks 7-8, connect loss, constraints and parameter scale to physical calibration. General-case
+proofs are optional.
+
+Compact implementation references
+SciPy optimize. least_squares: fun, jac, bounds, x_scale, loss. Before task 8, check stopping
+criteria and output fields. A success status does not replace unit, bound and held-out-data checks.
+NumPy. svd: Returns, Notes. For task 9, reconstruct A from U,S,Vh, then compare the
+pseudoinverse with pinv. Explain what changes when a small singular value is truncated.
+SciPy stats. bootstrap: data, statistic, paired, method. Resample independent runs; use paired
+only for paired comparisons. Optional constrained least-squares comparison: CVXPY example.
+Reading sequence. First distributions and the 30-repeat plan, then estimates and intervals, then
+optimisation and SVD. Deliver one sheet of experiment assumptions and one defining the
+calibration problem.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M3 • 29 Nov 2026 - 27 Dec 2026 • 75 hours                                                                       12 / 15
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://allendowney.github.io/ThinkStats/" target="_blank" rel="noopener noreferrer">https://allendowney.github.io/ThinkStats/</a></li><li><a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm" target="_blank" rel="noopener noreferrer">https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm</a></li><li><a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm" target="_blank" rel="noopener noreferrer">https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm</a></li><li><a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm" target="_blank" rel="noopener noreferrer">https://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm</a></li><li><a href="https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf" target="_blank" rel="noopener noreferrer">https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf</a></li><li><a href="https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf" target="_blank" rel="noopener noreferrer">https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf</a></li><li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html" target="_blank" rel="noopener noreferrer">https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html</a></li><li><a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.svd.html" target="_blank" rel="noopener noreferrer">https://numpy.org/doc/stable/reference/generated/numpy.linalg.svd.html</a></li><li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.bootstrap.html" target="_blank" rel="noopener noreferrer">https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.bootstrap.html</a></li><li><a href="https://www.cvxpy.org/examples/basic/least_squares.html" target="_blank" rel="noopener noreferrer">https://www.cvxpy.org/examples/basic/least_squares.html</a></li></ol></div></details><details class="source-page" id="page-13"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 13 · Glossary: terms and definitions</summary><pre class="source-text">ROBOTICS AND AI  /  M03  /  DETAILED STUDY PLAN
+
+Glossary: terms and definitions
+
+Random variable. A numerical function of a possible random-experiment outcome; its distribution
+specifies probabilities of values or ranges.
+Independence. Property of events or variables whereby information about one does not change
+the probability distribution of the other.
+Conditional probability. Probability of A given B: P(A|B)=P(A∩B)/P(B), provided P(B)&gt;0.
+Sample. The particular set of observations obtained; under temporal dependence, its size is not
+the number of independent observations.
+Parameter and estimate. A parameter characterises an unknown model; an estimate
+approximates it from a particular sample using a specified rule.
+Bias. Difference between an estimator&#x27;s expectation and the true parameter. Averaging does not
+remove constant sensor bias.
+Variance. Expected squared deviation from the mean; describes variability and has squared units
+of the measured quantity.
+Standard deviation. Square root of variance; describes individual-value variability in original
+units, such as rad or m/s².
+Standard error. Standard deviation of an estimator&#x27;s distribution over repeated samples;
+describes estimation uncertainty rather than individual-reading variability.
+Covariance. Mean product of centred deviations of two quantities; its sign describes the direction
+of their joint linear variation.
+Correlation. Normalised covariance; describes linear association, but zero generally does not
+imply independence.
+Confidence interval. Interval produced by a procedure that, over repeated experiments, covers a
+fixed parameter at the specified frequency.
+Bootstrap. Estimation of a statistic&#x27;s distribution by repeated sampling with replacement. The
+resampling unit must match the original experiment&#x27;s independent unit.
+Loss function. Scalar measure of model-data discrepancy; its choice determines which errors
+have greater influence on calibration.
+Gradient. Vector of a scalar function&#x27;s partial derivatives; gives the local direction of greatest
+increase for the chosen coordinates and metric.
+Regularisation. An additional preference or penalty in estimation that limits unstable solutions at
+the cost of possible systematic bias.
+SVD (singular value decomposition). Factorisation A=UΣVᵀ for a real matrix; singular values
+describe amplification along mutually orthogonal directions.
+Identifiability. Ability to distinguish parameters from available observations and inputs; repeating
+the same experiment can preserve model ambiguity.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M3 • 29 Nov 2026 - 27 Dec 2026 • 75 hours                                                                          13 / 15
+
+</pre></details><details class="source-page" id="page-14"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 14 · Equipment, installation and checks</summary><pre class="source-text">ROBOTICS AND AI  /  M03  /  DETAILED STUDY PLAN
+
+Equipment, installation and checks
+
+Complete preparation within the first study blocks in place of another general overview. The
+budget remains 75 hours; delivery waiting time is excluded. Statuses below specify actions for you
+to take, not purchases or installations already completed.
+
+Use existing equipment
+Use the MacBook Pro M4 and M02 Python environment with pinned NumPy, SciPy, Matplotlib,
+pytest and the chosen notebook environment. For physical work, use an existing phone with
+raw IMU data or an existing IMU, a stable fixture and a way to repeat placement. Perform 30
+separate placements and runs, not 30 adjacent samples.
+
+Purchases if needed
+No new mandatory M03 purchases. A motor and separate new IMU board are unnecessary
+before M06. If the phone cannot supply the required data, use an available existing sensor;
+synthetic work can begin immediately, but the real experiment remains open until 30 physical
+repeats are completed.
+
+Install now
+On the phone: an app exporting original accelerometer readings, timestamps and units; for
+example, phyphox, Acceleration with g. Check sensor availability on your model. Choose readings
+including gravity; do not describe &#x27;linear acceleration&#x27; after hidden processing as a raw channel.
+On macOS ARM: no new mandatory packages; use scipy.stats and scipy.optimize from M02. If the
+file format requires another package, add only that package and update the lockfile. Install CVXPY
+solely for the optional constrained-calibration comparison, not as an M03 passing requirement.
+
+Readiness checks
+Before the series, export one pilot CSV containing time in seconds, three axes, units, run identifier
+and sensor-mode name. Check finite values, timestamp ordering, gaps and duration. On a
+stationary support, raw accelerometer magnitude should be near g; this checks mode and scale,
+not full calibration.
+Open the CSV after restarting the notebook. On synthetic data with a known seed, calculate mean,
+SD and an interval; recover known a,b with least_squares and check SVD matrix reconstruction.
+Save software versions and the data manifest. Successful optimisation does not replace checking
+ground truth and run independence.
+
+Before the next stage
+The raw-data archive must contain 30 identifiable physical repeats or explicitly mark that part
+incomplete. Keep export settings and synthetic data separately; assess laboratory readiness
+against the original M03 criteria without adding hours.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M3 • 29 Nov 2026 - 27 Dec 2026 • 75 hours                                                                       14 / 15
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://phyphox.org/experiment/acceleration-with-g/" target="_blank" rel="noopener noreferrer">https://phyphox.org/experiment/acceleration-with-g/</a></li></ol></div></details><details class="source-page" id="page-15"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 15 · Motion fundamentals: how angle error moves</summary><pre class="source-text">ROBOTICS AND AI  /  M03  /  DETAILED STUDY PLAN
+
+Motion fundamentals: how angle error moves
+the foot
+
+Compulsory, within 75 hours. Use 1 h from 63-64 and 4 h from block 66-75 already allocated to
+analytical covariance and Monte Carlo in task 10. No new measurements or equipment are
+required. Entry check: explain zero-offset error, random variability and standard error of the mean.
+
+Displacement direction depends on the error source
+Use the task 10 link: L=0.12 m, q=π/6 rad, in a fixed planar frame with x right and y upwards; p=(L
+cos q,L sin q). Parameters u=(L,q) have small independent zero-mean errors: σ_L=0.0005 m,
+σ_q=0.005 rad. This is a specified teaching model, not a claim about real-encoder accuracy.
+A small length error moves the endpoint along the link: ∂p/∂L=(cos q,sin q)ᵀ. Angle error acts
+tangentially: ∂p/∂q=(−L sin q,L cos q)ᵀ. Assemble these columns into J to obtain δp≈Jδu. Here u
+denotes the parameter pair, not encoder_count in the calibration model.
+Covariance transforms as Σ_p≈J·diag(σ_L²,σ_q²)·Jᵀ. Independent input errors do not imply
+independent x and y: both outputs depend on L and q. Standard spread along the link is 0.5 mm
+and across it Lσ_q=0.6 mm; these are ellipse semiaxes at one standard uncertainty, not a
+guaranteed foot-position region.
+
+A calculation you can check by hand
+At 30°, Σ_xx=0.2775 mm², Σ_yy=0.3325 mm², Σ_xy=Σ_yx=−0.047631 mm². Thus σ_x≈0.5268 mm
+and σ_y≈0.5766 mm. The matrix trace is 0.61 mm², the sum 0.5²+0.6²; rotating axes changes
+components but preserves this trace.
+Now add a constant zero-offset error Δq=+0.01 rad. The linear mean shift J_qΔq≈(−0.600;1.039)
+mm has length 1.2 mm. The exact change p(q+Δq)−p(q)≈(−0.605;1.036) mm. Repeating one
+position can reduce uncertainty in the estimated mean, but does not remove this constant
+geometric shift.
+
+Verify task 10 and decide what to calibrate
+1. Using the same 10 000-point Monte Carlo cloud, compare both variances and covariance with
+the calculation, then rotate axes by 90° and check trace and eigenvalues. Save a drawing of the
+link, ellipse and cloud. Do not use relative error of nearly zero covariance as the sole metric; allow
+for Monte Carlo&#x27;s own variability.
+2. Add Δq separately and show the cloud-centre shift; then restore the task&#x27;s large σ_q=0.3 rad.
+Explain why a tangent describes the arc less accurately. In the report, state what needs correcting:
+zero offset, length or random-error model. M03 phone repeatability alone does not calibrate a
+future leg&#x27;s geometry.
+Read before calculating: NIST/SEMATECH, §2.5.5: propagation of error, sensitivity coefficients;
+Lynch, Park, Modern Robotics, chapter 5 introduction: Jacobian.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M3 • 29 Nov 2026 - 27 Dec 2026 • 75 hours                                                                      15 / 15</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://www.itl.nist.gov/div898/handbook/mpc/section5/mpc55.htm" target="_blank" rel="noopener noreferrer">https://www.itl.nist.gov/div898/handbook/mpc/section5/mpc55.htm</a></li><li><a href="https://modernrobotics.northwestern.edu/nu-gm-book-resource/velocity-kinematics-and-statics/" target="_blank" rel="noopener noreferrer">https://modernrobotics.northwestern.edu/nu-gm-book-resource/velocity-kinematics-and-statics/</a></li></ol></div></details>
+</section>
+<footer><p><a href="../library.html"><span lang="ru">Вернуться в библиотеку</span><span lang="en">Back to source library</span></a> · <a href="../index.html"><span lang="ru">Вернуться к новому плану</span><span lang="en">Back to revised plan</span></a></p><p class="checksum">SHA-256: 184e89aa441f552848dbde49752e9af544fb095c3eee7aa832652f7f39469b93</p></footer>
+</main>
+<script>
+(function() {
+  function openPage() {
+    if (!/^#page-\d+$/.test(location.hash)) return;
+    var page=document.getElementById(location.hash.slice(1));
+    if(page) {page.open=true; page.scrollIntoView({block:'start'});}
+  }
+  window.addEventListener('hashchange',openPage);
+  document.addEventListener('DOMContentLoaded',openPage);
+  document.getElementById('expand-pages').addEventListener('click',function(){document.querySelectorAll('details[id^="page-"]').forEach(function(el){el.open=true;});});
+  document.getElementById('collapse-pages').addEventListener('click',function(){document.querySelectorAll('details[id^="page-"]').forEach(function(el){el.open=false;});});
+})();
+</script>
+</body>
+</html>

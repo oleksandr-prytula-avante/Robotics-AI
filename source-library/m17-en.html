@@ -1,0 +1,1053 @@
+<!doctype html>
+<html lang="ru" data-ru-title="M17 · Манипуляция, HRI и инженерная ответственность · EN — Robotics &amp; AI" data-en-title="M17 · Manipulation, HRI and engineering responsibility · EN — Robotics &amp; AI">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>M17 · Манипуляция, HRI и инженерная ответственность · EN — Robotics &amp; AI</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body class="source-reader">
+<a class="skip-link" href="#main"><span lang="ru">К тексту источника</span><span lang="en">Skip to source text</span></a>
+<header class="topbar"><a class="brand" href="../index.html">Robotics &amp; AI</a><nav><a href="../library.html"><span lang="ru">Библиотека источников</span><span lang="en">Source library</span></a><a href="../index.html"><span lang="ru">Новый план</span><span lang="en">Revised plan</span></a></nav><div class="lang-switch" aria-label="Language"><button type="button" data-lang="ru">RU</button><button type="button" data-lang="en">EN</button></div></header>
+<main class="wrap" id="main">
+<p class="eyebrow"><span lang="ru">Архив · исходный документ</span><span lang="en">Archive · original document</span></p>
+<h1><span lang="ru">M17 · Манипуляция, HRI и инженерная ответственность · EN</span><span lang="en">M17 · Manipulation, HRI and engineering responsibility · EN</span></h1>
+<div class="notice source-notice"><strong><span lang="ru">Архивные даты и часы не действуют.</span><span lang="en">Original dates and hours are superseded.</span></strong><p><span lang="ru">Это полный текст исходного документа. Старый календарь, отпуска и бюджеты часов сохранены для проверки исходной информации. Рабочее расписание находится в новом плане: 50 часов в неделю, без отпусков.</span><span lang="en">This is the complete extracted text of the original document. Its historical calendar, vacations and hour budgets are preserved for source verification. Use the revised plan for the current schedule: 50 hours per week, with no vacations.</span></p></div>
+<p><span lang="ru">Язык исходника: английский.</span><span lang="en">Source language: English.</span> <span lang="ru">Переключатель RU/EN меняет язык интерфейса; исходный текст не переводится автоматически.</span><span lang="en">The RU/EN switch changes the interface; original source text is not automatically translated.</span></p>
+<p class="source-actions"><a href="../originals/detailed/English/Monthly/M17_Robotics_Plan_EN.pdf"><span lang="ru">Открыть исходный PDF без изменений</span><span lang="en">Open the unchanged original PDF</span></a> · <a href="m17-ru.html"><span lang="ru">Открыть другую языковую редакцию</span><span lang="en">Open the other language edition</span></a></p>
+<p><span lang="ru">Страниц</span><span lang="en">Pages</span>: 15 · <span lang="ru">Ссылок из PDF</span><span lang="en">PDF links</span>: 14</p>
+<details class="source-page source-toc"><summary><span lang="ru">Перейти к странице</span><span lang="en">Jump to a page</span></summary><nav class="page-links" aria-label="Pages"><a href="#page-1">1</a> <a href="#page-2">2</a> <a href="#page-3">3</a> <a href="#page-4">4</a> <a href="#page-5">5</a> <a href="#page-6">6</a> <a href="#page-7">7</a> <a href="#page-8">8</a> <a href="#page-9">9</a> <a href="#page-10">10</a> <a href="#page-11">11</a> <a href="#page-12">12</a> <a href="#page-13">13</a> <a href="#page-14">14</a> <a href="#page-15">15</a> </nav></details>
+<p class="source-controls"><button type="button" id="expand-pages"><span lang="ru">Развернуть все страницы</span><span lang="en">Expand all pages</span></button> <button type="button" id="collapse-pages"><span lang="ru">Свернуть все страницы</span><span lang="en">Collapse all pages</span></button></p>
+<p><span lang="ru">Извлечение PDF может сохранять переносы строк и наложенные редакции. Формулы, иллюстрации и исходное оформление доступны в неизменённом PDF. Все встроенные ссылки вынесены под текст соответствующей страницы.</span><span lang="en">PDF extraction may retain line breaks and overlapping revisions. Equations, illustrations and original formatting remain available in the unchanged PDF. Every embedded link is listed below its corresponding page.</span></p>
+<section class="source-pages" aria-label="Original document pages">
+<details class="source-page" id="page-1"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 1 · Monthly outcome: a manipulator under</summary><pre class="source-text">ROBOTICS AND AI  /  M17  /  DETAILED STUDY PLAN
+
+Monthly outcome: a manipulator under
+human supervision
+
+M17 • 15 Feb 2028 - 19 Mar 2028 • 75 hours
+
+Build a small, reproducible testbed for grasping and transferring an object. Treat it as an integrated
+robotic system connecting kinematics, planning, operator actions, data, commands, updates and
+engineering responsibility. The M17 deliverables are a simulated transfer of a simple object, a
+study of repeatability and failures, an interface for selecting modes and cancelling actions, and a
+documented assessment of threats and hazards.
+
+Four areas of work
+This month covers manipulation, human-robot interaction, ethics and cybersecurity, industrial
+applications and teamwork. Allocate the manipulator work so that every topic receives attention. A
+complex anthropomorphic hand, tactile skin and force-controlled grasping are not required here.
+Under the curriculum, the advanced OPT block on hand mechanics and tactile sensors takes 120
+hours after M17 and is separate from these 75 hours.
+
+What to bring from M14-M16
+From M14, use the object-observation format and the descriptions of coordinate frames and
+uncertainty; from M16, use the prepared manipulator scene, collision checks, pre-grasp pose and
+trajectory validation. In the main experiment, specify the object&#x27;s position precisely in simulation to
+distinguish manipulation errors from vision errors. Then deliberately offset the estimated position
+and orientation. A complete vision-guided grasping system is outside this month&#x27;s required project.
+
+Testbed and working environment
+Prepare an existing manipulator model with a simple parallel gripper, a table, a cube or cylinder,
+and a target region. Work in Ubuntu 24.04 with ROS 2 Jazzy and a compatible MoveIt 2
+configuration. You may additionally test your own mechanism once the baseline simulation
+experiment works; rated limits and real contacts require separate tests. A cancel button in a
+graphical interface does not, by itself, constitute a hardware emergency stop.
+By the end of the month, explain why the manipulator might fail to reach its goal, who is authorised
+to issue commands and how the operator knows the current mode. State which data are retained,
+what happens when communication is lost and what must be checked before changing a limit. For
+the future hexapod, the same questions concern body motion, leg contacts and handing control to
+a human.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M17 • 15 Feb 2028 - 19 Mar 2028 • 75 hours                                                                       1 / 15
+
+</pre></details><details class="source-page" id="page-2"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 2 · 75 hours and a separate hand project</summary><pre class="source-text">ROBOTICS AND AI  /  M17  /  DETAILED STUDY PLAN
+
+75 hours and a separate hand project
+
+Four blocks
+1-20: FK and IK, grasp coordinate frames, object transfer, contact and repeatability; 10 hours of
+theory and analysis +10 of practice. 21-40: teleoperation, levels of autonomy, modes, operator
+feedback and a small interface study; 10+10. 41-60: privacy, data errors, threat modelling,
+authentication, encryption and updates; 10+10. 61-75: PLCs, industrial buses, standards,
+requirements, verification and planning a team exercise; 5+10. Total: 35 hours of analysis and 40
+of practice.
+In the first three blocks, schedule reading in 2-hour sessions; in the last block, use 2+2+1. Divide
+practical work into four Sunday blocks of 10 hours, or equal periods that suit your schedule. Page
+dates follow the original curriculum, while step numbers indicate the learning workload.
+Overlapping module boundaries, rest, holidays and separate checkpoints do not add hours; OPT120
+is counted separately.
+
+Keeping the scope manageable
+Start with one robot, one object type and one scene, then introduce variations. Keep development
+of custom motor control, vision and a physical hand outside this experiment. MoveIt plans the
+geometric sequence of actions; assess contact and object retention using separate simulator
+observations. A simplified object attachment demonstrates planning, but does not establish that
+grasping force is sufficient.
+
+Preparation in the first block
+Create a model-description file: simulator and MoveIt versions, object dimensions, joint limits, table
+position, coordinate frames and the source of the pose estimate. For each experiment, save run_id,
+the random-number generator seed, parameters, initial object state and result. Provide observation
+without issuing commands, manual control, plan execution and stopping. Maintain a shared log of
+command_id, mode and actor, even while there is only one operator.
+Working folders: manipulation/ for tasks and scenes; operator/ for the interface and study protocol;
+evaluation/ for repeated experiments; review/ for hazards, threats and ethical decisions;
+requirements/ for criteria and changes. Store secret keys and participants&#x27; personal data outside
+the repository. In the report, distinguish observations, proposed causes and ways to test them: this
+helps another engineering team understand the system.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M17 • 15 Feb 2028 - 19 Mar 2028 • 75 hours                                                                         2 / 15
+
+</pre></details><details class="source-page" id="page-3"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 3 · Manipulation: poses, approach and contact</summary><pre class="source-text">ROBOTICS AND AI  /  M17  /  DETAILED STUDY PLAN
+
+Manipulation: poses, approach and contact
+
+What to study
+Review forward kinematics, FK: it determines end-effector position and orientation from joint
+coordinates. Inverse kinematics, IK, solves the reverse problem; there may be several valid
+solutions or none. Define the world, base, tool, object and grasp coordinate frames. Define the
+grasp pose relative to the object and the pre-grasp pose as an offset along the approach direction.
+Before connecting the planner, verify transform composition and inversion using three known
+poses.
+Transfer sequence: move into position → approach → close the gripper → confirm retention → lift →
+transfer → lower → open → withdraw. Define geometric and logical conditions for each stage. The
+attach operation in the planning scene changes the collision model, but does not measure contact.
+When introduced to force and impedance control, establish how position control differs from
+specifying a desired interaction; a complete force-control loop is studied separately.
+
+Task 1. FK, IK and the grasp coordinate frame
+Use an existing manipulator model and three reachable object poses. Specify the grasp offset,
+calculate the tool pose and solve IK while checking joint limits and self-collisions. Calculate FK for
+the solution and compare its position and orientation with the target. Save a table of poses,
+solutions and rejection reasons. Test an object outside the workspace and a rotation of 180°; if no
+valid IK solution exists, the limits must remain enabled.
+
+Task 2. A complete grasp-and-transfer cycle
+Use MoveIt Task Constructor or a compatible sequence of ROS actions. Save each stage and its
+result, add the table and object to the scene, and check attached geometry during transfer.
+Prepare a task description, configuration and reproducible demonstration. Separately verify that
+the object reached the target region and was released, and that the arm withdrew: successfully
+producing a plan without executing it must not count as task success.
+
+Interpreting contact checks
+For a physical simulation of retention, specify mass, friction and the gripper model; check whether
+the object can fall. When using a simplified attach, label the mode a kinematic demonstration
+(kinematic demo). Consider a virtual spring F=K·(x_des−x), with K in N/m, and a damper. Explain
+why high stiffness and delay can increase contact forces. Specified forces and speeds are
+educational parameters and do not replace checking rated specifications and conducting physical
+tests.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M17 • 15 Feb 2028 - 19 Mar 2028 • 75 hours                                                                         3 / 15
+
+</pre></details><details class="source-page" id="page-4"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 4 · Repeatability and operator interaction</summary><pre class="source-text">ROBOTICS AND AI  /  M17  /  DETAILED STUDY PLAN
+
+Repeatability and operator interaction
+
+Task 3. Defining a successful transfer
+Perform 10 runs with the same initial scene and 10 with small, predefined object offsets. Save
+success status and failure stage, final pose, cycle time and retention state. Before the experiments,
+specify the target region in metres and acceptable orientation. Present every result, mean error
+and dispersion; if deterministic simulation produces identical results, explain why.
+Repeatability describes how close results are under identical conditions; accuracy describes
+closeness to a specified reference. An incorrect grasp offset can make the arm place the object in
+the same wrong location every time: test this case. In separate experiments, introduce an incorrect
+mass, friction or calibration offset and distinguish these causes. In a kinematic demonstration,
+evaluate the plan and pose; such an experiment does not measure holding force.
+
+Human-robot interaction (HRI)
+Study direct teleoperation, assisted control, autonomous task execution and explicit transfer of
+control. The operator needs the current mode, active goal, age of state data, reason for rejection
+and available action. A mode error occurs when a person expects manual control while an
+autonomous plan is active, or the reverse. Spatial interaction requires clearly indicated access
+zones and the robot&#x27;s future path; low speed alone does not demonstrate contact safety.
+
+Task 4. Modes and operator intervention
+Create a simple panel or CLI with view, manual, auto and stopped states. Include command_id and
+mode in commands. Before a manual↔auto transition, complete or cancel the previous ROS action;
+after stopped, the old queue must not resume automatically. Save the transition table, interface
+and test log. Test a manual request during auto and a repeated start after communication loss.
+Give the operator a scenario: position the gripper, start a transfer and stop it when the object is
+wrong. Display the planned path and current stage; present debugging diagnostics separately. The
+same principle applies to transferring control of gait: a human action must bring the system into a
+clear state, otherwise competing commands may enter a shared topic.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M17 • 15 Feb 2028 - 19 Mar 2028 • 75 hours                                                                         4 / 15
+
+</pre></details><details class="source-page" id="page-5"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 5 · Interface testing and privacy</summary><pre class="source-text">ROBOTICS AND AI  /  M17  /  DETAILED STUDY PLAN
+
+Interface testing and privacy
+
+Task 5. Test the interface on a clearly defined task
+Conduct a pilot study in simulation with two interface versions: for example, buttons alone and
+buttons with explicit mode and state indications. Use the same task: start a transfer, notice an
+intentionally incorrect goal and cancel the action. Explain the task and the data to be recorded to
+the volunteer beforehand. Conduct this experiment without physical robot motion near a person. If
+no participant is available, follow a predefined scenario yourself and state that no independent
+study took place.
+Prepare 3-5 attempts for each version, alternate their order and provide the same initial training.
+Record the time until correct cancellation, mode errors, unnecessary actions and a brief answer to
+“what is the robot doing now?”. Save the protocol, anonymised table and three observations. So
+few attempts cannot establish statistical superiority; use them to correct specific unclear
+indications.
+
+Task 6. Camera data and model errors
+List the testbed&#x27;s data: table images, object pose, operator actions, identifiers and logs. For each
+type, state its purpose and retention period, access rights and deletion method. In the
+demonstration, retain only the necessary table region or use synthetic data. If people or personal
+belongings appear in the frame, exclude unnecessary regions from the educational dataset in
+advance; transfer to an external service requires an appropriate basis.
+Return to the baseline CNN from M14 and compare errors under two lighting conditions and with
+two object materials. Consider practical ethical questions: for whom and under which conditions
+does the system perform worse, who knows its limitations and who can correct the result? If the
+data contain no people, evaluate gaps in operating conditions and interface accessibility; there is
+no basis here for demographic statistics. Good average performance does not establish
+performance under unstudied conditions.
+
+A documented decision
+Write a short record: “question → alternatives → chosen decision → verification → remaining
+limitation”. For example, events and anonymised errors suffice to measure cancellation time, so
+operator video need not be retained. If pose-estimation confidence is low, request another
+observation before grasping. Include these decisions and supporting results in the final engineering
+review.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M17 • 15 Feb 2028 - 19 Mar 2028 • 75 hours                                                                          5 / 15
+
+</pre></details><details class="source-page" id="page-6"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 6 · Command security: a threat model for your</summary><pre class="source-text">ROBOTICS AND AI  /  M17  /  DETAILED STUDY PLAN
+
+Command security: a threat model for your
+testbed
+
+Distinguish hazards from threats
+A hazard is a potential source of harm, such as unexpected gripper motion. A cybersecurity threat
+is the possibility of malicious interference, such as an unauthorised command or a substituted
+update. A code error, malfunction or attack may lead to the same consequence. For each case,
+record the cause, protection and test. Encryption does not correct an invalid joint limit, and a limit
+switch does not determine access rights to video recordings.
+
+Task 7. A threat model for your own testbed
+Draw the testbed boundaries: operator, ROS and DDS network, control process, storage and update
+channel. For each flow, identify the protected asset, sender, recipient, trust boundary and possible
+violation. Analyse unauthorised commands, replay of old commands, calibration changes,
+corrupted updates and log leaks. Prepare a table of 5-8 specific threats with priorities and owners
+of protective measures.
+In an isolated experiment, test commands containing an unknown actor, expired timestamp,
+repeated command_id, NaN and out-of-range values. The expected result is rejection with an
+explanation and no simulated motion. DDS certificates, identity and permissions govern admission
+to the system and its channels; the application checks command freshness and prevents repeated
+execution. Enabling SROS2 alone does not protect against all these threats.
+
+Task 8. Minimum protection and an update
+Study authentication, authorisation, encryption and trust in updates. On the local testbed,
+configure minimum permissions for one publisher and subscriber using SROS2, or reproduce the
+official example in a separate namespace. Test permitted and prohibited publication. Save a public
+description of roles and permissions and verification logs; exclude private keys from the final
+package.
+Prepare an educational configuration-update scenario. A new version of the limits requires a
+contents description, a hash and engineering review; a deliberately modified file must be rejected,
+and the previous working version must be restored in simulation. Explain that a hash detects
+change, but verifying authorship requires a trusted signature or channel. Parameters may change
+during motion only through a defined state transition.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M17 • 15 Feb 2028 - 19 Mar 2028 • 75 hours                                                                       6 / 15
+
+</pre></details><details class="source-page" id="page-7"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 7 · Industrial applications: the cell and its</summary><pre class="source-text">ROBOTICS AND AI  /  M17  /  DETAILED STUDY PLAN
+
+Industrial applications: the cell and its
+requirements
+
+What to understand at an introductory level
+A PLC executes industrial cycle logic and processes inputs and outputs; the robot controller
+controls drives and the programme; a supervisory computer may plan actions and exchange data.
+An industrial bus connects devices and defines communication properties. Learn the purposes of
+EtherCAT, PROFINET and CAN; implementing these protocols is outside this month&#x27;s scope.
+Distinguish ordinary control from separate protective functions.
+ISO 10218 concerns industrial robots and their applications; ISO 13849 addresses safety-related
+parts of control systems; IEC 61508 provides the context of functional safety and its lifecycle. In
+M17, read official descriptions of scope and terminology, without claiming compliance with a
+standard. Applicability, the required level and verification of a real cell require separate input data
+and competent assessment.
+
+Task 9. Sketch an educational cell
+Draw the robot, table, object feed, presence sensor, operator panel and a notional PLC. Define a
+ready/request/busy/done/fault state exchange with cycle_id and test it using software process
+simulators. Save the diagram, I/O table and event sequence. Test a repeated request, a missing
+part, communication loss and reset during busy. The done state belongs to a particular cycle_id: an
+old event must not confirm processing of a new part.
+
+Task 10. Requirements, changes and teamwork
+Formulate 8-10 requirements: start conditions, acceptable scene, cancel behaviour, pose-estimate
+age, operator rights, logging and rejection on recovery. For each, provide a criterion and a link to
+its test. Change the grasp offset or speed and prepare a change request: reason, affected
+requirements, checks and restoration of the previous version. Support engineering review with
+data; label your own verification as self-review.
+Plan how to gain teamwork experience: which part of the work can be submitted for review, which
+questions to ask a control or mechanical specialist, and which small contribution to a robotics
+project would demonstrate collaboration. Prepare a review package and a list of missing
+experience, such as industrial equipment, initial hardware commissioning and working with
+someone else&#x27;s requirements. An educational testbed does not replace an internship or a verified
+professional qualification.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M17 • 15 Feb 2028 - 19 Mar 2028 • 75 hours                                                                        7 / 15
+
+</pre></details><details class="source-page" id="page-8"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 8 · Eight checks for manipulation, the operator</summary><pre class="source-text">ROBOTICS AND AI  /  M17  /  DETAILED STUDY PLAN
+
+Eight checks for manipulation, the operator
+and threats
+
+Manipulator and interface
+S1 - unreachable pose: IK or the planner reports failure, and the system does not enter executing.
+S2 - the object touches the table during transfer: the collision model includes the attached object
+and rejects the plan. S3 - incorrect grasp offset: the robot misses repeatedly, and the report
+distinguishes repeatability from accuracy. In a physical simulation, add slipping; in a kinematic
+demonstration, attach does not confirm retention.
+S4 - mode change during auto: a manual request triggers cancel, waits for coordinated completion
+and only then allows a manual command. Mode outputs are not mixed. S5 - loss of communication
+or pose estimates: data age increases, and the task receives the defined stopped or uncertain
+status. Network recovery does not start the old queue. Describe the simulator&#x27;s actual response;
+this experiment does not demonstrate a certified protective stop.
+
+Commands, data and the cycle
+S6 - repeated command or unknown actor: the application rejects the request without repeating
+the cycle. Check command_id, mode and validity period separately from DDS participant
+identification. S7 - configuration change: integrity checking detects substitution, the update is not
+activated and the previous version can be reproduced. Separately state that without a trusted
+signature, forged authorship remains possible.
+S8 - late done from the previous PLC cycle: the new request has a different cycle_id, so the old
+event does not count as success. Add an absent object after a claimed grasp: the hold-check stage
+must report the corresponding failure. Inspect the final archive manually: it must contain only
+necessary frames and events, without participants&#x27; personal data or secret keys.
+
+Recording criteria
+For each scenario, record the initial scene, triggering event, expected states, observed response,
+timing and remaining risk. Justify pose and timing tolerances as parameters of the educational
+task. This table does not define safe speeds for physical interaction with a person. The absence of
+errors in 10 repetitions does not prove zero failure probability.
+Indicate how each result is supported: simulation, logic or document review, or a required physical
+test. Show the operator the reason for failure, whether motion has been cancelled and whether
+restarting is possible. If the execution outcome is still unknown, state that explicitly: hidden
+uncertainty prevents an accurate assessment of robot state.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M17 • 15 Feb 2028 - 19 Mar 2028 • 75 hours                                                                         8 / 15
+
+</pre></details><details class="source-page" id="page-9"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 9 · Sessions 1-40: object transfer and the</summary><pre class="source-text">ROBOTICS AND AI  /  M17  /  DETAILED STUDY PLAN
+
+Sessions 1-40: object transfer and the
+operator
+
+Hours 1-10: five sessions of 2 hours
+1-2: review FK and IK, coordinate frames and grasp offset; calculate three transforms by hand. 3-4:
+pre-grasp pose, approach, attach/detach and scene geometry. 5-6: transfer stages and criteria for
+planning and execution. 7-8: contact, friction, fundamentals of force and impedance control, and
+differences between kinematic and physical demonstrations. 9-10: repeatability, accuracy, test
+protocol and simulation limitations. Prepare the scene for the practical session.
+
+Hours 11-20: practical session 1
+11-12: Task 1, reachable and unreachable poses with FK verification. 13-14: Task 2, initial stages
+using Task Constructor or ROS actions. 15-16: complete transfer with the correct scene and
+target-region checks. 17-18: Task 3, repeated trials and pose variations. 19-20: failures S1-S3,
+grasp offset and cause analysis. If the physical grasp model is not ready, save the basic kinematic
+demonstration and state its limitations explicitly; the remaining weeks are needed for other topics.
+
+Hours 21-30: five sessions of 2 hours
+21-22: teleoperation, automated assistance, autonomy and command authority. 23-24: mode FSM,
+operator intervention, cancel and transition confirmation. 25-26: operator feedback, data age and
+mode errors. 27-28: spatial interaction, zones and limitations of the educational simulation. 29-30:
+pilot study, metrics, participant preparation and limitations of a small sample.
+
+Hours 31-40: practical session 2
+31-32: Task 4, a simple interface and mode table. 33-34: operator intervention during auto,
+communication loss and command_id log. 35-36: Task 5, two interface versions and pilot attempts.
+37-38: analyse events, cancellation time and mode errors; fix one identified problem. 39-40: repeat
+the scenario and write a short HRI report stating its limitations.
+If no volunteer is available, follow a previously written scenario yourself and list questions for
+external testing. Study results must reflect the attempts actually conducted. A simple version can
+use a CLI with prominent mode and state indications: this experiment focuses on making robot
+control understandable.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M17 • 15 Feb 2028 - 19 Mar 2028 • 75 hours                                                                        9 / 15
+
+</pre></details><details class="source-page" id="page-10"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 10 · Sessions 41-75: data, threats and project</summary><pre class="source-text">ROBOTICS AND AI  /  M17  /  DETAILED STUDY PLAN
+
+Sessions 41-75: data, threats and project
+handover
+
+Hours 41-50: theory in 2-hour sessions
+41-42: necessary data, privacy and retention periods. 43-44: machine-learning limitations,
+incomplete data and responsibility for decisions; connection to M14. 45-46: hazards, cybersecurity
+threats, protected assets and trust boundaries. 47-48: authentication, authorisation, encryption
+and command-freshness checks. 49-50: update integrity, signatures, restoration of the previous
+version and documentation of remaining risks.
+
+Hours 51-60: practical session 3
+51-52: Task 6, data inventory and checks across lighting conditions and materials. 53-54: Task 7, a
+flow diagram and five specific threats. 55-56: test commands with repetitions, NaN and an
+unknown actor; rejection logs. 57-58: Task 8, permitted and prohibited communication in an
+isolated SROS2 example. 59-60: update and restore the previous version, inspect the archive and
+review responsible engineering decisions together.
+
+Hours 61-65: theory, 2+2+1
+61-62: PLC, robot controller, industrial bus and cycle coordination; channel purposes. 63-64: official
+scopes of ISO 10218, ISO 13849 and IEC 61508, requirements and supporting results. 65: change
+management, engineering review and planning teamwork experience. Introductory hours cover
+terminology and the limits of standards&#x27; applicability; a full compliance analysis requires separate
+work.
+
+Hours 66-75: practical session 4
+66-67: Task 9, cell sketch, I/O and cycle coordination. 68-69: checks for cycle_id, missing parts,
+communication loss and late done. 70-71: Task 10, requirements and a change request for one
+parameter. 72-73: scenarios S1-S8, repeat the transfer after the change and restore the previous
+version. 74-75: final materials package, demonstration and handover to OPT120 and subsequent
+modules. The intervals total 75 hours.
+
+How to reduce scope
+If time is short, first remove the second object, complex contact model and interface decoration;
+then reduce the number of configuration variants. Keep a reproducible experiment with one
+manipulator, repeatability testing, operator intervention, the HRI study, threat and hazard
+assessment, industrial diagram and a requirement with its test. Move hand development, tactile
+sensors and force experiments to the separate OPT120 block, preserving M17 time for ethics and
+teamwork.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M17 • 15 Feb 2028 - 19 Mar 2028 • 75 hours                                                                      10 / 15
+
+</pre></details><details class="source-page" id="page-11"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 11 · Acceptance checks and preparation for the</summary><pre class="source-text">ROBOTICS AND AI  /  M17  /  DETAILED STUDY PLAN
+
+Acceptance checks and preparation for the
+hand project
+
+Evidence for the four areas
+Manipulation: scene, configuration, complete cycle or explicitly labelled kinematic demonstration,
+FK and IK verification, and a table of repeated trials. HRI: modes, cancellation, indications and a
+protocol for the participant study or self-conducted walkthrough. Ethics and cybersecurity: data
+inventory, use decisions, threat model and results of isolated tests. Industrial applications: cell
+diagram, I/O, requirements, change request and a plan to develop teamwork experience.
+Prepare a README and a unified set of commands to reproduce the work. State in the report what
+was measured physically, what was tested in simulation and what was considered only
+theoretically. These experiments do not establish ISO/IEC certification, safe collaborative operation
+or industrial readiness. Save observed outcomes for the eight scenarios, and supporting results or
+a description of the remaining limitation for every significant protective measure.
+
+Self-check questions
+1. How does the tool pose differ from the object pose? 2. Why can IK have several valid solutions?
+3. How does an attached object affect collision checking? 4. Why does attach not measure grasping
+force? 5. How does repeatability differ from accuracy? 6. How does the operator know who
+currently controls the robot?
+7. What happens after cancel and communication loss? 8. How does a hazard differ from a
+cybersecurity threat? 9. Why does encryption not replace limit checks? 10. What does a hash prove
+about an update, and what does it not prove? 11. How does cycle_id prevent a false done? 12.
+What external experience do you still need to work in a robotics team?
+
+What to hand over to OPT120
+Hand over coordinate-frame descriptions, the baseline arm model, scene with objects, grasp
+parameters, reproducible action sequence, operator-intervention requirements and failure log.
+With this foundation, the separate 120-hour block after M17 develops hand mechanics, tactile
+perception, retention and physical testing. Its hours, equipment and criteria are accounted for
+separately; a completed anthropomorphic hand is not an M17 deliverable.
+For the walking robot, retain the rules for mode selection, command authority, command-freshness
+checks and review of limits. They will be needed for external control of the body and legs. Before
+use on a real robot, test these decisions with the relevant mechanics, loads and actuator
+electronics. M17 is complete when you can explain and reproduce the entire testbed&#x27;s operation,
+including failure and recovery.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M17 • 15 Feb 2028 - 19 Mar 2028 • 75 hours                                                                       11 / 15
+
+</pre></details><details class="source-page" id="page-12"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 12 · Assigned reading: manipulation and</summary><pre class="source-text">ROBOTICS AND AI  /  M17  /  DETAILED STUDY PLAN
+
+Assigned reading: manipulation and
+human-robot interaction
+
+Read the specified extracts before the corresponding tasks. Core reading explains principles;
+reference reading supports implementation. Sources may be in English; prepare your explanations
+and report in English. Reading is included in the 75 hours.
+
+Core reading
+1. Russ Tedrake, Robotic Manipulation (MIT, course notes). Basic Pick and Place: Monogram
+Notation; Pick and place via spatial transforms. For Tasks 1-2: write down the object → grasp → tool
+transforms and one pre-grasp pose; other chapters are not needed now.
+2. Christoph Bartneck et al., Human-Robot Interaction: An Introduction, 2nd ed., 2024.
+Chapters Design, Research Methods, Robots in Society. For Tasks 4-6: one mode-indication
+principle, a pilot-study protocol and a data decision; skim Spatial Interaction to define the
+boundaries of the motion zone.
+3. Ross Anderson, Security Engineering, 3rd ed. Ch. 4 Protocols; Ch. 6 Access Control. For
+Tasks 7-8: selected examples of authentication, message replay and permissions. After reading,
+distinguish an unauthorised command, an old command and an incorrect but permitted parameter.
+
+Mechanics reference reading
+4. Kevin Lynch, Frank Park, Modern Robotics. §12.1.2 Contact Types; §12.2.1 Friction; §11.5
+Force Control. For Task 3 and the transition to OPT120: distinguish touching, slipping and holding,
+and position and force. Leave the full theory of force-based grasping to the separate block.
+
+Laboratory documentation
+MoveIt Task Constructor: Pick and Place - stages and scene for Task 2; check main documentation
+against your pinned Jazzy version. SROS2: README and tutorials on the Jazzy branch - participant
+identification and permissions in Task 8, with permitted and prohibited communication.
+Official ISO/IEC scope descriptions for Tasks 9-10 are listed on the preparation page. After reading,
+prepare a cell diagram, one verifiable requirement and applicability limits. Reading the standards
+in full is not required this month.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M17 • 15 Feb 2028 - 19 Mar 2028 • 75 hours                                                                     12 / 15
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://manipulation.mit.edu/pick.html" target="_blank" rel="noopener noreferrer">https://manipulation.mit.edu/pick.html</a></li><li><a href="https://www.human-robot-interaction.org/" target="_blank" rel="noopener noreferrer">https://www.human-robot-interaction.org/</a></li><li><a href="https://www.cl.cam.ac.uk/archive/rja14/book.html" target="_blank" rel="noopener noreferrer">https://www.cl.cam.ac.uk/archive/rja14/book.html</a></li><li><a href="https://modernrobotics.northwestern.edu/nu-gm-book-resource/" target="_blank" rel="noopener noreferrer">https://modernrobotics.northwestern.edu/nu-gm-book-resource/</a></li><li><a href="https://modernrobotics.northwestern.edu/nu-gm-book-resource/" target="_blank" rel="noopener noreferrer">https://modernrobotics.northwestern.edu/nu-gm-book-resource/</a></li><li><a href="https://moveit.picknik.ai/main/doc/tutorials/pick_and_place_with_moveit_task_constructor/pick_and_place_with_moveit_task_constructor.html" target="_blank" rel="noopener noreferrer">https://moveit.picknik.ai/main/doc/tutorials/pick_and_place_with_moveit_task_constructor/pick_and_place_with_moveit_task_constructor.html</a></li><li><a href="https://github.com/ros2/sros2" target="_blank" rel="noopener noreferrer">https://github.com/ros2/sros2</a></li></ol></div></details><details class="source-page" id="page-13"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 13 · Fundamental concepts in M17</summary><pre class="source-text">ROBOTICS AND AI  /  M17  /  DETAILED STUDY PLAN
+
+Fundamental concepts in M17
+
+Pose. A body&#x27;s position and orientation relative to a specified coordinate frame; both components
+are needed to describe a grasp.
+Grasp frame. A coordinate frame on the object relative to which the desired end-effector position
+and orientation are specified.
+Inverse kinematics (IK). Finding joint coordinates for a specified pose; a valid solution must
+respect limits and be checked using forward kinematics.
+Pre-grasp pose (pregrasp). Position and orientation before approaching the object; it defines
+the approach direction and space for the open gripper.
+Attached object. Geometry linked to the robot in the planning scene; this link alone does not
+establish physical retention of the object.
+Repeatability. Closeness of repeated transfer results under identical conditions; a systematic
+offset may persist in every attempt.
+Accuracy. Closeness of a result to a specified reference; it is evaluated relative to a defined goal,
+coordinate frame and measurement conditions.
+Impedance. A specified dynamic relationship between motion and interaction force; it usually
+includes virtual stiffness and damping.
+HRI. The study and design of human-robot interaction, including state understanding, control,
+errors and social context.
+Mode error. An operator action based on an incorrect understanding of the current mode or of
+who controls the robot.
+Hazard. A potential source of harm; the presence of a hazard alone does not describe an event&#x27;s
+probability or the severity of its consequences.
+Security threat. A possible violation of protected system properties, such as command
+substitution, data disclosure or loss of control availability.
+Authentication. Verification of a participant&#x27;s claimed identity or identifier by a trusted method; it
+does not itself define permitted actions.
+Authorisation. A decision to permit a particular action by an identified participant, considering
+role, resource and access policy.
+Encryption. Transforming data to conceal their content from those without the key; it does not
+replace checks of command authority, freshness and admissibility.
+Hash. A short computed representation of content; comparison detects change relative to a
+trusted reference, but does not establish authorship.
+Digital signature. Cryptographic verification of integrity and of a message&#x27;s association with the
+signer&#x27;s key, assuming trust in the corresponding public key.
+Idempotency. A processing property whereby repeating the same logical command does not
+repeat the physical action or change.
+PLC. A programmable logic controller that executes industrial cycle logic and processes inputs and
+outputs according to its configuration.
+Cycle handshake. An exchange of readiness, request and completion states under defined rules;
+cycle_id links acknowledgement to a particular operation.
+
+
+
+
+
+
+
+M17 • 15 Feb 2028 - 19 Mar 2028 • 75 hours                                                                         13 / 15
+
+</pre></details><details class="source-page" id="page-14"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 14 · Equipment and software for M17</summary><pre class="source-text">ROBOTICS AND AI  /  M17  /  DETAILED STUDY PLAN
+
+Equipment and software for M17
+
+Use existing equipment
+MacBook Pro M4; Ubuntu 24.04 ARM64 in UTM; ROS 2 Jazzy, Gazebo Harmonic and the MoveIt 2
+configuration from M16. A virtual arm, table and object suffice for simulation. The M14 camera is
+needed only for the existing data in Task 6; do not repurchase sensors or the printer.
+
+No mandatory purchases
+M17 requires no purchases. Simulation is sufficient for all ten tasks; a physical arm, PLC, industrial
+bus and tactile sensors are unnecessary. The operator interface uses the keyboard and screen of
+the existing computer. A volunteer participant also needs no additional devices.
+
+Install now: additions to the existing environment
+In Ubuntu ARM64, add a Jazzy-compatible MoveIt Task Constructor only if it is absent and selected
+for Task 2; see Pick and Place. Pin the package, commit and dependencies, and check main against
+Jazzy. A custom sequence of ROS actions is acceptable.
+For Task 8, add SROS2 tools and tutorials from the corresponding branch in a separate ROS
+namespace. Save the chosen DDS implementation and its security settings. The mode FSM can be
+implemented in the existing code; a separate BehaviorTree library is needed only if a BT
+implementation is selected.
+
+Installation checks
+Launch the previous module&#x27;s MoveIt scene, solve IK for one reachable pose, and execute a short
+transfer and cancel. In SROS2 with security enabled, check permitted communication and rejection
+of a participant without permission; keep keys out of the report. Test the graphical interface and
+networking inside UTM on your own computer, and save versions and logs.
+
+Only after M17: the separate OPT120 block
+Before building and testing the hand, prepare CAD, a BOM and requirements. Include one actuator
+and one selected contact or tactile sensor in the first order for a single-finger prototype, with
+suitable load capacity, power supply and interface. Determine quantities for the full hand after
+testing the finger. Purchases and the 120 hours are accounted for separately.
+For introductory Tasks 9-10: ISO 10218-1, ISO 13849-1, IEC 61508-1 - official scopes. This overview
+does not assign a PL/SIL or establish installation compliance.
+Preparation and checks use time already allocated within the original 75 hours to review reading
+and setup. Delivery of possible OPT120 equipment is outside the learning workload. Check the
+availability of equipment and installed components.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M17 • 15 Feb 2028 - 19 Mar 2028 • 75 hours                                                                       14 / 15
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://moveit.picknik.ai/main/doc/tutorials/pick_and_place_with_moveit_task_constructor/pick_and_place_with_moveit_task_constructor.html" target="_blank" rel="noopener noreferrer">https://moveit.picknik.ai/main/doc/tutorials/pick_and_place_with_moveit_task_constructor/pick_and_place_with_moveit_task_constructor.html</a></li><li><a href="https://github.com/ros2/sros2" target="_blank" rel="noopener noreferrer">https://github.com/ros2/sros2</a></li><li><a href="https://www.iso.org/standard/73933.html" target="_blank" rel="noopener noreferrer">https://www.iso.org/standard/73933.html</a></li><li><a href="https://www.iso.org/standard/73481.html" target="_blank" rel="noopener noreferrer">https://www.iso.org/standard/73481.html</a></li><li><a href="https://webstore.iec.ch/en/publication/5515" target="_blank" rel="noopener noreferrer">https://webstore.iec.ch/en/publication/5515</a></li></ol></div></details><details class="source-page" id="page-15"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 15 · Motion fundamentals: fingers and grasping</summary><pre class="source-text">ROBOTICS AND AI  /  M17  /  DETAILED STUDY PLAN
+
+Motion fundamentals: fingers and grasping
+
+Required: touching is not yet retention
+Kinematics establishes whether contact has been reached; statics establishes whether admissible
+forces can balance the object&#x27;s weight and moments. First draw the object and finger separately,
+showing pairs of equal and opposite forces and the moment arm. For the finger, f_ext always
+denotes the force exerted by the object on the robot; the robot&#x27;s force on the object points in the
+opposite direction.
+
+A simple retention calculation
+Consider a stationary object between two symmetric vertical fingers. Each contact has a normal
+force N and upward friction no greater than μN; the weight mg acts downward. For a centred object
+without an external rotational moment, 2μN≥mg is necessary. This checks that particular vertical
+equilibrium; it does not prove retention against every possible disturbance.
+With m=0.20 kg, g=9.81 m/s² and μ=0.50: mg=1.962 N and N≥1.962 N per finger. Choosing
+N=2.5 N gives a maximum total friction force of 2.5 N. If μ falls to 0.25, the limit becomes 1.25 N
+and can no longer support the weight. Equality at the boundary provides no margin; μ here is an
+illustrative model parameter.
+For a massless vertical link with a normal-force moment arm of 0.04 m, the holding torque
+magnitude is 0.04·1.962≈0.0785 N·m; friction in this geometry acts along the link. A real finger
+requires its Jacobian, mass and configuration: in statics, τ_act+τ_g+Jᵀf_ext=0, where τ_g denotes
+joint torques due to gravity. Changing the external force direction also changes the sign of the
+compensating torque.
+
+Why one motor does not determine two angles
+For a finger with two independent joints, one taut, inextensible tendon can impose only
+Δl=r1q1+r2q2 for constant moment arms. With r1=r2=0.01 m and Δl=0.005 m, q1+q2=0.5 rad:
+the pairs (0.1;0.4) and (0.3;0.2) both satisfy the command. The actual pose depends on springs,
+contact and dynamics. This illustrates underactuation; when an object stops one link, the
+distribution of motion in the other changes.
+
+Two exercises for Tasks 2-3
+1. In the object-transfer report, save a force diagram and a table for three values of μ and two
+masses. With N=2.5 N, predict by hand whether the object will be held or will slip. Compare with
+contact simulation if available; with simplified attach, label the result a model calculation. Planner
+success does not establish this equilibrium.
+2. Plot the line q1+q2=0.5 and add the contact condition q1=0.2 rad: this leaves q2=0.3 rad. Save
+the plot and explain which physical condition determined the configuration. A full-size hand will
+need separate mechanics and sensors; a calculation without purchases suffices for now. Do not
+send torque commands to position-controlled servos.
+Time allocation: 1 hour from 7-8 for statics; 1 hour from 17-18 to check the table as part of Task
+3, and 1 hour from 19-20 to explain failure. These are within the original 75 hours. Building the
+hand and working with tactile sensors belong to the separate OPT120 stage after M17.
+Assigned reading: Lynch/Park, Modern Robotics §5.2 and §12.2.1 - torque and friction; Tedrake,
+Fully-actuated vs Underactuated Systems: Definitions - independent coordinates and available
+control inputs.
+
+
+
+
+
+
+
+M17 • 15 Feb 2028 - 19 Mar 2028 • 75 hours                                                                        15 / 15</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://modernrobotics.northwestern.edu/nu-gm-book-resource/" target="_blank" rel="noopener noreferrer">https://modernrobotics.northwestern.edu/nu-gm-book-resource/</a></li><li><a href="https://underactuated.mit.edu/intro.html" target="_blank" rel="noopener noreferrer">https://underactuated.mit.edu/intro.html</a></li></ol></div></details>
+</section>
+<footer><p><a href="../library.html"><span lang="ru">Вернуться в библиотеку</span><span lang="en">Back to source library</span></a> · <a href="../index.html"><span lang="ru">Вернуться к новому плану</span><span lang="en">Back to revised plan</span></a></p><p class="checksum">SHA-256: 27e30572920f969751b42e22e4cc0f5126d886c52c8924bd86768583bb317afe</p></footer>
+</main>
+<script>
+(function() {
+  function openPage() {
+    if (!/^#page-\d+$/.test(location.hash)) return;
+    var page=document.getElementById(location.hash.slice(1));
+    if(page) {page.open=true; page.scrollIntoView({block:'start'});}
+  }
+  window.addEventListener('hashchange',openPage);
+  document.addEventListener('DOMContentLoaded',openPage);
+  document.getElementById('expand-pages').addEventListener('click',function(){document.querySelectorAll('details[id^="page-"]').forEach(function(el){el.open=true;});});
+  document.getElementById('collapse-pages').addEventListener('click',function(){document.querySelectorAll('details[id^="page-"]').forEach(function(el){el.open=false;});});
+})();
+</script>
+</body>
+</html>

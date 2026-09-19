@@ -1,0 +1,1073 @@
+<!doctype html>
+<html lang="ru" data-ru-title="M07 · Приводы и идентификация системы · EN — Robotics &amp; AI" data-en-title="M07 · Actuators and system identification · EN — Robotics &amp; AI">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>M07 · Приводы и идентификация системы · EN — Robotics &amp; AI</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body class="source-reader">
+<a class="skip-link" href="#main"><span lang="ru">К тексту источника</span><span lang="en">Skip to source text</span></a>
+<header class="topbar"><a class="brand" href="../index.html">Robotics &amp; AI</a><nav><a href="../library.html"><span lang="ru">Библиотека источников</span><span lang="en">Source library</span></a><a href="../index.html"><span lang="ru">Новый план</span><span lang="en">Revised plan</span></a></nav><div class="lang-switch" aria-label="Language"><button type="button" data-lang="ru">RU</button><button type="button" data-lang="en">EN</button></div></header>
+<main class="wrap" id="main">
+<p class="eyebrow"><span lang="ru">Архив · исходный документ</span><span lang="en">Archive · original document</span></p>
+<h1><span lang="ru">M07 · Приводы и идентификация системы · EN</span><span lang="en">M07 · Actuators and system identification · EN</span></h1>
+<div class="notice source-notice"><strong><span lang="ru">Архивные даты и часы не действуют.</span><span lang="en">Original dates and hours are superseded.</span></strong><p><span lang="ru">Это полный текст исходного документа. Старый календарь, отпуска и бюджеты часов сохранены для проверки исходной информации. Рабочее расписание находится в новом плане: 50 часов в неделю, без отпусков.</span><span lang="en">This is the complete extracted text of the original document. Its historical calendar, vacations and hour budgets are preserved for source verification. Use the revised plan for the current schedule: 50 hours per week, with no vacations.</span></p></div>
+<p><span lang="ru">Язык исходника: английский.</span><span lang="en">Source language: English.</span> <span lang="ru">Переключатель RU/EN меняет язык интерфейса; исходный текст не переводится автоматически.</span><span lang="en">The RU/EN switch changes the interface; original source text is not automatically translated.</span></p>
+<p class="source-actions"><a href="../originals/detailed/English/Monthly/M07_Robotics_Plan_EN.pdf"><span lang="ru">Открыть исходный PDF без изменений</span><span lang="en">Open the unchanged original PDF</span></a> · <a href="m07-ru.html"><span lang="ru">Открыть другую языковую редакцию</span><span lang="en">Open the other language edition</span></a></p>
+<p><span lang="ru">Страниц</span><span lang="en">Pages</span>: 15 · <span lang="ru">Ссылок из PDF</span><span lang="en">PDF links</span>: 10</p>
+<details class="source-page source-toc"><summary><span lang="ru">Перейти к странице</span><span lang="en">Jump to a page</span></summary><nav class="page-links" aria-label="Pages"><a href="#page-1">1</a> <a href="#page-2">2</a> <a href="#page-3">3</a> <a href="#page-4">4</a> <a href="#page-5">5</a> <a href="#page-6">6</a> <a href="#page-7">7</a> <a href="#page-8">8</a> <a href="#page-9">9</a> <a href="#page-10">10</a> <a href="#page-11">11</a> <a href="#page-12">12</a> <a href="#page-13">13</a> <a href="#page-14">14</a> <a href="#page-15">15</a> </nav></details>
+<p class="source-controls"><button type="button" id="expand-pages"><span lang="ru">Развернуть все страницы</span><span lang="en">Expand all pages</span></button> <button type="button" id="collapse-pages"><span lang="ru">Свернуть все страницы</span><span lang="en">Collapse all pages</span></button></p>
+<p><span lang="ru">Извлечение PDF может сохранять переносы строк и наложенные редакции. Формулы, иллюстрации и исходное оформление доступны в неизменённом PDF. Все встроенные ссылки вынесены под текст соответствующей страницы.</span><span lang="en">PDF extraction may retain line breaks and overlapping revisions. Equations, illustrations and original formatting remain available in the unchanged PDF. Every embedded link is listed below its corresponding page.</span></p>
+<section class="source-pages" aria-label="Original document pages">
+<details class="source-page" id="page-1"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 1 · Measure an actuator on one joint first</summary><pre class="source-text">ROBOTICS AND AI  /  M07  /  DETAILED STUDY PLAN
+
+Measure an actuator on one joint first
+
+M7 • 04 Apr 2027 - 30 Apr 2027 • 75 hours
+
+Main deliverable
+Over the month, produce a single-actuator test rig and a model relating torque, speed, current and
+temperature. The result answers a specific question: can the selected actuator perform the work of
+a leg or finger joint over the required motion and load range? A catalogue torque at stall does not
+mean the actuator can hold the robot&#x27;s body continuously. Define requirements, measure an
+available sample, separate known parameters from estimates and validate the model on new data.
+Decide whether to buy a complete actuator set only after testing one sample.
+
+What must already be ready
+From M6, bring the controller, synchronised telemetry, error counters, timestamps, command
+limits, physical stop and verified prevention of automatic restart. From M5, bring link geometry,
+mountings and approximate mass. Identify where angle is measured: at the rotor, after the
+gearbox or by a separate output-link sensor. This determines whether gearbox backlash is
+observable. Entry check: convert degrees to radians, revolutions per second to rad/s and grams to
+kilograms, and explain force versus torque. Calculate the static torque of a known mass about an
+axis.
+Select equipment around the available actuator and its documentation. You need a securely
+mounted sample, compatible driver or the smart servo&#x27;s built-in control interface,
+angle/current/temperature measurement, a current-limited supply and a guarded fixture. If these
+are unavailable, first complete requirements and a digital model; clearly separate calculated
+characteristics from measurements. A bracket may be made on the existing 3D printer after
+checking geometry, material and load. A printed part does not automatically have the strength of
+an industrial mounting.
+
+Scope of the month
+Study the differences between DC, BLDC and smart servo architectures, but experiment with one
+type. You do not need to develop your own FOC driver, rewind a motor or buy 12/18 actuators. A
+smart servo&#x27;s internal loops may be closed to the user; measure its external behaviour and
+explicitly identify inaccessible internal signals. Low speed, holding and backlash matter for a hand;
+loaded torque, repeatability and heating matter for a leg. The method is shared, while
+requirements differ.
+The final report must show the operating region supported by measurements and the modes for
+which data remains insufficient. This plan specifies no universal current, temperature, voltage or
+mass limits: derive them from the motor, driver, gearbox, supply and mounting documentation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M7 • 04 Apr 2027 - 30 Apr 2027 • 75 hours                                                                          1 / 15
+
+</pre></details><details class="source-page" id="page-2"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 2 · How to allocate 75 hours</summary><pre class="source-text">ROBOTICS AND AI  /  M07  /  DETAILED STUDY PLAN
+
+How to allocate 75 hours
+
+Balance study and experiments
+Hours 1-20: actuator comparison, requirements and preliminary model; 10 hours theory and 10
+hours practice. Hours 21-40: measurement fixture, encoder, current, temperature and rig checks;
+10+10. Hours 41-60: control loops, limits and repeatable response; 10+10. Hours 61-75:
+identification, validation on new data and model boundaries; 5+10. Total: 35 hours of reading,
+calculation and analysis, and 40 hours of practice. Count evaluation of raw measurements as
+practice, and equation derivation and experiment selection as analysis.
+Divide each ten-hour theory block into five 2-hour sessions. In each session, study one mechanism,
+calculate its effect for your joint, then prepare an experiment. Schedule ten-hour practical blocks
+on Sundays, divided into stages with breaks; 10 hours means active work. The final 5 theory hours
+are split 2+2+1. Dates on the first page are the periods in the original overall plan. Shared
+boundary dates, rest, holidays and integration reviews are unchanged; place steps in available
+study hours without double counting.
+
+A separate record for each experiment
+State motor model and revision, gearbox, firmware, controller gains, supply voltage, ambient
+temperature, mounting, current sensor and temperature measurement location. Record command
+and measured angle, speed, current, voltage and temperature on one time axis, or document
+synchronisation. The commands file contains what was actually sent after limiting, rather than only
+the original desired profile. Save stop causes and missing-data intervals so fault periods remain
+visible in plots.
+
+Repository organisation
+Create requirements/ for joint calculations, fixture/ for CAD and assembly, acquisition/ for collection
+code, experiments/ for configurations, data/raw/ for raw runs, models/ for parameters and reports/
+for plots and limitations. Split data into training (train) and validation sets by whole runs before
+fitting. Randomly splitting one run into nearly identical neighbouring training and validation points
+is not independent validation. Begin with a simple model and retain it as the baseline before adding
+nonlinearities.
+If time is short, reduce the number of brands compared, omit an additional actuator type and
+simplify the interface. Requirements, measurement path, motion limits, thermal observation and
+validation on an independent run remain compulsory. Keep missing hardware measurements as
+open items rather than replacing them with arbitrary numbers.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M7 • 04 Apr 2027 - 30 Apr 2027 • 75 hours                                                                          2 / 15
+
+</pre></details><details class="source-page" id="page-3"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 3 · Joint requirements and architecture selection</summary><pre class="source-text">ROBOTICS AND AI  /  M07  /  DETAILED STUDY PLAN
+
+Joint requirements and architecture selection
+
+What to study
+Compare brushed DC, BLDC with a separate driver, and smart servos with integrated control.
+Consider motor, gearbox, sensor and interface separately: a convenient bus does not guarantee
+suitable torque, and a powerful motor does not solve feedback problems. Study the torque-speed
+curve, efficiency, rotor inertia, permissible gearbox load, encoder resolution, backlash and
+transmission compliance. Distinguish continuous and short-duration operation, and electrical,
+thermal and mechanical limits.
+
+Task 1. Load profiles for a leg and finger
+Start with the M5 mass and geometry; express unknowns as ranges. For a link with a horizontal
+lever arm, use τ=mgr, with m in kg, g in m/s², r the perpendicular lever arm in metres and τ in
+N·m. 1. Draw a free body with force direction. 2. Calculate three link positions and two payload
+cases. 3. For the leg, add a support scenario with load distribution explicitly assumed; do not divide
+robot mass by leg count without describing the support phase. 4. For the finger, use desired
+fingertip force and lever arm. Save the requirements table and sensitivity to mass and length.
+Check that doubling the lever arm at constant force doubles static torque. Edge case: zero force
+lever arm.
+
+Task 2. Compare actuators under relevant operating conditions
+Select three architectures or available candidates with primary documentation. Build a comparison
+table: torque in the required mode, loaded speed, mass, reduction, sensor, backlash, current
+control, diagnostics, supply, interface and unknown characteristics. 1. Reject any option that fails a
+hard requirement. 2. Separately assess uncertainty from missing data. 3. Choose one sample for
+the rig and describe an experiment that could disprove that choice. Prepare a decision justifying
+each criterion; an arbitrary weighted score is no substitute. Check that every important conclusion
+has a source, calculation or future test, and that stall torque has not been used as continuous
+torque.
+
+Reduction and inertia
+Fix the definition N=motor speed/output-shaft speed. In an ideal transmission, output speed is
+divided by N, torque is multiplied by N, and load inertia reflected to the motor is divided by N².
+Actual efficiency and backlash impose additional limitations. For the chosen geometry, calculate
+how increasing the ratio changes speed and reflected inertia. These calculations are hypotheses for
+measurement; gear tooth counts alone cannot establish actual holding accuracy.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M7 • 04 Apr 2027 - 30 Apr 2027 • 75 hours                                                                          3 / 15
+
+</pre></details><details class="source-page" id="page-4"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 4 · Measurement rig and calibration</summary><pre class="source-text">ROBOTICS AND AI  /  M07  /  DETAILED STUDY PLAN
+
+Measurement rig and calibration
+
+Task 3. Fixture for one actuator
+The aim is repeatable motion without movement of the motor housing. Inputs: mounting drawing,
+load direction and the sample&#x27;s permissible operating characteristics. 1. Draw the load path from
+shaft through mounting to base. 2. Position travel stops, motion-area guarding, access to the stop
+control and cable strain relief. 3. Check alignment and free travel without powered motion. 4.
+Perform the first powered run at the minimum justified command, increasing it in predefined steps.
+Deliver CAD, photographs, a fastener list and the verification record. Edge case: the cable must not
+become taut and alter measured torque at the travel limits.
+Create one table of permissible values for the supply, driver, wires, connectors and fuse. The
+weakest component determines the limit, considering operating mode, cooling and documentation.
+A fuse and a software current limit serve different purposes. Separately establish behaviour during
+braking and energy return to the supply: a supply capable of delivering energy may be unable to
+absorb it during braking. Do not command sharp acceleration or braking until this behaviour is
+understood.
+
+Task 4. Encoder angle and speed
+Check counts per revolution, quadrature decoding mode, gear ratio and sign. 1. Apply a known
+manual displacement with the actuator disabled, if its construction permits back-driving. 2.
+Compare counts with output-link angle. 3. Estimate velocity from angle differences over a known
+interval and, alternatively, from time between edges if pulses are available. 4. Compare noise and
+delay at low and higher speeds. Deliver the conversion factor and plots of both estimates. Check
+that a full revolution or available reference angle produces the expected count. Edge cases:
+overflow, reversal, zero speed and a missed edge.
+
+Task 5. Current and temperature
+Establish what the sensor measures: supply current, winding current or current in the control
+coordinate frame. These quantities are not automatically interchangeable as I in τ=K_t I. Measure
+zero-current offset, compare known points with a reference instrument and retain uncertainty.
+Record temperature with the sensor location and settling time: housing and windings heat
+differently. Deliver calibration coefficients and a description of limitations. Fault: a missing or
+saturated instrument must not permit continuation of an experiment that depends on its readings.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M7 • 04 Apr 2027 - 30 Apr 2027 • 75 hours                                                                          4 / 15
+
+</pre></details><details class="source-page" id="page-5"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 5 · Position control and bounded commands</summary><pre class="source-text">ROBOTICS AND AI  /  M07  /  DETAILED STUDY PLAN
+
+Position control and bounded commands
+
+Control-loop architecture
+Determine who closes the current, velocity and position loops: your code, the driver or smart-servo
+firmware. Use SimpleFOC and ODrive resources to draw the cascade and label the input and output
+units of each block. An external controller must not duplicate an unknown internal loop without
+understanding its mode. PID relates error to control action; feedforward predicts the required
+action. Command limiting introduces nonlinearity: the integrator can continue accumulating error
+when the actuator can no longer meet the request.
+
+Task 6. Repeatable position response
+Initial conditions: a checked rig, known limits and a small motion profile away from stops. 1. Begin
+with an available simple mode and a reproducible initial state. 2. Apply a smoothly changing
+command with specified limits; save position, speed and actual control action. 3. Change one gain
+or profile parameter while keeping load constant. 4. Repeat the best configuration several times.
+Deliver reference/measurement plots, steady-state error, overshoot and settling time. Define the
+settling band beforehand in angle units; measure the time until the response stays within it. Edge
+case: reversal and return to zero.
+
+Task 7. Saturation and anti-windup
+Begin in simulation of the simple joint. 1. Limit available control action. 2. Apply a command that
+cannot be achieved quickly. 3. Compare an ordinary integrator with the chosen anti-windup
+method: integrator limiting or back-calculation. 4. Restore an achievable reference and measure
+recovery time. Save two plots of control action and integrator state under identical conditions.
+Check that you can explain why controller gains cannot remove a physical limit. Confirm on
+hardware only with a smooth motion profile inside the operating region; deliberately jamming the
+shaft to demonstrate saturation is unnecessary.
+
+Task 8. Motion profile and stopping
+Set position, speed and acceleration limits from rig requirements and documentation. Generate a
+bounded trajectory between two angles and compare it with an abrupt step in simulation. Use only
+the permissible profile on the rig. Measure maximum speed, current, error and behaviour near the
+software limit. Reject or limit an out-of-range command under an explicit rule and log it; a
+mechanical stop is not a routine way to end every motion. Communication loss and restart use the
+tested M6 state machine, while the mechanism&#x27;s subsequent state depends on its load and
+construction.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M7 • 04 Apr 2027 - 30 Apr 2027 • 75 hours                                                                         5 / 15
+
+</pre></details><details class="source-page" id="page-6"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 6 · Identification: friction, delay and backlash</summary><pre class="source-text">ROBOTICS AND AI  /  M07  /  DETAILED STUDY PLAN
+
+Identification: friction, delay and backlash
+
+A testable model
+Start at the output joint: J·q̈+b·q̇+τ_c·sign(q̇)+τ_g(q)=τ_a. Here J is inertia about the axis in kg·m²,
+b is viscous resistance in N·m·s/rad, τ_c approximates dry friction, τ_g is gravitational torque and
+τ_a is actuator torque. Near zero speed, the sign model is inadequate: rest, breakaway and
+backlash require separate observations. If torque is unavailable, use the stock actuator command
+as input and identify the closed-loop command-to-angle system, explicitly stating that the model
+includes the actuator and its internal controller.
+
+Task 9. Backlash and dead zone
+The aim is to understand why a finger ignores a small command and why a leg reverses with a
+delay. 1. Reproduce slow motion in both directions over one range. 2. Record input command and
+angles before and after the transmission if both sensors are available. 3. Plot output against input
+in both directions and identify the region where input changes produce no measurable output. 4.
+Repeat with another permissible load. Save dead-zone and backlash estimates with sensor
+resolution. If only the motor encoder is available, output-link mechanical backlash cannot be
+claimed as directly measured; a separate observation method is required.
+
+Task 10. Steps and frequency excitation
+Prepare small bounded steps and a smooth chirp within the region authorised beforehand; chirp
+means excitation frequency changes over time. First calculate maximum profile speed and
+acceleration to ensure they remain within limits. 1. Record raw responses. 2. Identify delay and
+characteristic response time. 3. Fit a minimal model to the first group of runs. 4. Validate it with
+another profile and initial position. Save parameters, applicability limits, raw data and residuals. Do
+not increase frequency into dangerous oscillation merely to extend the measured bandwidth.
+
+Why not fit everything at once?
+Friction, delay, an inaccurate torque constant and a velocity filter can explain similar errors. Check
+units and measurement delay first, then a simple linear model; add one mechanism only when its
+effect has independent evidence. Save parameters with units, estimation method and a confidence
+range or observed spread. Lower error on the training record is not success if a new record is
+predicted worse. Show one case the model reproduces and one where it predictably loses
+accuracy.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M7 • 04 Apr 2027 - 30 Apr 2027 • 75 hours                                                                          6 / 15
+
+</pre></details><details class="source-page" id="page-7"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 7 · Torque, speed, heating and the operating</summary><pre class="source-text">ROBOTICS AND AI  /  M07  /  DETAILED STUDY PLAN
+
+Torque, speed, heating and the operating
+region
+
+Task 11. A verifiable torque characteristic
+If an independent force sensor and known lever arm are available, estimate torque as τ=F·r_perp.
+Begin with a secured rig, small justified loads and known geometric accuracy. 1. Check sensor zero.
+2. Measure several safe operating conditions with different loads and speeds. 3. Repeat in both
+directions. 4. Compare torque with measured current, accounting for current type and
+transmission. Deliver characteristic points with variability and operating limits. If torque is not
+independently measured, give a calculated estimate and a method for later verification; do not call
+a smart servo&#x27;s internal “load” indicator an accurate torque sensor without manufacturer
+confirmation.
+
+Task 12. Thermal experiment with controlled duration
+Choose a repeated profile resembling leg work or finger holding, within documented limits. 1. Begin
+from a known thermal state. 2. Record ambient and available-sensor temperatures, current,
+operating mode and fraction of time under load. 3. Stop at the preset duration or an earlier
+documentation-based stop condition. 4. Record cooling after the experiment. Save temperature
+rise above ambient and load duty cycle. A short record showing continued heating does not
+establish an acceptable steady-state thermal regime.
+The simplest thermal model relates temperature rate of change to dissipated power and heat
+removal. In the first version, estimating characteristic heating and cooling times and explaining
+applicability limits is sufficient. The I²R loss approximation requires the appropriate current and
+resistance; supply current and unknown internal commutation may not provide this information. Do
+not infer unmeasured winding temperature from an external sensor without a justified
+thermal-coupling model.
+
+A combined operating-range map
+Plot measured points in the speed-torque plane, marking current, temperature, duration and
+limiting factor. Display catalogue limits separately from your measurements. For a leg, state the
+supported profile and tested duration; for a finger, separately assess holding and repeated small
+motions. Check repeatability after cooling. An actuator with a different gearbox, voltage or cooling
+arrangement is a different configuration requiring verification. The final map informs robot design;
+it does not guarantee every future operating mode.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M7 • 04 Apr 2027 - 30 Apr 2027 • 75 hours                                                                         7 / 15
+
+</pre></details><details class="source-page" id="page-8"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 8 · Fault tests and numerical criteria</summary><pre class="source-text">ROBOTICS AND AI  /  M07  /  DETAILED STUDY PLAN
+
+Fault tests and numerical criteria
+
+Measurement path
+F1: encoder sign reversed. Detect the error in a software test and an initial small motion before
+continuing closed-loop control; record expected and actual direction. F2: incorrect counts per
+revolution. Comparison with an independent angle must reveal the scale error. F3: current or
+temperature data disappears. Mark the run invalid and stop it if the relevant parameter is a safety
+condition for the experiment. Do not reuse the last available value as fresh protective information.
+F4: timestamps jump or frames are lost. Do not treat angle differentiation across a corrupted
+interval as reliable velocity.
+
+Control and mechanics
+F5: target angle beyond the software limit. Check the chosen command rejection or limiting rule;
+log requested and applied commands. F6: control action saturates in simulation. After an
+achievable reference returns, anti-windup restores normal operation according to a defined metric;
+retain the saturation interval in the report. F7: communication loss during permissible motion. Test
+the M6 stopping procedure and prevention of automatic restart. F8: small reversal. Compare the
+expected dead zone with instrument resolution; the program must not infer absence of mechanical
+motion from a single unchanged count.
+
+Validate the model on another record
+F9: a model fitted to one profile receives another profile, load or amplitude within its declared
+region. Compare angle RMSE, maximum absolute error and transition-time error.
+RMSE=sqrt(mean((q_model-q_measured)²)); its unit matches the angle unit. F10: load or
+temperature goes beyond the identification region in simulation or existing data. The report must
+explicitly label extrapolation rather than conceal it in an overall mean error. F11: power restoration.
+Motion must not resume solely from a saved reference.
+
+Set thresholds before the experiment
+Choose angle tolerance from the joint&#x27;s future function and measurement capability; do not specify
+“0.1 degree” without reference to the encoder and backlash. Define a settling band and required
+time within it before measuring settling time. Compare model error with a simple baseline, such as
+a first-order system with constant delay; a more complex model must improve independent
+validation. For each experiment, retain maximum measured current and temperature with
+duration, sample rate and measurement location. Preserve a failed run with its stop cause and do
+not assess it as a fully completed run.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M7 • 04 Apr 2027 - 30 Apr 2027 • 75 hours                                                                          8 / 15
+
+</pre></details><details class="source-page" id="page-9"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 9 · First 40 hours: requirements and rig</summary><pre class="source-text">ROBOTICS AND AI  /  M07  /  DETAILED STUDY PLAN
+
+First 40 hours: requirements and rig
+
+Hours 1-10: determine what must be measured
+1-2: break leg and finger requirements into position, speed, torque and operating duration. 3-4:
+study DC, BLDC and smart servo architectures; draw a motor-gearbox-sensor-controller diagram.
+5-6: calculate task 1 static torques and their geometric dependence. 7-8: study the torque-speed
+characteristic, reflected inertia and efficiency; plot simple expected trends. 9-10: read
+documentation for available candidates and list unknown parameters. Finish by selecting the
+question the rig experiment must answer.
+
+Hours 11-20: document requirements and prepare the experiment
+11-12: complete task 1 load scenarios and unit table. 13-14: build the task 2 comparison table with
+sources and characteristic conditions. 15-16: create a simple joint simulation with bounded control
+action; save parameters and hypotheses. 17-18: design the task 3 fixture geometry and check load
+transfer, stop access and cables. 19-20: prepare test commands, acquisition configuration and the
+first experiment procedure. If the sample is not yet known, remain at interface level and explicitly
+mark parameters TBD; do not copy another motor&#x27;s limits.
+
+Hours 21-30: measurement and protection
+21-22: study the supply, driver, wiring, fuse and braking behaviour from the exact components&#x27;
+documentation. 23-24: study the encoder and velocity-estimation methods; calculate the smallest
+observable angle change. 25-26: establish current measurement location and type, sensor offset
+and range. 27-28: study thermal modes, temperature-sensor location and housing/winding
+temperature differences. 29-30: prepare calibration procedures, initial states and stop conditions.
+Finish this block with a usable measurement procedure, rather than notes alone.
+
+Hours 31-40: first physical dataset
+31-32: assemble and check the fixture without powered motion, then perform the first
+smooth-motion run. 33-34: verify task 4 angle scale and sign. 35-36: compare velocity estimates
+and retain stationary noise measurements. 37-38: calibrate current and temperature channels for
+task 5. 39-40: repeat a short profile, check synchronisation between fields, stopping and recreation
+of the plot from raw data. Saving results is included in every step. Without a real sample, complete
+equivalent software tests and leave physical acceptance open until the next available session.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M7 • 04 Apr 2027 - 30 Apr 2027 • 75 hours                                                                        9 / 15
+
+</pre></details><details class="source-page" id="page-10"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 10 · Hours 41-75: control and modelling</summary><pre class="source-text">ROBOTICS AND AI  /  M07  /  DETAILED STUDY PLAN
+
+Hours 41-75: control and modelling
+
+Hours 41-50: theory through your joint
+41-42: draw the actual inner and outer loops; label inputs and units. 43-44: study P, I, D and
+velocity measurement; explain the effect of each gain. 45-46: study action limits, integral
+accumulation and anti-windup; prepare a simulation comparison. 47-48: calculate a profile with
+speed and acceleration limits; distinguish a software boundary from a physical stop. 49-50: define
+response metrics, repeatability, settling band and communication-fault behaviour. Do not attempt
+complex tuning until feedback sign and angle scale are verified.
+
+Hours 51-60: control practical
+51-52: run the smooth task 6 profile; save the baseline response and several repeats. 53-54:
+change one control parameter and compare under identical conditions. 55-56: complete task 7
+simulation of saturation and recovery. 57-58: verify the task 8 bounded profile on the rig, including
+a request outside the software range. 59-60: perform task 9 slow reversals; assess dead zone and
+whether backlash can be measured. Freeze the working configuration at the end; identification
+runs must not mix different controller gains without labelling them.
+
+Hours 61-65: prepare identification
+61-62: derive the simple joint model and choose a measurable input: torque, current with a
+justified conversion constant or an external smart-servo command. 63-64: divide future runs into
+fitting and validation sets; choose task 10 excitation and task 11 torque-measurement conditions;
+calculate permissible profile limits. 65: finalise the task 12 thermal procedure, report format and
+sample-suitability criterion. Split these 5 hours 2+2+1; all following 10 hours are practice, keeping
+the total at 75.
+
+Hours 66-75: experiments and independent validation
+66-67: record bounded steps and an available frequency profile; estimate delay and initial
+parameters. 68-69: obtain available torque measurements or an explicitly labelled calculated
+estimate; verify directions and repeatability. 70-71: run the thermal profile for the predefined
+duration and also record cooling. 72-73: fit the model and validate on another run; compare
+residuals with the baseline and explain one systematic error. 74-75: assemble the operating region,
+model limitations and decision on the suitability of one sample. If time is insufficient to reach
+steady temperature, state that in the report; a short experiment&#x27;s results cannot be transferred to
+continuous operation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M7 • 04 Apr 2027 - 30 Apr 2027 • 75 hours                                                                         10 / 15
+
+</pre></details><details class="source-page" id="page-11"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 11 · Presenting the result and moving to</summary><pre class="source-text">ROBOTICS AND AI  /  M07  /  DETAILED STUDY PLAN
+
+Presenting the result and moving to
+mechanics
+
+What the final package must contain
+Requirements for the chosen joint with load scenarios; architecture comparison and sample
+justification; CAD and photographs of the guarded rig; supply, stop and limit descriptions with
+sources; angle, current and temperature calibration; raw synchronised recordings; controller
+parameters; a torque-speed-current-heating model within available measurements; independent
+validation and a fault list. For every model parameter, state units, estimation method, operating
+range and confidence level. Unmeasured torque or winding temperature remains unknown even if
+software can plot it.
+Completion criteria from the original plan: selection rests on measurements, electrical and thermal
+parameters stay within justified limits, and a set of 12/18 actuators is not selected from one
+catalogue number. A negative decision is valid: the sample may be unsuitable because of heating,
+backlash, speed, mass or diagnostics. This is a useful completed result if evidence supports the
+reasons and requirements for the next sample are stated. Publishing the report here means
+preparing a reproducible package; no external sharing or posting is required.
+
+Self-check questions
+1. Why is supply current not always the current that determines torque? 2. What changes when the
+reduction ratio doubles? 3. How does backlash differ from elastic deformation? 4. Where is the
+encoder, and which error can it not observe? 5. Why does a good unloaded response not resolve
+leg-support requirements? 6. What does the integrator do during saturation? 7. Why can the same
+PID produce a different response after heating? 8. What exactly constitutes independent model
+validation? 9. How can measurement delay be distinguished from actuator delay? 10. Why does
+housing temperature not guarantee a known winding temperature? Each answer needs your own
+plot, calculation or explicit data limitation.
+
+Handover to M8 and M9
+Pass axis geometry, permissible angle ranges, sign, zero, resolution and measured dead zone to
+M8. Kinematics must generate achievable references within these limits, but does not itself
+establish sufficient torque. Pass the identified joint, masses, inertia estimates, friction, delay, input
+interface and independent recordings to M9. Keep motor and link parameters separate to avoid
+counting the gearbox or inertia twice. When mechanics, load or cooling changes, flag the need for
+new validation because the previous operating region may change.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M7 • 04 Apr 2027 - 30 Apr 2027 • 75 hours                                                                        11 / 15
+
+</pre></details><details class="source-page" id="page-12"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 12 · Assigned reading: a focused reading route</summary><pre class="source-text">ROBOTICS AND AI  /  M07  /  DETAILED STUDY PLAN
+
+Assigned reading: a focused reading route
+
+Books and notes may be in English; keep the plan, definitions and your explanations in English for
+this edition. Read only the specified sections within the existing 75 hours.
+
+Core reading and one reference route
+1. Core: K. Lynch, F. Park, Modern Robotics, §8.9. Actuation, Gearing, and Friction: motor, gearbox
+and reflected inertia. Read for tasks 1-2 and 9 and explain why motor and output-joint parameters
+differ.
+2. Core: K. J. Åström, R. Murray, Feedback Systems, 2nd edition. Chapter 11 PID Control: Basic
+Control Functions and Integrator Windup. Read for tasks 6-8; draw your loops and compare
+saturation with anti-windup. Other editions have different numbering.
+3. Core, selectively: R. Tedrake, Underactuated Robotics: System Identification. Sections on least
+squares and dynamics identification. For tasks 9-10, list measurable inputs, unknown parameters
+and a separate validation recording; skip complex models.
+
+Documentation for the practical work
+ESP-IDF: Pulse Counter - Channel Actions and Glitch Filter for the encoder; SimpleFOC: Current
+Sensing - motor versus supply current for task 5.
+ODrive: Controller - cascade diagram and Trajectory Control for tasks 6-8. This is an architectural
+example; obtain your driver&#x27;s limits only from its own datasheet.
+
+Complete the reading with an action
+After each section, perform one calculation or short experiment. Save the actuator, driver and
+instrument datasheet revisions. For tasks 10-12, use the familiar SciPy least_squares: check
+parameter physical meaning and residuals on new data. Buying printed books is optional.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M7 • 04 Apr 2027 - 30 Apr 2027 • 75 hours                                                                       12 / 15
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://modernrobotics.northwestern.edu/nu-gm-book-resource/8-9-actuation-gearing-and-friction/" target="_blank" rel="noopener noreferrer">https://modernrobotics.northwestern.edu/nu-gm-book-resource/8-9-actuation-gearing-and-friction/</a></li><li><a href="https://www.cds.caltech.edu/~murray/FBS/Second_Edition.html" target="_blank" rel="noopener noreferrer">https://www.cds.caltech.edu/~murray/FBS/Second_Edition.html</a></li><li><a href="https://underactuated.mit.edu/sysid.html" target="_blank" rel="noopener noreferrer">https://underactuated.mit.edu/sysid.html</a></li><li><a href="https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/pcnt.html" target="_blank" rel="noopener noreferrer">https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/pcnt.html</a></li><li><a href="https://docs.simplefoc.com/current_sense" target="_blank" rel="noopener noreferrer">https://docs.simplefoc.com/current_sense</a></li><li><a href="https://docs.simplefoc.com/current_sense" target="_blank" rel="noopener noreferrer">https://docs.simplefoc.com/current_sense</a></li><li><a href="https://docs.odriverobotics.com/v/latest/manual/control.html" target="_blank" rel="noopener noreferrer">https://docs.odriverobotics.com/v/latest/manual/control.html</a></li></ol></div></details><details class="source-page" id="page-13"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 13 · Glossary: terms and definitions</summary><pre class="source-text">ROBOTICS AND AI  /  M07  /  DETAILED STUDY PLAN
+
+Glossary: terms and definitions
+
+Torque. The turning effect of force: τ=r×F; torque about a specified axis is the projection of τ onto
+that axis, in N·m.
+Gear ratio. The ratio of input to output speed; here N=ω_motor/ω_joint, with rotation direction
+specified separately.
+Efficiency. The ratio of useful output power to input power under stated conditions; it depends on
+speed and load.
+Torque constant. Coefficient Kt relating motor electromagnetic torque to current under the
+adopted model, in N·m/A.
+Back EMF. Voltage generated by motor rotation that opposes the supply; proportional to speed in
+a simple model.
+Stall current. Current in a stationary motor at a specified voltage; this is a limiting condition, not
+an allowable continuous current.
+Continuous torque. Torque permissible continuously under specified cooling, speed and
+temperature conditions; the manufacturer&#x27;s conditions must be confirmed.
+Reflected inertia. Inertia referred through a gearbox to a chosen shaft; rotor inertia at the output
+scales as N².
+Backlash. The relative angular travel between mating components over which a reversal is not
+immediately transmitted to the load.
+Static friction. Contact resistance before motion starts; it takes the required value only up to the
+maximum holding limit.
+Viscous friction. An approximation of motion resistance as torque proportional to angular velocity
+and opposing it.
+Quadrature encoder. A sensor producing two phase-shifted A/B signals from which angle
+increments and rotation direction can be determined.
+Counts per revolution. The number of counted signal transitions per revolution of the specified
+shaft; it depends on decoding mode and gearbox.
+Feedback loop. A path using measured output to change a command in order to reduce a
+specified control error.
+Saturation. Limiting actual control action at a physical or software boundary, even when the
+calculated command is larger.
+Anti-windup. A rule correcting integral state during output limiting, reducing excessive error
+accumulation and recovery delay.
+System identification. Determining model parameters or structure from recorded inputs and
+outputs under explicit assumptions.
+Residual. The difference between measured output and model prediction for the same inputs,
+time and initial state.
+Thermal time constant. A characteristic temperature-change time in the adopted thermal
+model; it depends on heat capacity and heat transfer.
+Check the relationships: P_mech=τω; for an ideal gearbox, ω_out=ω_in/N and torque increases
+by a factor of N. Losses and heating require separate treatment.
+
+
+
+
+
+
+
+M7 • 04 Apr 2027 - 30 Apr 2027 • 75 hours                                                                         13 / 15
+
+</pre></details><details class="source-page" id="page-14"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 14 · Equipment and software for M7</summary><pre class="source-text">ROBOTICS AND AI  /  M07  /  DETAILED STUDY PLAN
+
+Equipment and software for M7
+
+USE EXISTING EQUIPMENT
+MacBook Pro M4; tools and the M4 CC/CV supply; one ESP32-S3 from the two M6 boards, IMU, logic
+analyser and USB cables. The 0-30 V, 5-10 A rating specifies the supply&#x27;s capabilities: set
+experiment voltage and current according to the chosen load&#x27;s limits.
+
+BUY BEFORE RIG WORK: hours 21-40
+1 motor: a 12 V brushed DC gearmotor with an A/B quadrature encoder and documented gear
+ratio and counts. 1 driver: a bidirectional H-bridge with current limiting, protection and 3.3
+V-compatible inputs; select current rating and cooling for the motor and chosen experiments.
+1 current-measurement path in the driver, or a separate sensor or shunt with amplifier; 1
+contact temperature sensor with logged readings. 1 fixture set: rigid mounting, hub or lever,
+stops, guarding, power switch, fuse and correctly sized wires. Do not pass power-stage current
+through a solderless breadboard.
+Example datasheet study: Pololu 37D with encoder. Check encoder-output voltage; add level
+conversion before ESP32-S3 if needed. TI DRV8876 illustrates protection and current-sensing
+requirements; this does not promise compatibility with that motor.
+
+ADDITIONAL ITEMS, IF JUSTIFIED BY CALCULATION
+For independent torque measurement in task 11: 1 calibrated force gauge with a suitable range
+plus a measured lever arm. A separate smart actuator for the future leg: only 1 candidate after
+calculating requirements. The rig&#x27;s DC motor does not automatically become the final leg actuator;
+do not yet order a leg set or 18 actuators.
+
+SOFTWARE AND READINESS CHECK
+No new mandatory packages: macOS ARM, pinned ESP-IDF and Python, NumPy, SciPy, Matplotlib
+and pytest from M6. Build firmware, record one complete revolution in both directions, compare
+current with a reference, and check temperature, limiting and stopping before loading. Test USB
+with the actual connection; a VM is not assumed verified.
+Preparation is included in the existing 75 hours; arrange equipment delivery in advance and
+exclude delivery time from study hours.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M7 • 04 Apr 2027 - 30 Apr 2027 • 75 hours                                                                      14 / 15
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://www.pololu.com/product/4752" target="_blank" rel="noopener noreferrer">https://www.pololu.com/product/4752</a></li><li><a href="https://www.ti.com/product/DRV8876" target="_blank" rel="noopener noreferrer">https://www.ti.com/product/DRV8876</a></li></ol></div></details><details class="source-page" id="page-15"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 15 · Motion fundamentals: what a gearbox</summary><pre class="source-text">ROBOTICS AND AI  /  M07  /  DETAILED STUDY PLAN
+
+Motion fundamentals: what a gearbox
+provides
+
+Required: connect joint requirements with the motor
+Angle specifies the desired pose, but holding and acceleration require torque. For a leg, foot load
+and link weights matter; for a finger, the object&#x27;s force on a phalanx matters. Before calculating,
+draw the axis and lever arm: force in N and torque in N·m differ. If the force&#x27;s line of action passes
+through the axis, its torque about that axis is zero.
+
+A minimal transmission model
+For one revolute joint, q is output angle and v=q̇ is velocity in rad/s. Choose shaft signs so that
+N=ω_m/v&gt;0. Then v=ω_m/N. With power transmitted from motor to load and gearbox efficiency η,
+output torque is approximately τ_out=ηNτ_m. Hence τ_out·v=ητ_m·ω_m: a gearbox changes
+torque and speed but does not create power.
+At an illustrative operating point, let N=20, η=0.75, Kt=0.04 N·m/A, winding current i=1 A and
+ω_m=100 rad/s. Neglecting losses within the motor itself, τ_m=Kt·i=0.04 N·m, v=5 rad/s and
+τ_out=0.6 N·m. Mechanical power is 4 W at the motor shaft and 3 W after the gearbox. Supply
+consumption requires separate measurement of the electrical path.
+Separately draw a horizontal link: x right, y up, axis +z and positive torque anticlockwise. A mass
+m=0.5 kg at lever arm r=0.1 m produces gravitational torque -mgr=-0.4905 N·m at g=9.81 m/s².
+Rest requires compensation of +0.4905 N·m, excluding link weight. The difference
+0.6-0.4905=0.1095 N·m does not by itself establish actuator suitability: operating speed, heating
+and continuous holding differ.
+
+How inertia affects rapid motion
+Acceleration also requires torque I_joint·q̈, with I_joint in kg·m². Rotor inertia reflected to the output
+is N²I_motor; load inertia reflected to the motor is divided by N². High reduction therefore helps
+produce torque but changes dynamics and sensitivity to contact. Constant η is an approximation
+for the specified motoring condition; do not transfer it to rest or reverse energy flow without
+verification.
+
+Checks within existing tasks 1 and 11
+Build a calculation table and power balance. In the same exercise model, change N to 40: velocity
+becomes 2.5 rad/s, torque 1.2 N·m, output power remains 3 W and reflected rotor inertia increases
+fourfold. Then insert your confirmed M7 parameters and label unknowns separately. Check
+gravitational torque using r×F and the existing task 11 experiment; without an independent
+instrument, retain the result as a calculation.
+Included in the 75 hours: 1 hour from 7-8 for transmission and inertia; 1 hour from 11-12 for the
+load table; 1 hour from 68-69 for checking the existing run. This refines deliverables already
+prepared. Exercise values are not specifications for the purchased motor and must not be sent as
+commands.
+Reference: Lynch/Park, Modern Robotics, §8.9.1 DC Motors and Gearing; §8.9.2 Apparent Inertia.
+Read only the relationships between torque, speed, power and reflected inertia; FOC development
+is not added here.
+
+
+
+
+
+
+
+
+
+
+M7 • 04 Apr 2027 - 30 Apr 2027 • 75 hours                                                                        15 / 15</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://hades.mech.northwestern.edu/images/2/2e/MR-largefont-v2.pdf" target="_blank" rel="noopener noreferrer">https://hades.mech.northwestern.edu/images/2/2e/MR-largefont-v2.pdf</a></li></ol></div></details>
+</section>
+<footer><p><a href="../library.html"><span lang="ru">Вернуться в библиотеку</span><span lang="en">Back to source library</span></a> · <a href="../index.html"><span lang="ru">Вернуться к новому плану</span><span lang="en">Back to revised plan</span></a></p><p class="checksum">SHA-256: 1ae05089e82a650ad3d2b62ba4ee6a2230a077adbeaf99b7fbc6dd8e77271c15</p></footer>
+</main>
+<script>
+(function() {
+  function openPage() {
+    if (!/^#page-\d+$/.test(location.hash)) return;
+    var page=document.getElementById(location.hash.slice(1));
+    if(page) {page.open=true; page.scrollIntoView({block:'start'});}
+  }
+  window.addEventListener('hashchange',openPage);
+  document.addEventListener('DOMContentLoaded',openPage);
+  document.getElementById('expand-pages').addEventListener('click',function(){document.querySelectorAll('details[id^="page-"]').forEach(function(el){el.open=true;});});
+  document.getElementById('collapse-pages').addEventListener('click',function(){document.querySelectorAll('details[id^="page-"]').forEach(function(el){el.open=false;});});
+})();
+</script>
+</body>
+</html>

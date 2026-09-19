@@ -1,0 +1,1069 @@
+<!doctype html>
+<html lang="ru" data-ru-title="M10 · Классическое и цифровое управление · EN — Robotics &amp; AI" data-en-title="M10 · Classical and digital control · EN — Robotics &amp; AI">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>M10 · Классическое и цифровое управление · EN — Robotics &amp; AI</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body class="source-reader">
+<a class="skip-link" href="#main"><span lang="ru">К тексту источника</span><span lang="en">Skip to source text</span></a>
+<header class="topbar"><a class="brand" href="../index.html">Robotics &amp; AI</a><nav><a href="../library.html"><span lang="ru">Библиотека источников</span><span lang="en">Source library</span></a><a href="../index.html"><span lang="ru">Новый план</span><span lang="en">Revised plan</span></a></nav><div class="lang-switch" aria-label="Language"><button type="button" data-lang="ru">RU</button><button type="button" data-lang="en">EN</button></div></header>
+<main class="wrap" id="main">
+<p class="eyebrow"><span lang="ru">Архив · исходный документ</span><span lang="en">Archive · original document</span></p>
+<h1><span lang="ru">M10 · Классическое и цифровое управление · EN</span><span lang="en">M10 · Classical and digital control · EN</span></h1>
+<div class="notice source-notice"><strong><span lang="ru">Архивные даты и часы не действуют.</span><span lang="en">Original dates and hours are superseded.</span></strong><p><span lang="ru">Это полный текст исходного документа. Старый календарь, отпуска и бюджеты часов сохранены для проверки исходной информации. Рабочее расписание находится в новом плане: 50 часов в неделю, без отпусков.</span><span lang="en">This is the complete extracted text of the original document. Its historical calendar, vacations and hour budgets are preserved for source verification. Use the revised plan for the current schedule: 50 hours per week, with no vacations.</span></p></div>
+<p><span lang="ru">Язык исходника: английский.</span><span lang="en">Source language: English.</span> <span lang="ru">Переключатель RU/EN меняет язык интерфейса; исходный текст не переводится автоматически.</span><span lang="en">The RU/EN switch changes the interface; original source text is not automatically translated.</span></p>
+<p class="source-actions"><a href="../originals/detailed/English/Monthly/M10_Robotics_Plan_EN.pdf"><span lang="ru">Открыть исходный PDF без изменений</span><span lang="en">Open the unchanged original PDF</span></a> · <a href="m10-ru.html"><span lang="ru">Открыть другую языковую редакцию</span><span lang="en">Open the other language edition</span></a></p>
+<p><span lang="ru">Страниц</span><span lang="en">Pages</span>: 15 · <span lang="ru">Ссылок из PDF</span><span lang="en">PDF links</span>: 14</p>
+<details class="source-page source-toc"><summary><span lang="ru">Перейти к странице</span><span lang="en">Jump to a page</span></summary><nav class="page-links" aria-label="Pages"><a href="#page-1">1</a> <a href="#page-2">2</a> <a href="#page-3">3</a> <a href="#page-4">4</a> <a href="#page-5">5</a> <a href="#page-6">6</a> <a href="#page-7">7</a> <a href="#page-8">8</a> <a href="#page-9">9</a> <a href="#page-10">10</a> <a href="#page-11">11</a> <a href="#page-12">12</a> <a href="#page-13">13</a> <a href="#page-14">14</a> <a href="#page-15">15</a> </nav></details>
+<p class="source-controls"><button type="button" id="expand-pages"><span lang="ru">Развернуть все страницы</span><span lang="en">Expand all pages</span></button> <button type="button" id="collapse-pages"><span lang="ru">Свернуть все страницы</span><span lang="en">Collapse all pages</span></button></p>
+<p><span lang="ru">Извлечение PDF может сохранять переносы строк и наложенные редакции. Формулы, иллюстрации и исходное оформление доступны в неизменённом PDF. Все встроенные ссылки вынесены под текст соответствующей страницы.</span><span lang="en">PDF extraction may retain line breaks and overlapping revisions. Equations, illustrations and original formatting remain available in the unchanged PDF. Every embedded link is listed below its corresponding page.</span></p>
+<section class="source-pages" aria-label="Original document pages">
+<details class="source-page" id="page-1"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 1 · Feedback: achieving stable motion</summary><pre class="source-text">ROBOTICS AND AI  /  M10  /  DETAILED STUDY PLAN
+
+Feedback: achieving stable motion
+
+M10 • 07 Jul 2027 - 08 Aug 2027 • 75 hours
+
+What you will learn this month
+By the end of the month, you will be able to explain why a joint reaches its target angle, why
+increasing gain produces oscillations, and how IMU delay affects platform stability. The deliverable
+is a benchmark for comparing joint and body-tilt control methods. Prepare a model, a digital
+controller, measured transient and frequency responses, a description of limitations and fault-test
+results. For a future walking robot, this provides the basis for maintaining body attitude; for a hand,
+it supports precise finger motion without accumulating error when pressing against an object.
+
+Inputs and scope
+Use the geometry, actuator, limits and measurements from M5-M9. Encoder and IMU reading,
+timestamping, and command and state logging must work before you start. Review torque, angular
+velocity, inertia, derivatives and integrals. Be able to read a step-response plot and distinguish
+measurement time from delivery time. If any of these elements is not ready, use the first two hours
+to diagnose it and reduce optional plots.
+Begin with one axis. Full balancing of a multi-legged robot, gait planning and optimal force
+distribution are not required here. For tilt, use a platform model with limited rotation or a secured
+test rig from earlier stages. An IMU alone does not provide a plant to control: explicitly identify
+which actuator action changes roll or pitch. If this mechanism is unavailable, test tilt control in a
+model, physically measure only the joint and IMU, and leave physical tilt validation open.
+
+What counts as a result
+Show the continuous model, its discrete implementation and real data separately in the report.
+Give units for every coefficient and a source for every limit. The minimum final demonstration
+includes a joint-reference step, rejection of a repeatable disturbance, operation near saturation, tilt
+holding, artificial delay and loss of fresh data. Fix the criteria before the experiment, then report
+actual values without adjusting the acceptance limits.
+The purpose of the month is to make control choices, beyond learning a list of controllers. Choose
+the control bandwidth, justify the loop frequency and show the conditions under which the solution
+stops working. A good result includes one clearly explained failure mode and the reason for
+excluding it from the operating region. This information will support the transition to state-space
+methods and estimation in M11.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M10 • 07 Jul 2027 - 08 Aug 2027 • 75 hours                                                                           1 / 15
+
+</pre></details><details class="source-page" id="page-2"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 2 · Organising the 75 hours</summary><pre class="source-text">ROBOTICS AND AI  /  M10  /  DETAILED STUDY PLAN
+
+Organising the 75 hours
+
+Four work blocks
+Block A, hours 1-20: feedback and joint PID. Block B, 21-40: frequency responses and noise. Block
+C, 41-60: digital implementation and loop timing. Block D, 61-75: body tilt and the final comparison
+experiment. Each of the first three blocks contains 10 hours of theory and analysis and 10 hours of
+practice; the fourth contains 5 hours of analysis and 10 hours of practice. Total: 35 + 40 = 75
+hours. The work steps on pages 9-10 expand these same hours and require no additional time
+allocation.
+Divide each ten-hour theory block into five two-hour sessions: 20 minutes reviewing the previous
+model, 45 minutes reading the relevant section, 40 minutes deriving a small example or examining
+a log, and 15 minutes recording the conclusion. Also divide the ten-hour Sunday practical session
+into five two-hour periods with breaks between them. Breaks are excluded from net study hours.
+Allocate the final five hours of analysis as 2 + 2 + 1.
+
+Start with the question, then choose the tool
+The main computational environment is Python, NumPy, SciPy and python-control; implement the
+control loop in C++ in the existing rig firmware. Begin each session with a testable question: how
+does the input affect the output, which state cannot be measured, and which data reveal its
+changes? Before running, write down the expected sign, scale or sequence of events. Compare the
+prediction with the result and examine at least one discrepancy. A plot supports a conclusion only
+when accompanied by an explanation of the observed relationship.
+Maintain one repository with model, config, experiments, tests and reports directories. Every
+experiment needs a unique identifier, code version, configuration, parameter source, initial state,
+units and raw data. The analysis script reads a saved experiment and builds the report without
+manually correcting measurements. The final joint-and-attitude-control benchmark project
+combines comparisons of joint and body controllers; the individual exercises gradually form its test
+suite.
+
+Time accounting and reducing scope
+Calendar boundaries may coincide with an adjacent module. Keep rest days, holiday intervals and
+integration checks as specified in the overall calendar; place numbered steps in available time
+without counting hours twice. Do not add hours to this module. Assess equipment and library
+readiness at the outset rather than spending the practical session on an unplanned platform
+change.
+If you fall behind, reduce the number of sinusoidal test frequencies and gain-scheduling variants;
+thoroughly check one body axis. Retain the joint model, a saturation experiment with anti-windup,
+frequency-response measurement, firmware timing assessment and the fault test for stale IMU
+data. You may investigate the second axis in a model if you state this in the report. Preserve the
+comparison of joint and tilt control; physical validation remains unfinished until there are
+experimental results from the rig.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M10 • 07 Jul 2027 - 08 Aug 2027 • 75 hours                                                                          2 / 15
+
+</pre></details><details class="source-page" id="page-3"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 3 · Feedback, modelling and PID tuning</summary><pre class="source-text">ROBOTICS AND AI  /  M10  /  DETAILED STUDY PLAN
+
+Feedback, modelling and PID tuning
+
+Study the relationship between torque and position
+Examine the forward path command → actuator → mechanics → angle and the measurement
+feedback path. For the example joint, use J·q̈ + b·q̇ = τ: J in kg·m², b in N·m·s/rad, τ in N·m and q in
+rad. Under torque control, the transfer function from τ to q is 1/(J·s² + b·s). If the actuator accepts
+only position, identify the actuator together with its internal closed loop as a single plant; a position
+command cannot replace torque in the model. Explain where the sensor, delay, saturation and
+disturbance appear in the diagram.
+Poles determine natural modes; zeros change response shape. Stable poles of a continuous linear
+model have negative real parts; an integrator at zero needs separate reasoning, and simulation
+does not replace analysis. Study negative feedback T = PC/(1 + PC), error e = r − y and PID:
+proportional action responds to current error, integral action to accumulated error, and derivative
+action to rate of change. In a practical implementation, take the derivative of the measurement
+and filter it to reduce command kick when the reference changes.
+
+Task 1. A joint model with three proportional-control responses
+Inputs: estimated J and b or an explicitly labelled illustrative parameter set, a rest position and a
+bounded reference step. 1) Build the continuous model. 2) Choose three P values producing slow,
+acceptable and oscillatory responses. 3) Record angle, error and torque on the same time grid. 4)
+Explain changes in poles and curve shape. Deliverable: a computational notebook and a table of
+rise, peak and settling times. Check: the first motion has the correct sign relative to the command;
+doubling inertia must change the response. Error to investigate: reversed feedback sign, tested
+first in the model only.
+
+Task 2. Integral action near the actuator limit
+Add a constant external disturbance and the command limit from the rig specification. Compare P,
+PI and PID, then PID with anti-windup: for example, stop integrating when the command is already
+limited and the error demands more action in the same direction. Record the unsaturated
+command, limited command and integral state separately. Return the reference from an
+unreachable region to the admissible region and compare recovery times. Deliverable: a test and
+three plots. Check: the command never exceeds the declared limit; after returning, the integral
+must not hold the actuator in saturation beyond the expected recovery transient. Add feedforward
+as a separate calculation compensating for a known load, retaining feedback for the remaining
+error.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M10 • 07 Jul 2027 - 08 Aug 2027 • 75 hours                                                                        3 / 15
+
+</pre></details><details class="source-page" id="page-4"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 4 · Frequency domain: bandwidth, margins and</summary><pre class="source-text">ROBOTICS AND AI  /  M10  /  DETAILED STUDY PLAN
+
+Frequency domain: bandwidth, margins and
+measurement
+
+Study the meaning of a Bode plot
+For sinusoidal excitation, frequency determines whether the joint can keep up with the command.
+Study magnitude and phase, logarithmic scales, 20·log10 of the amplitude ratio, and the
+conversion ω = 2πf. Closed-loop bandwidth and open-loop crossover frequency are different
+quantities. Gain and phase margins are calculated from the loop transfer L = PC under the chosen
+negative-feedback convention. A closed-loop response plot alone cannot establish a stability
+margin without knowing the loop structure.
+Interpret S = 1/(1 + L) and T = L/(1 + L) as descriptions of disturbance rejection and signal and
+noise transmission at the chosen point in the diagram. State where the disturbance enters before
+comparing curves. Higher gain improves regulation over some low frequencies, but can amplify
+measurement noise and bring unwanted dynamics closer. A sensor filter changes phase as well as
+noise; include its delay in the loop analysis.
+
+Task 3. Model margins and frequency response
+Take the model from task 1 and the working PID. 1) Construct L and T and calculate margins with
+margin. 2) Check phase-argument units: phase data supplied to margin are in degrees, whereas
+frequency_response returns radians. 3) Introduce a known delay and rebuild the response. 4)
+Calculate step responses for the original and degraded cases. Deliverable: one sheet containing the
+Bode plot, poles and transient response. Check: a conclusion of reduced stability must agree with
+the time-domain experiment. If there is no crossover, explain the meaning of an infinite or
+undefined margin without treating it as a guarantee.
+
+Task 4. A sinusoidal experiment on the rig
+At small amplitude, apply 5-8 frequencies within the admissible range. At each frequency, wait for
+the transient to end, record at least several complete periods, and estimate amplitude and phase
+by fitting a sinusoid. Compare the reference-to-angle frequency response with model T.
+Deliverable: measured points with a range of variability and a configuration table. Check: repeat at
+half amplitude; a strong change in the ratio indicates nonlinearity or insufficient signal-to-noise
+ratio. Stop the experiment at the predefined limits if saturation, noticeable heating or excessive
+travel occurs. If margins are unconfirmed, describe tolerance to delay and load changes using the
+experimental series.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M10 • 07 Jul 2027 - 08 Aug 2027 • 75 hours                                                                       4 / 15
+
+</pre></details><details class="source-page" id="page-5"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 5 · Digital control: discretisation and real time</summary><pre class="source-text">ROBOTICS AND AI  /  M10  /  DETAILED STUDY PLAN
+
+Digital control: discretisation and real time
+
+Study system behaviour between samples
+A digital controller reads a sensor at intervals Ts, calculates a command and holds it until the next
+update. Study the zero-order hold, conversion from continuous to discrete systems, and the ZOH
+and Tustin methods. A discrete linear model requires poles inside the unit circle for stability. Euler’s
+method is useful for understanding, but an excessively large step creates numerical instability
+itself. Compare cont2discrete with a manual update of a simple first-order model.
+Describe the loop period, computation time, measurement delay and data age separately. Jitter is
+variation in interval duration; quantisation is the finite resolution of a measurement or command.
+“A frequency of 200 Hz” without the distribution of actual intervals does not characterise operation.
+The Nyquist condition relates sampling frequency to recoverable signal bandwidth, but is not
+sufficient for choosing a control frequency: phase margins, filters, computation and the actuator
+need additional headroom, supported by modelling and experiment.
+
+Task 5. One algorithm at several frequencies
+Take one controller designed for the continuous model and discretise it for three Ts values selected
+relative to the desired bandwidth. Use the same physical plant, duration and reference amplitude.
+Introduce delays of 0, 1 and several samples. Deliverable: a Ts × delay experiment table, poles,
+RMSE and maximum command. Check: Ts is stored in the configuration, and integral and derivative
+actions scale with time. Deliberately retain old coefficients after changing Ts, show the error and
+add a test that detects it. Do not claim that example values apply to every actuator.
+
+Task 6. Measure the embedded loop
+In the existing firmware, timestamp the start of reading, end of calculation and command
+transmission using a monotonic clock; where possible, check the period with GPIO and a logic
+analyser. Run a quiet mode, intensive logging and an artificial delay in one handler. Save
+distributions of computation time, intervals and measurement age: median, p95, p99 and
+maximum, together with sample counts. Check: logging does not perform a blocking write in the
+critical section; a stale measurement does not become fresh through late delivery. Deliverable: a
+timing-budget report. Explicitly state the sensor polling, controller and logging frequencies; mark a
+repeated previous value rather than counting it as a new measurement.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M10 • 07 Jul 2027 - 08 Aug 2027 • 75 hours                                                                         5 / 15
+
+</pre></details><details class="source-page" id="page-6"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 6 · Roll and pitch: controlling body tilt</summary><pre class="source-text">ROBOTICS AND AI  /  M10  /  DETAILED STUDY PLAN
+
+Roll and pitch: controlling body tilt
+
+Study the two-loop structure
+The outer tilt controller receives roll and pitch and generates a bounded reference for the
+actuator’s inner loop. Check one axis first, then the other. The inner loop must track the outer-loop
+reference within the chosen range; tuning two fast loops independently without analysing their
+interaction can produce oscillations. Derive the relationship positive command change → tilt
+change from the geometry and verify it with a small test input. For a stationary model, distinguish
+tilt from linear acceleration, which distorts the accelerometer-based estimate.
+Gain scheduling is specified in advance, for example as a function of position or load. It requires
+checks of boundaries and transitions, rather than arbitrary increases in P for large error. Limit the
+target angle, reference rate of change, inner-loop command and admissible IMU data age
+separately. Recovery after a fault must be an explicit state; the return of packets need not
+automatically resume motion.
+
+Task 7. Holding a tilt angle
+Initial conditions: a model or secured platform with a known axis, an IMU and a working inner
+controller. 1) Check zero and axis directions. 2) Command a small roll with zero pitch. 3) Repeat for
+pitch. 4) Introduce a repeatable disturbance pulse. 5) Compare controller-off and controller-on
+results under the same input. Deliverable: curves for both axes and commands. Check: calculate
+RMSE over the same window after the disturbance, peak error as the maximum absolute error, and
+settling time from entry into and continued residence within a predefined band. For a reference
+near zero, specify an absolute band in radians rather than a percentage of zero.
+
+Task 8. Surface tilt, limits and recovery
+Save two base orientations and two admissible loads; run every combination with fixed gains, then
+with two gain sets selected by operating point. Introduce a transition between gain sets and an IMU
+dropout. Deliverable: a table of stable and unconfirmed operating conditions, detection time and
+state sequence. Check: output continuity when gains change and correct handling of the integral;
+during a dropout, new motion commands stop within the time allocated for software fault
+detection. The physical stopping method depends on the mechanics: zero torque does not always
+hold a platform. Use the predefined behaviour of the secured rig and describe separately what a
+standing robot would require.
+For the hand, repeat only the reasoning: object contact obstructs the commanded finger motion,
+the internal actuator reaches its limit and the integral accumulates error. Describe which
+implemented limits help and why a position PID alone is insufficient to control contact force.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M10 • 07 Jul 2027 - 08 Aug 2027 • 75 hours                                                                          6 / 15
+
+</pre></details><details class="source-page" id="page-7"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 7 · Specification for the final benchmark</summary><pre class="source-text">ROBOTICS AND AI  /  M10  /  DETAILED STUDY PLAN
+
+Specification for the final benchmark
+
+Defining a reproducible experiment
+One scenario specifies the plant identifier, model version, initial angle, initial velocity, step or
+sinusoidal reference, disturbance, limits, Ts, filter and duration. The output log must contain
+measurement and control times, reference, measured joint angle or body tilt, estimated velocity,
+error, P, I and D terms, commands before and after limiting, saturation and deadline-miss flags,
+and state-machine state. Record the command in the units actually used and separate any
+conversion to torque.
+For the joint, compare at least P, PID and PID with anti-windup. For the body, compare disabled
+stabilisation with the working outer loop, then one variant with increased delay. Every variant
+receives the same reference sequence and initial state. Save the scenario and configurations
+before comparison; do not choose different convenient segments for each algorithm. On the real
+rig, repeat the key scenario at least three times to distinguish a trend from a single successful run.
+
+Calculating and interpreting metrics
+RMSE = sqrt(mean(e²)) has the units of the measured angle. Peak error = max(abs(e)); define
+percentage overshoot relative to a non-zero step amplitude. Calculate settling time as the time
+after which the signal remains inside the chosen band until the end of the window; if the window is
+too short, record “did not settle during the experiment”. The saturation fraction is the number of
+samples with a limited command divided by the number of commands. For uneven sampling, also
+calculate the fraction of time, since counting rows can distort the result.
+Plots: reference and output; error and settling band; command and limits; data age; model Bode
+plot and measured points. Separate calibration and validation data: do not assess model suitability
+solely on the experiment used to fit J, b and delay. Use one validation experiment with a different
+admissible load or excitation frequency.
+
+Deliverable-package requirements
+A launch command from a clean working directory must build the baseline report and run the limit
+checks. The README explains the plant, wiring and mounting for physical experiments,
+parameters, limits and stopping sequence. Include a log of failed scenarios and the reasons for
+excluding them. State the basis for every conclusion: analytical linear model, nonlinear model, rig
+experiment or a hypothesis awaiting confirmation. This will allow M11 to compare LQR with the real
+PID using the same criteria.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M10 • 07 Jul 2027 - 08 Aug 2027 • 75 hours                                                                          7 / 15
+
+</pre></details><details class="source-page" id="page-8"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 8 · Tests that reveal controller errors</summary><pre class="source-text">ROBOTICS AND AI  /  M10  /  DETAILED STUDY PLAN
+
+Tests that reveal controller errors
+
+Required fault scenarios
+Scenario F1: reverse the encoder sign in the model. Expected: error grows rapidly and the software
+monitor detects departure from the permitted region; do not run this experiment physically. Save a
+short log up to stopping and demonstrate that the event is caused by the feedback sign, rather
+than random noise. The corrected configuration must pass the same test.
+Scenario F2: an unreachable step followed by a return. Expected: the command is limited, the
+integral state is controlled, and recovery is faster than without anti-windup in the chosen test. Do
+not claim universal superiority from one curve; compare the specific recovery time and peak after
+the limit is removed.
+Scenario F3: measurement delay and a stale packet. Separate transport delay from the loss of new
+measurements. Expected: the monitor uses the age of the original measurement, while frequency
+analysis and the time-domain model show degradation as delay increases. The last late packet
+must not reset the freshness timer without checking its timestamp.
+Scenario F4: encoder noise and coarse quantisation. Expected: their effect on the D term and
+command is visible; a filter reduces some high-frequency noise, but its phase lag is represented in
+the model. Compare spectra and command RMS at a stationary reference, keeping this result
+separate from step-tracking accuracy.
+Scenario F5: increased inertia or load. Choose a model change and a separate admissible rig load.
+Expected: metric changes that can be related to the model; the operating region is limited to
+measured cases. Do not mark untested masses and configurations as passed in the table.
+Scenario F6: occasional long computations. Introduce one computation deadline miss every N
+cycles and batched logging. Expected: the event is explicitly marked, data losses are counted, and
+the response to lateness is checked. Compare p99 and the maximum; average duration must not
+hide an occasional overrun.
+
+Analysing a failed experiment
+First reproduce the failure using the saved configuration. Check units, signs and the time scale,
+then limiters, and only then gains. Change one factor per experiment. If the model is stable but the
+rig oscillates, check backlash, the actuator’s internal controller, the IMU filter, communication delay
+and frequency mismatches. Every unexplained effect becomes a separate task for additional
+measurements; reducing P without understanding the cause is a temporary measure.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M10 • 07 Jul 2027 - 08 Aug 2027 • 75 hours                                                                         8 / 15
+
+</pre></details><details class="source-page" id="page-9"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 9 · Hours 1-40: foundations and frequency</summary><pre class="source-text">ROBOTICS AND AI  /  M10  /  DETAILED STUDY PLAN
+
+Hours 1-40: foundations and frequency
+checks
+
+Hours 1-20: joint and feedback
+Theory 1-10: five 2-hour sessions. 1-2: examine the actuator interface and units; 3-4: derive the
+model and poles; 5-6: study the step response; 7-8: work through PID, feedforward and saturation;
+9-10: design the sign and anti-windup checks. In each session, perform a small calculation using
+numbers from your configuration so that theory immediately reveals missing parameters.
+Practice 11-20: 11-12: build the model and log; 13-14: complete task 1; 15-16: add integral and
+derivative actions and limiting; 17-18: complete task 2; 19-20: transfer one validated operating
+condition to the secured rig and save a validation recording. This is one 10-hour practical session in
+five periods; mounting preparation and the stopping check are included.
+Before proceeding, check that you have a model with dimensions, three operating responses, a
+limited command and a return-from-saturation experiment. Be able to explain why an actuator with
+internal position control cannot be treated as an ideal torque source.
+
+Hours 21-40: frequency and real data
+Theory 21-30: 21-22: sinusoid, magnitude and phase; 23-24: Bode plots and crossovers; 25-26:
+gain and phase margins; 27-28: sensitivity and noise; 29-30: plan a frequency experiment with
+bounded amplitude. For one frequency, calculate the amplitude ratio and phase shift by hand, then
+compare with the library.
+Practice 31-40: 31-32: complete task 3; 33-34: configure sinusoidal-response logging; 35-36:
+complete task 4 on the available rig; 37-38: repeat the end frequencies and half amplitude; 39-40:
+overlay the points and model, and document validity limits. If data are unusable, retain fewer
+frequencies with good repeated recordings rather than drawing a smooth curve from noise.
+Before proceeding, verify that you know exactly what was measured: closed-loop T or loop transfer
+L. Magnitude and phase must have the correct units, and conclusions about margins must identify
+their basis.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M10 • 07 Jul 2027 - 08 Aug 2027 • 75 hours                                                                        9 / 15
+
+</pre></details><details class="source-page" id="page-10"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 10 · Hours 41-75: the digital loop and body tilt</summary><pre class="source-text">ROBOTICS AND AI  /  M10  /  DETAILED STUDY PLAN
+
+Hours 41-75: the digital loop and body tilt
+
+Hours 41-60: discretisation and the timing budget
+Theory 41-50: 41-42: ZOH and the discrete model; 43-44: poles inside the unit circle; 45-46: Ts and
+PID coefficients; 47-48: delay, jitter and quantisation; 49-50: separating IMU, controller and logging
+frequencies. Draw a timeline for one measurement from physical sampling to command output and
+label every delay.
+Practice 51-60: 51-52: complete task 5 for three Ts values; 53-54: add delays and the
+incorrect-coefficient test; 55-56: add firmware timestamps; 57-58: complete task 6 under load;
+59-60: plot the distributions and reproduce a computation deadline miss. Do not spend these hours
+optimising before measuring the dominant source of delay.
+Before proceeding, check that you have a timing distribution, each component’s original frequency,
+a stale-data test and an explanation of differences between the model and embedded
+implementation.
+
+Hours 61-75: stabilisation and final validation
+Analysis 61-65: 61-62: outer- and inner-loop diagram, actuation sign and limits; 63-64: RMSE, peak
+and settling criteria, and gain scheduling; 65: compile the final experiment table. These are the last
+5 hours of theory and analysis, split as 2 + 2 + 1; do not add new chapters on multi-legged
+dynamics.
+Practice 66-75: 66-67: complete task 7 for one axis; 68-69: repeat for the second and introduce a
+disturbance; 70-71: complete task 8 and the IMU-loss test; 72-73: repeat key scenarios and compile
+final metrics; 74-75: reproduce the package from a clean directory, write conclusions and list
+outstanding physical checks. If no platform is available, explicitly retain the status “tilt control
+validated in a model”.
+Before proceeding, check that the comparison of joint and body control is complete and that
+command limits and fault behaviour have been tested. The next module receives a frozen baseline
+model and PID, rather than a set of unrelated demonstrations.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M10 • 07 Jul 2027 - 08 Aug 2027 • 75 hours                                                                       10 / 15
+
+</pre></details><details class="source-page" id="page-11"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 11 · Acceptance and handover to M11</summary><pre class="source-text">ROBOTICS AND AI  /  M10  /  DETAILED STUDY PLAN
+
+Acceptance and handover to M11
+
+Practical defence of the result
+In 10-15 minutes, show the loop diagram, one stable and one rejected operating condition, a
+frequency response and a fault recording. Explain how the model relates to the real actuator
+interface. Then change only delay or inertia and predict the direction of the response change in
+advance. A reviewer must be able to recalculate metrics from the raw recording and reach the
+same conclusion about whether the criteria were met.
+Required evidence of readiness: positive axis directions are checked; settings and units are fixed;
+the declared operating region is bounded; saturation and loss of fresh data are tested; measured
+timing costs are documented. Support stability with margins from a correct loop model or
+experimental evidence over declared delays and loads. Do not describe the latter as a rigorous
+proof of stability for every possible operating condition.
+
+Self-check questions
+1) How does a pole differ from a zero in the joint example? 2) Why can increasing P both speed up
+and degrade the response? 3) What does the integral do when the physical command is already at
+its limit? 4) Why does differentiating the measurement differ from differentiating the error at a
+reference step? 5) Which transfer is used to calculate phase margin? 6) Why does the Nyquist
+frequency not determine a sufficient control frequency?
+7) How can you distinguish sensor noise from loop oscillations? 8) What does a filter change
+besides noise amplitude? 9) How do you specify settling time for zero target tilt? 10) Why does
+average loop time not replace p99 and the maximum? 11) How can an old packet mistakenly
+appear fresh? 12) Why are zero torque and safe body holding not always equivalent? Support your
+answers with your own plots, as well as definitions.
+
+What to save and which claims remain unconfirmed
+Pass the model, baseline PID, discretisation parameters, disturbance scenarios, noise and delay
+configuration, and common metrics script to M11. They form the fixed basis for comparison with
+LQR and an estimator. In a separate table, list unmodelled effects: backlash, dry friction,
+torque-speed dependence, structural compliance and incorrect tilt estimation during acceleration.
+If time is limited, retain one thoroughly tested body axis and a model demonstration of the second
+axis with explicit status. Reduce frequency count and presentation work, but retain closed-loop
+response measurement, saturation and fault scenarios. The module is complete only within the
+checks actually performed; any deferred physical work must appear in the subsequent integration
+plan.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M10 • 07 Jul 2027 - 08 Aug 2027 • 75 hours                                                                        11 / 15
+
+</pre></details><details class="source-page" id="page-12"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 12 · Assigned reading: a focused reading route</summary><pre class="source-text">ROBOTICS AND AI  /  M10  /  DETAILED STUDY PLAN
+
+Assigned reading: a focused reading route
+
+Books and lecture notes may be in English; keep the plan, definitions and your own explanations in
+English. Read only the specified sections within the existing 75 hours.
+
+Core reading and one reference route
+1. Core: K. J. Åström, R. Murray, Feedback Systems, 2nd edition. Chapters Transfer Functions,
+Frequency Domain Analysis and PID Control; within the last chapter, Basic Control Functions,
+Integrator Windup and Implementation. For tasks 1-6, derive the loop equations, examine the
+effect of delay and implement a discrete PID.
+2. Core worked example: B. Messner, D. Tilbury and the CTMS team, Control Tutorials for
+MATLAB and Simulink. The page Introduction: PID Controller Design, followed by DC Motor Speed:
+PID Controller Design. For tasks 1-2, reproduce the P, PI and PID comparison on your own model in
+Python.
+3. Reference: J. Doyle, B. Francis, A. Tannenbaum, Feedback Control Theory. §3.1 Basic Feedback
+Loop and §3.4 Performance; §4.1 Plant Uncertainty - the introductory formulation only. For tasks
+3-4, explain the trade-off between error, noise and model inaccuracy.
+
+Documentation for specific practical work
+Python Control step_info - transient-response criteria; margin - phase units and loop margins.
+Before plotting, check units: rad and deg, Hz and rad·s⁻¹.
+SciPy cont2discrete - zoh, bilinear and euler for task 5. For the spectral analysis in F4, use the
+familiar scipy.signal.welch with explicit fs and scaling.
+
+After reading
+For each section, produce one plot and a short explanation using your own axis. Do not transfer
+coefficients from an illustrative example to the rig. MATLAB/Simulink are not mandatory purchases:
+translating the mathematical model into Python preserves the exercise’s purpose. Investigate
+delay in the model first, then repeat an admissible experiment on the rig.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M10 • 07 Jul 2027 - 08 Aug 2027 • 75 hours                                                                       12 / 15
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://www.cds.caltech.edu/~murray/FBS/Second_Edition.html" target="_blank" rel="noopener noreferrer">https://www.cds.caltech.edu/~murray/FBS/Second_Edition.html</a></li><li><a href="https://ctms.engin.umich.edu/CTMS/index.php?example=Introduction&amp;section=ControlPID" target="_blank" rel="noopener noreferrer">https://ctms.engin.umich.edu/CTMS/index.php?example=Introduction&amp;section=ControlPID</a></li><li><a href="https://ctms.engin.umich.edu/CTMS/index.php?example=Introduction&amp;section=ControlPID" target="_blank" rel="noopener noreferrer">https://ctms.engin.umich.edu/CTMS/index.php?example=Introduction&amp;section=ControlPID</a></li><li><a href="https://ctms.engin.umich.edu/CTMS/index.php?example=MotorSpeed&amp;section=ControlPID" target="_blank" rel="noopener noreferrer">https://ctms.engin.umich.edu/CTMS/index.php?example=MotorSpeed&amp;section=ControlPID</a></li><li><a href="https://ctms.engin.umich.edu/CTMS/index.php?example=MotorSpeed&amp;section=ControlPID" target="_blank" rel="noopener noreferrer">https://ctms.engin.umich.edu/CTMS/index.php?example=MotorSpeed&amp;section=ControlPID</a></li><li><a href="https://www.control.utoronto.ca/people/profs/francis/dft.pdf" target="_blank" rel="noopener noreferrer">https://www.control.utoronto.ca/people/profs/francis/dft.pdf</a></li><li><a href="https://python-control.readthedocs.io/en/latest/generated/control.step_info.html" target="_blank" rel="noopener noreferrer">https://python-control.readthedocs.io/en/latest/generated/control.step_info.html</a></li><li><a href="https://python-control.readthedocs.io/en/latest/generated/control.margin.html" target="_blank" rel="noopener noreferrer">https://python-control.readthedocs.io/en/latest/generated/control.margin.html</a></li><li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.cont2discrete.html" target="_blank" rel="noopener noreferrer">https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.cont2discrete.html</a></li></ol></div></details><details class="source-page" id="page-13"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 13 · Key terms and definitions</summary><pre class="source-text">ROBOTICS AND AI  /  M10  /  DETAILED STUDY PLAN
+
+Key terms and definitions
+
+Plant. A physical system or its model whose output changes under a control input and external
+disturbances.
+Control error. The difference between the reference and measured output, in the same units and
+a consistent coordinate frame.
+Proportional action (P). The part of the command equal to current error multiplied by a gain.
+Integral action (I). The part of the command that depends on error accumulated over time; it
+helps remove constant offset under admissible operating conditions.
+Derivative action (D). The part of the command responding to the rate of change of error or
+measurement; it usually requires measurement-noise filtering.
+Feedforward. A command calculated from the reference and a model of the expected input,
+without waiting for measured error to appear.
+Transfer function. The ratio of the Laplace transforms of output and input for a linear
+time-invariant system under zero initial conditions.
+Pole. A singularity of a transfer function associated with a natural dynamic mode; internal stability
+is checked with reference to the realisation.
+Frequency response. The complex ratio of output and input amplitudes of a linear system under
+steady-state sinusoidal excitation at a specified frequency.
+Bode plot. Plots of frequency-response magnitude and phase against a logarithmic frequency
+axis, with explicitly stated units.
+Phase margin. The additional phase lag to the critical value at a selected unity-gain frequency of
+the open loop.
+Gain margin. The permissible gain multiplier before the critical condition at a selected open-loop
+phase crossover.
+Bandwidth. The frequency range over which a signal is reproduced acceptably; the boundary
+criterion must be declared for the selected channel.
+Overshoot. The amount by which the output exceeds the final step level; a relative measure is
+normalised by the non-zero amplitude of that step.
+Settling time. The time after which error remains within the declared band until observation ends
+for the given scenario.
+Sampling period. The interval Ts between scheduled digital-controller updates; actual intervals
+are also measured using timestamps.
+Zero-order hold. Keeping the last command constant until the next output update.
+Jitter. Variation in actual execution times or update intervals relative to the chosen digital-loop
+schedule.
+Gain scheduling. A predefined choice of parameters based on operating point, with validated
+transitions between modes.
+Check the relationships: for unity negative feedback, L=PC, T=L/(1+L), S=1/(1+L). Frequency
+ω=2πf.
+
+
+
+
+
+
+
+
+
+
+M10 • 07 Jul 2027 - 08 Aug 2027 • 75 hours                                                                        13 / 15
+
+</pre></details><details class="source-page" id="page-14"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 14 · Equipment and software preparation</summary><pre class="source-text">ROBOTICS AND AI  /  M10  /  DETAILED STUDY PLAN
+
+Equipment and software preparation
+
+USE EXISTING EQUIPMENT
+MacBook Pro M4, the validated M7 rig, ESP32-S3, IMU and 8-channel logic analyser from M6, and
+the power supply and multimeter from M4. Use the tilt geometry and actuation axis from M8. Task
+7 permits a model-based option; you do not need to buy a physical two-axis platform for this
+module.
+
+PURCHASES: NO MANDATORY ADDITIONS
+Optional: 1 oscilloscope only if current, ripple or signal edges cannot be assessed with existing
+equipment. Minimum: 2 channels, triggering, recording export and probes with suitable ratings.
+Choose bandwidth and sample rate for the fastest signal under investigation, rather than the
+mechanical-motion frequency.
+Before buying, check data export on macOS ARM and input types. H-bridge potentials require a
+suitable differential measurement path; do not connect an ordinary grounded probe across two
+switching terminals. Selection guide: Tektronix: XYZs of Oscilloscopes.
+
+INSTALL NOW: BEFORE HOURS 1-20
+Add the control package (Python Control Systems Library) to the pinned macOS ARM environment,
+following Introduction → Installation. Use the existing NumPy, SciPy, Matplotlib and pytest
+installations. Slycot is optional for this module’s SISO experiments; retain the M6 ESP-IDF firmware
+environment.
+
+INSTALLATION CHECK
+Import control, print its version, create a first-order model and plot its step response. Compare the
+specified time constant with the plot; calculate step_info, the frequency response and margin for
+your loop. Obtain a discrete model through cont2discrete and compare it with the continuous
+model at small Ts.
+Build the previous firmware on the microcontroller; measure the actual GPIO period with the logic
+analyser and compare it with timestamps. Save p95 and p99, the maximum, data age and a
+deadline-miss scenario in the log. Separately check stopping and recovery without spontaneous
+motion resumption.
+You may repeat the calculations in a separate Ubuntu 24.04 ARM64 environment; test actual USB
+passthrough and virtual-machine graphics. Preparation is included in the 75 hours; order the
+instrument in advance if it proves necessary.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M10 • 07 Jul 2027 - 08 Aug 2027 • 75 hours                                                                     14 / 15
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://www.tek.com/en/documents/primer/xyzs-oscilloscopes-primer" target="_blank" rel="noopener noreferrer">https://www.tek.com/en/documents/primer/xyzs-oscilloscopes-primer</a></li><li><a href="https://python-control.readthedocs.io/en/latest/intro.html" target="_blank" rel="noopener noreferrer">https://python-control.readthedocs.io/en/latest/intro.html</a></li></ol></div></details><details class="source-page" id="page-15"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 15 · Motion fundamentals: holding and tracking</summary><pre class="source-text">ROBOTICS AND AI  /  M10  /  DETAILED STUDY PLAN
+
+Motion fundamentals: holding and tracking
+
+Required: why a stable position is insufficient
+Holding specifies a constant angle qd; tracking specifies qd(t), velocity and acceleration. A leg joint
+must change angle on time during foot swing. Small error at the end of motion is insufficient: lag
+along the path changes foot position. Before calculating, explain the negative-feedback sign and
+the distinction between angle, angular velocity and torque.
+
+Joint model and error equation
+The base is fixed; positive q and τ are chosen along the same axis. q is in rad, and primes denote
+time derivatives: q′ in rad/s, q″ in rad/s². The link moves without gravitational torque; J is inertia
+about the joint in kg·m², and b is viscous resistance in N·m·s/rad. For now, assume no saturation,
+delay or model error:
+J q″ + b q′ = τ; e = qd − q. Choose τ = J qd″ + b qd′ + Kp e + Kd e′. The first two terms
+provide acceleration and overcome resistance in advance; PD corrects deviation. Substituting q =
+qd − e into the model gives J e″ + (b + Kd)e′ + Kp e = 0. This is error dynamics, not a separate
+physical joint.
+Let J = 0.02 kg·m², b = 0.04 N·m·s/rad, Kp = 2 N·m/rad and Kd = 0.36 N·m·s/rad. Then e″ + 20e′ +
+100e = 0; both poles equal −10 s⁻¹. Error decays with critical damping in the ideal continuous
+model. This conclusion alone does not confirm the stability of a digital actuator with limits.
+
+Calculation at a selected instant
+At the selected instant, qd = 0.30 rad and q = 0.20 rad; qd′ = q′ = 0.50 rad/s and qd″ = 1 rad/s².
+Thus e = 0.10 rad and e′ = 0; feedforward is 0.02·1 + 0.04·0.50 = 0.04 N·m, feedback is 0.20 N·m,
+and total τ = 0.24 N·m. The model gives q″ = (0.24 − 0.04·0.50)/0.02 = 11 rad/s² and e″ = −10
+rad/s²: the joint accelerates, reducing its lag behind the reference.
+If feedforward is removed and qd moves at a constant velocity of 0.50 rad/s for a long time,
+steady-state e = b·qd′/Kp = 0.01 rad. The error creates the torque needed to overcome resistance.
+For a stationary target in this model, e tends to zero. Holding and tracking therefore require
+different test references.
+
+Two experiments within the existing laboratory work
+1. For a constant target, take e(0) = 0.10 rad and e′(0) = 0. Save an e plot and compare with e(t) =
+0.10(1 + 10t)exp(−10t): at t = 0.40 s, expect 0.00916 rad. 2. For a linearly changing reference,
+compare PD with and without feedforward; save qd, q, τ and the individual terms. Check: error
+without feedforward approaches 0.01 rad; mark saturated segments separately.
+Time: 1 theory hour from hours 7-8 (PID and feedforward), and 2 practice hours from 15-16
+(integral and derivative actions, limits); this analysis and these plots belong to existing tasks 1-2,
+within the 75 hours. The numbers apply to the model. Do not send torque τ to a position servo: its
+internal loop is studied separately. Full multi-joint computed-torque control remains outside the
+mandatory minimum.
+Read selectively: Lynch, Park, Modern Robotics, §11.4, Part 1: PD and error dynamics; §11.4, Part 3:
+model-based feedforward.
+
+
+
+
+
+
+
+
+
+
+
+
+
+M10 • 07 Jul 2027 - 08 Aug 2027 • 75 hours                                                                         15 / 15</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://modernrobotics.northwestern.edu/nu-gm-book-resource/11-4-motion-control-with-torque-or-force-inputs-part-1-of-3/" target="_blank" rel="noopener noreferrer">https://modernrobotics.northwestern.edu/nu-gm-book-resource/11-4-motion-control-with-torque-or-force-inputs-part-1-of-3/</a></li><li><a href="https://modernrobotics.northwestern.edu/nu-gm-book-resource/11-4-motion-control-with-torque-or-force-inputs-part-3-of-3/" target="_blank" rel="noopener noreferrer">https://modernrobotics.northwestern.edu/nu-gm-book-resource/11-4-motion-control-with-torque-or-force-inputs-part-3-of-3/</a></li><li><a href="https://modernrobotics.northwestern.edu/nu-gm-book-resource/11-4-motion-control-with-torque-or-force-inputs-part-3-of-3/" target="_blank" rel="noopener noreferrer">https://modernrobotics.northwestern.edu/nu-gm-book-resource/11-4-motion-control-with-torque-or-force-inputs-part-3-of-3/</a></li></ol></div></details>
+</section>
+<footer><p><a href="../library.html"><span lang="ru">Вернуться в библиотеку</span><span lang="en">Back to source library</span></a> · <a href="../index.html"><span lang="ru">Вернуться к новому плану</span><span lang="en">Back to revised plan</span></a></p><p class="checksum">SHA-256: 417b109b9abf99902b02e264f1e5386b5fb5ab57d88759cb35e4ebeabaaca4bc</p></footer>
+</main>
+<script>
+(function() {
+  function openPage() {
+    if (!/^#page-\d+$/.test(location.hash)) return;
+    var page=document.getElementById(location.hash.slice(1));
+    if(page) {page.open=true; page.scrollIntoView({block:'start'});}
+  }
+  window.addEventListener('hashchange',openPage);
+  document.addEventListener('DOMContentLoaded',openPage);
+  document.getElementById('expand-pages').addEventListener('click',function(){document.querySelectorAll('details[id^="page-"]').forEach(function(el){el.open=true;});});
+  document.getElementById('collapse-pages').addEventListener('click',function(){document.querySelectorAll('details[id^="page-"]').forEach(function(el){el.open=false;});});
+})();
+</script>
+</body>
+</html>

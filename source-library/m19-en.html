@@ -1,0 +1,1054 @@
+<!doctype html>
+<html lang="ru" data-ru-title="M19 · Оценка состояния и медленная походка · EN — Robotics &amp; AI" data-en-title="M19 · State estimation and slow gait · EN — Robotics &amp; AI">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>M19 · Оценка состояния и медленная походка · EN — Robotics &amp; AI</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body class="source-reader">
+<a class="skip-link" href="#main"><span lang="ru">К тексту источника</span><span lang="en">Skip to source text</span></a>
+<header class="topbar"><a class="brand" href="../index.html">Robotics &amp; AI</a><nav><a href="../library.html"><span lang="ru">Библиотека источников</span><span lang="en">Source library</span></a><a href="../index.html"><span lang="ru">Новый план</span><span lang="en">Revised plan</span></a></nav><div class="lang-switch" aria-label="Language"><button type="button" data-lang="ru">RU</button><button type="button" data-lang="en">EN</button></div></header>
+<main class="wrap" id="main">
+<p class="eyebrow"><span lang="ru">Архив · исходный документ</span><span lang="en">Archive · original document</span></p>
+<h1><span lang="ru">M19 · Оценка состояния и медленная походка · EN</span><span lang="en">M19 · State estimation and slow gait · EN</span></h1>
+<div class="notice source-notice"><strong><span lang="ru">Архивные даты и часы не действуют.</span><span lang="en">Original dates and hours are superseded.</span></strong><p><span lang="ru">Это полный текст исходного документа. Старый календарь, отпуска и бюджеты часов сохранены для проверки исходной информации. Рабочее расписание находится в новом плане: 50 часов в неделю, без отпусков.</span><span lang="en">This is the complete extracted text of the original document. Its historical calendar, vacations and hour budgets are preserved for source verification. Use the revised plan for the current schedule: 50 hours per week, with no vacations.</span></p></div>
+<p><span lang="ru">Язык исходника: английский.</span><span lang="en">Source language: English.</span> <span lang="ru">Переключатель RU/EN меняет язык интерфейса; исходный текст не переводится автоматически.</span><span lang="en">The RU/EN switch changes the interface; original source text is not automatically translated.</span></p>
+<p class="source-actions"><a href="../originals/detailed/English/Monthly/M19_Robotics_Plan_EN.pdf"><span lang="ru">Открыть исходный PDF без изменений</span><span lang="en">Open the unchanged original PDF</span></a> · <a href="m19-ru.html"><span lang="ru">Открыть другую языковую редакцию</span><span lang="en">Open the other language edition</span></a></p>
+<p><span lang="ru">Страниц</span><span lang="en">Pages</span>: 15 · <span lang="ru">Ссылок из PDF</span><span lang="en">PDF links</span>: 16</p>
+<details class="source-page source-toc"><summary><span lang="ru">Перейти к странице</span><span lang="en">Jump to a page</span></summary><nav class="page-links" aria-label="Pages"><a href="#page-1">1</a> <a href="#page-2">2</a> <a href="#page-3">3</a> <a href="#page-4">4</a> <a href="#page-5">5</a> <a href="#page-6">6</a> <a href="#page-7">7</a> <a href="#page-8">8</a> <a href="#page-9">9</a> <a href="#page-10">10</a> <a href="#page-11">11</a> <a href="#page-12">12</a> <a href="#page-13">13</a> <a href="#page-14">14</a> <a href="#page-15">15</a> </nav></details>
+<p class="source-controls"><button type="button" id="expand-pages"><span lang="ru">Развернуть все страницы</span><span lang="en">Expand all pages</span></button> <button type="button" id="collapse-pages"><span lang="ru">Свернуть все страницы</span><span lang="en">Collapse all pages</span></button></p>
+<p><span lang="ru">Извлечение PDF может сохранять переносы строк и наложенные редакции. Формулы, иллюстрации и исходное оформление доступны в неизменённом PDF. Все встроенные ссылки вынесены под текст соответствующей страницы.</span><span lang="en">PDF extraction may retain line breaks and overlapping revisions. Equations, illustrations and original formatting remain available in the unchanged PDF. Every embedded link is listed below its corresponding page.</span></p>
+<section class="source-pages" aria-label="Original document pages">
+<details class="source-page" id="page-1"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 1 · From individual sensors to a slow gait</summary><pre class="source-text">ROBOTICS AND AI  /  M19  /  DETAILED STUDY PLAN
+
+From individual sensors to a slow gait
+
+M19 • 04 Jun 2028 - 06 Jul 2028 • 75 hours
+
+What you will build this month
+Create a quadruped simulation with state estimation from the IMU and stance-leg kinematics, a
+deterministic planner for a slow gait that swings legs one at a time (crawl), reachable foothold
+selection and controlled stopping. The robot must stand for at least 60 seconds and execute a
+short, reproducible sequence of steps. For every attempt, save contacts, slip indicators, support
+margin, state errors, failure reasons and whether a fall occurred.
+The central engineering task is to connect confidence in sensors with permission for the next step.
+Even accurate inverse kinematics cannot rescue a gait if the controller uses contact from a lifted
+leg, confused IMU axes or stale body position. Therefore, first verify the standing robot&#x27;s state, then
+swing one leg, and finally execute a full cycle. Increased speed and trotting are outside the
+required implementation.
+
+What to bring from previous modules
+Prepare a model of the body and four legs, forward and inverse coordinate transforms, joint limits,
+verified actuator simulation and telemetry format. Save masses, centres of mass and the initial
+stance in a separate configuration. Check simulation stability with the chosen integration step and
+a floating body. Fixing the body is acceptable in a leg-kinematics experiment, but such an
+experiment does not demonstrate robot balance.
+The M18 ML classifier may run as an observer for comparison with classical contact detection. The
+required gait operates without it. Simulator ground-truth coordinates and contact forces are used
+for evaluation and diagnostics; do not silently feed them to an estimator claimed to use only IMU
+and encoders. List every component&#x27;s inputs explicitly.
+
+Connection to the future robot
+Four legs provide a clear intermediate stage between one mechanical leg and walking; the move to
+six legs comes later, after the baseline testbed succeeds. M19 does not require rebuilding the
+physical body or starting push experiments on a real robot. Reproduce all described disturbances in
+software. The result supports stance-force allocation in M20 and staged transfer to hardware in
+M22.
+The same principle applies to the hand: a supporting finger imposes a kinematic constraint only
+when contact is reliable. Compare a foot on the ground with a finger on an object: what is known
+about surface motion, and when does the stationary-surface assumption fail? Gait remains this
+month&#x27;s primary task; the grasp state machine is studied separately.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M19 • 04 Jun 2028 - 06 Jul 2028 • 75 hours                                                                          1 / 15
+
+</pre></details><details class="source-page" id="page-2"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 2 · A 75-hour work plan</summary><pre class="source-text">ROBOTICS AND AI  /  M19  /  DETAILED STUDY PLAN
+
+A 75-hour work plan
+
+Four blocks with observable outcomes
+Hours 1-20: 10 hours of theory and 10 of practice. Study coordinate frames, IMUs, sensor biases,
+orientation prediction, kinematic contact constraints and time alignment. Prepare a standing-body
+state estimate, compare it with ground truth and test exclusion of an unreliable leg. Describe
+observability limitations. First check signs and units in a simple case, then move to a filter with
+more states.
+Hours 21-40: 10 hours of theory and 10 of practice. Study stance and swing phases, allowed
+transitions, stance-time fraction, starting, pausing and stopping. Create a slow-gait state machine
+that swings only one leg and prohibits the next swing when support is insufficient. For now, use a
+prescribed foot trajectory above a flat surface; add terrain after checking transitions.
+Hours 41-60: 10 hours of theory and 10 of practice. Study swing trajectories, clearance,
+reachability, collisions, surface height, foothold selection with a margin and fallback mode.
+Implement selection from a small finite set of points, checks along the complete trajectory and a
+log of rejection reasons. Local selection suffices for a short step; a global terrain planner is
+unnecessary.
+Hours 61-75: 5 hours of theory and 10 of practice. Topics are support margin, body levelling,
+simplified load distribution, small repeatable disturbances and degraded mode. Deliver a test
+harness, a 60-second stand, a crawl under declared conditions and a verified pause. Total: 35 hours
+of analysis and 40 hours of your own experiments.
+
+Organising sessions
+Five two-hour sessions prepare each of the first three 10-hour practical blocks. Divide the final 5
+analysis hours as 2 + 2 + 1. Split a Sunday practical block into preparation, one implementation,
+measurement and analysis; schedule breaks separately. Hours below indicate workload sequence.
+Boundary dates may overlap the next module: place sessions in free periods of the original
+calendar without duplicating hours; rest, holidays and integration blocks remain unchanged.
+Before each run, record a hypothesis and restore an identical initial state. Store the scenario in the
+configuration: slope, noise, packet loss, leg order and body commands. Video reveals a failure;
+numerical logs help explain it. Change controller gains, simulation step and geometry separately so
+that the cause of improvement can be identified.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M19 • 04 Jun 2028 - 06 Jul 2028 • 75 hours                                                                            2 / 15
+
+</pre></details><details class="source-page" id="page-3"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 3 · Orientation, velocity and trust in contact</summary><pre class="source-text">ROBOTICS AND AI  /  M19  /  DETAILED STUDY PLAN
+
+Orientation, velocity and trust in contact
+
+A minimum state model
+Let W denote the world frame, B the body frame, r_i the position of foot i relative to the body in
+metres, and R the rotation from B to W. The state for initial experiments comprises body
+orientation, velocity and position, an estimated gyroscope bias and contact-quality flags. A
+gyroscope measures angular velocity in rad/s with bias and noise; an accelerometer measures
+specific force, not ready-to-use linear acceleration in the world frame. On a stationary body,
+readings depend on orientation and the chosen gravity convention.
+
+Task 1. Axis and time conventions
+Draw body and leg axes, specify the sign of z and quaternion component order. Record a stationary
+body, a small positive rotation about each axis and one foot moving forward. Compare
+measurement signs with the expected motion. Save frames.md and three plots; detect sign errors
+before introducing the filter. Convert timestamps to a common time base and retain each
+measurement&#x27;s age separately.
+
+Task 2. Predict orientation
+Estimate the initial gyroscope bias from a stationary interval. Subtract it and integrate angular
+velocity using the actual dt and a chosen library rotation operation. After each step, check
+quaternion norm and finite values. Compare with ground truth using the relative rotation angle.
+Quaternion components cannot be subtracted like ordinary coordinates: q and −q represent the
+same rotation.
+Introduce a constant bias and missing packets. Plot orientation error over time and compare
+uncompensated and compensated versions. Do not claim that an accelerometer always corrects
+tilt: during dynamic acceleration, its direction is not simply aligned with gravity. M19 requires only
+a restricted slow-motion regime and an explicit reduction in confidence when this assumption is
+violated.
+
+Task 3. Kinematic velocity from a support foot
+For a stationary, non-slipping foot, v_B in W = −R(ω_B × r_i + J_i·qdot_i), where J_i maps joint
+velocities to foot velocity in B. Check dimensions: rad/s × m and J·rad/s give m/s. Standing should
+yield velocity near zero; when the body moves with the foot fixed, the estimated velocity sign must
+match ground truth. Combine several supports using a weighted mean only after rejecting
+unreliable contacts.
+Study the structure of a full invariant EKF as a possible extension. Without an external reference,
+absolute position and yaw generally drift: contact does not create a global reference. State in the
+report which local tasks the estimate supports and which absolute-accuracy limitations remain.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M19 • 04 Jun 2028 - 06 Jul 2028 • 75 hours                                                                         3 / 15
+
+</pre></details><details class="source-page" id="page-4"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 4 · Contact, slipping and sensor alignment</summary><pre class="source-text">ROBOTICS AND AI  /  M19  /  DETAILED STUDY PLAN
+
+Contact, slipping and sensor alignment
+
+When the contact constraint fails
+A touching foot is not necessarily stationary relative to the world: it may slip, the surface may move
+and joints may deflect under load. The estimator needs different confidence weights for different
+legs. Store planner mode, measured contact evidence, confidence and the time of the last reliable
+update separately. A scheduled stance phase does not confirm actual contact.
+
+Task 4. Velocity residual during slipping
+For each presumed support, calculate the foot-velocity residual: r_v = v_est + R(ω × r_i +
+J_i·qdot_i). Its norm is expressed in m/s and should be small for a consistent stationary support.
+First obtain its distribution in a quiet stance, then during known slipping in simulation. Choose a
+threshold from these diagnostic data and state its applicable conditions; there is no universal
+number for every robot.
+Where possible, compare a leg with an estimate formed without its own contribution, provided
+enough other supports exist. Otherwise, explicitly state the residual&#x27;s dependence on the combined
+estimate. Test slipping of each leg in turn, a brief impact and loss of all reliable contacts. Save plots
+of residuals, detection delays and each leg&#x27;s weight. A brief spike must not cause continuous state
+chattering.
+
+Task 5. Hysteresis and data loss
+Implement a classical contact state machine with separate activation and deactivation conditions,
+a minimum confirmation time and a timeout. Choose durations from sensor rate, noise and
+permissible response delay. At low confidence, reduce the constraint weight; without fresh
+measurements, exclude it entirely. The unknown state means insufficient information and
+therefore cannot be treated as a confirmed swing phase.
+Introduce a known encoder time offset relative to the IMU. Compare residuals and velocity error
+before and after correct alignment. Then delete an IMU packet and introduce a long gap. A short
+gap may be handled by prediction within a declared horizon; a long gap puts the system into
+degraded mode. Record actual data age and transition reason, not only the final flag.
+
+Analysis to document
+In the same scenario, compare four versions: IMU without bias compensation, IMU with all contacts
+unchecked, contact-based estimation with rejection, and estimation with a delayed channel. Use
+one ground truth. Show velocity root-mean-square error, RMS, maximum tilt error and time without
+a reliable estimate. Rejection discards some information; explain why error may increase over
+particular intervals.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M19 • 04 Jun 2028 - 06 Jul 2028 • 75 hours                                                                         4 / 15
+
+</pre></details><details class="source-page" id="page-5"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 5 · Gait as a state machine of permitted</summary><pre class="source-text">ROBOTICS AND AI  /  M19  /  DETAILED STUDY PLAN
+
+Gait as a state machine of permitted
+transitions
+
+Stance and swing phases
+During stance, the foot supports the body; during swing, it moves to the next point. The duty factor
+is stance duration divided by the leg&#x27;s period. It is usually high in a slow gait with legs swinging one
+at a time; specify intervals in a schedule with additional pauses. Trotting swings diagonal pairs and
+requires a different dynamic stability analysis. Study the distinction this month; enabling trot would
+require new checks.
+
+Task 6. A deterministic state machine
+Define IDLE, SHIFT_BODY, LIFT, SWING, TOUCHDOWN, VERIFY_CONTACT and PAUSE states. In IDLE,
+first check estimate freshness and sufficient support. SHIFT_BODY moves the centre-of-mass
+projection into an admissible region of the remaining legs. Lift a leg only after confirming the
+margin. After SWING, confirm contact by measurement, then transfer load gradually; only after this
+select the next leg.
+Define conditions for every transition: trajectory completion, contact, timeout, insufficient margin
+or stale state estimate. Errors take priority over ordinary transitions. The state machine receives
+time, state estimate, contact statuses and a velocity command; it outputs leg modes, target points,
+a body command and a pause reason. Identical inputs must yield the same sequence regardless of
+rendering frequency.
+
+Task 7. Starting, stopping and a new command
+Run the sequence: rest → slow motion → direction change → stop request during swing → restart.
+Stopping does not mean instantly setting every joint position to zero. Choose a defined policy:
+complete an admissible swing and confirm contact, or perform a controlled return if reachable.
+With insufficient information, maintain the declared conservative mode and do not begin a new
+step.
+Check these rules: at most one leg swings in the normal slow gait; the next leg lifts after the
+previous contact is confirmed; a command change does not reset the phase backwards; identical
+messages do not restart the timeout. Save transitions.csv with transition conditions. Reprocessing
+the recording must produce the same state sequence.
+Define the response to losing two supports and being unable to complete a step. Holding a pose
+may be physically impossible in an unstable configuration, so a stop command alone does not
+guarantee safety. Mark failure in simulation, stop issuing further gait commands and save the final
+seconds for analysis.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M19 • 04 Jun 2028 - 06 Jul 2028 • 75 hours                                                                        5 / 15
+
+</pre></details><details class="source-page" id="page-6"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 6 · Foot trajectory and foothold selection</summary><pre class="source-text">ROBOTICS AND AI  /  M19  /  DETAILED STUDY PLAN
+
+Foot trajectory and foothold selection
+
+Swing geometry
+A trajectory specifies foot position in metres and its time derivatives. Start with smooth
+interpolation and zero velocity at both ends; define swing height with a separate smooth curve.
+Explain why a position discontinuity demands high velocity, and a velocity discontinuity demands
+acceleration. Choose height from the prescribed terrain and its estimation error.
+
+Task 8. Clearance and reachability
+On a flat surface, swing one leg along a short arc. Check inverse kinematics throughout the
+trajectory, joint position and velocity limits, and absence of intersections with the body or other
+legs. Measure minimum clearance relative to the surface below the foot at every intermediate step.
+Save plots of height, joint velocities and minimum distances. Even when the endpoint is reachable,
+the intermediate arc may be inadmissible.
+Add a low obstacle in simulation and an error in the height map. Derive the height limit from model
+geometry and available range of motion. Compare swings with sufficient and insufficient clearance,
+and retain the collision cause. Raising the foot does not always help: it may move the knee beyond
+its angle limit or bring the leg closer to the body.
+
+Task 9. Choose a foothold with a margin
+Generate a finite candidate grid around the nominal foothold. First filter out candidates that are
+unreachable, too close to an obstacle or on unknown surfaces. For the remaining candidates,
+evaluate reachability margin, local slope, surface quality and change in support margin. Normalise
+quantities into dimensionless scores; otherwise, millimetres may accidentally outweigh degrees
+purely because of numerical scale.
+Save candidates and rejection reasons: outside_workspace, collision, insufficient_clearance,
+unknown_height, poor_support. Check the entire trajectory to the selected point. If no suitable
+point exists, reduce step length under predefined rules; if that also fails, maintain support and
+enter PAUSE. The fallback algorithm must respect the original limits.
+Compare planned and actual touchdown points in one coordinate frame, in metres. Increasing error
+may come from terrain, delay or actuator tracking accuracy. The candidate-selection algorithm can
+be retained for a six-legged robot, but step admissibility must be recalculated for its support set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M19 • 04 Jun 2028 - 06 Jul 2028 • 75 hours                                                                          6 / 15
+
+</pre></details><details class="source-page" id="page-7"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 7 · The crawl_estimator_v1 laboratory</summary><pre class="source-text">ROBOTICS AND AI  /  M19  /  DETAILED STUDY PLAN
+
+The crawl_estimator_v1 laboratory
+
+Testbed components and data
+Use one simulator and one quadruped model. Processing sequence: time checks → IMU and
+kinematic estimation → contact checks → gait state machine → foothold selection → foot trajectory
+→ actuator controller. An independent observer saves simulator ground truth and failure indicators.
+Ground truth must not secretly correct the estimate; otherwise, operation depends on data
+unavailable to a real robot.
+Specify masses, inertias, geometry, physics step, controller and sensor rates, initial stance, leg
+order, noise, timeouts and motion limits in the configuration. At every tick, record time, true and
+estimated state, contacts, confidence, residual, measurement age, phase, selected point, failure
+reason and commands. Save events separately so an incorrect transition can be replayed quickly.
+
+Task 10. Standing and a full cycle
+First stand for 60 seconds on a level surface without swings. Check for no fall, finite state values,
+compliance with joint limits and absence of hidden body fixation. Then perform one cycle that
+swings each leg, followed by a stop. Only afterwards repeat several cycles at a low commanded
+speed. Define path length and tilt limits for the specific model before running, and record them as
+criteria for the educational scenario.
+Define a fall explicitly: for example, body contact with the floor, or orientation or height outside
+selected limits. Justify the boundaries for the model; they are not universal physical standards. Fall
+rate is the number of episodes containing a fall divided by the number of runs. Account separately
+for distance travelled and stops caused by deteriorating conditions: stopping after one second does
+not demonstrate route completion.
+
+Task 11. Compare estimators
+Compare identical scenarios in three modes: ground-truth state as a diagnostic reference, IMU-only
+estimation and contact-aided estimation. Present results for each mode separately. Compare
+orientation and velocity errors, stable-walking duration and pause count. If the gait works only with
+ground-truth state, contact-based estimation is not ready: identify how estimation error causes an
+incorrect transition.
+For every failure, save a short recording before and after the event, the configuration and a
+reproduction command. Then repeat the scenario without rendering and compare contacts: control
+must keep working when graphical-interface load changes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M19 • 04 Jun 2028 - 06 Jul 2028 • 75 hours                                                                          7 / 15
+
+</pre></details><details class="source-page" id="page-8"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 8 · Balance, disturbances and deteriorating</summary><pre class="source-text">ROBOTICS AND AI  /  M19  /  DETAILED STUDY PLAN
+
+Balance, disturbances and deteriorating
+conditions
+
+What support margin means
+For slow motion on a horizontal surface, construct the convex polygon of reliable support points
+and project the centre of mass onto the plane. The margin is the minimum signed distance from
+the projection to the polygon edges, in metres. A positive value inside is useful for quasi-static
+planning; it does not fully guarantee dynamic stability. Sloping or uneven surfaces and appreciable
+accelerations require additional force conditions.
+
+Task 12. Weight transfer and levelling
+Calculate the centre of mass from link masses and positions, rather than just the body&#x27;s geometric
+centre. Before lifting a leg, recalculate the polygon without it and smoothly move the body into the
+admissible region. Check the instant before liftoff, mid-swing and the instant after touchdown. If
+the margin is insufficient, the step does not begin. Deliver a plot of COM, supports and margin,
+marking state-machine transitions.
+Add a small roll and pitch correction through the desired body pose and stance-leg kinematics.
+Respect limits on height, rate of change and joint angles. Distribute vertical loads using a simple
+quasi-static model, checking nonnegativity and total weight. A full QP with friction and torques is
+studied in the next module; for now, identify conditions in which the simplified model is insufficient.
+
+Task 13. A repeatable disturbance
+In simulation, apply a force pulse of known force and duration at a declared point on the body.
+Impulse equals force multiplied by time, in N·s; torque depends on the moment arm. Start with a
+small fraction of the model&#x27;s permissible deviation and increase it only within the educational
+series. Compare identical disturbances with all four supports and during one swing. Save
+amplitude, phase and application time.
+Measure maximum tilt, minimum support margin, time to return to a defined range and number of
+new steps after the deterioration signal. Count recovery only after remaining within the range for a
+specified duration, rather than briefly crossing its boundary. Record demands beyond model
+capability as failures; falls must remain in the series results.
+When conditions worsen, reduce commanded speed, prohibit new swings and choose an admissible
+way to finish the current swing. If the estimate is unreliable or required supports are lost, stop
+planning motion. Test this transition separately: it must not produce a command jump or an
+unreachable pose.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M19 • 04 Jun 2028 - 06 Jul 2028 • 75 hours                                                                         8 / 15
+
+</pre></details><details class="source-page" id="page-9"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 9 · Session plan: hours 1-40</summary><pre class="source-text">ROBOTICS AND AI  /  M19  /  DETAILED STUDY PLAN
+
+Session plan: hours 1-40
+
+Hours 1-20: state estimation
+1-2: review transforms between W, B and the foot, quaternions and angular velocity; label units in
+five log rows. 3-4: study IMU bias, noise, specific force and gravity. 5-6: derive body velocity from
+the stationary-foot constraint and check a one-dimensional case. 7-8: study contact modes and
+observability, and sketch yaw drift. 9-10: plan synchronisation and comparisons of estimator
+variants.
+11-20 - first laboratory: 2 hours for axis conventions and ground-truth recordings; 2 for IMU
+prediction and bias; 2 for kinematic velocity; 2 for contact confidence and slipping; 2 for comparing
+missing packets, bias and time offsets. Save a plot and explanation after each experiment. Deliver
+a body-state estimate with confidence and freshness indicators.
+If the formula disagrees with ground truth, check the frames of ω and r, the Jacobian definition and
+agreement between dt and timestamps before tuning the filter. Increasing filter gains does not
+resolve a coordinate-frame error. First check a simple known motion, then tune noise smoothing.
+
+Hours 21-40: gait state machine
+21-22: draw a stance/swing phase diagram and calculate the schedule&#x27;s duty factor. 23-24:
+construct the support region with each leg removed. 25-26: describe transition conditions, timeouts
+and error priorities. 27-28: work through starting, pausing, stopping and command changes. 29-30:
+record expected events for three short scenarios, including unconfirmed touchdown.
+31-40 - second laboratory: 2 hours for the state machine without physics; 2 for synthetic inputs and
+transition tests; 2 for swinging one leg in simulation; 2 for a four-leg sequence; 2 for stopping and
+reprocessing a recording. Start with a known plane and a short step. If necessary, postpone turning
+and backward motion until the next block, while retaining every stopping mode.
+At the end of the block, show leg states on one plot and count simultaneous swings. Even one tick
+with two legs incorrectly swinging may be invisible in video yet cause a fall. Save the working
+classical_crawl_baseline configuration separately from later terrain experiments.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M19 • 04 Jun 2028 - 06 Jul 2028 • 75 hours                                                                           9 / 15
+
+</pre></details><details class="source-page" id="page-10"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 10 · Sessions and checks: hours 41-75</summary><pre class="source-text">ROBOTICS AND AI  /  M19  /  DETAILED STUDY PLAN
+
+Sessions and checks: hours 41-75
+
+Hours 41-60: footholds
+41-42: smooth trajectories and endpoint velocities; 43-44: clearance and height error; 45-46:
+workspace and collisions; 47-48: normalised foothold criteria; 49-50: rejection, step reduction and
+reason logging. Practice 51-60: 2 hours each for the trajectory, IK checks at intermediate points,
+candidate grid, terrain with error and integration with the state machine. Save an explanation for
+every rejected step.
+61-62: study COM, quasi-statics and support margin. 63-64: body balance and disturbance
+protocol. Hour 65: stopping criteria, result limitations and handover to M20. Practice 66-75: 2 hours
+for the 60-second stand; 2 for weight transfer; 2 for a disturbance series; 2 for failure checks; 2 for
+the results summary, video and reproduction from configuration. The total is exactly 75 hours.
+
+Required test scenarios
+1. Zero command. Stand for 60 seconds with the body unfixed. Record estimation errors,
+minimum height and false-contact count. 2. Unconfirmed touchdown. Remove the surface
+below the target foot. On timeout, prohibit the next swing even when the trajectory is complete.
+Check the pause reason and absence of a second swinging leg.
+3. One slipping support. Change friction beneath one foot while keeping other conditions fixed.
+Measure detection delay, number of incorrectly trusted samples and effect on body velocity. 4.
+IMU/encoder gap. First introduce a short gap, then one exceeding the freshness limit. Check
+prediction within the permitted window, then degradation and recovery without a jump.
+5. Unreachable foothold. Place all candidates outside the workspace or near an obstacle. Expect
+rejection reasons, bounded step reduction and PAUSE. 6. Height error. Change the surface
+relative to the map. Check clearance and early and late touchdown; the next step must await
+contact confirmation.
+7. Stopping during swing. Request a stop at the start, middle and end. Compare transition
+admissibility and continuity of target positions. 8. The same push in different phases. Repeat a
+known impulse in standing and on three supports. Show maximum tilt, recovery time and fall rate;
+include both cases in the report.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M19 • 04 Jun 2028 - 06 Jul 2028 • 75 hours                                                                       10 / 15
+
+</pre></details><details class="source-page" id="page-11"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 11 · Acceptance checks, limitations and the</summary><pre class="source-text">ROBOTICS AND AI  /  M19  /  DETAILED STUDY PLAN
+
+Acceptance checks, limitations and the
+transition to M20
+
+What to present as the result
+The crawl_estimator_v1 package includes the model, configurations, estimation code, state
+machine, foothold checks, test scenarios, source recordings and a reproducible report. Attach video
+of a 60-second stand and a short gait, with plots. State physics parameters, the floating body and
+the exact conditions for successful operation, falling or entering a pause.
+State estimation: coordinate frames, units, effects of bias, missing data and delays, contact
+residuals and operation without machine learning have been checked. Orientation error is
+measured by relative rotation, and velocities are compared in a common frame. Gait: transitions
+are admissible, the next swing depends on actual support, and starting and stopping have been
+tested in different phases. Footholds: rejection reasons are saved, and both endpoint and complete
+trajectory satisfy geometric limits.
+Scenario acceptance: stable standing for at least 60 seconds, with episode count, falls, slips,
+pauses and errors recorded. At least three repeats of each selected nominal and disturbed scenario
+are useful as an educational minimum; they do not establish real-robot failure probability. If 60
+seconds are not achieved, do not declare the module complete after one successful step: save a
+minimal reproducible case and fix the baseline control loop.
+
+Questions to explain independently
+1) Why does touching not imply a stationary support? 2) Why can the commanded phase not be
+the sole contact ground truth? 3) How does the sign of ω × r relate to body motion? 4) Why do yaw
+and absolute position drift? 5) How does brief packet loss differ from a stale estimate? 6) Why does
+a positive support margin not guarantee stability during fast motion?
+7) How do link centres of mass affect weight transfer? 8) Why does endpoint reachability not
+guarantee an admissible trajectory? 9) What happens after late touchdown? 10) Why can
+increasing swing height cause a collision? 11) How does stopping during swing differ from a zero
+velocity command? 12) How can recordings alone distinguish an estimator failure from a controller
+failure?
+
+Reduce scope while preserving the objective
+If time is short, remove trotting, complex terrain, learned confidence estimation and the full
+invariant EKF. Retain contact-aided estimation, a flat surface, a limited set of footholds, a slow gait
+and failure tests. A 60-second stand, actual contact, replay and stopping are mandatory. Hand
+active supports, COM and orientation estimates, joint limits and a verified classical mode to M20 for
+force allocation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M19 • 04 Jun 2028 - 06 Jul 2028 • 75 hours                                                                       11 / 15
+
+</pre></details><details class="source-page" id="page-12"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 12 · Assigned reading: estimation and slow gait</summary><pre class="source-text">ROBOTICS AND AI  /  M19  /  DETAILED STUDY PLAN
+
+Assigned reading: estimation and slow gait
+
+Read the specified extracts before the corresponding tasks. Core reading explains principles;
+reference reading assists implementation. Sources may be in English; prepare your explanations
+and report in English. Reading is included in the 75 hours.
+
+Core reading
+1. Kevin Lynch, Frank Park, Modern Robotics. §3.2.1 Rotation Matrices; §3.2.2 Angular
+Velocities; §5.1.1-5.1.2 Jacobians. For Tasks 1-3: reconstruct coordinate-frame transforms and foot
+velocity from joint motion. The key outcome is to derive the stationary-support constraint including
+body motion.
+2. Simo Särkkä, Bayesian Filtering and Smoothing, 1st ed., 2013. §4.3 Kalman filter; §5.2
+Extended Kalman filter. For Tasks 2-5: write the prediction, measurement residual and correction
+for a small example. EKF is reference material for extension; a full invariant filter is unnecessary.
+3. Russ Tedrake, Underactuated Robotics (MIT, course notes). Planning and Control through
+Contact: Autonomous Hybrid Systems; Given a fixed mode sequence. For Tasks 6-7: describe
+stance and swing through modes, transition conditions and events. From Simple Models of Walking
+and Running, read Simple Models of Walking and Stance Dynamics: explain how your slow gait
+differs from dynamic walking.
+
+Documentation for implementation checks
+SciPy Rotation: from_quat, apply, inv, composition - independent rotation checks in Task 1;
+explicitly specify quaternion component order and transform direction.
+MuJoCo Computation: Contact, friction, constraint model - only if MuJoCo is chosen: meaning of
+contact in ground truth and friction parameters. If retaining Gazebo, use documentation for its
+pinned physics engine.
+
+After reading
+Draw the supports, centre of mass and one unreliable foot. Explain which measurements the
+estimator has lost and why the state machine prohibits the next swing. Copying a gait from
+someone else&#x27;s SDK does not replace this reasoning; the required deliverable remains your own
+small crawl_estimator_v1.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M19 • 04 Jun 2028 - 06 Jul 2028 • 75 hours                                                                      12 / 15
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://modernrobotics.northwestern.edu/nu-gm-book-resource/" target="_blank" rel="noopener noreferrer">https://modernrobotics.northwestern.edu/nu-gm-book-resource/</a></li><li><a href="https://modernrobotics.northwestern.edu/nu-gm-book-resource/" target="_blank" rel="noopener noreferrer">https://modernrobotics.northwestern.edu/nu-gm-book-resource/</a></li><li><a href="https://users.aalto.fi/~ssarkka/pub/cup_book_online_20131111.pdf" target="_blank" rel="noopener noreferrer">https://users.aalto.fi/~ssarkka/pub/cup_book_online_20131111.pdf</a></li><li><a href="https://users.aalto.fi/~ssarkka/pub/cup_book_online_20131111.pdf" target="_blank" rel="noopener noreferrer">https://users.aalto.fi/~ssarkka/pub/cup_book_online_20131111.pdf</a></li><li><a href="https://underactuated.mit.edu/contact.html" target="_blank" rel="noopener noreferrer">https://underactuated.mit.edu/contact.html</a></li><li><a href="https://underactuated.mit.edu/contact.html" target="_blank" rel="noopener noreferrer">https://underactuated.mit.edu/contact.html</a></li><li><a href="https://underactuated.mit.edu/simple_legs.html" target="_blank" rel="noopener noreferrer">https://underactuated.mit.edu/simple_legs.html</a></li><li><a href="https://underactuated.mit.edu/simple_legs.html" target="_blank" rel="noopener noreferrer">https://underactuated.mit.edu/simple_legs.html</a></li><li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.transform.Rotation.html" target="_blank" rel="noopener noreferrer">https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.transform.Rotation.html</a></li><li><a href="https://mujoco.readthedocs.io/en/stable/computation/index.html" target="_blank" rel="noopener noreferrer">https://mujoco.readthedocs.io/en/stable/computation/index.html</a></li></ol></div></details><details class="source-page" id="page-13"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 13 · Fundamental concepts in M19</summary><pre class="source-text">ROBOTICS AND AI  /  M19  /  DETAILED STUDY PLAN
+
+Fundamental concepts in M19
+
+State. The set of model quantities needed to predict motion; here it includes orientation, body
+velocity and sensor-error parameters.
+Orientation. Rotation of the body coordinate frame relative to the world frame; specify the matrix
+or quaternion together with its transform direction.
+Specific force. Acceleration relative to free fall, measured by an accelerometer; in the ideal model
+f = Rᵀ(a − g), in m/s².
+Sensor bias. A systematic measurement-error component that may vary over time; integrating it
+causes the motion estimate to drift.
+Prediction. Propagating a state estimate forward using the dynamic model and inputs, while
+accounting for model and measurement uncertainty.
+Measurement update. Refining a prediction with a new measurement according to its reliability;
+false contact can corrupt the body-state estimate.
+Innovation. The difference between measured and predicted values; it helps detect inconsistent
+sensors or a model error.
+Covariance. A matrix describing error dispersion and pairwise relationships; it characterises
+uncertainty in the chosen state coordinates and units.
+Observability. The ability to distinguish states through measurements and motion; unobservable
+components cannot be uniquely recovered from those data.
+Leg kinematic odometry. Estimating body motion from joint measurements and leg geometry
+under an explicitly stated assumption about support motion.
+Contact. Interaction between a foot and a surface; touching alone confirms neither absence of
+slipping nor sufficient load-bearing capacity.
+Slip. Relative foot motion along a surface; it violates the stationary-support assumption and may
+distort estimated body motion.
+Support polygon. The convex hull of support points in a chosen plane; a geometric guide to
+quasi-statics when contact assumptions hold.
+Static support margin. The minimum distance from the COM projection to the polygon boundary,
+positive inside; it does not fully account for dynamics and friction.
+Stance phase. The part of a leg cycle in which it should support the body; actual contact
+suitability is checked using measurements.
+Swing phase. The part of a cycle that moves the foot to a new support; a swing command does
+not itself confirm actual absence of contact.
+Duty factor. The fraction of the gait period allocated to stance for a leg; it describes time, not
+force.
+Gait phase. A normalised coordinate within the cycle that specifies leg-action order; actual
+transitions also require event and condition checks.
+Transition guard. A logical condition permitting a state-machine mode change, such as reliable
+contact and an admissible configuration of the other supports.
+Foothold. The selected location for the next foot contact, checked for reachability, surface
+conditions, trajectory clearance and stability margin.
+
+
+
+
+
+
+
+M19 • 04 Jun 2028 - 06 Jul 2028 • 75 hours                                                                         13 / 15
+
+</pre></details><details class="source-page" id="page-14"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 14 · Equipment and software for M19</summary><pre class="source-text">ROBOTICS AND AI  /  M19  /  DETAILED STUDY PLAN
+
+Equipment and software for M19
+
+Use existing equipment
+MacBook Pro M4, the four-leg model, simulator contacts, actuator parameters and the Python
+environment from previous months. Keep the existing physical IMU, MCU and assembled leg;
+simulation suffices here for disturbances and slow gait. The main ROS route is Ubuntu 24.04 ARM64
+in UTM, Jazzy and Gazebo Harmonic.
+
+No mandatory purchases
+Do not order a quadruped body kit, additional actuators, a new IMU or an onboard computer. The
+60-second stand and step sequence are tested in simulation; purchases for the physical quadruped
+stage are deferred to M22.
+
+Install now: only what is missing
+No new software is mandatory: reuse pinned NumPy, SciPy, Matplotlib, pytest and the current
+simulator. For transforms, use the installed SciPy Rotation or your own verified implementation.
+Maintain one timestamp source and one coordinate-frame description format throughout the
+testbed.
+
+Optional: a separate MuJoCo route
+Only if MuJoCo has already been selected for this laboratory, add mujoco in a separate macOS ARM
+environment following the official Python bindings instructions. Check build availability for your
+Python version and ARM64; do not replace a working Gazebo without a reason. On macOS, passive
+viewing requires launching through mjpython.
+Before using contact ground truth, read Computation: contact and constraints. Begin model checks
+without a graphical interface, then enable viewing. You may read CHAMP and other SDKs to
+compare architectures; they are not mandatory dependencies for your own FSM.
+
+Installation checks and model limits
+Restart the scene and check the floating body, masses and gravity. Perform a 90° rotation, inverse
+transformation and quaternion-order check. Record 60 seconds of standing, then remove one
+contact. The log must show the change in confidence and whether swing is permitted or prohibited.
+Repeat with a stale timestamp, gyroscope bias and foot slipping. On the CPU, measure loop rate
+and deadline misses separately from UTM graphics load. Simulator ground-truth position and
+orientation are used only for quality evaluation; the estimator receives the declared sensor data.
+
+The next purchasing decision
+A GPU and Jetson are unnecessary for slow gait. The separate G3 on 27.11-10.12.2028 remains a
+future decision; having ML from M18 does not replace it. Preparation and checks use part of the
+original 75 hours; equipment-delivery time is excluded.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M19 • 04 Jun 2028 - 06 Jul 2028 • 75 hours                                                                     14 / 15
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.transform.Rotation.html" target="_blank" rel="noopener noreferrer">https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.transform.Rotation.html</a></li><li><a href="https://mujoco.readthedocs.io/en/stable/python.html" target="_blank" rel="noopener noreferrer">https://mujoco.readthedocs.io/en/stable/python.html</a></li><li><a href="https://mujoco.readthedocs.io/en/stable/computation/index.html" target="_blank" rel="noopener noreferrer">https://mujoco.readthedocs.io/en/stable/computation/index.html</a></li></ol></div></details><details class="source-page" id="page-15"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 15 · Motion fundamentals: weight transfer</summary><pre class="source-text">ROBOTICS AND AI  /  M19  /  DETAILED STUDY PLAN
+
+Motion fundamentals: weight transfer
+
+Required analysis: why admissible support changes before a leg is lifted
+
+What supports the body during slow gait
+First check the whole robot&#x27;s centre of mass: COM c=Σmⱼcⱼ/Σmⱼ. It may differ from the body&#x27;s
+geometric centre. All positions below are in world frame W: x forward, y left and z up; units are
+metres and kilograms. In quasi-statics, neglect accelerations and external loads other than gravity.
+Feet remain stationary on one horizontal plane; ground reaction forces act on the robot.
+Let Fᵢ≥0 denote the vertical support reaction acting on a foot in N, m the total mass and g=9.81
+m/s². Force balance gives ΣFᵢ=mg; moment balance gives ΣFᵢ·pᵢ,xy=mg·c_xy. Thus c_xy=Σλᵢpᵢ,xy,
+where λᵢ=Fᵢ/(mg)≥0 and Σλᵢ=1. This explains the convex support polygon: a negative reaction
+would require an ordinary foot to pull on the ground.
+
+Three supports: calculate before lifting the fourth
+Use an example robot mass of 10 kg; lift foot D=(0.20,0.15) m. The remaining feet are
+A=(−0.20,−0.15), B=(0.20,−0.15), C=(−0.20,0.15) m. After SHIFT_BODY, let c_xy=(−0.05,−0.03)
+m. From the coordinates: λ_B=0.15/0.40=0.375, λ_C=0.12/0.30=0.400 and λ_A=0.225. Loads
+F_A=22.07, F_B=36.79, F_C=39.24 N sum to 98.10 N.
+The diagonal boundary BC is 3x+4y=0; the expression is negative inside the triangle. Distances to
+the three boundaries are 0.15, 0.12 and |3(−0.05)+4(−0.03)|/5=0.054 m. The margin is 5.4 cm.
+With the previous c_xy=(0.05,0.03), λ_A=−0.225: this three-support stance requires a negative
+load, even though the projection may still lie inside the four-support rectangle.
+
+What to check in the state machine, beyond the diagram
+A. In Task 12, calculate c from the links before lifting each leg and recalculate the region without
+that leg. Save support_case.csv: points, c, λ, loads and signed margin. Checks: Σλ=1,
+reconstruction of both coordinates of c, Fᵢ≥0 and weight balance; the negative case must prohibit
+LIFT. Attach the diagram to the existing transitions plot.
+B. In Task 6, use an example gait period T=4 s and stance time of 3.2 s: the duty factor is 0.8.
+Schedule four swings of 0.8 s without overlap, leaving pauses on four supports. The timer specifies
+the plan; actual contact, a fresh estimate and support margin authorise transition to the next leg.
+Test unconfirmed touchdown: the schedule must not start the next step.
+A positive margin checks geometry under the stated assumptions. Sufficient friction and actuator
+torques, a load-bearing surface and leg reachability are also needed. Under acceleration,
+Σf+m·g_W=m·cdd, where g_W=(0,0,−9.81) m/s²; moments change angular momentum. The same
+polygon therefore does not guarantee balance under a push, during running or slipping, or with
+non-coplanar contacts.
+
+Time: 1 hour from 23-24 on excluding a leg, and 1 hour from 66-75 allocated to weight transfer. This
+calculation supports Tasks 6 and 12 within the existing laboratory; all previous tests and 75 hours remain.
+Read: Tedrake, Highly-articulated Legged Robots, “The special case of flat terrain”; Planning and Control
+through Contact, “(Autonomous) Hybrid Systems”.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M19 • 04 Jun 2028 - 06 Jul 2028 • 75 hours                                                                        15 / 15</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://underactuated.mit.edu/humanoids.html" target="_blank" rel="noopener noreferrer">https://underactuated.mit.edu/humanoids.html</a></li><li><a href="https://underactuated.mit.edu/contact.html" target="_blank" rel="noopener noreferrer">https://underactuated.mit.edu/contact.html</a></li><li><a href="https://underactuated.mit.edu/contact.html" target="_blank" rel="noopener noreferrer">https://underactuated.mit.edu/contact.html</a></li></ol></div></details>
+</section>
+<footer><p><a href="../library.html"><span lang="ru">Вернуться в библиотеку</span><span lang="en">Back to source library</span></a> · <a href="../index.html"><span lang="ru">Вернуться к новому плану</span><span lang="en">Back to revised plan</span></a></p><p class="checksum">SHA-256: 4751d7d76b57ef1f3fd24c7a8430fe8d1f4efdcd8c726f273ff6cc2a96d68b5b</p></footer>
+</main>
+<script>
+(function() {
+  function openPage() {
+    if (!/^#page-\d+$/.test(location.hash)) return;
+    var page=document.getElementById(location.hash.slice(1));
+    if(page) {page.open=true; page.scrollIntoView({block:'start'});}
+  }
+  window.addEventListener('hashchange',openPage);
+  document.addEventListener('DOMContentLoaded',openPage);
+  document.getElementById('expand-pages').addEventListener('click',function(){document.querySelectorAll('details[id^="page-"]').forEach(function(el){el.open=true;});});
+  document.getElementById('collapse-pages').addEventListener('click',function(){document.querySelectorAll('details[id^="page-"]').forEach(function(el){el.open=false;});});
+})();
+</script>
+</body>
+</html>

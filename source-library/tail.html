@@ -1,0 +1,3215 @@
+<!doctype html>
+<html lang="ru" data-ru-title="Исходный проект Tail — Robotics &amp; AI" data-en-title="Original Tail project — Robotics &amp; AI">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Исходный проект Tail — Robotics &amp; AI</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body class="source-reader">
+<a class="skip-link" href="#main"><span lang="ru">К тексту источника</span><span lang="en">Skip to source text</span></a>
+<header class="topbar"><a class="brand" href="../index.html">Robotics &amp; AI</a><nav><a href="../library.html"><span lang="ru">Библиотека источников</span><span lang="en">Source library</span></a><a href="../index.html"><span lang="ru">Новый план</span><span lang="en">Revised plan</span></a></nav><div class="lang-switch" aria-label="Language"><button type="button" data-lang="ru">RU</button><button type="button" data-lang="en">EN</button></div></header>
+<main class="wrap" id="main">
+<p class="eyebrow"><span lang="ru">Архив · исходный документ</span><span lang="en">Archive · original document</span></p>
+<h1><span lang="ru">Исходный проект Tail</span><span lang="en">Original Tail project</span></h1>
+<div class="notice source-notice"><strong><span lang="ru">Архивные даты и часы не действуют.</span><span lang="en">Original dates and hours are superseded.</span></strong><p><span lang="ru">Это полный текст исходного документа. Старый календарь, отпуска и бюджеты часов сохранены для проверки исходной информации. Рабочее расписание находится в новом плане: 50 часов в неделю, без отпусков.</span><span lang="en">This is the complete extracted text of the original document. Its historical calendar, vacations and hour budgets are preserved for source verification. Use the revised plan for the current schedule: 50 hours per week, with no vacations.</span></p></div>
+<p><span lang="ru">Язык исходника: английский.</span><span lang="en">Source language: English.</span> <span lang="ru">Переключатель RU/EN меняет язык интерфейса; исходный текст не переводится автоматически.</span><span lang="en">The RU/EN switch changes the interface; original source text is not automatically translated.</span></p>
+<p class="source-actions"><a href="../originals/tail.pdf"><span lang="ru">Открыть исходный PDF без изменений</span><span lang="en">Open the unchanged original PDF</span></a> · <span lang="ru">У этого исходника нет перевода: текст сохранён на английском.</span><span lang="en">This original has no translation: its English text is preserved.</span></p>
+<p><span lang="ru">Страниц</span><span lang="en">Pages</span>: 46 · <span lang="ru">Ссылок из PDF</span><span lang="en">PDF links</span>: 45</p>
+<details class="source-page source-toc"><summary><span lang="ru">Перейти к странице</span><span lang="en">Jump to a page</span></summary><nav class="page-links" aria-label="Pages"><a href="#page-1">1</a> <a href="#page-2">2</a> <a href="#page-3">3</a> <a href="#page-4">4</a> <a href="#page-5">5</a> <a href="#page-6">6</a> <a href="#page-7">7</a> <a href="#page-8">8</a> <a href="#page-9">9</a> <a href="#page-10">10</a> <a href="#page-11">11</a> <a href="#page-12">12</a> <a href="#page-13">13</a> <a href="#page-14">14</a> <a href="#page-15">15</a> <a href="#page-16">16</a> <a href="#page-17">17</a> <a href="#page-18">18</a> <a href="#page-19">19</a> <a href="#page-20">20</a> <a href="#page-21">21</a> <a href="#page-22">22</a> <a href="#page-23">23</a> <a href="#page-24">24</a> <a href="#page-25">25</a> <a href="#page-26">26</a> <a href="#page-27">27</a> <a href="#page-28">28</a> <a href="#page-29">29</a> <a href="#page-30">30</a> <a href="#page-31">31</a> <a href="#page-32">32</a> <a href="#page-33">33</a> <a href="#page-34">34</a> <a href="#page-35">35</a> <a href="#page-36">36</a> <a href="#page-37">37</a> <a href="#page-38">38</a> <a href="#page-39">39</a> <a href="#page-40">40</a> <a href="#page-41">41</a> <a href="#page-42">42</a> <a href="#page-43">43</a> <a href="#page-44">44</a> <a href="#page-45">45</a> <a href="#page-46">46</a> </nav></details>
+<p class="source-controls"><button type="button" id="expand-pages"><span lang="ru">Развернуть все страницы</span><span lang="en">Expand all pages</span></button> <button type="button" id="collapse-pages"><span lang="ru">Свернуть все страницы</span><span lang="en">Collapse all pages</span></button></p>
+<p><span lang="ru">Извлечение PDF может сохранять переносы строк и наложенные редакции. Формулы, иллюстрации и исходное оформление доступны в неизменённом PDF. Все встроенные ссылки вынесены под текст соответствующей страницы.</span><span lang="en">PDF extraction may retain line breaks and overlapping revisions. Equations, illustrations and original formatting remain available in the unchanged PDF. Every embedded link is listed below its corresponding page.</span></p>
+<section class="source-pages" aria-label="Original document pages">
+<details class="source-page" id="page-1"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 1 · Controllable Self Supporting Robotic Tail</summary><pre class="source-text">ROBOTICS AND AI  /  ADDITIONAL PROJECT MODULE
+Controllable Self Supporting Robotic Tail
+
+Detailed development plan for a wearable multi section
+mechanism
+75 hours  •  Python and Rust  •  ESP32 S3  •  CAD and 3D printing  •  ROS 2
+
+Project outcome
+
+A safe bench-tested and wearable tail prototype approximately 70–90 cm long. It bends smoothly
+through space, forms arcs and S-curves, produces a travelling wave, and holds a commanded shape
+without manual tension. It is not intended to balance a person, support body weight, or prevent a
+fall.
+
+Primary design decision
+
+Use three serial active sections. Each section controls two bending directions through two closed
+tendon loops. The resulting six controlled degrees of freedom create diagonal, circular, wave-like,
+and expressive motion. An elastic backbone, tendon pretension, reduction, and feedback keep the
+mechanism from sagging uncontrollably.
+
+                        Parameter                                                     Target
+
+
+                         Structure                           3 active sections × 2 DOF
+
+
+                         Vertebrae                           9–12 printed elements
+
+
+                          Control                            gamepad, motion files, trajectory editor
+
+
+                        Control loop                         50–100 Hz on the microcontroller
+
+
+                         Validation                          bench → dummy/load → brief wearable test
+
+
+Role in the programme. Complete this module after the single-joint and basic electronics work. It
+reuses sensor, control, embedded, CAD, and ROS 2 skills and prepares reusable components for the
+robotic hand and hexapod projects.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                          Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-2"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 2 · The 75 Hour Plan</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+The 75 Hour Plan
+
+Five blocks from requirements to demonstration
+
+         Block                     Hours                   Analysis                  Practice                   Result
+
+
+            1             15                        requirements, risks,      models and                Specification v1
+                                                    kinematics                calculations
+
+
+            2             15                        CAD and tendon            one passive section       Section v0
+                                                    routing
+
+
+            3             15                        actuation and             one active section        Section v1
+                                                    embedded control
+
+
+            4             15                        trajectories and          three-section bench       Tail bench v1
+                                                    synchronisation
+
+
+            5             15                        integration and           wearable prototype        Tail v1.0
+                                                    validation
+
+
+Working rhythm
+
+A two-hour session uses 10 minutes to restore context, 30 minutes for theory, 60 minutes for
+implementation, 15 minutes for measurements, and 5 minutes for the engineering log. A long
+session begins with a readiness criterion and ends with a repeatable test and saved evidence.
+
+Repository layout
+
+   requirements/ — scope, hazards, acceptance criteria
+   cad/ — vertebra, section, mount, spool, STL and STEP
+   firmware/ — drivers, watchdog and state machine
+   python/ — shape simulator, motion editor and plots
+   ros2_ws/ — messages, command nodes and telemetry
+   tests/ — scenarios, expected results and reports
+   motions/ — versioned YAML or JSON motion files
+Progression rule. Do not start the next block until the current gate is closed. A visually attractive
+video does not replace measurements. Record the CAD revision, firmware commit, pretension,
+mass, command, plots, and observed defects.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-3"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 3 · Requirements and Project Boundaries</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Requirements and Project Boundaries
+
+Define exactly what the prototype must and must not do
+
+Functional requirements
+
+   Bend smoothly in any direction within the validated working cone.
+   Control the base, middle, and tip independently.
+   Perform a diagonal arc, circle, S-curve, and travelling wave.
+   Hold a static pose for at least 30 seconds within a stated tolerance.
+   Move between poses without step changes in speed or tension.
+   Stop on stale commands, excessive current, or communication loss.
+   Never resume an old sequence automatically after a stop.
+
+                  Area                                  Requirement                                 Verification
+
+
+                   Mass                     minimise moving mass                       weigh each section and base
+
+
+                  Noise                     no gearbox impacts                         record and review
+
+
+              Temperature                   validated enclosure limit                  sensor during a 10-minute cycle
+
+
+              Repeatability                 pose repeats across trials                 five identical runs
+
+
+                  Repair                    replace one tendon or vertebra             disassembly test
+
+
+Exclusions. Version 1.0 does not balance the wearer, support body weight, act as an orthosis or
+medical device, operate while running, or perform high-energy swings. Add the decorative skin only
+after mechanical validation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-4"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 4 · Kinematics of a Multi Section Tail</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Kinematics of a Multi Section Tail
+
+From two bending axes to a spatial curve
+Represent one section with curvature components kx and ky, or with bending magnitude θ and
+bending-plane angle ψ. Combining the two components produces diagonal and circular motion.
+Connecting three sections produces a spatial curve without actuating every vertebra independently.
+
+         Command                              kx                              ky                     Observed shape
+
+
+            Neutral              0                              0                               straight or pre-curved tail
+
+
+              Left               +                              0                               horizontal arc
+
+
+              Up                 0                              +                               vertical arc
+
+
+           Diagonal              +                              +                               spatial arc
+
+
+             Circle              sin(ωt)                        cos(ωt)                         rotating bending direction
+
+
+Travelling wave
+
+For section i, define qᵢ(t) = Aᵢ sin(ωt + φᵢ). A phase delay between the base, middle, and tip makes
+motion propagate along the tail. The tip may use a larger amplitude, but receives separate velocity
+and acceleration limits.
+
+Required calculations
+
+1.  Define each local frame and positive bending direction.
+2.  Approximate the map from desired curvature to tendon-length change.
+3.  Validate neutral, principal axes, diagonal, and circle cases.
+4.  Animate the centreline in Python.
+5.  Compare predicted shape against a calibrated bench photograph.
+Use a constant-curvature model for v1. It does not capture friction, backlash, or local deformation;
+physical calibration remains mandatory.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-5"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 5 · Vertebrae and Backbone Mechanics</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Vertebrae and Backbone Mechanics
+
+A self-supporting structure without dangerous rigidity
+
+Recommended structure
+
+   9–12 vertebrae with four tendon passages
+   a flexible central rod or elastic backbone
+   three sections of 3–4 vertebrae
+   mechanical angle stops between neighbouring elements
+   a soft tip and enclosed pinch zones
+   a tool-free breakaway connection at the waist mount
+
+                  Part                              Prototype material                                Reason
+
+
+                Vertebra                    PETG                                      better repeated-load durability than
+                                                                                      PLA
+
+
+              Flexible insert               TPU 95A                                   return and damping
+
+
+                Backbone                    fibreglass rod or spring strip            elastic load-bearing centreline
+
+
+                 Tendon                     Dyneema or similar braid                  low stretch
+
+
+                  Guide                     PTFE liner                                reduced friction on bends
+
+
+CAD tasks
+
+1.  Create a parametric vertebra with diameter, pitch, tendon passage, and angle stop.
+2.  Remove sharp edges and prevent passage intersections.
+3.  Print three pitch variants and measure minimum bend radius.
+4.  Design a replaceable vertebra connection.
+5.  Publish an assembly drawing and component mass table.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-6"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 6 · Tendon Transmission</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Tendon Transmission
+
+Spatial bending and shape retention
+Each active section uses two perpendicular closed tendon loops. Rotation of a spool shortens one
+branch while lengthening the opposite branch. Moving both loops together aims the bending plane
+between the principal axes.
+
+Pretension
+
+A tendon must not leave its guide when direction reverses. Modest pretension removes slack; a
+spring or tensioning roller absorbs tolerances. Excessive pretension increases friction, heating, and
+base load.
+
+                 Defect                                    Symptom                                    Correction
+
+
+              Loose tendon                  delay and snap after reversal               set pretension and recalibrate zero
+
+
+            Excess pretension               high current and poor return                reduce tension
+
+
+                  Friction                  different shape by approach direction       increase radius and improve routing
+
+
+                  Stretch                   pose slowly drifts                          change tendon or add feedback
+
+
+              Cross-coupling                one section moves another                   secure and separate guides
+
+
+Mechanical gate
+
+   One passive section bends continuously without binding.
+   No wear or cracks after 100 manual cycles.
+   Neutral repeats after unloading.
+   Stops prevent backbone over-bending.
+   The section carries its own mass in a test pose.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                             Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-7"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 7 · Actuators and Pose Holding</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Actuators and Pose Holding
+
+Prevent sag without continuous overheating
+Self-support comes from the combined backbone stiffness, reduction, tendon pretension, and
+position feedback. The backbone carries part of the weight; tendons define curvature; the actuator
+supplies the remaining moment.
+
+            Option                       Advantages                       Limitations                          Use
+
+
+             Servo               fast start, integrated position  noise, backlash, limited        early bench
+                                                                  diagnostics
+
+
+         DC gearmotor            current and velocity control     needs encoder and driver        main prototype
+
+
+            Stepper              simple holding                   heat and missed steps           bench spool
+
+
+          Worm gear              mechanical holding               friction and poor               only after risk review
+                                                                  backdrivability
+
+
+Calculate before buying
+
+Estimate distal mass, lever arm, required tendon force, and spool radius for each section.
+Approximate spool torque as T = F·r. Add a documented allowance for friction and dynamics; do not
+select a motor from advertising peak torque alone.
+
+Holding without overheating
+
+   bias the neutral shape with an elastic element
+   reduce moving mass toward the tip
+   use reduction to lower holding current
+   limit time in demanding static poses
+   measure current and temperature
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-8"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 8 · Electronics and Power</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Electronics and Power
+
+Six channels with an independent stop path
+
+                             Node                                                           Purpose
+
+
+                           ESP32 S3                               real-time control, commands, telemetry, watchdog
+
+
+                         Motor drivers                            direction, PWM, current or fault feedback
+
+
+                           Encoders                               spool or shaft position for every channel
+
+
+                         Limit switches                           homing and hard travel boundary
+
+
+                         Fused supply                             limited and measurable bench energy
+
+
+                             E stop                               independent removal of motor power
+
+
+Wiring and measurements
+
+   Separate power and signal wiring and document grounding.
+   Place decoupling close to motor drivers.
+   Log supply voltage, current, position, and stop reason.
+   Measure voltage sag when several channels start together.
+   Keep batteries and exposed conductors away from the body during early tests.
+
+Commissioning order
+
+1.  One motor without a tendon and with a low current limit.
+2.  One motor with spool and mechanical stop.
+3.  One section with two actuators.
+4.  Three sections on a fixed bench.
+5.  Only then portable power and a wearable mount.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-9"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 9 · Embedded Software</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Embedded Software
+
+States, control loops, and safe stopping
+
+                  State                               Permitted action                                   Exit
+
+
+                  BOOT                      self-test, outputs disabled                READY or FAULT
+
+
+                  READY                     accept configuration                       HOMING or STOPPED
+
+
+                 HOMING                     slow zero search                           STOPPED or FAULT
+
+
+                 MANUAL                     accept new position commands               STOPPED or FAULT
+
+
+                PLAYBACK                    execute one trajectory                     STOPPED or FAULT
+
+
+                STOPPED                     clear motion and hold safely               explicit reset only
+
+
+                  FAULT                     disable power output                       manual diagnosis and reset
+
+
+Control layers
+
+   The outer loop commands section curvature or pose.
+   The inner loop controls spool position and limits velocity.
+   The limiter checks current, temperature, angle, and command rate.
+   The watchdog enters STOPPED on a stale command.
+   A duplicate packet does not refresh command freshness.
+
+Rust tasks
+
+1.  Model states and legal transitions with enums.
+2.  Use monotonic timestamps and command-age checks.
+3.  Store telemetry in a fixed-capacity ring buffer.
+4.  Test STOPPED, FAULT, and restart transitions.
+5.  Preserve the first fault cause.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-10"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 10 · Smooth and Expressive Motion</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Smooth and Expressive Motion
+
+Trajectory quality matters more than motor count
+Flexible mechanics will still move abruptly when commanded with steps. The planner limits position,
+velocity, acceleration, and preferably jerk. Host software plans in section coordinates; embedded
+software executes spool coordinates.
+
+                 Motion                                     Sections                                    Principle
+
+
+                   Sway                      1–3                                        small sine waves with phase delay
+
+
+                  Circle                     1–2                                        sine and cosine on two axes
+
+
+                 S-curve                     1 and 2 opposite                           static spatial curvature
+
+
+                   Wave                      1 → 2 → 3                                  one frequency and delayed phase
+
+
+                Curious tip                  3                                          small arc over the base pose
+
+
+                  Return                     all                                        velocity-limited transition to neutral
+
+
+Python editor
+
+   timeline with key poses
+   cubic interpolation or S-curve profile
+   3D centreline preview
+   position, velocity, and acceleration plots
+   versioned export with frequency and units
+Machine learning is not required for v1. Motion must first be deterministic, explainable, and
+constrained. Learning from demonstration belongs after reliable telemetry and a validated limiter.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                             Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-11"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 11 · ROS 2 Architecture</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+ROS 2 Architecture
+
+Separate planning from real-time execution
+
+                  Node                                       Input                                     Output
+
+
+                tail_input                  gamepad                                    desired pose and mode
+
+
+               tail_planner                 pose or motion ID                          timed trajectory
+
+
+                tail_limiter                trajectory                                 safe command
+
+
+                tail_bridge                 command                                    serial or CAN frames
+
+
+                tail_state                  telemetry                                  joint state and faults
+
+
+              tail_visualizer               state                                      RViz markers and plots
+
+
+Command contract
+
+Every command contains a sequence ID, monotonic timestamp, mode, six target coordinates, limits,
+and expiry. Units and signs are part of the interface. Reject unknown schema versions and incorrect
+channel counts.
+
+Mode switching
+
+   MANUAL cancels playback through an explicit user action.
+   A new trajectory starts from measured state.
+   STOPPED clears queued motion.
+   The embedded watchdog stops locally after ROS 2 loss.
+   RViz displays command and measurement separately.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-12"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 12 · Calibration and Bench Validation</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Calibration and Bench Validation
+
+Measure first and wear later
+
+Calibration sequence
+
+1.  Find mechanical neutral with unloaded tendons.
+2.  Set equal pretension with a documented method.
+3.  Home each spool at limited velocity.
+4.  Map spool travel to section curvature on a test grid.
+5.  Measure hysteresis from both approach directions.
+6.  Version coefficients with the physical assembly.
+
+               ID                           Scenario                       Saved data                      Pass criterion
+
+
+              T01                 neutral for 60 s                 position, current,               drift within tolerance
+                                                                   temperature
+
+
+              T02                 six boundary poses               command and measurement          no contact with hard stop
+
+
+              T03                 100 cycles                       current, events, tendon          no damage
+                                                                   photos
+
+
+              T04                 travelling wave                  six channels and video           no steps or slack
+
+
+              T05                 communication loss               event log                        transition to STOPPED
+
+
+              T06                 soft jam fixture                 current and fault                rapid shutdown
+
+
+Simulate a jam with a low-energy bench fixture. Never restrain a powered mechanism by hand and
+never introduce a deliberate fault while it is worn.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                             Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-13"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 13 · Wearable Integration and Safety</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Wearable Integration and Safety
+
+The tail moves itself but must not move the wearer
+
+Mount
+
+   A wide belt or rigid frame distributes load.
+   The motor block stays close to the body and inside a guard.
+   The tail detaches without tools.
+   Wiring cannot form loops near the legs.
+   Both wearer and observer can reach a stop control.
+
+                 Hazard                                  Risk reduction                                 Verification
+
+
+                Tail impact                  soft tip, velocity limit, clear zone         bench test
+
+
+                Pinch point                  closed skin and controlled gaps              inspection in every pose
+
+
+               Overheating                   sensor and current/time limits               10-minute cycle
+
+
+              Tendon failure                 guard and safe neutral                       controlled failure test
+
+
+             Unexpected start                manual reset and watchdog                    power-cycle test
+
+
+             Lower-back load                 low mass and short trials                    mount assessment
+
+
+Wearable test order. Begin stationary at minimum velocity with one channel, then one section,
+then one slow full-tail sequence. Stop immediately for pain, numbness, rubbing, unstable mounting,
+or unusual heating.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                             Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-14"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 14 · Purchasing and Tools</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Purchasing and Tools
+
+Buy only what the current gate requires
+
+                  Stage                                       Required                                        Note
+
+
+                 Available                    Creality CR-10 SE                             print vertebrae and spools
+
+
+                  Block 1                     caliper, scale, fasteners, heat-set           measurement and assembly
+                                              inserts
+
+
+                  Block 2                     PETG, TPU 95A, tendon, PTFE guides            passive section
+
+
+                  Block 3                     ESP32-S3, two motors, drivers,                one section first
+                                              encoders
+
+
+                  Block 3                     fused bench supply and E stop                 bench safety
+
+
+                  Block 4                     four more motors and driver channels          after the one-section gate
+
+
+                  Block 5                     waist frame, guards, soft tip                 after bench validation
+
+
+Install
+
+   Ubuntu 24.04, Git, and an editor
+   Python, uv, NumPy, SciPy, Matplotlib, and pytest
+   Rustup, Cargo, and ESP32 target tools
+   ROS 2 and RViz for integration
+   FreeCAD or Fusion 360
+   KiCad after breadboard validation
+   logic analyser and multimeter
+Do not buy six expensive actuators at once. Measure the force and motion quality of one active
+section, then select a consistent motor family from actual data.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                              Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-15"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 15 · Acceptance Terms and Reading</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Acceptance Terms and Reading
+
+What must be demonstrated at the end
+
+Final gate
+
+   All three sections independently pass the calibration grid.
+   The tail performs neutral, diagonal, circle, S-curve, and wave motions.
+   A static pose is held for 30 seconds within tolerance.
+   No tendon, vertebra, or mount damage appears after 100 cycles.
+   Communication loss, overcurrent, and E stop produce a verified stop.
+   No motion begins after power cycle without explicit authorisation.
+   CAD, BOM, firmware, Python tools, ROS 2 interfaces, logs, and video are retained.
+
+                            Term                                                          Definition
+
+
+                      Degree of freedom                          independent configuration coordinate
+
+
+                           Curvature                             rate of centreline direction change
+
+
+                      Antagonistic drive                         opposing force pair
+
+
+                          Pretension                             initial tension that removes slack
+
+
+                          Hysteresis                             path-dependent response to the same command
+
+
+                          Watchdog                               freshness monitor that enters a safe state
+
+
+Short reading list
+
+   Lynch and Park, Modern Robotics.
+   Spong, Hutchinson, and Vidyasagar, Robot Modeling and Control.
+   Webster and Jones, Design and Kinematic Modeling of Constant Curvature Continuum Robots.
+   Camarillo et al., Mechanics Modeling of Tendon Driven Continuum Manipulators.
+   Arque, Artificial Biomimicry Inspired Tail for Extending Innate Body Functions, ACM SIGGRAPH
+    2019.
+   ROS 2, ESP-IDF, and The Embedded Rust Book documentation as required by each block.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-16"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 16 · Session 1 Measurable Requirements</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Session 1 Measurable Requirements
+
+Hours 1–5  •  Block 1
+
+Session outcome
+
+A one-page specification v0.1 with measurable criteria, explicit exclusions, and five reference
+motions.
+
+Theory 60 minutes
+
+   scope and v1 boundaries
+   configuration, state, and degree of freedom
+   requirement, metric, tolerance, and test method
+   verifiable behaviour versus visual impression
+
+Practice 180 minutes
+
+1.  Describe the stationary-use scenario.
+2.  Set tentative length, section count, and working cone.
+3.  Draw the three sections and local axes.
+4.  Specify five motions from start pose to completion.
+5.  Turn smoothness and pose holding into measurable tests.
+
+Measurement and report 60 minutes
+
+                            Retain                                                         Purpose
+
+
+                     requirements_v01.md                         evidence of completion and input to the next session
+
+
+                          axes sketch                            evidence of completion and input to the next session
+
+
+                       acceptance table                          evidence of completion and input to the next session
+
+
+                         exclusions list                         evidence of completion and input to the next session
+
+
+Completion criterion. Every requirement has a test method; balancing the wearer is explicitly
+excluded.
+Typical mistakes. Do not freeze exact motor specifications before the first mechanical experiment.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-17"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 17 · Session 2 Risk and Safe Architecture</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Session 2 Risk and Safe Architecture
+
+Hours 6–10  •  Block 1
+
+Session outcome
+
+A hazard register and stop architecture created before powered mechanics.
+
+Theory 60 minutes
+
+   hazard, severity, probability, and residual risk
+   safe state
+   unexpected-start prevention
+   energy limitation
+
+Practice 180 minutes
+
+1.  List impact, pinch, tendon failure, heating, and link-loss hazards.
+2.  Define prevention, detection, and response for each hazard.
+3.  Choose STOPPED behaviour.
+4.  Draw an independent E-stop power path.
+5.  Define the order of bench and wearable tests.
+
+Measurement and report 60 minutes
+
+                            Retain                                                          Purpose
+
+
+                        risk_register.csv                        evidence of completion and input to the next session
+
+
+                         safe_state.md                           evidence of completion and input to the next session
+
+
+                        E-stop diagram                           evidence of completion and input to the next session
+
+
+                         test_order.md                           evidence of completion and input to the next session
+
+
+Completion criterion. No single software fault can start motion after a stop or power-up.
+Typical mistakes. Do not rely on ROS 2 as the only protection layer.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-18"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 18 · Session 3 Kinematic Model in Python</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Session 3 Kinematic Model in Python
+
+Hours 11–15  •  Block 1
+
+Session outcome
+
+A three-section model, 3D preview, and tests for known shapes.
+
+Theory 60 minutes
+
+   constant curvature
+   kx and ky
+   local and world frames
+   transform composition
+
+Practice 180 minutes
+
+1.  Implement one section from length and curvature.
+2.  Chain three sections.
+3.  Plot neutral, four directions, and diagonal.
+4.  Animate a rotating bending plane.
+5.  Test zero curvature, continuity, and symmetry.
+
+Measurement and report 60 minutes
+
+                            Retain                                                         Purpose
+
+
+                         tail_model.py                           evidence of completion and input to the next session
+
+
+                      test_kinematics.py                         evidence of completion and input to the next session
+
+
+                           five plots                            evidence of completion and input to the next session
+
+
+                     units_and_frames.md                         evidence of completion and input to the next session
+
+
+Completion criterion. All reference shapes are reproducible and units are documented.
+Typical mistakes. Do not mix degrees and radians or compare plots without saved parameters.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-19"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 19 · Session 4 Parametric Vertebra</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Session 4 Parametric Vertebra
+
+Hours 16–20  •  Block 2
+
+Session outcome
+
+Three CAD variants and one printed test chain.
+
+Theory 60 minutes
+
+   parametric dependencies
+   FDM tolerances
+   guide radius and friction
+   stress concentration
+
+Practice 180 minutes
+
+1.  Create diameter, pitch, four passages, and centre-hole parameters.
+2.  Round tendon entry and exit edges.
+3.  Add a relative-angle stop.
+4.  Export three pitch variants.
+5.  Print a short chain and test tendon travel.
+
+Measurement and report 60 minutes
+
+                            Retain                                                          Purpose
+
+
+                          CAD sources                             evidence of completion and input to the next session
+
+
+                         STL and STEP                             evidence of completion and input to the next session
+
+
+                          print profile                           evidence of completion and input to the next session
+
+
+                         variant photos                           evidence of completion and input to the next session
+
+
+                        dimension table                           evidence of completion and input to the next session
+
+
+Completion criterion. The tendon moves freely and the vertebrae meet the designed stop first.
+Typical mistakes. Do not size the passage at the tendon nominal diameter or leave sharp printed
+edges.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-20"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 20 · Session 5 Passive Section</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Session 5 Passive Section
+
+Hours 21–25  •  Block 2
+
+Session outcome
+
+A passive section with backbone, return behaviour, and manual tendon control.
+
+Theory 60 minutes
+
+   elastic-beam bending
+   neutral shape
+   stiffness and damping
+   holding versus compliance
+
+Practice 180 minutes
+
+1.  Assemble 3–4 vertebrae.
+2.  Route four temporary tendons.
+3.  Measure mass, length, and minimum bend radius.
+4.  Run ten manual cycles in four directions.
+5.  Compare three backbone variants.
+
+Measurement and report 60 minutes
+
+                            Retain                                                         Purpose
+
+
+                        section_v0.step                          evidence of completion and input to the next session
+
+
+                     mass and dimensions                         evidence of completion and input to the next session
+
+
+                          cycle video                            evidence of completion and input to the next session
+
+
+                    backbone comparison                          evidence of completion and input to the next session
+
+
+Completion criterion. The section returns near neutral, does not bind, and carries its own mass.
+Typical mistakes. Do not make the section dangerously rigid merely to prevent sag.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-21"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 21 · Session 6 Spool and Closed Tendon Loop</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Session 6 Spool and Closed Tendon Loop
+
+Hours 26–30  •  Block 2
+
+Session outcome
+
+A manual two-axis section rig with repeatable pretension adjustment.
+
+Theory 60 minutes
+
+   antagonistic pair
+   tendon-length change
+   spool radius and resolution
+   Bowden hysteresis
+
+Practice 180 minutes
+
+1.  Design a spool that anchors both loop ends.
+2.  Add tension adjustment without retying knots.
+3.  Build two perpendicular loops.
+4.  Mark zero and angular scale.
+5.  Measure shape from both approach directions.
+
+Measurement and report 60 minutes
+
+                            Retain                                                         Purpose
+
+
+                         spool_v1.step                           evidence of completion and input to the next session
+
+
+                       routing diagram                           evidence of completion and input to the next session
+
+
+                       pretension record                         evidence of completion and input to the next session
+
+
+                        hysteresis plot                          evidence of completion and input to the next session
+
+
+Completion criterion. Both axes combine into a diagonal pose without creating slack.
+Typical mistakes. Do not allow uncontrolled crossing layers on the spool.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-22"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 22 · Session 7 One Actuator Channel</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Session 7 One Actuator Channel
+
+Hours 31–35  •  Block 3
+
+Session outcome
+
+One safe motor channel tested before attachment to the full tail.
+
+Theory 60 minutes
+
+   torque, speed, and power
+   encoder and gear ratio
+   PWM and direction
+   current as a diagnostic
+
+Practice 180 minutes
+
+1.  Power one driver with a low current limit.
+2.  Verify direction without a tendon.
+3.  Read the encoder and define sign.
+4.  Add software and mechanical limits.
+5.  Measure current at idle, acceleration, and stop.
+
+Measurement and report 60 minutes
+
+                            Retain                                                          Purpose
+
+
+                      channel schematic                           evidence of completion and input to the next session
+
+
+                      motor_test firmware                         evidence of completion and input to the next session
+
+
+                      position-current log                        evidence of completion and input to the next session
+
+
+                       motor data sheet                           evidence of completion and input to the next session
+
+
+Completion criterion. The channel tracks a small position command and stops safely on link loss.
+Typical mistakes. Never apply full power before validating feedback sign.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-23"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 23 · Session 8 One Active Two Axis Section</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Session 8 One Active Two Axis Section
+
+Hours 36–40  •  Block 3
+
+Session outcome
+
+Section v1 with two actuators, four directions, and diagonal motion.
+
+Theory 60 minutes
+
+   independent position loops
+   mechanical cross-coupling
+   saturation and anti-windup
+   command-rate limiting
+
+Practice 180 minutes
+
+1.  Connect one actuator to one closed loop.
+2.  Tune low-speed position control.
+3.  Add the perpendicular loop.
+4.  Run a 3 × 3 command grid.
+5.  Measure current at neutral and boundary poses.
+
+Measurement and report 60 minutes
+
+                            Retain                                                         Purpose
+
+
+                     section_v1 assembly                         evidence of completion and input to the next session
+
+
+                       controller settings                       evidence of completion and input to the next session
+
+
+                        nine test poses                          evidence of completion and input to the next session
+
+
+                    command-position plots                       evidence of completion and input to the next session
+
+
+Completion criterion. The section completes the pose grid without snap, bind, overcurrent, or
+slack.
+Typical mistakes. Tune one loop at a time; do not hide mechanical defects with aggressive PID.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-24"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 24 · Session 9 Firmware and Fault Transitions</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Session 9 Firmware and Fault Transitions
+
+Hours 41–45  •  Block 3
+
+Session outcome
+
+A tested state controller with watchdog, fault latch, and homing.
+
+Theory 60 minutes
+
+   finite-state machine
+   monotonic time
+   latched fault
+   command-state-event separation
+
+Practice 180 minutes
+
+1.  Implement BOOT through FAULT states.
+2.  Disable power until successful initialisation.
+3.  Add command-freshness timeout.
+4.  Simulate duplicate, loss, and range faults.
+5.  Verify that power cycling does not start motion.
+
+Measurement and report 60 minutes
+
+                            Retain                                                          Purpose
+
+
+                       state_machine.rs                           evidence of completion and input to the next session
+
+
+                        transition table                          evidence of completion and input to the next session
+
+
+                           unit tests                             evidence of completion and input to the next session
+
+
+                          events.json                             evidence of completion and input to the next session
+
+
+                          E-stop video                            evidence of completion and input to the next session
+
+
+Completion criterion. Every failure reaches a known state and preserves the first cause.
+Typical mistakes. Never auto-clear FAULT or refresh the watchdog with a duplicate command.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-25"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 25 · Session 10 Three Section Mechanical Assembly</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Session 10 Three Section Mechanical Assembly
+
+Hours 46–50  •  Block 4
+
+Session outcome
+
+A full tail on a fixed bench with routed tendons and measured mass.
+
+Theory 60 minutes
+
+   cascaded section load
+   distal mass and base moment
+   guide routing
+   module repairability
+
+Practice 180 minutes
+
+1.  Connect three sections.
+2.  Route six loops without crossings or sharp bends.
+3.  Mount actuators on a rigid bench.
+4.  Weigh each section and the complete tail.
+5.  Check manual travel before power.
+
+Measurement and report 60 minutes
+
+                            Retain                                                        Purpose
+
+
+                      tail_bench_v1.step                         evidence of completion and input to the next session
+
+
+                          mass BOM                               evidence of completion and input to the next session
+
+
+                         routing plan                            evidence of completion and input to the next session
+
+
+                    boundary-pose photos                         evidence of completion and input to the next session
+
+
+Completion criterion. Each actuator affects only its intended coordinate within the documented
+coupling limit.
+Typical mistakes. Do not wear this assembly or increase tension to mask bad routing.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-26"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 26 · Session 11 Six Channel Calibration</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Session 11 Six Channel Calibration
+
+Hours 51–55  •  Block 4
+
+Session outcome
+
+A versioned map from section commands to spool positions.
+
+Theory 60 minutes
+
+   zero and homing
+   coupling matrix
+   repeatability and reproducibility
+   data-based backlash compensation
+
+Practice 180 minutes
+
+1.  Calibrate each neutral independently.
+2.  Collect a command grid per section.
+3.  Repeat points from positive and negative directions.
+4.  Estimate cross-coupling.
+5.  Bind coefficients to the mechanical assembly revision.
+
+Measurement and report 60 minutes
+
+                            Retain                                                          Purpose
+
+
+                      calibration_v1.yaml                        evidence of completion and input to the next session
+
+
+                            raw CSV                              evidence of completion and input to the next session
+
+
+                        hysteresis plots                         evidence of completion and input to the next session
+
+
+                       calibration report                        evidence of completion and input to the next session
+
+
+Completion criterion. Five repeats of a reference pose meet tolerance; unknown calibration
+versions are rejected.
+Typical mistakes. Never reuse calibration after replacing a tendon without verification.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-27"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 27 · Session 12 Smooth Trajectory Generator</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Session 12 Smooth Trajectory Generator
+
+Hours 56–60  •  Block 4
+
+Session outcome
+
+A motion editor and player with velocity and acceleration constraints.
+
+Theory 60 minutes
+
+   key poses and interpolation
+   velocity profile
+   derivative continuity
+   phase-delayed wave
+
+Practice 180 minutes
+
+1.  Define a versioned motion-file format.
+2.  Start each transition from measured state.
+3.  Create sway, circle, S-curve, wave, and return.
+4.  Plot all six channels and derivatives.
+5.  Run first without motors, then at low speed.
+
+Measurement and report 60 minutes
+
+                            Retain                                                          Purpose
+
+
+                       motion YAML files                          evidence of completion and input to the next session
+
+
+                           planner.py                             evidence of completion and input to the next session
+
+
+                        trajectory plots                          evidence of completion and input to the next session
+
+
+                       five-motion video                          evidence of completion and input to the next session
+
+
+Completion criterion. Commands contain no steps and the limiter rejects unsafe trajectories with
+a reason.
+Typical mistakes. Never jump to a motion file’s first recorded point.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-28"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 28 · Session 13 ROS 2 Integration</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Session 13 ROS 2 Integration
+
+Hours 61–65  •  Block 5
+
+Session outcome
+
+A ROS 2 workspace for input, planning, limiting, bridging, and telemetry.
+
+Theory 60 minutes
+
+   topics, services, and actions
+   QoS
+   action cancellation
+   host versus real-time control
+
+Practice 180 minutes
+
+1.  Define command, state, and event messages.
+2.  Connect a gamepad through tail_input.
+3.  Send limited commands through tail_bridge.
+4.  Publish position, current, and state.
+5.  Test playback cancellation and planner loss.
+
+Measurement and report 60 minutes
+
+                            Retain                                                          Purpose
+
+
+                            ros2_ws                               evidence of completion and input to the next session
+
+
+                      interface definitions                       evidence of completion and input to the next session
+
+
+                        scenario rosbag                           evidence of completion and input to the next session
+
+
+                          node graph                              evidence of completion and input to the next session
+
+
+                            fault log                             evidence of completion and input to the next session
+
+
+Completion criterion. Embedded stopping works even when a ROS node exits; old actions never
+resume after STOPPED.
+Typical mistakes. Do not move the fast protective loop into ROS.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-29"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 29 · Session 14 Endurance and Fault Testing</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Session 14 Endurance and Fault Testing
+
+Hours 66–70  •  Block 5
+
+Session outcome
+
+A 100-cycle protocol and controlled-failure report.
+
+Theory 60 minutes
+
+   test scenario and expected result
+   fault observability
+   thermal regime
+   stop criterion
+
+Practice 180 minutes
+
+1.  Run 100 slow wave cycles with logging.
+2.  Inspect tendons every 25 cycles.
+3.  Measure current and temperature consistently.
+4.  Simulate link loss, excess command, and a soft jam.
+5.  Repeat neutral and reference pose after endurance.
+
+Measurement and report 60 minutes
+
+                            Retain                                                          Purpose
+
+
+                       test_protocol.md                           evidence of completion and input to the next session
+
+
+                         100-cycle.csv                            evidence of completion and input to the next session
+
+
+                          wear photos                             evidence of completion and input to the next session
+
+
+                          fault matrix                            evidence of completion and input to the next session
+
+
+                         summary plot                             evidence of completion and input to the next session
+
+
+Completion criterion. No progressive damage appears and every injected fault reaches its defined
+response.
+Typical mistakes. Stop on unusual noise, heat, or damage; record any configuration change.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-30"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 30 · Session 15 Wearable Test and Final Demonstration</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Session 15 Wearable Test and Final Demonstration
+
+Hours 71–75  •  Block 5
+
+Session outcome
+
+Tail v1.0 with a complete evidence package and v2 backlog.
+
+Theory 60 minutes
+
+   staged energy increase
+   human-in-the-loop stopping
+   repeatable demonstration
+   post-project review
+
+Practice 180 minutes
+
+1.  Validate the mount on a dummy or equivalent load.
+2.  Wear the unpowered mechanism and assess mass and release.
+3.  Run one channel, one section, then the full slow sequence.
+4.  Demonstrate five reference motions and E stop.
+5.  Package the repository, report, BOM, logs, video, and launch instructions.
+
+Measurement and report 60 minutes
+
+                            Retain                                                         Purpose
+
+
+                       tail_v1.0 release                         evidence of completion and input to the next session
+
+
+                          final report                           evidence of completion and input to the next session
+
+
+                          demo video                             evidence of completion and input to the next session
+
+
+                             BOM                                 evidence of completion and input to the next session
+
+
+                         known issues                            evidence of completion and input to the next session
+
+
+                          v2 backlog                             evidence of completion and input to the next session
+
+
+Completion criterion. The demonstration repeats from a clean environment and every criterion
+has saved evidence.
+Typical mistakes. Never raise speed for a more dramatic video or claim safety outside validated
+modes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre></details><details class="source-page" id="page-31"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 31 · Detailed Reading Guide</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Detailed Reading Guide
+
+Appendix to the 75 hour build plan
+This appendix maps specific books, papers, standards, and official documentation to every project
+session. It is deliberately selective: read the named chapters or topics, then apply them immediately
+to the tail. The complete recommended reading load is approximately 20–25 hours in addition to the
+75 hours of engineering work; the minimum path is about 8–10 hours.
+
+Core reference shelf
+
+   Lynch and Park, Modern Robotics — Chapters 2–5, 8, 9, and 11: configuration, rigid
+    transformations, kinematics, statics, dynamics, trajectories, and control.  Open source
+   Webster and Jones, Design and Kinematic Modeling of Constant Curvature Continuum
+    Robots — Continuum architectures, constant-curvature coordinates, section frames, and model
+    limitations.  Open source
+   Rao et al., How to Model Tendon-Driven Continuum Robots and Benchmark Modelling
+    Performance — Tendon routing, modelling assumptions, gravity, friction, external loads, and
+    model selection.  Open source
+   Astrom and Murray, Feedback Systems — Feedback principles, modelling, stability, PID,
+    saturation, and discrete control.  Open source
+   Budynas and Nisbett, Shigley&#x27;s Mechanical Engineering Design — Use as a reference for
+    stress, bending, springs, fatigue, shafts, fasteners, and safety factors.
+   Scherz and Monk, Practical Electronics for Inventors — Use as a reference for motor
+    power, H-bridges, PWM, encoders, protection, filtering, and grounding.
+
+How to use the list
+
+1.  Before a session, read only the required items and write five technical notes.
+2.  During the build, record which assumption each experiment tests.
+3.  After the session, save one calculation, plot, drawing, or test result derived from the reading.
+4.  Treat standards as design guidance, not as evidence that the prototype is certified.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://fbsbook.org/" target="_blank" rel="noopener noreferrer">https://fbsbook.org/</a></li><li><a href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2020.630245/full" target="_blank" rel="noopener noreferrer">https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2020.630245/full</a></li><li><a href="https://doi.org/10.1177/0278364910368147" target="_blank" rel="noopener noreferrer">https://doi.org/10.1177/0278364910368147</a></li><li><a href="https://hades.mech.northwestern.edu/index.php/Modern_Robotics" target="_blank" rel="noopener noreferrer">https://hades.mech.northwestern.edu/index.php/Modern_Robotics</a></li></ol></div></details><details class="source-page" id="page-32"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 32 · Reading for Session 1</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Reading for Session 1
+
+Measurable Requirements
+
+Required reading
+
+   NASA Systems Engineering Handbook — System requirements, functional and performance
+    requirements, verification, validation, and traceability.  Open source
+   Modern Robotics Chapter 2 — Configuration space, degrees of freedom, constraints, task
+    space, and workspace.  Open source
+
+Concepts to understand
+
+   goal versus requirement versus preference
+   metric, tolerance, and acceptance threshold
+   functional versus performance requirement
+   verification versus validation
+   traceability from requirement to saved evidence
+
+Evidence after reading
+
+Create requirements_v01.md with Requirement → Metric → Test → Acceptance threshold. Replace
+statements such as “moves naturally” with measurable limits for angle, rate, acceleration, pose-hold
+duration, and repeatability.
+
+Reading rule
+
+Do not postpone the build until every source is finished. Read the listed topic, write a concise
+engineering note, apply it in the session, and record where the physical result differs from the
+model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://modernrobotics.northwestern.edu/nu-gm-book-resource/foundations-of-robot-motion/" target="_blank" rel="noopener noreferrer">https://modernrobotics.northwestern.edu/nu-gm-book-resource/foundations-of-robot-motion/</a></li><li><a href="https://www.nasa.gov/reference/systems-engineering-handbook/" target="_blank" rel="noopener noreferrer">https://www.nasa.gov/reference/systems-engineering-handbook/</a></li></ol></div></details><details class="source-page" id="page-33"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 33 · Reading for Session 2</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Reading for Session 2
+
+Risk and Safe Architecture
+
+Required reading
+
+   ISO 12100 — Hazard identification, risk estimation, inherently safe design, guards, information
+    for use, and residual risk.  Open source
+   IEC 60204-1 — Electrical equipment of machines, supply isolation, protective bonding, and
+    emergency stopping principles.  Open source
+   ISO 13849-1 overview — Safety-related control functions and the idea that risk reduction must
+    be designed and validated.  Open source
+
+Concepts to understand
+
+   pinch point and impact zone
+   stored elastic energy
+   single point of failure
+   safe state and latched fault
+   independent E-stop power removal
+   unexpected-start prevention
+
+Evidence after reading
+
+Produce a hazard register with hazard, cause, severity, likelihood, prevention, detection, response,
+and residual risk. This study does not certify the prototype.
+
+Reading rule
+
+Do not postpone the build until every source is finished. Read the listed topic, write a concise
+engineering note, apply it in the session, and record where the physical result differs from the
+model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://www.iso.org/standard/69883.html" target="_blank" rel="noopener noreferrer">https://www.iso.org/standard/69883.html</a></li><li><a href="https://webstore.iec.ch/en/publication/26037" target="_blank" rel="noopener noreferrer">https://webstore.iec.ch/en/publication/26037</a></li><li><a href="https://www.iso.org/standard/51528.html" target="_blank" rel="noopener noreferrer">https://www.iso.org/standard/51528.html</a></li></ol></div></details><details class="source-page" id="page-34"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 34 · Reading for Session 3</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Reading for Session 3
+
+Kinematic Model in Python
+
+Required reading
+
+   Modern Robotics Chapters 3–5 — Rotations, homogeneous transforms, forward kinematics,
+    Jacobians, and statics.  Open source
+   Webster and Jones — Constant-curvature representation and transforms between sections.
+    Open source
+   Open Continuum Robotics — Worked constant-curvature model for a tendon-driven
+    continuum robot.  Open source
+
+Concepts to understand
+
+   local and world frames
+   curvature kappa, bending angle theta, and bending-plane angle phi
+   homogeneous transform composition
+   zero-curvature limit
+   assumptions omitted by the geometric model
+
+Evidence after reading
+
+Implement and test a three-section centreline model. Save neutral, axial, diagonal, circular, and
+phase-delayed wave plots with units and frame conventions.
+
+Reading rule
+
+Do not postpone the build until every source is finished. Read the listed topic, write a concise
+engineering note, apply it in the session, and record where the physical result differs from the
+model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://www.opencontinuumrobotics.com/101/2022/12/09/tdcr-cc-model.html" target="_blank" rel="noopener noreferrer">https://www.opencontinuumrobotics.com/101/2022/12/09/tdcr-cc-model.html</a></li><li><a href="https://doi.org/10.1177/0278364910368147" target="_blank" rel="noopener noreferrer">https://doi.org/10.1177/0278364910368147</a></li><li><a href="https://hades.mech.northwestern.edu/images/7/7f/MR.pdf" target="_blank" rel="noopener noreferrer">https://hades.mech.northwestern.edu/images/7/7f/MR.pdf</a></li></ol></div></details><details class="source-page" id="page-35"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 35 · Reading for Session 4</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Reading for Session 4
+
+Parametric Vertebra
+
+Required reading
+
+   Autodesk Fusion learning collection — Parametric sketches, user parameters, components,
+    patterns, drawings, and manufacturing export.  Open source
+   Shigley&#x27;s Mechanical Engineering Design — Stress concentration, bending, fatigue, fillets,
+    fasteners, and factor of safety.
+   Creality CR-10 SE support material — Printer setup, material profiles, calibration, and
+    maintenance for the available machine.  Open source
+
+Concepts to understand
+
+   fully constrained sketch
+   parameter dependency
+   FDM hole compensation
+   layer-direction strength
+   guide radius and edge finishing
+   STEP versus STL
+
+Evidence after reading
+
+Publish three pitch variants, a dimension table, print settings, and a test chain. Measure the printed
+tendon passage and update the CAD compensation.
+
+Reading rule
+
+Do not postpone the build until every source is finished. Read the listed topic, write a concise
+engineering note, apply it in the session, and record where the physical result differs from the
+model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://www.creality.com/pages/download-cr-10-se" target="_blank" rel="noopener noreferrer">https://www.creality.com/pages/download-cr-10-se</a></li><li><a href="https://www.autodesk.com/learn/ondemand/collection/introduction-to-modeling-and-design-for-manufacturing" target="_blank" rel="noopener noreferrer">https://www.autodesk.com/learn/ondemand/collection/introduction-to-modeling-and-design-for-manufacturing</a></li></ol></div></details><details class="source-page" id="page-36"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 36 · Reading for Session 5</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Reading for Session 5
+
+Passive Section
+
+Required reading
+
+   Webster and Jones — Continuum architectures, segmented backbones, compliant structures,
+    and constant-curvature assumptions.  Open source
+   Shigley&#x27;s Mechanical Engineering Design — Beam deflection, elastic energy, springs, creep,
+    repeated loading, and fatigue.
+   Material data sheets — Read the actual PETG, TPU 95A, fibreglass rod, and spring-strip data
+    supplied by the chosen manufacturers.
+
+Concepts to understand
+
+   bending stiffness EI
+   elastic return and neutral shape
+   minimum bend radius
+   hysteresis and creep
+   stiffness versus safe compliance
+   mass distribution
+
+Evidence after reading
+
+Compare at least three backbone configurations with the same geometry. Record mass, unloaded
+neutral, tip deflection, bend radius, and recovery after ten cycles.
+
+Reading rule
+
+Do not postpone the build until every source is finished. Read the listed topic, write a concise
+engineering note, apply it in the session, and record where the physical result differs from the
+model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://doi.org/10.1177/0278364910368147" target="_blank" rel="noopener noreferrer">https://doi.org/10.1177/0278364910368147</a></li></ol></div></details><details class="source-page" id="page-37"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 37 · Reading for Session 6</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Reading for Session 6
+
+Spool and Closed Tendon Loop
+
+Required reading
+
+   Rao et al. — Tendon routing, tendon-length mapping, friction, actuation space, and model
+    assumptions.  Open source
+   Capstan equation reference — Understand tension multiplication caused by friction and total
+    wrap angle.  Open source
+   Selected tendon data sheet — Rated load, construction, diameter, stretch, creep, bend
+    radius, termination, and abrasion.
+
+Concepts to understand
+
+   antagonistic pair and closed loop
+   pretension and slack
+   spool radius and effective radius change
+   Bowden friction
+   hysteresis by approach direction
+   tendon creep
+
+Evidence after reading
+
+Verify delta L = r delta alpha experimentally. Save pretension settings and a bidirectional command-
+versus-shape plot; reject routing that produces uncontrolled spool layering.
+
+Reading rule
+
+Do not postpone the build until every source is finished. Read the listed topic, write a concise
+engineering note, apply it in the session, and record where the physical result differs from the
+model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://eng.libretexts.org/Bookshelves/Mechanical_Engineering/Engineering_Mechanics_-_Statics_(Osgood_Cameron_and_Christensen)/09%3A_Friction/9.05%3A_Belt_Friction" target="_blank" rel="noopener noreferrer">https://eng.libretexts.org/Bookshelves/Mechanical_Engineering/Engineering_Mechanics_-_Statics_(Osgood_Cameron_and_Christensen)/09%3A_Friction/9.05%3A_Belt_Friction</a></li><li><a href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2020.630245/full" target="_blank" rel="noopener noreferrer">https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2020.630245/full</a></li></ol></div></details><details class="source-page" id="page-38"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 38 · Reading for Session 7</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Reading for Session 7
+
+One Actuator Channel
+
+Required reading
+
+   Selected motor, encoder, and driver data sheets — Use continuous ratings, absolute
+    maximum ratings, thermal limits, signal levels, and fault behaviour.
+   maxon Motor Data and Formulae — Torque, speed, current, motor constants, gear ratio,
+    efficiency, and thermal limits.  Open source
+   ESP-IDF MCPWM — Timers, comparators, generators, capture, synchronization, faults, and
+    brake actions.  Open source
+
+Concepts to understand
+
+   continuous versus stall torque
+   torque = tendon force × spool radius
+   gear ratio and efficiency
+   encoder resolution at the spool
+   current as load evidence
+   hardware and software limits
+
+Evidence after reading
+
+Create a channel calculation sheet and low-energy test log. Confirm encoder sign, PWM sign, stop
+behaviour, idle current, loaded current, and voltage sag before attaching a tendon.
+
+Reading rule
+
+Do not postpone the build until every source is finished. Read the listed topic, write a concise
+engineering note, apply it in the session, and record where the physical result differs from the
+model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/mcpwm.html" target="_blank" rel="noopener noreferrer">https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/mcpwm.html</a></li><li><a href="https://www.maxongroup.com/medias/sys_master/root/8834327834654/maxon-Motor-Data-and-Operating-Ranges.pdf" target="_blank" rel="noopener noreferrer">https://www.maxongroup.com/medias/sys_master/root/8834327834654/maxon-Motor-Data-and-Operating-Ranges.pdf</a></li></ol></div></details><details class="source-page" id="page-39"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 39 · Reading for Session 8</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Reading for Session 8
+
+One Active Two Axis Section
+
+Required reading
+
+   Feedback Systems — Feedback loop, stability, proportional and integral action, disturbances,
+    saturation, and anti-windup.  Open source
+   Modern Robotics Chapter 11 — Motion control and feedback control of robot systems.  Open
+    source
+   Rao et al. — Actuation-space mapping and tendon coupling.  Open source
+
+Concepts to understand
+
+   closed-loop position control
+   P, PI, and PID behaviour
+   saturation and integral windup
+   deadband and rate limiting
+   mechanical cross-coupling
+   controller sample time
+
+Evidence after reading
+
+Tune one loop at a time, then run a 3 × 3 two-axis command grid. Record both commands, both
+measurements, current, settling behaviour, and coupling instead of hiding mechanical defects with
+high gains.
+
+Reading rule
+
+Do not postpone the build until every source is finished. Read the listed topic, write a concise
+engineering note, apply it in the session, and record where the physical result differs from the
+model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2020.630245/full" target="_blank" rel="noopener noreferrer">https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2020.630245/full</a></li><li><a href="https://hades.mech.northwestern.edu/images/7/7f/MR.pdf" target="_blank" rel="noopener noreferrer">https://hades.mech.northwestern.edu/images/7/7f/MR.pdf</a></li><li><a href="https://hades.mech.northwestern.edu/images/7/7f/MR.pdf" target="_blank" rel="noopener noreferrer">https://hades.mech.northwestern.edu/images/7/7f/MR.pdf</a></li><li><a href="https://fbsbook.org/" target="_blank" rel="noopener noreferrer">https://fbsbook.org/</a></li></ol></div></details><details class="source-page" id="page-40"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 40 · Reading for Session 9</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Reading for Session 9
+
+Firmware and Fault Transitions
+
+Required reading
+
+   The Rust Programming Language Chapters 6, 9, 11, and 16 — Enums, error handling,
+    tests, and concurrency.  Open source
+   The Embedded Rust Book — Bare-metal development model, memory, exceptions, interrupts,
+    and peripheral access.  Open source
+   ESP-IDF Watchdogs — Task watchdog, interrupt watchdog, configuration, and failure
+    behaviour.  Open source
+
+Concepts to understand
+
+   finite-state machine and legal transition
+   latched fault and first-cause preservation
+   monotonic time
+   command freshness
+   safe initialization
+   fixed-capacity telemetry buffer
+
+Evidence after reading
+
+Build a transition table and unit tests for BOOT, READY, HOMING, MANUAL, PLAYBACK, STOPPED,
+and FAULT. Power-up and duplicate packets must never restart or refresh stale motion.
+
+Reading rule
+
+Do not postpone the build until every source is finished. Read the listed topic, write a concise
+engineering note, apply it in the session, and record where the physical result differs from the
+model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/system/wdts.html" target="_blank" rel="noopener noreferrer">https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/system/wdts.html</a></li><li><a href="https://docs.rust-embedded.org/book/" target="_blank" rel="noopener noreferrer">https://docs.rust-embedded.org/book/</a></li><li><a href="https://doc.rust-lang.org/book/" target="_blank" rel="noopener noreferrer">https://doc.rust-lang.org/book/</a></li></ol></div></details><details class="source-page" id="page-41"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 41 · Reading for Session 10</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Reading for Session 10
+
+Three Section Mechanical Assembly
+
+Required reading
+
+   Shigley&#x27;s Mechanical Engineering Design — Combined loading, bending moment, shafts,
+    supports, fasteners, fatigue, and serviceability.
+   Rao et al. — Multi-section routing and effects of friction, gravity, external loads, and coupling.
+    Open source
+   NASA Systems Engineering Handbook — Interface management and configuration
+    management.  Open source
+
+Concepts to understand
+
+   cascaded distal load
+   base bending moment
+   routing interfaces
+   actuator placement near the body
+   replaceable modules
+   configuration-controlled assembly
+
+Evidence after reading
+
+Create a mass and moment budget for each section and the base. Freeze a routing drawing and
+photograph all boundary poses before applying motor power.
+
+Reading rule
+
+Do not postpone the build until every source is finished. Read the listed topic, write a concise
+engineering note, apply it in the session, and record where the physical result differs from the
+model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://www.nasa.gov/reference/systems-engineering-handbook/" target="_blank" rel="noopener noreferrer">https://www.nasa.gov/reference/systems-engineering-handbook/</a></li><li><a href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2020.630245/full" target="_blank" rel="noopener noreferrer">https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2020.630245/full</a></li></ol></div></details><details class="source-page" id="page-42"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 42 · Reading for Session 11</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Reading for Session 11
+
+Six Channel Calibration
+
+Required reading
+
+   NumPy linear algebra — Matrix multiplication, least-squares solution, pseudoinverse,
+    conditioning, and residuals.  Open source
+   SciPy least_squares — Bounded nonlinear least-squares fitting and residual analysis.  Open
+    source
+   NIST Technical Note 1297 — Measurement result, uncertainty components, repeatability, and
+    reporting.  Open source
+
+Concepts to understand
+
+   zero offset and homing
+   calibration and coupling matrices
+   repeatability versus reproducibility
+   residual and outlier
+   hysteresis by approach direction
+   calibration versioning
+
+Evidence after reading
+
+Save raw CSV data, fit coefficients, residual plots, and a versioned YAML file bound to the CAD
+revision, tendon set, pretension method, spool radius, and firmware commit.
+
+Reading rule
+
+Do not postpone the build until every source is finished. Read the listed topic, write a concise
+engineering note, apply it in the session, and record where the physical result differs from the
+model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://www.nist.gov/pml/nist-technical-note-1297" target="_blank" rel="noopener noreferrer">https://www.nist.gov/pml/nist-technical-note-1297</a></li><li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html" target="_blank" rel="noopener noreferrer">https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html</a></li><li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html" target="_blank" rel="noopener noreferrer">https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html</a></li><li><a href="https://numpy.org/doc/stable/reference/routines.linalg.html" target="_blank" rel="noopener noreferrer">https://numpy.org/doc/stable/reference/routines.linalg.html</a></li></ol></div></details><details class="source-page" id="page-43"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 43 · Reading for Session 12</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Reading for Session 12
+
+Smooth Trajectory Generator
+
+Required reading
+
+   Modern Robotics Chapter 9 — Point-to-point trajectories, cubic time scaling, and quintic time
+    scaling.  Open source
+   SciPy CubicSpline — Piecewise cubic interpolation, boundary conditions, and derivative
+    evaluation.  Open source
+   Ruckig documentation — Online trajectory generation with position, velocity, acceleration,
+    and jerk constraints.  Open source
+
+Concepts to understand
+
+   position, velocity, and acceleration continuity
+   jerk
+   cubic versus quintic profile
+   phase shift
+   sample frequency and aliasing
+   start from measured state
+
+Evidence after reading
+
+Plot all six channels and their first two derivatives. Create sway, circle, S-curve, travelling wave,
+curious-tip, and neutral-return motions; reject any file that violates validated limits.
+
+Reading rule
+
+Do not postpone the build until every source is finished. Read the listed topic, write a concise
+engineering note, apply it in the session, and record where the physical result differs from the
+model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://docs.ruckig.com/" target="_blank" rel="noopener noreferrer">https://docs.ruckig.com/</a></li><li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.CubicSpline.html" target="_blank" rel="noopener noreferrer">https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.CubicSpline.html</a></li><li><a href="https://hades.mech.northwestern.edu/images/7/7f/MR.pdf" target="_blank" rel="noopener noreferrer">https://hades.mech.northwestern.edu/images/7/7f/MR.pdf</a></li></ol></div></details><details class="source-page" id="page-44"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 44 · Reading for Session 13</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Reading for Session 13
+
+ROS 2 Integration
+
+Required reading
+
+   ROS 2 Jazzy documentation — Nodes, topics, services, actions, parameters, launch,
+    interfaces, and rosbag2.  Open source
+   ROS 2 QoS concepts — History, depth, reliability, durability, deadline, lifespan, and liveliness.
+    Open source
+   RViz and URDF tutorials — Robot model, robot_state_publisher, transforms, markers, and
+    command-versus-measurement visualization.  Open source
+
+Concepts to understand
+
+   topic, service, and action semantics
+   action cancellation
+   custom message versioning
+   QoS compatibility
+   JointState and diagnostics
+   host planning versus embedded protection
+
+Evidence after reading
+
+Record a rosbag that contains desired pose, limited command, measured position, current, state,
+and fault events. Verify that the embedded controller stops safely when any ROS node exits.
+
+Reading rule
+
+Do not postpone the build until every source is finished. Read the listed topic, write a concise
+engineering note, apply it in the session, and record where the physical result differs from the
+model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://docs.ros.org/en/jazzy/Tutorials/Intermediate/URDF/URDF-Main.html" target="_blank" rel="noopener noreferrer">https://docs.ros.org/en/jazzy/Tutorials/Intermediate/URDF/URDF-Main.html</a></li><li><a href="https://docs.ros.org/en/jazzy/Concepts/Intermediate/About-Quality-of-Service-Settings.html" target="_blank" rel="noopener noreferrer">https://docs.ros.org/en/jazzy/Concepts/Intermediate/About-Quality-of-Service-Settings.html</a></li><li><a href="https://docs.ros.org/en/jazzy/" target="_blank" rel="noopener noreferrer">https://docs.ros.org/en/jazzy/</a></li></ol></div></details><details class="source-page" id="page-45"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 45 · Reading for Session 14</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Reading for Session 14
+
+Endurance and Fault Testing
+
+Required reading
+
+   NASA Systems Engineering Handbook — Verification, validation, test planning, configuration
+    control, and anomaly reporting.  Open source
+   ISO 12100 — Risk reduction verification and residual-risk review after design changes.  Open
+    source
+   ESP-IDF diagnostics — Reset reason, watchdog behaviour, and fault evidence for embedded
+    tests.  Open source
+
+Concepts to understand
+
+   test scenario and expected result
+   controlled fault injection
+   stop criterion
+   thermal regime
+   progressive wear
+   configuration change during testing
+
+Evidence after reading
+
+Run 100 slow wave cycles with inspections every 25 cycles. Save temperature, current, voltage,
+position, fault events, wear photographs, and before-versus-after reference-pose error.
+
+Reading rule
+
+Do not postpone the build until every source is finished. Read the listed topic, write a concise
+engineering note, apply it in the session, and record where the physical result differs from the
+model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           Controllable self-supporting robotic tail  •  75-hour project module
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/system/system.html" target="_blank" rel="noopener noreferrer">https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/system/system.html</a></li><li><a href="https://www.iso.org/standard/51528.html" target="_blank" rel="noopener noreferrer">https://www.iso.org/standard/51528.html</a></li><li><a href="https://www.iso.org/standard/51528.html" target="_blank" rel="noopener noreferrer">https://www.iso.org/standard/51528.html</a></li><li><a href="https://www.nasa.gov/reference/systems-engineering-handbook/" target="_blank" rel="noopener noreferrer">https://www.nasa.gov/reference/systems-engineering-handbook/</a></li></ol></div></details><details class="source-page" id="page-46"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 46 · Reading for Session 15</summary><pre class="source-text">ROBOTICS AND AI  /  PROJECT MODULE  /  ROBOTIC TAIL
+
+Reading for Session 15
+
+Wearable Test and Final Demonstration
+
+Required reading
+
+   ISO 12100 — Final hazard review, safeguards, warnings, and residual risks.  Open source
+   ISO 13482 scope and principles — Safety ideas for personal closely interacting personal-care
+    robots; use as context, not a certification claim.  Open source
+   NASA Systems Engineering Handbook — Validation in the intended use scenario and
+    evidence-based project closeout.  Open source
+
+Concepts to understand
+
+   staged energy increase
+   dummy-load validation
+   breakaway mount
+   observer-accessible stop
+   repeatable demonstration
+   known limitations and v2 backlog
+
+Evidence after reading
+
+Package CAD, BOM, firmware, Python, ROS 2 interfaces, calibration, logs, test report, known issues,
+and video. The tail must not be described as a balance aid, protective device, orthosis, or certified
+wearable robot.
+
+Reading rule
+
+Do not postpone the build until every source is finished. Read the listed topic, write a concise
+engineering note, apply it in the session, and record where the physical result differs from the
+model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           Controllable self-supporting robotic tail  •  75-hour project module</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://www.nasa.gov/reference/systems-engineering-handbook/" target="_blank" rel="noopener noreferrer">https://www.nasa.gov/reference/systems-engineering-handbook/</a></li><li><a href="https://www.iso.org/standard/53820.html" target="_blank" rel="noopener noreferrer">https://www.iso.org/standard/53820.html</a></li><li><a href="https://www.iso.org/standard/51528.html" target="_blank" rel="noopener noreferrer">https://www.iso.org/standard/51528.html</a></li></ol></div></details>
+</section>
+<footer><p><a href="../library.html"><span lang="ru">Вернуться в библиотеку</span><span lang="en">Back to source library</span></a> · <a href="../index.html"><span lang="ru">Вернуться к новому плану</span><span lang="en">Back to revised plan</span></a></p><p class="checksum">SHA-256: 0f76bf0c3e0ab45449d413d6193ee6df18dc3139dccb2de89c39803c03834fbe</p></footer>
+</main>
+<script>
+(function() {
+  function openPage() {
+    if (!/^#page-\d+$/.test(location.hash)) return;
+    var page=document.getElementById(location.hash.slice(1));
+    if(page) {page.open=true; page.scrollIntoView({block:'start'});}
+  }
+  window.addEventListener('hashchange',openPage);
+  document.addEventListener('DOMContentLoaded',openPage);
+  document.getElementById('expand-pages').addEventListener('click',function(){document.querySelectorAll('details[id^="page-"]').forEach(function(el){el.open=true;});});
+  document.getElementById('collapse-pages').addEventListener('click',function(){document.querySelectorAll('details[id^="page-"]').forEach(function(el){el.open=false;});});
+})();
+</script>
+</body>
+</html>

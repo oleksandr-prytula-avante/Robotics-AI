@@ -1,0 +1,2586 @@
+{
+  "version": "4.3",
+  "observed_on": "2026-09-19",
+  "currency_default": "UAH",
+  "owned": [
+    {
+      "name": "Creality (exact model unconfirmed)",
+      "purchase_quantity": 0
+    }
+  ],
+  "first_basket": [
+    {
+      "id": "wb-meter",
+      "quantity": 1
+    },
+    {
+      "id": "wb-psu",
+      "quantity": 1
+    },
+    {
+      "id": "wb-solder",
+      "quantity": 1
+    },
+    {
+      "id": "wb-cutters",
+      "quantity": 1
+    },
+    {
+      "id": "wb-breadboard",
+      "quantity": 1
+    },
+    {
+      "id": "wb-jumpers",
+      "quantity": 1
+    },
+    {
+      "id": "wb-components",
+      "quantity": 1
+    },
+    {
+      "id": "wb-fuseholder",
+      "quantity": 2
+    },
+    {
+      "id": "wb-fuses",
+      "quantity": 5
+    },
+    {
+      "id": "wb-xt60",
+      "quantity": 2
+    }
+  ],
+  "items": [
+    {
+      "id": "HEX-ST3215",
+      "title": {
+        "ru": "Waveshare ST3215, именно 12 В / 30 кг·см, SKU 22414",
+        "en": "Waveshare ST3215, exact 12 V / 30 kg·cm variant, SKU 22414"
+      },
+      "group": "hex",
+      "stage": "L1",
+      "price": 1142,
+      "currency": "UAH",
+      "url": "https://evo.net.ua/servoprivid-st3215-servo-22414/",
+      "seller": "EVONET.UA",
+      "quantity_text": {
+        "ru": "1 образец → +2 = 3 на L1 → +9 = 12 на M22 → +6 = 18 на M23. Для руки и хвата — отдельное количество после расчёта.",
+        "en": "1 sample → +2 = 3 for L1 → +9 = 12 for M22 → +6 = 18 for M23. Separate arm/gripper quantity after sizing."
+      },
+      "status_label": {
+        "ru": "В наличии на странице",
+        "en": "Page says in stock"
+      },
+      "classification_label": {
+        "ru": "Кандидат после испытаний",
+        "en": "Candidate after qualification"
+      },
+      "compatibility": {
+        "ru": "Трёхпроводная TTL-шина ST, 6–12,6 В; выбранная шина 12 В. Обратная связь, 4096 отсчётов. Кабель, качалки и крепёж указаны в комплекте.",
+        "en": "Three-wire ST TTL bus, 6–12.6 V; selected rail 12 V. Feedback, 4096 counts. Listing includes cable, horns and screws."
+      },
+      "notes": {
+        "ru": "30 кг·см ≈ 2,94 Н·м — stall, не длительный момент. 2,7 А stall на привод. Проверить шильдик 22414: не HS и не 7,4 В. Плечо ARM этим приводом по умолчанию не оснащать. На странице: Новая почта по Украине; свыше 5000 грн бесплатно, иначе за счёт получателя.",
+        "en": "30 kg·cm ≈ 2.94 N·m is stall torque, not continuous. Stall current 2.7 A per actuator. Verify label 22414: neither HS nor 7.4 V. This is not the default ARM shoulder actuator. Page: Nova Poshta within Ukraine; free above UAH 5,000, otherwise recipient pays."
+      },
+      "sources": [
+        "https://www.waveshare.com/product/modules/st3215-servo.htm",
+        "https://files.waveshare.com/upload/f/f4/ST3215_Servo_User_Manual.pdf"
+      ],
+      "timing": {
+        "ru": "Первое использование: L1. Дата — в календаре закупок выше.",
+        "en": "First use: L1. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "HEX-TTL-USB",
+      "title": {
+        "ru": "Waveshare Bus Servo Adapter (A), SKU 25514",
+        "en": "Waveshare Bus Servo Adapter (A), SKU 25514"
+      },
+      "group": "hex",
+      "stage": "L1",
+      "price": 223,
+      "currency": "UAH",
+      "url": "https://evo.net.ua/bus-servo-adapter-a/",
+      "seller": "EVONET.UA",
+      "quantity_text": {
+        "ru": "1 на общую HEX-шину; повторно не покупать при 3→12→18. Для независимой руки может понадобиться ещё 1.",
+        "en": "1 for the shared HEX bus; no repurchase at 3→12→18. An independent arm may need one more."
+      },
+      "status_label": {
+        "ru": "В наличии",
+        "en": "In stock"
+      },
+      "classification_label": {
+        "ru": "Кандидат после испытаний",
+        "en": "Candidate after qualification"
+      },
+      "compatibility": {
+        "ru": "USB-C/MCU UART → полудуплексная TTL ST; внешнее питание сервоприводов. USB не питает силовую шину.",
+        "en": "USB-C/MCU UART to half-duplex ST TTL; external servo supply. USB does not power the motor rail."
+      },
+      "notes": {
+        "ru": "Производитель ограничивает адаптер 5 А, напряжение на выходе равно входному. Даже 3 × 2,7 А = 8,1 А превышают предел: отдельный ввод питания с предохранителями, общей землёй и правильной распиновкой. Не RS485. Украина: местный продавец; наличие и срок подтвердить при заказе.",
+        "en": "Manufacturer limit is 5 A; output voltage equals input. Even 3 × 2.7 A = 8.1 A exceeds it: use separately fused power injection, common ground and correct pinout. Not RS485. Ukraine: local seller; confirm inventory and lead time at order."
+      },
+      "sources": [
+        "https://www.waveshare.com/product/modules/motors-servos/bus-servo-adapter-a.htm",
+        "https://docs.waveshare.com/Bus_Servo_Adapter_A/FAQ"
+      ],
+      "timing": {
+        "ru": "Первое использование: L1. Дата — в календаре закупок выше.",
+        "en": "First use: L1. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "ARM-XM540",
+      "title": {
+        "ru": "ROBOTIS DYNAMIXEL XM540-W270-R, 902-0133-000",
+        "en": "ROBOTIS DYNAMIXEL XM540-W270-R, 902-0133-000"
+      },
+      "group": "arm",
+      "stage": "A1",
+      "price": 34012.09,
+      "currency": "UAH",
+      "url": "https://www.rcscomponents.kiev.ua/product/902-0133-000.html",
+      "seller": "RCS Components",
+      "quantity_text": {
+        "ru": "0 сейчас; 0 или 1 как альтернатива плечевому образцу. Полная партия после расчёта каждой оси.",
+        "en": "0 now; 0 or 1 as alternative shoulder sample. Full quantity after sizing each joint."
+      },
+      "status_label": {
+        "ru": "Индекс каталога: под заказ, 53 шт. у поставщика, 21–31 день; прямую страницу повторно получить не удалось",
+        "en": "Indexed catalog: supplier order, 53 supplier units, 21–31 days; direct page could not be reopened"
+      },
+      "classification_label": {
+        "ru": "Условно · альтернатива / HOLD",
+        "en": "Conditional · alternative / HOLD"
+      },
+      "compatibility": {
+        "ru": "12 В номинально, 10–14,8 В; RS485, 4 контакта, DYNAMIXEL Protocol 2.0, 165 г.",
+        "en": "12 V nominal, 10–14.8 V; RS485, 4 pins, DYNAMIXEL Protocol 2.0, 165 g."
+      },
+      "notes": {
+        "ru": "10,6 Н·м при 12 В — stall. Для плеча нужны расчёт суммарной нагрузки, реальные кривые, длительный прогон, опора выходного вала; при необходимости внешнее снижение скорости/противовес. Не обещает 0,5 кг во всех позах. Украина: местный продавец; наличие и срок подтвердить при заказе.",
+        "en": "10.6 N·m at 12 V is stall. Shoulder needs total-load calculation, performance curves, endurance test and supported output; add reduction/counterbalance if needed. Does not guarantee 0.5 kg in all poses. Ukraine: local seller; confirm inventory and lead time at order."
+      },
+      "sources": [
+        "https://www.robotis.com/shop/item.php?it_id=902-0133-000",
+        "https://emanual.robotis.com/docs/en/dxl/x/xm540-w270/"
+      ],
+      "timing": {
+        "ru": "Первое использование: A1. Дата — в календаре закупок выше.",
+        "en": "First use: A1. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "ARM-XM430",
+      "title": {
+        "ru": "ROBOTIS DYNAMIXEL XM430-W350-R",
+        "en": "ROBOTIS DYNAMIXEL XM430-W350-R"
+      },
+      "group": "arm",
+      "stage": "A1",
+      "price": 24842,
+      "currency": "UAH",
+      "url": "https://prom.ua/ua/p3161393851-dynamixel-xm430-w350.html",
+      "seller": "chipmod / Prom.ua",
+      "quantity_text": {
+        "ru": "0 сейчас; 0 или 1 образец для выбранного сустава/хвата. Альтернатива, не добавка к каждому ST3215.",
+        "en": "0 now; 0 or 1 sample for a selected joint/gripper. An alternative, not an addition to each ST3215."
+      },
+      "status_label": {
+        "ru": "Под заказ; показанная дата отправки 25.08.2026 уже прошла — актуального ETA нет",
+        "en": "On order; displayed dispatch date 2026-08-25 is past, so no current ETA"
+      },
+      "classification_label": {
+        "ru": "Условно · альтернатива / HOLD",
+        "en": "Conditional · alternative / HOLD"
+      },
+      "compatibility": {
+        "ru": "12 В, RS485 4-pin, Protocol 2.0; 82 г; 4,1 Н·м stall при 12 В.",
+        "en": "12 V, RS485 4-pin, Protocol 2.0; 82 g; 4.1 N·m stall at 12 V."
+      },
+      "notes": {
+        "ru": "Смешанные характеристики продавца не использовать: подтвердить R и 4-pin кабель, а не TTL T/3-pin. Для запястья проверить момент и нагрев с фактическим захватом; HEX — только вместо ST, после квалификации. Продавец предлагает Новую почту по Украине; срок импорта подтвердить.",
+        "en": "Ignore mixed seller metadata: confirm R and 4-pin cable, not TTL T/3-pin. Test wrist torque and heat with actual gripper; for HEX use instead of ST, after qualification. Seller offers Nova Poshta within Ukraine; confirm import lead time."
+      },
+      "sources": [
+        "https://www.robotis.us/dynamixel-xm430-w350-r/",
+        "https://emanual.robotis.com/docs/en/dxl/x/xm430-w350/"
+      ],
+      "timing": {
+        "ru": "Первое использование: A1. Дата — в календаре закупок выше.",
+        "en": "First use: A1. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "ARM-U2D2",
+      "title": {
+        "ru": "ROBOTIS U2D2",
+        "en": "ROBOTIS U2D2"
+      },
+      "group": "arm",
+      "stage": "A1",
+      "price": 4745,
+      "currency": "UAH",
+      "url": "https://prom.ua/ua/p3176822463-dynamixel-u2d2.html",
+      "seller": "Vevor / Prom.ua",
+      "quantity_text": {
+        "ru": "1 только при выборе ROBOTIS; иначе 0.",
+        "en": "1 only when selecting ROBOTIS; otherwise 0."
+      },
+      "status_label": {
+        "ru": "Под заказ; опубликованная дата 06.09.2026 устарела",
+        "en": "On order; published date 2026-09-06 is stale"
+      },
+      "classification_label": {
+        "ru": "Условно · альтернатива / HOLD",
+        "en": "Conditional · alternative / HOLD"
+      },
+      "compatibility": {
+        "ru": "Есть TTL 3-pin и RS485 4-pin; для выбранных XM-R использовать RS485 и 4-pin.",
+        "en": "Has TTL 3-pin and RS485 4-pin; selected XM-R uses RS485 and 4-pin."
+      },
+      "notes": {
+        "ru": "U2D2 не подаёт питание сервоприводам. Не заменяется ST-адаптером; проверить комплект USB-кабеля и разъёмов. Украина: местный продавец; наличие и срок подтвердить при заказе.",
+        "en": "U2D2 does not supply servo power. ST adapter is not a substitute; check USB cable and connectors in bundle. Ukraine: local seller; confirm inventory and lead time at order."
+      },
+      "sources": [
+        "https://docs.robotis.com/docs/software/dynamixel_sdk/device_setup/"
+      ],
+      "timing": {
+        "ru": "Первое использование: A1. Дата — в календаре закупок выше.",
+        "en": "First use: A1. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "ARM-DXL-HUB",
+      "title": {
+        "ru": "ROBOTIS U2D2 Power Hub Board",
+        "en": "ROBOTIS U2D2 Power Hub Board"
+      },
+      "group": "arm",
+      "stage": "A1",
+      "price": 3388,
+      "currency": "UAH",
+      "url": "https://prom.ua/ua/m5288073029889996056-kontsentrator-pitaniya-dynamixel.html",
+      "seller": "Vevor / Prom.ua",
+      "quantity_text": {
+        "ru": "1 только при выборе ROBOTIS и этой схемы питания; иначе 0.",
+        "en": "1 only with ROBOTIS and this power-injection method; otherwise 0."
+      },
+      "status_label": {
+        "ru": "Под заказ; опубликованная дата 08.09.2026 устарела",
+        "en": "On order; published date 2026-09-08 is stale"
+      },
+      "classification_label": {
+        "ru": "Условно · альтернатива / HOLD",
+        "en": "Conditional · alternative / HOLD"
+      },
+      "compatibility": {
+        "ru": "Хаб для U2D2, внешний источник; паспортный максимум 10 А.",
+        "en": "Hub for U2D2 with external supply; documented maximum 10 A."
+      },
+      "notes": {
+        "ru": "Не питать 12/18 приводов через один хаб без расчёта. Раздельные шины 12 и 24 В; общая RS485 не разрешает соединять плюсы питания. Украина: местный продавец; наличие и срок подтвердить при заказе.",
+        "en": "Do not power 12/18 actuators through one hub without a current budget. Separate 12 V and 24 V rails; shared RS485 does not permit joining positive power rails. Ukraine: local seller; confirm inventory and lead time at order."
+      },
+      "sources": [
+        "https://github.com/ROBOTIS-GIT/emanual/blob/master/docs/en/parts/interface/u2d2_power_hub.md"
+      ],
+      "timing": {
+        "ru": "Первое использование: A1. Дата — в календаре закупок выше.",
+        "en": "First use: A1. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "ARM-STEP",
+      "title": {
+        "ru": "Комплект NEMA23, 2,2 Н·м, энкодер + HBS57",
+        "en": "NEMA23 2.2 N·m encoder motor + HBS57 kit"
+      },
+      "group": "arm",
+      "stage": "A1",
+      "price": 4250,
+      "currency": "UAH",
+      "url": "https://prom.ua/ua/p984465311-komplekt-shagovyj-dvigatel.html",
+      "seller": "ЧПУ и комплектующие / Prom.ua",
+      "quantity_text": {
+        "ru": "1 комплект для A1 после паспортов; 0 дополнительных до испытаний. Альтернатива XM540.",
+        "en": "1 A1 kit after documentation; 0 additional before qualification. Alternative to XM540."
+      },
+      "status_label": {
+        "ru": "В наличии",
+        "en": "In stock"
+      },
+      "classification_label": {
+        "ru": "Условно · альтернатива / HOLD",
+        "en": "Conditional · alternative / HOLD"
+      },
+      "compatibility": {
+        "ru": "Объявлены NEMA23, вал 8 мм, 4 А, 1,8°, корпус 80 мм; STEP/DIR через контроллер, отдельный силовой драйвер.",
+        "en": "Advertised NEMA23, 8 mm shaft, 4 A, 1.8°, 80 mm body; MCU STEP/DIR and separate power driver."
+      },
+      "notes": {
+        "ru": "Перед покупкой получить точный артикул мотора, кривую момента/скорости, напряжение HBS57 и распиновку энкодера. Не подтверждён бренд Leadshine. 2,2 Н·м не гарантируют длительный момент на скорости; энкодер мотора не измеряет люфт выходного сустава. На странице — Новая почта по Украине.",
+        "en": "Before buying obtain exact motor part number, torque/speed curve, HBS57 input voltage and encoder pinout. Leadshine branding is unverified. 2.2 N·m does not guarantee continuous torque at speed; motor encoder does not measure output-joint backlash. Page offers Nova Poshta within Ukraine."
+      },
+      "sources": [],
+      "timing": {
+        "ru": "Первое использование: A1. Дата — в календаре закупок выше.",
+        "en": "First use: A1. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "ARM-GEAR",
+      "title": {
+        "ru": "PX57 планетарный редуктор NEMA23, выбрать 1:10",
+        "en": "PX57 NEMA23 planetary gearbox, select 1:10"
+      },
+      "group": "arm",
+      "stage": "A1",
+      "price": 1949,
+      "currency": "UAH",
+      "url": "https://grizlicnc.com.ua/tovar-planetarnyj-reduktor-nema23",
+      "seller": "Grizli CNC",
+      "quantity_text": {
+        "ru": "1 редуктор 1:10 для A1 после паспортов и проверки посадок.",
+        "en": "1 reducer, 1:10, for A1 after rating and fit checks."
+      },
+      "status_label": {
+        "ru": "Вариант 1:10: заканчивается",
+        "en": "1:10 variant: low stock"
+      },
+      "classification_label": {
+        "ru": "Условно · альтернатива / HOLD",
+        "en": "Conditional · alternative / HOLD"
+      },
+      "compatibility": {
+        "ru": "Вход 8 мм, выход 14 мм, фланец 57 мм; заявлены КПД 90% и люфт ≤1,2°.",
+        "en": "8 mm input, 14 mm output, 57 mm flange; claimed 90% efficiency and ≤1.2° backlash."
+      },
+      "notes": {
+        "ru": "Нет допустимого длительного момента и радиальных/осевых нагрузок: запросить до покупки. Проверить посадки, болты и длину вала. При 400 мм 1,2° дают около 8,4 мм перемещения; решение условное, не обещает точность руки. На странице: доставка Новой почтой по Украине.",
+        "en": "No continuous torque or radial/axial ratings: obtain before purchase. Verify pilot, bolts and shaft length. At 400 mm, 1.2° implies about 8.4 mm motion; conditional candidate, not an arm accuracy promise. Page: Nova Poshta delivery within Ukraine."
+      },
+      "sources": [],
+      "timing": {
+        "ru": "Первое использование: A1. Дата — в календаре закупок выше.",
+        "en": "First use: A1. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "ARM-ENC",
+      "title": {
+        "ru": "ams OSRAM AS5048A ADAPTERBOARD, плата",
+        "en": "ams OSRAM AS5048A ADAPTERBOARD, assembled board"
+      },
+      "group": "arm",
+      "stage": "A1",
+      "price": 1317.17,
+      "currency": "UAH",
+      "url": "https://www.rcscomponents.kiev.ua/product/as5048a%20adapterboard.html",
+      "seller": "RCS Components",
+      "quantity_text": {
+        "ru": "1 на плечевой образец; далее по одной на ось, которой нужна независимая обратная связь выхода.",
+        "en": "1 shoulder sample; later one per joint needing independent output feedback."
+      },
+      "status_label": {
+        "ru": "Под заказ: 394 шт. у поставщика, 21–31 день",
+        "en": "Supplier order: 394 supplier units, 21–31 days"
+      },
+      "classification_label": {
+        "ru": "Условно · альтернатива / HOLD",
+        "en": "Conditional · alternative / HOLD"
+      },
+      "compatibility": {
+        "ru": "14-bit SPI; плату подключать по схеме производителя к 3,3/5 В.",
+        "en": "14-bit SPI; connect the board to 3.3/5 V according to manufacturer schematic."
+      },
+      "notes": {
+        "ru": "Это плата, не голая микросхема. Подтвердить наличие подходящего диаметрального магнита; установить по центру выходного вала. Разрешение не равно точности; проверить зазор, нелинейность и независимое нулевание. Украина: местный продавец; наличие и срок подтвердить при заказе. Цена 1 317,17 грн без НДС; итоговый счёт запросить отдельно.",
+        "en": "Board, not bare IC. Confirm suitable diametric magnet inclusion; center it on output shaft. Resolution is not accuracy; test gap, nonlinearity and independent homing. Ukraine: local seller; confirm inventory and lead time at order. UAH 1,317.17 excludes VAT; obtain the final invoice total."
+      },
+      "sources": [
+        "https://look.ams-osram.com/m/d6b55afbdfe4b3d0/original/AS5048_UG000223_1-00.pdf",
+        "https://look.ams-osram.com/m/287d7ad97d1ca22e/original/AS5048-DS000298.pdf"
+      ],
+      "timing": {
+        "ru": "Первое использование: A1. Дата — в календаре закупок выше.",
+        "en": "First use: A1. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "POWER-12",
+      "title": {
+        "ru": "Mean Well LRS-350-12, 12 В / 29 А",
+        "en": "Mean Well LRS-350-12, 12 V / 29 A"
+      },
+      "group": "hex",
+      "stage": "L1",
+      "price": 1346,
+      "currency": "UAH",
+      "url": "https://meanwell.in.ua/acdc/korpus/lrs-350-12",
+      "seller": "meanwell.in.ua",
+      "quantity_text": {
+        "ru": "0 на старте; 1 на независимо работающий 12-В стенд после токовых измерений. Общий стенд можно переиспользовать.",
+        "en": "0 initially; 1 per independently operating 12 V rig after current measurements. Reuse a shared rig where practical."
+      },
+      "status_label": {
+        "ru": "В наличии",
+        "en": "In stock"
+      },
+      "classification_label": {
+        "ru": "Кандидат после испытаний",
+        "en": "Candidate after qualification"
+      },
+      "compatibility": {
+        "ru": "348 Вт, 12 В / 29 А; установить ровно 12 В до подключения ST/XM.",
+        "en": "348 W, 12 V / 29 A; set exactly 12 V before connecting ST/XM."
+      },
+      "notes": {
+        "ru": "29 А не покрывают 18 × 2,7 А = 48,6 А stall. Покупка после измерения токов; нужны отдельные предохранители и вводы. Открытые сетевые клеммы: корпус, PE, фиксация кабеля и корректная сборка 230 В. Не поглощает гарантированно энергию торможения. Украина: местный продавец; наличие и срок подтвердить при заказе.",
+        "en": "29 A does not cover 18 × 2.7 A = 48.6 A stall. Buy after current measurements; separate fuses and injection required. Exposed mains terminals need enclosure, PE, strain relief and correct 230 V assembly. Regenerative energy absorption is not guaranteed. Ukraine: local seller; confirm inventory and lead time at order."
+      },
+      "sources": [
+        "https://www.meanwell.com/Upload/PDF/LRS-350/LRS-350-SPEC.PDF"
+      ],
+      "timing": {
+        "ru": "Первое использование: L1. Дата — в календаре закупок выше.",
+        "en": "First use: L1. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "POWER-24",
+      "title": {
+        "ru": "Mean Well LRS-350-24, 24 В / 14,6 А",
+        "en": "Mean Well LRS-350-24, 24 V / 14.6 A"
+      },
+      "group": "arm",
+      "stage": "A1",
+      "price": 1347,
+      "currency": "UAH",
+      "url": "https://meanwell.in.ua/acdc/korpus/lrs-350-24",
+      "seller": "meanwell.in.ua",
+      "quantity_text": {
+        "ru": "0 или 1 для руки после выбора драйвера; не прибавлять автоматически к БП 12 В.",
+        "en": "0 or 1 for the arm after choosing its driver; not automatically added to the 12 V PSU."
+      },
+      "status_label": {
+        "ru": "В наличии",
+        "en": "In stock"
+      },
+      "classification_label": {
+        "ru": "Кандидат после испытаний",
+        "en": "Candidate after qualification"
+      },
+      "compatibility": {
+        "ru": "350,4 Вт, 24 В / 14,6 А. Только если конкретный драйвер HBS57 допускает 24 В и тест скорости/момента достаточен.",
+        "en": "350.4 W, 24 V / 14.6 A. Only if the actual HBS57 driver accepts 24 V and speed/torque testing passes."
+      },
+      "notes": {
+        "ru": "Не подключать ST3215 или XM-W к 24 В. Напряжение шагового стенда окончательно выбрать по документации драйвера; нужны корпус/PE и проверка перенапряжения при торможении. Украина: местный продавец; наличие и срок подтвердить при заказе.",
+        "en": "Never connect ST3215 or XM-W to 24 V. Final stepper voltage follows driver documentation; enclosure/PE and regenerative overvoltage testing required. Ukraine: local seller; confirm inventory and lead time at order."
+      },
+      "sources": [
+        "https://www.meanwell.com/Upload/PDF/LRS-350/LRS-350-SPEC.PDF"
+      ],
+      "timing": {
+        "ru": "Первое использование: A1. Дата — в календаре закупок выше.",
+        "en": "First use: A1. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "STOP",
+      "title": {
+        "ru": "Schneider Electric Harmony XB5AS8442, 1NC, поворотный сброс",
+        "en": "Schneider Electric Harmony XB5AS8442, 1NC, twist release"
+      },
+      "group": "motor",
+      "stage": "M07",
+      "price": 856.96,
+      "currency": "UAH",
+      "url": "https://eleksun.com.ua/uk/xb5as8442-gribovidnaya-knopka-avariynogo-ostanova-v-sbore-tipa-razblokirovanie-povorotom-krasnaya-1",
+      "seller": "Eleksun",
+      "quantity_text": {
+        "ru": "1 на первый приводной стенд; затем по одной на каждую независимо работающую установку.",
+        "en": "1 first actuator rig; later one per independently operating rig."
+      },
+      "status_label": {
+        "ru": "Поставка: склад",
+        "en": "Supply: warehouse"
+      },
+      "classification_label": {
+        "ru": "Кандидат после испытаний",
+        "en": "Candidate after qualification"
+      },
+      "compatibility": {
+        "ru": "Красный грибок 22 мм, комплект с нормально замкнутым контактом.",
+        "en": "Red 22 mm mushroom, assembled with normally closed contact."
+      },
+      "notes": {
+        "ru": "Контакт включает проверенную цепь останова с подходящим DC-коммутационным устройством; не пропускать через кнопку весь ток приводов. Нужны проверка обрыва, явный сброс без автозапуска и механическая защита от падения руки при снятии питания. Украина: местный продавец; наличие и срок подтвердить при заказе.",
+        "en": "Contact controls a tested stop circuit with appropriate DC switching device; do not pass full motor current through button. Test broken-wire response, explicit reset without auto-start, and arm support against falling on power removal. Ukraine: local seller; confirm inventory and lead time at order."
+      },
+      "sources": [
+        "https://www.se.com/ua/uk/product/XB5AS8442/"
+      ],
+      "timing": {
+        "ru": "Первое использование: M07. Дата — в календаре закупок выше.",
+        "en": "First use: M07. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "FUSE-HOLDER",
+      "title": {
+        "ru": "Littelfuse 01550320ZXU, держатель ножевого предохранителя 19 мм",
+        "en": "Littelfuse 01550320ZXU, 19 mm blade-fuse holder"
+      },
+      "group": "motor",
+      "stage": "M07",
+      "price": 108,
+      "currency": "UAH",
+      "url": "https://vseplus.com/product/derzatel-predokhranitela-19mm-01550320zxu-144534",
+      "seller": "Vseplus",
+      "quantity_text": {
+        "ru": "1 образец; далее главный и ветвевые держатели по схеме. Для HEX возможны 6 ветвей ног, но это не готовый комплект.",
+        "en": "1 sample; then main and branch holders according to the schematic. HEX may use 6 leg branches, but this is not a complete kit."
+      },
+      "status_label": {
+        "ru": "В наличии",
+        "en": "In stock"
+      },
+      "classification_label": {
+        "ru": "Кандидат после испытаний",
+        "en": "Candidate after qualification"
+      },
+      "compatibility": {
+        "ru": "Держатель для отдельной ветви; плавкая вставка и проводка выбираются отдельно.",
+        "en": "Holder for an individual branch; fuse and wiring selected separately."
+      },
+      "notes": {
+        "ru": "До покупки подтвердить паспортный ток/напряжение, тип выводов и провод. Не назначать этот держатель главным вводом 29 А без паспорта. Номинал вставки защищает самый слабый провод/разъём и выдерживает проверенный пусковой ток. Украина: местный продавец; наличие и срок подтвердить при заказе.",
+        "en": "Before purchase confirm rated current/voltage, terminal type and wire. Do not assign this holder as a 29 A main input without datasheet. Fuse rating protects the weakest wire/connector while tolerating validated startup current. Ukraine: local seller; confirm inventory and lead time at order."
+      },
+      "sources": [
+        "https://www.littelfuse.com/assetdocs/coc-rohs10-01550320zxu?assetguid=c38cb284-8e3a-4471-bcf7-ad9e4fea0c53"
+      ],
+      "timing": {
+        "ru": "Первое использование: M07. Дата — в календаре закупок выше.",
+        "en": "First use: M07. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "ARM-BEARING",
+      "title": {
+        "ru": "SKF 6001-2RS, 12 × 28 × 8 мм",
+        "en": "SKF 6001-2RS, 12 × 28 × 8 mm"
+      },
+      "group": "arm",
+      "stage": "A1",
+      "price": 180,
+      "currency": "UAH",
+      "url": "https://podshipnik.ua/ua/product/pidshypnyk-6001-2rs-skf-00001758",
+      "seller": "Podshipnik.ua",
+      "quantity_text": {
+        "ru": "0 или 2 образца только для выбранного собственного вала 12 мм; не для PX57 14 мм напрямую.",
+        "en": "0 or 2 samples only for a selected custom 12 mm shaft; not a direct fit on 14 mm PX57."
+      },
+      "status_label": {
+        "ru": "В каталоге 116 шт.; видимый снимок цены от 11.07.2026, перепроверить",
+        "en": "Catalog says 116 units; visible price snapshot dated 2026-07-11, reconfirm"
+      },
+      "classification_label": {
+        "ru": "Условно · альтернатива / HOLD",
+        "en": "Conditional · alternative / HOLD"
+      },
+      "compatibility": {
+        "ru": "Пара подшипников для спроектированного вала 12 мм, при подтверждённых нагрузках и посадках.",
+        "en": "Bearing pair for a designed 12 mm shaft, subject to loads and fits."
+      },
+      "notes": {
+        "ru": "Не подходит напрямую к выходу PX57 14 мм. Точный суффикс уплотнений сверить при заказе; это образец для CAD, а не готовая опора плеча. Разнести опоры и рассчитать момент, осевые нагрузки и жёсткость корпуса. Украина: местный продавец; наличие и срок подтвердить при заказе.",
+        "en": "Does not directly fit the PX57 14 mm output. Verify exact seal suffix at order; this is a CAD sample, not a complete shoulder bearing unit. Space supports and calculate moment, axial loads and housing stiffness. Ukraine: local seller; confirm inventory and lead time at order."
+      },
+      "sources": [
+        "https://cdn.skfmediahub.skf.com/api/public/0901d196802809de/pdf_preview_medium/0901d196802809de_pdf_preview_medium.pdf"
+      ],
+      "timing": {
+        "ru": "Первое использование: A1. Дата — в календаре закупок выше.",
+        "en": "First use: A1. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "ARM-PM54-REFERENCE",
+      "title": {
+        "ru": "ROBOTIS PM54-060-S250-R, 902-0088-001",
+        "en": "ROBOTIS PM54-060-S250-R, 902-0088-001"
+      },
+      "group": "arm",
+      "stage": "A1",
+      "price": 2224.95,
+      "currency": "EUR",
+      "url": "https://www.mybotshop.de/DYNAMIXEL-Pro-PM54-060-S250-R_1",
+      "seller": "MYBOTSHOP, Germany",
+      "quantity_text": {
+        "ru": "0. Только ориентир по паспортному длительному моменту и цене.",
+        "en": "0. Reference for documented continuous torque and price only."
+      },
+      "status_label": {
+        "ru": "Доступен немедленно; 1–3 рабочих дня относятся к Германии, не Украине",
+        "en": "Immediately available; 1–3 working days refer to Germany, not Ukraine"
+      },
+      "classification_label": {
+        "ru": "Ориентир · доставка не подтверждена",
+        "en": "Reference · delivery unconfirmed"
+      },
+      "compatibility": {
+        "ru": "24 В, RS485 Protocol 2.0; 10,1 Н·м длительного момента по паспорту; масса 855 г.",
+        "en": "24 V, RS485 Protocol 2.0; documented 10.1 N·m continuous torque; mass 855 g."
+      },
+      "notes": {
+        "ru": "Только ценовой/технический ориентир. Проверить общий момент, нагрузку на опору и бюджет; его масса увеличивает нагрузки предыдущих звеньев. Доставка в Украину не подтверждена; не закупать комплект из шести. НЕ ПОДТВЕРЖДЕНА: общая международная политика не подтверждает Украину. До заказа нужен расчёт продавца для конкретного адреса. Цена в EUR включает немецкий НДС 19%; доставка и налог для Украины не рассчитаны.",
+        "en": "Price/technical reference only. Check total torque, bearing loads and budget; its mass increases upstream loads. Ukraine delivery is unconfirmed; do not buy six as a default arm kit. UNCONFIRMED: general international policy does not establish Ukraine coverage. Merchant quote to actual destination required before ordering. EUR price includes 19% German VAT; Ukraine shipping and tax are not quoted."
+      },
+      "sources": [
+        "https://emanual.robotis.com/docs/en/dxl/p/pm54-060-s250-r/"
+      ],
+      "timing": {
+        "ru": "Первое использование: A1. Дата — в календаре закупок выше.",
+        "en": "First use: A1. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "tail_motor_4755",
+      "title": {
+        "ru": "Pololu 4755: DC-мотор 12 В, редуктор 100:1, энкодер",
+        "en": "Pololu 4755: 12 V DC gearmotor, 100:1 gearbox and encoder"
+      },
+      "group": "tail",
+      "stage": "T2",
+      "price": 5135,
+      "currency": "UAH",
+      "url": "https://prom.ua/ua/p3191546950-reduktornyj-dvigatel-37dx73l.html",
+      "seller": "modpoint / Prom",
+      "quantity_text": {
+        "ru": "2 на первую секцию → +4 после PASS = 6; энкодеры уже входят.",
+        "en": "2 first section → +4 after PASS = 6; encoders are included."
+      },
+      "status_label": {
+        "ru": "Карточка: под заказ; опубликованный срок уже прошёл. Новый срок не подтверждён.",
+        "en": "Listing: to order; displayed dispatch date has passed. Current lead time unconfirmed."
+      },
+      "classification_label": {
+        "ru": "Нужная функция · кандидат товара",
+        "en": "Required function · product candidate"
+      },
+      "compatibility": {
+        "ru": "Кандидат, не подтверждённый выбор по моменту. 12 В, 100 об/мин без нагрузки, вал D 6 мм; энкодер 6533 отсчёта/оборот выхода. Сначала измерить усилие троса и радиус барабана. Энкодер питать 5 В; A/B через согласование с ESP32-S3.",
+        "en": "Candidate, not torque-qualified. 12 V, 100 rpm unloaded, 6 mm D shaft; encoder gives 6533 counts/output revolution. Measure tendon force and spool radius first. Power encoder at 5 V; level-shift A/B for ESP32-S3."
+      },
+      "notes": {
+        "ru": "34 кг·см и 5,5 А — экстраполированные stall-параметры, не рабочая точка. Производитель ограничивает непрерывную нагрузку редуктора 10 кг·см и рекомендует для мотора ≤25% stall-тока; тепловой режим всё равно проверяется. Розничная цена используется без скидки за четыре штуки.",
+        "en": "34 kg·cm and 5.5 A are extrapolated stall figures, not an operating point. Manufacturer limits continuous gearbox loading to 10 kg·cm and generally recommends motor current ≤25% of stall; thermal duty still needs testing. Retail price used without assuming the four-piece discount."
+      },
+      "sources": [
+        "https://www.pololu.com/product/4755"
+      ],
+      "timing": {
+        "ru": "Первое использование: T2. Дата — в календаре закупок выше.",
+        "en": "First use: T2. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "tail_driver_mdd10a",
+      "title": {
+        "ru": "Cytron MDD10A: двухканальный H-мост",
+        "en": "Cytron MDD10A: dual-channel H bridge"
+      },
+      "group": "tail",
+      "stage": "T2",
+      "price": 2090,
+      "currency": "UAH",
+      "url": "https://zuma.in.ua/p3087462457-mdd10a-motor-driver.html",
+      "seller": "zuma.in.ua",
+      "quantity_text": {
+        "ru": "1 на первые два мотора → +2 после PASS = 3 платы / 6 каналов.",
+        "en": "1 for two motors → +2 after PASS = 3 boards / 6 channels."
+      },
+      "status_label": {
+        "ru": "Карточка: в наличии / готов к отправке; количество партии не подтверждено.",
+        "en": "Listing: in stock / ready to ship; batch quantity unconfirmed."
+      },
+      "classification_label": {
+        "ru": "Нужная функция · кандидат товара",
+        "en": "Required function · product candidate"
+      },
+      "compatibility": {
+        "ru": "5–30 В, 10 А/канал, PWM/DIR 3,3 В совместимы с 12-В Pololu 4755 и ESP32-S3. Один модуль на два двигателя; три модуля на шесть. Нужны отдельные датчики тока, ограничения и проверенная остановка.",
+        "en": "5–30 V, 10 A/channel and 3.3 V PWM/DIR are electrically compatible with 12 V Pololu 4755 and ESP32-S3. One board for two motors, three for six. Separate current sensors, limiting and a validated stop are required."
+      },
+      "notes": {
+        "ru": "Нет защиты от переполюсовки. Не считать защиту самой платы регулируемым ограничением тока конкретного мотора. Продавец не подтверждает количество трёх плат на складе.",
+        "en": "No reverse-polarity protection. Do not treat board protection as an adjustable current limit for the particular motor. Seller does not confirm three-board stock depth."
+      },
+      "sources": [
+        "https://www.cytron.io/cytron/p-10amp-5v-30v-dc-motor-driver-2-channels"
+      ],
+      "timing": {
+        "ru": "Первое использование: T2. Дата — в календаре закупок выше.",
+        "en": "First use: T2. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "tail_current_acs724",
+      "title": {
+        "ru": "ACS724LLCTR-10AB: датчик тока ±10 А",
+        "en": "ACS724LLCTR-10AB: ±10 A current sensor"
+      },
+      "group": "tail",
+      "stage": "T2",
+      "price": 895,
+      "currency": "UAH",
+      "url": "https://prom.ua/ua/p3179423669-derzhatel-datchika-toka.html",
+      "seller": "mikromod / Prom",
+      "quantity_text": {
+        "ru": "2 на первые два мотора → +4 после PASS = 6 датчиков.",
+        "en": "2 for two motors → +4 after PASS = 6 sensors."
+      },
+      "status_label": {
+        "ru": "Карточка: под заказ; опубликованный срок уже прошёл. Новый срок не подтверждён.",
+        "en": "Listing: to order; displayed dispatch date has passed. Current lead time unconfirmed."
+      },
+      "classification_label": {
+        "ru": "Нужная функция · кандидат товара",
+        "en": "Required function · product candidate"
+      },
+      "compatibility": {
+        "ru": "Двунаправленный вариант 10AB: 5 В, ноль 2,5 В, 200 мВ/А. Ставить в провод мотора для измерения тока обмотки; общий ток БП не эквивалентен этому измерению. Выход 5-В датчика нельзя напрямую подавать на ADC ESP32.",
+        "en": "Bidirectional 10AB version: 5 V supply, 2.5 V zero and 200 mV/A. Insert in a motor lead to measure winding current; shared supply current is not equivalent. The 5 V sensor output cannot connect directly to the ESP32 ADC."
+      },
+      "notes": {
+        "ru": "Проверить маркировку именно 10AB, схему конкретной платы, полярность, ноль и масштаб. Нужны делитель/фильтр, калибровка ADC и защёлкиваемая остановка; датчик сам питание не отключает.",
+        "en": "Verify the exact 10AB marking, delivered board circuit, polarity, offset and scale. Requires divider/filter, ADC calibration and a latched stop; the sensor itself does not disconnect power."
+      },
+      "sources": [
+        "https://www.pololu.com/product/4043/specs"
+      ],
+      "timing": {
+        "ru": "Первое использование: T2. Дата — в календаре закупок выше.",
+        "en": "First use: T2. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "shared_petg",
+      "title": {
+        "ru": "PETG 3DUN 1,75 мм, прозрачный, 1 кг",
+        "en": "3DUN PETG 1.75 mm, transparent, 1 kg"
+      },
+      "group": "mechanics",
+      "stage": "M05",
+      "price": 493.1,
+      "currency": "UAH",
+      "url": "https://voron.ua/uk/catalog/050286--plastik-filament-petg-175mm-tsvet-prozrachnyy-1-kg-flament-kolr-prozoriy-3dun",
+      "seller": "Ворон / Voron",
+      "quantity_text": {
+        "ru": "1 катушка 1 кг сначала; остаток по массе из слайсера и фактическому браку, общий для трёх проектов.",
+        "en": "One 1 kg spool first; remainder follows slicer mass and measured failed prints, shared by all three projects."
+      },
+      "status_label": {
+        "ru": "Карточка: в наличии / готов к отправке; количество партии не подтверждено.",
+        "en": "Listing: in stock / ready to ship; batch quantity unconfirmed."
+      },
+      "classification_label": {
+        "ru": "Нужная функция · кандидат товара",
+        "en": "Required function · product candidate"
+      },
+      "compatibility": {
+        "ru": "Для имеющегося Creality с филаментом 1,75 мм. Проверить фактическую модель принтера, профиль, посадки и прочность образцов. 9–12 позвонков и барабаны печатать по своему CAD после образцов.",
+        "en": "For the existing Creality using 1.75 mm filament. Confirm actual printer model, profile, fits and coupon strength. Print 9–12 vertebrae and spools from the project CAD after coupon tests."
+      },
+      "notes": {
+        "ru": "Одна катушка — стартовая закупка, не обещание полного расхода всех трёх роботов.",
+        "en": "One spool is an initial purchase, not a full material allowance for all three robots."
+      },
+      "sources": [],
+      "timing": {
+        "ru": "Первое использование: M05. Дата — в календаре закупок выше.",
+        "en": "First use: M05. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "tail_tpu",
+      "title": {
+        "ru": "Connexa TPU 95A 1,75 мм, серый, 1 кг",
+        "en": "Connexa TPU 95A 1.75 mm, grey, 1 kg"
+      },
+      "group": "tail",
+      "stage": "T1",
+      "price": 1340,
+      "currency": "UAH",
+      "url": "https://rozetka.com.ua/ua/620656577/p620656577/",
+      "seller": "UART / Rozetka",
+      "quantity_text": {
+        "ru": "0 или 1 катушка 1 кг после образца; нужная функция — мягкие вставки и ограждения.",
+        "en": "0 or one 1 kg spool after a coupon; required function is flexible inserts and guards."
+      },
+      "status_label": {
+        "ru": "Карточка: в наличии / готов к отправке; количество партии не подтверждено.",
+        "en": "Listing: in stock / ready to ship; batch quantity unconfirmed."
+      },
+      "classification_label": {
+        "ru": "Условно · проверить имеющееся",
+        "en": "Conditional · check existing equipment"
+      },
+      "compatibility": {
+        "ru": "Гибкие вставки и мягкие элементы. Настроить подачу/сушку/печать на имеющемся принтере; провести образец. TPU не является расчётным упругим хребтом по умолчанию.",
+        "en": "Flexible inserts and soft elements. Qualify feeding, drying and printing on the existing printer with a coupon. TPU is not automatically a qualified elastic backbone."
+      },
+      "notes": null,
+      "sources": [],
+      "timing": {
+        "ru": "Первое использование: T1. Дата — в календаре закупок выше.",
+        "en": "First use: T1. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "tail_backbone_sample",
+      "title": {
+        "ru": "Стеклопластиковая протяжка E.NEXT 3,8 мм × 4 м",
+        "en": "E.NEXT fiberglass cable rod, 3.8 mm × 4 m"
+      },
+      "group": "tail",
+      "stage": "T1",
+      "price": 431,
+      "currency": "UAH",
+      "url": "https://tvoe.ua/protiazka-dlia-kabelia-stekloplastikovaia-edrawrope384-d38-mm-l4-m-s068001",
+      "seller": "ТВОЄ / TVOE",
+      "quantity_text": {
+        "ru": "1 отрезок 4 м для образцов; проверить минимум три варианта упругой конструкции, не три одинаковых покупки.",
+        "en": "One 4 m length for coupons; test at least three elastic-structure variants, not three identical purchases."
+      },
+      "status_label": {
+        "ru": "Карточка: в наличии / готов к отправке; количество партии не подтверждено.",
+        "en": "Listing: in stock / ready to ship; batch quantity unconfirmed."
+      },
+      "classification_label": {
+        "ru": "Нужная функция · кандидат товара",
+        "en": "Required function · product candidate"
+      },
+      "compatibility": {
+        "ru": "Образец материала, не готовый хребет. Диаметр 3,8 мм может оказаться слишком жёстким. Измерить EI, минимальный радиус, возврат, гистерезис и состояние после циклов; закрыть срезы и волокна.",
+        "en": "Material sample, not a finished backbone. The 3.8 mm diameter may be too stiff. Measure EI, minimum radius, recovery, hysteresis and condition after cycling; cover cut ends and fibers."
+      },
+      "notes": {
+        "ru": "Сравнить минимум три конструкции/варианта хребта; одна карточка товара эту проверку не заменяет. Пружинная полоса — альтернативный материал после выбора толщины/ширины и радиуса.",
+        "en": "Compare at least three backbone designs/variants; one product listing does not replace this test. Spring strip is an alternative after thickness, width and bend radius are selected."
+      },
+      "sources": [],
+      "timing": {
+        "ru": "Первое использование: T1. Дата — в календаре закупок выше.",
+        "en": "First use: T1. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "tail_tendon",
+      "title": {
+        "ru": "Salvimar ACIDYNE Dyneema 1,3 мм, погонный метр",
+        "en": "Salvimar ACIDYNE Dyneema 1.3 mm, sold per metre"
+      },
+      "group": "tail",
+      "stage": "T1",
+      "price": 22,
+      "currency": "UAH",
+      "url": "https://divedrive.in.ua/lin-salvimar-acidyne-dyneema-13-mm-yarko-zelenyy-metr/",
+      "seller": "DiveDrive",
+      "quantity_text": {
+        "ru": "10 м на прототип → ориентировочно ещё 10 м; точный раскрой после CAD.",
+        "en": "10 m prototype → approximately 10 m more; final cut list after CAD."
+      },
+      "status_label": {
+        "ru": "Карточка: в наличии / готов к отправке; количество партии не подтверждено.",
+        "en": "Listing: in stock / ready to ship; batch quantity unconfirmed."
+      },
+      "classification_label": {
+        "ru": "Нужная функция · кандидат товара",
+        "en": "Required function · product candidate"
+      },
+      "compatibility": {
+        "ru": "Кандидат для малорастяжимых тяг. Проверить фактический диаметр, закрепление, ползучесть и износ; номинальные 1,3 мм проходят в PTFE с ID 2 мм, но трение в изгибах измеряется. 20 м — запас для макета, не окончательная раскройная ведомость.",
+        "en": "Candidate low-stretch tendon. Check actual diameter, anchoring, creep and abrasion; nominal 1.3 mm fits 2 mm-ID PTFE, but bend friction must be measured. Twenty metres is a prototype allowance, not the final cutting schedule."
+      },
+      "notes": {
+        "ru": "На странице указана доставка Новой Почтой по Украине.",
+        "en": "Page explicitly offers Nova Poshta delivery within Ukraine."
+      },
+      "sources": [],
+      "timing": {
+        "ru": "Первое использование: T1. Дата — в календаре закупок выше.",
+        "en": "First use: T1. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "tail_ptfe",
+      "title": {
+        "ru": "PTFE-трубка: внутренний 2 мм, наружный 4 мм",
+        "en": "PTFE tube: 2 mm ID, 4 mm OD"
+      },
+      "group": "tail",
+      "stage": "T1",
+      "price": 60,
+      "currency": "UAH",
+      "url": "https://prom.ua/ua/p204295156-trubka-ptfe-24mm.html",
+      "seller": "UA Reprap Store / Prom",
+      "quantity_text": {
+        "ru": "3 м на прототип → ориентировочно ещё 3 м; итог по CAD.",
+        "en": "3 m prototype → approximately 3 m more; total from CAD."
+      },
+      "status_label": {
+        "ru": "Карточка: в наличии / готов к отправке; количество партии не подтверждено.",
+        "en": "Listing: in stock / ready to ship; batch quantity unconfirmed."
+      },
+      "classification_label": {
+        "ru": "Нужная функция · кандидат товара",
+        "en": "Required function · product candidate"
+      },
+      "compatibility": {
+        "ru": "Для направляющих троса 1,3 мм. Сначала проверить радиусы, закрепление концов, трение и отсутствие заеданий; длина определяется CAD. Не считать трубку гарантированно подходящей оболочкой Боудена под сжатием.",
+        "en": "For guiding 1.3 mm tendon. First test bend radii, end anchoring, friction and absence of binding; length follows CAD. Do not assume the tube is a qualified compression-resistant Bowden housing."
+      },
+      "notes": null,
+      "sources": [],
+      "timing": {
+        "ru": "Первое использование: T1. Дата — в календаре закупок выше.",
+        "en": "First use: T1. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "shared_bearings_626",
+      "title": {
+        "ru": "Радиальный подшипник 626ZZ, 6 × 19 × 6 мм",
+        "en": "626ZZ radial bearing, 6 × 19 × 6 mm"
+      },
+      "group": "mechanics",
+      "stage": "T1",
+      "price": 12,
+      "currency": "UAH",
+      "url": "https://arduino.ua/prod3167-radialnii-podshipnik-626zz-6h19h6mm",
+      "seller": "Arduino.ua",
+      "quantity_text": {
+        "ru": "4 на двухмоторный образец → ориентировочно +8 = 12; пересчитать по CAD опор.",
+        "en": "4 for the two-motor sample → provisionally +8 = 12; recalculate from bearing-support CAD."
+      },
+      "status_label": {
+        "ru": "Карточка: в наличии / готов к отправке; количество партии не подтверждено.",
+        "en": "Listing: in stock / ready to ship; batch quantity unconfirmed."
+      },
+      "classification_label": {
+        "ru": "Нужная функция · кандидат товара",
+        "en": "Required function · product candidate"
+      },
+      "compatibility": {
+        "ru": "Кандидат опор барабанов/роликов на гладком валу 6 мм. Посадки, осевая фиксация, число опор и допустимые нагрузки определяются CAD; резьбовая шпилька M6 не заменяет гладкую посадку.",
+        "en": "Candidate support for spools/idlers on a smooth 6 mm shaft. CAD determines fits, axial retention, support count and loads; M6 threaded rod is not a substitute for a smooth bearing seat."
+      },
+      "notes": {
+        "ru": "12 штук — предварительный сценарий двух опор на шесть барабанов, а не утверждённый BOM.",
+        "en": "Twelve is a provisional two-supports-per-spool scenario, not an approved BOM."
+      },
+      "sources": [],
+      "timing": {
+        "ru": "Первое использование: T1. Дата — в календаре закупок выше.",
+        "en": "First use: T1. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "shared_shaft_6mm",
+      "title": {
+        "ru": "Nimet WRA6: прецизионный вал 6 мм, отрезок 300 мм",
+        "en": "Nimet WRA6: precision 6 mm shaft, 300 mm length"
+      },
+      "group": "mechanics",
+      "stage": "T1",
+      "price": 132,
+      "currency": "UAH",
+      "url": "https://gp-tech.com.ua/linijni-vali-ta-pidshipniki/valy-napravlyauchi-zagartovani/indukcijno-zagartovani-ta-shlifovani-nerzhaviyuchi-linijni-valy-x90crmov18-wra-nimet/tsylindrychnyi-val-wra6-300mm-x90crmov18",
+      "seller": "GP-Tech",
+      "quantity_text": {
+        "ru": "1 отрезок 300 мм на образцы; дополнительные длины по CAD барабанов.",
+        "en": "One 300 mm length for samples; additional lengths from spool CAD."
+      },
+      "status_label": {
+        "ru": "Карточка: в наличии / готов к отправке; количество партии не подтверждено.",
+        "en": "Listing: in stock / ready to ship; batch quantity unconfirmed."
+      },
+      "classification_label": {
+        "ru": "Нужная функция · кандидат товара",
+        "en": "Required function · product candidate"
+      },
+      "compatibility": {
+        "ru": "Номинально соответствует внутреннему диаметру 626ZZ, но посадку и фиксацию проверить по допускам. Длины валов, ступицы/муфты, стопорные кольца и проставки заказать по утверждённому чертежу.",
+        "en": "Nominally matches the 626ZZ bore, but verify actual fit and retention tolerances. Order shaft lengths, hubs/couplings, retaining rings and spacers from the approved drawing."
+      },
+      "notes": {
+        "ru": "132 грн указаны без НДС. Продавец предлагает порезку под размер; итоговую цену с нужным налоговым оформлением подтвердить.",
+        "en": "132 UAH is listed excluding VAT. Seller offers cutting to length; confirm the final price for the required tax treatment."
+      },
+      "sources": [],
+      "timing": {
+        "ru": "Первое использование: T1. Дата — в календаре закупок выше.",
+        "en": "First use: T1. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "shared_m3_inserts_screws",
+      "title": {
+        "ru": "SPEC SP-1693A420: M3 термовставки и винты, 420 шт.",
+        "en": "SPEC SP-1693A420: M3 heat-set inserts and screws, 420 pieces"
+      },
+      "group": "mechanics",
+      "stage": "M05",
+      "price": 980,
+      "currency": "UAH",
+      "url": "https://build.rozetka.com.ua/ua/535435364/p535435364/",
+      "seller": "SPEC-TOOL / Rozetka",
+      "quantity_text": {
+        "ru": "1 набор для образцов всех проектов; точные длины/диаметры и количество добрать по ведомости CAD.",
+        "en": "1 sample kit shared across projects; buy final lengths/diameters/quantities from the CAD bill of materials."
+      },
+      "status_label": {
+        "ru": "Карточка: в наличии / готов к отправке; количество партии не подтверждено.",
+        "en": "Listing: in stock / ready to ship; batch quantity unconfirmed."
+      },
+      "classification_label": {
+        "ru": "Нужная функция · кандидат товара",
+        "en": "Required function · product candidate"
+      },
+      "compatibility": {
+        "ru": "Набор для учебных посадок и разборных печатных соединений. Выбрать длину вставки, диаметр отверстия и толщину стенки по образцам PETG; окончательный крепёж, шайбы и гайки — по BOM.",
+        "en": "Assortment for fit coupons and serviceable printed joints. Select insert length, hole diameter and wall thickness using PETG coupons; final screws, washers and nuts follow the BOM."
+      },
+      "notes": {
+        "ru": "У Pololu 37D ограничение захода монтажного винта в корпус ≤3 мм; длину винта считать вместе с толщиной кронштейна.",
+        "en": "For Pololu 37D, screw engagement into the motor face must be ≤3 mm; account for bracket thickness when selecting screw length."
+      },
+      "sources": [],
+      "timing": {
+        "ru": "Первое использование: M05. Дата — в календаре закупок выше.",
+        "en": "First use: M05. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "tail_belt",
+      "title": {
+        "ru": "Kombat Tactical Quick Release Belt, 50 мм × 102 см",
+        "en": "Kombat Tactical Quick Release Belt, 50 mm × 102 cm"
+      },
+      "group": "tail",
+      "stage": "T3",
+      "price": 455,
+      "currency": "UAH",
+      "url": "https://tacticua.com.ua/remin-taktichniy-quick-release-belt-kombat-tactical-olive/",
+      "seller": "TacticUA",
+      "quantity_text": {
+        "ru": "1 после стендовых испытаний, подобрать фактический размер.",
+        "en": "1 after bench qualification; choose actual body size."
+      },
+      "status_label": {
+        "ru": "Карточка: в наличии / готов к отправке; количество партии не подтверждено.",
+        "en": "Listing: in stock / ready to ship; batch quantity unconfirmed."
+      },
+      "classification_label": {
+        "ru": "Нужная функция · кандидат товара",
+        "en": "Required function · product candidate"
+      },
+      "compatibility": {
+        "ru": "Только образец ремня с быстросъёмной пряжкой. Проверить размер пользователя, распределение массы рамой/подкладкой и снятие под фактической нагрузкой. Quick release не означает автоматическое breakaway.",
+        "en": "A quick-release belt candidate only. Check wearer fit, load distribution through frame/padding and release under actual load. Quick release does not imply automatic breakaway."
+      },
+      "notes": {
+        "ru": "Не страховочная система и не опора массы человека. Носимая проба только короткая, стоя на месте, после стенда/манекена.",
+        "en": "Not a fall-arrest harness or human weight support. Wearable trial is brief and stationary, following bench/dummy qualification."
+      },
+      "sources": [],
+      "timing": {
+        "ru": "Первое использование: T3. Дата — в календаре закупок выше.",
+        "en": "First use: T3. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "tail_padding",
+      "title": {
+        "ru": "EVA START: лист-пазл 500 × 500 × 10 мм",
+        "en": "EVA START foam tile, 500 × 500 × 10 mm"
+      },
+      "group": "tail",
+      "stage": "T3",
+      "price": 115,
+      "currency": "UAH",
+      "url": "https://evaplast-pazl.com.ua/kylymok-pazl-start-50kh50sm.-siryi/",
+      "seller": "EVAPLAST-PAZL",
+      "quantity_text": {
+        "ru": "1 плитка 500 × 500 × 10 мм для образцов; расход по креплению.",
+        "en": "One 500 × 500 × 10 mm tile for coupons; final usage from mounting design."
+      },
+      "status_label": {
+        "ru": "Карточка: в наличии / готов к отправке; количество партии не подтверждено.",
+        "en": "Listing: in stock / ready to ship; batch quantity unconfirmed."
+      },
+      "classification_label": {
+        "ru": "Нужная функция · кандидат товара",
+        "en": "Required function · product candidate"
+      },
+      "compatibility": {
+        "ru": "Заготовка для мягких прокладок и закрытия жёстких кромок; проверить сжатие, фиксацию, трение и чистку. Не использовать как силовую раму или доказательство безопасности контакта с телом.",
+        "en": "Stock for padding and covering hard edges; check compression, retention, rubbing and cleaning. Not a structural frame or proof of body-contact safety."
+      },
+      "notes": null,
+      "sources": [],
+      "timing": {
+        "ru": "Первое использование: T3. Дата — в календаре закупок выше.",
+        "en": "First use: T3. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "arm_rgb_camera",
+      "title": {
+        "ru": "Logitech C270 HD USB RGB, 960-001063",
+        "en": "Logitech C270 HD USB RGB webcam, 960-001063"
+      },
+      "group": "compute",
+      "stage": "M14",
+      "price": 999,
+      "currency": "UAH",
+      "url": "https://logitech-store.com.ua/ru/logitech-webcam-c270-hd-960-001063-534677",
+      "seller": "Logitech Store Ukraine",
+      "quantity_text": {
+        "ru": "0 если имеющаяся камера проходит тест; иначе 1 общая USB-камера.",
+        "en": "0 if an existing camera passes; otherwise 1 shared USB camera."
+      },
+      "status_label": {
+        "ru": "Карточка: в наличии / готов к отправке; количество партии не подтверждено.",
+        "en": "Listing: in stock / ready to ship; batch quantity unconfirmed."
+      },
+      "classification_label": {
+        "ru": "Условно · проверить имеющееся",
+        "en": "Conditional · check existing equipment"
+      },
+      "compatibility": {
+        "ru": "USB RGB 720p, Linux UVC: C270 046d:0825 присутствует в списке проекта linux-uvc. Для известной плоскости стола достаточно после проверки калибровки. Закрепить жёстко, проверить фокус на рабочей дистанции, экспозицию и возраст кадра.",
+        "en": "USB RGB 720p; C270 046d:0825 appears on the Linux UVC project device list. Sufficient candidate for a known table plane after calibration validation. Use a rigid mount; test focus at working distance, exposure and frame age."
+      },
+      "notes": {
+        "ru": "Нужна одна камера; depth-камера, Raspberry Pi и новая камера для хвоста не обязательны. Проверить доставленный USB ID и захват в V4L2/OpenCV; Windows ПО Logitech не требуется для UVC.",
+        "en": "One camera is required; depth camera, Raspberry Pi and a separate tail camera are not required. Verify delivered USB ID and V4L2/OpenCV capture; Logitech Windows software is unnecessary for UVC."
+      },
+      "sources": [
+        "https://www.ideasonboard.org/uvc/",
+        "https://support.logi.com/hc/en-hk/articles/360023393913-Logitech-HD-Webcam-C270-Technical-Specifications"
+      ],
+      "timing": {
+        "ru": "Первое использование: M14. Дата — в календаре закупок выше.",
+        "en": "First use: M14. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "shared_gamepad",
+      "title": {
+        "ru": "Logitech F310, проводной USB, 940-000135",
+        "en": "Logitech F310 wired USB, 940-000135"
+      },
+      "group": "compute",
+      "stage": "T3",
+      "price": 1940,
+      "currency": "UAH",
+      "url": "https://rozetka.com.ua/ua/423367287/p423367287/",
+      "seller": "rozetka.com.ua",
+      "quantity_text": {
+        "ru": "1 на все проекты; сначала проверить имеющийся геймпад",
+        "en": "1 shared across projects; test an existing controller first"
+      },
+      "status_label": {
+        "ru": "Карточка: в наличии; проверить перед оплатой.",
+        "en": "Listing: in stock; recheck before payment."
+      },
+      "classification_label": {
+        "ru": "Условно · не стартовая покупка",
+        "en": "Conditional · not a starter purchase"
+      },
+      "compatibility": {
+        "ru": "Продавец SEMPIE. Проверить Linux/ROS joy, deadman, нейтраль и отключение кабеля; игровой контроллер не заменяет аппаратную остановку. Нужен к T3.",
+        "en": "Seller SEMPIE. Verify Linux/ROS joy, deadman, neutral and cable-disconnect behavior; a gamepad does not replace hardware power removal. Needed by T3."
+      },
+      "notes": null,
+      "sources": [
+        "https://support.logi.com/hc/articles/360023467133-Logitech-Gamepad-F310-Technical-Specifications"
+      ],
+      "timing": {
+        "ru": "Первое использование: T3. Дата — в календаре закупок выше.",
+        "en": "First use: T3. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "optional_pi5",
+      "title": {
+        "ru": "Raspberry Pi 5, 8 GB — только при необходимости",
+        "en": "Raspberry Pi 5, 8 GB — only if needed"
+      },
+      "group": "compute",
+      "stage": "M22",
+      "price": 11707,
+      "currency": "UAH",
+      "url": "https://evo.net.ua/mikrokompiuter-raspberry-pi-5-board-8gb/",
+      "seller": "evo.net.ua",
+      "quantity_text": {
+        "ru": "0 сейчас; максимум 1 общая плата после проверки потребности",
+        "en": "0 now; at most 1 shared board after confirming the need"
+      },
+      "status_label": {
+        "ru": "Карточка: в наличии; проверить перед оплатой.",
+        "en": "Listing: in stock; recheck before payment."
+      },
+      "classification_label": {
+        "ru": "Условно · не стартовая покупка",
+        "en": "Conditional · not a starter purchase"
+      },
+      "compatibility": {
+        "ru": "На старте использовать имеющийся компьютер. SBC нужен только если проверка ROS/USB/сети показывает необходимость бортового хоста. 8 GB — найденный вариант в наличии; это не минимальное требование программы. Ubuntu 24.04 ARM64/Jazzy, нагрузку и USB проверить до интеграции.",
+        "en": "Use the existing computer first. An SBC is needed only if ROS/USB/network testing establishes a need for an onboard host. 8 GB is a listed in-stock option, not a programme minimum. Qualify Ubuntu 24.04 ARM64/Jazzy, load and USB before integration."
+      },
+      "notes": null,
+      "sources": [
+        "https://www.raspberrypi.com/documentation/computers/raspberry-pi.html"
+      ],
+      "timing": {
+        "ru": "Первое использование: M22. Дата — в календаре закупок выше.",
+        "en": "First use: M22. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "optional_pi_power",
+      "title": {
+        "ru": "HT-PD27W-EU, USB-C 5,1 В / 5 А, 27 Вт",
+        "en": "HT-PD27W-EU, USB-C 5.1 V / 5 A, 27 W"
+      },
+      "group": "compute",
+      "stage": "M22",
+      "price": 537,
+      "currency": "UAH",
+      "url": "https://arduino.ua/prod6957-blok-pitaniya-type-c-5v-5a-27vt-s-fynkciei-power-delivery",
+      "seller": "arduino.ua",
+      "quantity_text": {
+        "ru": "1 только вместе с Pi; кабель встроен",
+        "en": "1 only with Pi; attached cable"
+      },
+      "status_label": {
+        "ru": "Карточка: в наличии; проверить перед оплатой.",
+        "en": "Listing: in stock; recheck before payment."
+      },
+      "classification_label": {
+        "ru": "Условно · не стартовая покупка",
+        "en": "Conditional · not a starter purchase"
+      },
+      "compatibility": {
+        "ru": "Для компьютера на стенде, не для сервомоторов. Для движения с автономным питанием понадобится отдельно рассчитанный преобразователь; его модель выбирается после токовых измерений.",
+        "en": "For the bench computer, not servo power. Untethered operation requires a separately sized converter selected after current measurements."
+      },
+      "notes": null,
+      "sources": [],
+      "timing": {
+        "ru": "Первое использование: M22. Дата — в календаре закупок выше.",
+        "en": "First use: M22. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "optional_pi_cooling",
+      "title": {
+        "ru": "Raspberry Pi Active Cooler SC1148",
+        "en": "Raspberry Pi Active Cooler SC1148"
+      },
+      "group": "compute",
+      "stage": "M22",
+      "price": 360,
+      "currency": "UAH",
+      "url": "https://arduino.ua/ru/prod8198-aktivnii-radiator-dlya-raspberry-pi-5-oficiinii-sc1148",
+      "seller": "arduino.ua",
+      "quantity_text": {
+        "ru": "1 только вместе с Pi",
+        "en": "1 only with Pi"
+      },
+      "status_label": {
+        "ru": "Ожидается / нет в наличии; сейчас не готовая покупка.",
+        "en": "Awaiting stock / unavailable; not ready to buy now."
+      },
+      "classification_label": {
+        "ru": "Условно · не стартовая покупка",
+        "en": "Conditional · not a starter purchase"
+      },
+      "compatibility": {
+        "ru": "Радиатор с вентилятором для Pi 5; не перепутать с отдельным сменным вентилятором без радиатора. В карточке ожидается: повторно проверить перед выбором всей конфигурации.",
+        "en": "Heatsink and fan for Pi 5; do not confuse with a replacement fan lacking a heatsink. Listing is awaiting stock: recheck before committing to the complete configuration."
+      },
+      "notes": null,
+      "sources": [
+        "https://www.raspberrypi.com/products/active-cooler/"
+      ],
+      "timing": {
+        "ru": "Первое использование: M22. Дата — в календаре закупок выше.",
+        "en": "First use: M22. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "optional_pi_storage",
+      "title": {
+        "ru": "SanDisk Ultra microSDXC 128 GB, ZKE112",
+        "en": "SanDisk Ultra microSDXC 128 GB, ZKE112"
+      },
+      "group": "compute",
+      "stage": "M22",
+      "price": 963,
+      "currency": "UAH",
+      "url": "https://arduino.ua/prod4221-sandisk-ultra-microsdxc-128gb-100mbs-class-10-uhs-i",
+      "seller": "arduino.ua",
+      "quantity_text": {
+        "ru": "1 только если нужна новая карта для Pi",
+        "en": "1 only if a new Pi card is needed"
+      },
+      "status_label": {
+        "ru": "Каталог: в наличии; карточка старее, цену и срок подтвердить.",
+        "en": "Catalogue: in stock; product page is older, confirm price and lead time."
+      },
+      "classification_label": {
+        "ru": "Условно · не стартовая покупка",
+        "en": "Conditional · not a starter purchase"
+      },
+      "compatibility": {
+        "ru": "Цена 963 грн из более свежего каталога бренда; старая карточка может отличаться. Нужны microSD и резервная копия образа; при записи через компьютер нужен имеющийся либо отдельно купленный USB-кардридер.",
+        "en": "UAH 963 from the newer brand listing; the older product page may differ. Requires microSD and an image backup; use an existing or separately purchased USB card reader for computer-based imaging."
+      },
+      "notes": null,
+      "sources": [
+        "https://arduino.ua/brand/sandisk"
+      ],
+      "timing": {
+        "ru": "Первое использование: M22. Дата — в календаре закупок выше.",
+        "en": "First use: M22. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "wb-meter",
+      "title": {
+        "ru": "Мультиметр UNI-T UT136C+",
+        "en": "UNI-T UT136C+ multimeter"
+      },
+      "group": "bench",
+      "stage": "M04",
+      "price": 1394,
+      "currency": "UAH",
+      "url": "https://masteram.com.ua/uk/digital-multimeter-uni-t-ut136cplus/",
+      "seller": "masteram.com.ua",
+      "quantity_text": {
+        "ru": "1 шт./набор; общие для плана.",
+        "en": "1 unit(s)/pack(s), shared across the plan."
+      },
+      "status_label": {
+        "ru": "Склад Львов.",
+        "en": "Lviv warehouse."
+      },
+      "classification_label": {
+        "ru": "Общий инструмент / компонент",
+        "en": "Shared tool / component"
+      },
+      "compatibility": {
+        "ru": "DC-напряжение/ток, сопротивление, прозвонка; щупы, 2×AA и термопара указаны в комплекте.",
+        "en": "DC voltage/current, resistance and continuity; leads, 2×AA and thermocouple listed."
+      },
+      "notes": {
+        "ru": "",
+        "en": ""
+      },
+      "sources": [
+        "https://meters.uni-trend.com/product/ut136plus-series/"
+      ],
+      "timing": {
+        "ru": "Первое использование: M04. Дата — в календаре закупок выше.",
+        "en": "First use: M04. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "wb-psu",
+      "title": {
+        "ru": "БП Masteram HPS305D, 0–30 В / 0–5 А",
+        "en": "Masteram HPS305D supply, 0–30 V / 0–5 A"
+      },
+      "group": "bench",
+      "stage": "M04",
+      "price": 2300,
+      "currency": "UAH",
+      "url": "https://masteram.com.ua/uk/mini-switching-dc-power-supply-masteram-hps305d/",
+      "seller": "masteram.com.ua",
+      "quantity_text": {
+        "ru": "1 шт./набор; общие для плана.",
+        "en": "1 unit(s)/pack(s), shared across the plan."
+      },
+      "status_label": {
+        "ru": "Львов; прямая страница 2300 по акции, другие снимки 2557–2792.",
+        "en": "Lviv; direct page sale 2300, other snapshots 2557–2792."
+      },
+      "classification_label": {
+        "ru": "Общий инструмент / компонент",
+        "en": "Shared tool / component"
+      },
+      "compatibility": {
+        "ru": "Страница бренда подтверждает грубую/точную регулировку напряжения и тока. Проверить CC на резистивной нагрузке при приёмке; начинать с малого ограничения. Сетевой шнур и щупы включены; переключатель сети 220 В. Внешний предохранитель ветви отдельно. БП не рассчитан автоматически на целого робота.",
+        "en": "Brand page confirms coarse/fine voltage and current adjustment. Verify CC with a resistive load on receipt; start with a low limit. Mains lead and test leads included; set mains selector to 220 V. Add branch fuse. This is not automatically a complete-robot supply."
+      },
+      "notes": {
+        "ru": "Регулируемый ток 0–5 А подтверждён; численные переходные характеристики CC не опубликованы.",
+        "en": "Adjustable 0–5 A current is documented; numerical CC transient performance is unpublished."
+      },
+      "sources": [],
+      "timing": {
+        "ru": "Первое использование: M04. Дата — в календаре закупок выше.",
+        "en": "First use: M04. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "wb-solder",
+      "title": {
+        "ru": "Handskit T12 MINI",
+        "en": "Handskit T12 MINI"
+      },
+      "group": "bench",
+      "stage": "M04",
+      "price": 1366,
+      "currency": "UAH",
+      "url": "https://arduino.ua/prod3938-cifrovaya-portativnaya-payalnaya-stanciya-t12-mini",
+      "seller": "arduino.ua",
+      "quantity_text": {
+        "ru": "1 шт./набор; общие для плана.",
+        "en": "1 unit(s)/pack(s), shared across the plan."
+      },
+      "status_label": {
+        "ru": "На странице: в наличии.",
+        "en": "Page: in stock."
+      },
+      "classification_label": {
+        "ru": "Общий инструмент / компонент",
+        "en": "Shared tool / component"
+      },
+      "compatibility": {
+        "ru": "72 Вт, T12-BK указан в комплекте. Добавить подставку, очиститель, припой, флюс, оплётку и термостойкую поверхность; вентиляция. Состав сетевого питания уточнить перед заказом.",
+        "en": "72 W, T12-BK listed. Add stand, cleaner, solder, flux, wick and heatproof surface; ventilate. Confirm mains power package before ordering."
+      },
+      "notes": {
+        "ru": "",
+        "en": ""
+      },
+      "sources": [],
+      "timing": {
+        "ru": "Первое использование: M04. Дата — в календаре закупок выше.",
+        "en": "First use: M04. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "wb-cutters",
+      "title": {
+        "ru": "Микрокусачки Pro’sKit 1PK-501A",
+        "en": "Pro’sKit 1PK-501A flush cutters"
+      },
+      "group": "bench",
+      "stage": "M04",
+      "price": 199.08,
+      "currency": "UAH",
+      "url": "https://masteram.com.ua/uk/micro-cutting-pliers-pro-skit-1pk-501a/",
+      "seller": "masteram.com.ua",
+      "quantity_text": {
+        "ru": "1 шт./набор; общие для плана.",
+        "en": "1 unit(s)/pack(s), shared across the plan."
+      },
+      "status_label": {
+        "ru": "Прямая страница 199,08, Львов/Днепр/Киев; новый каталог 239.",
+        "en": "Direct page 199.08, Lviv/Dnipro/Kyiv; newer catalogue 239."
+      },
+      "classification_label": {
+        "ru": "Общий инструмент / компонент",
+        "en": "Shared tool / component"
+      },
+      "compatibility": {
+        "ru": "Медь до Ø1,3 мм; не для стальных винтов.",
+        "en": "Copper up to Ø1.3 mm; not for steel screws."
+      },
+      "notes": {
+        "ru": "",
+        "en": ""
+      },
+      "sources": [],
+      "timing": {
+        "ru": "Первое использование: M04. Дата — в календаре закупок выше.",
+        "en": "First use: M04. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "wb-caliper",
+      "title": {
+        "ru": "Штангенциркуль Pro’sKit PD-151, 150 мм",
+        "en": "Pro’sKit PD-151 caliper, 150 mm"
+      },
+      "group": "mechanics",
+      "stage": "M05",
+      "price": 2235,
+      "currency": "UAH",
+      "url": "https://comtrade.ua/ua/proskit-pd-151/",
+      "seller": "comtrade.ua",
+      "quantity_text": {
+        "ru": "1 шт./набор; общие для плана.",
+        "en": "1 unit(s)/pack(s), shared across the plan."
+      },
+      "status_label": {
+        "ru": "На странице: в наличии.",
+        "en": "Page: in stock."
+      },
+      "classification_label": {
+        "ru": "Общий инструмент / компонент",
+        "en": "Shared tool / component"
+      },
+      "compatibility": {
+        "ru": "Разрешение 0,01 мм, заявленная точность ±0,03 мм. SR44 1,55 В отдельно.",
+        "en": "0.01 mm resolution, stated accuracy ±0.03 mm. SR44 1.55 V battery separate."
+      },
+      "notes": {
+        "ru": "",
+        "en": ""
+      },
+      "sources": [],
+      "timing": {
+        "ru": "Первое использование: M05. Дата — в календаре закупок выше.",
+        "en": "First use: M05. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "wb-breadboard",
+      "title": {
+        "ru": "Макетная плата MB-102, 830 точек",
+        "en": "MB-102 830-point breadboard"
+      },
+      "group": "bench",
+      "stage": "M04",
+      "price": 69,
+      "currency": "UAH",
+      "url": "https://arduino.ua/prod361-maketnaya-plata-mb-102-830-otverstii",
+      "seller": "arduino.ua",
+      "quantity_text": {
+        "ru": "1 шт./набор; общие для плана.",
+        "en": "1 unit(s)/pack(s), shared across the plan."
+      },
+      "status_label": {
+        "ru": "Прямая страница в наличии; старый поиск ожидался.",
+        "en": "Direct page in stock; older search expected."
+      },
+      "classification_label": {
+        "ru": "Общий инструмент / компонент",
+        "en": "Shared tool / component"
+      },
+      "compatibility": {
+        "ru": "Сигналы и малый ток; моторные токи по отдельным проводам. Вторую плату только если ESP32 перекрывает контакты.",
+        "en": "Signals and low current; motor current uses separate wires. Add second board only if ESP32 obstructs access."
+      },
+      "notes": {
+        "ru": "",
+        "en": ""
+      },
+      "sources": [],
+      "timing": {
+        "ru": "Первое использование: M04. Дата — в календаре закупок выше.",
+        "en": "First use: M04. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "wb-jumpers",
+      "title": {
+        "ru": "Перемычки MM/MF/FF, 120 шт.",
+        "en": "MM/MF/FF jumpers, 120 pack"
+      },
+      "group": "bench",
+      "stage": "M04",
+      "price": 119,
+      "currency": "UAH",
+      "url": "https://arduino.ua/prod1596-komplekt-peremichek-arduino-120sht",
+      "seller": "arduino.ua",
+      "quantity_text": {
+        "ru": "1 шт./набор; общие для плана.",
+        "en": "1 unit(s)/pack(s), shared across the plan."
+      },
+      "status_label": {
+        "ru": "На странице: в наличии.",
+        "en": "Page: in stock."
+      },
+      "classification_label": {
+        "ru": "Общий инструмент / компонент",
+        "en": "Shared tool / component"
+      },
+      "compatibility": {
+        "ru": "20 см, только сигнальные цепи, не моторное питание.",
+        "en": "20 cm, signal circuits only, not motor power."
+      },
+      "notes": {
+        "ru": "",
+        "en": ""
+      },
+      "sources": [],
+      "timing": {
+        "ru": "Первое использование: M04. Дата — в календаре закупок выше.",
+        "en": "First use: M04. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "wb-components",
+      "title": {
+        "ru": "Резисторы и конденсаторы M04",
+        "en": "M04 resistors and capacitors"
+      },
+      "group": "bench",
+      "stage": "M04",
+      "price": 349,
+      "currency": "UAH",
+      "url": "https://arduino.ua/prod409-nabor-rezistorov-0-25w-600-sht",
+      "seller": "arduino.ua",
+      "quantity_text": {
+        "ru": "1 шт./набор; общие для плана.",
+        "en": "1 unit(s)/pack(s), shared across the plan."
+      },
+      "status_label": {
+        "ru": "На странице: в наличии.",
+        "en": "Page: in stock."
+      },
+      "classification_label": {
+        "ru": "Общий инструмент / компонент",
+        "en": "Shared tool / component"
+      },
+      "compatibility": {
+        "ru": "По набору 600 резисторов, 300 керамических, 120 электролитов. Проверять мощность, полярность и напряжение; прочие компоненты в резерве.",
+        "en": "One pack each: 600 resistors, 300 ceramic, 120 electrolytic capacitors. Check dissipation, polarity and voltage; other components in allowance."
+      },
+      "notes": {
+        "ru": " Показана сумма отдельных товаров: 156 + 98 + 95 UAH. Все ссылки приведены ниже.",
+        "en": " Shown price totals separate items: 156 + 98 + 95 UAH. All links are below."
+      },
+      "sources": [
+        "https://arduino.ua/prod267-nabor-keramicheskih-kondensatorov-300-sht",
+        "https://arduino.ua/prod268-nabor-elektroliticheskih-kondensatorov-120sht"
+      ],
+      "timing": {
+        "ru": "Первое использование: M04. Дата — в календаре закупок выше.",
+        "en": "First use: M04. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "wb-fuseholder",
+      "title": {
+        "ru": "Держатель 5×20 с проводами 18AWG",
+        "en": "5×20 fuse holder with 18AWG leads"
+      },
+      "group": "bench",
+      "stage": "M04",
+      "price": 14,
+      "currency": "UAH",
+      "url": "https://arduino.ua/ru/prod6396-korpys-zapobijnika-10a-5x20-iz-provodami-18awg-1sht",
+      "seller": "arduino.ua",
+      "quantity_text": {
+        "ru": "2 шт./набор; общие для плана.",
+        "en": "2 unit(s)/pack(s), shared across the plan."
+      },
+      "status_label": {
+        "ru": "На странице: в наличии.",
+        "en": "Page: in stock."
+      },
+      "classification_label": {
+        "ru": "Общий инструмент / компонент",
+        "en": "Shared tool / component"
+      },
+      "compatibility": {
+        "ru": "Два: стенд и запас. Комплектная вставка 4 А не подходит автоматически. Только маломощный стенд; проверить контакт/нагрев. Для робота подобрать документированный держатель под DC-ток.",
+        "en": "Two: bench and spare. Included 4 A fuse is not automatically suitable. Low-power bench only; check contacts/heating. Select a documented DC holder for robot power."
+      },
+      "notes": {
+        "ru": "",
+        "en": ""
+      },
+      "sources": [],
+      "timing": {
+        "ru": "Первое использование: M04. Дата — в календаре закупок выше.",
+        "en": "First use: M04. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "wb-fuses",
+      "title": {
+        "ru": "Предохранитель 0,5 А, 5×20",
+        "en": "0.5 A 5×20 fuse"
+      },
+      "group": "bench",
+      "stage": "M04",
+      "price": 4,
+      "currency": "UAH",
+      "url": "https://arduino.ua/ru/prod5765-zapobijnik-keramichnii-0-5a-5x20-1sht",
+      "seller": "arduino.ua",
+      "quantity_text": {
+        "ru": "5 шт./набор; общие для плана.",
+        "en": "5 unit(s)/pack(s), shared across the plan."
+      },
+      "status_label": {
+        "ru": "На странице: в наличии.",
+        "en": "Page: in stock."
+      },
+      "classification_label": {
+        "ru": "Общий инструмент / компонент",
+        "en": "Shared tool / component"
+      },
+      "compatibility": {
+        "ru": "0,5 А / 250 В указаны, DC breaking rating не опубликован: подтвердить для выбранной ветви. Не переносить в батарейную/силовую ветвь робота. CC БП — основная защита первых маломощных опытов.",
+        "en": "0.5 A / 250 V stated; DC breaking rating unpublished: confirm for selected branch. Do not reuse this choice for battery/robot power. PSU CC is primary protection for first low-power experiments."
+      },
+      "notes": {
+        "ru": "",
+        "en": ""
+      },
+      "sources": [],
+      "timing": {
+        "ru": "Первое использование: M04. Дата — в календаре закупок выше.",
+        "en": "First use: M04. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "wb-xt60",
+      "title": {
+        "ru": "XT60 с проводами 16AWG, пара",
+        "en": "XT60 pair, 16AWG pigtails"
+      },
+      "group": "bench",
+      "stage": "M04",
+      "price": 69,
+      "currency": "UAH",
+      "url": "https://arduino.ua/prod8303-rozm-xt60-s-provodami-16awg-para",
+      "seller": "arduino.ua",
+      "quantity_text": {
+        "ru": "2 шт./набор; общие для плана.",
+        "en": "2 unit(s)/pack(s), shared across the plan."
+      },
+      "status_label": {
+        "ru": "На странице: в наличии.",
+        "en": "Page: in stock."
+      },
+      "classification_label": {
+        "ru": "Общий инструмент / компонент",
+        "en": "Shared tool / component"
+      },
+      "compatibility": {
+        "ru": "Две пары: кабель и запас. Этот комплект ограничен магазином 15 А. Проверить полярность; размыкать после отключения питания. Не аварийный выключатель под нагрузкой.",
+        "en": "Two pairs: cable and spare. Store limits this assembly to 15 A. Check polarity; unplug after power-off. Not an emergency load-breaking switch."
+      },
+      "notes": {
+        "ru": "",
+        "en": ""
+      },
+      "sources": [],
+      "timing": {
+        "ru": "Первое использование: M04. Дата — в календаре закупок выше.",
+        "en": "First use: M04. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "wb-wire",
+      "title": {
+        "ru": "Провод 22AWG, 6 цветов × 10 м",
+        "en": "22AWG wire, six colours × 10 m"
+      },
+      "group": "bench",
+      "stage": "M04",
+      "price": 889,
+      "currency": "UAH",
+      "url": "https://arduino.ua/prod7279-nabir-montajnih-provodiv-22awg-10m",
+      "seller": "arduino.ua",
+      "quantity_text": {
+        "ru": "1 шт./набор; общие для плана.",
+        "en": "1 unit(s)/pack(s), shared across the plan."
+      },
+      "status_label": {
+        "ru": "На странице: в наличии.",
+        "en": "Page: in stock."
+      },
+      "classification_label": {
+        "ru": "Опция / условный выбор",
+        "en": "Optional / conditional choice"
+      },
+      "compatibility": {
+        "ru": "60 м суммарно; на старте достаточно коротких отрезков из резерва. Для сигналов/малого стенда; силовое сечение отдельно рассчитывается.",
+        "en": "60 m total; short lengths from allowance suffice initially. Signal/small-bench use; size power wiring separately."
+      },
+      "notes": {
+        "ru": "",
+        "en": ""
+      },
+      "sources": [],
+      "timing": {
+        "ru": "Первое использование: M04. Дата — в календаре закупок выше.",
+        "en": "First use: M04. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "wb-esp32",
+      "title": {
+        "ru": "ESP32 DevKit V1, ESP-WROOM-32, 30 pin",
+        "en": "ESP32 DevKit V1, ESP-WROOM-32, 30-pin"
+      },
+      "group": "motor",
+      "stage": "M06",
+      "price": 295,
+      "currency": "UAH",
+      "url": "https://arduino.ua/ru/prod3990-wi-fi-modyl-devkit-v1-s-esp-32",
+      "seller": "arduino.ua",
+      "quantity_text": {
+        "ru": "1 шт./набор; общие для плана.",
+        "en": "1 unit(s)/pack(s), shared across the plan."
+      },
+      "status_label": {
+        "ru": "На странице: в наличии.",
+        "en": "Page: in stock."
+      },
+      "classification_label": {
+        "ru": "Альтернатива S3 · не покупать обе",
+        "en": "S3 alternative · do not buy both"
+      },
+      "compatibility": {
+        "ru": "Один общий учебный MCU. GPIO 3,3 В, питание USB 5 В; Micro-USB data-кабель. Финальная архитектура хвоста — отдельный этап: карта GPIO/PCNT/ADC, 6 энкодеров и PWM должны пройти тест; классический ESP32 не путать с ESP32-S3. Не покупать 3 платы заранее.",
+        "en": "One shared learning MCU. 3.3 V GPIO, 5 V USB power; Micro-USB data cable. Final tail architecture is separate: map GPIO/PCNT/ADC and test six encoders/PWM; do not confuse classic ESP32 with ESP32-S3. Do not buy three boards upfront."
+      },
+      "notes": {
+        "ru": "Один сначала; до трёх контроллеров по утверждённой архитектуре проекта. Для S3 с 4 PCNT возможны три узла по двум моторам; не суммировать альтернативы как обязательные. Для единого стека лучше выбрать указанную ниже ESP32-S3 уже на M06 и переиспользовать её в tail; классическая ESP32 здесь только бюджетная альтернатива для отдельного стенда.",
+        "en": "One initially; up to three controllers according to approved project architecture. S3 with four PCNT can use three two-motor nodes; do not sum alternative architectures as mandatory. For a shared stack choose the ESP32-S3 listed below already in M06 and reuse it in the tail; classic ESP32 is only a budget alternative for a separate learning rig."
+      },
+      "sources": [
+        "https://documentation.espressif.com/esp32_datasheet_en.html"
+      ],
+      "timing": {
+        "ru": "Первое использование: M06. Дата — в календаре закупок выше.",
+        "en": "First use: M06. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "wb-imu",
+      "title": {
+        "ru": "GY-521 / MPU-6050 IMU",
+        "en": "GY-521 / MPU-6050 IMU"
+      },
+      "group": "motor",
+      "stage": "M06",
+      "price": 149,
+      "currency": "UAH",
+      "url": "https://arduino.ua/prod512-akselerometr-i-giroskop-mpu-6050-modyl-6dof",
+      "seller": "arduino.ua",
+      "quantity_text": {
+        "ru": "1 шт./набор; общие для плана.",
+        "en": "1 unit(s)/pack(s), shared across the plan."
+      },
+      "status_label": {
+        "ru": "На странице: в наличии.",
+        "en": "Page: in stock."
+      },
+      "classification_label": {
+        "ru": "Общий инструмент / компонент",
+        "en": "Shared tool / component"
+      },
+      "compatibility": {
+        "ru": "6 осей, без абсолютного yaw. Начать с питания/логики 3,3 В; проверить подтяжки I2C. Вход питания 5 В не доказывает 5-В GPIO.",
+        "en": "Six axes, no absolute yaw. Start with 3.3 V power/logic; check I2C pull-ups. A 5 V supply input does not imply 5 V GPIO."
+      },
+      "notes": {
+        "ru": "",
+        "en": ""
+      },
+      "sources": [
+        "https://product.tdk.com/system/files/dam/doc/product/sensor/mortion-inertial/imu/data_sheet/mpu-6000-datasheet1.pdf"
+      ],
+      "timing": {
+        "ru": "Первое использование: M06. Дата — в календаре закупок выше.",
+        "en": "First use: M06. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "wb-motor",
+      "title": {
+        "ru": "Учебный мотор 6 В, 50 rpm",
+        "en": "Learning gearmotor, 6 V, 50 rpm"
+      },
+      "group": "motor",
+      "stage": "M07",
+      "price": 164,
+      "currency": "UAH",
+      "url": "https://arduino.ua/prod3383-mikromotor-s-redyktorom-6v-50-rpm",
+      "seller": "arduino.ua",
+      "quantity_text": {
+        "ru": "1 шт./набор; общие для плана.",
+        "en": "1 unit(s)/pack(s), shared across the plan."
+      },
+      "status_label": {
+        "ru": "На странице: в наличии.",
+        "en": "Page: in stock."
+      },
+      "classification_label": {
+        "ru": "Опция / условный выбор",
+        "en": "Optional / conditional choice"
+      },
+      "compatibility": {
+        "ru": "Энкодера нет. Для M07 нужны AS5600, диаметральный магнит и соосное крепление на D3 мм. Stall-ток неизвестен: измерить с CC. Не выбран для суставов; убрать при повторном использовании мотора проекта с энкодером.",
+        "en": "No encoder. M07 needs AS5600, diametric magnet and coaxial D3 mm mount. Stall current unknown: characterize with CC. Not chosen for robot joints; omit if reusing project encoder motor."
+      },
+      "notes": {
+        "ru": "",
+        "en": ""
+      },
+      "sources": [],
+      "timing": {
+        "ru": "Первое использование: M07. Дата — в календаре закупок выше.",
+        "en": "First use: M07. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "wb-driver",
+      "title": {
+        "ru": "Модуль DRV8833",
+        "en": "DRV8833 dual H-bridge module"
+      },
+      "group": "motor",
+      "stage": "M07",
+      "price": 42,
+      "currency": "UAH",
+      "url": "https://arduino.ua/prod3697-draiver-dvigatelei-dvyhkanalnii-drv8833",
+      "seller": "arduino.ua",
+      "quantity_text": {
+        "ru": "1 шт./набор; общие для плана.",
+        "en": "1 unit(s)/pack(s), shared across the plan."
+      },
+      "status_label": {
+        "ru": "На странице: в наличии.",
+        "en": "Page: in stock."
+      },
+      "classification_label": {
+        "ru": "Опция / условный выбор",
+        "en": "Optional / conditional choice"
+      },
+      "compatibility": {
+        "ru": "TI VM 2,7–10,8 В, 3,3-В управление; стенд 6 В. 2 А — пик IC, не гарантированный постоянный ток платы. Проверить sense-разводку: встроенный настроенный лимит тока не подтверждён.",
+        "en": "TI VM 2.7–10.8 V, 3.3 V control; bench at 6 V. 2 A IC peak is not guaranteed carrier continuous current. Check sense routing: configured current limiting is unconfirmed."
+      },
+      "notes": {
+        "ru": "",
+        "en": ""
+      },
+      "sources": [
+        "https://www.ti.com/product/DRV8833"
+      ],
+      "timing": {
+        "ru": "Первое использование: M07. Дата — в календаре закупок выше.",
+        "en": "First use: M07. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "wb-encoder",
+      "title": {
+        "ru": "AS5600 магнитный энкодер",
+        "en": "AS5600 magnetic encoder"
+      },
+      "group": "motor",
+      "stage": "M07",
+      "price": 105,
+      "currency": "UAH",
+      "url": "https://prom.ua/ua/p1713901866-magnitnyj-enkoder-datchik.html",
+      "seller": "prom.ua",
+      "quantity_text": {
+        "ru": "1 шт./набор; общие для плана.",
+        "en": "1 unit(s)/pack(s), shared across the plan."
+      },
+      "status_label": {
+        "ru": "Стек: готово к отправке, минимум заказа 300 грн.",
+        "en": "Stek: ready to dispatch, minimum order 300 UAH."
+      },
+      "classification_label": {
+        "ru": "Опция / условный выбор",
+        "en": "Optional / conditional choice"
+      },
+      "compatibility": {
+        "ru": "3,3 В по карточке. Правильный магнит в комплекте не подтверждён; нужен диаметральный магнит и крепление. Проверить magnet-detect и полный оборот перед PID; обычный аксиальный магнит не заменяет его.",
+        "en": "Listing specifies 3.3 V. Correct magnet inclusion unconfirmed; add diametric magnet and mount. Test magnet-detect and full rotation before PID; ordinary axial magnet is not a substitute."
+      },
+      "notes": {
+        "ru": " Минимум заказа у продавца: 300 грн; не цена одного модуля.",
+        "en": " Seller order minimum: UAH 300; not the price of one module."
+      },
+      "sources": [
+        "https://look.ams-osram.com/m/7059eac7531a86fd/original/AS5600-DS000365.pdf",
+        "https://stack.in.ua/p1713901866-magnitnyj-enkoder-datchik.html"
+      ],
+      "timing": {
+        "ru": "Первое использование: M07. Дата — в календаре закупок выше.",
+        "en": "First use: M07. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "wb-endstop",
+      "title": {
+        "ru": "Механический EndStop с кабелем",
+        "en": "Mechanical endstop with cable"
+      },
+      "group": "motor",
+      "stage": "M06",
+      "price": 34,
+      "currency": "UAH",
+      "url": "https://arduino.ua/ru/prod978-koncevoi-vikluchatel-mehanicheskii",
+      "seller": "arduino.ua",
+      "quantity_text": {
+        "ru": "2 шт./набор; общие для плана.",
+        "en": "2 unit(s)/pack(s), shared across the plan."
+      },
+      "status_label": {
+        "ru": "На странице: в наличии.",
+        "en": "Page: in stock."
+      },
+      "classification_label": {
+        "ru": "Общий инструмент / компонент",
+        "en": "Shared tool / component"
+      },
+      "compatibility": {
+        "ru": "Home и limit стенда. Проверить NC/NO и подтяжку/LED; на вход ESP32 не подавать 5 В. Это датчик, не силовое отключение.",
+        "en": "Bench home and limit. Check NC/NO and pull-up/LED; no 5 V into ESP32. Sensor, not a power disconnect."
+      },
+      "notes": {
+        "ru": "",
+        "en": ""
+      },
+      "sources": [],
+      "timing": {
+        "ru": "Первое использование: M06. Дата — в календаре закупок выше.",
+        "en": "First use: M06. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "wb-logic",
+      "title": {
+        "ru": "WeAct DLA Mini, 8 каналов / 24 MHz",
+        "en": "WeAct DLA Mini, 8 channels / 24 MHz"
+      },
+      "group": "motor",
+      "stage": "M06",
+      "price": 426,
+      "currency": "UAH",
+      "url": "https://arduino.ua/prod7389-usb-logichnii-analizator-weact-dla-mini-24mhz-8-kanaliv",
+      "seller": "arduino.ua",
+      "quantity_text": {
+        "ru": "1 шт./набор; общие для плана.",
+        "en": "1 unit(s)/pack(s), shared across the plan."
+      },
+      "status_label": {
+        "ru": "На странице: в наличии.",
+        "en": "Page: in stock."
+      },
+      "classification_label": {
+        "ru": "Опция / условный выбор",
+        "en": "Optional / conditional choice"
+      },
+      "compatibility": {
+        "ru": "Цифровые 3,3-В сигналы; проверить кабели/зажимы и ОС. Не подключать к моторным выводам. Для аналоговых выбросов нужен доступ к осциллографу; дорогая покупка на старте не требуется.",
+        "en": "3.3 V digital signals; verify cables/clips and OS. Do not connect to motor outputs. Analog spikes require oscilloscope access; no costly scope purchase initially."
+      },
+      "notes": {
+        "ru": "",
+        "en": ""
+      },
+      "sources": [],
+      "timing": {
+        "ru": "Первое использование: M06. Дата — в календаре закупок выше.",
+        "en": "First use: M06. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "wb-uart",
+      "title": {
+        "ru": "USB–UART CP2102 mini",
+        "en": "CP2102 mini USB–UART"
+      },
+      "group": "motor",
+      "stage": "M06",
+      "price": 79,
+      "currency": "UAH",
+      "url": "https://arduino.ua/ru/prod1957-usb-uart-perehodnik-na-cp2102",
+      "seller": "arduino.ua",
+      "quantity_text": {
+        "ru": "1 шт./набор; общие для плана.",
+        "en": "1 unit(s)/pack(s), shared across the plan."
+      },
+      "status_label": {
+        "ru": "На странице: в наличии.",
+        "en": "Page: in stock."
+      },
+      "classification_label": {
+        "ru": "Опция / условный выбор",
+        "en": "Optional / conditional choice"
+      },
+      "compatibility": {
+        "ru": "На DevKit уже есть USB–UART. Магазин указывает UART 3,3 В; измерить TX idle до подключения. Micro-USB data-кабель отдельно.",
+        "en": "DevKit already has USB–UART. Store states 3.3 V UART; measure idle TX before connecting. Micro-USB data cable separate."
+      },
+      "notes": {
+        "ru": "",
+        "en": ""
+      },
+      "sources": [],
+      "timing": {
+        "ru": "Первое использование: M06. Дата — в календаре закупок выше.",
+        "en": "First use: M06. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "wb-stm32",
+      "title": {
+        "ru": "STM32 NUCLEO-F446RE — альтернатива",
+        "en": "STM32 NUCLEO-F446RE — alternative"
+      },
+      "group": "motor",
+      "stage": "M06",
+      "price": 886,
+      "currency": "UAH",
+      "url": "https://arduino.ua/prod1845-plata-razrabotchika-nucleo-f446re",
+      "seller": "arduino.ua",
+      "quantity_text": {
+        "ru": "1 шт./набор; общие для плана.",
+        "en": "1 unit(s)/pack(s), shared across the plan."
+      },
+      "status_label": {
+        "ru": "Ожидается.",
+        "en": "Expected."
+      },
+      "classification_label": {
+        "ru": "Опция / условный выбор",
+        "en": "Optional / conditional choice"
+      },
+      "compatibility": {
+        "ru": "Вместо ESP32 или позже, не второй обязательный MCU. ST-LINK встроен; Mini-USB data-кабель отдельно.",
+        "en": "Instead of ESP32 or later, not a second mandatory MCU. ST-LINK onboard; Mini-USB data cable separate."
+      },
+      "notes": {
+        "ru": "",
+        "en": ""
+      },
+      "sources": [],
+      "timing": {
+        "ru": "Первое использование: M06. Дата — в календаре закупок выше.",
+        "en": "First use: M06. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "wb-force",
+      "title": {
+        "ru": "Тензодатчик 1 кг + HX711",
+        "en": "1 kg load cell + HX711"
+      },
+      "group": "motor",
+      "stage": "M07",
+      "price": 186,
+      "currency": "UAH",
+      "url": "https://arduino.ua/prod1979-datchik-vesa-tenzodatchik-1-kg-visokotochnii",
+      "seller": "arduino.ua",
+      "quantity_text": {
+        "ru": "1 шт./набор; общие для плана.",
+        "en": "1 unit(s)/pack(s), shared across the plan."
+      },
+      "status_label": {
+        "ru": "Датчик 154: ожидается; HX711 32: в наличии.",
+        "en": "Cell 154: expected; HX711 32: in stock."
+      },
+      "classification_label": {
+        "ru": "Опция / условный выбор",
+        "en": "Optional / conditional choice"
+      },
+      "compatibility": {
+        "ru": "Статические тесты, калибровка известными массами и защита от перегрузки. 1 кг не подходит для полного момента плеча без расчёта рычага. HX711 при 5 В может выдавать 5-В DATA: проверить DVDD/согласование 3,3 В. Сначала допустимы грузы + линейка.",
+        "en": "Static tests, calibration with known masses and overload stop. 1 kg does not cover full shoulder torque without lever sizing. At 5 V HX711 may output 5 V DATA: check DVDD/3.3 V interface. Known weights plus ruler can be used first."
+      },
+      "notes": {
+        "ru": " Показана сумма отдельных товаров: 154 + 32 UAH. Все ссылки приведены ниже.",
+        "en": " Shown price totals separate items: 154 + 32 UAH. All links are below."
+      },
+      "sources": [
+        "https://arduino.ua/docs/hx711.pdf",
+        "https://arduino.ua/prod1147-hx711-dual-channel-weighing-sensor-module"
+      ],
+      "timing": {
+        "ru": "Первое использование: M07. Дата — в календаре закупок выше.",
+        "en": "First use: M07. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "tail-esp32-s3",
+      "title": {
+        "ru": "ESP32-S3 N16R8 DevKitC-1, 44 pin, 2×USB-C",
+        "en": "ESP32-S3 N16R8 DevKitC-1, 44-pin, dual USB-C"
+      },
+      "group": "motor",
+      "stage": "M06",
+      "price": 450,
+      "currency": "UAH",
+      "url": "https://infostar.prom.ua/p3158399369-esp32-n16r8-44pin.html",
+      "seller": "Тех підтримка + / infostar.prom.ua",
+      "quantity_text": {
+        "ru": "1 на M06 → переиспользовать в первой секции T2 → ещё 2 после PASS внутри T2 = 3 всего. Классическую ESP32 параллельно не покупать.",
+        "en": "1 in M06 → reuse for the first T2 section → 2 more after PASS within T2 = 3 total. Do not buy classic ESP32 alongside it."
+      },
+      "status_label": {
+        "ru": "Прямая товарная страница: в наличии, 450 грн. Наблюдение 19.09.2026, индекс страницы примерно месячной давности; не подтверждение склада продавцом.",
+        "en": "Direct product page: in stock, 450 UAH. Observed 2026-09-19; page index about one month old, not seller-confirmed live stock."
+      },
+      "classification_label": {
+        "ru": "Условно · после проверки",
+        "en": "Conditional · after qualification"
+      },
+      "compatibility": {
+        "ru": "Карточка явно указывает 44 контакта, размер 64×28 мм и N16R8: 16 МБ flash / 8 МБ PSRAM. GPIO 3,3 В. Питание логики USB-C 5 В; 12 В моторов отдельно. Энкодеры Pololu 4755 при питании 5 В требуют согласования A/B до 3,3 В и общего GND. У S3 четыре PCNT-блока: два квадратурных энкодера на узел укладываются, шесть на одной плате этой схемой не заявлены.",
+        "en": "Listing explicitly specifies 44 pins, 64×28 mm and N16R8: 16 MB flash / 8 MB PSRAM. 3.3 V GPIO. Supply logic via 5 V USB-C; motor 12 V is separate. Pololu 4755 encoders powered at 5 V need A/B conversion to 3.3 V and common GND. S3 has four PCNT units: two quadrature encoders per node fit; six on one board are not claimed by this architecture."
+      },
+      "notes": {
+        "ru": "USB-C data-кабель; стабилизированное питание логики; согласование четырёх A/B-сигналов на каждый узел; проводка/разъёмы. Если связь между узлами CAN/TWAI, отдельный 3,3-В совместимый CAN-трансивер на каждый узел и согласование шины — не включены в цену платы. До покупки ещё двух: проверить маркировку/flash/PSRAM, pinout клона, два энкодера без потери отсчётов, PWM/ADC, stop/watchdog и задержку связи между узлами. GPIO35–37 заняты Octal PSRAM; также исключить память, USB19/20, загрузочные и LED-пины из рабочей карты. 44 контакта не означают 44 свободных GPIO.",
+        "en": "USB-C data cable; regulated logic supply; conversion for four A/B lines per node; wiring/connectors. If nodes use CAN/TWAI, each needs a separate 3.3 V-compatible CAN transceiver and bus termination, excluded from board price. Before buying two more: verify module marking/flash/PSRAM, clone pinout, two encoders without count loss, PWM/ADC, stop/watchdog and inter-node latency. GPIO35–37 are occupied by Octal PSRAM; exclude memory, USB19/20, strapping and LED pins from the working map. 44 header pins do not mean 44 free GPIO."
+      },
+      "sources": [
+        "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/esp32-s3-devkitc-1/user_guide_v1.1.html"
+      ],
+      "timing": {
+        "ru": "Первое использование: M06. Дата — в календаре закупок выше.",
+        "en": "First use: M06. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "BENCH-SCOPE",
+      "title": {
+        "ru": "RIGOL DHO802, 2 канала, 70 МГц",
+        "en": "RIGOL DHO802, 2 channels, 70 MHz"
+      },
+      "group": "motor",
+      "stage": "M07",
+      "price": 25067,
+      "currency": "UAH",
+      "url": "https://masteram.com.ua/uk/digital-oscilloscope-rigol-dho802/",
+      "seller": "Masteram, Ukraine",
+      "quantity_text": {
+        "ru": "0 на старте; 1 общий прибор купить или взять для измерений.",
+        "en": "0 initially; buy or borrow 1 shared instrument for measurements."
+      },
+      "status_label": {
+        "ru": "В индексированной карточке: склад Львов; цена также подтверждена страницей rigol.com.ua. Прямую страницу Masteram повторно получить не удалось; наличие подтвердить перед заказом.",
+        "en": "Indexed product page: Lviv warehouse; price corroborated by rigol.com.ua. Direct Masteram page could not be reopened; confirm stock before ordering."
+      },
+      "classification_label": {
+        "ru": "Опция · купить или заимствовать",
+        "en": "Optional · buy or borrow"
+      },
+      "compatibility": {
+        "ru": "Для низковольтного стенда MCU/привода. Перед измерением компенсировать щупы и проверить общую землю; входы не изолированы. Пассивный щуп не заменяет токовый или дифференциальный; не цеплять землю к силовому переключаемому узлу или сети. Два пассивных щупа PVP3150 150 МГц — по комплекту производителя и украинской карточке. Проверить при заказе; дополнительные обычные щупы сразу не нужны.",
+        "en": "For low-voltage MCU/actuator bench. Compensate probes and verify common ground before measuring; inputs are not isolated. Passive probes do not replace current/differential probes; do not attach ground to a switched power node or mains. Two PVP3150 150 MHz passive probes, according to manufacturer bundle and Ukrainian listing. Confirm at order; no extra ordinary probes initially needed."
+      },
+      "notes": {
+        "ru": "Сначала доступ к прибору в лаборатории/взаймы. Покупать только если он регулярно нужен и устраивает бюджет; цену доставки уточнить отдельно.",
+        "en": "First seek laboratory access or borrowing. Buy only if regularly needed and within budget; confirm delivery cost separately."
+      },
+      "sources": [
+        "https://rigol.com.ua/uk/products/digital-oscilloscope-rigol-dho802/",
+        "https://www.rigol.com/dam/global/downloads/brochures/en/data-sheet/oscilloscopes/DHO800_DataSheet_EN.pdf"
+      ],
+      "timing": {
+        "ru": "Первое использование: M07. Дата — в календаре закупок выше.",
+        "en": "First use: M07. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "wb-diametric-magnet",
+      "title": {
+        "ru": "Диаметральный магнит D5×10 DN, N38 — для AS5600",
+        "en": "D5×10 DN N38 diametric magnet — for AS5600"
+      },
+      "group": "motor",
+      "stage": "M07",
+      "price": 12.32,
+      "currency": "UAH",
+      "url": "https://runok.com.ua/mahnit-diametralno-d-5x10-dn/",
+      "seller": "Runok.com.ua",
+      "quantity_text": {
+        "ru": "1 для учебного стенда M07; крепление напечатать.",
+        "en": "1 for the M07 learning rig; print its mount."
+      },
+      "status_label": {
+        "ru": "Runok: в наличии; 12,32 грн/шт.",
+        "en": "Runok: in stock; 12.32 UAH each."
+      },
+      "classification_label": {
+        "ru": "Условно · после проверки",
+        "en": "Conditional · after qualification"
+      },
+      "compatibility": {
+        "ru": "Карточка прямо указывает диаметральное намагничивание, диаметр 5 мм, длину 10 мм и N38. Отдельный магнит к уже выбранному AS5600, не второй датчик. Нужен печатный соосный держатель: посадка D3 мм на выходной вал N20, карман Ø5×10 мм и регулируемый зазор до AS5600. Полюса должны вращаться вокруг оси датчика; не заменять аксиальным магнитом.",
+        "en": "Listing explicitly specifies diametric magnetization, 5 mm diameter, 10 mm length and N38. Separate magnet for the selected AS5600, not a second sensor. Print a coaxial carrier with a D3 mm N20 output-shaft fit, Ø5×10 mm magnet pocket and adjustable sensor gap. Poles rotate around the sensor axis; do not substitute an axial magnet."
+      },
+      "notes": {
+        "ru": "Совместимость по типу магнитного поля; точность конкретной сборки ещё не проверена. Вручную пройти полный оборот, проверить magnet-detect, признаки слабого/сильного поля, непрерывность угла и повторяемость до включения PID. У AS5600 рабочее поле 30–90 мТ; зазор подбирается по собранному узлу. Филамент и крепёж — из общей закупки. Датчик wb-encoder остаётся 105 грн с минимумом заказа у его продавца 300 грн: датчик+магнит поштучно 117,32 грн, отдельные заказы минимум 312,32 грн плюс доставка. Требование минимального заказа Runok на прочитанных страницах не найдено. Политика Runok: Новая Почта по Украине, стоимость по тарифу перевозчика.",
+        "en": "Compatible magnetic field type; the assembled fixture is not yet accuracy-qualified. Rotate manually through 360°, check magnet-detect, weak/strong-field flags, angle continuity and repeatability before PID. AS5600 operating field is 30–90 mT; set the gap on the actual assembly. Filament and fasteners come from shared stock. Keep the 105 UAH wb-encoder with its seller's 300 UAH minimum: sensor plus magnet unit prices total 117.32 UAH; separate orders require at least 312.32 UAH plus shipping. No Runok minimum-order requirement found on the pages read. Runok policy: Nova Poshta within Ukraine, carrier-priced shipping."
+      },
+      "sources": [
+        "https://look.ams-osram.com/m/1f9fec31c21d8f4d/original/Magnet-selection-guide-rotary-magnetic-position-sensors.pdf"
+      ],
+      "timing": {
+        "ru": "Первое использование: M07. Дата — в календаре закупок выше.",
+        "en": "First use: M07. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    },
+    {
+      "id": "tail-encoder-buck-5v",
+      "title": {
+        "ru": "HX1314 AOC450: понижающий модуль 12→5 В для энкодеров",
+        "en": "HX1314 AOC450: 12-to-5 V buck for encoder supply"
+      },
+      "group": "tail",
+      "stage": "T2",
+      "price": 39,
+      "currency": "UAH",
+      "url": "https://arduino.ua/prod8092-modyl-dcdc-peretvoruvacha-hx1314-step-down-5-5-32v5v-1a",
+      "seller": "Arduino.ua",
+      "quantity_text": {
+        "ru": "1 сначала на два энкодера, затем переиспользовать на все шесть.",
+        "en": "1 for two encoders initially, then reuse for all six."
+      },
+      "status_label": {
+        "ru": "Arduino.ua, украинская карточка: в наличии, 39 грн. Русская поисковая копия показывала «ожидается»; проверить остаток при заказе.",
+        "en": "Arduino.ua Ukrainian page: in stock, 39 UAH. Russian search copy showed pending arrival; recheck stock when ordering."
+      },
+      "classification_label": {
+        "ru": "Условно · после проверки",
+        "en": "Conditional · after qualification"
+      },
+      "compatibility": {
+        "ru": "Вход 5,5–32 В, фиксированный выход 5 В ±0,1 В, заявленный максимум 1 А. От защищённой 12-В шины хвоста питает только отдельную 5-В ветвь энкодеров: шесть Pololu 4755 требуют до 6×10 мА=60 мА. Один модуль используется сначала с двумя, затем с шестью энкодерами; не покупать шесть модулей.",
+        "en": "Input 5.5–32 V, fixed 5 V ±0.1 V output, advertised maximum 1 A. From the protected 12 V tail bus, supply the separate encoder rail only: six Pololu 4755 encoders require up to 6×10 mA=60 mA. Reuse one module for two then six encoders; do not buy six modules."
+      },
+      "notes": {
+        "ru": "До подключения проверить полярность, 5 В без нагрузки и под нагрузкой, пульсации и просадки при переключении моторов; добавить развязку питания у датчиков и защищённую разводку. Общая сигнальная земля с MCU, A/B каждого энкодера через согласование 5→3,3 В из проекта. Модуль не заменяет питание двигателей, Raspberry Pi или силовую защиту. Питание ACS724 проектировать отдельно либо добавить их потребление в расчёт и квалификацию этой ветви. На карточке указана доставка Новой Почтой по Украине.",
+        "en": "Before connecting, verify polarity, 5 V unloaded and loaded, ripple and dips during motor switching; add local sensor decoupling and protected wiring. Share signal ground with the MCU and use the project's 5-to-3.3 V interface on every encoder A/B. This module does not replace motor power, Raspberry Pi power or power protection. Design ACS724 power separately, or include its consumption when calculating and qualifying this rail. Listing explicitly offers Nova Poshta delivery within Ukraine."
+      },
+      "sources": [
+        "https://www.pololu.com/product/4755"
+      ],
+      "timing": {
+        "ru": "Первое использование: T2. Дата — в календаре закупок выше.",
+        "en": "First use: T2. See the purchasing calendar above."
+      },
+      "observed_on": "2026-09-19"
+    }
+  ],
+  "dependency_notes": [
+    {
+      "title": {
+        "ru": "Расходники стартового рабочего стола",
+        "en": "Starter workbench consumables"
+      },
+      "detail": {
+        "ru": "Подставка/очиститель жала, припой/флюс/оплётка, термостойкая поверхность, стриппер, пинцет/плоскогубцы, отвёртки/шестигранники, короткий провод, термоусадка, LED/кнопки/диоды/потенциометр/транзисторы и мелкий крепёж. Плановый резерв, не котировка магазина. Доставка, стол, освещение/вытяжка при отсутствии; вычесть имеющиеся инструменты. DC-рейтинг предохранителя проверить до заказа. Малый набор не включает всю силовую проводку будущих роботов. Сумма первой корзины использует акционную цену БП; снимки 2 300–2 792 грн, кусачек 199,08–239 грн.",
+        "en": "Stand/tip cleaner, solder/flux/wick, heatproof surface, stripper, tweezers/pliers, screwdrivers/hex keys, short wire, heatshrink, LEDs/buttons/diodes/potentiometer/transistors and small hardware. Planning allowance, not shop quote. Shipping, desk, lighting/extraction if absent; subtract owned tools. Confirm fuse DC rating before ordering. The small set excludes full robot power wiring. The first basket uses the PSU sale price; observed PSU prices span UAH 2,300–2,792 and cutters UAH 199.08–239."
+      }
+    },
+    {
+      "title": {
+        "ru": "M07: полноценная обратная связь",
+        "en": "M07: complete feedback loop"
+      },
+      "detail": {
+        "ru": "N20 в списке не имеет энкодера. AS5600 требует диаметрального магнита, соосного крепления и проверенного зазора; напечатать держатель по своему CAD. Осциллограф можно взять для измерений; логический анализатор не показывает аналоговые выбросы. Нужны крепление двигателя, рычаг/диск с метками и известные массы. Проверить ток мотора на 6 В до выбора DRV8833; 2 А в заголовке — не длительный рейтинг конкретной платы.",
+        "en": "The listed N20 has no encoder. AS5600 requires a diametric magnet, coaxial mounting and a verified gap; print a holder from the custom CAD. Borrow a scope for measurements if practical; a logic analyser does not show analog spikes. Provide a motor mount, marked lever/disc and known masses. Measure motor current at 6 V before selecting DRV8833; a 2 A headline is not the delivered board’s continuous rating."
+      }
+    },
+    {
+      "title": {
+        "ru": "Питание, кабели и независимая остановка",
+        "en": "Power, wiring and independent stopping"
+      },
+      "detail": {
+        "ru": "Начать с общего лабораторного БП с ограничением тока из раздела стенда. Силовые вводы идут через подобранные главный/ветвевые предохранители и проводку, а не через USB, макетную плату или тонкую цепочку разъёмов. HEX: ветви по ногам с общими signal/GND, измерить просадки и одновременный ток. Конкретный DC-контактор, номиналы вставок, кабели, распределитель и защита от рекуперации выбираются после измерения; это ещё не законченная силовая BOM. Независимая проводная STOP-цепь проверяется на обрыв, отключение и отсутствие автозапуска; падающий груз удерживается механически. К L1 нужны короткие сервоудлинители нужного ST-разъёма по фактической укладке; комплектные кабели сначала пересчитать. Для электроники — USB data, для каждого драйвера — свои силовые клеммы/наконечники. Пример LRS-350 не заменяет закрытый безопасно собранный источник: для новичка сетевую часть поручить квалифицированному специалисту или выбрать готовый закрытый БП с требуемым током.",
+        "en": "Start with the shared current-limited bench PSU. Power enters through selected main/branch fuses and wiring, not USB, breadboard or a thin connector chain. HEX: branch by leg with common signal/GND; measure sag and simultaneous current. Exact DC contactor, fuse values, cables, distributor and regeneration protection follow measurements; this is not a finished power BOM. Test independent wired STOP for broken wire, shutdown and no automatic restart; falling loads are mechanically restrained. For L1, select short servo extensions matching the ST connector and actual routing; count included cables first. Electronics need USB data cables; each driver needs suitable power terminals/ferrules. An LRS-350 example does not replace a safely enclosed supply: a beginner should have the mains assembly made by a qualified person or use a closed supply with the required ratings."
+      }
+    },
+    {
+      "title": {
+        "ru": "Шины и напряжения",
+        "en": "Buses and voltages"
+      },
+      "detail": {
+        "ru": "ST: ST3215 12 В + Waveshare Adapter A + ST TTL 3-wire, единая проверенная распиновка. ROBOTIS: XM-R 12 В + U2D2 RS485 4-wire + внешний ввод питания. PM54 требует отдельные 24 В. Не смешивать TTL/RS485, протоколы, разъёмы и силовые напряжения. Шаговый плечевой стенд: MCU STEP/DIR → HBS57 → мотор/энкодер → покупной редуктор → собственная опора; отдельный выходной датчик и homing по проекту.",
+        "en": "ST: 12 V ST3215 + Waveshare Adapter A + ST TTL 3-wire with verified pinout. ROBOTIS: 12 V XM-R + U2D2 RS485 4-wire + external power injection. PM54 requires separate 24 V. Do not mix TTL/RS485, protocols, connectors or power voltages. Stepper shoulder rig: MCU STEP/DIR → HBS57 → motor/encoder → purchased reducer → custom support; separate output sensor and homing as designed."
+      }
+    },
+    {
+      "title": {
+        "ru": "Рука: механика и удержание",
+        "en": "Arm: structure and holding"
+      },
+      "detail": {
+        "ru": "При горизонтальном вылете 0,4 м один груз 0,5 кг даёт 0,5 × 9,81 × 0,4 = 1,962 Н·м. Добавить массы всех звеньев, удалённых приводов, захвата и кабелей с их плечами, ускорения и запас. Каждая ось получает собственный расчёт и тепловой цикл. Предусмотреть покупные подшипники/вал, противовес либо тормоз, а также механическую опору при STOP. Собственный печатный захват на уже имеющемся Creality; отдельный ST3215 из строки HEX-ST3215 как кандидат привода, либо XM430 выбранной ROBOTIS-шины. Сначала лёгкие тестовые предметы, затем измеренные усилие/трение/проскальзывание и ток. Челюсти, передаточное отношение и массу включить в расчёт руки; купить 1 привод, не готовую шестисервовую руку. Ведомость A1 должна включать опоры выходов, валы/муфты, стопорные кольца, болты нужного класса, противовес/тормоз при необходимости и жёсткое крепление основания. Их размеры нельзя честно назначить до собственной геометрии.",
+        "en": "At horizontal 0.4 m reach, the 0.5 kg payload alone gives 0.5 × 9.81 × 0.4 = 1.962 N·m. Add every link, distal actuator, gripper and cable with its moment arm, acceleration and margin. Each axis needs its own calculation and thermal cycle. Provide stock bearings/shaft, counterbalance or brake, and mechanical support during STOP. Custom printed gripper using the existing Creality; one separate ST3215 from HEX-ST3215 as actuator candidate, or XM430 if choosing the ROBOTIS bus. Start with light test objects, then measure force/friction/slip and current. Include jaw geometry, reduction and mass in arm calculation; buy one gripper actuator, not a ready six-servo arm. The A1 bill must include output supports, shafts/couplings, retaining rings, correctly rated bolts, any counterbalance/brake and rigid base mounting. Their dimensions cannot be set honestly before custom geometry is available."
+      }
+    },
+    {
+      "title": {
+        "ru": "Контакт стопы и homing",
+        "en": "Foot contact and homing"
+      },
+      "detail": {
+        "ru": "EndStop из общего списка — кандидат датчика, а не силовой элемент. На L1 проверить один механический контакт с разгрузкой датчика; для четырёх ног добавить до 4 контактов, для шести до 6 всего (уже установленные входят в итог). Отдельные home/limit датчики руки/барабанов добавляются по схеме, до 2 на ось: точное число зависит от энкодеров и механики. Согласовать 3,3 В и отказ при обрыве; питание моторов снимает отдельная цепь.",
+        "en": "The shared EndStop is a sensor candidate, not a structural or power element. Test one mechanically unloaded contact on L1; expand to up to 4 foot contacts for four legs and 6 total for six, including previously fitted contacts. Add independent arm/spool home/limit sensors per schematic, up to two per axis; exact count depends on encoders and mechanics. Qualify 3.3 V and broken-wire behavior; a separate circuit removes motor power."
+      }
+    },
+    {
+      "title": {
+        "ru": "Tail: MCU и каналы измерения",
+        "en": "Tail: MCU and measurement channels"
+      },
+      "detail": {
+        "ru": "У ESP32-S3 четыре PCNT-блока: один на квадратурный энкодер в стандартной конфигурации. Кандидат масштабирования — три одинаковых узла по два мотора, сначала один, затем +2. Для каждого узла нужны 4 входа A/B, 2 PWM+2 DIR, 2 ADC тока, входы homing/stop и связь. Утвердить карту реальных выводов платы, уровни, частоту и задержки; M06/M07 C++ переиспользуется. Общий host задаёт траекторию, каждый узел имеет локальный watchdog и отказобезопасный выход. Не покупать три платы до испытаний первого узла.",
+        "en": "ESP32-S3 has four PCNT units: one per quadrature encoder in the standard configuration. Candidate scaling uses three identical two-motor nodes, one first, then +2. Each node needs 4 A/B inputs, 2 PWM+2 DIR, 2 current ADCs, home/stop inputs and communication. Release the actual board pin map, levels, frequency and timing; reuse M06/M07 C++. A shared host commands trajectories, while each node has a local watchdog and fail-safe output. Do not buy three boards before qualifying the first."
+      },
+      "sources": [
+        "https://raw.githubusercontent.com/espressif/esp-idf/v5.3.2/components/soc/esp32s3/include/soc/soc_caps.h"
+      ]
+    },
+    {
+      "title": {
+        "ru": "Камера, свет и контрольная сцена",
+        "en": "Camera, lighting and reference scene"
+      },
+      "detail": {
+        "ru": "Нужны жёсткое крепление камеры, постоянный рассеянный свет, матовый фон, напечатанная калибровочная мишень с измеренным размером и три тестовых предмета. На M14 сначала проверить имеющееся освещение; число/мощность ламп выбрать по экспозиции и отсутствию мерцания. Изготовление крепления и разметка входят в M14.",
+        "en": "Provide a rigid camera mount, stable diffuse light, matte background, printed calibration target with measured dimensions and three test objects. In M14 test existing lighting first; select lamp count/output from exposure and absence of flicker. Mount fabrication and calibration are included in M14."
+      }
+    },
+    {
+      "title": {
+        "ru": "Согласование энкодеров 5 В → 3,3 В",
+        "en": "Encoder level interface, 5 V → 3.3 V"
+      },
+      "detail": {
+        "ru": "Для короткого стендового жгута кандидат: на каждом A/B делитель из 4,7 кОм последовательно и 6,8 кОм на землю, 1%; энкодер питается стабилизированными 5 В, земля общая. Номинально выход 2,96 В при входе 5 В. Проверить уровни и фронты на максимальной частоте и реальном кабеле логическим анализатором/осциллографом до движения. При недостаточном запасе заменить на 3,3-В буфер с 5-В-толерантными входами. Резисторы и макетный материал берутся из общего M04 набора; отдельная цена здесь не выдумывается.",
+        "en": "Short bench harness candidate: each A/B uses a 4.7 kΩ series / 6.8 kΩ ground divider, 1%; encoder on regulated 5 V with common ground. Nominal output is 2.96 V at 5 V input. Verify voltage levels and edges at maximum frequency with the actual cable using a logic analyser/oscilloscope before motion. If margins are insufficient, use a 3.3 V buffer with 5 V-tolerant inputs. Use shared M04 resistors/prototyping materials; no separate price is invented."
+      },
+      "sources": [
+        "https://www.pololu.com/product/4755"
+      ]
+    },
+    {
+      "title": {
+        "ru": "ADC-интерфейс и проверенная защита",
+        "en": "ADC interface and validated protection"
+      },
+      "detail": {
+        "ru": "ACS724 питается 5 В; кандидат масштабирования аналогового выхода — делитель 10 кОм / 10 кОм, 1%, затем согласованный с ADC фильтр/буфер. Выход 0,5–4,5 В превращается в 0,25–2,25 В, ноль 1,25 В и 100 мВ/А. Это расчёт интерфейса, не готовая проверенная схема. Калибровать ноль/масштаб и отклик на PWM; ADC в отдельном подтверждённом цикле. Быстрая защита от КЗ, предохранители, аппаратное отключение питания, защёлкиваемая остановка и watchdog обязательны. Датчик тока не ограничивает ток сам.",
+        "en": "ACS724 uses 5 V; a candidate analog scaling interface is a 10 kΩ / 10 kΩ, 1% divider followed by an ADC-compatible filter/buffer. A 0.5–4.5 V signal becomes 0.25–2.25 V, with 1.25 V zero and 100 mV/A sensitivity. This is an interface calculation, not a validated circuit. Calibrate offset, scale and PWM response; sample in a separately qualified loop. Fast short-circuit protection, fuses, hardware power removal, latched stop and watchdog remain required. A current sensor does not itself limit current."
+      },
+      "sources": [
+        "https://www.pololu.com/product/4043/specs"
+      ]
+    },
+    {
+      "title": {
+        "ru": "Tail: питание и ограничения",
+        "en": "Tail: power and limits"
+      },
+      "detail": {
+        "ru": "Источник 12 В, проводка, разъёмы, предохранители, подавление помех и E-stop рассчитываются по фактическим токам, одновременному запуску и самому слабому проводнику/разъёму. Общий учебный БП и малые предохранители автоматически не подходят для шести моторов. Нужны homing/концевые датчики, температура, механические ограничители, ограждения и закреплённый стенд. Батарею подбирать после стендовых измерений, не покупать сейчас.",
+        "en": "Size 12 V power, wiring, connectors, fuses, decoupling and E-stop using measured currents, simultaneous startup and the weakest conductor/connector. The shared learning PSU and small fuses are not automatically suitable for six motors. Homing/limit sensors, temperature monitoring, mechanical stops, guards and a fixed rig are required. Select a battery after bench measurements, not now."
+      },
+      "sources": []
+    },
+    {
+      "title": {
+        "ru": "Tail: детали после CAD",
+        "en": "Tail: parts after CAD"
+      },
+      "detail": {
+        "ru": "Барабаны, ступицы/муфты, натяжители, кронштейны, проставки, точные длины валов/винтов и количества подшипников требуют CAD. Предотвратить многослойную намотку; радиальную нагрузку троса не передавать на редуктор без проверки. Закупать после чертежа и испытания одной секции.",
+        "en": "Spools, hubs/couplings, tensioners, brackets, spacers, exact shaft/screw lengths and bearing counts require CAD. Prevent multilayer winding; do not apply tendon radial load to the gearbox without verification. Buy after drawing release and one-section testing."
+      },
+      "sources": []
+    }
+  ],
+  "baseline_hours_unchanged": 2960,
+  "raw_research_files": [
+    "workbench.json",
+    "hex_arm.json",
+    "tail_mechanics.json",
+    "root_items.json"
+  ],
+  "first_basket_subtotal_uah": 5982.08
+}

@@ -1,0 +1,1031 @@
+<!doctype html>
+<html lang="ru" data-ru-title="M23 · Hexapod: масштабирование и надёжность · EN — Robotics &amp; AI" data-en-title="M23 · Hexapod: scaling and reliability · EN — Robotics &amp; AI">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>M23 · Hexapod: масштабирование и надёжность · EN — Robotics &amp; AI</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body class="source-reader">
+<a class="skip-link" href="#main"><span lang="ru">К тексту источника</span><span lang="en">Skip to source text</span></a>
+<header class="topbar"><a class="brand" href="../index.html">Robotics &amp; AI</a><nav><a href="../library.html"><span lang="ru">Библиотека источников</span><span lang="en">Source library</span></a><a href="../index.html"><span lang="ru">Новый план</span><span lang="en">Revised plan</span></a></nav><div class="lang-switch" aria-label="Language"><button type="button" data-lang="ru">RU</button><button type="button" data-lang="en">EN</button></div></header>
+<main class="wrap" id="main">
+<p class="eyebrow"><span lang="ru">Архив · исходный документ</span><span lang="en">Archive · original document</span></p>
+<h1><span lang="ru">M23 · Hexapod: масштабирование и надёжность · EN</span><span lang="en">M23 · Hexapod: scaling and reliability · EN</span></h1>
+<div class="notice source-notice"><strong><span lang="ru">Архивные даты и часы не действуют.</span><span lang="en">Original dates and hours are superseded.</span></strong><p><span lang="ru">Это полный текст исходного документа. Старый календарь, отпуска и бюджеты часов сохранены для проверки исходной информации. Рабочее расписание находится в новом плане: 50 часов в неделю, без отпусков.</span><span lang="en">This is the complete extracted text of the original document. Its historical calendar, vacations and hour budgets are preserved for source verification. Use the revised plan for the current schedule: 50 hours per week, with no vacations.</span></p></div>
+<p><span lang="ru">Язык исходника: английский.</span><span lang="en">Source language: English.</span> <span lang="ru">Переключатель RU/EN меняет язык интерфейса; исходный текст не переводится автоматически.</span><span lang="en">The RU/EN switch changes the interface; original source text is not automatically translated.</span></p>
+<p class="source-actions"><a href="../originals/detailed/English/Monthly/M23_Robotics_Plan_EN.pdf"><span lang="ru">Открыть исходный PDF без изменений</span><span lang="en">Open the unchanged original PDF</span></a> · <a href="m23-ru.html"><span lang="ru">Открыть другую языковую редакцию</span><span lang="en">Open the other language edition</span></a></p>
+<p><span lang="ru">Страниц</span><span lang="en">Pages</span>: 15 · <span lang="ru">Ссылок из PDF</span><span lang="en">PDF links</span>: 15</p>
+<details class="source-page source-toc"><summary><span lang="ru">Перейти к странице</span><span lang="en">Jump to a page</span></summary><nav class="page-links" aria-label="Pages"><a href="#page-1">1</a> <a href="#page-2">2</a> <a href="#page-3">3</a> <a href="#page-4">4</a> <a href="#page-5">5</a> <a href="#page-6">6</a> <a href="#page-7">7</a> <a href="#page-8">8</a> <a href="#page-9">9</a> <a href="#page-10">10</a> <a href="#page-11">11</a> <a href="#page-12">12</a> <a href="#page-13">13</a> <a href="#page-14">14</a> <a href="#page-15">15</a> </nav></details>
+<p class="source-controls"><button type="button" id="expand-pages"><span lang="ru">Развернуть все страницы</span><span lang="en">Expand all pages</span></button> <button type="button" id="collapse-pages"><span lang="ru">Свернуть все страницы</span><span lang="en">Collapse all pages</span></button></p>
+<p><span lang="ru">Извлечение PDF может сохранять переносы строк и наложенные редакции. Формулы, иллюстрации и исходное оформление доступны в неизменённом PDF. Все встроенные ссылки вынесены под текст соответствующей страницы.</span><span lang="en">PDF extraction may retain line breaks and overlapping revisions. Equations, illustrations and original formatting remain available in the unchanged PDF. Every embedded link is listed below its corresponding page.</span></p>
+<section class="source-pages" aria-label="Original document pages">
+<details class="source-page" id="page-1"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 1 · Six legs: scale only what has been verified</summary><pre class="source-text">ROBOTICS AND AI  /  M23  /  DETAILED STUDY PLAN
+
+Six legs: scale only what has been verified
+
+M23 • 01 Oct 2028 - 01 Nov 2028 • 75 hours
+
+The completed robot
+M23 aims to produce a six-legged robot v1.0 with 18 degrees of freedom, slow walking
+and active body levelling: three actuators per leg. It must stand independently for at least 120
+seconds, perform wave and ripple gaits under declared conditions, and diagnose loss of data,
+contacts and individual components. The central question is what changes when moving from four
+legs to six in mechanics, power, communication timing and support control.
+18 DOF refers to the number of actuated joint coordinates, not the number of independent body
+motions available on the ground. Additional legs provide more contact-allocation options, but
+increase mass, energy consumption, wiring and possible faults. Simply appending six IDs to an
+array does not validate previous calculations. Analysing the architectural change is a major
+practical task.
+
+Entry check before scaling
+Open the M22 package: independent quadruped standing, slow gait, functioning independent stop,
+calibrations, current and bus budgets, and analysis of significant failures. Record the entry decision
+PASS/HOLD in writing. If E-stop, power, actuator identification or the control cycle remain
+unverified, physical expansion stays on HOLD. In that case, complete M23 calculations and
+simulation tasks while resolving hardware blockers.
+The six additional actuators and parts for two legs are planned only after this check, as in the
+original plan. Purchasing is not automatic: first verify compatibility, calculate the budget and obtain
+the project owner&#x27;s decision. Changing actuator family for the last two legs requires new
+calibrations, a delay model and verification of joint operation.
+
+The operating scope of the result
+The ±10-15° range in the overall plan is a design target for body levelling and slope tests,
+admissible only where the particular assembly&#x27;s geometry, stability, traction and loads permit. Do
+not adopt it as an operating range before calculation. Start with a smaller verified angle and
+expand only when criteria are met. State surface angle and desired body angle separately: they
+are different quantities.
+The robotic hand develops along its own OPT workstream after M17; M23 leg verification does not
+replace its limits or results. Shared logging and diagnostics benefit both systems. The final goal is a
+walking robot and hand by programme completion, so pass six-legged-version limitations and
+unfinished hand items to M24 and the separate G4 without adding hidden hours.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M23 • 01 Oct 2028 - 01 Nov 2028 • 75 hours                                                                         1 / 15
+
+</pre></details><details class="source-page" id="page-2"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 2 · Work blocks, measurements and scope</summary><pre class="source-text">ROBOTICS AND AI  /  M23  /  DETAILED STUDY PLAN
+
+Work blocks, measurements and scope
+management
+
+The monthly plan: 35 hours of analysis + 40 hours of practice
+1-20: 10 hours recalculating mechanics, power and communication; 10 hours assembling,
+calibrating and testing 18 devices. 21-40: 10 hours on contact sequences and admissible
+transitions; 10 hours implementing wave and ripple in simulation and on the prepared test area.
+41-60: 10 hours on surface, contact and uncertainty estimation; 10 hours on active levelling,
+bounded terrain and operation without a camera. 61-75: 5 hours analysing reliability and energy;
+10 hours conducting a test series, maintenance and preparing v1.0.
+Organise the first three analysis blocks as five 2-hour sessions each; the last is 2 + 2 + 1. Practice
+comprises four Sunday blocks of 10 study hours. Alternate movement, cooling, inspection,
+resetting initial conditions and analysis. Charging time alone is not study time; use that interval for
+calculations and data processing.
+
+One experiment, one question
+For every run, record gait type, phase order, cycle duration, swing height, target body tilt, surface,
+load, battery condition and temperatures. Begin by comparing two configurations differing in one
+parameter. Simultaneously changing gait, surface and controller gain prevents you from identifying
+why error changed.
+The first-page dates repeat the overall plan&#x27;s calendar window. Shared boundary dates do not
+double hours; holidays and integration G blocks retain their place in the overall schedule.
+Work-hour numbers specify task order and do not require extra evening work. Print parts and
+arrange components in advance after entry-check authorisation, allowing for actual delivery time.
+
+Reducing scope while preserving the objective
+If behind schedule, postpone tripod first, then sideways motion on difficult terrain, then optional
+depth-camera comparisons and additional surfaces. Retain wave and ripple, standing, independent
+stopping, admissible-slope assessment, operation when the camera is unavailable and transparent
+repeated-test results. Without hardware verification of wave and ripple, call the result a candidate,
+not a completed six-legged robot v1.0.
+Do not consume the hand reserve or G4&#x27;s 35 hours on minor gait refinements without replanning
+the programme. The main deliverable is a justified operating envelope. Python is useful for support
+geometry and reports, C++ for the existing control loop. An additional log analyser may be written
+in Rust; a third implementation is optional.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M23 • 01 Oct 2028 - 01 Nov 2028 • 75 hours                                                                       2 / 15
+
+</pre></details><details class="source-page" id="page-3"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 3 · The six-legged frame and the 18-actuator</summary><pre class="source-text">ROBOTICS AND AI  /  M23  /  DETAILED STUDY PLAN
+
+The six-legged frame and the 18-actuator
+budget
+
+What to study and recalculate
+Examine the arrangement of six hip assemblies, fastener access, harness routing and
+centre-of-mass changes. Check overlap between adjacent leg workspaces, load transmission from
+the middle pair to the frame and whether one actuator can be removed without dismantling the
+body. New legs use the existing naming conventions and units but have their own calibrations.
+Estimate stiffness for the selected design load case and compare it with admissible foot-position
+change.
+Build the power budget for actual load combinations: standing, initiating swing, a low body posture
+and stopping. Do not assign each leg exactly one sixth of the weight in every phase. List
+specification limits and cooling conditions for branches, connectors, BMS and DC-DC converters.
+Summed rated peaks represent only one conservative scenario; separately measure simultaneous
+currents and their duration.
+
+Task 1. Design review: 4 → 6
+Inputs are the M22 candidate, six-legged-frame CAD and component specifications. 1) List changes
+to parts, masses, axes, harnesses and power distribution. 2) Check fasteners, clearances and
+service access for every new hip frame. 3) Calculate the new configuration&#x27;s centre of mass and
+predict support reactions. 4) After unpowered assembly, measure mass and verify geometry using
+reference dimensions.
+Save scaleup_design_review.md and an updated assembly_manifest. Check that every change
+traces to a CAD revision and that software renaming does not conceal workspace collisions.
+Boundary case: a middle foot collides with a front link during turning. Correct the trajectory or
+geometry and save the forbidden region as a test before permitting physical motion.
+
+Task 2. Power and communication after expansion
+Calculate the 18-actuator communication cycle for your protocol and telemetry content, then
+compare with M22 measurements for 12 devices. With the robot supported, add new branches in
+stages, checking IDs, polarity, signs, zeros and idle current. Measure simultaneous communication
+at the actual frequency, computer load and enabled diagnostics. Record supply and branch
+currents separately where instruments permit.
+Save power_bus_18.csv and plots of margin to the communication deadline. Acceptance: new
+devices create no duplicate IDs, and voltage sag and delays remain within justified operating
+ranges. Boundary case: two branches work separately but overload a shared DC-DC converter
+together. Revisit calculation and measurement of the common circuit; reducing gait speed is not a
+universal solution to an electrical problem.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M23 • 01 Oct 2028 - 01 Nov 2028 • 75 hours                                                                      3 / 15
+
+</pre></details><details class="source-page" id="page-4"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 4 · Wave, ripple and admissible contact</summary><pre class="source-text">ROBOTICS AND AI  /  M23  /  DETAILED STUDY PLAN
+
+Wave, ripple and admissible contact
+transitions
+
+Gait model and transition conditions
+Describe each leg with the state machine STANCE → LIFT → SWING → TOUCHDOWN → STANCE. In
+STANCE, the foot is an assumed support; in SWING it moves; TOUCHDOWN requires contact
+confirmation. Transitions depend on more than time: check target reachability, state freshness and
+remaining supports. Phase φ from 0 to 1 identifies position in the cycle, while duty factor is the
+fraction of the cycle assigned to stance.
+For slow motion, calculate the convex polygon of confirmed supports and the centre-of-mass
+projection along gravity onto their plane. Support margin is the signed minimum distance from this
+projection to the polygon boundaries. On a horizontal floor, this is the ordinary vertical projection;
+retain the projection direction on a slope. Positive geometric margin alone does not check friction,
+actuator torque or dynamics.
+
+Task 3. A wave table and verifiable support margin
+Inputs are the six-legged model, level floor, calibrated axes and initial standing pose. 1) Specify
+sequential single-leg swing and a phase table for all six legs. 2) Before lift-off, recalculate
+remaining supports and body-position feasibility. 3) Visualise contacts, polygon and margin in
+metres. 4) Run a complete cycle, startup and stopping, first in simulation and then with a small
+permitted step on the test area.
+Save gait_wave.yaml, the phase diagram and a log of minimum margin. Check that no more than
+one leg swings at a time, feasible support exists before lift-off and commands cannot skip
+touchdown. Boundary case: the foot has not touched down but the timer requests the next lift.
+Block the transition and emit an event; the state machine must not continue without contact
+confirmation.
+
+Task 4. Ripple, turning and sideways motion
+Construct ripple with more overlap between swings, an explicit phase table and allowed
+combinations. Do not rely on the gait name alone: ripple implementations use different
+conventions. For every combination, check reachability, collisions and support. Then add turning
+about body z and sideways translation separately; positive directions follow the frozen coordinate
+frame.
+Save gait_ripple.yaml, allowed-transition tests and three short scenarios: forwards, turning and
+sideways. Check that an identical command has the same meaning for right and left legs and that
+mode changes pass through an admissible state. Boundary case: switching wave → ripple during
+swing. Permit it only after phase alignment or through a stop. If the assumed contact is physically
+impossible, the test fails even when motion appears smooth.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M23 • 01 Oct 2028 - 01 Nov 2028 • 75 hours                                                                        4 / 15
+
+</pre></details><details class="source-page" id="page-5"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 5 · Six contacts, the surface plane and</summary><pre class="source-text">ROBOTICS AND AI  /  M23  /  DETAILED STUDY PLAN
+
+Six contacts, the surface plane and
+uncertainty
+
+What to study
+Review transforming foot coordinates from leg frames to a common body or world frame. For an
+approximately planar patch, estimate z = a·x + b·y + c from confirmed supports: matrix A contains
+rows [x, y, 1], vector z contains foot heights in metres, and the solution minimises squared
+residuals. The normal is proportional to (−a, −b, 1). Use weights for measurements with different
+reliability, explaining their origin.
+A plane model cannot represent arbitrary stairs or separate rocks without examining residuals.
+Three nearly collinear points provide poor geometry even with a small computed error. Six
+coordinates are not six independent measurements if all derive from one erroneous body
+orientation. Contact, a stationary foot and estimator confidence are three different indicators.
+
+Task 5. Estimate a plane from six supports
+Generate synthetic data for a horizontal plane and two inclined planes with known parameters,
+then add noise, one outlier and contact loss. 1) Transform every foot into one frame. 2) Select
+confirmed supports. 3) Solve by least squares and check rank and conditioning. 4) Calculate
+residuals and a validity flag. 5) Compare with an independent reference measurement of the
+prepared area.
+Save terrain_estimator_tests and plot_plane_error. Check that ideal data recover the specified
+plane within numerical precision; with noise, compare error to the declared tolerance, not zero.
+Boundary cases are two supports, nearly collinear contacts and one foot on a protrusion. Return
+invalidity or a limited estimate in these cases; an arbitrary normal without a flag is unacceptable.
+
+Task 6. Depth-based foothold selection and camera failure
+Use a saved scene depth map and camera calibration from earlier modules. Construct a small
+region of admissible footholds: reachable kinematics, clearance, known surface, height uncertainty
+and image age. Compare selection against a method using only confirmed contacts. With the
+camera disabled, the robot remains in a previously tested mode or stops; an IMU alone does not
+authorise movement over unknown terrain.
+Save foothold_candidates.json and two identical scenarios with and without the camera. Check that
+unknown depth does not become zero height, a stale image is not treated as fresh, and the
+selected foothold passes reachability checks. Boundary case: a shiny or dark surface creates a hole
+in the depth map. Show uncertainty and explain rejection of the placement while retaining the
+classical fallback mode.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M23 • 01 Oct 2028 - 01 Nov 2028 • 75 hours                                                                        5 / 15
+
+</pre></details><details class="source-page" id="page-6"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 6 · Active levelling and the terrain operating</summary><pre class="source-text">ROBOTICS AND AI  /  M23  /  DETAILED STUDY PLAN
+
+Active levelling and the terrain operating
+boundary
+
+Relating body tilt to leg configuration
+Levelling maintains a selected body orientation relative to gravity by changing leg positions within
+reachability and load limits. The IMU estimates orientation, contact estimation describes support,
+and kinematics converts desired body position into joint commands. Zero roll and pitch do not
+mean the feet lie at the same height; on a slope, leg configurations may differ.
+Map the constraints for each pose: joint travel, proximity to singularity, loaded torque, body
+clearance, traction, contact quality and support margin. Estimate quasi-static joint torque using
+T·f, where J is the foot Jacobian, f is force in newtons and the result is in N·m. Force allocation
+J(q)
+must satisfy equilibrium and contact constraints; equal forces on all six legs are only one special
+case.
+
+Task 7. Verify 120 seconds of standing
+Start on a level surface in a previously verified configuration. 1) Run a short current and contact
+check. 2) Stand independently for at least 120 seconds without the backup support carrying
+weight. 3) Record roll and pitch errors, data freshness, minimum support margin and temperatures.
+4) Repeat after cooling and restoring initial conditions, explicitly identifying every repeat.
+Save stand_120s with raw log and video. The criterion is a complete continuous interval within
+declared limits, without body support or unaccounted measurement losses. This verifies a
+particular standing condition, not machine lifetime. Boundary case: tilt error decreases by
+saturating one joint. Body-orientation error is small, but a constraint is violated, so the trial fails.
+
+Task 8. Map slopes and uneven terrain
+Before the physical trial, calculate admissible surface angles and commanded body orientations,
+then test them in simulation with mass, friction and delay variations. On an adjustable rig with
+suitable backup support, increase slope in steps from a verified value. For each angle, save
+achieved body roll and pitch, currents, joint poses, contacts and stopping reason. Introduce
+unevenness as a separate factor with measured height.
+Save operating_envelope.csv: tested, untested and forbidden regions. Mark the ±10-15° design
+target as achieved only from actual tests of the specific configuration. If the limit is smaller, identify
+the limiting mechanism. Boundary case: traction is lost while torque remains admissible. Reducing
+controller error does not solve a contact problem. Return to level ground and investigate
+foot-surface interaction.
+When expanding the M20 force allocator, update contact-set size, constraints and solver timing
+measurements. In HIL, test infeasible constraints and solver-deadline overruns: retain the
+previously tested classical fallback. The M21 policy is outside the mandatory physical result;
+transfer from four legs to six requires separate verification of observations, actions and
+applicability.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M23 • 01 Oct 2028 - 01 Nov 2028 • 75 hours                                                                           6 / 15
+
+</pre></details><details class="source-page" id="page-7"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 7 · Reliability, energy and maintenance</summary><pre class="source-text">ROBOTICS AND AI  /  M23  /  DETAILED STUDY PLAN
+
+Reliability, energy and maintenance
+
+A fault tree with a clear top event
+Choose the top event: the robot loses admissible support or fails to stop on request. Divide causes
+into power, bus, actuator, mechanical connection, state estimation and control logic. AND denotes
+a combination of required events; OR denotes alternative sufficient paths. Do not assign branch
+probabilities without data; a qualitative tree already helps select tests. A common power source or
+configuration error links several legs, so do not silently assume independent failures.
+With only five functioning legs, the system must first recognise the condition and restrict
+behaviour. Continued walking depends on geometry, load and how the sixth leg failed. A freely
+dangling leg, a leg jammed in the air and a leg jammed while supporting load require different
+responses. The basic fallback to verify is stopping or lowering according to the design procedure.
+Five-legged walking requires a separate justification.
+
+Task 9. Component or leg failures and recovery
+From the tree, select telemetry loss, a stopped node and incorrect contact. First inject them in
+simulation or HIL, recording the stimulus time, detection and resulting state. Then reproduce only
+permissible rig variants with the robot supported. Check that a recovered node cannot receive an
+old command without state verification and an explicit resumption procedure.
+Save fault_tree and fault_runs with a timeline. Check that every stimulus has an expected outcome
+and measured detection time; behaviour must fit the remaining contacts and limits. Boundary
+case: a common bus failure produces six identical warnings instead of recognising a shared cause.
+Add aggregate status while retaining primary errors. Do not unplug a loaded connector by hand to
+demonstrate a fault.
+
+Task 10. Energy and maintainability
+On a marked route, measure voltage U(t), supply current I(t) and distance d. Energy E = ∫U·I dt is in
+joules; E/3600 is Wh, and E/d is J/m for a valid non-zero distance. Compare wave and ripple at
+comparable speed, surface, mass and temperature. For a stationary robot, report power and
+energy over a selected interval; do not divide by a near-zero distance.
+Save energy_comparison.csv with integration boundaries, measurement gaps and repeats. Then,
+with the system de-energised, replace an accessible service assembly according to its instructions,
+measure the time, and repeat inspection and calibration. Save maintenance_runbook and a
+reasonable spare-parts list based on actual failures. Boundary case: the mechanics are restored
+but zero is lost. Restart is prohibited until the joint record is updated.
+For thermal balance, tabulate every actuator&#x27;s temperatures on the same route: initial, maximum
+observed, rise and load duration. Identify a consistently overloaded leg and check zero, friction and
+support allocation. Change only one admissible configuration or phase parameter and repeat;
+reduced heating in one leg must not conceal increased heating elsewhere or compromised support.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M23 • 01 Oct 2028 - 01 Nov 2028 • 75 hours                                                                         7 / 15
+
+</pre></details><details class="source-page" id="page-8"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 8 · The test series and six required boundary</summary><pre class="source-text">ROBOTICS AND AI  /  M23  /  DETAILED STUDY PLAN
+
+The test series and six required boundary
+cases
+
+A repeat plan with a defined trial unit
+Plan 40 attempts as a working target within the original 30-50+ guideline. Example allocation: 10
+wave trials on level ground, 10 ripple trials on the same ground, 10 levelling trials on a verified
+slope, and 10 transitions into restricted operation without a camera. Each attempt includes
+restoring the starting pose, checking conditions, executing the specified scenario and recording the
+outcome. Sensor samples and steps within one traversal are not independent attempts.
+If equipment availability or cooling duration prevents this plan, justify a smaller sample and
+narrower conclusion in advance. Do not replace unavailable difficult trials with many identical easy
+ones while claiming the original coverage. Mark untested conditions explicitly. For comparisons, fix
+the order or alternate modes so battery discharge is not mistaken for a gait advantage.
+
+Control scenarios
+T1. Camera loss during an admissible short route: enter a verified fallback or stop, without
+selecting new unknown footholds. T2. One false contact during replay: the estimator accounts for
+inconsistency and does not automatically expand support. T3. Nearly collinear surface points:
+return poor-conditioning or invalidity status; do not present an arbitrary slope as a reliable
+estimate.
+T4. Stale state from one leg: do not authorise the next phase using an old pose. T5. Wave/ripple
+switching in an inconvenient phase: defer the transition or pass through a stop, retaining an
+admissible contact order. T6. A stopped node or bus loss in HIL: detection, restricted behaviour and
+recovery proceed without unintended resumption. A physical variant requires impact analysis and
+support verification first.
+
+What the results can establish
+Report N, successes, failures and unusable records separately by condition. Calculate a confidence
+interval for success rate and explicitly state the assumption of independent trials. Even 40
+successful tests do not prove absolute reliability or determine lifetime in hours. Temperature drift
+and a shared defect in one assembly make trials dependent; discuss this limitation instead of
+artificially increasing N.
+The summary must include at least one negative scenario with the expected restriction of
+behaviour and one real failure if one occurred. Analyse causes, add a regression test and repeat
+the relevant test class. A version change during the series separates data into different
+configurations; do not combine them into one v1.0 estimate without explanation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M23 • 01 Oct 2028 - 01 Nov 2028 • 75 hours                                                                          8 / 15
+
+</pre></details><details class="source-page" id="page-9"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 9 · The first 40 hours: expansion and gaits</summary><pre class="source-text">ROBOTICS AND AI  /  M23  /  DETAILED STUDY PLAN
+
+The first 40 hours: expansion and gaits
+
+Hours 1-10: decisions and calculations
+1-2: check the M22 package and record PASS/HOLD for physical expansion. 3-4: compare four- and
+six-legged CAD and map loads, service access and conflicts. 5-6: recalculate mass, centre of mass
+and power scenarios. 7-8: assess BMS, DC-DC converters, protective branches and communication
+margin for 18 actuators. 9-10: specify assembly, calibration and E-stop re-verification sequences.
+Put unresolved specification parameters in a question table. For each, identify its decision impact:
+blocks power-up, limits the tested mode or concerns future expansion. Separately assess the
+effects of external covers or styling and unknown power-connection ratings. By the end of hour ten,
+have a concrete task 1 work list and expected task 2 measurements.
+
+Hours 11-20: expansion on the rig
+11-14: assemble new hip frames and two legs; measure mass, add labels and check clearances.
+15-17: staged connection, identification, signs and calibration of new joints. 18-19: communication
+load and power measurements with 18 devices. 20: repeat independent stopping, inspect and
+freeze the revision. If the entry decision is HOLD, use these hours to repair the quadruped and test
+the six-legged model without physical expansion.
+Post-assembly verification must include the original four legs: new harnesses or added mass can
+impair previously working components. Repeating known M22 scenarios checks preservation of
+earlier functions, but does not verify an untested six-legged gait. Update numerical limits only with
+supporting evidence.
+
+Hours 21-40: contacts and movement
+21-22: phase state machine and duty factor. 23-24: support polygon, centre-of-mass projection and
+permissible-lift criteria. 25-26: wave table and touchdown that does not occur when the timer
+expects it. 27-28: ripple and allowed overlapping swings. 29-30: turning, sideways motion and gait
+changes. For every 2-hour session, prepare one test or drawing needed in practice.
+31-34: task 3 in simulation, support checks and a short hardware wave traversal after rig testing.
+35-37: task 4, ripple and transition through an aligned phase. 38-39: separate turning and sideways
+scenarios within the verified region. 40: analyse worst support margin and correct one transition
+fault. Treat tripod as a possible extension; do not add it at the expense of unfinished touchdown
+control.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M23 • 01 Oct 2028 - 01 Nov 2028 • 75 hours                                                                        9 / 15
+
+</pre></details><details class="source-page" id="page-10"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 10 · Hours 41-75: terrain and evidence</summary><pre class="source-text">ROBOTICS AND AI  /  M23  /  DETAILED STUDY PLAN
+
+Hours 41-75: terrain and evidence
+
+Hours 41-50: four important distinctions
+41-42: foot coordinate frames, gravity and the support plane. 43-44: least squares, residuals, rank
+and nearly collinear contacts. 45-46: contact confidence, slip and body observability. 47-48: depth
+uncertainty, image age and selection of a reachable foothold. 49-50: load and kinematic-constraint
+maps on a slope, desired body orientation and conditions for restricting motion.
+Explain four distinctions in writing: touching versus stationary support; the plane beneath the feet
+versus the horizontal; body tilt versus surface slope; and no camera versus no sensors at all. If
+these concepts are confused, postpone new-terrain trials and correct notation and tests.
+Terminology must agree across code, plots and protocol.
+
+Hours 51-60: the surface experiment
+51-53: task 5 on synthetic data and the measured area, including an outlier and contact loss.
+54-55: task 6, the saved depth map and the same scenario without a camera. 56-57: preliminary
+and qualifying 120-second standing for task 7, with analysis. 58-60: stepped slope increases and
+small measured terrain variations for task 8, only within the admissible region. Save every attempt,
+but count it in the confirmation series only if it follows the predefined protocol.
+A failed slope trial still yields a useful result: the operating boundary and its cause. Do not raise
+current limits to reach a desired plot value without recalculating the complete power circuit and
+thermal behaviour. Do not change foot size midway through a series without a new design revision
+either: traction and the contact model then change.
+
+Hours 61-75: reliability and release
+61-62: fault tree, five functioning legs and admissible recovery. 63-64: energy metrics, a 30-50+
+series or justified N, accounting for repeats and dependence. 65: readiness of scenarios,
+instruments and criteria. These 5 analysis hours are split into 2 + 2 + 1.
+66-68: task 9 and control faults first in HIL, then necessary rig checks. 69-71: the prepared series of
+short trials, including attempts already accepted; resetting conditions and cooling are included.
+72-73: task 10 energy measurements and a service operation on the de-energised machine. 74-75:
+results table, success-rate interval, limitations and the six-legged robot v1.0 package, or a
+candidate with release blockers. Do not shorten checks merely to reach a repeat count: revise
+claimed precision and coverage.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M23 • 01 Oct 2028 - 01 Nov 2028 • 75 hours                                                                         10 / 15
+
+</pre></details><details class="source-page" id="page-11"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 11 · Acceptance, additional gaits and the M24</summary><pre class="source-text">ROBOTICS AND AI  /  M23  /  DETAILED STUDY PLAN
+
+Acceptance, additional gaits and the M24
+handoff
+
+Required evidence for v1.0
+The package includes the six-legged-frame revision and 18-joint map; mass and centre of mass;
+power and communication calculations and measurements; repeated independent-stop
+verification; confirmed 120-second standing; wave and ripple with admissible phases; levelling
+within a defined region; responses to camera loss and node failure; a test series with justified N; an
+energy report; and inspection and maintenance instructions.
+Every result has a raw file, configuration version and criterion. Holding level becomes a measured
+roll/pitch error, surface condition and duration. Traversing uneven terrain requires measured
+obstacle geometry and attempt count. Operation without a camera applies only to the tested
+restricted mode. An unmeasured quantity remains unknown even when the video appears
+convincing.
+
+When to investigate tripod
+Consider tripod only after verifying wave and ripple, actuator loading and feasibility of three-legged
+support. Typical alternating groups for a symmetric six-legged body are LF/RM/LR and RF/LM/RR;
+verify this convention against your names and geometry. For every phase, check contacts, margin
+and transition conditions. A triangle&#x27;s existence does not guarantee admissible torques, friction or
+stability during swing.
+Optional task if time permits: compare tripod and ripple phase tables in simulation with the same
+input, saving minimum margin and errors. A physical run requires a separate positive decision for
+that mode; it is outside the required M23 evidence. Similarly, five-legged walking remains research
+unless its operating envelope is calculated and verified.
+
+Defence and handoff package
+Answer: why do 18 actuators change the communication deadline; why is six-legged load not
+always shared equally; what does insufficient rank in plane estimation mean; how do loss of
+contact and slip differ; why does zero tilt not guarantee an admissible pose; what response is
+available for a jammed leg; what does E/d measure; and why do 40 successful attempts not mean
+100% reliability? Demonstrate the answers using your data.
+Pass to M24 requirements_candidates.csv, the attempt register, links to every raw log, assembly
+and calibration instructions, limitations, known defects and repair priorities. Record the hand&#x27;s
+status and OPT results on a separate line. Do not rename an unfinished function as verified to meet
+the shared date. G4 remains a separate 35-hour integration checkpoint after the modules; it is not
+hidden within these 75 hours.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M23 • 01 Oct 2028 - 01 Nov 2028 • 75 hours                                                                       11 / 15
+
+</pre></details><details class="source-page" id="page-12"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 12 · Assigned reading: six legs, contact and</summary><pre class="source-text">ROBOTICS AND AI  /  M23  /  DETAILED STUDY PLAN
+
+Assigned reading: six legs, contact and
+reliability
+
+The references may be in English; the exercises and definitions are presented here in English. Read
+only the named sections before the associated work, within the existing 75 hours.
+
+Core reading: contact and loading
+1. R. Tedrake - Underactuated Robotics, MIT notes. Planning and Control through Contact →
+(Autonomous) Hybrid Systems. For tasks 3-4, write out foot modes, transition conditions (guards)
+and state changes on switching (reset); a phase transition requires a verified event. Retain the
+remaining contact-optimisation material as reference.
+2. K. Lynch, F. Park - Modern Robotics. 12.1.2 Contact Types; 12.1.3 Multiple Contacts; 12.2.1
+Friction. For tasks 4-6, distinguish touching, slipping and contact loss. Apply the contact model to
+feet; manipulation results do not directly establish six-legged stability.
+
+A decision-making reference
+3. NASA - Systems Engineering Handbook. 6.4 Technical Risk Management; 6.5 Configuration
+Management. For task 9 and PASS/HOLD, connect the fault event, consequence, test and assembly
+revision. Use a brief register without unsupported probabilities.
+
+Documentation as needed
+Actuator bus. DYNAMIXEL Protocol 2.0: Sync Read/Write, Bulk Read - only if it matches the real
+protocol. For task 2, recalculate communication volume and time for 18 devices; spares are
+excluded from active polling.
+ROS diagnostics. README: diagnostic_updater, diagnostic_aggregator. For task 9, distinguish a
+missing reply from one leg, common-channel failure and stale status; check the branch against
+Jazzy.
+NumPy. linalg.lstsq: rank, singular values, residuals. For task 5, assess geometric degeneracy in
+plane estimation. An empty residuals array does not establish a perfect fit.
+
+Optional: architecture comparison
+Kevin Ochs, ROS Hexapod Stack: Nodes and hexapod_controller. This historical ROS project is useful for
+comparing ripple and tripod; do not install its dependencies and gains into the current working environment.
+Reading deliverable: two transferable design choices and two incompatible assumptions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M23 • 01 Oct 2028 - 01 Nov 2028 • 75 hours                                                                       12 / 15
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://underactuated.mit.edu/contact.html" target="_blank" rel="noopener noreferrer">https://underactuated.mit.edu/contact.html</a></li><li><a href="https://underactuated.mit.edu/contact.html" target="_blank" rel="noopener noreferrer">https://underactuated.mit.edu/contact.html</a></li><li><a href="https://modernrobotics.northwestern.edu/nu-gm-book-resource/" target="_blank" rel="noopener noreferrer">https://modernrobotics.northwestern.edu/nu-gm-book-resource/</a></li><li><a href="https://modernrobotics.northwestern.edu/nu-gm-book-resource/" target="_blank" rel="noopener noreferrer">https://modernrobotics.northwestern.edu/nu-gm-book-resource/</a></li><li><a href="https://www.nasa.gov/reference/6-0-crosscutting-technical-management/" target="_blank" rel="noopener noreferrer">https://www.nasa.gov/reference/6-0-crosscutting-technical-management/</a></li><li><a href="https://www.nasa.gov/reference/6-0-crosscutting-technical-management/" target="_blank" rel="noopener noreferrer">https://www.nasa.gov/reference/6-0-crosscutting-technical-management/</a></li><li><a href="https://docs.robotis.com/docs/dxl/protocol/protocol2/" target="_blank" rel="noopener noreferrer">https://docs.robotis.com/docs/dxl/protocol/protocol2/</a></li><li><a href="https://github.com/ros/diagnostics" target="_blank" rel="noopener noreferrer">https://github.com/ros/diagnostics</a></li><li><a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.lstsq.html" target="_blank" rel="noopener noreferrer">https://numpy.org/doc/stable/reference/generated/numpy.linalg.lstsq.html</a></li><li><a href="https://github.com/KevinOchs/hexapod_ros" target="_blank" rel="noopener noreferrer">https://github.com/KevinOchs/hexapod_ros</a></li></ol></div></details><details class="source-page" id="page-13"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 13 · Terms and definitions</summary><pre class="source-text">ROBOTICS AND AI  /  M23  /  DETAILED STUDY PLAN
+
+Terms and definitions
+
+Gait phase. Normalised position within a repeating cycle; it specifies the contact plan but does not
+confirm actual foot-surface contact.
+Stance. An interval of planned leg contact during which admissible support force is constrained by
+traction, geometry and actuators.
+Swing. Movement of a foot to its next support without planned support-force transmission;
+premature contact requires a separate response.
+Wave gait. A slow sequential gait with legs swinging in turn; the specific order and admissible
+overlaps are defined by a phase table.
+Ripple gait. A gait with phase-shifted waves of swing; the selected table, rather than the name,
+determines the number of simultaneous swings.
+Tripod gait. A gait alternating two groups of three legs; group geometry alone does not guarantee
+admissible forces.
+Guard. A testable condition for changing a discrete mode, such as confirmed contact or a timeout;
+activation is associated with a defined response.
+Reset. A specified model or controller state change at a mode transition, such as clearing a timer
+and initialising a new support point.
+Support polygon. The convex hull of selected contact points in a planar model; its applicability
+depends on assumptions about surface and forces.
+Static stability margin. The minimum signed distance from the centre-of-mass projection to the
+support-polygon boundary, positive inside. Its use is limited to a planar quasi-static model.
+Duty factor β. The fraction of a cycle a leg spends in planned stance; a dimensionless quantity
+between zero and one.
+Surface normal. A unit vector perpendicular to a local plane; fix its direction and coordinate
+frame to prevent sign reversal of the estimate.
+System rank. The number of independent data or constraint directions; insufficient rank means
+the selected plane parameters cannot be determined uniquely.
+Slip. Relative tangential motion between a contacting foot and surface; a contact sensor may
+remain active during slipping.
+Active levelling. Changing leg commands to reduce body-orientation error while respecting
+reachability, contacts and load limits.
+Load redistribution. Changing forces among stance legs during movement or failure; additional
+contacts do not automatically equalise forces.
+Bus utilisation. The fraction of available channel time occupied by communication, including
+overhead, pauses and retries; distinct from useful data throughput.
+Specific energy E/d. Energy used per unit distance travelled, usually J/m; comparison requires
+identical conditions and a non-zero measured distance.
+
+Relationships: β = T_stance/T_cycle; E = ∫U(t)I(t)dt. Check: verified 120-second standing characterises the
+completed trial, not every possible duration.
+
+
+
+
+
+
+
+
+
+
+
+
+M23 • 01 Oct 2028 - 01 Nov 2028 • 75 hours                                                                          13 / 15
+
+</pre></details><details class="source-page" id="page-14"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 14 · Six-legged robot purchases and setup</summary><pre class="source-text">ROBOTICS AND AI  /  M23  /  DETAILED STUDY PLAN
+
+Six-legged robot purchases and setup
+
+USE EXISTING EQUIPMENT
+Use the accepted M22 quadruped with 12 working actuators and 2 separate spares, onboard
+computer, MCU, IMU, camera, bus, instruments and support rig. For the existing 3D printer, choose
+the exact-model profile; print new parts to the six-legged-frame revision.
+
+BUY BEFORE EXPANSION - AFTER M22 PASS
+6 additional working actuators from the same verified family and 2 additional spares. This
+gives 18 installed + 4 separate spares if the earlier spares are unused. Update inventory when
+replenishing used spares. The M7 actuator rig is excluded from this count.
+1 set of parts for two legs and a new or reinforced frame, bearings, inserts, fasteners and
+harnesses, with quantities from released CAD and BOM. If retaining M22 contact-sensing feet, add
+2 channels for two feet: 4 + 2 = 6 total. Without the original four, select a separate six-channel
+set after testing one foot.
+
+OPTIONAL OR SUBJECT TO CALCULATION
+Recalculate power, thermal behaviour and communication for the new mass and 18 devices.
+Replace battery, BMS, charger, power disconnection, DC-DC converter, cables and protective
+devices only when they fail the measured budget; upgrading the battery alone is insufficient.
+Ratings depend on peaks and their durations, voltage drop and interruption currents, not the ratio
+18/12.
+Check the existing rig&#x27;s load capacity and onboard-computer cooling. A second computer, CUDA
+GPU and new actuator family are optional. Hardware tripod operation requires a separate check of
+that mode after wave and ripple; do not expand while on HOLD.
+
+INSTALL NOW
+No new software stack is needed: pinned Ubuntu 24.04, ROS 2 Jazzy, ros2_control, NumPy and
+SciPy. If diagnostics are not connected, add diagnostic_updater and diagnostic_aggregator from
+ROS diagnostics for your version; check dependencies with rosdep. Retain the analysis and replay
+environment on the Mac and in UTM.
+
+INSTALLATION AND CONFIGURATION CHECK
+Before applying torque: check 18 unique IDs, 18 correct URDF joints, the software simulator, replay
+with a missing node and displayed diagnostics. Then measure communication cycle and stopping
+on the support. For terrain, check degenerate point sets, REP-103 units and axes and SciPy
+proportion_ci: method, confidence_level using the log of all attempts.
+
+Preparation and checks fit within the existing 75 hours, replacing repeated reading and setup. Delivery waiting
+time does not count as study time.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M23 • 01 Oct 2028 - 01 Nov 2028 • 75 hours                                                                     14 / 15
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://github.com/ros/diagnostics" target="_blank" rel="noopener noreferrer">https://github.com/ros/diagnostics</a></li><li><a href="https://github.com/ros-infrastructure/rep/blob/master/rep-0103.rst" target="_blank" rel="noopener noreferrer">https://github.com/ros-infrastructure/rep/blob/master/rep-0103.rst</a></li><li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats._result_classes.BinomTestResult.proportion_ci.html" target="_blank" rel="noopener noreferrer">https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats._result_classes.BinomTestResult.proportion_ci.html</a></li><li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats._result_classes.BinomTestResult.proportion_ci.html" target="_blank" rel="noopener noreferrer">https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats._result_classes.BinomTestResult.proportion_ci.html</a></li></ol></div></details><details class="source-page" id="page-15"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 15 · Motion fundamentals: support transitions</summary><pre class="source-text">ROBOTICS AND AI  /  M23  /  DETAILED STUDY PLAN
+
+Motion fundamentals: support transitions
+and equilibrium
+
+Required analysis: support changes, body acceleration and actual contact
+
+Walking changes both leg angles and the set of active contacts. A lifted foot no longer supplies
+support force; count a new support only after confirmed touchdown. The gait timer specifies intent;
+the sensor confirms the physical transition. Even six functioning legs do not guarantee stability
+when these transitions occur in the wrong order.
+
+From static projection to a moving body
+For slow standing on one horizontal plane, check that the centre-of-mass projection lies inside the
+contact polygon, friction is sufficient and loads are admissible. Under acceleration, this is
+insufficient. In a simplified planar model with constant height h and zero rate of change of angular
+momentum about the centre of mass: x_CoP=x_c-(h/g)·a_x. CoP is the point of application of the
+resultant normal reaction; it must lie in the admissible support region.
+Numerical counterexample. x_c=0.03 m, h=0.25 m, g=9.81 m/s²; after a support transition, the
+admissible longitudinal CoP interval is [-0.08; 0.12] m. At rest, CoP=0.03 m. Requesting a_x=5 m/s²
+gives CoP=-0.09742 m: the centre-of-mass projection is inside, but the required reaction lies
+outside. This model rejects the command. This is a calculation test, not an instruction to accelerate
+the physical robot.
+For μ=0.6, the aggregate friction constraint gives |a_x|≤μg=5.886 m/s² when vertical acceleration
+is zero. It separately permits 5 m/s², but the CoP condition is already violated. Both conditions and
+actuator constraints must hold. A longitudinal interval does not check lateral stability; use complete
+contact geometry for the robot.
+
+Practice: verify a wave → ripple transition
+In the existing simulation scenario, select the instant before leg lift-off. Construct current and next
+support regions using confirmed contacts only and calculate static margin. Then estimate required
+CoP under the declared assumptions; for the general case, use M20 force constraints. Inject loss of
+one contact: defer swing or select a previously verified fallback.
+Save contact_transition.csv and support diagrams: phase commands, touchdown confirmations,
+x_c, CoP estimate, boundaries and decision reason. Separately test delayed swing and a false early
+touchdown. Increasing duty factor provides more time in stance, but does not establish that every
+transition is feasible or friction sufficient.
+
+Within 75 hours: 1 hour from 23-24 and 2 hours from the simulation portion of 31-34, tasks 3-4. Physical trials
+remain within the accepted M22 region. Read Russ Tedrake, Highly-articulated Legged Robots: CoP and ZMP -
+assumptions of simplified dynamics. Do not apply this formula to contacts at different heights or large body
+rotations without checking its validity.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M23 • 01 Oct 2028 - 01 Nov 2028 • 75 hours                                                                          15 / 15</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://underactuated.mit.edu/humanoids.html" target="_blank" rel="noopener noreferrer">https://underactuated.mit.edu/humanoids.html</a></li></ol></div></details>
+</section>
+<footer><p><a href="../library.html"><span lang="ru">Вернуться в библиотеку</span><span lang="en">Back to source library</span></a> · <a href="../index.html"><span lang="ru">Вернуться к новому плану</span><span lang="en">Back to revised plan</span></a></p><p class="checksum">SHA-256: 2fc845b4131a4781ab5297719cf6ed4fb350c209ba803a39eb121378c2964bbf</p></footer>
+</main>
+<script>
+(function() {
+  function openPage() {
+    if (!/^#page-\d+$/.test(location.hash)) return;
+    var page=document.getElementById(location.hash.slice(1));
+    if(page) {page.open=true; page.scrollIntoView({block:'start'});}
+  }
+  window.addEventListener('hashchange',openPage);
+  document.addEventListener('DOMContentLoaded',openPage);
+  document.getElementById('expand-pages').addEventListener('click',function(){document.querySelectorAll('details[id^="page-"]').forEach(function(el){el.open=true;});});
+  document.getElementById('collapse-pages').addEventListener('click',function(){document.querySelectorAll('details[id^="page-"]').forEach(function(el){el.open=false;});});
+})();
+</script>
+</body>
+</html>

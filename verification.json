@@ -1,0 +1,366 @@
+{
+  "status": "PASS",
+  "scope": "Read-only static checks and mocked app.js; no browser, visual render, or external URL availability test",
+  "html_pages": 76,
+  "main_pages": 10,
+  "month_pages": 14,
+  "local_file_and_anchor_links": 4213,
+  "unique_external_link_targets": 630,
+  "external_network_status_checked": false,
+  "original_pdfs": 52,
+  "original_pdf_pages": 1600,
+  "preserved_source_text_characters": 4207543,
+  "preserved_original_annotation_links": 1839,
+  "original_hashes_compared_to_input_zip": false,
+  "original_hashes_compared_to_retained_backup_zip": true,
+  "original_hashes_match_source_manifest": true,
+  "original_hash_reference": "/Users/oleksandrprytula/Documents/Codex/2026-09-19/d/work/revision_v3/Robotics-AI-Plan-Revised-RU-EN.zip",
+  "hours": {
+    "base_hours": 2660,
+    "contingency_hours": 300,
+    "allocated_hours": 2960,
+    "calendar_capacity_hours": 3045,
+    "unallocated_hours": 85,
+    "weeks": 61,
+    "full_weeks": 60,
+    "final_partial_week_hours": 45
+  },
+  "work_categories": {
+    "learn": 628,
+    "build": 1280,
+    "verify": 752
+  },
+  "selected_software_hours": 400,
+  "software_task_count": 33,
+  "start": "2026-11-01",
+  "work_finish": "2027-12-21",
+  "calendar_finish": "2027-12-31",
+  "dependency_edges_checked": 98,
+  "original_topics_retained": 24,
+  "optional_development_tracks": 22,
+  "javascript": {
+    "status": "PASS",
+    "scenarios": 5,
+    "assertions": 148,
+    "browser_used": false,
+    "network_used": false,
+    "checks": [
+      "language default/query/storage priority",
+      "blocked file storage",
+      "RU/EN toggle/title/aria",
+      "relative language links and query/hash preservation",
+      "PDF/external/mailto/anchor stability",
+      "month search",
+      "print callback",
+      "hash opening/invalid hash"
+    ]
+  },
+  "language_element_counts": {
+    "changes.html": {
+      "ru": 83,
+      "en": 83
+    },
+    "curriculum.html": {
+      "ru": 1259,
+      "en": 1259
+    },
+    "full-syllabus.html": {
+      "ru": 348,
+      "en": 348
+    },
+    "growth.html": {
+      "ru": 287,
+      "en": 287
+    },
+    "hexapod-review.html": {
+      "ru": 234,
+      "en": 234
+    },
+    "index.html": {
+      "ru": 99,
+      "en": 99
+    },
+    "library.html": {
+      "ru": 735,
+      "en": 735
+    },
+    "method.html": {
+      "ru": 127,
+      "en": 127
+    },
+    "months/2026-11.html": {
+      "ru": 194,
+      "en": 194
+    },
+    "months/2026-12.html": {
+      "ru": 173,
+      "en": 173
+    },
+    "months/2027-01.html": {
+      "ru": 168,
+      "en": 168
+    },
+    "months/2027-02.html": {
+      "ru": 162,
+      "en": 162
+    },
+    "months/2027-03.html": {
+      "ru": 189,
+      "en": 189
+    },
+    "months/2027-04.html": {
+      "ru": 195,
+      "en": 195
+    },
+    "months/2027-05.html": {
+      "ru": 161,
+      "en": 161
+    },
+    "months/2027-06.html": {
+      "ru": 171,
+      "en": 171
+    },
+    "months/2027-07.html": {
+      "ru": 152,
+      "en": 152
+    },
+    "months/2027-08.html": {
+      "ru": 153,
+      "en": 153
+    },
+    "months/2027-09.html": {
+      "ru": 163,
+      "en": 163
+    },
+    "months/2027-10.html": {
+      "ru": 201,
+      "en": 201
+    },
+    "months/2027-11.html": {
+      "ru": 147,
+      "en": 147
+    },
+    "months/2027-12.html": {
+      "ru": 137,
+      "en": 137
+    },
+    "procurement.html": {
+      "ru": 738,
+      "en": 738
+    },
+    "projects.html": {
+      "ru": 553,
+      "en": 553
+    },
+    "source-library/full-en.html": {
+      "ru": 472,
+      "en": 472
+    },
+    "source-library/full-ru.html": {
+      "ru": 472,
+      "en": 472
+    },
+    "source-library/m01-en.html": {
+      "ru": 44,
+      "en": 44
+    },
+    "source-library/m01-ru.html": {
+      "ru": 44,
+      "en": 44
+    },
+    "source-library/m02-en.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m02-ru.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m03-en.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m03-ru.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m04-en.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m04-ru.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m05-en.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m05-ru.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m06-en.html": {
+      "ru": 40,
+      "en": 40
+    },
+    "source-library/m06-ru.html": {
+      "ru": 40,
+      "en": 40
+    },
+    "source-library/m07-en.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m07-ru.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m08-en.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m08-ru.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m09-en.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m09-ru.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m10-en.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m10-ru.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m11-en.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m11-ru.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m12-en.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m12-ru.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m13-en.html": {
+      "ru": 38,
+      "en": 38
+    },
+    "source-library/m13-ru.html": {
+      "ru": 38,
+      "en": 38
+    },
+    "source-library/m14-en.html": {
+      "ru": 40,
+      "en": 40
+    },
+    "source-library/m14-ru.html": {
+      "ru": 40,
+      "en": 40
+    },
+    "source-library/m15-en.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m15-ru.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m16-en.html": {
+      "ru": 39,
+      "en": 39
+    },
+    "source-library/m16-ru.html": {
+      "ru": 39,
+      "en": 39
+    },
+    "source-library/m17-en.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m17-ru.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m18-en.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m18-ru.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m19-en.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m19-ru.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m20-en.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m20-ru.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m21-en.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m21-ru.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m22-en.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m22-ru.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m23-en.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m23-ru.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m24-en.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/m24-ru.html": {
+      "ru": 37,
+      "en": 37
+    },
+    "source-library/roadmap.html": {
+      "ru": 156,
+      "en": 156
+    },
+    "source-library/tail.html": {
+      "ru": 81,
+      "en": 81
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

@@ -1,0 +1,886 @@
+[
+  {
+    "id": "roadmap",
+    "title": {
+      "ru": "Исходная дорожная карта",
+      "en": "Original roadmap"
+    },
+    "language": "en",
+    "pages": 104,
+    "pdf": "originals/roadmap.pdf",
+    "html": "source-library/roadmap.html",
+    "sha256": "7c09a75079a4644727e65d1a9f60c39d4472021c2892f68f22feccff302bcf6a",
+    "original_filename": "roadmap.pdf",
+    "original_relative_path": "roadmap.pdf",
+    "links_count": 210,
+    "text_characters": 208792,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "full-en",
+    "title": {
+      "ru": "Полный исходный том · EN",
+      "en": "Complete original volume · EN"
+    },
+    "language": "en",
+    "pages": 365,
+    "pdf": "originals/detailed/English/Full/Robotics_M01-M24_Complete_EN.pdf",
+    "html": "source-library/full-en.html",
+    "sha256": "de46cda8b2704970dc098cb0b8808ee70db32f646fa40e916a38ab171d641e5a",
+    "original_filename": "Robotics_M01-M24_Complete_EN.pdf",
+    "original_relative_path": "detailed/English/Full/Robotics_M01-M24_Complete_EN.pdf",
+    "links_count": 390,
+    "text_characters": 992095,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "full-ru",
+    "title": {
+      "ru": "Полный исходный том · RU",
+      "en": "Complete original volume · RU"
+    },
+    "language": "ru",
+    "pages": 365,
+    "pdf": "originals/detailed/Russian/Full/Robotics_M01-M24_Complete_RU.pdf",
+    "html": "source-library/full-ru.html",
+    "sha256": "15dc035df331db8bff60247550efeb8c36af2555291fa8e6c81399b2cf230206",
+    "original_filename": "Robotics_M01-M24_Complete_RU.pdf",
+    "original_relative_path": "detailed/Russian/Full/Robotics_M01-M24_Complete_RU.pdf",
+    "links_count": 402,
+    "text_characters": 987737,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m01-en",
+    "title": {
+      "ru": "M01 · Основы программного обеспечения робота · EN",
+      "en": "M01 · Robot software foundations · EN"
+    },
+    "language": "en",
+    "pages": 15,
+    "pdf": "originals/detailed/English/Monthly/M01_Robotics_Plan_EN.pdf",
+    "html": "source-library/m01-en.html",
+    "sha256": "679ad85e4a7f02bf522ce3f6cff0c6a5a2a1bc5df9fb280debaffd0c48829755",
+    "original_filename": "M01_Robotics_Plan_EN.pdf",
+    "original_relative_path": "detailed/English/Monthly/M01_Robotics_Plan_EN.pdf",
+    "links_count": 37,
+    "text_characters": 49883,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m01-ru",
+    "title": {
+      "ru": "M01 · Основы программного обеспечения робота · RU",
+      "en": "M01 · Robot software foundations · RU"
+    },
+    "language": "ru",
+    "pages": 15,
+    "pdf": "originals/detailed/Russian/Monthly/M01_Robotics_Plan_RU.pdf",
+    "html": "source-library/m01-ru.html",
+    "sha256": "d3b0949bab612ac5aa42d4eee3b3f0cb06bdb3f939643b3e259ce19922c49403",
+    "original_filename": "M01_Robotics_Plan_RU.pdf",
+    "original_relative_path": "detailed/Russian/Monthly/M01_Robotics_Plan_RU.pdf",
+    "links_count": 38,
+    "text_characters": 49097,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m02-en",
+    "title": {
+      "ru": "M02 · Математика состояния и движения · EN",
+      "en": "M02 · Mathematics of state and motion · EN"
+    },
+    "language": "en",
+    "pages": 15,
+    "pdf": "originals/detailed/English/Monthly/M02_Robotics_Plan_EN.pdf",
+    "html": "source-library/m02-en.html",
+    "sha256": "bd47773e2a9c2b3fd4adbbf974ac93a6c50e9dd587ab4cbb2ad16f0d9852abe8",
+    "original_filename": "M02_Robotics_Plan_EN.pdf",
+    "original_relative_path": "detailed/English/Monthly/M02_Robotics_Plan_EN.pdf",
+    "links_count": 14,
+    "text_characters": 38428,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m02-ru",
+    "title": {
+      "ru": "M02 · Математика состояния и движения · RU",
+      "en": "M02 · Mathematics of state and motion · RU"
+    },
+    "language": "ru",
+    "pages": 15,
+    "pdf": "originals/detailed/Russian/Monthly/M02_Robotics_Plan_RU.pdf",
+    "html": "source-library/m02-ru.html",
+    "sha256": "b1aebd2f156bcf49f04e29f09b06ad898982e2f66c3a814fe28fd27f130a9c84",
+    "original_filename": "M02_Robotics_Plan_RU.pdf",
+    "original_relative_path": "detailed/Russian/Monthly/M02_Robotics_Plan_RU.pdf",
+    "links_count": 15,
+    "text_characters": 38148,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m03-en",
+    "title": {
+      "ru": "M03 · Вероятность, статистика и неопределённость · EN",
+      "en": "M03 · Probability, statistics and uncertainty · EN"
+    },
+    "language": "en",
+    "pages": 15,
+    "pdf": "originals/detailed/English/Monthly/M03_Robotics_Plan_EN.pdf",
+    "html": "source-library/m03-en.html",
+    "sha256": "184e89aa441f552848dbde49752e9af544fb095c3eee7aa832652f7f39469b93",
+    "original_filename": "M03_Robotics_Plan_EN.pdf",
+    "original_relative_path": "detailed/English/Monthly/M03_Robotics_Plan_EN.pdf",
+    "links_count": 13,
+    "text_characters": 38660,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m03-ru",
+    "title": {
+      "ru": "M03 · Вероятность, статистика и неопределённость · RU",
+      "en": "M03 · Probability, statistics and uncertainty · RU"
+    },
+    "language": "ru",
+    "pages": 15,
+    "pdf": "originals/detailed/Russian/Monthly/M03_Robotics_Plan_RU.pdf",
+    "html": "source-library/m03-ru.html",
+    "sha256": "3f71588b56e688e8657055e10cd7f92e2de200ea3940dbd1d215626cff4dc1dd",
+    "original_filename": "M03_Robotics_Plan_RU.pdf",
+    "original_relative_path": "detailed/Russian/Monthly/M03_Robotics_Plan_RU.pdf",
+    "links_count": 14,
+    "text_characters": 39678,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m04-en",
+    "title": {
+      "ru": "M04 · Электроника и обработка сигналов · EN",
+      "en": "M04 · Electronics and signal processing · EN"
+    },
+    "language": "en",
+    "pages": 15,
+    "pdf": "originals/detailed/English/Monthly/M04_Robotics_Plan_EN.pdf",
+    "html": "source-library/m04-en.html",
+    "sha256": "691aa7273cc4ff3403b10ef4416dbf6abcf4a5342d684bdc3250ce96fd53e412",
+    "original_filename": "M04_Robotics_Plan_EN.pdf",
+    "original_relative_path": "detailed/English/Monthly/M04_Robotics_Plan_EN.pdf",
+    "links_count": 14,
+    "text_characters": 37923,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m04-ru",
+    "title": {
+      "ru": "M04 · Электроника и обработка сигналов · RU",
+      "en": "M04 · Electronics and signal processing · RU"
+    },
+    "language": "ru",
+    "pages": 15,
+    "pdf": "originals/detailed/Russian/Monthly/M04_Robotics_Plan_RU.pdf",
+    "html": "source-library/m04-ru.html",
+    "sha256": "fc122fb11c4d7517d0944204b001ca5ae95749afa1c4cd3709ed9afa588370f6",
+    "original_filename": "M04_Robotics_Plan_RU.pdf",
+    "original_relative_path": "detailed/Russian/Monthly/M04_Robotics_Plan_RU.pdf",
+    "links_count": 15,
+    "text_characters": 38965,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m05-en",
+    "title": {
+      "ru": "M05 · CAD, механика и изготовление ноги · EN",
+      "en": "M05 · CAD, mechanics and leg manufacture · EN"
+    },
+    "language": "en",
+    "pages": 15,
+    "pdf": "originals/detailed/English/Monthly/M05_Robotics_Plan_EN.pdf",
+    "html": "source-library/m05-en.html",
+    "sha256": "f34ec20e3cb586212d378cf667641466ea2141a9d8ee8a9482cb9ff3a0295919",
+    "original_filename": "M05_Robotics_Plan_EN.pdf",
+    "original_relative_path": "detailed/English/Monthly/M05_Robotics_Plan_EN.pdf",
+    "links_count": 19,
+    "text_characters": 41882,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m05-ru",
+    "title": {
+      "ru": "M05 · CAD, механика и изготовление ноги · RU",
+      "en": "M05 · CAD, mechanics and leg manufacture · RU"
+    },
+    "language": "ru",
+    "pages": 15,
+    "pdf": "originals/detailed/Russian/Monthly/M05_Robotics_Plan_RU.pdf",
+    "html": "source-library/m05-ru.html",
+    "sha256": "ef58de91c66e2a13c4faccfc80c67a60748488a9f797232005d6c2cc28147b87",
+    "original_filename": "M05_Robotics_Plan_RU.pdf",
+    "original_relative_path": "detailed/Russian/Monthly/M05_Robotics_Plan_RU.pdf",
+    "links_count": 19,
+    "text_characters": 40222,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m06-en",
+    "title": {
+      "ru": "M06 · Встроенный контроллер, шины и безопасность · EN",
+      "en": "M06 · Embedded controller, buses and safety · EN"
+    },
+    "language": "en",
+    "pages": 15,
+    "pdf": "originals/detailed/English/Monthly/M06_Robotics_Plan_EN.pdf",
+    "html": "source-library/m06-en.html",
+    "sha256": "bb5f4706d81c3bceca1efec1b11960bdc054e4c16e6fd7efc0a5d6c59d0f1e70",
+    "original_filename": "M06_Robotics_Plan_EN.pdf",
+    "original_relative_path": "detailed/English/Monthly/M06_Robotics_Plan_EN.pdf",
+    "links_count": 24,
+    "text_characters": 42060,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m06-ru",
+    "title": {
+      "ru": "M06 · Встроенный контроллер, шины и безопасность · RU",
+      "en": "M06 · Embedded controller, buses and safety · RU"
+    },
+    "language": "ru",
+    "pages": 15,
+    "pdf": "originals/detailed/Russian/Monthly/M06_Robotics_Plan_RU.pdf",
+    "html": "source-library/m06-ru.html",
+    "sha256": "fc91e177f07a7311ed40ba9b85cf8c81a74b69780afd26cd97354d2f1b6d11ce",
+    "original_filename": "M06_Robotics_Plan_RU.pdf",
+    "original_relative_path": "detailed/Russian/Monthly/M06_Robotics_Plan_RU.pdf",
+    "links_count": 24,
+    "text_characters": 42383,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m07-en",
+    "title": {
+      "ru": "M07 · Приводы и идентификация системы · EN",
+      "en": "M07 · Actuators and system identification · EN"
+    },
+    "language": "en",
+    "pages": 15,
+    "pdf": "originals/detailed/English/Monthly/M07_Robotics_Plan_EN.pdf",
+    "html": "source-library/m07-en.html",
+    "sha256": "1ae05089e82a650ad3d2b62ba4ee6a2230a077adbeaf99b7fbc6dd8e77271c15",
+    "original_filename": "M07_Robotics_Plan_EN.pdf",
+    "original_relative_path": "detailed/English/Monthly/M07_Robotics_Plan_EN.pdf",
+    "links_count": 10,
+    "text_characters": 39692,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m07-ru",
+    "title": {
+      "ru": "M07 · Приводы и идентификация системы · RU",
+      "en": "M07 · Actuators and system identification · RU"
+    },
+    "language": "ru",
+    "pages": 15,
+    "pdf": "originals/detailed/Russian/Monthly/M07_Robotics_Plan_RU.pdf",
+    "html": "source-library/m07-ru.html",
+    "sha256": "de7880fb4d6bdd5151eaa81a21d6fcd40dccff9a4fe0fb7bfb9df84624dac356",
+    "original_filename": "M07_Robotics_Plan_RU.pdf",
+    "original_relative_path": "detailed/Russian/Monthly/M07_Robotics_Plan_RU.pdf",
+    "links_count": 10,
+    "text_characters": 40444,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m08-en",
+    "title": {
+      "ru": "M08 · Геометрия, прямая и обратная кинематика · EN",
+      "en": "M08 · Geometry, forward and inverse kinematics · EN"
+    },
+    "language": "en",
+    "pages": 15,
+    "pdf": "originals/detailed/English/Monthly/M08_Robotics_Plan_EN.pdf",
+    "html": "source-library/m08-en.html",
+    "sha256": "d5ec9b6db5b706275e6b1532ae7fe64cb799643cf038d4efca6eb75c86509a95",
+    "original_filename": "M08_Robotics_Plan_EN.pdf",
+    "original_relative_path": "detailed/English/Monthly/M08_Robotics_Plan_EN.pdf",
+    "links_count": 10,
+    "text_characters": 38349,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m08-ru",
+    "title": {
+      "ru": "M08 · Геометрия, прямая и обратная кинематика · RU",
+      "en": "M08 · Geometry, forward and inverse kinematics · RU"
+    },
+    "language": "ru",
+    "pages": 15,
+    "pdf": "originals/detailed/Russian/Monthly/M08_Robotics_Plan_RU.pdf",
+    "html": "source-library/m08-ru.html",
+    "sha256": "b3c1e0199f38e16ffb5fc5dfc808a9d83a4c4feb7ff649ade032354350c1bb91",
+    "original_filename": "M08_Robotics_Plan_RU.pdf",
+    "original_relative_path": "detailed/Russian/Monthly/M08_Robotics_Plan_RU.pdf",
+    "links_count": 10,
+    "text_characters": 38898,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m09-en",
+    "title": {
+      "ru": "M09 · Динамика жёстких тел · EN",
+      "en": "M09 · Rigid-body dynamics · EN"
+    },
+    "language": "en",
+    "pages": 15,
+    "pdf": "originals/detailed/English/Monthly/M09_Robotics_Plan_EN.pdf",
+    "html": "source-library/m09-en.html",
+    "sha256": "9b7a243a006728eebb61da8f4544e9376599f8517c6066362c8f900752a3bf15",
+    "original_filename": "M09_Robotics_Plan_EN.pdf",
+    "original_relative_path": "detailed/English/Monthly/M09_Robotics_Plan_EN.pdf",
+    "links_count": 14,
+    "text_characters": 41150,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m09-ru",
+    "title": {
+      "ru": "M09 · Динамика жёстких тел · RU",
+      "en": "M09 · Rigid-body dynamics · RU"
+    },
+    "language": "ru",
+    "pages": 15,
+    "pdf": "originals/detailed/Russian/Monthly/M09_Robotics_Plan_RU.pdf",
+    "html": "source-library/m09-ru.html",
+    "sha256": "f6efe5710bf35d45143440febb85db3d9e4203789c700b22213e7c8726f9df90",
+    "original_filename": "M09_Robotics_Plan_RU.pdf",
+    "original_relative_path": "detailed/Russian/Monthly/M09_Robotics_Plan_RU.pdf",
+    "links_count": 14,
+    "text_characters": 39564,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m10-en",
+    "title": {
+      "ru": "M10 · Классическое и цифровое управление · EN",
+      "en": "M10 · Classical and digital control · EN"
+    },
+    "language": "en",
+    "pages": 15,
+    "pdf": "originals/detailed/English/Monthly/M10_Robotics_Plan_EN.pdf",
+    "html": "source-library/m10-en.html",
+    "sha256": "417b109b9abf99902b02e264f1e5386b5fb5ab57d88759cb35e4ebeabaaca4bc",
+    "original_filename": "M10_Robotics_Plan_EN.pdf",
+    "original_relative_path": "detailed/English/Monthly/M10_Robotics_Plan_EN.pdf",
+    "links_count": 14,
+    "text_characters": 40171,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m10-ru",
+    "title": {
+      "ru": "M10 · Классическое и цифровое управление · RU",
+      "en": "M10 · Classical and digital control · RU"
+    },
+    "language": "ru",
+    "pages": 15,
+    "pdf": "originals/detailed/Russian/Monthly/M10_Robotics_Plan_RU.pdf",
+    "html": "source-library/m10-ru.html",
+    "sha256": "12a2fbc5c880271db0f8d083749023e88ad837894fd457b516fc6d7ecb08b475",
+    "original_filename": "M10_Robotics_Plan_RU.pdf",
+    "original_relative_path": "detailed/Russian/Monthly/M10_Robotics_Plan_RU.pdf",
+    "links_count": 15,
+    "text_characters": 39657,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m11-en",
+    "title": {
+      "ru": "M11 · Пространство состояний, оценивание и QP · EN",
+      "en": "M11 · State space, estimation and QP · EN"
+    },
+    "language": "en",
+    "pages": 15,
+    "pdf": "originals/detailed/English/Monthly/M11_Robotics_Plan_EN.pdf",
+    "html": "source-library/m11-en.html",
+    "sha256": "4b978a7f6154f432579959c066e4697f9b79698a8a4a4dc9757ffd29355689d2",
+    "original_filename": "M11_Robotics_Plan_EN.pdf",
+    "original_relative_path": "detailed/English/Monthly/M11_Robotics_Plan_EN.pdf",
+    "links_count": 13,
+    "text_characters": 39534,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m11-ru",
+    "title": {
+      "ru": "M11 · Пространство состояний, оценивание и QP · RU",
+      "en": "M11 · State space, estimation and QP · RU"
+    },
+    "language": "ru",
+    "pages": 15,
+    "pdf": "originals/detailed/Russian/Monthly/M11_Robotics_Plan_RU.pdf",
+    "html": "source-library/m11-ru.html",
+    "sha256": "a89c030068d1954b628726ca5aefc27809f1d55e46bce7193bd68d5040fc6418",
+    "original_filename": "M11_Robotics_Plan_RU.pdf",
+    "original_relative_path": "detailed/Russian/Monthly/M11_Robotics_Plan_RU.pdf",
+    "links_count": 13,
+    "text_characters": 38625,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m12-en",
+    "title": {
+      "ru": "M12 · ROS 2, архитектура и наблюдаемость · EN",
+      "en": "M12 · ROS 2, architecture and observability · EN"
+    },
+    "language": "en",
+    "pages": 15,
+    "pdf": "originals/detailed/English/Monthly/M12_Robotics_Plan_EN.pdf",
+    "html": "source-library/m12-en.html",
+    "sha256": "e4b399eba3e10c224a35528c047d256ec322309809014c740bd5894a14772007",
+    "original_filename": "M12_Robotics_Plan_EN.pdf",
+    "original_relative_path": "detailed/English/Monthly/M12_Robotics_Plan_EN.pdf",
+    "links_count": 17,
+    "text_characters": 40457,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m12-ru",
+    "title": {
+      "ru": "M12 · ROS 2, архитектура и наблюдаемость · RU",
+      "en": "M12 · ROS 2, architecture and observability · RU"
+    },
+    "language": "ru",
+    "pages": 15,
+    "pdf": "originals/detailed/Russian/Monthly/M12_Robotics_Plan_RU.pdf",
+    "html": "source-library/m12-ru.html",
+    "sha256": "59a5382598c07b3683a767db27e3c04a6507b2a888c1cd308d6c44269f142f44",
+    "original_filename": "M12_Robotics_Plan_RU.pdf",
+    "original_relative_path": "detailed/Russian/Monthly/M12_Robotics_Plan_RU.pdf",
+    "links_count": 17,
+    "text_characters": 40721,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m13-en",
+    "title": {
+      "ru": "M13 · Симуляция, цифровой двойник и HIL · EN",
+      "en": "M13 · Simulation, digital twin and HIL · EN"
+    },
+    "language": "en",
+    "pages": 15,
+    "pdf": "originals/detailed/English/Monthly/M13_Robotics_Plan_EN.pdf",
+    "html": "source-library/m13-en.html",
+    "sha256": "a3cb2866aae7f79d7d48525b2f1581384120b0115d52278f81d3f1638c57b6b5",
+    "original_filename": "M13_Robotics_Plan_EN.pdf",
+    "original_relative_path": "detailed/English/Monthly/M13_Robotics_Plan_EN.pdf",
+    "links_count": 14,
+    "text_characters": 41235,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m13-ru",
+    "title": {
+      "ru": "M13 · Симуляция, цифровой двойник и HIL · RU",
+      "en": "M13 · Simulation, digital twin and HIL · RU"
+    },
+    "language": "ru",
+    "pages": 15,
+    "pdf": "originals/detailed/Russian/Monthly/M13_Robotics_Plan_RU.pdf",
+    "html": "source-library/m13-ru.html",
+    "sha256": "342d2af0758d3a1d682be325c85705bba10073970b415cbccc567a1e783b8437",
+    "original_filename": "M13_Robotics_Plan_RU.pdf",
+    "original_relative_path": "detailed/Russian/Monthly/M13_Robotics_Plan_RU.pdf",
+    "links_count": 15,
+    "text_characters": 40189,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m14-en",
+    "title": {
+      "ru": "M14 · Компьютерное зрение и 3D-восприятие · EN",
+      "en": "M14 · Computer vision and 3D perception · EN"
+    },
+    "language": "en",
+    "pages": 15,
+    "pdf": "originals/detailed/English/Monthly/M14_Robotics_Plan_EN.pdf",
+    "html": "source-library/m14-en.html",
+    "sha256": "3bd696822fc2b1e1488c7028956fca28ecf43977e612888fe0dc71fe466cbfec",
+    "original_filename": "M14_Robotics_Plan_EN.pdf",
+    "original_relative_path": "detailed/English/Monthly/M14_Robotics_Plan_EN.pdf",
+    "links_count": 16,
+    "text_characters": 39176,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m14-ru",
+    "title": {
+      "ru": "M14 · Компьютерное зрение и 3D-восприятие · RU",
+      "en": "M14 · Computer vision and 3D perception · RU"
+    },
+    "language": "ru",
+    "pages": 15,
+    "pdf": "originals/detailed/Russian/Monthly/M14_Robotics_Plan_RU.pdf",
+    "html": "source-library/m14-ru.html",
+    "sha256": "652ff96cbb48e3e6c4ed24b59fceb231a80b1ca6e176490eb7f9404cbe95be49",
+    "original_filename": "M14_Robotics_Plan_RU.pdf",
+    "original_relative_path": "detailed/Russian/Monthly/M14_Robotics_Plan_RU.pdf",
+    "links_count": 18,
+    "text_characters": 39001,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m15-en",
+    "title": {
+      "ru": "M15 · Локализация, карты и SLAM · EN",
+      "en": "M15 · Localisation, mapping and SLAM · EN"
+    },
+    "language": "en",
+    "pages": 15,
+    "pdf": "originals/detailed/English/Monthly/M15_Robotics_Plan_EN.pdf",
+    "html": "source-library/m15-en.html",
+    "sha256": "c6d0caeab78ccb63235be659f1a80ddfcca06c4ddae49811321ed1836906a205",
+    "original_filename": "M15_Robotics_Plan_EN.pdf",
+    "original_relative_path": "detailed/English/Monthly/M15_Robotics_Plan_EN.pdf",
+    "links_count": 17,
+    "text_characters": 37748,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m15-ru",
+    "title": {
+      "ru": "M15 · Локализация, карты и SLAM · RU",
+      "en": "M15 · Localisation, mapping and SLAM · RU"
+    },
+    "language": "ru",
+    "pages": 15,
+    "pdf": "originals/detailed/Russian/Monthly/M15_Robotics_Plan_RU.pdf",
+    "html": "source-library/m15-ru.html",
+    "sha256": "89a566dcb852e2047c39eedc9a810b765b53345cee1e1c5ade6bbe774384414b",
+    "original_filename": "M15_Robotics_Plan_RU.pdf",
+    "original_relative_path": "detailed/Russian/Monthly/M15_Robotics_Plan_RU.pdf",
+    "links_count": 17,
+    "text_characters": 38227,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m16-en",
+    "title": {
+      "ru": "M16 · Планирование движения и автономное поведение · EN",
+      "en": "M16 · Motion planning and autonomous behaviour · EN"
+    },
+    "language": "en",
+    "pages": 15,
+    "pdf": "originals/detailed/English/Monthly/M16_Robotics_Plan_EN.pdf",
+    "html": "source-library/m16-en.html",
+    "sha256": "d67e2f074beaf9f6633f64b4cd02933dea24ce95712f6e5ee6933d4442f7bf03",
+    "original_filename": "M16_Robotics_Plan_EN.pdf",
+    "original_relative_path": "detailed/English/Monthly/M16_Robotics_Plan_EN.pdf",
+    "links_count": 15,
+    "text_characters": 37386,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m16-ru",
+    "title": {
+      "ru": "M16 · Планирование движения и автономное поведение · RU",
+      "en": "M16 · Motion planning and autonomous behaviour · RU"
+    },
+    "language": "ru",
+    "pages": 15,
+    "pdf": "originals/detailed/Russian/Monthly/M16_Robotics_Plan_RU.pdf",
+    "html": "source-library/m16-ru.html",
+    "sha256": "88379069971ba48d5e15e7e2eef42e70d673eb55719feef20d298f27684dedf7",
+    "original_filename": "M16_Robotics_Plan_RU.pdf",
+    "original_relative_path": "detailed/Russian/Monthly/M16_Robotics_Plan_RU.pdf",
+    "links_count": 15,
+    "text_characters": 37910,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m17-en",
+    "title": {
+      "ru": "M17 · Манипуляция, HRI и инженерная ответственность · EN",
+      "en": "M17 · Manipulation, HRI and engineering responsibility · EN"
+    },
+    "language": "en",
+    "pages": 15,
+    "pdf": "originals/detailed/English/Monthly/M17_Robotics_Plan_EN.pdf",
+    "html": "source-library/m17-en.html",
+    "sha256": "27e30572920f969751b42e22e4cc0f5126d886c52c8924bd86768583bb317afe",
+    "original_filename": "M17_Robotics_Plan_EN.pdf",
+    "original_relative_path": "detailed/English/Monthly/M17_Robotics_Plan_EN.pdf",
+    "links_count": 14,
+    "text_characters": 39758,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m17-ru",
+    "title": {
+      "ru": "M17 · Манипуляция, HRI и инженерная ответственность · RU",
+      "en": "M17 · Manipulation, HRI and engineering responsibility · RU"
+    },
+    "language": "ru",
+    "pages": 15,
+    "pdf": "originals/detailed/Russian/Monthly/M17_Robotics_Plan_RU.pdf",
+    "html": "source-library/m17-ru.html",
+    "sha256": "a772c98d318e7d9402df47c02a3ba98bf11355134907b6b4f592767c68938f88",
+    "original_filename": "M17_Robotics_Plan_RU.pdf",
+    "original_relative_path": "detailed/Russian/Monthly/M17_Robotics_Plan_RU.pdf",
+    "links_count": 15,
+    "text_characters": 38884,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m18-en",
+    "title": {
+      "ru": "M18 · Машинное обучение для робототехники · EN",
+      "en": "M18 · Machine learning for robotics · EN"
+    },
+    "language": "en",
+    "pages": 15,
+    "pdf": "originals/detailed/English/Monthly/M18_Robotics_Plan_EN.pdf",
+    "html": "source-library/m18-en.html",
+    "sha256": "b90395ea7ce65c142f1c837af46bbddbcf9231dd004b6c2fe3c2cdb9a7118d97",
+    "original_filename": "M18_Robotics_Plan_EN.pdf",
+    "original_relative_path": "detailed/English/Monthly/M18_Robotics_Plan_EN.pdf",
+    "links_count": 19,
+    "text_characters": 41786,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m18-ru",
+    "title": {
+      "ru": "M18 · Машинное обучение для робототехники · RU",
+      "en": "M18 · Machine learning for robotics · RU"
+    },
+    "language": "ru",
+    "pages": 15,
+    "pdf": "originals/detailed/Russian/Monthly/M18_Robotics_Plan_RU.pdf",
+    "html": "source-library/m18-ru.html",
+    "sha256": "da4a21cf1287e8140bd609eb930edca63c27fdaf0b1c3a4bacb320a4108204d2",
+    "original_filename": "M18_Robotics_Plan_RU.pdf",
+    "original_relative_path": "detailed/Russian/Monthly/M18_Robotics_Plan_RU.pdf",
+    "links_count": 20,
+    "text_characters": 40929,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m19-en",
+    "title": {
+      "ru": "M19 · Оценка состояния и медленная походка · EN",
+      "en": "M19 · State estimation and slow gait · EN"
+    },
+    "language": "en",
+    "pages": 15,
+    "pdf": "originals/detailed/English/Monthly/M19_Robotics_Plan_EN.pdf",
+    "html": "source-library/m19-en.html",
+    "sha256": "4751d7d76b57ef1f3fd24c7a8430fe8d1f4efdcd8c726f273ff6cc2a96d68b5b",
+    "original_filename": "M19_Robotics_Plan_EN.pdf",
+    "original_relative_path": "detailed/English/Monthly/M19_Robotics_Plan_EN.pdf",
+    "links_count": 16,
+    "text_characters": 40346,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m19-ru",
+    "title": {
+      "ru": "M19 · Оценка состояния и медленная походка · RU",
+      "en": "M19 · State estimation and slow gait · RU"
+    },
+    "language": "ru",
+    "pages": 15,
+    "pdf": "originals/detailed/Russian/Monthly/M19_Robotics_Plan_RU.pdf",
+    "html": "source-library/m19-ru.html",
+    "sha256": "f3ff5ba5c036963158396510e85adc7d2008335213b7d57bf2216f64789e26f6",
+    "original_filename": "M19_Robotics_Plan_RU.pdf",
+    "original_relative_path": "detailed/Russian/Monthly/M19_Robotics_Plan_RU.pdf",
+    "links_count": 16,
+    "text_characters": 39850,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m20-en",
+    "title": {
+      "ru": "M20 · Опорные силы и управление всем телом · EN",
+      "en": "M20 · Support forces and whole-body control · EN"
+    },
+    "language": "en",
+    "pages": 15,
+    "pdf": "originals/detailed/English/Monthly/M20_Robotics_Plan_EN.pdf",
+    "html": "source-library/m20-en.html",
+    "sha256": "dac18242e43fd6c1130e575fa4347bf7bb6cf61c1f5d698da60e3a219f715f0b",
+    "original_filename": "M20_Robotics_Plan_EN.pdf",
+    "original_relative_path": "detailed/English/Monthly/M20_Robotics_Plan_EN.pdf",
+    "links_count": 14,
+    "text_characters": 39977,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m20-ru",
+    "title": {
+      "ru": "M20 · Опорные силы и управление всем телом · RU",
+      "en": "M20 · Support forces and whole-body control · RU"
+    },
+    "language": "ru",
+    "pages": 15,
+    "pdf": "originals/detailed/Russian/Monthly/M20_Robotics_Plan_RU.pdf",
+    "html": "source-library/m20-ru.html",
+    "sha256": "f252568f963fae83878c539038eacc7f71d662e375475fdb0c9c906428c74a36",
+    "original_filename": "M20_Robotics_Plan_RU.pdf",
+    "original_relative_path": "detailed/Russian/Monthly/M20_Robotics_Plan_RU.pdf",
+    "links_count": 14,
+    "text_characters": 39239,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m21-en",
+    "title": {
+      "ru": "M21 · Обучение подражанием, RL и sim-to-real · EN",
+      "en": "M21 · Imitation learning, RL and sim-to-real · EN"
+    },
+    "language": "en",
+    "pages": 15,
+    "pdf": "originals/detailed/English/Monthly/M21_Robotics_Plan_EN.pdf",
+    "html": "source-library/m21-en.html",
+    "sha256": "1a4d2b15c965083ebdd46d666344696745269744bfb7dcc57ed37a1189725074",
+    "original_filename": "M21_Robotics_Plan_EN.pdf",
+    "original_relative_path": "detailed/English/Monthly/M21_Robotics_Plan_EN.pdf",
+    "links_count": 20,
+    "text_characters": 43353,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m21-ru",
+    "title": {
+      "ru": "M21 · Обучение подражанием, RL и sim-to-real · RU",
+      "en": "M21 · Imitation learning, RL and sim-to-real · RU"
+    },
+    "language": "ru",
+    "pages": 15,
+    "pdf": "originals/detailed/Russian/Monthly/M21_Robotics_Plan_RU.pdf",
+    "html": "source-library/m21-ru.html",
+    "sha256": "076d641b01c87e423f755c80bd6b9d04f283c136f577db6b9015be8e728655d2",
+    "original_filename": "M21_Robotics_Plan_RU.pdf",
+    "original_relative_path": "detailed/Russian/Monthly/M21_Robotics_Plan_RU.pdf",
+    "links_count": 21,
+    "text_characters": 43484,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m22-en",
+    "title": {
+      "ru": "M22 · Физическая промежуточная четырёхногая конфигурация · EN",
+      "en": "M22 · Physical intermediate four-leg configuration · EN"
+    },
+    "language": "en",
+    "pages": 15,
+    "pdf": "originals/detailed/English/Monthly/M22_Robotics_Plan_EN.pdf",
+    "html": "source-library/m22-en.html",
+    "sha256": "c53deeb70643a43f2e00a9d0974fcf2d24ec9d8f8a1f032f29c56a53ea9938c1",
+    "original_filename": "M22_Robotics_Plan_EN.pdf",
+    "original_relative_path": "detailed/English/Monthly/M22_Robotics_Plan_EN.pdf",
+    "links_count": 18,
+    "text_characters": 43016,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m22-ru",
+    "title": {
+      "ru": "M22 · Физическая промежуточная четырёхногая конфигурация · RU",
+      "en": "M22 · Physical intermediate four-leg configuration · RU"
+    },
+    "language": "ru",
+    "pages": 15,
+    "pdf": "originals/detailed/Russian/Monthly/M22_Robotics_Plan_RU.pdf",
+    "html": "source-library/m22-ru.html",
+    "sha256": "217f0508b06c2302d0415fe275449878eea1df9732ed2c070786733ba860d288",
+    "original_filename": "M22_Robotics_Plan_RU.pdf",
+    "original_relative_path": "detailed/Russian/Monthly/M22_Robotics_Plan_RU.pdf",
+    "links_count": 18,
+    "text_characters": 42959,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m23-en",
+    "title": {
+      "ru": "M23 · Hexapod: масштабирование и надёжность · EN",
+      "en": "M23 · Hexapod: scaling and reliability · EN"
+    },
+    "language": "en",
+    "pages": 15,
+    "pdf": "originals/detailed/English/Monthly/M23_Robotics_Plan_EN.pdf",
+    "html": "source-library/m23-en.html",
+    "sha256": "2fc845b4131a4781ab5297719cf6ed4fb350c209ba803a39eb121378c2964bbf",
+    "original_filename": "M23_Robotics_Plan_EN.pdf",
+    "original_relative_path": "detailed/English/Monthly/M23_Robotics_Plan_EN.pdf",
+    "links_count": 15,
+    "text_characters": 42046,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m23-ru",
+    "title": {
+      "ru": "M23 · Hexapod: масштабирование и надёжность · RU",
+      "en": "M23 · Hexapod: scaling and reliability · RU"
+    },
+    "language": "ru",
+    "pages": 15,
+    "pdf": "originals/detailed/Russian/Monthly/M23_Robotics_Plan_RU.pdf",
+    "html": "source-library/m23-ru.html",
+    "sha256": "33ea7bbc7bbfccd2c126ef2407f31a51b58bea9d87cc7a4b68cdd7602a218579",
+    "original_filename": "M23_Robotics_Plan_RU.pdf",
+    "original_relative_path": "detailed/Russian/Monthly/M23_Robotics_Plan_RU.pdf",
+    "links_count": 14,
+    "text_characters": 42576,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m24-en",
+    "title": {
+      "ru": "M24 · Верификация, системная инженерия и выпуск · EN",
+      "en": "M24 · Verification, systems engineering and release · EN"
+    },
+    "language": "en",
+    "pages": 15,
+    "pdf": "originals/detailed/English/Monthly/M24_Robotics_Plan_EN.pdf",
+    "html": "source-library/m24-en.html",
+    "sha256": "da2e83e7283877408bc109a67d67195f02324eb4934e5c901f103ed3a4b8f412",
+    "original_filename": "M24_Robotics_Plan_EN.pdf",
+    "original_relative_path": "detailed/English/Monthly/M24_Robotics_Plan_EN.pdf",
+    "links_count": 13,
+    "text_characters": 42064,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "m24-ru",
+    "title": {
+      "ru": "M24 · Верификация, системная инженерия и выпуск · RU",
+      "en": "M24 · Verification, systems engineering and release · RU"
+    },
+    "language": "ru",
+    "pages": 15,
+    "pdf": "originals/detailed/Russian/Monthly/M24_Robotics_Plan_RU.pdf",
+    "html": "source-library/m24-ru.html",
+    "sha256": "a32294c982427882ae3c93f7f99a23a34182f5a6cf800b7b3c69f413692858ec",
+    "original_filename": "M24_Robotics_Plan_RU.pdf",
+    "original_relative_path": "detailed/Russian/Monthly/M24_Robotics_Plan_RU.pdf",
+    "links_count": 15,
+    "text_characters": 42760,
+    "text_extraction": "existing complete page-delimited extraction"
+  },
+  {
+    "id": "tail",
+    "title": {
+      "ru": "Исходный проект Tail",
+      "en": "Original Tail project"
+    },
+    "language": "en",
+    "pages": 46,
+    "pdf": "originals/tail.pdf",
+    "html": "source-library/tail.html",
+    "sha256": "0f76bf0c3e0ab45449d413d6193ee6df18dc3139dccb2de89c39803c03834fbe",
+    "original_filename": "tail.pdf",
+    "original_relative_path": "tail.pdf",
+    "links_count": 45,
+    "text_characters": 70429,
+    "text_extraction": "existing complete page-delimited extraction"
+  }
+]

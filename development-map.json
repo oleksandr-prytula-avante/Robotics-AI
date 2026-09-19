@@ -1,0 +1,926 @@
+{
+  "tracks": [
+    {
+      "id": "D_NUM",
+      "title": {
+        "ru": "Численные методы и дополнительные математические упражнения",
+        "en": "Numerical methods and additional mathematics"
+      },
+      "themes": [
+        {
+          "ru": "Euler/semi-implicit/RK4, сходимость и энергия двух систем; дополнительные linear algebra exercises.",
+          "en": "Euler/semi-implicit/RK4, convergence and energy for two systems; additional linear-algebra exercises."
+        }
+      ],
+      "prerequisites": [
+        "M02",
+        "M09"
+      ],
+      "entry": {
+        "ru": "Начинать после прохождения указанных проверок ядра и выбора этого направления.",
+        "en": "Start after passing the listed core gates and choosing this direction."
+      },
+      "results": {
+        "ru": "Один сравнительный notebook объясняет, почему методы расходятся и когда точность/стабильность важнее скорости.",
+        "en": "One comparison notebook explains method divergence and accuracy/stability versus speed."
+      },
+      "outcome": {
+        "ru": "Один сравнительный notebook объясняет, почему методы расходятся и когда точность/стабильность важнее скорости.",
+        "en": "One comparison notebook explains method divergence and accuracy/stability versus speed."
+      },
+      "original_refs": [
+        "M02 tasks3–10,pp4–10,15"
+      ],
+      "example_project": {
+        "ru": "Сравнить модель хвоста как маятника и демпфированный сустав.",
+        "en": "Compare a tail-as-pendulum model with a damped joint."
+      },
+      "approximate_extra_hours_range": {
+        "low": 30,
+        "high": 55,
+        "unit": "hours",
+        "basis": {
+          "ru": "10–20 ч адресной теории, 15–25 реализации на готовых моделях, 5–10 анализа; второй раз калибровка и инфраструктура не считаются.",
+          "en": "10–20 hours targeted theory, 15–25 implementing on existing models and 5–10 analysis; calibration/infrastructure are not counted again."
+        }
+      },
+      "not_in_core_total": true,
+      "estimation_note": {
+        "ru": "Отдельная грубая оценка при готовом ядре и повторном использовании инфраструктуры. Это не перенесённая автоматически старая сумма, не обязательство и не срок полного освоения области; пересчитать при выборе проекта.",
+        "en": "A separate rough estimate assuming completed core and reused infrastructure. It is not an automatically transferred old total, a commitment or time to master the field; re-estimate when choosing a project."
+      }
+    },
+    {
+      "id": "D_STATS",
+      "title": {
+        "ru": "Расширенная статистика и идентификация",
+        "en": "Advanced statistics and identification"
+      },
+      "themes": [
+        {
+          "ru": "Monte Carlo/bootstrap/аналитическая covariance, SVD identifiability, nonlinear optimisation, robust loss, Bayes.",
+          "en": "Monte Carlo/bootstrap/analytic covariance, SVD identifiability, nonlinear optimisation, robust loss and Bayes."
+        }
+      ],
+      "prerequisites": [
+        "M03",
+        "M09"
+      ],
+      "entry": {
+        "ru": "Начинать после прохождения указанных проверок ядра и выбора этого направления.",
+        "en": "Start after passing the listed core gates and choosing this direction."
+      },
+      "results": {
+        "ru": "Сравнение двух методов неопределённости и одной нелинейной модели на независимых физических сериях.",
+        "en": "Compare two uncertainty methods and one nonlinear model on independent physical runs."
+      },
+      "outcome": {
+        "ru": "Сравнение двух методов неопределённости и одной нелинейной модели на независимых физических сериях.",
+        "en": "Compare two uncertainty methods and one nonlinear model on independent physical runs."
+      },
+      "original_refs": [
+        "M03 tasks1–10,pp3–10,15"
+      ],
+      "example_project": {
+        "ru": "Оценить погрешность положения кончика arm или tail по реальным повторным установкам; исходный протокол 30 установок доступен.",
+        "en": "Estimate actual repeated-placement error at the arm/tail tip; the original thirty-placement protocol is available."
+      },
+      "approximate_extra_hours_range": {
+        "low": 40,
+        "high": 70,
+        "unit": "hours",
+        "basis": {
+          "ru": "15–25 ч новых методов, 15–30 одного углублённого эксперимента, 10–15 независимой проверки; общий датасет и plots переиспользуются.",
+          "en": "15–25 hours new methods, 15–30 one deeper experiment and 10–15 independent validation, reusing data and plots."
+        }
+      },
+      "not_in_core_total": true,
+      "estimation_note": {
+        "ru": "Отдельная грубая оценка при готовом ядре и повторном использовании инфраструктуры. Это не перенесённая автоматически старая сумма, не обязательство и не срок полного освоения области; пересчитать при выборе проекта.",
+        "en": "A separate rough estimate assuming completed core and reused infrastructure. It is not an automatically transferred old total, a commitment or time to master the field; re-estimate when choosing a project."
+      }
+    },
+    {
+      "id": "D_KIN",
+      "title": {
+        "ru": "Углублённая кинематика и альтернативные представления",
+        "en": "Deeper kinematics and alternative representations"
+      },
+      "themes": [
+        {
+          "ru": "DH/PoE, вторая независимая цепь, дополнительные singularity/IK stress tests.",
+          "en": "DH/PoE, a second independent chain and additional singularity/IK stress tests."
+        }
+      ],
+      "prerequisites": [
+        "M08"
+      ],
+      "entry": {
+        "ru": "Начинать после прохождения указанных проверок ядра и выбора этого направления.",
+        "en": "Start after passing the listed core gates and choosing this direction."
+      },
+      "results": {
+        "ru": "Две реализации одной цепи согласуются и объяснены пределы IK; расширение фактических DOF требует отдельной оценки.",
+        "en": "Two implementations of one chain agree and IK limits are explained; adding actual DOF requires a separate estimate."
+      },
+      "outcome": {
+        "ru": "Две реализации одной цепи согласуются и объяснены пределы IK; расширение фактических DOF требует отдельной оценки.",
+        "en": "Two implementations of one chain agree and IK limits are explained; adding actual DOF requires a separate estimate."
+      },
+      "original_refs": [
+        "M08 tasks1–12,pp3–14"
+      ],
+      "example_project": {
+        "ru": "Проверить реальный arm через PoE как независимую модель существующей геометрии.",
+        "en": "Validate the actual arm using PoE as an independent model of its existing geometry."
+      },
+      "approximate_extra_hours_range": {
+        "low": 25,
+        "high": 45,
+        "unit": "hours",
+        "basis": {
+          "ru": "8–15 ч представлений, 12–20 альтернативной реализации, 5–10 сравнения; первая FK/IK уже работает.",
+          "en": "8–15 hours representations, 12–20 alternative implementation and 5–10 comparison, with the first FK/IK already working."
+        }
+      },
+      "not_in_core_total": true,
+      "estimation_note": {
+        "ru": "Отдельная грубая оценка при готовом ядре и повторном использовании инфраструктуры. Это не перенесённая автоматически старая сумма, не обязательство и не срок полного освоения области; пересчитать при выборе проекта.",
+        "en": "A separate rough estimate assuming completed core and reused infrastructure. It is not an automatically transferred old total, a commitment or time to master the field; re-estimate when choosing a project."
+      }
+    },
+    {
+      "id": "D_DYN",
+      "title": {
+        "ru": "Собственный вывод многозвенной динамики",
+        "en": "Deriving multibody dynamics"
+      },
+      "themes": [
+        {
+          "ru": "2R M,h,g, Newton–Euler/Lagrange, forward/inverse dynamics и энергия.",
+          "en": "2R M,h,g, Newton–Euler/Lagrange, forward/inverse dynamics and energy."
+        }
+      ],
+      "prerequisites": [
+        "M08",
+        "M09"
+      ],
+      "entry": {
+        "ru": "Начинать после прохождения указанных проверок ядра и выбора этого направления.",
+        "en": "Start after passing the listed core gates and choosing this direction."
+      },
+      "results": {
+        "ru": "Самостоятельный 2R вывод совпадает с библиотечным reference по силам/энергии и проверен на фиксированных примерах.",
+        "en": "A custom 2R derivation agrees with a library reference on forces/energy and passes fixed examples."
+      },
+      "outcome": {
+        "ru": "Самостоятельный 2R вывод совпадает с библиотечным reference по силам/энергии и проверен на фиксированных примерах.",
+        "en": "A custom 2R derivation agrees with a library reference on forces/energy and passes fixed examples."
+      },
+      "original_refs": [
+        "M09 tasks3–7,11–12,pp4–8"
+      ],
+      "example_project": {
+        "ru": "Модель двух звеньев существующего arm или tail; без обязательного нового стенда.",
+        "en": "A two-link model of the existing arm or tail, without a mandatory new rig."
+      },
+      "approximate_extra_hours_range": {
+        "low": 40,
+        "high": 70,
+        "unit": "hours",
+        "basis": {
+          "ru": "15–25 ч вывода, 15–30 кода и 10–15 независимой сверки; параметры/измерения ядра уже доступны.",
+          "en": "15–25 hours derivation, 15–30 code and 10–15 independent checks, with core parameters/measurements already available."
+        }
+      },
+      "not_in_core_total": true,
+      "estimation_note": {
+        "ru": "Отдельная грубая оценка при готовом ядре и повторном использовании инфраструктуры. Это не перенесённая автоматически старая сумма, не обязательство и не срок полного освоения области; пересчитать при выборе проекта.",
+        "en": "A separate rough estimate assuming completed core and reused infrastructure. It is not an automatically transferred old total, a commitment or time to master the field; re-estimate when choosing a project."
+      }
+    },
+    {
+      "id": "D_FREQ",
+      "title": {
+        "ru": "Частотное управление и расширенная настройка",
+        "en": "Frequency-domain control and advanced tuning"
+      },
+      "themes": [
+        {
+          "ru": "Bode, margins/sensitivity, 5–8 частот стенда, ZOH/Tustin, gain scheduling.",
+          "en": "Bode, margins/sensitivity, five-to-eight bench frequencies, ZOH/Tustin and gain scheduling."
+        }
+      ],
+      "prerequisites": [
+        "M09",
+        "M10"
+      ],
+      "entry": {
+        "ru": "Начинать после прохождения указанных проверок ядра и выбора этого направления.",
+        "en": "Start after passing the listed core gates and choosing this direction."
+      },
+      "results": {
+        "ru": "Измеренная частотная модель и улучшение либо доказанное отсутствие улучшения baseline PID.",
+        "en": "A measured frequency model and improvement, or demonstrated lack of improvement, over baseline PID."
+      },
+      "outcome": {
+        "ru": "Измеренная частотная модель и улучшение либо доказанное отсутствие улучшения baseline PID.",
+        "en": "A measured frequency model and improvement, or demonstrated lack of improvement, over baseline PID."
+      },
+      "original_refs": [
+        "M10 tasks3–5,7–8,pp4–7"
+      ],
+      "example_project": {
+        "ru": "Уточнить диапазон нагрузок одного сустава arm без опасной широкой амплитуды.",
+        "en": "Refine one arm-joint load envelope without hazardous large-amplitude motion."
+      },
+      "approximate_extra_hours_range": {
+        "low": 30,
+        "high": 55,
+        "unit": "hours",
+        "basis": {
+          "ru": "10–20 ч частотной теории, 12–20 измерений на готовом стенде, 8–15 настройки/проверки; не создаётся второй tilt rig.",
+          "en": "10–20 hours frequency theory, 12–20 existing-rig measurements and 8–15 tuning/validation, without a second tilt rig."
+        }
+      },
+      "not_in_core_total": true,
+      "estimation_note": {
+        "ru": "Отдельная грубая оценка при готовом ядре и повторном использовании инфраструктуры. Это не перенесённая автоматически старая сумма, не обязательство и не срок полного освоения области; пересчитать при выборе проекта.",
+        "en": "A separate rough estimate assuming completed core and reused infrastructure. It is not an automatically transferred old total, a commitment or time to master the field; re-estimate when choosing a project."
+      }
+    },
+    {
+      "id": "D_STATE",
+      "title": {
+        "ru": "KF/EKF, LQR и контактное оценивание",
+        "en": "KF/EKF, LQR and contact-aided estimation"
+      },
+      "themes": [
+        {
+          "ru": "State space, linearisation, observability/controllability; собственные KF/EKF; fair PID/LQR comparison; stationary-foot velocity и slip.",
+          "en": "State space, linearisation, observability/controllability; custom KF/EKF; fair PID/LQR comparison; stationary-foot velocity and slip."
+        }
+      ],
+      "prerequisites": [
+        "M03",
+        "M09",
+        "M10",
+        "M11",
+        "M19"
+      ],
+      "entry": {
+        "ru": "Начинать после прохождения указанных проверок ядра и выбора этого направления.",
+        "en": "Start after passing the listed core gates and choosing this direction."
+      },
+      "results": {
+        "ru": "Один связанный benchmark оценивает собственные фильтры и LQR на одних записях; bias/slip/acceleration и observability limits явно проверены.",
+        "en": "One connected benchmark compares custom filters and LQR on the same recordings, explicitly testing bias/slip/acceleration and observability limits."
+      },
+      "outcome": {
+        "ru": "Один связанный benchmark оценивает собственные фильтры и LQR на одних записях; bias/slip/acceleration и observability limits явно проверены.",
+        "en": "One connected benchmark compares custom filters and LQR on the same recordings, explicitly testing bias/slip/acceleration and observability limits."
+      },
+      "original_refs": [
+        "M11 tasks1–6,pp3–6,9–13",
+        "M19 tasks1–5,11,pp3–4,7"
+      ],
+      "example_project": {
+        "ru": "Оценка движения корпуса hexapod по IMU и опорным ногам в симуляции; локальная оценка не обещает абсолютные position/yaw.",
+        "en": "Estimate hexapod body motion from IMU and stance legs in simulation; local estimates do not promise absolute position/yaw."
+      },
+      "approximate_extra_hours_range": {
+        "low": 80,
+        "high": 135,
+        "unit": "hours",
+        "basis": {
+          "ru": "25–40 ч новой теории, 35–65 реализации KF/EKF/LQR на готовых интерфейсах, 20–30 сравнения и отказов. Invariant EKF сверх этого не входит.",
+          "en": "25–40 hours new theory, 35–65 KF/EKF/LQR implementation on existing interfaces and 20–30 comparisons/failures; an invariant EKF is not included."
+        }
+      },
+      "not_in_core_total": true,
+      "estimation_note": {
+        "ru": "Отдельная грубая оценка при готовом ядре и повторном использовании инфраструктуры. Это не перенесённая автоматически старая сумма, не обязательство и не срок полного освоения области; пересчитать при выборе проекта.",
+        "en": "A separate rough estimate assuming completed core and reused infrastructure. It is not an automatically transferred old total, a commitment or time to master the field; re-estimate when choosing a project."
+      }
+    },
+    {
+      "id": "D_FORCE",
+      "title": {
+        "ru": "Распределение сил через QP",
+        "en": "QP contact-force allocation"
+      },
+      "themes": [
+        {
+          "ru": "Two-support QP → 3D stance QP, friction pyramid, feasibility, Jᵀf, contact generation, solver timeout и fallback.",
+          "en": "Two-support QP → 3D stance QP, friction pyramid, feasibility, Jᵀf, contact generation, solver timeout and fallback."
+        }
+      ],
+      "prerequisites": [
+        "M08",
+        "M09",
+        "M19"
+      ],
+      "entry": {
+        "ru": "Начинать после прохождения указанных проверок ядра и выбора этого направления.",
+        "en": "Start after passing the listed core gates and choosing this direction."
+      },
+      "results": {
+        "ru": "В симуляции QP и независимый validator сохраняют force/moment balance и constraints; timeout/stale contacts вызывают корректный fallback.",
+        "en": "In simulation, QP and an independent validator preserve force/moment balance and constraints, with correct timeout/stale-contact fallback."
+      },
+      "outcome": {
+        "ru": "В симуляции QP и независимый validator сохраняют force/moment balance и constraints; timeout/stale contacts вызывают корректный fallback.",
+        "en": "In simulation, QP and an independent validator preserve force/moment balance and constraints, with correct timeout/stale-contact fallback."
+      },
+      "original_refs": [
+        "M11 tasks7–8,pp7–8",
+        "M20 tasks1–11,pp3–10",
+        "M23 QP extension"
+      ],
+      "example_project": {
+        "ru": "Сравнить классический hexapod baseline и QP при смене опор; физический torque interface требует отдельного проекта.",
+        "en": "Compare the classical hexapod baseline with QP during support transitions; a physical torque interface requires a separate project."
+      },
+      "approximate_extra_hours_range": {
+        "low": 80,
+        "high": 125,
+        "unit": "hours",
+        "basis": {
+          "ru": "20–30 ч постановки, 35–60 solver/integration, 25–35 constraint/fallback tests; geometry/PID/simulator уже готовы. Железный перенос не включён.",
+          "en": "20–30 hours formulation, 35–60 solver/integration and 25–35 constraint/fallback tests, reusing geometry/PID/simulator; hardware transfer is excluded."
+        }
+      },
+      "not_in_core_total": true,
+      "estimation_note": {
+        "ru": "Отдельная грубая оценка при готовом ядре и повторном использовании инфраструктуры. Это не перенесённая автоматически старая сумма, не обязательство и не срок полного освоения области; пересчитать при выборе проекта.",
+        "en": "A separate rough estimate assuming completed core and reused infrastructure. It is not an automatically transferred old total, a commitment or time to master the field; re-estimate when choosing a project."
+      }
+    },
+    {
+      "id": "D_MPC",
+      "title": {
+        "ru": "MPC и постановка whole-body задач",
+        "en": "MPC and whole-body formulations"
+      },
+      "themes": [
+        {
+          "ru": "Небольшой finite-horizon MPC, q/v dimensions, WBC/NMPC awareness.",
+          "en": "Small finite-horizon MPC, q/v dimensions and WBC/NMPC awareness."
+        }
+      ],
+      "prerequisites": [
+        "M09",
+        "M10",
+        "D_FORCE"
+      ],
+      "entry": {
+        "ru": "Начинать после прохождения указанных проверок ядра и выбора этого направления.",
+        "en": "Start after passing the listed core gates and choosing this direction."
+      },
+      "results": {
+        "ru": "Один 1D MPC с timing/constraint/fallback проверкой; объяснена более сложная постановка без обещания полноценного WBC solver.",
+        "en": "One 1D MPC with timing/constraint/fallback checks; the more complex formulation is explained without promising a full WBC solver."
+      },
+      "outcome": {
+        "ru": "Один 1D MPC с timing/constraint/fallback проверкой; объяснена более сложная постановка без обещания полноценного WBC solver.",
+        "en": "One 1D MPC with timing/constraint/fallback checks; the more complex formulation is explained without promising a full WBC solver."
+      },
+      "original_refs": [
+        "M20 task12,pp7–8,10–15"
+      ],
+      "example_project": {
+        "ru": "Предсказывать одну координату корпуса hexapod в учебной модели.",
+        "en": "Predict one hexapod body coordinate in a teaching model."
+      },
+      "approximate_extra_hours_range": {
+        "low": 25,
+        "high": 45,
+        "unit": "hours",
+        "basis": {
+          "ru": "8–15 ч метода, 10–20 эксперимента и 7–10 оценки. Полный NMPC/acados/whole-body inverse dynamics потребует новой оценки.",
+          "en": "8–15 hours method, 10–20 experiment and 7–10 evaluation; full NMPC/acados/whole-body inverse dynamics needs a new estimate."
+        }
+      },
+      "not_in_core_total": true,
+      "estimation_note": {
+        "ru": "Отдельная грубая оценка при готовом ядре и повторном использовании инфраструктуры. Это не перенесённая автоматически старая сумма, не обязательство и не срок полного освоения области; пересчитать при выборе проекта.",
+        "en": "A separate rough estimate assuming completed core and reused infrastructure. It is not an automatically transferred old total, a commitment or time to master the field; re-estimate when choosing a project."
+      }
+    },
+    {
+      "id": "D_IL",
+      "title": {
+        "ru": "Imitation learning: BC и DAgger",
+        "en": "Imitation learning: BC and DAgger"
+      },
+      "themes": [
+        {
+          "ru": "Expert audit, episode split, BC, одна DAgger iteration и closed-loop evaluation.",
+          "en": "Expert audit, episode splits, BC, one DAgger iteration and closed-loop evaluation."
+        }
+      ],
+      "prerequisites": [
+        "M18",
+        "M19"
+      ],
+      "entry": {
+        "ru": "Начинать после прохождения указанных проверок ядра и выбора этого направления.",
+        "en": "Start after passing the listed core gates and choosing this direction."
+      },
+      "results": {
+        "ru": "Политика сравнивается с существующим классическим baseline на новых эпизодах и явно ограничена по действиям; отрицательный результат допустим.",
+        "en": "A policy is compared with the classical baseline on new episodes under explicit action bounds; a negative result is acceptable."
+      },
+      "outcome": {
+        "ru": "Политика сравнивается с существующим классическим baseline на новых эпизодах и явно ограничена по действиям; отрицательный результат допустим.",
+        "en": "A policy is compared with the classical baseline on new episodes under explicit action bounds; a negative result is acceptable."
+      },
+      "original_refs": [
+        "M21 tasks1–4,11–14"
+      ],
+      "example_project": {
+        "ru": "В симуляции предлагать малую поправку body roll/pitch; gait FSM и ограничения остаются независимыми.",
+        "en": "Propose a small simulated body roll/pitch correction while gait FSM and bounds remain independent."
+      },
+      "approximate_extra_hours_range": {
+        "low": 35,
+        "high": 60,
+        "unit": "hours",
+        "basis": {
+          "ru": "10–15 ч метода, 15–25 expert dataset/BC/DAgger и 10–20 независимой оценки; готовые ML-инструменты и simulator переиспользуются.",
+          "en": "10–15 hours method, 15–25 expert data/BC/DAgger and 10–20 independent evaluation, reusing ML tools and the simulator."
+        }
+      },
+      "not_in_core_total": true,
+      "estimation_note": {
+        "ru": "Отдельная грубая оценка при готовом ядре и повторном использовании инфраструктуры. Это не перенесённая автоматически старая сумма, не обязательство и не срок полного освоения области; пересчитать при выборе проекта.",
+        "en": "A separate rough estimate assuming completed core and reused infrastructure. It is not an automatically transferred old total, a commitment or time to master the field; re-estimate when choosing a project."
+      }
+    },
+    {
+      "id": "D_RL",
+      "title": {
+        "ru": "Ограниченный PPO и проверка переноса",
+        "en": "Bounded PPO and transfer evaluation"
+      },
+      "themes": [
+        {
+          "ru": "MDP/Gymnasium, reward/reset, PPO seeds, physically consistent randomisation, ablations, OOD и shield.",
+          "en": "MDP/Gymnasium, reward/reset, PPO seeds, physically consistent randomisation, ablations, OOD and a shield."
+        }
+      ],
+      "prerequisites": [
+        "M18",
+        "M19"
+      ],
+      "entry": {
+        "ru": "Начинать после прохождения указанных проверок ядра и выбора этого направления.",
+        "en": "Start after passing the listed core gates and choosing this direction."
+      },
+      "results": {
+        "ru": "Проверенная двухмерная action-среда, воспроизводимые ограниченные прогоны и оценка на OOD; нет обещания сходимости или физического policy transfer.",
+        "en": "A validated two-action environment, reproducible bounded runs and OOD evaluation, without promising convergence or physical policy transfer."
+      },
+      "outcome": {
+        "ru": "Проверенная двухмерная action-среда, воспроизводимые ограниченные прогоны и оценка на OOD; нет обещания сходимости или физического policy transfer.",
+        "en": "A validated two-action environment, reproducible bounded runs and OOD evaluation, without promising convergence or physical policy transfer."
+      },
+      "original_refs": [
+        "M21 tasks5–14,pp5–14"
+      ],
+      "example_project": {
+        "ru": "Учебная roll/pitch policy поверх безопасного классического hexapod controller в симуляции.",
+        "en": "A teaching roll/pitch policy above a safe classical simulated hexapod controller."
+      },
+      "approximate_extra_hours_range": {
+        "low": 60,
+        "high": 105,
+        "unit": "hours",
+        "basis": {
+          "ru": "15–25 ч метода/среды, 25–45 реализации и коротких экспериментов, 20–35 OOD/shield/evaluation. Машинное время не складывается с параллельным анализом.",
+          "en": "15–25 hours method/environment, 25–45 implementation/short experiments and 20–35 OOD/shield/evaluation; machine time is not added to concurrent analysis."
+        }
+      },
+      "not_in_core_total": true,
+      "estimation_note": {
+        "ru": "Отдельная грубая оценка при готовом ядре и повторном использовании инфраструктуры. Это не перенесённая автоматически старая сумма, не обязательство и не срок полного освоения области; пересчитать при выборе проекта.",
+        "en": "A separate rough estimate assuming completed core and reused infrastructure. It is not an automatically transferred old total, a commitment or time to master the field; re-estimate when choosing a project."
+      }
+    },
+    {
+      "id": "G-MULTILANGUAGE",
+      "title": {
+        "ru": "Rust и сравнение реализаций",
+        "en": "Rust and implementation comparisons"
+      },
+      "outcome": {
+        "ru": "Вторая реализация одного реального компонента с корректной семантикой и измеренным поведением.",
+        "en": "A second implementation of one real component with matching semantics and measured behaviour."
+      },
+      "prerequisites": [
+        "M01",
+        "M06"
+      ],
+      "original_refs": [
+        "M01 R1–R4",
+        "M01 comparative measurements",
+        "M13 PIL extensions"
+      ],
+      "example_project": {
+        "ru": "Перенести decoder/MCU-компонент на Rust, проверить одинаковые журналы и свойства владения.",
+        "en": "Port a decoder/MCU component to Rust and check shared logs and ownership properties."
+      },
+      "approx_extra_hours_range": [
+        20,
+        40
+      ],
+      "deferred_work": {
+        "ru": "Rust CLI, второй parser, расширенные sanitizer/concurrency и comparative benchmarks.",
+        "en": "Rust CLI, second parser, extended sanitizer/concurrency and comparative benchmarks."
+      },
+      "hours_note": {
+        "ru": "Дополнительная работа поверх core, с переиспользованием среды, данных, интерфейсов и испытательных инструментов. Диапазон ориентировочный; независимые ветки не являются новым обязательным календарём.",
+        "en": "Additional work after core, reusing environment, data, interfaces and test tools. This is an approximate range; independent branches are not a new mandatory calendar."
+      },
+      "range_scope": {
+        "ru": "Диапазон относится к одному выбранному примеру в ветке, а не ко всем исходным упражнениям сразу. Полный объём уточняется при выборе направления.",
+        "en": "The range covers one selected example in the branch, not every original exercise at once. Re-estimate full scope when choosing a direction."
+      }
+    },
+    {
+      "id": "G-ROS-PERFORMANCE",
+      "title": {
+        "ru": "ROS middleware и производительность",
+        "en": "ROS middleware and performance"
+      },
+      "outcome": {
+        "ru": "Объяснённые задержки для выбранных executors/RMW/composition на одной нагрузке.",
+        "en": "Explained latency for selected executors/RMW/composition under a shared workload."
+      },
+      "prerequisites": [
+        "M12B"
+      ],
+      "original_refs": [
+        "M12 Tasks3–4,8",
+        "M12 F1–F3"
+      ],
+      "example_project": {
+        "ru": "Сравнить callback groups, отдельные процессы и composition; измерить overhead и replay.",
+        "en": "Compare callback groups, separate processes and composition; measure overhead and replay."
+      },
+      "approx_extra_hours_range": [
+        30,
+        55
+      ],
+      "deferred_work": {
+        "ru": "Полная матрица QoS, zero-copy/copy count, tracing, несколько архитектур исполнения.",
+        "en": "Full QoS matrix, zero-copy/copy count, tracing and multiple executor architectures."
+      },
+      "hours_note": {
+        "ru": "Дополнительная работа поверх core, с переиспользованием среды, данных, интерфейсов и испытательных инструментов. Диапазон ориентировочный; независимые ветки не являются новым обязательным календарём.",
+        "en": "Additional work after core, reusing environment, data, interfaces and test tools. This is an approximate range; independent branches are not a new mandatory calendar."
+      },
+      "range_scope": {
+        "ru": "Диапазон относится к одному выбранному примеру в ветке, а не ко всем исходным упражнениям сразу. Полный объём уточняется при выборе направления.",
+        "en": "The range covers one selected example in the branch, not every original exercise at once. Re-estimate full scope when choosing a direction."
+      }
+    },
+    {
+      "id": "G-SIM-FIDELITY",
+      "title": {
+        "ru": "Углублённый digital twin",
+        "en": "Deeper digital-twin validation"
+      },
+      "outcome": {
+        "ru": "Модель объясняет выбранный физический эффект и имеет проверенную область применимости.",
+        "en": "A model explains a selected physical effect and has a verified applicability range."
+      },
+      "prerequisites": [
+        "M13",
+        "M19"
+      ],
+      "original_refs": [
+        "M13 Tasks1–8",
+        "M13 F1–F6"
+      ],
+      "example_project": {
+        "ru": "Исследовать один тип контакта или actuator lag на нескольких шагах/движках и сверить с отдельными измерениями.",
+        "en": "Investigate one contact or actuator-lag effect across steps/engines and compare with separate measurements."
+      },
+      "approx_extra_hours_range": [
+        25,
+        50
+      ],
+      "deferred_work": {
+        "ru": "Расширенные PIL/platform comparisons, коллекция sensor worlds, второй движок и полная campaign fidelity.",
+        "en": "Extended PIL/platform comparisons, sensor-world collection, second engine and full fidelity campaign."
+      },
+      "hours_note": {
+        "ru": "Дополнительная работа поверх core, с переиспользованием среды, данных, интерфейсов и испытательных инструментов. Диапазон ориентировочный; независимые ветки не являются новым обязательным календарём.",
+        "en": "Additional work after core, reusing environment, data, interfaces and test tools. This is an approximate range; independent branches are not a new mandatory calendar."
+      },
+      "range_scope": {
+        "ru": "Диапазон относится к одному выбранному примеру в ветке, а не ко всем исходным упражнениям сразу. Полный объём уточняется при выборе направления.",
+        "en": "The range covers one selected example in the branch, not every original exercise at once. Re-estimate full scope when choosing a direction."
+      }
+    },
+    {
+      "id": "G-ADV-VISION",
+      "title": {
+        "ru": "3D-зрение и обучаемое восприятие",
+        "en": "3D vision and learned perception"
+      },
+      "outcome": {
+        "ru": "Один расширенный perception pipeline сравнен с core-baseline на независимых сценах.",
+        "en": "One extended perception pipeline compared with the core baseline on independent scenes."
+      },
+      "prerequisites": [
+        "M14",
+        "M18"
+      ],
+      "original_refs": [
+        "M14 features/tracking",
+        "M14 point clouds/ICP",
+        "M14 CNN/transfer and 60–100 frames"
+      ],
+      "example_project": {
+        "ru": "Добавить RGB-D/ICP или transfer-learning detection для предметов с меняющейся позой; выбранный вариант, затем следующая итерация.",
+        "en": "Add RGB-D/ICP or transfer-learning detection for objects with varying poses; choose one first, then iterate."
+      },
+      "approx_extra_hours_range": [
+        50,
+        85
+      ],
+      "deferred_work": {
+        "ru": "ICP, облака/height grid, несколько trackers, CNN/transfer и расширенные визуальные отказы.",
+        "en": "ICP, clouds/height grids, multiple trackers, CNN/transfer and extended visual faults."
+      },
+      "hours_note": {
+        "ru": "Дополнительная работа поверх core, с переиспользованием среды, данных, интерфейсов и испытательных инструментов. Диапазон ориентировочный; независимые ветки не являются новым обязательным календарём.",
+        "en": "Additional work after core, reusing environment, data, interfaces and test tools. This is an approximate range; independent branches are not a new mandatory calendar."
+      },
+      "range_scope": {
+        "ru": "Диапазон относится к одному выбранному примеру в ветке, а не ко всем исходным упражнениям сразу. Полный объём уточняется при выборе направления.",
+        "en": "The range covers one selected example in the branch, not every original exercise at once. Re-estimate full scope when choosing a direction."
+      }
+    },
+    {
+      "id": "G-CONTACT-ML",
+      "title": {
+        "ru": "ML для контакта и состояния hexapod",
+        "en": "ML for hexapod contact and state"
+      },
+      "outcome": {
+        "ru": "Классификатор контакта проверен против простого правила и независимой разметки эпизодов.",
+        "en": "Contact classifier evaluated against a simple rule and independently labelled episodes."
+      },
+      "prerequisites": [
+        "M18",
+        "M13",
+        "M19"
+      ],
+      "original_refs": [
+        "M18 contact contract/episode split",
+        "M18 classifier/calibration/OOD"
+      ],
+      "example_project": {
+        "ru": "Перенести уже изученный training/evaluation процесс на контакт ноги; собрать новые корректно размеченные эпизоды.",
+        "en": "Apply the learned training/evaluation process to foot contact; collect new correctly labelled episodes."
+      },
+      "approx_extra_hours_range": [
+        35,
+        65
+      ],
+      "deferred_work": {
+        "ru": "Отдельный исходный contact-ML эксперимент; общие autograd, метрики и deployment не учатся второй раз.",
+        "en": "The separate original contact-ML experiment; do not relearn shared autograd, metrics or deployment."
+      },
+      "hours_note": {
+        "ru": "Дополнительная работа поверх core, с переиспользованием среды, данных, интерфейсов и испытательных инструментов. Диапазон ориентировочный; независимые ветки не являются новым обязательным календарём.",
+        "en": "Additional work after core, reusing environment, data, interfaces and test tools. This is an approximate range; independent branches are not a new mandatory calendar."
+      },
+      "range_scope": {
+        "ru": "Диапазон относится к одному выбранному примеру в ветке, а не ко всем исходным упражнениям сразу. Полный объём уточняется при выборе направления.",
+        "en": "The range covers one selected example in the branch, not every original exercise at once. Re-estimate full scope when choosing a direction."
+      }
+    },
+    {
+      "id": "G-SLAM",
+      "title": {
+        "ru": "Локализация и SLAM",
+        "en": "Localization and SLAM"
+      },
+      "outcome": {
+        "ru": "Карта и локализация с количественными ошибками, потерей позиции и документированными условиями.",
+        "en": "Mapping/localization with quantitative errors, loss handling and documented conditions."
+      },
+      "prerequisites": [
+        "M14",
+        "M12B",
+        "M19"
+      ],
+      "original_refs": [
+        "M15 Tasks1–8",
+        "M15 F1–F8"
+      ],
+      "example_project": {
+        "ru": "Одна indoor-трасса: odometry, occupancy grid, slam_toolbox/AMCL; затем pose graph или RGB-D как выбранное расширение.",
+        "en": "One indoor route: odometry, occupancy grid, slam_toolbox/AMCL; then pose graph or RGB-D as a selected extension."
+      },
+      "approx_extra_hours_range": [
+        80,
+        120
+      ],
+      "deferred_work": {
+        "ru": "M15 целиком: contact/odometry EKF, scan matching, occupancy, pose graph, RGB-D, ATE/RPE и lost-localization.",
+        "en": "All of M15: contact/odometry EKF, scan matching, occupancy, pose graph, RGB-D, ATE/RPE and lost localization."
+      },
+      "hours_note": {
+        "ru": "Дополнительная работа поверх core, с переиспользованием среды, данных, интерфейсов и испытательных инструментов. Диапазон ориентировочный; независимые ветки не являются новым обязательным календарём.",
+        "en": "Additional work after core, reusing environment, data, interfaces and test tools. This is an approximate range; independent branches are not a new mandatory calendar."
+      },
+      "range_scope": {
+        "ru": "Диапазон относится к одному выбранному примеру в ветке, а не ко всем исходным упражнениям сразу. Полный объём уточняется при выборе направления.",
+        "en": "The range covers one selected example in the branch, not every original exercise at once. Re-estimate full scope when choosing a direction."
+      }
+    },
+    {
+      "id": "G-NAVIGATION",
+      "title": {
+        "ru": "Автономная навигация и сравнение planners",
+        "en": "Autonomous navigation and planner comparisons"
+      },
+      "outcome": {
+        "ru": "Робот выполняет ограниченный маршрут с понятными replanning/cancel/recovery условиями.",
+        "en": "A robot follows a bounded route with explicit replanning/cancel/recovery conditions."
+      },
+      "prerequisites": [
+        "M16",
+        "G-SLAM"
+      ],
+      "original_refs": [
+        "M16 Dijkstra/A*",
+        "M16 OMPL benchmark",
+        "M16 BT/Nav2"
+      ],
+      "example_project": {
+        "ru": "Nav2 на известной карте с изменённым препятствием; сравнить два planners по общей метрике.",
+        "en": "Nav2 on a known map with a changed obstacle; compare two planners under a common metric."
+      },
+      "approx_extra_hours_range": [
+        50,
+        85
+      ],
+      "deferred_work": {
+        "ru": "A*/Dijkstra, costmap/footprint, полноценный Nav2/BT и расширенный OMPL benchmark.",
+        "en": "A*/Dijkstra, costmap/footprint, full Nav2/BT and extended OMPL benchmarking."
+      },
+      "hours_note": {
+        "ru": "Дополнительная работа поверх core, с переиспользованием среды, данных, интерфейсов и испытательных инструментов. Диапазон ориентировочный; независимые ветки не являются новым обязательным календарём.",
+        "en": "Additional work after core, reusing environment, data, interfaces and test tools. This is an approximate range; independent branches are not a new mandatory calendar."
+      },
+      "range_scope": {
+        "ru": "Диапазон относится к одному выбранному примеру в ветке, а не ко всем исходным упражнениям сразу. Полный объём уточняется при выборе направления.",
+        "en": "The range covers one selected example in the branch, not every original exercise at once. Re-estimate full scope when choosing a direction."
+      }
+    },
+    {
+      "id": "G-SECURITY-HRI",
+      "title": {
+        "ru": "Защита, HRI и промышленная интеграция",
+        "en": "Security, HRI and industrial integration"
+      },
+      "outcome": {
+        "ru": "Один проверенный сценарий защиты/взаимодействия или PLC-интерфейс с явной ответственностью.",
+        "en": "One verified security/interaction scenario or PLC interface with explicit responsibility."
+      },
+      "prerequisites": [
+        "M17",
+        "M12B"
+      ],
+      "original_refs": [
+        "M17 HRI walkthrough",
+        "M17 SROS2/threats",
+        "M17 PLC/ethics/data/team review"
+      ],
+      "example_project": {
+        "ru": "Ввести ROS security policies либо PLC handshake; провести ограниченное исследование интерфейса с подготовленным протоколом.",
+        "en": "Introduce ROS security policies or a PLC handshake; run a bounded interface study under a prepared protocol."
+      },
+      "approx_extra_hours_range": [
+        35,
+        60
+      ],
+      "deferred_work": {
+        "ru": "Глубокие HRI, SROS2, data/privacy analysis, PLC handshake и отдельная командная review-процедура.",
+        "en": "Deeper HRI, SROS2, data/privacy analysis, PLC handshake and a separate team-review process."
+      },
+      "hours_note": {
+        "ru": "Дополнительная работа поверх core, с переиспользованием среды, данных, интерфейсов и испытательных инструментов. Диапазон ориентировочный; независимые ветки не являются новым обязательным календарём.",
+        "en": "Additional work after core, reusing environment, data, interfaces and test tools. This is an approximate range; independent branches are not a new mandatory calendar."
+      },
+      "range_scope": {
+        "ru": "Диапазон относится к одному выбранному примеру в ветке, а не ко всем исходным упражнениям сразу. Полный объём уточняется при выборе направления.",
+        "en": "The range covers one selected example in the branch, not every original exercise at once. Re-estimate full scope when choosing a direction."
+      }
+    },
+    {
+      "id": "G-ENGINEERING-EVIDENCE",
+      "title": {
+        "ru": "Расширенная верификация и инженерная коммуникация",
+        "en": "Extended verification and engineering communication"
+      },
+      "outcome": {
+        "ru": "Более сильное доказательство выбранного свойства, не повторный выпуск всех файлов.",
+        "en": "Stronger evidence for a selected property rather than another release of all files."
+      },
+      "prerequisites": [
+        "M24"
+      ],
+      "original_refs": [
+        "M24 technical report/defence",
+        "M24 external feedback",
+        "M24 expanded trial campaign"
+      ],
+      "example_project": {
+        "ru": "Углубить один reliability/traceability вопрос, добавить независимый review и воспроизводимую статью.",
+        "en": "Deepen one reliability/traceability question, add independent review and a reproducible article."
+      },
+      "approx_extra_hours_range": [
+        20,
+        40
+      ],
+      "deferred_work": {
+        "ru": "Большой отчёт, расширенная независимая проверка и новая серия испытаний только по новой гипотезе.",
+        "en": "Long report, extended independent review and new trial series only for a new hypothesis."
+      },
+      "hours_note": {
+        "ru": "Дополнительная работа поверх core, с переиспользованием среды, данных, интерфейсов и испытательных инструментов. Диапазон ориентировочный; независимые ветки не являются новым обязательным календарём.",
+        "en": "Additional work after core, reusing environment, data, interfaces and test tools. This is an approximate range; independent branches are not a new mandatory calendar."
+      },
+      "range_scope": {
+        "ru": "Диапазон относится к одному выбранному примеру в ветке, а не ко всем исходным упражнениям сразу. Полный объём уточняется при выборе направления.",
+        "en": "The range covers one selected example in the branch, not every original exercise at once. Re-estimate full scope when choosing a direction."
+      }
+    },
+    {
+      "id": "D-H04-SPECTRUM",
+      "from": "M04.E4",
+      "title": {
+        "ru": "Расширенный спектральный анализ сигналов",
+        "en": "Extended signal spectrum analysis"
+      },
+      "learn": 6,
+      "build": 3,
+      "verify": 1,
+      "hours": 10,
+      "result": {
+        "ru": "Окна/утечка/PSD, Welch, freqz/notch и полная частотная сравнительная лабораторная исходного M04.",
+        "en": "Window/leakage/PSD, Welch, freqz/notch and the full original M04 frequency-comparison laboratory."
+      },
+      "prerequisites": [
+        "M04"
+      ]
+    },
+    {
+      "id": "D-H05-FEA",
+      "from": "M05.C5",
+      "title": {
+        "ru": "FEA и сходимость по трём сеткам",
+        "en": "FEA and three-mesh convergence"
+      },
+      "learn": 8,
+      "build": 5,
+      "verify": 2,
+      "hours": 15,
+      "result": {
+        "ru": "Ручной расчёт→FEA балки→реальное звено, варианты закрепления и три сетки; границы изотропной FDM-модели.",
+        "en": "Hand calculation→beam FEA→actual link, boundary-condition variants and three meshes; limits of an isotropic FDM model."
+      },
+      "prerequisites": [
+        "M05"
+      ]
+    },
+    {
+      "id": "D-H07-IDENTIFICATION",
+      "from": "M07.A4",
+      "title": {
+        "ru": "Параметрическая идентификация привода",
+        "en": "Parametric actuator identification"
+      },
+      "learn": 6,
+      "build": 10,
+      "verify": 4,
+      "hours": 20,
+      "result": {
+        "ru": "Ограниченный chirp, модель трения/инерции/задержки, независимые validation-ряды и F9/F10 с границами экстраполяции.",
+        "en": "Bounded chirp, friction/inertia/delay model, independent validation records and F9/F10 extrapolation limits."
+      },
+      "prerequisites": [
+        "M07",
+        "P_SYSTEM_ID"
+      ]
+    }
+  ],
+  "not_in_core_hours": true
+}

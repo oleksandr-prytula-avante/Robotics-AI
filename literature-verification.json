@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "version": "4.3",
+  "curated_reference_entries": 41,
+  "audited_findings": 39,
+  "stage_routes": 30,
+  "monthly_reading_occurrences": 42,
+  "existing_learning_hours": 628,
+  "added_hours": 0,
+  "calendar_and_task_content_identical_to_v42_except_version": true,
+  "all_routes_bilingual_inline": true,
+  "all_reference_ids_unique": true,
+  "monthly_and_curriculum_routes_match_catalog": true,
+  "scope": "Static consistency and primary-source bibliography research; not a comprehensive network test of all original external URLs. No visual browser test."
+}

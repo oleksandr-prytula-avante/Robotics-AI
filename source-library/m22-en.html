@@ -1,0 +1,1030 @@
+<!doctype html>
+<html lang="ru" data-ru-title="M22 · Физическая промежуточная четырёхногая конфигурация · EN — Robotics &amp; AI" data-en-title="M22 · Physical intermediate four-leg configuration · EN — Robotics &amp; AI">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>M22 · Физическая промежуточная четырёхногая конфигурация · EN — Robotics &amp; AI</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body class="source-reader">
+<a class="skip-link" href="#main"><span lang="ru">К тексту источника</span><span lang="en">Skip to source text</span></a>
+<header class="topbar"><a class="brand" href="../index.html">Robotics &amp; AI</a><nav><a href="../library.html"><span lang="ru">Библиотека источников</span><span lang="en">Source library</span></a><a href="../index.html"><span lang="ru">Новый план</span><span lang="en">Revised plan</span></a></nav><div class="lang-switch" aria-label="Language"><button type="button" data-lang="ru">RU</button><button type="button" data-lang="en">EN</button></div></header>
+<main class="wrap" id="main">
+<p class="eyebrow"><span lang="ru">Архив · исходный документ</span><span lang="en">Archive · original document</span></p>
+<h1><span lang="ru">M22 · Физическая промежуточная четырёхногая конфигурация · EN</span><span lang="en">M22 · Physical intermediate four-leg configuration · EN</span></h1>
+<div class="notice source-notice"><strong><span lang="ru">Архивные даты и часы не действуют.</span><span lang="en">Original dates and hours are superseded.</span></strong><p><span lang="ru">Это полный текст исходного документа. Старый календарь, отпуска и бюджеты часов сохранены для проверки исходной информации. Рабочее расписание находится в новом плане: 50 часов в неделю, без отпусков.</span><span lang="en">This is the complete extracted text of the original document. Its historical calendar, vacations and hour budgets are preserved for source verification. Use the revised plan for the current schedule: 50 hours per week, with no vacations.</span></p></div>
+<p><span lang="ru">Язык исходника: английский.</span><span lang="en">Source language: English.</span> <span lang="ru">Переключатель RU/EN меняет язык интерфейса; исходный текст не переводится автоматически.</span><span lang="en">The RU/EN switch changes the interface; original source text is not automatically translated.</span></p>
+<p class="source-actions"><a href="../originals/detailed/English/Monthly/M22_Robotics_Plan_EN.pdf"><span lang="ru">Открыть исходный PDF без изменений</span><span lang="en">Open the unchanged original PDF</span></a> · <a href="m22-ru.html"><span lang="ru">Открыть другую языковую редакцию</span><span lang="en">Open the other language edition</span></a></p>
+<p><span lang="ru">Страниц</span><span lang="en">Pages</span>: 15 · <span lang="ru">Ссылок из PDF</span><span lang="en">PDF links</span>: 18</p>
+<details class="source-page source-toc"><summary><span lang="ru">Перейти к странице</span><span lang="en">Jump to a page</span></summary><nav class="page-links" aria-label="Pages"><a href="#page-1">1</a> <a href="#page-2">2</a> <a href="#page-3">3</a> <a href="#page-4">4</a> <a href="#page-5">5</a> <a href="#page-6">6</a> <a href="#page-7">7</a> <a href="#page-8">8</a> <a href="#page-9">9</a> <a href="#page-10">10</a> <a href="#page-11">11</a> <a href="#page-12">12</a> <a href="#page-13">13</a> <a href="#page-14">14</a> <a href="#page-15">15</a> </nav></details>
+<p class="source-controls"><button type="button" id="expand-pages"><span lang="ru">Развернуть все страницы</span><span lang="en">Expand all pages</span></button> <button type="button" id="collapse-pages"><span lang="ru">Свернуть все страницы</span><span lang="en">Collapse all pages</span></button></p>
+<p><span lang="ru">Извлечение PDF может сохранять переносы строк и наложенные редакции. Формулы, иллюстрации и исходное оформление доступны в неизменённом PDF. Все встроенные ссылки вынесены под текст соответствующей страницы.</span><span lang="en">PDF extraction may retain line breaks and overlapping revisions. Equations, illustrations and original formatting remain available in the unchanged PDF. Every embedded link is listed below its corresponding page.</span></p>
+<section class="source-pages" aria-label="Original document pages">
+<details class="source-page" id="page-1"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 1 · Quadruped robot: from components to a</summary><pre class="source-text">ROBOTICS AND AI  /  M22  /  DETAILED STUDY PLAN
+
+Quadruped robot: from components to a
+controlled system
+
+M22 • 03 Sep 2028 - 01 Oct 2028 • 75 hours
+
+This month&#x27;s deliverable
+Assemble and commission a quadruped with 12 degrees of freedom: four legs, each with three
+actuated joints. The deliverable is an assembled robot ready for final acceptance: a specific
+hardware build, reproducible configuration, calibrations and test results demonstrating at least 60
+seconds of standing and a slow gait on a prepared level floor. This stage verifies the architecture
+before the six-legged version, which remains the programme&#x27;s final goal.
+The software model, mechanical assembly and visualiser must describe the same physical unit. For
+every actuator, record its physical location, identifier, positive movement direction, zero, operating
+limits and firmware version. Save raw measurements and conditions for every trial: battery
+position, mass, surface, IMU mounting, communication frequencies and initial temperature.
+
+What must be ready at entry
+Prepare the outputs of earlier modules: a tested leg and actuator rig, CAD and drawings, power
+diagram, URDF, standing and gait controller, state estimator, diagnostics and failure scenarios. The
+entry check is to run a saved simulation test and explain the origin of every actuator command. If
+an axis sign or encoder conversion is unclear, resolve it on one leg first.
+List the components actually available and the missing parts. Do not schedule a full-machine trial
+before the necessary support, wiring and measurement equipment are available. This month&#x27;s
+main tools are the existing C++ and ROS 2 software, Python for analysis, a multimeter and suitable
+current and temperature instruments; choose ranges for your system. There is no need to
+introduce a new programming platform at this stage.
+
+Scope and connection to the hand
+M22 covers assembly, measurement, calibration and transfer of control to real hardware. Running,
+jumping, difficult terrain and neural-network control are outside the minimum deliverable. Actuator
+records, current monitoring, hardware motion stopping and calibration logs can be reused for the
+hand. The hand remains a separate device: successful robot standing does not verify it.
+Distinguish three evidence levels: simulation, a supported test rig, and the physical robot on the
+floor. A suspended test does not establish stable standing. If a hardware problem cannot be
+resolved this month, save a release candidate with its blockers and continue the repair. Progression
+to 18 actuators requires the M23 entry check.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M22 • 03 Sep 2028 - 01 Oct 2028 • 75 hours                                                                        1 / 15
+
+</pre></details><details class="source-page" id="page-2"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 2 · Organising 75 hours and the workspace</summary><pre class="source-text">ROBOTICS AND AI  /  M22  /  DETAILED STUDY PLAN
+
+Organising 75 hours and the workspace
+
+Four sequential blocks
+Hours 1-20: 10 hours studying construction, power and commissioning procedures; 10 hours of
+assembly, inspection and initial power-up. Deliverables: the unit record and power-verification
+protocol. 21-40: 10 hours on calibration and communication; 10 hours measuring one actuator,
+one leg and then the remaining legs. Deliverables: a machine-readable calibration file and actuator
+mapping table.
+41-60: 10 hours analysing HIL, contact, IMU and delays; 10 hours comparing the model with real
+measurements and rerunning the controller. 61-75: 5 hours analysing standing and the test
+programme; 10 hours practising standing, slow stepping, controlled stopping and preparing the
+candidate. Total: 35 hours of theory and analysis and 40 of practice; protocol preparation and data
+processing are included.
+
+Arranging sessions
+Organise each 10-hour analysis block into five 2-hour sessions: begin with a specific question, read
+the relevant section, calculate or inspect a log, then decide what to do on the rig. Split the final 5
+hours into 2 + 2 + 1. Each practice block comprises 10 study hours in the Sunday practical, with
+breaks and alternating assembly, measurement and analysis. Do not operate actuators
+continuously for 10 hours: use cooling time to process recordings.
+The dates on the first page are the calendar window from the original plan. A boundary date may
+belong to two modules; allocate available sessions without double-counting. Retain rest, holidays
+and separate integration G blocks from the overall plan. The hour numbering below specifies
+workload and order; it does not add evening sessions to the calendar.
+
+Rig organisation
+Separate the workspace into unpowered assembly, measurement and potential-motion areas.
+Prepare a stable support that holds the body when actuators are disabled, and provide access to
+the hardware E-stop. Before starting, specify the permitted motion and stopping condition. Do not
+use your hands to hold the legs or body as the primary motion restraint.
+Each attempt&#x27;s log contains run_id, author, Git commit identifier, CAD revision, configuration hash,
+initial conditions, expected behaviour and actual outcome. Record interventions separately:
+retightening fasteners, replacing a cable or moving the battery. A condition changed during a trial
+defines a new experiment. Record a missing measurement as no data, not zero current or zero
+error.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M22 • 03 Sep 2028 - 01 Oct 2028 • 75 hours                                                                         2 / 15
+
+</pre></details><details class="source-page" id="page-3"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 3 · Mechanics, mass and load distribution</summary><pre class="source-text">ROBOTICS AND AI  /  M22  /  DETAILED STUDY PLAN
+
+Mechanics, mass and load distribution
+
+What to study
+Identify the connections that transmit load from body to foot: frame, hip-actuator mounts, links,
+shafts, bearings and threaded inserts. Read the insert and fastener manufacturers&#x27; guidance for
+the material used, together with the test results for your printed parts. Check print orientation,
+local cracks and deformation after tightening. No universal tightening torque applies to every
+printed connection.
+Review centre of mass: r_COM = Σ(m_i r_i) / Σm_i, with masses in kilograms, coordinates in metres
+and all r_i expressed in one frame. CAD provides an initial estimate, but measure the mass of
+cables, battery and actual actuators. For quasi-static standing, the centre-of-mass projection and
+actual contacts help estimate support margin; they do not prove dynamic stability.
+
+Task 1. Record the actual assembly
+Inputs are CAD, the parts list, the assembled body and four legs with actuator power disconnected.
+1) Assign leg names LF, RF, LR, RR and mark body axes. 2) Weigh assemblies and the complete
+unit in one configuration. 3) Compare measured mass with the assembly sum and CAD. 4) Inspect
+every loaded connection, insert and clearance throughout the admissible manual movement range,
+where the actuator permits manual movement.
+Save assembly_manifest.csv, photographs of connections and a discrepancy list. Check that every
+loaded fastener and insert has an inspection status, and explain the difference between total and
+summed masses considering scale resolution. Boundary case: a cable is trapped only with the leg
+bent. Record the collision configuration, reroute the cable and repeat the complete inspection.
+
+Task 2. Check centre of mass and deflection
+Use supports or scales with suitable ranges and known contact coordinates. Measure reactions in a
+repeatable static configuration and estimate horizontal centre-of-mass position from moment
+balance. Repeat after moving the battery between two intended locations. Do not infer
+centre-of-mass height from this horizontal-plane measurement; use a model estimate and state its
+uncertainty.
+Save mass_properties.md with calculations, battery positions and a frame-deflection estimate from
+markers or a measuring instrument. Check that centre-of-mass shift agrees with battery movement
+and the reaction sum agrees with weight. If a support carries no load, do not count it as a
+confirmed contact. Reposition supports and repeat the measurement, then update model inertial
+parameters only from established quantities.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M22 • 03 Sep 2028 - 01 Oct 2028 • 75 hours                                                                        3 / 15
+
+</pre></details><details class="source-page" id="page-4"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 4 · Power, cable harnesses and independent</summary><pre class="source-text">ROBOTICS AND AI  /  M22  /  DETAILED STUDY PLAN
+
+Power, cable harnesses and independent
+motion stopping
+
+What to review before power-up
+Trace the power circuit from the battery or supply through protection, switching and distribution to
+each actuator. Identify computer and sensor power, common grounds, signal interfaces, cable
+strain relief and connectors separately. For each branch, list wire specifications, connector ratings,
+allowable conditions, protective device and its time-current characteristic. Comparing a single
+current rating is insufficient.
+Distinguish controller current limiting, wiring protection, BMS and emergency energy removal. They
+serve different purposes and do not replace one another. If the circuit uses a contactor, check its
+suitability for DC, voltage, load characteristics and coil-transient suppression against component
+documentation. Develop a procedure for the selected circuit here; do not assign generic fuse
+values.
+
+Task 3. Wiring checks and staged power-up
+Inputs are the de-energised assembly, circuit diagram and component instructions. 1) Check
+continuity of intended connections, absence of unwanted connections between power rails, and
+connector polarity. 2) Check harness restraint throughout the leg&#x27;s permitted range. 3) Power the
+low-power section and measure voltages. 4) Connect power branches using the approved
+procedure, beginning with one supported actuator; do not enable motion yet.
+Save powerup_checklist.csv and an oscilloscope trace or log of available voltage and current
+measurements. Check that measured polarity and ranges match specifications; explain unexpected
+consumption before the next stage. Boundary case: computer supply voltage sags when an
+actuator is powered. Return to disconnected actuator power and check inrush current, DC-DC
+conversion, ground and connections; increasing a software timeout does not repair a power fault.
+
+Task 4. Demonstrate E-stop operation
+Define the physically achievable state after an emergency stop: support by an independent
+structure, removal of actuator energy and prevention of automatic reactivation. On a protected rig,
+test the circuit with the programme running and with the control process stopped. Record the
+button-press instant and an independent indication that force or torque application has ceased,
+using a circuit or actuator measurement appropriate to the design.
+Save estop_test.md with the circuit, measured response time and residual-motion description.
+Derive the timing criterion from admissible displacement and mechanism characteristics. Releasing
+the pressed button alone must not resume an earlier motion command: test recovery separately. If
+torque removal makes the robot fall, test with support; improve how the safe state is achieved
+instead of calling free fall a successful stop.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M22 • 03 Sep 2028 - 01 Oct 2028 • 75 hours                                                                       4 / 15
+
+</pre></details><details class="source-page" id="page-5"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 5 · Calibrating 12 actuators and reliable</summary><pre class="source-text">ROBOTICS AND AI  /  M22  /  DETAILED STUDY PLAN
+
+Calibrating 12 actuators and reliable
+communication
+
+The single-joint model
+For each joint, record q = s · k · (n − n0), where q is angle in radians, n is the encoder count, n0 is
+the calibration zero, s is +1 or −1, and k is radians per count including the transmission ratio. The
+formula applies only to your encoder mode; count wraparound and multiple turns need separate
+rules. Do not apply another actuator&#x27;s conversion factor merely because its connector looks similar.
+Separate the mechanism&#x27;s physical limit from the software operating boundary. The latter must
+account for calibration error, backlash, deformation, stopping distance and cable clearance. A limit
+recorded in the model still requires verification in the command path. For current and temperature,
+state measurement source, scale, offset and interpretation: built-in housing or board temperature
+may differ from winding temperature.
+
+Task 5. Identifiers, signs and zeros
+Connect one actuator or one leg with support that constrains unexpected motion. 1) Read ID,
+model and firmware and match them to the physical label. 2) In the permitted small region,
+command a known increment and compare motion with the positive URDF axis. 3) Establish a
+repeatable mechanical reference pose and calculate n0. 4) Repeat approaches to the reference
+from both directions, then apply the procedure to the remaining joints.
+Save calibration.yaml and a table of repeats. Check that all 12 IDs are unique, commands reach the
+observed joint, and residual error and backlash measured in radians remain within a tolerance
+justified in advance. Boundary cases are a mirrored leg and a swapped cable. The script must
+detect disagreement with the hardware map; bus response order alone does not identify which
+actuator to enable.
+
+Task 6. Frequency, errors and bus utilisation
+First calculate communication time from byte count, bit rate and framing for the actual interface;
+add response and direction-switching delays. Then measure the real cycle for 1, 3 and 12 devices
+with the same command frequency and telemetry content. For DYNAMIXEL, study Sync Read/Write
+and Status Packet; for another bus, use its primary specification. Do not count a missing reply as
+packet loss when the protocol specifies no reply to that command.
+Save bus_budget.csv, the cycle-duration distribution and counters for timeouts, CRC errors and
+retries. Calculate margin to the communication deadline using a measured adverse case and list
+untested modes separately. In the driver simulator, suppress one reply: only that joint&#x27;s data must
+become stale, and an old sample must not be republished as new.
+To calibrate current, compare the built-in channel with an independent measurement of the same
+physical quantity in several permitted modes; record scale, offset and error. Check temperature
+against a reference at a comparable location and in steady conditions. A board sensor cannot be
+calibrated as a winding sensor by simple subtraction. If the register cannot be corrected, save the
+verified conversion model and its limitations in the actuator record.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M22 • 03 Sep 2028 - 01 Oct 2028 • 75 hours                                                                        5 / 15
+
+</pre></details><details class="source-page" id="page-6"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 6 · HIL and comparison with real measurements</summary><pre class="source-text">ROBOTICS AND AI  /  M22  /  DETAILED STUDY PLAN
+
+HIL and comparison with real measurements
+
+What HIL means here
+HIL is a test in which part of the real computing or hardware chain operates with a simulated plant.
+Draw the boundary: identify which process, controller, driver, bus and sensor are real and which
+are replaced. If control hardware is absent, call processing a file on a laptop replay. Match interface
+versions, units and timestamps; the HIL label alone does not make a test more accurate.
+Tabulate discrepancies between model and robot: mass, link lengths, zeros, command delay,
+filters, friction, backlash, stiffness and foot contact. For each, specify its expected effect and
+measurement method. Correct geometry and signs first, then timing and dynamics. Simultaneously
+tuning many coefficients hides the root cause and does not produce reproducible improvement.
+
+Task 7. Time alignment and control verification
+Take a low-amplitude target sequence already verified on the leg and one log of its physical
+response. Record command-generation and transmission times, data-reception time and
+measurement timestamp if available. Establish the relationship between clocks first; subtracting
+timestamps from unsynchronised devices does not measure delay. Plot q_cmd, q_meas and
+interface events together, estimate the shift, then replay the same input in the model.
+Save fidelity_gaps.csv and a before-and-after report for one justified parameter correction. Check
+that input, initial pose and frequency are identical; calculate RMSE on a common time grid and
+label it in radians. Boundary case: several samples are lost. Mark the gap and do not present
+interpolated values as complete measurements. Check controller changes by reprocessing the
+recording dataset before restoring actuator power.
+
+Task 8. IMU and foot contact
+With the body secured, check physical axes against frame_id, then test known static tilts using an
+external reference. Verify roll and pitch signs and IMU orientation relative to the body. Under
+translational acceleration, do not treat tilt calculated from the accelerometer alone as ground truth.
+For each foot, compare detected contact against observed touching and unloading, using the
+chosen sensor or an indirect estimate with stated uncertainty.
+Save imu_contact_validation.md: reference, reference uncertainty, orientation errors and a table of
+correct and incorrect contact classifications. Control case: a leg touches the floor but slips; contact
+exists, but there is no stationary support. Remove one contact from estimator input and check the
+degradation flag. Accompany simulation friction tuning with a surface description; one fitted value
+does not characterise all real terrain.
+Retain the M19 classical algorithm and M20 force allocator; check QP failure and timeout. Before
+operation, establish whether the actuator supports the required torque or current mode. Jᵀf is not a
+ready-to-use position command: a position interface requires a justified inner and outer
+control-loop design. Keep the M21 policy disabled during initial integration.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M22 • 03 Sep 2028 - 01 Oct 2028 • 75 hours                                                                         6 / 15
+
+</pre></details><details class="source-page" id="page-7"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 7 · Integrated laboratory: standing and the first</summary><pre class="source-text">ROBOTICS AND AI  /  M22  /  DETAILED STUDY PLAN
+
+Integrated laboratory: standing and the first
+step
+
+Entry conditions and protocol
+The assembly may enter this laboratory after tasks 1-8: known calibrations, verified independent
+stopping, working diagnostics, and a recording and time-alignment procedure consistent with
+measurements. Prepare a level area, foot and body markers, a backup support that carries no
+weight during the qualifying stand, a way to observe displacement, and all measurable limits.
+Record initial temperature, charge, voltage and battery configuration.
+Before starting, specify operating boundaries: body-position region, joint limits, allowable data age,
+current, temperature and trial-termination conditions. For every threshold, provide its calculation or
+specification, unit and response. Criteria must use measurable quantities rather than descriptions
+such as not very hot or a plot colour. Removing torque and controlled lowering are different
+actions, selected according to the stopping cause and mechanism capability.
+
+Task 9. Stand for at least 60 seconds
+1) On the support, verify coordinated movement of all four legs to the permitted starting pose. 2)
+Place feet on their marked locations and gradually transfer load to the robot using your procedure.
+3) Run a short trial and inspect currents and contact. 4) Only then run a continuous qualifying
+interval of at least 60 seconds. Record roll and pitch, body height and displacement where
+measurable, joint errors, currents, temperatures and events.
+Save stand_report.md, video showing the backup support and the raw log. Success means
+independent standing throughout the interval without crossing declared boundaries or hiding
+telemetry losses. Calculate mean and maximum absolute roll and pitch errors separately and state
+units explicitly. If the backup support carries weight or an operator supports the body, the attempt
+does not establish standing. Do not remove that moment from the evidence.
+
+Task 10. Slow gait and stopping
+After standing, perform a limited crawl sequence: transfer the load centre, lift one foot, move it and
+confirm touchdown. Begin with one cycle, then attempt a short marked route. Compare initial and
+final poses, completed steps and contact losses. A commanded stop must reach the previously
+described state; an emergency cause uses the independent stopping path.
+Save crawl_run and stop_run with video aligned to logs. Repeat a small, bounded change in tilt or
+load under identical conditions, first on the rig; derive method and amplitude from allowable loads
+instead of applying a hand strike. Check for recovery into the declared region within a measured
+time, or a timely stop. One successful traversal is a demonstration, not proof of reliability.
+Separately from the qualifying stand, command a small permitted sequence of body roll and pitch
+changes, save target and measurement, and calculate error and settling time. Set amplitude from
+available kinematics and loading. This tests command tracking as well as holding one pose; stop
+the experiment on joint saturation according to the adopted criterion.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M22 • 03 Sep 2028 - 01 Oct 2028 • 75 hours                                                                         7 / 15
+
+</pre></details><details class="source-page" id="page-8"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 8 · Failure tests and data validity</summary><pre class="source-text">ROBOTICS AND AI  /  M22  /  DETAILED STUDY PLAN
+
+Failure tests and data validity
+
+Six required tests
+T1 - incorrect ID or sign. Substitute a configuration in the test environment, then verify it by
+reading hardware on the rig with actuator power disconnected. Activation must be refused with the
+exact joint name. T2 - stale sample. Repeat the last value with its original timestamp in the driver
+simulator. The controller must distinguish a missing new measurement from a stationary joint.
+T3 - missing reply. Simulate one lost packet, then a sequence of losses; check counters and state
+transitions without an automatic hidden reset. T4 - command beyond the limit. Supply an
+inadmissible target only to the software path or HIL; verify rejection or documented clamping
+before writing to the actuator. This test does not require contact with the mechanical stop.
+T5 - emergency stop with a stalled programme. With the robot on a support, stop the control
+process and check the independent path for ending force or torque application. T6 - inconsistent
+contact. During replay, supply contact during swing or loss of expected support; the system must
+report degradation and enter the intended state. Save the input, expected event and observed
+sequence for every test.
+
+Heat, current and physical repeats
+Also test slowly rising temperature and current indication beyond the set threshold by substituting
+telemetry in HIL. This establishes response logic; a separate circuit-specific rig test establishes the
+protection&#x27;s physical ability to remove energy. Do not create a short circuit or overheat a motor to
+check a software flag. Load tests remain within the previously calculated range.
+State which current is measured: supply current, branch current, phase current or the actuator&#x27;s
+internal estimate. Quantities with different definitions cannot be summed without a model. For
+temperature, identify sensor location and sampling interval. Failure to record a peak with
+infrequent sampling does not prove there was no peak. Telemetry losses make the relevant metric
+incomplete.
+
+Documenting verification
+One test_matrix.csv row contains test ID, revision, evidence level, preconditions, stimulus,
+expected result, measured result, PASS/FAIL/INCOMPLETE and log link. Run required scenarios first
+in the simulator, then only those necessary and permissible on the rig. Do not reproduce physical
+faults by dangerously destroying components.
+Do not exclude a failed attempt from statistics without a reason defined before the trial. A startup
+failure caused by your programme is a result, not bad data. An external-instrument error may
+invalidate a trial, but retain the record. Fully analyse at least one real failure or deviation and its
+correction: symptom, hypothesis, check, change and repeat.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M22 • 03 Sep 2028 - 01 Oct 2028 • 75 hours                                                                          8 / 15
+
+</pre></details><details class="source-page" id="page-9"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 9 · The first 40 hours: detailed sequence</summary><pre class="source-text">ROBOTICS AND AI  /  M22  /  DETAILED STUDY PLAN
+
+The first 40 hours: detailed sequence
+
+Hours 1-10: five 2-hour analysis sessions
+1-2: reread the M22 objective, run the original algorithm in simulation or replay and inventory
+earlier-module outputs. 3-4: trace load transmission in CAD and list questionable connections and
+task 1 measurements. 5-6: calculate centre of mass and plan task 2 reaction measurements; state
+method limitations. 7-8: annotate the power diagram, ratings and unknown data, and prepare
+continuity testing. 9-10: describe the E-stop, support and restart prevention; rehearse without
+motion.
+Use the final 15 minutes of each session to record decisions. If a component rating is unknown,
+name who will clarify it and the document required. An assumption must not become permission to
+power up. Before the practical, prepare a short action sheet with power-up and stopping
+sequences, available beside the rig.
+
+Hours 11-20: the first practical
+11-13: assembly, labels, inspection and weighing for task 1. 14-15: reaction measurements and
+centre-of-mass estimation for task 2. 16-18: wiring, continuity checks and staged power for task 3.
+19-20: independent-stop verification for task 4 and evidence recording. These intervals include
+instrument setup and documenting results; repeats after finding a defect use time from the same
+block.
+If the E-stop fails verification, do not start the next motion stage. Use remaining time to repair the
+circuit and make passive measurements. The month may end with a candidate that has not yet
+passed; retain that status instead of recording an unsupported pass. Calendar pressure does not
+relax the mandatory deliverable.
+
+Hours 21-40: calibration and the bus
+21-22: encoder conversion and zero definition. 23-24: mirrored legs, axis signs, operating limits
+and uncertainty. 25-26: physical meaning of current and temperature readings for the selected
+actuator. 27-28: calculate frame size and bus utilisation. 29-30: hardware-component lifecycle,
+read-error handling and pre-activation checks. These are five 2-hour analysis sessions.
+31-34: calibrate one leg and then the others; record zero-repeatability results. 35-37: compare
+communication with 1, 3 and 12 devices and check timeouts in the simulator. 38-39:
+parameterised hardware-map and limit tests. 40: inspect after first activation, freeze the
+calibration version and prepare a log for model comparison. By the end of this block, physical
+names and software indices must map unambiguously.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M22 • 03 Sep 2028 - 01 Oct 2028 • 75 hours                                                                         9 / 15
+
+</pre></details><details class="source-page" id="page-10"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 10 · Hours 41-75: from HIL to a release candidate</summary><pre class="source-text">ROBOTICS AND AI  /  M22  /  DETAILED STUDY PLAN
+
+Hours 41-75: from HIL to a release candidate
+
+Hours 41-50: transfer analysis
+41-42: define the HIL boundary and tabulate timing in command and measurement paths. 43-44:
+estimate delay and comparison limitations from task 7. 45-46: check measured masses, lengths
+and contact parameters; choose one significant model correction. 47-48: review IMU conventions,
+the tilt reference and contact-trust rules. 49-50: plan estimator and controller regression checks
+using original and corrupted logs.
+At this stage, read only the required primary-source sections on page 12. Reading must produce a
+revised diagram, test or calculation. If dynamics material extends substantially beyond your control
+stack, document the model limitation and retain the previously verified controller; this month
+integrates material already studied.
+
+Hours 51-60: the third practical
+51-53: obtain a low-amplitude physical response from one leg and align it in time. 54-55: correct
+one parameter, repeat the same input and record improvement or deterioration. 56-57: measure
+the IMU in reference orientations and verify foot contact. 58-59: run T1-T6 in software or HIL and
+verify recovery. 60: prepare the complete standing configuration and reinspect harnesses after
+movement.
+Do not spend the entire block seeking visually perfect simulation-hardware agreement. Establish
+the magnitude of significant discrepancies and verify that the controller respects limits in their
+presence. Record at least two explained discrepancies and one still unexplained, if present. An
+incomplete model is a limitation that can be investigated experimentally.
+
+Hours 61-75: completion
+61-62: define standing and roll/pitch tracking criteria, stopping conditions and measurement
+methods. 63-64: specify the slow gait, controlled stop and repeatable small disturbance. 65: review
+readiness from documentation; state which result permits or blocks M23. These 5 hours are split
+into 2 + 2 + 1.
+66-68: preliminary and qualifying standing for task 9, with analysis between attempts. 69-71: a
+slow gait cycle, short route and normal stop for task 10. 72-73: permissible disturbance repeats
+and checks for new defects. 74-75: assemble the candidate package, verify plot reproduction and
+complete the progression decision. If time is short, omit video editing, additional routes and
+optional optimisation; calibrations, E-stop, standing and raw trial records remain mandatory.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M22 • 03 Sep 2028 - 01 Oct 2028 • 75 hours                                                                        10 / 15
+
+</pre></details><details class="source-page" id="page-11"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 11 · M22 acceptance and handoff to the</summary><pre class="source-text">ROBOTICS AND AI  /  M22  /  DETAILED STUDY PLAN
+
+M22 acceptance and handoff to the
+six-legged robot
+
+What complete means
+The release candidate contains source code and the exact assembly revision; a circuit with ratings
+and selection rationale; mass and centre of mass with measurement descriptions; the 12-actuator
+map; calibrations and operating limits; hardware-stop documentation; a consistent URDF; HIL,
+replay, IMU and contact records; and evidence of independent standing for at least 60 seconds,
+slow walking and controlled stopping. During the completed trials, currents, temperatures and
+communication parameters remain within operating ranges specified in advance.
+Turn the original criterion, no unbounded growth of current, temperature or bus errors, into an
+observable check: every signal has a source, sampling interval, limit, response and test duration. A
+short normal run does not authorise continuous operation of unknown duration. An unresolved
+cause of control loss or an unreliable emergency stop blocks physical scaling.
+
+Engineering self-check
+Answer without running the programme: 1) Which joint moves when a chosen ID is addressed, and
+why? 2) How was its zero measured, and what is the spread? 3) What happens after emergency
+torque removal? 4) Which part of stopping is independent of the main computer? 5) How does a
+measurement timestamp differ from recording time? 6) Why does supply current not equal torque
+at each joint? 7) How do a new measurement from a stationary sensor and a stale sample differ? 8)
+Which simulation-reality discrepancy constrains the next trial?
+Practical defence: choose one failed run, open its raw log, reproduce the plot and identify the root
+cause or explicitly state the hypothesis still untested. Show which change tests it. Then explain the
+power-disconnection chain on the diagram and the axis direction using a physical label. A
+screenshot of a successful simulation cannot replace this check.
+
+The M23 package and the separate hand workstream
+Create handoff_M23.md: verified quadruped capabilities, test boundaries, problematic parts,
+maximum observed bus utilisation and a projection for 18 actuators. Attach the progression
+decision PASS/HOLD. PASS means the scaling entry requirements are met; it does not establish
+that battery, frame and bus are already suitable for six legs.
+For the hand, pass on the calibration.yaml template, diagnostic scheme and method of linking
+evidence to a physical unit. Do not copy numerical leg limits to fingers. The hand and
+tactile-equipment work in OPT 120 hours remains a separate workstream begun after M17. M22
+does not consume its time or present its results as results of this assembly. Completion of both
+systems is checked at the end of the overall programme.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M22 • 03 Sep 2028 - 01 Oct 2028 • 75 hours                                                                      11 / 15
+
+</pre></details><details class="source-page" id="page-12"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 12 · Assigned reading: quadruped assembly and</summary><pre class="source-text">ROBOTICS AND AI  /  M22  /  DETAILED STUDY PLAN
+
+Assigned reading: quadruped assembly and
+measurement
+
+The references may be in English; the exercises and definitions are presented here in English. Read
+only the named sections before the associated work, within the existing 75 hours.
+
+Core reading
+1. K. Lynch, F. Park - Modern Robotics. Sections 4.1.1 and 8.9: forward kinematics in the space
+frame; actuation, gearing and friction. For the 12-joint map, connect physical zero and sign to the
+model; for current tests, explain the effects of transmission and friction.
+2. NASA - Systems Engineering Handbook. 5.2 Product Integration; 5.3 Product Verification;
+5.4 Product Validation. Before HIL and floor trials, separate evidence of assembly, compliance with
+requirements and suitability of the selected mode. Deliverable: the power-up sequence and entry
+criteria for each rig.
+
+Reference book: power problems
+3. P. Horowitz, W. Hill - The Art of Electronics, 3rd ed. 9.4 Heat and power design; 9.6
+Switching regulators and dc–dc converters. Read selected heating and power-conversion
+calculations for task 4. The aim is to understand losses and limits of a ready-made DC-DC
+converter; designing a mains supply is unnecessary.
+
+Documents before specific checks
+ros2_control, Jazzy. Hardware Components: interface types, lifecycle, errors. For the driver,
+specify which states and errors permit command output; relate this to independent stopping.
+ROS REP-103 / REP-145. Units, Axis Orientation, Rotation Representation; IMU: Data Reporting,
+Common Parameters. For axis and IMU calibration, state the coordinate frame, units and meaning
+of acceleration; perform static verification before standing.
+The actual bus specification. For DYNAMIXEL Protocol 2.0: Status Packet, Sync Read/Write, Bulk
+Read. For another actuator, use its specification. Calculate communication volume with 12 devices
+and the cycle deadline; a similar connector does not establish compatibility.
+
+Separately save specification pages for your actuators, battery, BMS, charger, DC-DC converter and protective
+devices: voltage, current, temperature, mode and duration. A textbook example does not establish this
+assembly&#x27;s operating limits.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M22 • 03 Sep 2028 - 01 Oct 2028 • 75 hours                                                                       12 / 15
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://modernrobotics.northwestern.edu/nu-gm-book-resource/" target="_blank" rel="noopener noreferrer">https://modernrobotics.northwestern.edu/nu-gm-book-resource/</a></li><li><a href="https://www.nasa.gov/reference/5-0-product-realization/" target="_blank" rel="noopener noreferrer">https://www.nasa.gov/reference/5-0-product-realization/</a></li><li><a href="https://www.nasa.gov/reference/5-0-product-realization/" target="_blank" rel="noopener noreferrer">https://www.nasa.gov/reference/5-0-product-realization/</a></li><li><a href="https://artofelectronics.net/the-book/table-of-contents/" target="_blank" rel="noopener noreferrer">https://artofelectronics.net/the-book/table-of-contents/</a></li><li><a href="https://artofelectronics.net/the-book/table-of-contents/" target="_blank" rel="noopener noreferrer">https://artofelectronics.net/the-book/table-of-contents/</a></li><li><a href="https://control.ros.org/jazzy/doc/ros2_control/hardware_interface/doc/hardware_components_userdoc.html" target="_blank" rel="noopener noreferrer">https://control.ros.org/jazzy/doc/ros2_control/hardware_interface/doc/hardware_components_userdoc.html</a></li><li><a href="https://github.com/ros-infrastructure/rep/blob/master/rep-0103.rst" target="_blank" rel="noopener noreferrer">https://github.com/ros-infrastructure/rep/blob/master/rep-0103.rst</a></li><li><a href="https://github.com/ros-infrastructure/rep/blob/master/rep-0145.rst" target="_blank" rel="noopener noreferrer">https://github.com/ros-infrastructure/rep/blob/master/rep-0145.rst</a></li><li><a href="https://github.com/ros-infrastructure/rep/blob/master/rep-0145.rst" target="_blank" rel="noopener noreferrer">https://github.com/ros-infrastructure/rep/blob/master/rep-0145.rst</a></li><li><a href="https://docs.robotis.com/docs/dxl/protocol/protocol2/" target="_blank" rel="noopener noreferrer">https://docs.robotis.com/docs/dxl/protocol/protocol2/</a></li><li><a href="https://docs.robotis.com/docs/dxl/protocol/protocol2/" target="_blank" rel="noopener noreferrer">https://docs.robotis.com/docs/dxl/protocol/protocol2/</a></li></ol></div></details><details class="source-page" id="page-13"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 13 · Terms and definitions</summary><pre class="source-text">ROBOTICS AND AI  /  M22  /  DETAILED STUDY PLAN
+
+Terms and definitions
+
+Commissioning. Connecting and verifying an assembled device in stages, progressing to the next
+mode only after declared criteria are met.
+Hardware revision. An identifier for the exact composition and implementation of an assembly:
+parts, wiring, sensors and board versions to which measurements apply.
+Actuator map. A table linking physical joints to bus addresses, directions, zeros, units and limits;
+verified by real movement of every assembly.
+Zero calibration. Determining the offset between a sensor reading and a selected geometric
+zero, recording the method, conditions and repeatability spread.
+Backlash. Relative movement within a transmission when load direction reverses, during which
+input motion is not transmitted to the output.
+Continuous torque. Torque admissible at specified speed, cooling and sustained thermal
+conditions; it must not be equated with short-duration stalled-shaft torque.
+Centre of mass. The mass-weighted position of the complete assembly; it changes as legs move
+or the battery is repositioned.
+Inertia tensor. A matrix describing mass distribution about a selected point and axes; it relates
+angular motion to torques, with units kg·m².
+Duty cycle. The fraction of time under active load within a declared cycle; together with peaks and
+cooling, it affects actuator heating.
+Power tree. A diagram of sources, converters, protective devices and loads showing current paths
+and points where individual branches can be disconnected.
+Voltage sag. A drop in voltage under load caused by source and wiring resistance or supply
+limiting; it can reset electronics.
+BMS. A system monitoring battery cells and providing specified protection; it does not replace a
+compatible charger, fuses and emergency stop.
+DC-DC. A DC voltage converter selected for input range, output voltage and current, losses,
+cooling and response to transient loads.
+E-stop. A specified independent means of ending hazardous motion; the structure may fall after
+torque removal, so verify the final state.
+Watchdog. Monitoring timely confirmation of correct operation; exceeding the timeout triggers a
+predefined response independently of the normal command cycle.
+Communication deadline. The latest time for obtaining required data and issuing a command;
+exceeding it requires a response even without a packet error.
+HIL. Testing in which real hardware interacts with a simulated part of the system; explicitly
+document which channels are real.
+Specific force. The ideal accelerometer reading associated with a − g in the sensor frame; it is
+not directly equal to body acceleration in world coordinates.
+
+Relationships: P = UI; conductor losses P = I²R. Check: disconnecting actuator power and reaching a safe final
+state are different facts.
+
+
+
+
+
+
+
+
+
+
+
+
+M22 • 03 Sep 2028 - 01 Oct 2028 • 75 hours                                                                          13 / 15
+
+</pre></details><details class="source-page" id="page-14"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 14 · Quadruped purchases and setup</summary><pre class="source-text">ROBOTICS AND AI  /  M22  /  DETAILED STUDY PLAN
+
+Quadruped purchases and setup
+
+USE EXISTING EQUIPMENT
+Use the tested 3-degree-of-freedom leg, its bus interface, MCU and IMU, RGB-D camera,
+multimeter, CC/CV supply, analyser, tools and Mac M4. For the existing 3D printer, select a profile
+for its exact model; replenish consumables and fasteners according to released CAD and BOM.
+
+BUY BEFORE ASSEMBLY - AFTER LEG ACCEPTANCE
+9 identical working actuators plus 2 separate spares: 3 + 9 = 12 installed. The family,
+voltage, bus, thermal regime and continuous loading have already been verified on the leg. Add
+parts for three legs, frame, harnesses and fasteners according to the BOM; the M7 bench DC motor
+is not included in these 12.
+1 onboard computer: Pi 5 with 8 GB or an Ubuntu-compatible x86 computer after measuring
+CPU, RAM and USB loads. Reuse a suitable computer already purchased. The Pi needs 1 boot
+medium, cooling and power according to Pi documentation; account for camera consumption
+separately. The model name does not guarantee every driver will work.
+1 power system: battery, compatible charger and BMS, hardware stop and power disconnection,
+branch fuses, DC-DC converter, connectors and wiring. Select ratings after measuring operating
+and peak currents, duration, voltage sag and heating; the bench supply limit is not the power
+budget for 12 actuators. The number of protective devices matches the branch count.
+1 support or backup frame with verified load capacity; 1 IR thermometer with a suitable range
+and allowance for surface properties; spare harness components. If choosing contact-sensing feet,
+provide 4 channels, one per foot, repeatable activation and calibration for robot mass; these
+sensors do not establish absence of slip.
+
+INSTALL AND VERIFY
+Onboard, use Ubuntu 24.04 ARM64 for Pi or 24.04 x86_64; ROS 2 Jazzy, existing ros2_control, bus
+driver and diagnostics from the pinned working environment. Retain the existing environment on
+the Mac and in UTM.
+Check the build, software simulator and replay without motion; 12 unique IDs; units and sign of one
+supported channel; heartbeat loss; current and temperature recording; and independent stopping.
+Test USB, network and camera under load on the chosen computer. Do not enable torque
+automatically when the OS starts.
+
+For the model: URDF inertial/collision; for logs: Foxglove Plot; for the ID table: pytest parametrization.
+Preparation and checks fit within the existing 75 hours, replacing repeated reading and setup. Delivery waiting
+time does not count as study time.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M22 • 03 Sep 2028 - 01 Oct 2028 • 75 hours                                                                      14 / 15
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#power-supply" target="_blank" rel="noopener noreferrer">https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#power-supply</a></li><li><a href="https://ubuntu.com/hardware/docs/boards/how-to/ubuntu_supported/raspberry-pi/" target="_blank" rel="noopener noreferrer">https://ubuntu.com/hardware/docs/boards/how-to/ubuntu_supported/raspberry-pi/</a></li><li><a href="https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html" target="_blank" rel="noopener noreferrer">https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html</a></li><li><a href="https://github.com/ros/urdf_tutorial/blob/ros2/urdf/07-physics.urdf" target="_blank" rel="noopener noreferrer">https://github.com/ros/urdf_tutorial/blob/ros2/urdf/07-physics.urdf</a></li><li><a href="https://docs.foxglove.dev/docs/visualization/panels/plot" target="_blank" rel="noopener noreferrer">https://docs.foxglove.dev/docs/visualization/panels/plot</a></li><li><a href="https://docs.pytest.org/en/stable/how-to/parametrize.html" target="_blank" rel="noopener noreferrer">https://docs.pytest.org/en/stable/how-to/parametrize.html</a></li></ol></div></details><details class="source-page" id="page-15"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 15 · Motion fundamentals: loading before the</summary><pre class="source-text">ROBOTICS AND AI  /  M22  /  DETAILED STUDY PLAN
+
+Motion fundamentals: loading before the
+first step
+
+Required analysis: measured reactions, centre of mass and model limits
+
+Kinematics shows where a foot can be placed. Forces and torques are needed to determine
+whether the robot can withstand standing and acceleration. Begin with measurable statics: it
+reveals errors in mass, centre-of-mass and load-transmission estimates before gait tuning. The
+number of supports alone does not imply equal weight distribution.
+
+Free-body diagram and equilibrium
+The example body model assumes a horizontal surface, a stationary robot, gravity and vertical
+reactions from two support groups. The x axis points forwards; the rear group is at x=-a, the front
+at x=+a; z points upwards. F_r and F_f are ground forces on the robot in N, and x_c is
+centre-of-mass position. Force and moment balance give F_r+F_f=mg; a(F_f-F_r)=mg·x_c.
+Therefore, F_f=mg(a+x_c)/(2a), F_r=mg-F_f.
+Example. m=4 kg, a=0.20 m, x_c=0.05 m, g=9.81 m/s²: F_f=24.525 N, F_r=14.715 N. Adding a
+0.5 kg load at x=0.25 m gives total mass 4.5 kg and x_c=(4·0.05+0.5·0.25)/4.5=0.07222 m. The
+new reactions are 30.043 N and 14.102 N. Rear loading decreases: the payload adds a moment as
+well as weight.
+
+Practice: verify the calculation on the assembled robot
+1. Measure mass and grouped reactions in task 2 using existing fixtures and instruments. If an
+instrument displays equivalent mass in kg, convert it to N using g. Recover
+x_c=a(F_f-F_r)/(F_f+F_r), compare against CAD and include the mass of cables, battery and
+mounts. Two sums cannot determine the force at each of four feet.
+2. Relate load to the joint. For one adopted pose from M8, calculate J and the force in the same
+coordinate frame; the force contribution is τ_ext=JᵀF_ext. During holding, the actuator must
+compensate for it while accounting for link weight; compare with the M9 model. Convert current to
+torque only through a calibrated transmission model. Do not send a calculated torque to a
+position-controlled servo as an angle.
+
+What counts as evidence
+Save load_balance.csv: pose, payload, reactions, calculation, residuals, units and instrument
+uncertainties. Check reaction sum, moment balance and direction of centre-of-mass displacement.
+Set tolerance from scale resolution, repeatability and geometry; do not impose 1% without
+justification. A negative calculated reaction means that support is infeasible, not that the foot is
+attracted to the floor.
+
+Within 75 hours: 1 hour of analysis in 5-6 and the practical in 14-15 (task 2), without a new motion mode.
+This is a quasi-static check: accelerations, slopes and external disturbances require the full model. Read
+Modern Robotics §5.2 - the relationship between external force and joint torques.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M22 • 03 Sep 2028 - 01 Oct 2028 • 75 hours                                                                        15 / 15</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://modernrobotics.northwestern.edu/nu-gm-book-resource/5-2-statics-of-open-chains/" target="_blank" rel="noopener noreferrer">https://modernrobotics.northwestern.edu/nu-gm-book-resource/5-2-statics-of-open-chains/</a></li></ol></div></details>
+</section>
+<footer><p><a href="../library.html"><span lang="ru">Вернуться в библиотеку</span><span lang="en">Back to source library</span></a> · <a href="../index.html"><span lang="ru">Вернуться к новому плану</span><span lang="en">Back to revised plan</span></a></p><p class="checksum">SHA-256: c53deeb70643a43f2e00a9d0974fcf2d24ec9d8f8a1f032f29c56a53ea9938c1</p></footer>
+</main>
+<script>
+(function() {
+  function openPage() {
+    if (!/^#page-\d+$/.test(location.hash)) return;
+    var page=document.getElementById(location.hash.slice(1));
+    if(page) {page.open=true; page.scrollIntoView({block:'start'});}
+  }
+  window.addEventListener('hashchange',openPage);
+  document.addEventListener('DOMContentLoaded',openPage);
+  document.getElementById('expand-pages').addEventListener('click',function(){document.querySelectorAll('details[id^="page-"]').forEach(function(el){el.open=true;});});
+  document.getElementById('collapse-pages').addEventListener('click',function(){document.querySelectorAll('details[id^="page-"]').forEach(function(el){el.open=false;});});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1070 @@
+<!doctype html>
+<html lang="ru" data-ru-title="M04 · Электроника и обработка сигналов · EN — Robotics &amp; AI" data-en-title="M04 · Electronics and signal processing · EN — Robotics &amp; AI">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>M04 · Электроника и обработка сигналов · EN — Robotics &amp; AI</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body class="source-reader">
+<a class="skip-link" href="#main"><span lang="ru">К тексту источника</span><span lang="en">Skip to source text</span></a>
+<header class="topbar"><a class="brand" href="../index.html">Robotics &amp; AI</a><nav><a href="../library.html"><span lang="ru">Библиотека источников</span><span lang="en">Source library</span></a><a href="../index.html"><span lang="ru">Новый план</span><span lang="en">Revised plan</span></a></nav><div class="lang-switch" aria-label="Language"><button type="button" data-lang="ru">RU</button><button type="button" data-lang="en">EN</button></div></header>
+<main class="wrap" id="main">
+<p class="eyebrow"><span lang="ru">Архив · исходный документ</span><span lang="en">Archive · original document</span></p>
+<h1><span lang="ru">M04 · Электроника и обработка сигналов · EN</span><span lang="en">M04 · Electronics and signal processing · EN</span></h1>
+<div class="notice source-notice"><strong><span lang="ru">Архивные даты и часы не действуют.</span><span lang="en">Original dates and hours are superseded.</span></strong><p><span lang="ru">Это полный текст исходного документа. Старый календарь, отпуска и бюджеты часов сохранены для проверки исходной информации. Рабочее расписание находится в новом плане: 50 часов в неделю, без отпусков.</span><span lang="en">This is the complete extracted text of the original document. Its historical calendar, vacations and hour budgets are preserved for source verification. Use the revised plan for the current schedule: 50 hours per week, with no vacations.</span></p></div>
+<p><span lang="ru">Язык исходника: английский.</span><span lang="en">Source language: English.</span> <span lang="ru">Переключатель RU/EN меняет язык интерфейса; исходный текст не переводится автоматически.</span><span lang="en">The RU/EN switch changes the interface; original source text is not automatically translated.</span></p>
+<p class="source-actions"><a href="../originals/detailed/English/Monthly/M04_Robotics_Plan_EN.pdf"><span lang="ru">Открыть исходный PDF без изменений</span><span lang="en">Open the unchanged original PDF</span></a> · <a href="m04-ru.html"><span lang="ru">Открыть другую языковую редакцию</span><span lang="en">Open the other language edition</span></a></p>
+<p><span lang="ru">Страниц</span><span lang="en">Pages</span>: 15 · <span lang="ru">Ссылок из PDF</span><span lang="en">PDF links</span>: 14</p>
+<details class="source-page source-toc"><summary><span lang="ru">Перейти к странице</span><span lang="en">Jump to a page</span></summary><nav class="page-links" aria-label="Pages"><a href="#page-1">1</a> <a href="#page-2">2</a> <a href="#page-3">3</a> <a href="#page-4">4</a> <a href="#page-5">5</a> <a href="#page-6">6</a> <a href="#page-7">7</a> <a href="#page-8">8</a> <a href="#page-9">9</a> <a href="#page-10">10</a> <a href="#page-11">11</a> <a href="#page-12">12</a> <a href="#page-13">13</a> <a href="#page-14">14</a> <a href="#page-15">15</a> </nav></details>
+<p class="source-controls"><button type="button" id="expand-pages"><span lang="ru">Развернуть все страницы</span><span lang="en">Expand all pages</span></button> <button type="button" id="collapse-pages"><span lang="ru">Свернуть все страницы</span><span lang="en">Collapse all pages</span></button></p>
+<p><span lang="ru">Извлечение PDF может сохранять переносы строк и наложенные редакции. Формулы, иллюстрации и исходное оформление доступны в неизменённом PDF. Все встроенные ссылки вынесены под текст соответствующей страницы.</span><span lang="en">PDF extraction may retain line breaks and overlapping revisions. Equations, illustrations and original formatting remain available in the unchanged PDF. Every embedded link is listed below its corresponding page.</span></p>
+<section class="source-pages" aria-label="Original document pages">
+<details class="source-page" id="page-1"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 1 · Electronics and signals for a robot sensor</summary><pre class="source-text">ROBOTICS AND AI  /  M04  /  DETAILED STUDY PLAN
+
+Electronics and signals for a robot sensor
+node
+
+M4 • 27 Dec 2026 - 31 Jan 2027 • 75 hours
+
+What you will build
+M04 delivers a low-voltage electrical experiment log and a sensor-signal filtering report.
+The first part teaches assembly and measurement of simple future-robot circuits: a status
+indicator, analogue-input divider, digital contact and a switch for a small inductive load. The second
+explains why functioning electronics do not guarantee usable data: sampling rate, quantisation,
+aliasing and delay change the observed motion.
+These tasks directly support leg and hand design. A foot-contact sensor or limit switch must
+produce a defined logic level. An analogue position sensor requires a suitable voltage range. A
+body-mounted IMU sees both useful tilt and vibration. Filtering may suppress jitter, but delayed
+angles can degrade later feedback. Measure this tradeoff in M04 before programming the M06
+controller.
+
+Equipment and monthly scope
+You need an adjustable supply with current limiting and a suitable low-voltage output, a
+multimeter, breadboard, wires, resistors, LEDs, small capacitors, a switch and switching-circuit
+components. Frequency experiments may use simulation; an oscilloscope or logic analyser allows
+physical measurement but does not replace circuit understanding. First record available equipment
+specifications, then select compatible components.
+Battery packs and high currents are outside the plan before checkpoint G1. Here, use bench
+circuits with limited stored energy; leg power drives, loaded motors and whole-robot power come
+later. A small relay coil with known specifications and unloaded contacts is sufficient for the
+inductive experiment. Derive current limits and fuse ratings from the actual components rather
+than copy universal values.
+
+Preparation after M02-M03
+Retain M03 noisy encoder and IMU recordings, timestamps and the 30-repeat protocol. Create
+circuits/, measurements/, signals/ and filter_report/. Link every measurement to a circuit revision,
+component values, probe locations and instrument mode. State which results were calculated,
+simulated or physically measured.
+Initial check: distinguish voltage and current, convert mA to A and µF to F, and solve I=V/R for a
+known resistor. If electronics is entirely new, devote the first two hours to circuit diagrams and the
+multimeter; use familiar Python for software work. Working ESP32 firmware is not yet required this
+month.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M4 • 27 Dec 2026 - 31 Jan 2027 • 75 hours                                                                          1 / 15
+
+</pre></details><details class="source-page" id="page-2"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 2 · Allocating 75 hours and laboratory</summary><pre class="source-text">ROBOTICS AND AI  /  M04  /  DETAILED STUDY PLAN
+
+Allocating 75 hours and laboratory
+procedures
+
+Four blocks
+A, hours 1-20: 10 h theory + 10 h practice. Voltage, current, resistance, power and energy;
+Ohm&#x27;s and Kirchhoff&#x27;s laws; series and parallel branches; multimeter use. Deliverables: LED and
+loaded divider with predictions and measurements.
+B, hours 21-40: 10+10 h. Capacitors, diodes, BJT/MOSFET and flyback diode; pull resistors, logic
+levels, ground and supply decoupling; wires, connectors, crimping and fuses. Deliverables: verified
+low-power switch and wiring diagram for a future sensor node.
+C, hours 41-60: 10+10 h. Sampling, Nyquist, aliasing and quantisation; low-pass, high-pass and
+notch filters; moving average, IIR and complementary estimation. Deliverable: reproducible
+encoder and IMU processing with error checks.
+D, hours 61-75: 5+10 h. Frequency response, bandwidth, phase, FFT, vibration spectrum,
+ADC/PWM and sensor delay. Deliverables: noise-versus-delay table, aliasing experiment and final
+presentation. Total: 35 h of analysis and 40 h of practice.
+
+Scheduling sessions
+Divide ten theory hours into five two-hour sessions and the final 5 h into 2+2+1. Divide each 10 h
+practical into five parts: circuit and prediction, assembly, measurement, edge cases and
+documentation. For electrical experiments, calculate and draw wiring first, assemble without
+power, then measure only after checking.
+First-page dates follow the original plan. Boundary dates may overlap a neighbouring module;
+holidays, rest and integration stages are not recalculated. Work steps fill available sessions
+sequentially without double counting. Time spent merely waiting for recording or printing does not
+add study hours.
+
+Required measurement sequence
+Before power-up, check polarity, pinout, component limits, common return and accidental shorts.
+Measure voltage across a circuit section; measure current in series with its branch; measure
+resistance and continuity only on an unpowered circuit with discharged capacitors. After current
+measurement, return the probe to the voltage socket. Do not test incorrect ammeter connection by
+creating a real short circuit.
+Before the physical inductive experiment, check the circuit against component documentation and,
+if inexperienced, review it with someone who can assemble such circuits. Without the necessary
+review or equipment, perform calculation and simulation and mark the physical work pending. A
+simulator screenshot cannot replace real-circuit acceptance. If behind schedule, reduce filter
+variants while retaining basic circuits and delay measurement.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M4 • 27 Dec 2026 - 31 Jan 2027 • 75 hours                                                                         2 / 15
+
+</pre></details><details class="source-page" id="page-3"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 3 · Direct current: indicator and analogue input</summary><pre class="source-text">ROBOTICS AND AI  /  M04  /  DETAILED STUDY PLAN
+
+Direct current: indicator and analogue input
+
+Study before assembly
+Voltage is potential difference; current is charge flow; resistance relates them in an ohmic element:
+V=I·R. Power P=V·I is measured in watts; energy E=P·t at constant power is measured in joules.
+Kirchhoff&#x27;s current law expresses current balance; the voltage law expresses loop-voltage balance.
+Choose arrow directions beforehand: a negative calculated value indicates the reverse direction.
+Study series and parallel connections, open-circuit voltage and loading. An LED is not a constant
+resistor: its forward voltage depends on current and temperature. Calculate the limiting resistor for
+permissible current and the worst combination of supply voltage and forward drop, then check
+resistor power.
+
+Task 1. Node status indicator
+Input: supply and LED with manufacturer documentation, and two suitable resistors. A teaching
+calculation for 5 V, Vf≈2 V and 5 mA gives about 600 ohm; this illustrates arithmetic, while the
+actual value depends on your components and margin. Draw the loop, label voltage drops and
+current, then assemble LED and resistor with the supply disconnected.
+After checking the circuit, enable power with the calculated limit. Measure supply, LED and resistor
+voltages; compute current as V_R/R and, if needed, compare with a correctly connected direct
+measurement. Deliverables: schematic, photograph, component values and a
+predicted-versus-measured table. Check voltage balance. Study reversed polarity and a missing
+resistor in a diagram or simulation without exposing components to damage.
+
+Task 2. Divider as a position-sensor model
+Build a divider from two known resistors. Predict V_out=V_in·R2/(R1+R2), then measure without an
+added load. Add a third resistor parallel to the lower leg and recalculate using equivalent
+resistance. This demonstrates the practical meaning of the next device&#x27;s input resistance.
+Compare three positions of a model resistive sensor; plot voltage against divider-leg ratio. Deliver
+an error table accounting for resistor and instrument tolerances. Edge case: divider output exceeds
+the future analogue-to-digital converter (ADC) input limit; identify incompatibility during
+calculation. Do not treat a divider as a complete voltage regulator or universal input protection.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M4 • 27 Dec 2026 - 31 Jan 2027 • 75 hours                                                                          3 / 15
+
+</pre></details><details class="source-page" id="page-4"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 4 · Components, ground and logic levels</summary><pre class="source-text">ROBOTICS AND AI  /  M04  /  DETAILED STUDY PLAN
+
+Components, ground and logic levels
+
+From passive components to switching
+Study capacitors through Q=C·V and energy C·V²/2, and RC charging/discharging with time
+constant τ=R·C. A diode conducts mainly in one direction and has current and voltage limits. A BJT
+is controlled by base current; a MOSFET by gate-source voltage and gate charge. On-state losses
+and switching transients matter, beyond the component name.
+Distinguish VGS(th) from the voltage at which the manufacturer specifies RDS(on): threshold does
+not mean a fully enhanced power switch. Study the selected package&#x27;s exact pinout. For a digital
+input, compare source VOH/VOL with receiver VIH/VIL and absolute limits. A &#x27;3.3 V&#x27; board label
+does not make all pins 5 V compatible.
+
+Task 3. Foot contact and pull-up resistor
+Model the contact with a normal switch connecting the input to ground. A pull-up resistor connects
+the input to a suitable logic supply. Before attaching a controller, measure open/closed contact
+levels with a multimeter and calculate pull-up current. For teaching values 3.3 V and 10 kohm,
+closed-contact current is about 0.33 mA; verify the final value against the input and wire length.
+Try two resistor values and compare prediction with measurement. A broken wire must have a
+defined logic meaning for future diagnostics, though this need not distinguish it from an open
+contact. Deliver a state table for &#x27;open, closed, broken wire&#x27; and an explanation. First observe or
+simulate switch bounce; firmware debouncing comes in M06.
+
+Task 4. RC circuits, decoupling and return current
+Build an RC circuit in a simulator, apply a step and predict the time to approximately 63% of final
+voltage. With a suitable instrument, measure the transient in a circuit with little stored energy.
+Double R or C and compare the timescale. Save a plot and τ-estimation error; account for
+instrument input resistance.
+Draw supply-current paths for the sensor and a separate load. Explain why decoupling capacitors
+sit near supply pins and why a long shared return wire can introduce interference. Do not
+disconnect ground while powered to &#x27;demonstrate failure&#x27;. Model shared-wire resistance and show
+the added voltage drop caused by load current.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M4 • 27 Dec 2026 - 31 Jan 2027 • 75 hours                                                                         4 / 15
+
+</pre></details><details class="source-page" id="page-5"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 5 · Protected switching and sensor-bench</summary><pre class="source-text">ROBOTICS AND AI  /  M04  /  DETAILED STUDY PLAN
+
+Protected switching and sensor-bench
+connections
+
+Task 5. Small inductive load
+Choose a low-power, low-voltage relay coil with known rated voltage, resistance and current. Leave
+relay contacts unloaded. Draw a low-side switch: coil between positive supply and drain or
+collector, source or emitter to common ground. Connect the flyback diode across the coil so it is
+reverse-biased in the normal energised state; on a standard positive rail, its cathode connects to
+the positive side.
+First calculate coil current, switch losses, control-level compatibility and diode-rating margins.
+Study any ULN2003A option through its documentation: connect the clamp-diode common pin
+correctly, and do not assume the whole breadboard assembly can carry the IC&#x27;s rated currents.
+With a MOSFET, ensure a defined off-state gate voltage and check RDS(on) at the actual drive
+voltage.
+
+Experiment sequence and acceptance
+1. Check the circuit on paper and in simulation. 2. Verify components and pinouts. 3. Assemble
+unpowered after selecting the supply current limit and fuse. 4. Start with static on/off operation. 5.
+Measure coil supply and switch voltage drop. 6. If an oscilloscope is available and its ground
+connection is understood, compare the measured transient with the model.
+Deliver a log of currents, voltages, calculated losses and turn-off response. The coil must reliably
+de-energise, current must remain within component limits, and wiring must show no overload
+signs. Perform the no-flyback-diode experiment only in simulation. A multimeter cannot establish
+absence of a brief voltage spike; explicitly state if fast transients were not measured.
+
+Task 6. Wiring, connector and fuse
+List connection details: wire length and cross-section, contact type, connector current rating,
+retention method and labels. Calculate ΔV=I·R across outgoing and return wires. Select fuse rating
+together with its time-current characteristic, operating and inrush currents, voltage and the
+weakest section&#x27;s allowable conditions; &#x27;slightly above current&#x27; is insufficient.
+On an unpowered sample, inspect crimps visually and apply a light controlled pull according to
+contact instructions; check continuity of each conductor and isolation from adjacent ones. Prepare
+a pin→signal→voltage→wire_colour table and photographs of both ends. Edge cases: mirrored
+connector pinout and reversed polarity. Detect these before powering rather than rely on
+protection after an error.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M4 • 27 Dec 2026 - 31 Jan 2027 • 75 hours                                                                          5 / 15
+
+</pre></details><details class="source-page" id="page-6"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 6 · Sampling: when a sensor reports different</summary><pre class="source-text">ROBOTICS AND AI  /  M04  /  DETAILED STUDY PLAN
+
+Sampling: when a sensor reports different
+motion
+
+Theory
+Sampling converts a continuous signal into values at time intervals. fs=1/dt is measured in hertz. A
+band-limited signal requires a sampling rate above twice its highest frequency, plus practical
+margin for an antialiasing filter&#x27;s transition band. Once frequencies have aliased, an ordinary digital
+low-pass filter applied after recording cannot reliably separate them.
+ADC quantisation limits amplitude resolution; sampling limits temporal resolution. Study saturation,
+missing samples and uneven timestamp intervals separately. PWM is a pulse train with a defined
+on-time fraction; its frequency differs from command-update frequency and does not automatically
+produce a precise analogue voltage.
+
+Task 7. Vibration becomes apparent motion
+Generate ground truth on a dense time grid: a useful 2 Hz sinusoid plus 70 Hz vibration. Sample at
+100 Hz and show the false 30 Hz component; repeat at 250 Hz. All numbers are teaching examples.
+Compare time plots and spectra, labelling true and observed frequencies.
+Next, apply a suitable antialiasing filter to the dense recording before downsampling, and compare
+with &#x27;downsample first, filter afterwards&#x27;. Deliver three spectra and explain operation order. Edge
+case: a sinusoid at fs/2 with an unsuitable phase; a few samples cannot reliably recover its
+amplitude. Do not test the Nyquist criterion only at the exact boundary.
+
+Task 8. ADC and actual timestamps
+Model conversion of voltage 0…Vref to an N-bit ADC integer code with explicit rounding and
+saturation rules. Calculate the quantisation step for the chosen model, plot error during a slow
+voltage change and check the smallest distinguishable change in a model joint position.
+Add timestamp-interval variation (jitter) and one missing sample. Compare angle derivatives using
+constant dt and actual intervals; incorporate M01 checks. Deliver a CSV with raw_code, t_s,
+voltage_V, angle_rad and flags. Do not silently treat irregular samples as uniform before FFT: for
+this laboratory, select a uniform segment or explicitly resample onto a grid and describe the
+procedure.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M4 • 27 Dec 2026 - 31 Jan 2027 • 75 hours                                                                         6 / 15
+
+</pre></details><details class="source-page" id="page-7"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 7 · Filters for encoders and body tilt</summary><pre class="source-text">ROBOTICS AND AI  /  M04  /  DETAILED STUDY PLAN
+
+Filters for encoders and body tilt
+
+Required concepts
+A low-pass filter preserves slow components and attenuates high frequencies; a high-pass filter
+attenuates DC and slow components; a notch filter suppresses a narrow band. A moving average
+uses a finite sample window; an IIR uses previous state. A simple low-pass filter is
+y[k]=α·x[k]+(1−α)·y[k−1], with 0&lt;α≤1. Smaller α gives stronger smoothing and slower response.
+Study causality: a real-time filter cannot access future samples. Forward-backward processing such
+as filtfilt is useful for recorded-data analysis, but cannot establish a streaming algorithm&#x27;s delay.
+Define initial filter state and behaviour after missing samples separately.
+
+Task 9. Encoder noise versus delay
+Input: a slow reference trajectory with a stationary section and a step, followed by a copy with
+noise and outliers. Implement causal moving averages with windows 3, 5, 11 and IIR filters with
+three α values. Calculate SD on the same stationary section, motion RMSE and time to reach 50%
+of the step relative to the reference. Distinguish step delay from 10-90% rise time.
+Deliver a parameter table, time plots and a chosen tradeoff for the future joint monitor. Edge
+cases: first packet, NaN, a long gap and restart. NaN handling must allow valid IIR state to recover.
+State the policy for each case: reject, reset or continue with a flag; the policy must be visible in
+output data.
+
+Task 10. Complementary tilt estimation
+Generate a synthetic body-tilt trajectory in one plane with known θ(t). One input is angular velocity
+to integrate, with a small constant bias; the other is a noisy accelerometer angle estimate
+assuming small translational acceleration. Implement θ_est=β·(θ_prev+ω·dt)+(1−β)·θ_acc and
+check rad and s units. For the initial discrete approximation, use β=τ/(τ+dt), with chosen time
+constant τ in seconds; recalculate β when dt changes and check the response.
+Compare each separate estimate and their combination at rest, during tilt and during artificial
+linear acceleration. The last case must reveal the accelerometer-angle limitation. Do not add full
+3D orientation, quaternions or automatic calibration here. Deliver drift/noise plots and describe
+conditions in which this simplified complementary filter is suitable.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M4 • 27 Dec 2026 - 31 Jan 2027 • 75 hours                                                                           7 / 15
+
+</pre></details><details class="source-page" id="page-8"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 8 · Frequency response and latency budget</summary><pre class="source-text">ROBOTICS AND AI  /  M04  /  DETAILED STUDY PLAN
+
+Frequency response and latency budget
+
+What a vibration spectrum means
+FFT converts a finite, uniformly sampled recording into frequency components. Study recording
+length, frequency spacing fs/N, DC component, window functions and spectral leakage. Spectrum
+amplitude and power spectral density are different quantities; acceleration PSD has units
+(m/s²)²/Hz. Welch&#x27;s method helps estimate a noise spectrum, but window parameters affect
+resolution.
+A filter&#x27;s frequency response describes amplitude and phase changes at each frequency. For a
+sinusoid, time delay relates to phase, but one delay constant may not describe an arbitrary signal.
+Do not approve a filter for future control from one smoothed plot: relate bandwidth and phase to
+task dynamics.
+
+Task 11. Measure the frequency tradeoff
+Pass a set of sinusoids through the task 9 causal filter. After the initial transient, measure
+amplitude ratio and phase shift; compare with scipy.signal.freqz. Add one synthetic vibration peak
+and calculate PSD with Welch&#x27;s method. If using a notch filter, first specify centre frequency and
+suppressed bandwidth, then verify that nearby useful components remain intact.
+Deliver amplitude/phase response plots and a three-variant table. For each setting, report
+stationary SD, motion RMSE, step delay and attenuation of the selected vibration. Define
+acceptance thresholds from the teaching monitor&#x27;s requirements; the conclusion does not establish
+suitability for balancing a real robot.
+
+From ADC to computed state
+Draw the timing sequence: physical event → wait for sampling → conversion and internal sensor
+filter → transmission → processing → publication. List ADC sampling rate, output-message rate,
+PWM update rate and computation time separately. &#x27;100 Hz&#x27; does not describe the whole chain.
+Some times come from manufacturer documentation, some are measured and some remain
+unknown.
+Add a known message delay to the test-bench model and compare physical-change time with
+filter-output time. If source and receiver clocks are not synchronised, their timestamp difference is
+not a reliable one-way latency. M04 needs one shared simulation timebase and a separate list of
+future M06-M07 hardware measurements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M4 • 27 Dec 2026 - 31 Jan 2027 • 75 hours                                                                        8 / 15
+
+</pre></details><details class="source-page" id="page-9"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 9 · Work sequence: hours 1-40</summary><pre class="source-text">ROBOTICS AND AI  /  M04  /  DETAILED STUDY PLAN
+
+Work sequence: hours 1-40
+
+Block A: understand multimeter readings
+Hours 1-2. Inventory equipment, study modes and convert units. Hours 3-4. Ohm&#x27;s law, power
+and LED calculations. Hours 5-6. Kirchhoff&#x27;s laws and series/parallel branches. Hours 7-8.
+Divider, loading and instrument input. Hours 9-10. Draw correct probe placement for all
+forthcoming measurements and check circuits.
+Hours 11-20 - practice. 2 h: unpowered LED assembly and checks; 2 h: LED measurements and
+voltage balance; 2 h: unloaded and loaded divider; 2 h: repeat measurements and account for
+tolerances; 2 h: log, photographs and error review. Do not spend the practical buying equipment:
+prepare it before the relevant session.
+At hour 20, choose a new resistor pair and predict divider output before measuring. Explain
+deviations from nominal-value calculations: tolerances, actual supply, instrument loading or
+connection errors. Identifying testable causes is more useful than adjusting an answer to an ideal
+number.
+
+Block B: from contact to small coil
+Hours 21-22. Capacitors, diodes and RC transients. Hours 23-24. BJT/MOSFET, pinouts and
+turn-on specifications. Hours 25-26. Pull resistors and logic-level compatibility table. Hours
+27-28. Flyback diode, return currents and decoupling. Hours 29-30. Wires, connectors, crimping
+and protection selection for the actual circuit.
+Hours 31-40 - practice. 2 h: pull-up switch and RC. 2 h: inductive-switch schematic, simulation
+and component checks. 2 h: physical assembly of the checked circuit. 2 h: measurements, static
+turn-off and log. 2 h: pinout, unpowered connection checks and verification report.
+Intermediate acceptance: another person can use the schematic to trace on/off current paths,
+identify flyback-diode polarity and find protection ratings. Documentation supports all voltages and
+permissible operating conditions. If hardware is not ready, software block C proceeds
+independently; physical items remain open without being falsely marked complete.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M4 • 27 Dec 2026 - 31 Jan 2027 • 75 hours                                                                         9 / 15
+
+</pre></details><details class="source-page" id="page-10"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 10 · Work sequence: hours 41-75</summary><pre class="source-text">ROBOTICS AND AI  /  M04  /  DETAILED STUDY PLAN
+
+Work sequence: hours 41-75
+
+Block C: record a signal and verify its interpretation
+Hours 41-42. Sampling, fs and Nyquist; predict an alias frequency by hand. Hours 43-44.
+Quantisation, saturation, timestamps and jitter. Hours 45-46. Low-pass, high-pass and notch
+filters, and causality. Hours 47-48. Moving average and IIR; calculate state after one sample.
+Hours 49-50. Planar complementary filter and accelerometer-angle assumptions.
+Hours 51-60 - practice. 2 h: 70→30 Hz aliasing and filtering before downsampling. 2 h: ADC
+model and missing sample. 2 h: causal encoder filters. 2 h: complementary angle and body
+acceleration. 2 h: error table and restart/NaN tests. Use the same reference when comparing
+settings.
+By hour 60, implement streaming interface update(sample,timestamp). It updates state without
+future data and returns a value plus diagnostic flag. A separate saved-file analysis may use the
+whole recording, but its result name and delay conclusions must reflect that.
+
+Block D: frequencies, latency and presentation
+Hours 61-62. FFT, windows, resolution and PSD. Hours 63-64. Frequency response, bandwidth
+and phase shift. Hour 65. Build the ADC/sensor/transport/filter/PWM latency budget and identify
+unknown times.
+Hours 66-75 - practice. 2 h: spectrum and Welch parameters. 2 h: sinusoidal runs and freqz. 2 h:
+final noise, error and delay table. 2 h: six error checks and reproduction. 2 h: assemble electronics
+log and report, give an oral explanation, and list M06 hardware questions.
+Six required failure cases: incorrect polarity detected before power-up; mirrored pinout found by
+continuity checks; ADC range excess identified by calculation and simulation; aliasing not &#x27;fixed&#x27; by
+later filtering; NaN does not permanently corrupt IIR; a long gap is flagged and handled by the
+chosen policy. The first three require no deliberate damage to the physical test bench.
+Final new variant: change fs by a factor of two and, before running, predict changes in an
+11-sample window&#x27;s delay, the IIR coefficient for the same time constant and the observed alias
+frequency. Verify the calculation. If the programme simply keeps the old coefficients, explain why
+filter behaviour in physical seconds changes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M4 • 27 Dec 2026 - 31 Jan 2027 • 75 hours                                                                        10 / 15
+
+</pre></details><details class="source-page" id="page-11"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 11 · Acceptance: a measured circuit and an</summary><pre class="source-text">ROBOTICS AND AI  /  M04  /  DETAILED STUDY PLAN
+
+Acceptance: a measured circuit and an
+explainable filter
+
+Deliverable package
+The electronics log includes schematics and revisions, selected components and documentation,
+resistance/power/protection calculations, probe positions, assembly photographs and
+measurement tables. The switching circuit shows current paths, flyback diode, turn-off and
+measurement limitations. Connections include pinout, labels and confirmed unpowered continuity
+checks.
+The signal-processing report includes a reference generator, real M03 recordings, fs metadata and
+timestamps, causal filters, settings, time plots and spectra, noise/delay metrics, gap handling and
+tests. Do not present a smoothed real-IMU signal as unknown ground truth; calculate reference
+RMSE on synthetic data, and assess repeatability and observable properties on real data.
+
+Questions to explain
+Why are voltmeters and ammeters connected differently? How does loading change divider output?
+Why does an LED need current limiting? How does VGS(th) differ from a low-RDS(on) operating
+condition? Where does coil current flow immediately after turn-off? Why is the common return part
+of the signal path? How are fuse parameters selected, and why do they depend on wiring?
+How does sampling rate differ from PWM frequency? Why cannot digital filtering restore
+information lost through aliasing? What changes when the window grows? How does step delay
+differ from rise time? Why is filtfilt not a streaming filter? How does body acceleration distort a
+simple accelerometer-angle estimate? What are PSD units?
+
+Completion criteria
+Passing work includes a correctly assembled and protected low-power circuit after checking,
+correct multimeter measurements, recognised aliasing, comparison of at least two causal filters
+and a quantified delay tradeoff. Label physical experiments and simulations separately. Fill blank
+templates with your own results; the document does not claim accuracy in advance.
+Pass M06 the pinout, signal ranges, expected rates, error handling and low-voltage assembly log.
+M07 uses current calculations and understanding of inductive loads, but its power bench requires
+its own components, protection and tests after G1. State one sensor-path limitation each for the leg
+and hand; for example, permissible delay remains undefined until the future loop dynamics are
+known.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M4 • 27 Dec 2026 - 31 Jan 2027 • 75 hours                                                                       11 / 15
+
+</pre></details><details class="source-page" id="page-12"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 12 · Assigned reading: a short route</summary><pre class="source-text">ROBOTICS AND AI  /  M04  /  DETAILED STUDY PLAN
+
+Assigned reading: a short route
+
+Read only the specified passages before the corresponding experiment. References are mainly in
+English; keep explanations, glossary and report in English. Reading and preparation fit within the
+existing 75 hours; whole books are not required.
+
+Core reading
+1. Tony R. Kuphaldt, Lessons in Electric Circuits. DC volume: chapters 1-3, 6, 16. Selected
+topics: voltage/current, Ohm&#x27;s law, measurement, dividers, Kirchhoff&#x27;s laws and RC transients.
+Before tasks 1-4, draw instrument connections and calculate the circuit. For task 5, read
+Semiconductors volume, chapter 3, Inductor Commutating Circuits.
+2. Steven W. Smith, The Scientist and Engineer’s Guide to Digital Signal Processing.
+Chapter 3: sampling; chapter 15: moving average. For tasks 7 and 9, compare aliasing, noise and
+delay. In chapter 15, read Noise Reduction vs. Step Response and Frequency Response; a full DSP
+course is unnecessary.
+3. Anant Agarwal, MIT 6.002: Circuits and Electronics, notes. Lectures 2, 4, 12: Basic circuit
+analysis method; The digital abstraction; Capacitors and first-order systems. Consult after a simple
+experiment to understand logic-level tolerances and finite RC settling time.
+
+Documentation for individual experiments
+Switching and protection. TI ULN2003A: pinout, typical circuit, power supply or Nexperia
+AN11158: MOSFET parameters. Read the chosen option for task 5: limits, losses and flyback diode.
+Every circuit component contributes to permissible operation.
+Filtering. Analog Devices: Anti-Alias Filters; SciPy freqz and welch. For tasks 7 and 11, specify fs,
+window, nperseg and scaling; assess causality and units first.
+Bus pull-up reference. TI SLVA689, I2C pull-up calculation. Understand resistance, capacitance
+and edge-rate relationships; build a real I2C bus in M06.
+Understanding check. Before assembly, explain current paths when the switch turns on and off;
+before filtering, identify information already lost during sampling and the cost of noise reduction.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M4 • 27 Dec 2026 - 31 Jan 2027 • 75 hours                                                                        12 / 15
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://www.allaboutcircuits.com/textbook/" target="_blank" rel="noopener noreferrer">https://www.allaboutcircuits.com/textbook/</a></li><li><a href="https://www.analog.com/en/resources/technical-books/scientist_engineers_guide.html" target="_blank" rel="noopener noreferrer">https://www.analog.com/en/resources/technical-books/scientist_engineers_guide.html</a></li><li><a href="https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/pages/lecture-notes/" target="_blank" rel="noopener noreferrer">https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/pages/lecture-notes/</a></li><li><a href="https://www.ti.com/lit/ds/symlink/uln2003a.pdf" target="_blank" rel="noopener noreferrer">https://www.ti.com/lit/ds/symlink/uln2003a.pdf</a></li><li><a href="https://assets.nexperia.com/documents/application-note/AN11158.pdf" target="_blank" rel="noopener noreferrer">https://assets.nexperia.com/documents/application-note/AN11158.pdf</a></li><li><a href="https://assets.nexperia.com/documents/application-note/AN11158.pdf" target="_blank" rel="noopener noreferrer">https://assets.nexperia.com/documents/application-note/AN11158.pdf</a></li><li><a href="https://www.analog.com/en/resources/technical-articles/guide-to-antialiasing-filter-basics.html" target="_blank" rel="noopener noreferrer">https://www.analog.com/en/resources/technical-articles/guide-to-antialiasing-filter-basics.html</a></li><li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.freqz.html" target="_blank" rel="noopener noreferrer">https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.freqz.html</a></li><li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.welch.html" target="_blank" rel="noopener noreferrer">https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.welch.html</a></li><li><a href="https://www.ti.com/lit/an/slva689/slva689.pdf" target="_blank" rel="noopener noreferrer">https://www.ti.com/lit/an/slva689/slva689.pdf</a></li></ol></div></details><details class="source-page" id="page-13"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 13 · Glossary: terms and definitions</summary><pre class="source-text">ROBOTICS AND AI  /  M04  /  DETAILED STUDY PLAN
+
+Glossary: terms and definitions
+
+Voltage. Electric potential difference between two points; measured in volts and always requires a
+reference point.
+Current. Rate of electric-charge transfer through a cross-section; measured in amperes, with sign
+determined by the chosen direction.
+Resistance. Voltage-to-current ratio of an ohmic element under specified conditions; measured in
+ohms and limits circuit current.
+Power. Rate of energy transfer; for an electrical circuit, P=U·I with consistent direction
+conventions, measured in watts.
+Ground. Chosen circuit reference node and current-return path; its conductors have nonzero
+resistance and inductance.
+Voltage divider. Series circuit producing a fraction of input voltage; connected loads change the
+division ratio and must be included.
+Time constant. For a simple RC circuit, τ=R·C in seconds; during τ, step response covers
+approximately 63% of its full change.
+Inductance. Parameter relating current change to voltage; a coil opposes rapid current changes
+and stores magnetic energy.
+Flyback diode. Diode providing a coil-current path after the switch opens; supply configuration
+determines its polarity and ratings.
+MOSFET. An insulated-gate field-effect transistor; gate-source voltage controls channel
+conductance, and switching requires changing gate charge.
+Pull-up. Resistor between signal line and supply that establishes a high level when the input or
+open drain is high impedance. At a low level, it limits current.
+Fuse. Component that breaks a circuit under a specified current-time load; protects the selected
+wiring path within its rated characteristics.
+Sampling. Representing a continuous signal by samples in time; fs=1/Δt on a uniform time grid.
+Aliasing. Frequency ambiguity after sampling in which different continuous signals produce
+identical samples, causing information loss.
+Quantisation. Replacing a continuous value with one of a finite set of levels; introduces amplitude
+error distinct from temporal sampling.
+Causal filter. Filter using only present and past inputs; future samples are unavailable during
+streaming.
+FIR and IIR. FIR has a finite impulse response; IIR usually uses feedback and may respond for an
+unlimited duration.
+Power spectral density (PSD). Distribution of signal power over frequency; integrating a band
+gives its mean-square contribution under consistent normalisation.
+Complementary filter. Combination of estimates with complementary frequency responses, such
+as slow accelerometer tilt and rapid gyroscope angle changes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+M4 • 27 Dec 2026 - 31 Jan 2027 • 75 hours                                                                          13 / 15
+
+</pre></details><details class="source-page" id="page-14"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 14 · Equipment, installation and checks</summary><pre class="source-text">ROBOTICS AND AI  /  M04  /  DETAILED STUDY PLAN
+
+Equipment, installation and checks
+
+Complete preparation within the first study blocks in place of another general overview. The
+budget remains 75 hours; delivery waiting time is excluded. Statuses below specify actions for you
+to take, not purchases or installations already completed.
+
+Use existing equipment
+Use the MacBook Pro M4 and Python/SciPy from M02-M03, plus sensor recordings or synthetic data
+for filtering. Reuse listed tools if already available and working.
+
+Buy before the first circuit experiment
+1 each: a multimeter measuring DC voltage and resistance, with continuity, diode test and a fused
+current input; a set of working probes. Supplement this measurement guide with your model&#x27;s
+manual. Connect across a circuit for voltage and in series for current.
+1 CC/CV bench supply with adjustable voltage, current limit and independent output switching. A
+guideline for the shared M04-M07 bench is approximately 0-30 V and up to 5-10 A at the required
+voltage. These are supply capabilities; calculate each experiment&#x27;s low-voltage, low-power
+operating point. Do not route full supply power through a breadboard.
+1 low-power circuit kit: breadboard and jumpers; several each of resistors from 330 ohm to 100
+kohm, LEDs and buttons; 100 nF and 10-100 µF capacitors; 1 low-power, low-voltage relay with
+unloaded contacts, 1 compatible switch and flyback diode. Select final values, powers and voltages
+from tasks 1-5 and documentation before ordering.
+1 connection kit: adjustable soldering iron or station with stand, solder, flux and fume extraction;
+side cutters, wire stripper, tool for the chosen crimp contacts, wires, connectors, heat-shrink,
+holder and suitable fuses. Consumable quantities should cover one bench and task 6 samples.
+
+Install and check now
+macOS ARM: LTspice for macOS for RC and switching circuits; verify your macOS version and
+Apple Silicon support in the selected release. SciPy.signal is already available. Test: RC step
+response reaches about 63% at t=RC, freqz displays a Hz axis, and welch reproduces after restart.
+Before power-up: continuity and polarity checks, correct multimeter sockets, calculated supply
+limits and protection ratings; then test a low-power resistive load according to the supply manual.
+M04 needs neither a motor nor MCU firmware. An oscilloscope remains optional: simulate fast
+transients and explicitly state that no physical measurement was made.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M4 • 27 Dec 2026 - 31 Jan 2027 • 75 hours                                                                         14 / 15
+
+</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://learn.adafruit.com/multimeters" target="_blank" rel="noopener noreferrer">https://learn.adafruit.com/multimeters</a></li><li><a href="https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html" target="_blank" rel="noopener noreferrer">https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html</a></li></ol></div></details><details class="source-page" id="page-15"><summary><span lang="ru">Страница</span><span lang="en">Page</span> 15 · Motion fundamentals: what a sampled sensor</summary><pre class="source-text">ROBOTICS AND AI  /  M04  /  DETAILED STUDY PLAN
+
+Motion fundamentals: what a sampled sensor
+sees
+
+Compulsory, within 75 hours. Use 1 h from 63-64 and 2 h of practice 66-75, &#x27;sinusoidal runs and
+freqz&#x27;. Use existing generators and the filter from tasks 7, 9 and 11; this is their combined physical
+interpretation. Before starting, calculate Δt=1/100=0.01 s and convert 20 ms to seconds.
+
+Motion continues between samples
+Let a joint in a fixed plane have angle q(t)=0.20 sin(2π·2t) rad relative to the horizontal axis. Its
+velocity q̇=0.80π cos(4πt) rad/s reaches 2.513 rad/s. For link L=0.12 m, maximum endpoint speed
+L|q̇|≈0.302 m/s. The sensor measures q, not foot velocity directly; calculation supplies geometry
+and differentiation.
+The example recording also contains sinusoidal interference e(t)=0.01 sin(2π·70t) rad. At fs=100
+Hz, its samples match −0.01 sin(2π·30k/100): 70 Hz appears as 30 Hz with a different phase. This
+sequence cannot establish the original continuous oscillation. A later filter may attenuate 30 Hz but
+cannot restore lost information; antialiasing is needed before sampling or reducing its rate.
+
+Why a smoother angle may arrive too late
+Consider a causal five-sample average: q_f[k]=(q_m[k]+…+q_m[k−4])/5, where q_m is measured
+angle. Output is issued at kΔt although the window centre is two samples earlier. In steady state at
+2 Hz, delay is (5−1)Δt/2=0.020 s and phase shift is −2π·2·0.020=−0.2513 rad, or −14.4°.
+The amplitude of the desired sinusoid is multiplied by sin(5πf/fs)/(5 sin(πf/fs))≈0.98428 at f=2 Hz.
+Thus the smoothed angle nearly preserves amplitude but describes earlier motion. Treating it as
+current gives endpoint position error of scale |v|·0.020≈6 mm during rapid motion. This is a local
+delay-effect estimate, not an accuracy tolerance for a finished leg.
+
+Checks for the future control loop
+1. Compare sampled 70 Hz interference with a negative 30 Hz sinusoid; repeat at fs=250 Hz. Save
+overlaid sequences and label true frequency only where known from the generator. A measured
+spectral peak does not establish a mechanical cause.
+2. On clean 2 Hz motion, measure the five-sample filter&#x27;s amplitude and phase after the transient
+and compare with freqz. For a unit step with zero prehistory, output first exceeds 0.5 at 20 ms after
+the first changed input sample. Add these values to the task 11 table; account for transport delay
+separately.
+Do not shift streaming data backwards in time to claim less delay: an earlier timestamp does not
+speed publication. Feedback suitability depends on the future M10 loop dynamics, not plot
+smoothness. All motion here is synthetic; no motor is needed.
+Read before calculating: Steven W. Smith, DSP Guide: chapter 3, The Sampling Theorem;
+chapter 15, Noise Reduction vs. Step Response.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+M4 • 27 Dec 2026 - 31 Jan 2027 • 75 hours                                                                        15 / 15</pre><div class="source-links"><h3><span lang="ru">Ссылки из этой страницы PDF</span><span lang="en">Links embedded in this PDF page</span></h3><ol><li><a href="https://www.dspguide.com/ch3/2.htm" target="_blank" rel="noopener noreferrer">https://www.dspguide.com/ch3/2.htm</a></li><li><a href="https://www.dspguide.com/ch15/2.htm" target="_blank" rel="noopener noreferrer">https://www.dspguide.com/ch15/2.htm</a></li></ol></div></details>
+</section>
+<footer><p><a href="../library.html"><span lang="ru">Вернуться в библиотеку</span><span lang="en">Back to source library</span></a> · <a href="../index.html"><span lang="ru">Вернуться к новому плану</span><span lang="en">Back to revised plan</span></a></p><p class="checksum">SHA-256: 691aa7273cc4ff3403b10ef4416dbf6abcf4a5342d684bdc3250ce96fd53e412</p></footer>
+</main>
+<script>
+(function() {
+  function openPage() {
+    if (!/^#page-\d+$/.test(location.hash)) return;
+    var page=document.getElementById(location.hash.slice(1));
+    if(page) {page.open=true; page.scrollIntoView({block:'start'});}
+  }
+  window.addEventListener('hashchange',openPage);
+  document.addEventListener('DOMContentLoaded',openPage);
+  document.getElementById('expand-pages').addEventListener('click',function(){document.querySelectorAll('details[id^="page-"]').forEach(function(el){el.open=true;});});
+  document.getElementById('collapse-pages').addEventListener('click',function(){document.querySelectorAll('details[id^="page-"]').forEach(function(el){el.open=false;});});
+})();
+</script>
+</body>
+</html>
