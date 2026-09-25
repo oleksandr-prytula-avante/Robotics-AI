@@ -8931,7 +8931,6 @@
   ],
   "research_records": [
     "procurement-link-verification.json",
-    "procurement-verification.json",
-    "consistency-audit.json"
+    "procurement-verification.json"
   ]
 }

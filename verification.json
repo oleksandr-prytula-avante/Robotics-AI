@@ -6,7 +6,7 @@
   "html_pages": 76,
   "main_pages": 10,
   "month_pages": 14,
-  "local_file_and_anchor_links": 4271,
+  "local_file_and_anchor_links": 4270,
   "unique_external_link_targets": 751,
   "all_external_link_targets_network_checked": false,
   "original_pdfs": 52,
@@ -86,8 +86,8 @@
   },
   "language_element_counts": {
     "changes.html": {
-      "ru": 90,
-      "en": 90
+      "ru": 83,
+      "en": 83
     },
     "curriculum.html": {
       "ru": 1259,
