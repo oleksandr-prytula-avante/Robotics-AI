@@ -1008,7 +1008,7 @@
         "en": "Connexa TPU 95A 1.75 mm, grey, 1 kg"
       },
       "group": "tail",
-      "stage": "T1",
+      "stage": "L1",
       "price": 1340,
       "currency": "UAH",
       "url": "https://rozetka.com.ua/ua/620656577/p620656577/",
@@ -1029,11 +1029,14 @@
         "ru": "Гибкие вставки и мягкие элементы. Настроить подачу/сушку/печать на имеющемся принтере; напечатать и испытать образец. TPU не является расчётным упругим хребтом по умолчанию.",
         "en": "Flexible inserts and soft elements. Qualify feeding, drying and printing on the existing printer with a coupon. TPU is not automatically a qualified elastic backbone."
       },
-      "notes": null,
+      "notes": {
+        "ru": "Первая проба — мягкая вставка стопы L1, затем элементы хвоста. Проверить возможность печати TPU на фактической модели Creality.",
+        "en": "First coupon: L1 foot insert, then tail parts. Qualify TPU printing on the actual Creality model."
+      },
       "sources": [],
       "timing": {
-        "ru": "Первое использование: T1. Дата — в календаре закупок выше.",
-        "en": "First use: T1. See the purchasing calendar above."
+        "ru": "Подготовить к этапу L1; дата использования указана в календаре закупок.",
+        "en": "Prepare for L1; see the purchasing calendar for the usage date."
       },
       "observed_on": "2026-09-19"
     },
@@ -1903,12 +1906,12 @@
       "url": "https://arduino.ua/prod409-nabor-rezistorov-0-25w-600-sht",
       "seller": "arduino.ua",
       "quantity_text": {
-        "ru": "1 шт. или набор; используется во всей программе.",
-        "en": "1 unit(s)/pack(s), shared across the plan."
+        "ru": "3 набора: 600 резисторов + 300 керамических и 120 электролитических конденсаторов.",
+        "en": "3 assortments: 600 resistors + 300 ceramic and 120 electrolytic capacitors."
       },
       "status_label": {
-        "ru": "На странице: в наличии.",
-        "en": "Page: in stock."
+        "ru": "Набор резисторов: ожидается поступление; оба набора конденсаторов: в наличии на 25.09.2026.",
+        "en": "Resistor assortment: awaiting stock; both capacitor assortments: in stock on 2026-09-25."
       },
       "classification_label": {
         "ru": "Общий инструмент / компонент",
@@ -1919,8 +1922,8 @@
         "en": "Three assortments: 600 resistors, 300 ceramic capacitors and 120 electrolytics. Check values, resistor power rating, polarity and capacitor voltage rating. LEDs, buttons, diodes and transistors are listed separately."
       },
       "notes": {
-        "ru": " Показана сумма отдельных товаров: 156 + 98 + 95 UAH. Все ссылки приведены ниже.",
-        "en": " Shown price totals separate items: 156 + 98 + 95 UAH. All links are below."
+        "ru": " Показана сумма отдельных товаров: 156 + 98 + 95 UAH. Все ссылки приведены ниже. В этом наборе нет 4,7 кОм; допуск 1% не заявлен. Точные резисторы для хвоста закупаются отдельно в строках согласования энкодеров и АЦП.",
+        "en": " Shown price totals separate items: 156 + 98 + 95 UAH. All links are below. This assortment has no 4.7 kΩ value and does not specify 1% tolerance. Precision tail resistors are purchased separately in the encoder and ADC interface rows."
       },
       "sources": [
         "https://arduino.ua/prod267-nabor-keramicheskih-kondensatorov-300-sht",
@@ -1930,7 +1933,7 @@
         "ru": "Первое использование: M04. Дата — в календаре закупок выше.",
         "en": "First use: M04. See the purchasing calendar above."
       },
-      "observed_on": "2026-09-19"
+      "observed_on": "2026-09-25"
     },
     {
       "id": "wb-fuseholder",
@@ -2616,8 +2619,8 @@
         "en": "Listing explicitly specifies diametric magnetization, 5 mm diameter, 10 mm length and N38. Separate magnet for the selected AS5600, not a second sensor. Print a coaxial carrier with a D3 mm N20 output-shaft fit, Ø5×10 mm magnet pocket and adjustable sensor gap. Poles rotate around the sensor axis; do not substitute an axial magnet."
       },
       "notes": {
-        "ru": "Совместимость по типу магнитного поля; точность конкретной сборки ещё не проверена. Вручную пройти полный оборот, проверить признак обнаружения магнита, признаки слабого/сильного поля, непрерывность угла и повторяемость до включения PID. У AS5600 рабочее поле 30–90 мТ; зазор подбирается по собранному узлу. Филамент и крепёж — из общей закупки. Датчик wb-encoder остаётся 105 грн с минимумом заказа у его продавца 300 грн: датчик+магнит поштучно 117,32 грн, отдельные заказы минимум 312,32 грн плюс доставка. Требование минимального заказа Runok на прочитанных страницах не найдено. Политика Runok: Новая Почта по Украине, стоимость по тарифу перевозчика.",
-        "en": "Compatible magnetic field type; the assembled fixture is not yet accuracy-qualified. Rotate manually through 360°, check magnet-detect, weak/strong-field flags, angle continuity and repeatability before PID. AS5600 operating field is 30–90 mT; set the gap on the actual assembly. Filament and fasteners come from shared stock. Keep the 105 UAH wb-encoder with its seller's 300 UAH minimum: sensor plus magnet unit prices total 117.32 UAH; separate orders require at least 312.32 UAH plus shipping. No Runok minimum-order requirement found on the pages read. Runok policy: Nova Poshta within Ukraine, carrier-priced shipping."
+        "ru": "Совместимость по типу магнитного поля; точность конкретной сборки ещё не проверена. Вручную пройти полный оборот, проверить признак обнаружения магнита, признаки слабого/сильного поля, непрерывность угла и повторяемость до включения PID. У AS5600 рабочее поле 30–90 мТ; зазор подбирается по собранному узлу. Филамент и крепёж — из общей закупки. Текущая цена датчика указана отдельно в wb-encoder. Доставка датчика и магнита оплачивается отдельно; у Runok заявлена Новая почта по Украине.",
+        "en": "Compatible magnetic field type; the assembled fixture is not yet accuracy-qualified. Rotate manually through 360°, check magnet-detect, weak/strong-field flags, angle continuity and repeatability before PID. AS5600 operating field is 30–90 mT; set the gap on the actual assembly. Filament and fasteners come from shared stock. The current sensor price is listed separately in wb-encoder. Sensor and magnet shipping are separate; Runok lists Nova Poshta delivery within Ukraine."
       },
       "sources": [
         "https://look.ams-osram.com/m/1f9fec31c21d8f4d/original/Magnet-selection-guide-rotary-magnetic-position-sensors.pdf"
@@ -3284,8 +3287,8 @@
       "url": null,
       "seller": null,
       "quantity_text": {
-        "ru": "1 набор термоусадки 1,5–8 мм + 50 стяжек + 1 набор маркировки.",
-        "en": "1 heat-shrink assortment, 1.5–8 mm + 50 cable ties + 1 label set."
+        "ru": "328 отрезков термоусадки + 1 м трубки 1,5 мм + 100 стяжек с полем для подписи + 2 м защитной оплётки.",
+        "en": "328 heat-shrink pieces plus 1 m of 1.5 mm tubing, 100 ties with write-on labels, and 2 m protective sleeve."
       },
       "status_label": {
         "ru": "Подобраны конкретные товары; наличие и доставка указаны для каждого компонента.",
@@ -4524,8 +4527,8 @@
       "url": null,
       "seller": null,
       "quantity_text": {
-        "ru": "1 совместимое запасное сопло + 1 набор для очистки и обслуживания; принтер уже есть.",
-        "en": "1 compatible spare nozzle + 1 cleaning/maintenance kit; printer is already owned."
+        "ru": "Набор для очистки и обслуживания. Запасное сопло — отдельная условная покупка после определения модели принтера; варианты и цены ниже.",
+        "en": "Cleaning and maintenance set. A spare nozzle is a separate conditional purchase after identifying the printer model; options and prices below."
       },
       "status_label": {
         "ru": "Подобраны конкретные товары; наличие и доставка указаны для каждого компонента.",
@@ -4831,13 +4834,13 @@
       },
       "group": "mechanics",
       "stage": "M05",
-      "price": 933.86,
+      "price": 3542.86,
       "currency": "UAH",
       "url": null,
       "seller": null,
       "quantity_text": {
-        "ru": "1 нож + 1 набор надфилей + шкурка P180/P400 + 1 набор свёрл 2–6 мм.",
-        "en": "1 knife + 1 needle-file set + P180/P400 abrasive sheets + 1 drill-bit set, 2–6 mm."
+        "ru": "Нож, надфили, шкурка P180/P400, свёрла 2–6 мм и аккумуляторная дрель с зарядным устройством. Струбцины — из общего стенда.",
+        "en": "Knife, needle files, P180/P400 abrasives, 2–6 mm bits and cordless drill with charger. Reuse shared bench clamps."
       },
       "status_label": {
         "ru": "Подобраны конкретные товары; наличие и доставка указаны для каждого компонента.",
@@ -5004,18 +5007,56 @@
             "sources": [
               "https://epicentrk.ua/ua/shop/nabor-sverl-bosch-hss-pointteq-mm-2-6-mm-5-sht-2608577345.html"
             ]
+          },
+          {
+            "name": {
+              "ru": "INTERTOOL WT-0321, дрель-шуруповёрт 12 В: 2 аккумулятора, зарядное устройство и кейс",
+              "en": "INTERTOOL WT-0321 12 V drill/driver: 2 batteries, charger and case"
+            },
+            "url": "https://storgom.ua/ua/product/akkumulyatornyy-drel-shurupovert-intertool-wt-0321.html",
+            "seller": "STORGOM",
+            "unit_price": 2609,
+            "currency": "UAH",
+            "quantity": 1,
+            "unit": "piece",
+            "availability": {
+              "ru": "На складе поставщика; отправка через 1–4 дня по карточке.",
+              "en": "Supplier stock; listing states dispatch in 1–4 days."
+            },
+            "checked_on": "2026-09-25",
+            "shipping_to_ukraine": {
+              "ru": "Украинский продавец; стоимость и срок доставки уточняются при заказе.",
+              "en": "Ukrainian seller; shipping cost and lead time at checkout."
+            },
+            "evidence_note": {
+              "ru": "Карточка и основное Offer: 2609 грн. Патрон 0,8–10 мм; комплект включает два аккумулятора и зарядное устройство.",
+              "en": "Product page and primary Offer: UAH 2,609. Chuck 0.8–10 mm; kit includes two batteries and charger."
+            },
+            "sources": [
+              "https://storgom.ua/ua/product/akkumulyatornyy-drel-shurupovert-intertool-wt-0321.html",
+              "https://intertool.ua/files/products_instructions/intertool-wt-0321-manual.pdf"
+            ]
+          },
+          {
+            "name": {
+              "ru": "Основание стенда, крепления и контрольные грузы",
+              "en": "Rig base, clamps and reference masses"
+            },
+            "reused_from": "bench-fixtures",
+            "quantity": 1,
+            "unit": ""
           }
         ],
         "notes": {
-          "ru": "Набор для зачистки печатных деталей и отверстий. В состав входит оснастка; ручная дрель/шуруповёрт, если их нет, нужны отдельно. Для точных посадок подшипников сверление не заменяет развёртку или корректировку CAD.",
-          "en": "Set for deburring printed parts and finishing holes. This contains tooling; a hand drill/driver is separate if not already owned. Drilling is not a substitute for reaming or CAD adjustment for precise bearing fits."
+          "ru": "Закреплять заготовку струбцинами общего стенда; дрель подходит для обычных отверстий в печатных деталях и креплениях. Точные посадки подшипников требуют корректировки CAD, развёртки или изготовления в мастерской. Распил фанеры и обработку сетевого шкафа заказать по чертежу; их стоимость в материалы не включена.",
+          "en": "Clamp the work to the shared bench; the drill serves ordinary holes in printed parts and fixtures. Precision bearing fits require CAD adjustment, reaming or workshop fabrication. Order plywood cutting and mains-cabinet machining to the drawing; these services are excluded from material prices."
         },
         "scope": {
-          "ru": "Начальный набор: 933,86 грн",
-          "en": "Starter set: UAH 933.86"
+          "ru": "Набор с дрелью: 3542,86 грн; если подходящая дрель уже есть или доступна взаймы — 933,86 грн.",
+          "en": "Set including drill: UAH 3,542.86; UAH 933.86 when a suitable drill is already owned or borrowed."
         },
         "totals": {
-          "UAH": 933.86
+          "UAH": 3542.86
         }
       }
     },
@@ -5026,7 +5067,7 @@
         "en": "Rig base, clamps and reference masses"
       },
       "group": "mechanics",
-      "stage": "M07",
+      "stage": "M05",
       "price": 3614.0,
       "currency": "UAH",
       "url": null,
@@ -5053,8 +5094,8 @@
       },
       "sources": [],
       "timing": {
-        "ru": "Подготовить к этапу M07; дата использования указана в календаре закупок.",
-        "en": "Prepare for M07; see the purchasing calendar for the usage date."
+        "ru": "Подготовить к этапу M05; дата использования указана в календаре закупок.",
+        "en": "Prepare for M05; see the purchasing calendar for the usage date."
       },
       "observed_on": "2026-09-25",
       "procurement_status": "priced_components",
@@ -5731,14 +5772,14 @@
         "en": "Crimping tool and terminals"
       },
       "group": "motor",
-      "stage": "L1",
+      "stage": "M07",
       "price": 4408.09,
       "currency": "UAH",
       "url": null,
       "seller": null,
       "quantity_text": {
-        "ru": "1 кримпер под выбранные наконечники + 1 набор наконечников; отдельная матрица для контактов разъёмов при необходимости.",
-        "en": "1 crimper matching selected ferrules + 1 ferrule assortment; a separate connector-contact die if needed."
+        "ru": "3 обжимных инструмента для разных типов контактов и 2 набора наконечников.",
+        "en": "3 crimp tools for different terminal types and 2 terminal assortments."
       },
       "status_label": {
         "ru": "Подобраны конкретные товары; наличие и доставка указаны для каждого компонента.",
@@ -5758,8 +5799,8 @@
       },
       "sources": [],
       "timing": {
-        "ru": "Подготовить к этапу L1; дата использования указана в календаре закупок.",
-        "en": "Prepare for L1; see the purchasing calendar for the usage date."
+        "ru": "Подготовить к этапу M07; дата использования указана в календаре закупок.",
+        "en": "Prepare for M07; see the purchasing calendar for the usage date."
       },
       "observed_on": "2026-09-25",
       "procurement_status": "priced_components",
@@ -5932,7 +5973,7 @@
       },
       "group": "motor",
       "stage": "L1",
-      "price": 3261.86,
+      "price": 3497.86,
       "currency": "UAH",
       "url": null,
       "seller": null,
@@ -6190,19 +6231,75 @@
             "reused_from": "wb-insulation",
             "quantity": 1,
             "unit": ""
+          },
+          {
+            "name": {
+              "ru": "AS-04 C14, панельный сетевой ввод, 250 В / 10 А",
+              "en": "AS-04 C14 panel mains inlet, 250 V / 10 A"
+            },
+            "url": "https://arduino.ua/prod7574-shteker-merejevii-as-04-c14-montajnii",
+            "seller": "arduino.ua",
+            "unit_price": 9,
+            "currency": "UAH",
+            "quantity": 1,
+            "unit": "piece",
+            "availability": {
+              "ru": "В наличии по карточке продавца на 25.09.2026.",
+              "en": "Listed in stock on 2026-09-25."
+            },
+            "checked_on": "2026-09-25",
+            "shipping_to_ukraine": {
+              "ru": "Украинский продавец; стоимость и срок доставки уточняются при заказе.",
+              "en": "Ukrainian seller; shipping cost and lead time at checkout."
+            },
+            "evidence_note": {
+              "ru": "Прямой запрос к карточке: название, характеристики и основное предложение товара.",
+              "en": "Direct product-page retrieval: title, specifications and primary product offer."
+            },
+            "sources": [
+              "https://arduino.ua/prod7574-shteker-merejevii-as-04-c14-montajnii"
+            ]
+          },
+          {
+            "name": {
+              "ru": "TAKEL FDFD 1.25-250: полностью изолированные гнездовые контакты, 0,5–1,5 мм², 6,3×0,8 мм, 100 шт.",
+              "en": "TAKEL FDFD 1.25-250 fully insulated female tabs, 0.5–1.5 mm², 6.3×0.8 mm, 100-pack"
+            },
+            "url": "https://ultratool.com.ua/ua/p867604707-konnektor-takel-ploskij.html",
+            "seller": "Ultratool",
+            "unit_price": 227,
+            "currency": "UAH",
+            "quantity": 1,
+            "unit": "pack",
+            "availability": {
+              "ru": "В наличии по карточке продавца на 25.09.2026.",
+              "en": "Listed in stock on 2026-09-25."
+            },
+            "checked_on": "2026-09-25",
+            "shipping_to_ukraine": {
+              "ru": "Украинский продавец; стоимость и срок доставки уточняются при заказе.",
+              "en": "Ukrainian seller; shipping cost and lead time at checkout."
+            },
+            "evidence_note": {
+              "ru": "Прямой запрос к карточке: название, характеристики и основное предложение товара.",
+              "en": "Direct product-page retrieval: title, specifications and primary product offer."
+            },
+            "sources": [
+              "https://ultratool.com.ua/ua/p867604707-konnektor-takel-ploskij.html"
+            ]
           }
         ],
         "alternatives": [],
         "notes": {
-          "ru": "Комплект материалов для одного 12-В LRS-350; при двух БП нужен второй корпус или отдельный проверенный проект общего шкафа. Уложить сетевую и низковольтную части с разделением, связать корпус/дверь с PE и обеспечить разгрузку кабелей. Кольцевые наконечники, втулки и крепёж берутся из общих комплектов; конкретные наконечники, защитное соединение и экран определяются чертежом. Сверление, внутренний экран, профессиональная сборка и проверка PE не входят в цену товаров. Вентиляционные отверстия отменяют исходную степень IP66; проверить температуру при нагрузке. Для 24 В вентилятор заменить соответствующей моделью, не подключать 12-В вентилятор к 24 В. При готовом закрытом адаптере этот комплект не покупать.",
-          "en": "Materials for one 12 V LRS-350; two PSUs need a second enclosure or a separately validated shared-cabinet design. Separate mains/low-voltage sections, bond cabinet/door to PE and provide cable strain relief. Reuse shared ring terminals, ferrules and fixings; final terminals, protective bonding and barrier follow the drawing. Drilling, internal barrier, professional assembly and PE testing are outside product prices. Vent openings invalidate original IP66; test loaded temperature. For 24 V replace the fan with the correct voltage model; do not connect the 12 V fan to 24 V. Skip this kit with a complete enclosed adapter."
+          "ru": "Комплект материалов для одного 12-В LRS-350; при двух БП нужен второй корпус или отдельный проверенный проект общего шкафа. Уложить сетевую и низковольтную части с разделением, связать корпус/дверь с PE и обеспечить разгрузку кабелей. Кольцевые наконечники, втулки и крепёж берутся из общих комплектов; конкретные наконечники, защитное соединение и экран определяются чертежом. Сверление, внутренний экран, профессиональная сборка и проверка PE не входят в цену товаров. Вентиляционные отверстия отменяют исходную степень IP66; проверить температуру при нагрузке. Для 24 В вентилятор заменить соответствующей моделью, не подключать 12-В вентилятор к 24 В. При готовом закрытом адаптере этот комплект не покупать. C13 кабель подключается к добавленному C14 вводу. Пачка из 100 гнездовых контактов учтена целиком: для ввода нужны три, остальные остаются в запасе. Контакты рассчитаны на провод 0,5–1,5 мм²; монтажник должен сверить фактические выводы ввода с размером 6,3×0,8 мм и проверить обжим. Номинал 10 А относится к вводу переменного тока, не к выходу БП.",
+          "en": "Materials for one 12 V LRS-350; two PSUs need a second enclosure or a separately validated shared-cabinet design. Separate mains/low-voltage sections, bond cabinet/door to PE and provide cable strain relief. Reuse shared ring terminals, ferrules and fixings; final terminals, protective bonding and barrier follow the drawing. Drilling, internal barrier, professional assembly and PE testing are outside product prices. Vent openings invalidate original IP66; test loaded temperature. For 24 V replace the fan with the correct voltage model; do not connect the 12 V fan to 24 V. Skip this kit with a complete enclosed adapter. The C13 cord mates with the added C14 inlet. The full 100-pack of female terminals is budgeted: three for the inlet and the remainder as stock. Terminals suit 0.5–1.5 mm² wire; the assembler must match actual inlet blades to 6.3×0.8 mm and qualify the crimp. The 10 A rating is for the AC inlet, not PSU output."
         },
         "scope": {
           "ru": "Материалы для изготовления корпуса одного 12-В БП; монтажные работы не включены.",
           "en": "Stock for one 12 V PSU enclosure; fabrication and assembly labour excluded."
         },
         "totals": {
-          "UAH": 3261.86
+          "UAH": 3497.86
         }
       }
     },
@@ -6566,8 +6663,8 @@
       "url": null,
       "seller": null,
       "quantity_text": {
-        "ru": "1 комплект на ось A1 → комплекты на 6 осей A2 с учётом пригодного образца.",
-        "en": "1 set for the A1 joint → sets for 6 A2 axes including the qualified prototype."
+        "ru": "1 опытный сустав A1 для варианта NEMA23/PX57. Для каждой оси A2 состав определить по её расчёту и CAD.",
+        "en": "1 A1 prototype joint for the NEMA23/PX57 option. Determine each A2 axis bill of materials from its own sizing and CAD."
       },
       "status_label": {
         "ru": "Подобраны конкретные товары; наличие и доставка указаны для каждого компонента.",
@@ -6961,7 +7058,7 @@
         "en": "Tendon spools, guides and tensioners"
       },
       "group": "tail",
-      "stage": "T1",
+      "stage": "T2",
       "price": 62.61,
       "currency": "PLN",
       "url": null,
@@ -6990,8 +7087,8 @@
         "https://www.pololu.com/product/4755"
       ],
       "timing": {
-        "ru": "Подготовить к этапу T1; дата использования указана в календаре закупок.",
-        "en": "Prepare for T1; see the purchasing calendar for the usage date."
+        "ru": "Подготовить к этапу T2; дата использования указана в календаре закупок.",
+        "en": "Prepare for T2; see the purchasing calendar for the usage date."
       },
       "observed_on": "2026-09-25",
       "procurement_status": "priced_components",
@@ -7030,12 +7127,12 @@
           }
         ],
         "notes": {
-          "ru": "T1: купить одну пару ступиц для двух двигателей. T3: всего три пары (ещё две); у TME при 3 комплектах показано 55,24 PLN с польским НДС за пару. Ø6 мм совместим с круглым/D-валом Pololu. Два барабана, два винтовых натяжителя и четыре фиксатора концов тяги изготовить из PETG с общими M3; масштабирование 2/2/4→6/6/12. Для Dyneema использовать охват барабана и рассчитанное удержание конца; зажим для стального троса без проверки не подставлять. Вал, 626ZZ, PETG, тяга и PTFE уже учтены отдельно. Проверить прочность печати, ползучесть, диаметр навивки и осевую фиксацию.",
-          "en": "T1: purchase one hub pair for two motors. T3: three pairs total (two more); TME lists PLN 55.24 including Polish VAT per pair at quantity 3. The 6 mm bore fits Pololu round/D shafts. Print two spools, two screw tensioners and four tendon terminations using PETG/shared M3; scale 2/2/4→6/6/12. Use capstan wraps and a validated end-retention design for Dyneema; do not substitute a steel-wire clamp without verification. Shaft, 626ZZ, PETG, tendon and PTFE are already separate rows. Validate print strength, creep, winding diameter and axial retention."
+          "ru": "T2: купить одну пару ступиц для двух двигателей. После PASS первой активной секции T04 в рамках T2: ещё две пары, всего три. При поэтапной покупке 1 + 2 пары считать по обычной цене 62,61 PLN: всего 187,83 PLN. Цена TME 55,24 PLN за пару действует при единовременной покупке трёх комплектов и в этот поэтапный расчёт не включена. Ø6 мм совместим с круглым/D-валом Pololu. Два барабана, два винтовых натяжителя и четыре фиксатора концов тяги изготовить из PETG с общими M3; масштабирование 2/2/4→6/6/12. Для Dyneema использовать охват барабана и рассчитанное удержание конца; зажим для стального троса без проверки не подставлять. Вал, 626ZZ, PETG, тяга и PTFE уже учтены отдельно. Проверить прочность печати, ползучесть, диаметр навивки и осевую фиксацию.",
+          "en": "T2: purchase one hub pair for two motors. After first-active-section T04 PASS within T2: two more pairs, three total. For staged purchases of 1 + 2 pairs, budget the ordinary PLN 62.61 rate: PLN 187.83 total. TME lists PLN 55.24 per pair when ordering three together; that discount is excluded from this staged estimate. The 6 mm bore fits Pololu round/D shafts. Print two spools, two screw tensioners and four tendon terminations using PETG/shared M3; scale 2/2/4→6/6/12. Use capstan wraps and a validated end-retention design for Dyneema; do not substitute a steel-wire clamp without verification. Shaft, 626ZZ, PETG, tendon and PTFE are already separate rows. Validate print strength, creep, winding diameter and axial retention."
         },
         "scope": {
-          "ru": "T1: одна пара ступиц 62,61 PLN; T3: 3 пары по 55,24 PLN = 165,72 PLN до пересчёта налогов/доставки",
-          "en": "T1: one hub pair PLN 62.61; T3: 3 pairs × PLN 55.24 = PLN 165.72 before checkout tax/shipping adjustments"
+          "ru": "Первый образец T2: одна пара ступиц 62,61 PLN; расширение T2 после T04 PASS: ещё две пары 125,22 PLN. Всего 187,83 PLN до пересчёта налогов и доставки.",
+          "en": "First T2 prototype: one hub pair PLN 62.61; T2 expansion after T04 PASS: two more pairs PLN 125.22. PLN 187.83 total before checkout tax and shipping adjustments."
         },
         "totals": {
           "PLN": 62.61
@@ -7050,7 +7147,7 @@
       },
       "group": "tail",
       "stage": "T2",
-      "price": 0,
+      "price": 14.1,
       "currency": "UAH",
       "url": null,
       "seller": null,
@@ -7059,8 +7156,8 @@
         "en": "4 A/B channels for two motors → 12 channels for six."
       },
       "status_label": {
-        "ru": "Собрать из уже учтённых компонентов; повторная покупка не требуется.",
-        "en": "Build from already budgeted components; no duplicate purchase required."
+        "ru": "Подобраны конкретные товары; наличие и доставка указаны для каждого компонента.",
+        "en": "Specific products selected; see availability and delivery for each component."
       },
       "classification_label": {
         "ru": "Обязательная позиция по этапу",
@@ -7083,19 +7180,10 @@
         "en": "Prepare for T2; see the purchasing calendar for the usage date."
       },
       "observed_on": "2026-09-25",
-      "procurement_status": "reuse_budgeted_materials",
+      "procurement_status": "priced_components",
       "added_on": "2026-09-25",
       "market": {
         "components": [
-          {
-            "name": {
-              "ru": "Резисторы и конденсаторы M04",
-              "en": "M04 resistors and capacitors"
-            },
-            "reused_from": "wb-components",
-            "quantity": 1,
-            "unit": ""
-          },
           {
             "name": {
               "ru": "Паяемые макетные платы и разъёмы",
@@ -7113,18 +7201,84 @@
             "reused_from": "wb-short-wire",
             "quantity": 1,
             "unit": ""
+          },
+          {
+            "name": {
+              "ru": "Резистор 4.7 кОм ±1%, 0,25 Вт, выводной",
+              "en": "4.7 kΩ ±1% 0.25 W through-hole resistor"
+            },
+            "url": "https://printec.ua/ua/p2766144275-rezistor-kom-025vt.html",
+            "seller": "Прінтек",
+            "unit_price": 0.47,
+            "currency": "UAH",
+            "quantity": 15,
+            "unit": "pcs",
+            "availability": {
+              "ru": "В наличии по карточке продавца на 25.09.2026.",
+              "en": "Listed in stock on 2026-09-25."
+            },
+            "checked_on": "2026-09-25",
+            "shipping_to_ukraine": {
+              "ru": "Новая почта по Украине, доставка отдельно. На карточках указан минимальный заказ 200 грн у продавца.",
+              "en": "Nova Poshta within Ukraine; shipping extra. Product cards state a UAH 200 seller order minimum."
+            },
+            "evidence_note": {
+              "ru": "Прямая карточка: 0,47 грн/шт., явно указаны номинал и допуск ±1%. Сумма деталей не равна сумме отдельного заказа: объединить с другими нужными товарами до минимума 200 грн.",
+              "en": "Direct listing: UAH 0.47 each, explicit resistance and ±1% tolerance. Parts subtotal is not a standalone order total: combine with other needed goods to meet the UAH 200 minimum."
+            },
+            "sources": [
+              "https://printec.ua/ua/p2766144275-rezistor-kom-025vt.html",
+              "https://printec.ua/ua/delivery_info"
+            ],
+            "resistance_ohm": 4700,
+            "tolerance_percent": 1,
+            "seller_minimum_order_uah": 200
+          },
+          {
+            "name": {
+              "ru": "Резистор 6.8 кОм ±1%, 0,25 Вт, выводной",
+              "en": "6.8 kΩ ±1% 0.25 W through-hole resistor"
+            },
+            "url": "https://printec.ua/ua/p2766144271-rezistor-kom-025vt.html",
+            "seller": "Прінтек",
+            "unit_price": 0.47,
+            "currency": "UAH",
+            "quantity": 15,
+            "unit": "pcs",
+            "availability": {
+              "ru": "В наличии по карточке продавца на 25.09.2026.",
+              "en": "Listed in stock on 2026-09-25."
+            },
+            "checked_on": "2026-09-25",
+            "shipping_to_ukraine": {
+              "ru": "Новая почта по Украине, доставка отдельно. На карточках указан минимальный заказ 200 грн у продавца.",
+              "en": "Nova Poshta within Ukraine; shipping extra. Product cards state a UAH 200 seller order minimum."
+            },
+            "evidence_note": {
+              "ru": "Прямая карточка: 0,47 грн/шт., явно указаны номинал и допуск ±1%. Сумма деталей не равна сумме отдельного заказа: объединить с другими нужными товарами до минимума 200 грн.",
+              "en": "Direct listing: UAH 0.47 each, explicit resistance and ±1% tolerance. Parts subtotal is not a standalone order total: combine with other needed goods to meet the UAH 200 minimum."
+            },
+            "sources": [
+              "https://printec.ua/ua/p2766144271-rezistor-kom-025vt.html",
+              "https://printec.ua/ua/delivery_info"
+            ],
+            "resistance_ohm": 6800,
+            "tolerance_percent": 1,
+            "seller_minimum_order_uah": 200
           }
         ],
         "alternatives": [],
         "notes": {
-          "ru": "В базовом варианте новых покупок нет: из wb-components взять по 5 резисторов 4,7 кОм и 6,8 кОм (1%) на четыре канала с запасом; для 12 каналов — по 15. Плата, гребёнки и провод из общих строк. Проверить наличие этих номиналов и допуск в фактически полученном наборе, уровни и фронты на максимальной частоте. При неудовлетворительных фронтах нужен отдельный буфер с 5-В-толерантными входами; его не покупать одновременно с успешно испытанными делителями.",
-          "en": "No new baseline purchases: allocate five each of 4.7 kΩ and 6.8 kΩ 1% resistors from wb-components for four channels plus spares; fifteen each for twelve channels. Board, headers and wire come from shared rows. Verify these values/tolerance in the received assortment and measure logic levels/edges at maximum frequency. Inadequate edges require a separate 5 V-tolerant buffer; do not automatically buy it alongside qualified dividers."
+          "ru": "Четыре канала требуют по 4 резистора каждого номинала; 12 каналов — по 12, остаются по 3 запасных. Обычный набор M04 не содержит 4,7 кОм и не гарантирует 1%. Проверить уровни и фронты на максимальной частоте; при недостаточном запасе заменить делители буфером с 5-В-толерантными входами. Все три номинала для энкодеров и АЦП стоят 21,15 грн, но у продавца минимальный заказ 200 грн: объединить с нужными товарами. Дополнительная сумма до минимума не включена в стоимость этих схем.",
+          "en": "Four channels require four of each value; twelve channels need twelve, leaving three spares each. The M04 assortment lacks 4.7 kΩ and does not guarantee 1%. Verify levels and edges at maximum frequency; insufficient margins require a buffer with 5 V-tolerant inputs. All three encoder/ADC resistor values cost UAH 21.15, but the seller has a UAH 200 order minimum: combine with needed goods. Additional spending to meet that minimum is excluded from these circuit subtotals."
         },
         "scope": {
-          "ru": "Сборка четырёх каналов с расширением до 12 из уже учтённых материалов.",
-          "en": "Build four channels, expanding to twelve, from already budgeted materials."
+          "ru": "По 15 резисторов 4,7 и 6,8 кОм: запас на 12 каналов; монтажные платы и провод уже учтены.",
+          "en": "15 each of 4.7 and 6.8 kΩ resistors: stock for 12 channels; boards and wire already budgeted."
         },
-        "totals": {}
+        "totals": {
+          "UAH": 14.1
+        }
       }
     },
     {
@@ -7135,7 +7289,7 @@
       },
       "group": "tail",
       "stage": "T2",
-      "price": 55.92,
+      "price": 62.97,
       "currency": "UAH",
       "url": null,
       "seller": null,
@@ -7202,8 +7356,8 @@
           },
           {
             "name": {
-              "ru": "Резисторы и конденсаторы M04",
-              "en": "M04 resistors and capacitors"
+              "ru": "Конденсаторы M04 для фильтра и развязки",
+              "en": "M04 capacitors for filtering and decoupling"
             },
             "reused_from": "wb-components",
             "quantity": 1,
@@ -7226,19 +7380,51 @@
             "reused_from": "wb-short-wire",
             "quantity": 1,
             "unit": ""
+          },
+          {
+            "name": {
+              "ru": "Резистор 10 кОм ±1%, 0,25 Вт, выводной",
+              "en": "10 kΩ ±1% 0.25 W through-hole resistor"
+            },
+            "url": "https://printec.ua/ua/p2766144267-rezistor-kom-025vt.html",
+            "seller": "Прінтек",
+            "unit_price": 0.47,
+            "currency": "UAH",
+            "quantity": 15,
+            "unit": "pcs",
+            "availability": {
+              "ru": "В наличии по карточке продавца на 25.09.2026.",
+              "en": "Listed in stock on 2026-09-25."
+            },
+            "checked_on": "2026-09-25",
+            "shipping_to_ukraine": {
+              "ru": "Новая почта по Украине, доставка отдельно. На карточках указан минимальный заказ 200 грн у продавца.",
+              "en": "Nova Poshta within Ukraine; shipping extra. Product cards state a UAH 200 seller order minimum."
+            },
+            "evidence_note": {
+              "ru": "Прямая карточка: 0,47 грн/шт., явно указаны номинал и допуск ±1%. Сумма деталей не равна сумме отдельного заказа: объединить с другими нужными товарами до минимума 200 грн.",
+              "en": "Direct listing: UAH 0.47 each, explicit resistance and ±1% tolerance. Parts subtotal is not a standalone order total: combine with other needed goods to meet the UAH 200 minimum."
+            },
+            "sources": [
+              "https://printec.ua/ua/p2766144267-rezistor-kom-025vt.html",
+              "https://printec.ua/ua/delivery_info"
+            ],
+            "resistance_ohm": 10000,
+            "tolerance_percent": 1,
+            "seller_minimum_order_uah": 200
           }
         ],
         "alternatives": [],
         "notes": {
-          "ru": "Из wb-components взять четыре резистора 10 кОм 1% на первые два канала, конденсаторы фильтра и развязки; монтаж из общих плат/провода. MCP6002 при 3,3 В — кандидат буферизации уже поделённого сигнала, а не готовая схема защиты АЦП. Полосу RC-фильтра, устойчивость буфера с ёмкостью АЦП, скорость опроса и отклик на ШИМ утвердить измерениями; защиту от аварийного входного напряжения проектировать отдельно. На шесть каналов добавить ещё два MCP6002.",
-          "en": "Allocate four 10 kΩ 1% resistors for the first two channels, filtering and decoupling capacitors from wb-components; use shared boards/wire. MCP6002 at 3.3 V is a candidate buffer for the divided signal, not a finished ADC-protection circuit. Validate RC bandwidth, buffer stability with ADC capacitance, sampling and PWM response; design abnormal-input protection separately. Add two more MCP6002 packages for six channels."
+          "ru": "Первые два канала требуют 4 резистора 10 кОм 1%; все шесть — 12, остаются 3 запасных. Конденсаторы фильтра/развязки взять из M04 после выбора ёмкостей. MCP6002 при 3,3 В — кандидат буферизации поделённого сигнала, а не готовая защита АЦП. Проверить полосу RC-фильтра, устойчивость при ёмкостной нагрузке АЦП, частоту опроса и отклик на ШИМ; защиту при аварийном напряжении проектировать отдельно. Для шести каналов добавить два MCP6002. Минимумы заказов: Прінтек 200 грн для совместного заказа резисторов, MICRO-ТЕХНІК 300 грн для микросхем; дополнительные товары до этих минимумов не включены.",
+          "en": "The first two channels need four 10 kΩ 1% resistors; all six need twelve, leaving three spares. Select filter/decoupling capacitors from M04 after sizing. MCP6002 at 3.3 V is a candidate buffer for the divided signal, not complete ADC protection. Validate RC bandwidth, stability with ADC capacitive loading, sample rate and PWM response; design abnormal-voltage protection separately. Add two MCP6002 packages for six channels. Order minima: UAH 200 at Printec for the combined resistor order and UAH 300 at MICRO-TECHNIK for ICs; extra goods to reach these minima are excluded."
         },
         "scope": {
-          "ru": "Один двухканальный образец T2; пассивные компоненты и монтаж повторно используются.",
-          "en": "One two-channel T2 prototype; reuse passive components and assembly supplies."
+          "ru": "Один двухканальный образец T2 и 15 точных резисторов на все 6 каналов; конденсаторы и монтаж уже учтены.",
+          "en": "One two-channel T2 prototype and 15 precision resistors for all six channels; capacitors and assembly stock already budgeted."
         },
         "totals": {
-          "UAH": 55.92
+          "UAH": 62.97
         }
       }
     },
@@ -7632,8 +7818,8 @@
       "url": null,
       "seller": null,
       "quantity_text": {
-        "ru": "1 жёсткая монтажная пластина + 1 быстросъёмный узел + 1 манекен или макет туловища.",
-        "en": "1 rigid mounting plate + 1 quick-release attachment + 1 dummy or torso fixture."
+        "ru": "1 лист фанеры для собственной монтажной пластины и макета торса; ремень с пряжкой и EVA учтены отдельно.",
+        "en": "1 plywood sheet for a custom mounting plate and torso fixture; belt/buckle and EVA are budgeted separately."
       },
       "status_label": {
         "ru": "Подобраны конкретные товары; наличие и доставка указаны для каждого компонента.",
@@ -7947,8 +8133,8 @@
           },
           {
             "name": {
-              "ru": "Две неэластичные стяжки с пружинным замком, 1 м",
-              "en": "Two non-elastic cam-buckle straps, 1 m"
+              "ru": "Неэластичный стяжной ремень с замком, 25 мм × 3 м",
+              "en": "Non-elastic cam-buckle strap, 25 mm × 3 m"
             },
             "url": "https://prom.ua/ua/p2229514706-remen-styazhnoj-zamok.html",
             "seller": "Комфорт — ПІТОН / Prom.ua",
@@ -8492,8 +8678,8 @@
         "en": "Encoder level interface, 5 V → 3.3 V"
       },
       "detail": {
-        "ru": "Для короткого стендового жгута кандидат: на каждом A/B делитель из 4,7 кОм последовательно и 6,8 кОм на землю, 1%; энкодер питается стабилизированными 5 В, земля общая. Номинально выход 2,96 В при входе 5 В. Проверить уровни и фронты на максимальной частоте и реальном кабеле логическим анализатором/осциллографом до движения. При недостаточном запасе заменить на 3,3-В буфер с 5-В-толерантными входами. Резисторы и материалы для монтажа учтены в общих закупках M04; повторно включать их стоимость в этот узел не нужно.",
-        "en": "Short bench harness candidate: each A/B uses a 4.7 kΩ series / 6.8 kΩ ground divider, 1%; encoder on regulated 5 V with common ground. Nominal output is 2.96 V at 5 V input. Verify voltage levels and edges at maximum frequency with the actual cable using a logic analyser/oscilloscope before motion. If margins are insufficient, use a 3.3 V buffer with 5 V-tolerant inputs. Resistors and prototyping materials are included in the shared M04 purchases; do not count their cost again for this assembly."
+        "ru": "Для короткого стендового жгута кандидат: на каждом A/B делитель из 4,7 кОм последовательно и 6,8 кОм на землю, 1%; энкодер питается стабилизированными 5 В, земля общая. Номинально выход 2,96 В при входе 5 В. Проверить уровни и фронты на максимальной частоте и реальном кабеле логическим анализатором/осциллографом до движения. При недостаточном запасе заменить на 3,3-В буфер с 5-В-толерантными входами. Точные резисторы учтены в tail-encoder-interface к T2; платы и провод повторно используются из M04.",
+        "en": "Short bench harness candidate: each A/B uses a 4.7 kΩ series / 6.8 kΩ ground divider, 1%; encoder on regulated 5 V with common ground. Nominal output is 2.96 V at 5 V input. Verify voltage levels and edges at maximum frequency with the actual cable using a logic analyser/oscilloscope before motion. If margins are insufficient, use a 3.3 V buffer with 5 V-tolerant inputs. Precision resistors are budgeted in tail-encoder-interface for T2; boards and wire are reused from M04."
       },
       "sources": [
         "https://www.pololu.com/product/4755"
@@ -8501,12 +8687,12 @@
     },
     {
       "title": {
-        "ru": "Интерфейс АЦП и проверенная защита",
-        "en": "ADC interface and validated protection"
+        "ru": "Интерфейс АЦП и проверка защиты",
+        "en": "ADC interface and protection verification"
       },
       "detail": {
-        "ru": "ACS724 питается 5 В; предлагаемая схема согласования аналогового выхода — делитель 10 кОм / 10 кОм, 1%, затем согласованный с АЦП фильтр и буфер. Выход 0,5–4,5 В превращается в 0,25–2,25 В, ноль 1,25 В и 100 мВ/А. Это расчёт интерфейса, не готовая проверенная схема. Калибровать ноль/масштаб и отклик на ШИМ; опрос АЦП в отдельном проверенном цикле. Быстрая защита от КЗ, предохранители, аппаратное отключение питания, останов с фиксацией до ручного сброса и сторожевой таймер обязательны. Датчик тока не ограничивает ток сам.",
-        "en": "ACS724 uses 5 V; a candidate analog scaling interface is a 10 kΩ / 10 kΩ, 1% divider followed by an ADC-compatible filter/buffer. A 0.5–4.5 V signal becomes 0.25–2.25 V, with 1.25 V zero and 100 mV/A sensitivity. This is an interface calculation, not a validated circuit. Calibrate offset, scale and PWM response; sample in a separately qualified loop. Fast short-circuit protection, fuses, hardware power removal, latched stop and watchdog remain required. A current sensor does not itself limit current."
+        "ru": "ACS724 питается 5 В; предлагаемая схема согласования аналогового выхода — делитель 10 кОм / 10 кОм, 1%, затем согласованный с АЦП фильтр и буфер. Выход 0,5–4,5 В превращается в 0,25–2,25 В, ноль 1,25 В и 100 мВ/А. Это расчёт интерфейса, не готовая проверенная схема. Калибровать ноль/масштаб и отклик на ШИМ; опрос АЦП в отдельном проверенном цикле. Быстрая защита от КЗ, предохранители, аппаратное отключение питания, останов с фиксацией до ручного сброса и сторожевой таймер обязательны. Датчик тока не ограничивает ток сам. Резисторы 10 кОм 1% закупаются отдельно в tail-current-interface.",
+        "en": "ACS724 uses 5 V; a candidate analog scaling interface is a 10 kΩ / 10 kΩ, 1% divider followed by an ADC-compatible filter/buffer. A 0.5–4.5 V signal becomes 0.25–2.25 V, with 1.25 V zero and 100 mV/A sensitivity. This is an interface calculation, not a validated circuit. Calibrate offset, scale and PWM response; sample in a separately qualified loop. Fast short-circuit protection, fuses, hardware power removal, latched stop and watchdog remain required. A current sensor does not itself limit current. 10 kΩ 1% resistors are purchased separately in tail-current-interface."
       },
       "sources": [
         "https://www.pololu.com/product/4043/specs"
@@ -8536,18 +8722,12 @@
     }
   ],
   "baseline_hours_unchanged": 2960,
-  "raw_research_files": [
-    "workbench.json",
-    "hex_arm.json",
-    "tail_mechanics.json",
-    "root_items.json"
-  ],
   "first_basket_subtotal_uah": 22319.5,
   "updated_on": "2026-09-25",
   "first_basket_unpriced_rows": 0,
   "budget_note": {
-    "ru": "Для всех 38 ранее неоценённых строк подобраны товары с опубликованными ценами либо указан повторный расход уже учтённых материалов. Сумма каждой карточки относится только к её перечисленному составу и этапу; альтернативы не складываются. Валюты сохранены отдельно. Доставка, импортные платежи, работа и дополнительные детали после CAD не включены. Комплект образца не означает готовую спецификацию всего робота.",
-    "en": "All 38 previously unpriced rows now have products with published prices or explicitly reuse already budgeted materials. Each card totals only its listed components and stage; alternatives are excluded. Currencies remain separate. Shipping, import charges, labour and extra parts defined after CAD are excluded. A prototype kit is not the final bill of materials for a complete robot."
+    "ru": "Для всех 38 ранее неоценённых строк подобраны товары с опубликованными ценами либо указан повторный расход уже учтённых материалов. Сумма каждой карточки относится только к её перечисленному составу и этапу; альтернативы не складываются. Валюты сохранены отдельно. Доставка, импортные платежи, работа и дополнительные детали после CAD не включены. Комплект образца не означает готовую спецификацию всего робота. Минимальная сумма заказа отдельных магазинов раскрыта в карточках; недостающая до неё сумма не добавлена как неуказанный товар. Для некоторых комплектов поэтому потребуется объединённый заказ.",
+    "en": "All 38 previously unpriced rows now have products with published prices or explicitly reuse already budgeted materials. Each card totals only its listed components and stage; alternatives are excluded. Currencies remain separate. Shipping, import charges, labour and extra parts defined after CAD are excluded. A prototype kit is not the final bill of materials for a complete robot. Seller order minima are disclosed in the cards; any shortfall is not added as unspecified goods. Some kits therefore require a combined order."
   },
   "first_basket_without_workplace_uah": 14370.5,
   "market_checked_on": "2026-09-25",
@@ -8748,5 +8928,10 @@
         "en": "Excludes output encoder, supports, brake/counterbalance, power and structure. One-joint candidate after sizing; size other joints separately."
       }
     }
+  ],
+  "research_records": [
+    "procurement-link-verification.json",
+    "procurement-verification.json",
+    "consistency-audit.json"
   ]
 }

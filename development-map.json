@@ -273,12 +273,12 @@
         "en": "Start after passing the listed core gates and choosing this direction."
       },
       "results": {
-        "ru": "Единый сравнительный эксперимент оценивает собственные фильтры и LQR по одинаковым записям. Отдельно проверяются смещение, скольжение, ускорение и пределы наблюдаемости.",
-        "en": "One connected benchmark compares custom filters and LQR on the same recordings, explicitly testing bias/slip/acceleration and observability limits."
+        "ru": "Фильтры сравниваются на одинаковых записях датчиков; PID и LQR — в отдельных замкнутых прогонах с одинаковыми начальными условиями, ограничениями и сценариями возмущений. Проверяются смещение, скольжение, ускорение и пределы наблюдаемости.",
+        "en": "Compare filters on the same sensor recordings; compare PID and LQR in separate closed-loop runs with matched initial conditions, limits and disturbance scenarios. Test bias, slip, acceleration and observability limits."
       },
       "outcome": {
-        "ru": "Единый сравнительный эксперимент оценивает собственные фильтры и LQR по одинаковым записям. Отдельно проверяются смещение, скольжение, ускорение и пределы наблюдаемости.",
-        "en": "One connected benchmark compares custom filters and LQR on the same recordings, explicitly testing bias/slip/acceleration and observability limits."
+        "ru": "Фильтры сравниваются на одинаковых записях датчиков; PID и LQR — в отдельных замкнутых прогонах с одинаковыми начальными условиями, ограничениями и сценариями возмущений. Проверяются смещение, скольжение, ускорение и пределы наблюдаемости.",
+        "en": "Compare filters on the same sensor recordings; compare PID and LQR in separate closed-loop runs with matched initial conditions, limits and disturbance scenarios. Test bias, slip, acceleration and observability limits."
       },
       "original_refs": [
         "M11 tasks1–6,pp3–6,9–13",

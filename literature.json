@@ -807,8 +807,8 @@
       },
       "url": "https://web.mit.edu/course/3/3.11/www/module_list.html",
       "selection": {
-        "ru": "Модули 1, 13 и 14: только линейная упругость и пример консольной балки под концевой силой; модуль 18 — вводная часть перед FEM. По 20–30 минут непосредственно перед своим расчётом/опытом.",
-        "en": "Modules 1, 13 and 14: only linear elasticity and a cantilever under tip load; module 18 introduction before FEM. Read 20–30 minutes immediately before the corresponding calculation/experiment."
+        "ru": "Модули 1, 13 и 14: линейная упругость и ручной расчёт напряжения и прогиба консольной балки под концевой силой с проверкой измерением. Модуль 18 о FEM — только для необязательного углубления. По 20–30 минут непосредственно перед своим расчётом/опытом.",
+        "en": "Modules 1, 13 and 14: linear elasticity and hand stress/deflection calculations for a cantilever under tip load, checked by measurement. Module 18 on FEM is optional further development. Read 20–30 minutes immediately before the corresponding calculation/experiment."
       },
       "stages": [
         "M05",
@@ -885,8 +885,8 @@
       },
       "url": "https://www.freecad.org/manual/a-freecad-manual.pdf",
       "selection": {
-        "ru": "Руководство: главы о проектировании изделия и подготовке к печати; затем один закреплённый эскиз → Body/Pad/Pocket → чертёж с размерами. FEM-главу читать только перед своей балкой. По командам использовать справку установленной версии; один CAD — FreeCAD.",
-        "en": "Manual: product modelling and preparing for printing; then one constrained sketch → Body/Pad/Pocket → dimensioned drawing. Read FEM chapter only before the beam task. Use installed-version help for commands; use one CAD system, FreeCAD."
+        "ru": "Руководство: главы о проектировании изделия и подготовке к печати; затем один закреплённый эскиз → Body/Pad/Pocket → чертёж с размерами. Для основной программы достаточно ручного расчёта прогиба балки и измерения; FEM-глава — только для необязательного углубления. По командам использовать справку установленной версии; один CAD — FreeCAD.",
+        "en": "Manual: product modelling and preparing for printing; then one constrained sketch → Body/Pad/Pocket → dimensioned drawing. Core work uses a hand beam-deflection calculation and measurement; the FEM chapter is optional further development. Use installed-version help for commands; use one CAD system, FreeCAD."
       },
       "stages": [
         "M05",
@@ -2598,15 +2598,15 @@
         {
           "ref": "H-FREECAD",
           "selection": {
-            "ru": "Руководство: главы о проектировании изделия и подготовке к печати; затем один закреплённый эскиз → Body/Pad/Pocket → чертёж с размерами. FEM-главу читать только перед своей балкой. По командам использовать справку установленной версии; один CAD — FreeCAD.",
-            "en": "Manual: product modelling and preparing for printing; then one constrained sketch → Body/Pad/Pocket → dimensioned drawing. Read FEM chapter only before the beam task. Use installed-version help for commands; use one CAD system, FreeCAD."
+            "ru": "Руководство: главы о проектировании изделия и подготовке к печати; затем один закреплённый эскиз → Body/Pad/Pocket → чертёж с размерами. Для основной программы достаточно ручного расчёта прогиба балки и измерения; FEM-глава — только для необязательного углубления. По командам использовать справку установленной версии; один CAD — FreeCAD.",
+            "en": "Manual: product modelling and preparing for printing; then one constrained sketch → Body/Pad/Pocket → dimensioned drawing. Core work uses a hand beam-deflection calculation and measurement; the FEM chapter is optional further development. Use installed-version help for commands; use one CAD system, FreeCAD."
           }
         },
         {
           "ref": "H-ROY",
           "selection": {
-            "ru": "Модули 1, 13 и 14: только линейная упругость и пример консольной балки под концевой силой; модуль 18 — вводная часть перед FEM. По 20–30 минут непосредственно перед своим расчётом/опытом.",
-            "en": "Modules 1, 13 and 14: only linear elasticity and a cantilever under tip load; module 18 introduction before FEM. Read 20–30 minutes immediately before the corresponding calculation/experiment."
+            "ru": "Модули 1, 13 и 14: линейная упругость и ручной расчёт напряжения и прогиба консольной балки под концевой силой с проверкой измерением. Модуль 18 о FEM — только для необязательного углубления. По 20–30 минут непосредственно перед своим расчётом/опытом.",
+            "en": "Modules 1, 13 and 14: linear elasticity and hand stress/deflection calculations for a cantilever under tip load, checked by measurement. Module 18 on FEM is optional further development. Read 20–30 minutes immediately before the corresponding calculation/experiment."
           }
         },
         {

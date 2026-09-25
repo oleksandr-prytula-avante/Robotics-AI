@@ -1,6 +1,7 @@
 """Static site integrity checks. Run: python3 tests/site_test.py"""
 import json
 import unittest
+from datetime import date
 from decimal import Decimal
 from html.parser import HTMLParser
 from pathlib import Path
@@ -158,6 +159,71 @@ class SiteTests(unittest.TestCase):
         page = (ROOT / 'procurement.html').read_text()
         self.assertNotIn('Request price', page)
         self.assertNotIn('Запросить цену', page)
+
+    def test_procurement_reused_materials_are_available_before_use(self):
+        data = json.loads((ROOT / 'procurement.json').read_text())
+        items = {item['id']: item for item in data['items']}
+        schedule = json.loads((ROOT / 'schedule.json').read_text())
+        stage_dates = {}
+        for segment in schedule['segments']:
+            if segment['hours'] > 0:
+                day = date.fromisoformat(segment['date'])
+                stage = segment['item']
+                stage_dates[stage] = min(day, stage_dates.get(stage, day))
+
+        def references(value, path=''):
+            if isinstance(value, dict):
+                for key, child in value.items():
+                    child_path = f'{path}.{key}'
+                    if key in ('reused_from', 'included_in'):
+                        yield child_path, child
+                    else:
+                        yield from references(child, child_path)
+            elif isinstance(value, list):
+                for index, child in enumerate(value):
+                    yield from references(child, f'{path}[{index}]')
+
+        for item in items.values():
+            with self.subTest(item=item['id']):
+                self.assertIn(item['stage'], stage_dates, 'First use must be an active scheduled stage')
+            for field, source_id in references(item):
+                with self.subTest(item=item['id'], field=field, source=source_id):
+                    self.assertIn(source_id, items, 'Reused or included material must identify its budgeted source')
+                    self.assertNotEqual(source_id, item['id'], 'An item cannot supply itself')
+                    source_stage = items[source_id]['stage']
+                    self.assertIn(source_stage, stage_dates)
+                    self.assertIn(item['stage'], stage_dates)
+                    self.assertLessEqual(
+                        stage_dates[source_stage], stage_dates[item['stage']],
+                        f'{source_id} first appears in {source_stage}, after {item["id"]} needs it in {item["stage"]}',
+                    )
+
+    def test_tail_dividers_have_budgeted_precision_resistors(self):
+        items = {
+            item['id']: item
+            for item in json.loads((ROOT / 'procurement.json').read_text())['items']
+        }
+        # Twelve encoder signal dividers and six two-resistor ADC dividers
+        # each need twelve of the relevant values, plus at least 20% spares.
+        required_values = {
+            'tail-encoder-interface': (4700, 6800),
+            'tail-current-interface': (10000,),
+        }
+        for item_id, values in required_values.items():
+            components = items[item_id]['market']['components']
+            for resistance in values:
+                with self.subTest(item=item_id, resistance_ohm=resistance):
+                    matching = [part for part in components if part.get('resistance_ohm') == resistance]
+                    self.assertTrue(matching, 'A general resistor assortment does not establish this value and tolerance')
+                    quantity = Decimal(0)
+                    for part in matching:
+                        self.assertGreater(part['tolerance_percent'], 0)
+                        self.assertLessEqual(part['tolerance_percent'], 1)
+                        self.assertFalse(part.get('reused_from') or part.get('included_in'))
+                        self.assertGreater(part['unit_price'], 0, 'Precision resistors must be included in the component budget')
+                        self.assertEqual(urlsplit(part['url']).scheme, 'https')
+                        quantity += Decimal(str(part['quantity']))
+                    self.assertGreaterEqual(quantity, 15, 'Twelve installed resistors require at least three spares')
 
 
 if __name__ == '__main__':

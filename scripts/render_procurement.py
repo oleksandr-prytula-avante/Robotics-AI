@@ -67,7 +67,8 @@ def component_table(components):
         unit = c.get('unit', '')
         units = {'pcs': bi('шт.', 'pcs'), 'piece': bi('шт.', 'pcs'), 'pack': bi('уп.', 'pack'), 'set': bi('компл.', 'set'), 'kit': bi('компл.', 'kit'), '2-pack': bi('уп. по 2 шт.', '2-pack'), 'm': bi('м', 'm'), 'page': bi('стр.', 'page')}
         unit_label = span(units[unit]) if unit in units else html.escape(unit)
-        out += '<tr><td>' + description + '</td><td>' + html.escape(str(c['quantity'])) + ' ' + unit_label + '</td><td>' + unit_amount + '</td><td>' + amount + '</td></tr>'
+        quantity = span(bi('По этапу', 'By stage')) if reused else html.escape(str(c['quantity'])) + ' ' + unit_label
+        out += '<tr><td>' + description + '</td><td>' + quantity + '</td><td>' + unit_amount + '</td><td>' + amount + '</td></tr>'
     return out + '</tbody></table></div>'
 
 def market_details(market):

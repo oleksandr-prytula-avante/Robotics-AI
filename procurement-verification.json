@@ -1,6 +1,6 @@
 {
   "status": "market_research_recorded",
-  "scope": "38 previously unpriced requirements, original product-link audit, component arithmetic and staged reuse.",
+  "scope": "All 100 purchase rows, linked component evidence, arithmetic, stage order and precision-divider materials; static and supplier-source audit, no physical qualification.",
   "version": "4.3",
   "observed_on": "2026-09-25",
   "product_rows": 100,
@@ -8,8 +8,8 @@
   "multi_currency_rows": 2,
   "unpriced_requirement_rows": 0,
   "researched_requirement_rows": 38,
-  "priced_component_offers": 109,
-  "unique_product_urls": 159,
+  "priced_component_offers": 115,
+  "unique_product_urls": 165,
   "first_basket_rows": 22,
   "first_basket_subtotal_uah": 22319.5,
   "first_basket_without_workplace_uah": 14370.5,
@@ -22,6 +22,7 @@
   "checks": [
     "node --test tests/language.test.cjs",
     "python3 tests/site_test.py",
+    "python3 tests/content_test.py",
     "python3 scripts/render_procurement.py --check"
   ],
   "limitations": [
@@ -29,6 +30,8 @@
     "Prototype and conditional kits do not establish final robot sizing, fabrication labour or total build cost.",
     "Waveshare cable shipping to Ukraine requires prior confirmation; Pololu carrier service to the exact destination remains unconfirmed.",
     "Shipping, currency conversion and import charges are excluded; reused materials and alternatives are not added twice.",
-    "Printer model remains unspecified; nozzle alternatives are priced separately."
-  ]
+    "Printer model remains unspecified; nozzle alternatives are priced separately.",
+    "Resistor/IC seller minimum orders can exceed listed component subtotals; additional goods are not silently added to the budget."
+  ],
+  "consistency_audit": "consistency-audit.json"
 }

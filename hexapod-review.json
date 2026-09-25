@@ -659,8 +659,8 @@
         "en": "The version baseline covers the programme"
       },
       "detail": {
-        "ru": "Jazzy имеет официальные пакеты Ubuntu 24.04 ARM64 и срок поддержки до мая 2029. Текущая официальная таблица Gazebo также указывает Harmonic до мая 2029; рекомендована пара Jazzy/Harmonic. Планируемый июнь 2028 находится внутри этих сроков. Новизна другого релиза сама по себе не требует миграции.",
-        "en": "Jazzy supplies official Ubuntu 24.04 ARM64 packages and is supported through May 2029. Gazebo's current official table also lists Harmonic through May 2029; Jazzy/Harmonic is the recommended pairing. Planned June 2028 completion falls within both lifecycles. A newer release alone does not require migration."
+        "ru": "Jazzy имеет официальные пакеты Ubuntu 24.04 ARM64 и срок поддержки до мая 2029. Текущая официальная таблица Gazebo также указывает Harmonic до мая 2029; рекомендована пара Jazzy/Harmonic. Планируемое завершение в декабре 2027 года находится внутри этих сроков. Новизна другого релиза сама по себе не требует миграции.",
+        "en": "Jazzy supplies official Ubuntu 24.04 ARM64 packages and is supported through May 2029. Gazebo's current official table also lists Harmonic through May 2029; Jazzy/Harmonic is the recommended pairing. Planned December 2027 completion falls within both lifecycles. A newer release alone does not require migration."
       },
       "action": {
         "ru": "Зафиксировать версии ОС, RMW, ROS-пакетов, Gazebo, gz_ros2_control, SDK микроконтроллера и драйвера. Использовать Jazzy-ветки документации и пакеты согласованной пары; проверять обновления воспроизведением сохранённых записей и на одной ноге перед всей платформой. Не смешивать Gazebo Classic и Harmonic.",
@@ -684,12 +684,12 @@
     {
       "id": "HEX-S02",
       "title": {
-        "ru": "ARM64 VM — проверяемая конфигурация, не гарантия",
-        "en": "ARM64 VM is a configuration to qualify"
+        "ru": "Выбранная виртуальная машина требует проверки",
+        "en": "Qualify the selected virtual-machine configuration"
       },
       "detail": {
-        "ru": "В отличие от ROS, Gazebo Harmonic указывает Ubuntu amd64 как официальную платформу, а ARM — как платформу с ограниченной поддержкой (best effort). Гостевая графика и плагины M4/UTM требуют фактической проверки. Работа процесса без окна не подтверждает наличие кадров глубины; смена средства визуализации не гарантирует сохранение набора датчиков.",
-        "en": "Unlike ROS, Gazebo Harmonic lists Ubuntu amd64 as an official platform and ARM as best-effort. M4/UTM guest graphics and plugins need a practical check. A windowless process does not establish available depth images; changing renderer does not guarantee the same sensor features."
+        "ru": "В отличие от ROS, Gazebo Harmonic указывает Ubuntu amd64 как официальную платформу, а ARM — как платформу с ограниченной поддержкой (best effort). Модель и процессор имеющегося MacBook Pro пока не указаны; в M01 определить архитектуру и проверить графику и плагины выбранной виртуальной машины. Работа процесса без окна не подтверждает наличие кадров глубины; смена средства визуализации не гарантирует сохранение набора датчиков.",
+        "en": "Unlike ROS, Gazebo Harmonic lists Ubuntu amd64 as an official platform and ARM as best-effort. The owned MacBook Pro model and CPU are unspecified; establish its architecture in M01 and test the selected virtual machine’s graphics and plugins. A windowless process does not establish available depth images; changing renderer does not guarantee the same sensor features."
       },
       "action": {
         "ru": "В M01 выполнить 6-часовую базовую проверку. Проверить не только запуск приложения, но и /clock, изменение состояний суставов и непустые корректные кадры тестового датчика. При неуспехе зафиксировать HOLD и доступный способ решения; отсутствующие данные датчика нельзя подменять идеальными данными без явной маркировки.",
@@ -944,8 +944,8 @@
         "en": "Qualify the onboard computer separately"
       },
       "detail": {
-        "ru": "M4/VM — среда разработки. Исходник M22 предусматривает Pi 5 либо совместимый Ubuntu x86-хост после измерения нагрузки. Название платы, сборка пакета и прежний HIL на ноутбуке не подтверждают работу камеры, драйвера, питания, охлаждения и обмена на новом хосте.",
-        "en": "M4/VM is the development environment. Original M22 considers Pi 5 or a compatible Ubuntu x86 host after measuring load. A board name, package build and previous laptop HIL do not validate camera, driver, power, cooling or communication on the new host."
+        "ru": "Имеющийся MacBook Pro — компьютер разработки; его архитектуру и рабочую среду Ubuntu нужно подтвердить в M01. Исходник M22 предусматривает Pi 5 либо совместимый Ubuntu x86-хост после измерения нагрузки. Название платы, сборка пакета и прежний HIL на ноутбуке не подтверждают работу камеры, драйвера, питания, охлаждения и обмена на новом хосте.",
+        "en": "The owned MacBook Pro is the development computer; establish its architecture and working Ubuntu environment in M01. Original M22 considers Pi 5 or a compatible Ubuntu x86 host after measuring load. A board name, package build and previous laptop HIL do not validate camera, driver, power, cooling or communication on the new host."
       },
       "action": {
         "ru": "В M22 повторить первичный запуск без движения, воспроизведение записей и цепь остановки на выбранном хосте, затем проверить CPU/RAM/USB/запись под нагрузкой. Сохранить образ/манифест и udev/права устройств. Применить поэтапное включение; автозапуск ОС может запускать диагностику, но не движение. Оборудование выбирается после измерений; новая покупка не предполагается автоматически.",
@@ -2117,8 +2117,8 @@
         "en": "Practical hexapod stack: ROS, simulation, MCU, buses, time, data quality and actual actuator interfaces. Relevant tasks and requirements in original M06/M11/M12/M13/M22/M23 were checked against current work packages. This is a document review, not a test of the computer or robot."
       },
       "summary": {
-        "ru": "Сохранить Ubuntu 24.04 / ROS 2 Jazzy / Gazebo Harmonic. Существенная поправка: поддержка ROS на ARM64 не гарантирует работу всей графики Gazebo в M4/UTM. Добавить раннюю проверку готовой сцены, явные физические интерфейсы и критерии временных характеристик/отказов. Дополнительной разработки поверх уже учтённых работ не требуется; 6 ч установки и первичной проверки переносятся в M01 из M12/M13.",
-        "en": "Retain Ubuntu 24.04 / ROS 2 Jazzy / Gazebo Harmonic. Main correction: ROS support on ARM64 does not establish full Gazebo graphics support in M4/UTM. Add an early supplied-scene readiness check, explicit physical interfaces and timing/fault criteria. No additional development beyond existing work is required; move six installation and initial-check hours from M12/M13 into M01."
+        "ru": "Сохранить Ubuntu 24.04 / ROS 2 Jazzy / Gazebo Harmonic. Существенная поправка: поддержка ROS на ARM64 не гарантирует работу всей графики Gazebo в виртуальной машине. Архитектура имеющегося MacBook Pro пока не подтверждена. Добавить раннюю проверку готовой сцены, явные физические интерфейсы и критерии временных характеристик/отказов. Дополнительной разработки поверх уже учтённых работ не требуется; 6 ч установки и первичной проверки переносятся в M01 из M12/M13.",
+        "en": "Retain Ubuntu 24.04 / ROS 2 Jazzy / Gazebo Harmonic. Main correction: ROS support on ARM64 does not establish full Gazebo graphics support in a virtual machine. The owned MacBook Pro architecture is not yet confirmed. Add an early supplied-scene readiness check, explicit physical interfaces and timing/fault criteria. No additional development beyond existing work is required; move six installation and initial-check hours from M12/M13 into M01."
       },
       "hour_delta": 0,
       "ownership_shift": {
@@ -2216,8 +2216,8 @@
             "en": "The version baseline covers the programme"
           },
           "detail": {
-            "ru": "Jazzy имеет официальные пакеты Ubuntu 24.04 ARM64 и срок поддержки до мая 2029. Текущая официальная таблица Gazebo также указывает Harmonic до мая 2029; рекомендована пара Jazzy/Harmonic. Планируемый июнь 2028 находится внутри этих сроков. Новизна другого релиза сама по себе не требует миграции.",
-            "en": "Jazzy supplies official Ubuntu 24.04 ARM64 packages and is supported through May 2029. Gazebo's current official table also lists Harmonic through May 2029; Jazzy/Harmonic is the recommended pairing. Planned June 2028 completion falls within both lifecycles. A newer release alone does not require migration."
+            "ru": "Jazzy имеет официальные пакеты Ubuntu 24.04 ARM64 и срок поддержки до мая 2029. Текущая официальная таблица Gazebo также указывает Harmonic до мая 2029; рекомендована пара Jazzy/Harmonic. Планируемое завершение в декабре 2027 года находится внутри этих сроков. Новизна другого релиза сама по себе не требует миграции.",
+            "en": "Jazzy supplies official Ubuntu 24.04 ARM64 packages and is supported through May 2029. Gazebo's current official table also lists Harmonic through May 2029; Jazzy/Harmonic is the recommended pairing. Planned December 2027 completion falls within both lifecycles. A newer release alone does not require migration."
           },
           "action": {
             "ru": "Зафиксировать версии ОС, RMW, ROS-пакетов, Gazebo, gz_ros2_control, SDK микроконтроллера и драйвера. Использовать Jazzy-ветки документации и пакеты согласованной пары; проверять обновления воспроизведением сохранённых записей и на одной ноге перед всей платформой. Не смешивать Gazebo Classic и Harmonic.",
@@ -2241,12 +2241,12 @@
         {
           "id": "HEX-S02",
           "title": {
-            "ru": "ARM64 VM — проверяемая конфигурация, не гарантия",
-            "en": "ARM64 VM is a configuration to qualify"
+            "ru": "Выбранная виртуальная машина требует проверки",
+            "en": "Qualify the selected virtual-machine configuration"
           },
           "detail": {
-            "ru": "В отличие от ROS, Gazebo Harmonic указывает Ubuntu amd64 как официальную платформу, а ARM — как платформу с ограниченной поддержкой (best effort). Гостевая графика и плагины M4/UTM требуют фактической проверки. Работа процесса без окна не подтверждает наличие кадров глубины; смена средства визуализации не гарантирует сохранение набора датчиков.",
-            "en": "Unlike ROS, Gazebo Harmonic lists Ubuntu amd64 as an official platform and ARM as best-effort. M4/UTM guest graphics and plugins need a practical check. A windowless process does not establish available depth images; changing renderer does not guarantee the same sensor features."
+            "ru": "В отличие от ROS, Gazebo Harmonic указывает Ubuntu amd64 как официальную платформу, а ARM — как платформу с ограниченной поддержкой (best effort). Модель и процессор имеющегося MacBook Pro пока не указаны; в M01 определить архитектуру и проверить графику и плагины выбранной виртуальной машины. Работа процесса без окна не подтверждает наличие кадров глубины; смена средства визуализации не гарантирует сохранение набора датчиков.",
+            "en": "Unlike ROS, Gazebo Harmonic lists Ubuntu amd64 as an official platform and ARM as best-effort. The owned MacBook Pro model and CPU are unspecified; establish its architecture in M01 and test the selected virtual machine’s graphics and plugins. A windowless process does not establish available depth images; changing renderer does not guarantee the same sensor features."
           },
           "action": {
             "ru": "В M01 выполнить 6-часовую базовую проверку. Проверить не только запуск приложения, но и /clock, изменение состояний суставов и непустые корректные кадры тестового датчика. При неуспехе зафиксировать HOLD и доступный способ решения; отсутствующие данные датчика нельзя подменять идеальными данными без явной маркировки.",
@@ -2501,8 +2501,8 @@
             "en": "Qualify the onboard computer separately"
           },
           "detail": {
-            "ru": "M4/VM — среда разработки. Исходник M22 предусматривает Pi 5 либо совместимый Ubuntu x86-хост после измерения нагрузки. Название платы, сборка пакета и прежний HIL на ноутбуке не подтверждают работу камеры, драйвера, питания, охлаждения и обмена на новом хосте.",
-            "en": "M4/VM is the development environment. Original M22 considers Pi 5 or a compatible Ubuntu x86 host after measuring load. A board name, package build and previous laptop HIL do not validate camera, driver, power, cooling or communication on the new host."
+            "ru": "Имеющийся MacBook Pro — компьютер разработки; его архитектуру и рабочую среду Ubuntu нужно подтвердить в M01. Исходник M22 предусматривает Pi 5 либо совместимый Ubuntu x86-хост после измерения нагрузки. Название платы, сборка пакета и прежний HIL на ноутбуке не подтверждают работу камеры, драйвера, питания, охлаждения и обмена на новом хосте.",
+            "en": "The owned MacBook Pro is the development computer; establish its architecture and working Ubuntu environment in M01. Original M22 considers Pi 5 or a compatible Ubuntu x86 host after measuring load. A board name, package build and previous laptop HIL do not validate camera, driver, power, cooling or communication on the new host."
           },
           "action": {
             "ru": "В M22 повторить первичный запуск без движения, воспроизведение записей и цепь остановки на выбранном хосте, затем проверить CPU/RAM/USB/запись под нагрузкой. Сохранить образ/манифест и udev/права устройств. Применить поэтапное включение; автозапуск ОС может запускать диагностику, но не движение. Оборудование выбирается после измерений; новая покупка не предполагается автоматически.",

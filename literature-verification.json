@@ -1,15 +1,26 @@
 {
   "status": "PASS",
+  "checked_on": "2026-09-25",
   "version": "4.3",
+  "original_bibliography_checked_on": "2026-09-19",
   "curated_reference_entries": 41,
-  "audited_findings": 39,
+  "recorded_prior_audit_findings": 39,
   "stage_routes": 30,
   "monthly_reading_occurrences": 42,
   "existing_learning_hours": 628,
   "added_hours": 0,
-  "calendar_and_task_content_identical_to_v42_except_version": true,
-  "all_routes_bilingual_inline": true,
+  "calendar_and_hour_allocations_unchanged_by_current_audit": true,
+  "allocation_comparison": "Compared current schedule dates, monthly totals, all segments and per-task hours/categories with repository HEAD before this audit. Historical v4.2 prose equality is not asserted.",
+  "task_and_reading_prose_revised": true,
+  "all_routes_have_bilingual_inline_containers": true,
   "all_reference_ids_unique": true,
-  "monthly_and_curriculum_routes_match_catalog": true,
-  "scope": "Static consistency and primary-source bibliography research; not a comprehensive network test of all original external URLs. No visual browser test."
+  "monthly_and_curriculum_reference_ids_and_learning_hours_match_catalog": true,
+  "wording_note": "Rendered Russian selections include editorial paraphrases. Reference order and learning hours are checked exactly; verbatim catalog equality is not asserted for all rendered prose.",
+  "verification_command": "python3 tests/content_test.py",
+  "primary_source_recheck": {
+    "checked_on": "2026-09-25",
+    "scope": "Selected official publisher, author, standards and software-documentation pages rechecked for editions, versions, section mappings and access labels; original 2026-09-19 bibliography provenance retained.",
+    "all_original_external_urls_fetched": false
+  },
+  "scope": "Static bibliography/route consistency and selected primary-source factual checks. The 1,839 preserved PDF annotation links were compared locally, not all fetched. No visual browser, firmware or hardware validation."
 }

@@ -3,8 +3,8 @@
   "method": "Public product-page GET plus seller/manufacturer search-index review; no login, checkout or order.",
   "scope": "Product URLs used in procurement.json, including alternatives. Technical documentation is outside this HTTP audit.",
   "counts": {
+    "ok": 127,
     "restricted": 37,
-    "ok": 121,
     "unavailable": 1
   },
   "limitations": {
@@ -227,6 +227,15 @@
       "http_status": 200,
       "final_url": "https://arduino.ua/prod7389-usb-logichnii-analizator-weact-dla-mini-24mhz-8-kanaliv",
       "title": "USB логічний аналізатор WeAct DLA Mini 24Mhz 8-каналів купити в Києві та Україні"
+    },
+    {
+      "url": "https://arduino.ua/prod7574-shteker-merejevii-as-04-c14-montajnii",
+      "product": "AS-04 C14 panel mains inlet, 250 V / 10 A",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/prod7574-shteker-merejevii-as-04-c14-montajnii",
+      "title": "Роз'єм мережевий AS-04 (C14) купити в Києві та Україні"
     },
     {
       "url": "https://arduino.ua/prod7744-nabir-nakonechnikiv-kilcevih-102sht",
@@ -789,6 +798,33 @@
       "title": "Цифровий друк - Копі-Центр КНУБА Київ"
     },
     {
+      "url": "https://printec.ua/ua/p2766144267-rezistor-kom-025vt.html",
+      "product": "10 kΩ ±1% 0.25 W through-hole resistor",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://printec.ua/ua/p2766144267-rezistor-kom-025vt.html",
+      "title": "Резистор 10 кОм ±1% 0.25Вт - купити за ціною 0,47 ₴ | Прінтек"
+    },
+    {
+      "url": "https://printec.ua/ua/p2766144271-rezistor-kom-025vt.html",
+      "product": "6.8 kΩ ±1% 0.25 W through-hole resistor",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://printec.ua/ua/p2766144271-rezistor-kom-025vt.html",
+      "title": "Резистор 6.8 кОм ±1% 0.25Вт - купити за ціною 0,47 ₴ | Прінтек"
+    },
+    {
+      "url": "https://printec.ua/ua/p2766144275-rezistor-kom-025vt.html",
+      "product": "4.7 kΩ ±1% 0.25 W through-hole resistor",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://printec.ua/ua/p2766144275-rezistor-kom-025vt.html",
+      "title": "Резистор 4.7 кОм ±1% 0.25Вт - купити за ціною 0,47 ₴ | Прінтек"
+    },
+    {
       "url": "https://prologix.ua/akumulyatorna-batareya-prologix-128v-20ah-256wh-plfp12-20-lifepo4",
       "product": "Prologix PLFP12-20 LiFePO4, 12.8 V 20 Ah / 256 Wh",
       "checked_on": "2026-09-25",
@@ -1092,6 +1128,15 @@
       "title": "6x2.5mm Diametrical Neodymium Magnet\n – source robotics"
     },
     {
+      "url": "https://storgom.ua/ua/product/akkumulyatornyy-drel-shurupovert-intertool-wt-0321.html",
+      "product": "INTERTOOL WT-0321 12 V drill/driver: 2 batteries, charger and case",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://storgom.ua/ua/product/akkumulyatornyy-drel-shurupovert-intertool-wt-0321.html",
+      "title": "Акумуляторний дриль-шуруповерт Intertool WT-0321| Купити в Україні, ціна в інтернет-магазині STORGOM.UA"
+    },
+    {
       "url": "https://tacticua.com.ua/remin-taktichniy-quick-release-belt-kombat-tactical-olive/",
       "product": "Kombat Tactical Quick Release Belt, 50 mm × 102 cm",
       "checked_on": "2026-09-25",
@@ -1144,6 +1189,15 @@
       "http_status": 200,
       "final_url": "https://tvoe.ua/protiazka-dlia-kabelia-stekloplastikovaia-edrawrope384-d38-mm-l4-m-s068001",
       "title": "Протяжка для кабелю склопластикова купити в інтернет-магазині з гарантією, доставка по Україні та Києву | ТВОЄ"
+    },
+    {
+      "url": "https://ultratool.com.ua/ua/p867604707-konnektor-takel-ploskij.html",
+      "product": "TAKEL FDFD 1.25-250 fully insulated female tabs, 0.5–1.5 mm², 6.3×0.8 mm, 100-pack",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://ultratool.com.ua/ua/p867604707-konnektor-takel-ploskij.html",
+      "title": "Конектор Takel плоский повністю ізольований \"мама\" FDFD 1.25-250 (0,5-1,5/6,3-0,8) (100 шт.): продаж, ціна у Харкові. Елементи кріплення кабелю від \"Ultratool\" - 867604707"
     },
     {
       "url": "https://vencon.ua/products/wago-221-415",

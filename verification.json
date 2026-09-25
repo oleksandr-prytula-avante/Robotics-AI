@@ -1,20 +1,27 @@
 {
   "status": "PASS",
-  "scope": "Read-only static checks and mocked app.js; no browser, visual render, or external URL availability test",
+  "checked_on": "2026-09-25",
+  "version": "4.3",
+  "scope": "Static repository, accounting, dependency-order and source-manifest checks, plus app.js in a mocked DOM. No real browser or hardware validation; supplier receipts and every original external URL were not verified.",
   "html_pages": 76,
   "main_pages": 10,
   "month_pages": 14,
-  "local_file_and_anchor_links": 4213,
-  "unique_external_link_targets": 630,
-  "external_network_status_checked": false,
+  "local_file_and_anchor_links": 4271,
+  "unique_external_link_targets": 751,
+  "all_external_link_targets_network_checked": false,
   "original_pdfs": 52,
   "original_pdf_pages": 1600,
   "preserved_source_text_characters": 4207543,
   "preserved_original_annotation_links": 1839,
-  "original_hashes_compared_to_input_zip": false,
-  "original_hashes_compared_to_retained_backup_zip": true,
-  "original_hashes_match_source_manifest": true,
-  "original_hash_reference": "/Users/oleksandrprytula/Documents/Codex/2026-09-19/d/work/revision_v3/Robotics-AI-Plan-Revised-RU-EN.zip",
+  "archive_validation": {
+    "reference": "source-manifest.json",
+    "sha256_match": true,
+    "page_counts_match": true,
+    "html_extracted_character_counts_match": true,
+    "pdf_annotation_links_match_html": true,
+    "input_or_backup_zip_compared_in_this_audit": false,
+    "provenance_note": "The prior report recorded a retained backup ZIP comparison. This audit independently checked the repository PDFs against the retained SHA-256 manifest; it did not reopen that ZIP."
+  },
   "hours": {
     "base_hours": 2660,
     "contingency_hours": 300,
@@ -32,41 +39,63 @@
   },
   "selected_software_hours": 400,
   "software_task_count": 33,
+  "scheduled_stages": 39,
+  "scheduled_tasks_checked": 129,
+  "scheduled_segments_checked": 470,
   "start": "2026-11-01",
   "work_finish": "2027-12-21",
   "calendar_finish": "2027-12-31",
-  "dependency_edges_checked": 98,
+  "dependency_edges_checked": 169,
+  "external_receipt_dependencies_not_verified": [
+    {
+      "dependency": "PR3_received",
+      "task": "M22.Q2"
+    },
+    {
+      "dependency": "PR4_received",
+      "task": "M23.X1"
+    }
+  ],
   "original_topics_retained": 24,
   "optional_development_tracks": 22,
+  "automated_checks": {
+    "site": {
+      "command": "python3 tests/site_test.py",
+      "status": "PASS",
+      "test_cases": 7
+    },
+    "content": {
+      "command": "python3 tests/content_test.py",
+      "status": "PASS",
+      "test_cases": 6
+    }
+  },
   "javascript": {
     "status": "PASS",
-    "scenarios": 5,
-    "assertions": 148,
+    "command": "node --test tests/language.test.cjs",
+    "test_cases": 5,
     "browser_used": false,
     "network_used": false,
     "checks": [
-      "language default/query/storage priority",
-      "blocked file storage",
-      "RU/EN toggle/title/aria",
-      "relative language links and query/hash preservation",
-      "PDF/external/mailto/anchor stability",
-      "month search",
-      "print callback",
-      "hash opening/invalid hash"
+      "English URL default without duplicate history",
+      "Russian query selection, title, aria and back/forward history",
+      "Unsupported query languages normalize to English",
+      "Local links carry language and preserve queries/anchors; external/download/PDF/mailto links remain stable",
+      "file:// links and reloads retain selected URL language"
     ]
   },
   "language_element_counts": {
     "changes.html": {
-      "ru": 83,
-      "en": 83
+      "ru": 90,
+      "en": 90
     },
     "curriculum.html": {
       "ru": 1259,
       "en": 1259
     },
     "full-syllabus.html": {
-      "ru": 348,
-      "en": 348
+      "ru": 380,
+      "en": 380
     },
     "growth.html": {
       "ru": 287,
@@ -77,8 +106,8 @@
       "en": 234
     },
     "index.html": {
-      "ru": 99,
-      "en": 99
+      "ru": 102,
+      "en": 102
     },
     "library.html": {
       "ru": 735,
@@ -101,20 +130,20 @@
       "en": 168
     },
     "months/2027-02.html": {
-      "ru": 162,
-      "en": 162
+      "ru": 163,
+      "en": 163
     },
     "months/2027-03.html": {
       "ru": 189,
       "en": 189
     },
     "months/2027-04.html": {
-      "ru": 195,
-      "en": 195
+      "ru": 196,
+      "en": 196
     },
     "months/2027-05.html": {
-      "ru": 161,
-      "en": 161
+      "ru": 163,
+      "en": 163
     },
     "months/2027-06.html": {
       "ru": 171,
@@ -125,8 +154,8 @@
       "en": 152
     },
     "months/2027-08.html": {
-      "ru": 153,
-      "en": 153
+      "ru": 155,
+      "en": 155
     },
     "months/2027-09.html": {
       "ru": 163,
@@ -145,8 +174,8 @@
       "en": 137
     },
     "procurement.html": {
-      "ru": 738,
-      "en": 738
+      "ru": 2189,
+      "en": 2189
     },
     "projects.html": {
       "ru": 553,
@@ -362,5 +391,9 @@
     }
   },
   "errors": [],
-  "warnings": []
+  "limitations": [
+    "No real-browser visual or interaction test.",
+    "Archive hashes establish equality to the retained manifest, not authorship or provenance authenticity.",
+    "Planned PASS gates, component delivery dates and hardware performance are not experimentally validated."
+  ]
 }
