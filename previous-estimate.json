@@ -140,7 +140,7 @@
         },
         {
           "title": {
-            "ru": "Производные и интегралы, цепное правило, частные производные и Якобиан; задачи 7–8",
+            "ru": "Производные и интегралы, цепное правило, частные производные и якобиан; задачи 7–8",
             "en": "Derivatives and integrals, chain rule, partial derivatives and Jacobian; tasks 7–8"
           },
           "learn": 7,
@@ -181,7 +181,7 @@
         },
         {
           "title": {
-            "ru": "Масса–пружина–демпфер и маятник; Euler, semi-implicit Euler, RK4 и независимая сходимость; задачи 9–10",
+            "ru": "Система «масса — пружина — демпфер» и маятник; явный и полунеявный методы Эйлера, RK4 и независимая проверка сходимости; задачи 9–10",
             "en": "Mass–spring–damper and pendulum; Euler, semi-implicit Euler, RK4 and independent convergence checks; tasks 9–10"
           },
           "learn": 10,
@@ -238,7 +238,7 @@
         },
         {
           "title": {
-            "ru": "Объединить четыре notebook и robot_math; шесть ошибок, устная защита, чистое воспроизведение",
+            "ru": "Объединить четыре вычислительных блокнота и пакет robot_math; проверить шесть ошибочных случаев, защитить результаты и воспроизвести их в чистой среде",
             "en": "Integrate four notebooks and robot_math; six fault cases, oral explanation and clean reproduction"
           },
           "learn": 0,
@@ -281,7 +281,7 @@
         "en": "All ten tasks; four notebooks; calibration with held-out data; both dynamic systems and three integration steps; units, signs, six faults and the p15 ṗ=Jq̇ example."
       },
       "reuse": {
-        "ru": "M01: готовая среда, тестирование и работа с данными. Не повторять основы Python/NumPy как отдельный курс. Вывод Якобиана в M08, динамика в M09 и матричные методы в M11 являются последующим применением уже восстановленных основ.",
+        "ru": "M01: готовая среда, тестирование и работа с данными. Не повторять основы Python/NumPy как отдельный курс. Вывод якобиана в M08, динамика в M09 и матричные методы в M11 являются последующим применением уже восстановленных основ.",
         "en": "Reuse the M01 environment, testing and data skills; no separate introductory Python/NumPy course. Jacobians in M08, dynamics in M09 and matrix methods in M11 apply the refreshed foundations rather than repeat full courses."
       },
       "optional": {
@@ -468,7 +468,7 @@
       "tasks": [
         {
           "title": {
-            "ru": "Распределения, квантизация, ковариация, Bayes, независимость и коррелированный шум; задачи 1–4",
+            "ru": "Распределения, квантование, ковариация, формула Байеса, независимость и коррелированный шум; задачи 1–4",
             "en": "Distributions, quantisation, covariance, Bayes, independence and correlated noise; tasks 1–4"
           },
           "learn": 13,
@@ -525,7 +525,7 @@
         },
         {
           "title": {
-            "ru": "Протокол 30 физических повторов IMU; интервалы, робастность, парное сравнение и утечки; задачи 5–6",
+            "ru": "Протокол 30 повторных физических испытаний IMU; доверительные интервалы, робастность, парное сравнение и утечка данных; задачи 5–6",
             "en": "Thirty physical IMU repeats, intervals, robustness, paired comparison and leakage; tasks 5–6"
           },
           "learn": 12,
@@ -574,7 +574,7 @@
         },
         {
           "title": {
-            "ru": "Градиент и line search; ограниченная нелинейная калибровка, robust loss, regularisation и отдельный тест; задачи 7–8",
+            "ru": "Градиент и одномерный поиск; нелинейная калибровка с ограничениями, робастная функция потерь, регуляризация и независимая проверка; задачи 7–8",
             "en": "Gradient and line search; bounded nonlinear calibration, robust loss, regularisation and independent test; tasks 7–8"
           },
           "learn": 13,
@@ -631,7 +631,7 @@
         },
         {
           "title": {
-            "ru": "SVD, идентифицируемость, ковариация через Якобиан, Monte Carlo и bootstrap по повторным опытам; задачи 9–10",
+            "ru": "SVD, идентифицируемость, расчёт ковариации через якобиан, метод Монте-Карло и бутстреп по повторным опытам; задачи 9–10",
             "en": "SVD, identifiability, Jacobian covariance, Monte Carlo and run-level bootstrap; tasks 9–10"
           },
           "learn": 12,
@@ -715,7 +715,7 @@
         "en": "Ten tasks; thirty real independent sensor placements; run-based train/validation/test splits; nonlinear calibration, SVD, propagation/Monte Carlo, bootstrap and six validity checks. Synthetic data do not replace physical repeats."
       },
       "reuse": {
-        "ru": "Повторно использовать калибровку q=a·u+b, геометрию p(L,q), Якобиан, данные, тестовый каркас и SciPy из M02; не строить их заново и не проходить полный курс Boyd.",
+        "ru": "Повторно использовать калибровку q=a·u+b, геометрию p(L,q), якобиан, данные, тестовый каркас и SciPy из M02; не строить их заново и не проходить полный курс Boyd.",
         "en": "Reuse M02 calibration q=a·u+b, p(L,q), Jacobian, data, tests and SciPy; do not rebuild them or complete all of Boyd."
       },
       "optional": {
@@ -894,7 +894,7 @@
       "tasks": [
         {
           "title": {
-            "ru": "Системы координат, SO(2)/SO(3), quaternion и CAD-дерево; задачи 1–4",
+            "ru": "Системы координат, SO(2)/SO(3), кватернионы и дерево сборки в САПР; задачи 1–4",
             "en": "Frames, SO(2)/SO(3), quaternions and CAD tree; tasks 1–4"
           },
           "learn": 8,
@@ -935,7 +935,7 @@
         },
         {
           "title": {
-            "ru": "Две FK-модели и реальные оси CAD, DH/PoE awareness; независимые позы; задачи 5–6",
+            "ru": "Две модели прямой кинематики (FK), фактические оси CAD-модели, знакомство с DH/PoE; независимые проверочные конфигурации; задачи 5–6",
             "en": "Two FK models and actual CAD axes, DH/PoE awareness; independent poses; tasks 5–6"
           },
           "learn": 10,
@@ -984,7 +984,7 @@
         },
         {
           "title": {
-            "ru": "Аналитическая IK, обе ветви, пределы и траектория стопы; задачи 7–8",
+            "ru": "Аналитическое решение обратной кинематики (IK), обе ветви решения, ограничения и траектория стопы; задачи 7–8",
             "en": "Analytical IK, both branches, limits and foot path; tasks 7–8"
           },
           "learn": 9,
@@ -1033,7 +1033,7 @@
         },
         {
           "title": {
-            "ru": "Численная damped IK, seeds, сходимость и ясные статусы; задача 9",
+            "ru": "Численное решение обратной кинематики с демпфированием: начальные приближения, сходимость и однозначные статусы результата; задача 9",
             "en": "Numerical damped IK, seeds, convergence and clear statuses; task 9"
           },
           "learn": 6,
@@ -1074,7 +1074,7 @@
         },
         {
           "title": {
-            "ru": "Якобианы, velocity, JᵀF, virtual work и карта сингулярностей; задачи 10–12",
+            "ru": "якобианы, скорости, JᵀF, принцип виртуальных работ и карта сингулярностей; задачи 10–12",
             "en": "Jacobians, velocity, JᵀF, virtual work and singularity map; tasks 10–12"
           },
           "learn": 9,
@@ -1115,7 +1115,7 @@
         },
         {
           "title": {
-            "ru": "Общий API, неподвижная мировая точка, 11 fault cases и приёмка",
+            "ru": "Единый API, неподвижная точка в мировой системе координат, 11 сценариев отказа и приёмка",
             "en": "Common API, fixed world point, eleven fault cases and acceptance"
           },
           "learn": 1,
@@ -1154,11 +1154,11 @@
         "en": "Geometry is new, while mathematics has been refreshed. The 120 hours support independent derivations, actual CAD-axis alignment and verification of two small mechanisms. Full Lie-group mastery or three robotics libraries is excluded."
       },
       "scope": {
-        "ru": "Все 12 задач, 2R и 3-DOF reference, отдельная адаптация к реальной CAD-ноге при отличии осей, FK/IK round-trip, численная проверка Якобиана, силы и сингулярности, 11 отрицательных тестов.",
+        "ru": "Все 12 задач, 2R и 3-DOF reference, отдельная адаптация к реальной CAD-ноге при отличии осей, FK/IK round-trip, численная проверка якобиана, силы и сингулярности, 11 отрицательных тестов.",
         "en": "All twelve tasks, 2R and 3-DOF references, separate actual-CAD adaptation if axes differ, FK/IK round trips, numerical Jacobian verification, forces, singularities and eleven negative tests."
       },
       "reuse": {
-        "ru": "Функции поворотов и единиц из M02, SVD из M03, готовые CAD-размеры и калибровка M07. Позднее эти FK/IK/Jacobian без повторного изучения основ используются ногой, целой роботизированной рукой-манипулятором и хвостом там, где архитектура совпадает. M08 не включает готовую IK произвольной 6-DOF руки: её геометрию, дополнительные оси и пределы оплачивает arm-проект.",
+        "ru": "Функции поворотов и единиц из M02, SVD из M03, готовые CAD-размеры и калибровка M07. Позднее эти FK/IK/якобиан без повторного изучения основ используются ногой, целой роботизированной рукой-манипулятором и хвостом там, где архитектура совпадает. M08 не включает готовую IK произвольной 6-DOF манипулятора: её геометрию, дополнительные оси и пределы оплачивает arm-проект.",
         "en": "Reuse M02 rotations/units, M03 SVD, CAD dimensions and M07 calibration. Later leg, whole robotic-arm and tail work reuses FK/IK/Jacobian foundations where mechanism architecture matches. M08 does not supply finished arbitrary 6-DOF arm IK: the arm project budgets its geometry, additional axes and limits."
       },
       "optional": {
@@ -1337,7 +1337,7 @@
       "tasks": [
         {
           "title": {
-            "ru": "Масса, COM, inertia, free-body diagrams и параметры звеньев; задачи 1–2",
+            "ru": "Масса, центр масс (COM), моменты инерции, схемы сил и параметры звеньев; задачи 1–2",
             "en": "Mass, COM, inertia, free-body diagrams and link parameters; tasks 1–2"
           },
           "learn": 12,
@@ -1386,7 +1386,7 @@
         },
         {
           "title": {
-            "ru": "Одно звено: Newton–Euler/Lagrange, энергия, работа и диссипация; задачи 3–4",
+            "ru": "Одно звено: уравнения Ньютона — Эйлера и Лагранжа, энергия, работа и диссипация; задачи 3–4",
             "en": "One link: Newton–Euler/Lagrange, energy, work and dissipation; tasks 3–4"
           },
           "learn": 10,
@@ -1435,7 +1435,7 @@
         },
         {
           "title": {
-            "ru": "Собственный вывод 2R M,h,g, forward/inverse dynamics, контакт-free simulation; задачи 5–7",
+            "ru": "Самостоятельный вывод M, h, g для двухзвенного механизма 2R, прямая и обратная динамика, моделирование без контакта; задачи 5–7",
             "en": "Derive 2R M,h,g, forward/inverse dynamics and contact-free simulation; tasks 5–7"
           },
           "learn": 22,
@@ -1492,7 +1492,7 @@
         },
         {
           "title": {
-            "ru": "Односторонний контакт, stick/slip, impact awareness и support polygon; задачи 8–10",
+            "ru": "Односторонний контакт, сцепление и скольжение, основы ударного взаимодействия и опорный многоугольник; задачи 8–10",
             "en": "Unilateral contact, stick/slip, impact awareness and support polygon; tasks 8–10"
           },
           "learn": 11,
@@ -1541,7 +1541,7 @@
         },
         {
           "title": {
-            "ru": "Один независимый reference и перенос M07; новая измеренная серия и чувствительность; задачи 11–12",
+            "ru": "Одна независимая эталонная модель и перенос результатов M07; новая серия измерений и анализ чувствительности; задачи 11–12",
             "en": "One independent reference and M07 transfer; held-out measured run and sensitivity; tasks 11–12"
           },
           "learn": 6,
@@ -1582,7 +1582,7 @@
         },
         {
           "title": {
-            "ru": "Проверка энергии, размерностей, сходимости, десяти fault cases и границ модели",
+            "ru": "Проверка энергии, размерностей, сходимости, десяти сценариев отказа и границ применимости модели",
             "en": "Energy, dimensional, convergence, ten-fault and model-domain acceptance"
           },
           "learn": 0,
@@ -1633,7 +1633,7 @@
         "en": "All twelve tasks, two pendulum derivations, 2R M,h,g and energy tests, simple contact/friction, one independent numerical reference and a separate physical validation run. Without hardware recordings, that validation remains open."
       },
       "reuse": {
-        "ru": "Геометрия/Jacobian M08, осциллятор/маятник и integrator M02, измерения и response model M07, CAD/load cases M05. Добавляются многозвенная динамика и проверка её применимости, а не новый стенд или вся механика с нуля.",
+        "ru": "Геометрия/якобиан M08, осциллятор/маятник и integrator M02, измерения и response model M07, CAD/load cases M05. Добавляются многозвенная динамика и проверка её применимости, а не новый стенд или вся механика с нуля.",
         "en": "Reuse M08 geometry/Jacobians, M02 oscillator/pendulum/integrators, M07 measurements/response model and M05 CAD/load cases. Add multi-link dynamics and validity checks, rather than another rig or all mechanics from scratch."
       },
       "optional": {
@@ -1844,7 +1844,7 @@
       "tasks": [
         {
           "title": {
-            "ru": "Передаточная функция, poles, PID/feedforward/anti-windup на готовом joint model; задачи 1–2",
+            "ru": "Передаточная функция, полюса, ПИД-регулирование, упреждающее управление и защита от насыщения интегратора на готовой модели сустава; задачи 1–2",
             "en": "Transfer function, poles, PID/feedforward/anti-windup on the existing joint model; tasks 1–2"
           },
           "learn": 11,
@@ -1893,7 +1893,7 @@
         },
         {
           "title": {
-            "ru": "Bode, margins, sensitivity и 5–8 частот на физическом стенде; задачи 3–4",
+            "ru": "Диаграммы Боде, запасы устойчивости, чувствительность и измерения на 5–8 частотах на физическом стенде; задачи 3–4",
             "en": "Bode, margins, sensitivity and 5–8 measured rig frequencies; tasks 3–4"
           },
           "learn": 12,
@@ -1942,7 +1942,7 @@
         },
         {
           "title": {
-            "ru": "ZOH/Tustin, три Ts, задержки и шум; задача 5",
+            "ru": "Дискретизация с экстраполятором нулевого порядка и по Тастину, три периода Ts, задержки и шум; задача 5",
             "en": "ZOH/Tustin, three sampling periods, delay and noise; task 5"
           },
           "learn": 9,
@@ -1991,7 +1991,7 @@
         },
         {
           "title": {
-            "ru": "C++-контур в существующей прошивке; timing/data-age distributions и fault injection; задача 6",
+            "ru": "Контур управления на C++ в существующей прошивке; распределения времени выполнения и возраста данных, внесение отказов; задача 6",
             "en": "C++ loop in existing firmware; timing/data-age distributions and fault injection; task 6"
           },
           "learn": 3,
@@ -2032,7 +2032,7 @@
         },
         {
           "title": {
-            "ru": "Внешний контур наклона, roll/pitch, disturbance, limits, gain scheduling и recovery; задачи 7–8",
+            "ru": "Внешний контур стабилизации наклона: крен и тангаж, возмущения, ограничения, адаптация коэффициентов по режимам и восстановление; задачи 7–8",
             "en": "Outer tilt loop, roll/pitch, disturbances, limits, gain scheduling and recovery; tasks 7–8"
           },
           "learn": 9,
@@ -2081,7 +2081,7 @@
         },
         {
           "title": {
-            "ru": "Единый benchmark и шесть fault cases; три повтора ключевого физического сценария",
+            "ru": "Единая методика сравнения и шесть сценариев отказа; три повтора основного физического испытания",
             "en": "Common benchmark and six faults; three repeats of the key hardware scenario"
           },
           "learn": 1,
@@ -2335,7 +2335,7 @@
       "tasks": [
         {
           "title": {
-            "ru": "State space, discretisation, linearisation, controllability/observability; задачи 1–2",
+            "ru": "Пространство состояний, дискретизация, линеаризация, управляемость и наблюдаемость; задачи 1–2",
             "en": "State space, discretisation, linearisation, controllability/observability; tasks 1–2"
           },
           "learn": 13,
@@ -2384,7 +2384,7 @@
         },
         {
           "title": {
-            "ru": "Собственный 2D KF и independent cross-check; пропуски, ковариации, innovations; задача 3",
+            "ru": "Собственный двумерный фильтр Калмана и независимая проверка; пропуски измерений, ковариации и невязки; задача 3",
             "en": "Own 2D KF and independent cross-check; gaps, covariances and innovations; task 3"
           },
           "learn": 13,
@@ -2433,7 +2433,7 @@
         },
         {
           "title": {
-            "ru": "Одноосевой tilt EKF с gyro bias; Jacobian, acceleration, outlier/gating; задача 4",
+            "ru": "Одноосевой расширенный фильтр Калмана (EKF) для оценки наклона со смещением гироскопа; якобиан, ускорение и пороговое отбрасывание выбросов; задача 4",
             "en": "One-axis tilt EKF with gyro bias; Jacobian, acceleration, outliers/gating; task 4"
           },
           "learn": 14,
@@ -2490,7 +2490,7 @@
         },
         {
           "title": {
-            "ru": "LQR/LQG, нормирование и честное сравнение с прежним PID; задачи 5–6",
+            "ru": "LQR/LQG, нормирование и корректное сравнение с прежним ПИД-регулятором; задачи 5–6",
             "en": "LQR/LQG, scaling and a fair comparison with the existing PID; tasks 5–6"
           },
           "learn": 13,
@@ -2531,7 +2531,7 @@
         },
         {
           "title": {
-            "ru": "Плоский two-support QP, hard/soft feasibility, solver timeouts и force/moment check; задачи 7–8",
+            "ru": "Плоская задача квадратичного программирования (QP) для двух опор: жёсткие и мягкие ограничения, допустимость решения, тайм-ауты решателя и проверка сил и моментов; задачи 7–8",
             "en": "Planar two-support QP, hard/soft feasibility, solver timeouts and force/moment check; tasks 7–8"
           },
           "learn": 13,
@@ -2588,7 +2588,7 @@
         },
         {
           "title": {
-            "ru": "Три связанных эксперимента, шесть fault cases и интерфейсы состояния для ROS",
+            "ru": "Три связанных эксперимента, шесть сценариев отказа и интерфейсы передачи состояния в ROS",
             "en": "Three linked experiments, six faults and state interfaces for ROS"
           },
           "learn": 0,
@@ -2852,13 +2852,13 @@
     "M19": {
       "id": "M19",
       "title": {
-        "ru": "Контактное оценивание и медленный crawl в симуляции",
+        "ru": "Оценивание состояния с учётом контактов и медленная ползущая походка в симуляции",
         "en": "Contact-aided estimation and simulated slow crawl"
       },
       "tasks": [
         {
           "title": {
-            "ru": "Orientation/bias, stationary-foot velocity и общий timing; задачи 1–3",
+            "ru": "Ориентация и смещение датчика, ограничение скорости неподвижной стопы и единая временная шкала; задачи 1–3",
             "en": "Orientation/bias, stationary-foot velocity and common timing; tasks 1–3"
           },
           "learn": 12,
@@ -2907,7 +2907,7 @@
         },
         {
           "title": {
-            "ru": "Slip residuals, доверие к контакту, hysteresis, gaps и alignment; задачи 4–5",
+            "ru": "Невязки для обнаружения проскальзывания, достоверность контакта, гистерезис, пропуски данных и временное согласование; задачи 4–5",
             "en": "Slip residuals, contact confidence, hysteresis, gaps and alignment; tasks 4–5"
           },
           "learn": 8,
@@ -2956,7 +2956,7 @@
         },
         {
           "title": {
-            "ru": "Crawl FSM, перенос веса до LIFT, старт/стоп/смена команды и replay; задачи 6–7",
+            "ru": "Конечный автомат ползущей походки, перенос веса до отрыва ноги (LIFT), запуск, остановка, смена команды и воспроизведение записей; задачи 6–7",
             "en": "Crawl FSM, weight transfer before LIFT, start/stop/command change and replay; tasks 6–7"
           },
           "learn": 8,
@@ -2997,7 +2997,7 @@
         },
         {
           "title": {
-            "ru": "Swing, проверка всей дуги, clearance и bounded foothold grid; задачи 8–9",
+            "ru": "Перенос ноги, проверка всей траектории, зазор над поверхностью и ограниченная сетка точек опоры; задачи 8–9",
             "en": "Swing, full-path checks, clearance and bounded foothold grid; tasks 8–9"
           },
           "learn": 8,
@@ -3046,7 +3046,7 @@
         },
         {
           "title": {
-            "ru": "Свободный корпус, COM, 60 s stand, weight transfer, leveling и disturbance; задачи 10,12–13",
+            "ru": "Свободный корпус, центр масс, стояние в течение 60 с, перенос веса, выравнивание корпуса и внешние возмущения; задачи 10, 12–13",
             "en": "Floating body, COM, 60-second stand, weight transfer, levelling and disturbances; tasks 10,12–13"
           },
           "learn": 10,
@@ -3087,7 +3087,7 @@
         },
         {
           "title": {
-            "ru": "Сравнить estimators, восемь сценариев, повторы, fall rate и границы; задача 11 и приёмка",
+            "ru": "Сравнить методы оценивания: восемь сценариев, повторные испытания, частота падений и границы применимости; задача 11 и приёмка",
             "en": "Compare estimators, eight scenarios, repeats, fall rate and limitations; task 11 and acceptance"
           },
           "learn": 2,
@@ -3327,13 +3327,13 @@
     "M20": {
       "id": "M20",
       "title": {
-        "ru": "QP сил опор, fallback и учебный MPC",
+        "ru": "Квадратичное программирование сил опор, резервный режим и учебный пример MPC",
         "en": "Support-force QP, fallback and educational MPC"
       },
       "tasks": [
         {
           "title": {
-            "ru": "COM, momentum, 6×3n force/moment matrix и bounded wrench; задачи 1–3",
+            "ru": "Центр масс, импульс, матрица сил и моментов 6×3n и ограниченный вектор сил и моментов; задачи 1–3",
             "en": "COM, momentum, 6×3n force/moment matrix and bounded wrench; tasks 1–3"
           },
           "learn": 8,
@@ -3374,7 +3374,7 @@
         },
         {
           "title": {
-            "ru": "3D QP, inner friction pyramid, scaling, warm start, contact generation и solver failures; задачи 4–7",
+            "ru": "Трёхмерная задача QP, вписанная пирамида трения, масштабирование, старт с предыдущего решения, формирование контактов и отказы решателя; задачи 4–7",
             "en": "3D QP, inner friction pyramid, scaling, warm start, contact generation and solver failures; tasks 4–7"
           },
           "learn": 12,
@@ -3431,7 +3431,7 @@
         },
         {
           "title": {
-            "ru": "Jᵀf/virtual power, gravity sign и пределы полного torque/current command; задачи 8–9",
+            "ru": "Jᵀf и принцип виртуальных мощностей, знак силы тяжести и ограничения полной команды момента или тока; задачи 8–9",
             "en": "Jᵀf/virtual power, gravity sign and complete torque/current limits; tasks 8–9"
           },
           "learn": 10,
@@ -3480,7 +3480,7 @@
         },
         {
           "title": {
-            "ru": "Замкнутый stance, три/четыре контакта, switching и fallback на M19; задачи 10–11",
+            "ru": "Замкнутый контур управления в фазе опоры, три или четыре контакта, переключение режимов и возврат к алгоритму M19; задачи 10–11",
             "en": "Closed-loop stance, three/four contacts, switching and M19 fallback; tasks 10–11"
           },
           "learn": 6,
@@ -3537,7 +3537,7 @@
         },
         {
           "title": {
-            "ru": "1D finite-horizon MPC experiment, WBC/NMPC formulation и q/v dimension model; задача 12",
+            "ru": "Одномерный эксперимент MPC с конечным горизонтом, постановка задач WBC/NMPC и размерности векторов q и v в модели; задача 12",
             "en": "1D finite-horizon MPC experiment, WBC/NMPC formulation and q/v dimension model; task 12"
           },
           "learn": 11,
@@ -3578,7 +3578,7 @@
         },
         {
           "title": {
-            "ru": "Восемь fault cases, slopes/disturbances, baseline comparison, solve times и отчёт",
+            "ru": "Восемь сценариев отказа, уклоны и возмущения, сравнение с базовым методом, время решения и отчёт",
             "en": "Eight faults, slopes/disturbances, baseline comparison, solve times and report"
           },
           "learn": 0,
@@ -3834,13 +3834,13 @@
     "M21": {
       "id": "M21",
       "title": {
-        "ru": "Ограниченный BC/PPO эксперимент с оценкой и fallback",
+        "ru": "Эксперимент BC/PPO с ограниченной областью применения, оценкой качества и резервным режимом",
         "en": "Bounded BC/PPO experiment with evaluation and fallback"
       },
       "tasks": [
         {
           "title": {
-            "ru": "Expert audit, whole-episode split, simple baselines, BC и один DAgger; задачи 1–4",
+            "ru": "Проверка экспертной стратегии, разделение данных по целым эпизодам, простые базовые методы, клонирование поведения (BC) и один цикл DAgger; задачи 1–4",
             "en": "Expert audit, whole-episode split, simple baselines, BC and one DAgger iteration; tasks 1–4"
           },
           "learn": 9,
@@ -3889,7 +3889,7 @@
         },
         {
           "title": {
-            "ru": "MDP, 2-action Gymnasium wrapper, reset, reward/dt и environment validation; задачи 5–6",
+            "ru": "Марковский процесс принятия решений (MDP), обёртка Gymnasium с двумя действиями, сброс состояния, связь вознаграждения с шагом dt и проверка среды; задачи 5–6",
             "en": "MDP, two-action Gymnasium wrapper, reset, reward/dt and environment validation; tasks 5–6"
           },
           "learn": 10,
@@ -3930,7 +3930,7 @@
         },
         {
           "title": {
-            "ru": "PPO concepts, короткий smoke run и три независимых bounded CPU runs; задачи 7–8",
+            "ru": "Основы PPO, короткий пробный запуск и три независимых запуска на CPU с ограничением ресурсов; задачи 7–8",
             "en": "PPO concepts, short smoke run and three independent bounded CPU runs; tasks 7–8"
           },
           "learn": 10,
@@ -3971,7 +3971,7 @@
         },
         {
           "title": {
-            "ru": "Физически согласованная рандомизация, пять коротких ablations и отдельные OOD sweeps; задачи 9–10",
+            "ru": "Физически согласованная рандомизация, пять кратких исследований вклада компонентов и отдельные серии испытаний вне обучающего распределения (OOD); задачи 9–10",
             "en": "Physically consistent randomisation, five short ablations and separate OOD sweeps; tasks 9–10"
           },
           "learn": 9,
@@ -4020,7 +4020,7 @@
         },
         {
           "title": {
-            "ru": "Независимый shield, OOD indicator, two-mode fallback и fault tests; задачи 11–12",
+            "ru": "Независимый защитный фильтр действий, индикатор OOD, резервная стратегия с двумя режимами и испытания при отказах; задачи 11–12",
             "en": "Independent shield, OOD indicator, two-mode fallback and faults; tasks 11–12"
           },
           "learn": 3,
@@ -4053,7 +4053,7 @@
         },
         {
           "title": {
-            "ru": "Общие push tests, все seeds, actual steps/runtime и written hardware-transfer protocol; задачи 13–14",
+            "ru": "Общие испытания толчками, все начальные значения генератора случайных чисел, фактическое число шагов и время выполнения, письменный протокол переноса на оборудование; задачи 13–14",
             "en": "Common push tests, all seeds, actual steps/runtime and written hardware-transfer protocol; tasks 13–14"
           },
           "learn": 1,
@@ -4379,7 +4379,7 @@
         },
         {
           "title": {
-            "ru": "Один Rust CLI с общим контрактом и проверками владения",
+            "ru": "Одна утилита командной строки на Rust с единым форматом данных и проверками владения ресурсами",
             "en": "One Rust CLI with the shared contract and ownership checks"
           },
           "learn": 2,
@@ -4412,7 +4412,7 @@
         },
         {
           "title": {
-            "ru": "Очередь, watchdog, ошибки потока, replay и сравнительные измерения",
+            "ru": "Очередь, сторожевой таймер, ошибки потока данных, воспроизведение записей и сравнительные измерения",
             "en": "Queue, watchdog, stream faults, replay and comparative measurements"
           },
           "learn": 4,
@@ -4456,7 +4456,7 @@
         },
         {
           "title": {
-            "ru": "Ранняя проверка Jazzy/RViz и Harmonic: готовая сцена, графика, датчик и demo-контроллер; решение PASS/HOLD",
+            "ru": "Ранняя проверка Jazzy/RViz и Harmonic: готовая сцена, графика, датчик и демонстрационный контроллер; решение о допуске к следующему этапу (PASS/HOLD)",
             "en": "Early Jazzy/RViz and Harmonic check: stock scene, graphics, sensor and demo controller; record PASS/HOLD"
           },
           "learn": 0,
@@ -4611,7 +4611,7 @@
       "tasks": [
         {
           "title": {
-            "ru": "Граф ROS, интерфейсы, launch, action/cancel и namespaces (первичная установка 3 ч уже в M01)",
+            "ru": "Граф ROS, интерфейсы, файлы запуска, действия и их отмена, пространства имён (3 ч на первичную установку уже учтены в M01)",
             "en": "ROS graph, interfaces, launch, action cancellation and namespaces (3 h initial setup already in M01)"
           },
           "learn": 8,
@@ -4661,7 +4661,7 @@
         },
         {
           "title": {
-            "ru": "DDS/QoS, executors, callback groups и измерения задержек",
+            "ru": "DDS/QoS, исполнители, группы обратных вызовов и измерение задержек",
             "en": "DDS/QoS, executors, callback groups and latency experiments"
           },
           "learn": 7,
@@ -4711,7 +4711,7 @@
         },
         {
           "title": {
-            "ru": "TF во времени, Xacro и ros2_control mock с жизненным циклом",
+            "ru": "Преобразования TF с учётом времени, Xacro и имитационное оборудование ros2_control с управлением жизненным циклом",
             "en": "Time-aware TF, Xacro and lifecycle-managed ros2_control mock"
           },
           "learn": 10,
@@ -4770,7 +4770,7 @@
         },
         {
           "title": {
-            "ru": "Диагностика, один dashboard, rosbag и автоматический replay отказов",
+            "ru": "Диагностика, единая панель наблюдения, rosbag и автоматическое воспроизведение записей с отказами",
             "en": "Diagnostics, one dashboard, rosbag and automated fault replay"
           },
           "learn": 5,
@@ -5092,7 +5092,7 @@
         },
         {
           "title": {
-            "ru": "SIL, перенос ядра на MCU, PIL и численная эквивалентность",
+            "ru": "Программное моделирование (SIL), перенос вычислительного ядра на микроконтроллер, моделирование с участием процессора (PIL) и проверка численной эквивалентности",
             "en": "SIL, MCU core build, PIL and numerical equivalence"
           },
           "learn": 6,
@@ -5142,7 +5142,7 @@
         },
         {
           "title": {
-            "ru": "HIL с реальным каналом, тайминг и сравнение с имеющимся стендом",
+            "ru": "Аппаратно-программное моделирование (HIL) с реальным каналом связи, временные характеристики и сравнение с имеющимся стендом",
             "en": "HIL with a real channel, timing and comparison to the existing rig"
           },
           "learn": 8,
@@ -5436,7 +5436,7 @@
         },
         {
           "title": {
-            "ru": "Классическое зрение: маски, признаки, RANSAC и короткий tracking",
+            "ru": "Классическое компьютерное зрение: маски, признаки, RANSAC и кратковременное отслеживание объектов",
             "en": "Classical masks, features, RANSAC and short tracking"
           },
           "learn": 8,
@@ -5544,7 +5544,7 @@
         },
         {
           "title": {
-            "ru": "Один CNN/transfer baseline и разметка 60–100 кадров",
+            "ru": "Одна базовая модель CNN с переносом обучения и разметка 60–100 кадров",
             "en": "One CNN/transfer baseline and 60–100 annotated frames"
           },
           "learn": 7,
@@ -5586,7 +5586,7 @@
         },
         {
           "title": {
-            "ru": "Общий replay, ROS-адаптер, восемь отказов и сравнение методов",
+            "ru": "Общий механизм воспроизведения записей, адаптер ROS, восемь сценариев отказа и сравнение методов",
             "en": "Shared replay, ROS adapter, eight failures and method comparison"
           },
           "learn": 3,
@@ -5849,7 +5849,7 @@
         },
         {
           "title": {
-            "ru": "Occupancy grid, scan matching, slam_toolbox и AMCL",
+            "ru": "Сетка занятости, сопоставление сканов, slam_toolbox и AMCL",
             "en": "Occupancy grid, scan matching, slam_toolbox and AMCL"
           },
           "learn": 10,
@@ -5908,7 +5908,7 @@
         },
         {
           "title": {
-            "ru": "Малый pose graph, ложное замыкание и RGB-D odometry",
+            "ru": "Небольшой граф поз, ложное замыкание петли и RGB-D-одометрия",
             "en": "Small pose graph, false loop closure and RGB-D odometry"
           },
           "learn": 10,
@@ -5967,7 +5967,7 @@
         },
         {
           "title": {
-            "ru": "ATE/RPE, покрытие маршрута, восемь отказов и lost-localization",
+            "ru": "Метрики ATE/RPE, покрытие маршрута, восемь сценариев отказа и потеря локализации",
             "en": "ATE/RPE, route coverage, eight faults and lost-localization handling"
           },
           "learn": 7,
@@ -6178,7 +6178,7 @@
       "tasks": [
         {
           "title": {
-            "ru": "Dijkstra/A*, costmap, footprint и изменение карты",
+            "ru": "Алгоритмы Дейкстры и A*, карта стоимости, контур робота и изменение карты",
             "en": "Dijkstra/A*, costmap, footprint and map changes"
           },
           "learn": 4,
@@ -6221,7 +6221,7 @@
         },
         {
           "title": {
-            "ru": "C-space, OMPL benchmark и одна MoveIt collision scene",
+            "ru": "Конфигурационное пространство, сравнение планировщиков OMPL и одна сцена проверки столкновений в MoveIt",
             "en": "C-space, OMPL benchmark and one MoveIt collision scene"
           },
           "learn": 10,
@@ -6330,7 +6330,7 @@
         },
         {
           "title": {
-            "ru": "BT/FSM, Nav2-демо, отмена, устаревшие ответы и recovery",
+            "ru": "Деревья поведения и конечные автоматы (BT/FSM), демонстрация Nav2, отмена, устаревшие ответы и восстановление",
             "en": "BT/FSM, Nav2 demo, cancellation, stale responses and recovery"
           },
           "learn": 5,
@@ -6593,7 +6593,7 @@
         },
         {
           "title": {
-            "ru": "Режимы оператора, отмена и малый HRI walkthrough",
+            "ru": "Режимы оператора, отмена и краткий разбор сценария взаимодействия человека с роботом (HRI)",
             "en": "Operator modes, cancellation and small HRI walkthrough"
           },
           "learn": 4,
@@ -6635,7 +6635,7 @@
         },
         {
           "title": {
-            "ru": "Угрозы, SROS2, старые команды и обновление конфигурации",
+            "ru": "Модель угроз, SROS2, устаревшие команды и обновление конфигурации",
             "en": "Threats, SROS2, stale commands and configuration update"
           },
           "learn": 3,
@@ -6677,7 +6677,7 @@
         },
         {
           "title": {
-            "ru": "Данные/этика, PLC handshake, требования и командный review-пакет",
+            "ru": "Данные и этика, протокол обмена с ПЛК, требования и комплект материалов для технического разбора командой",
             "en": "Data/ethics, PLC handshake, requirements and team review package"
           },
           "learn": 5,
@@ -6729,7 +6729,7 @@
       "low": 60,
       "high": 120,
       "rationale": {
-        "ru": "Повторное обучение интерфейсам, авторизации и общим процессам разработки не требуется. Нужна их привязка к физическим режимам, отмене движения и инженерным доказательствам. Сохраняются четыре направления исходника и десять заданий. Симуляционная модель и последовательность действий из M16 напрямую готовят проект полной роботизированной руки ARM; его механика, приводы, сборка и физическая приёмка учитываются отдельно. Антропоморфная кисть не является обязательным четвёртым проектом.",
+        "ru": "Повторное обучение интерфейсам, авторизации и общим процессам разработки не требуется. Нужна их привязка к физическим режимам, отмене движения и инженерным доказательствам. Сохраняются четыре направления исходника и десять заданий. Симуляционная модель и последовательность действий из M16 напрямую готовят проект полной роботизированной манипулятора ARM; его механика, приводы, сборка и физическая приёмка учитываются отдельно. Антропоморфная кисть не является обязательным четвёртым проектом.",
         "en": "Ordinary interface, authorization and development workflows need no repeat course. They must be adapted to physical modes, motion cancellation and engineering evidence. All four original areas and ten tasks remain. The M16 model and action sequence directly prepare the complete robotic-arm project ARM; its mechanics, drives, assembly and physical acceptance are budgeted separately. An anthropomorphic hand is not a mandatory fourth project."
       },
       "track": "core",
@@ -6923,7 +6923,7 @@
         },
         {
           "title": {
-            "ru": "Autograd, logistic/MLP, один тренировочный цикл и градиенты",
+            "ru": "Автоматическое дифференцирование, логистическая регрессия и многослойный перцептрон (MLP), один цикл обучения и проверка градиентов",
             "en": "Autograd, logistic/MLP, one training loop and gradient checks"
           },
           "learn": 12,
@@ -6981,7 +6981,7 @@
         },
         {
           "title": {
-            "ru": "Precision/recall, calibration/OOD, неизвестное и ablation",
+            "ru": "Точность и полнота классификации, калибровка вероятностей, данные вне обучающего распределения (OOD), неизвестные случаи и исследование вклада компонентов",
             "en": "Precision/recall, calibration/OOD, abstention and ablation"
           },
           "learn": 9,
@@ -7023,7 +7023,7 @@
         },
         {
           "title": {
-            "ru": "Отложенное сравнение, сохранение/export, CPU latency и воспроизведение",
+            "ru": "Сравнение на отложенных данных, сохранение и экспорт модели, задержка выполнения на CPU и воспроизведение результатов",
             "en": "Held-out comparison, save/export, CPU latency and reproduction"
           },
           "learn": 4,
@@ -7311,7 +7311,7 @@
         },
         {
           "title": {
-            "ru": "Один manifest, архив, инструкции и чистое воспроизведение",
+            "ru": "Единая опись состава и версий, архив, инструкции и воспроизведение в чистой среде",
             "en": "One manifest, archive, instructions and clean reproduction"
           },
           "learn": 1,
@@ -7567,7 +7567,7 @@
       "tasks": [
         {
           "title": {
-            "ru": "DC, схемы, документация и простые расчёты",
+            "ru": "Цепи постоянного тока, схемы, техническая документация и базовые расчёты",
             "en": "DC, schematics, documentation and calculations"
           },
           "learn": 24,
@@ -8021,7 +8021,7 @@
         },
         {
           "title": {
-            "ru": "Параметрическая 3-DOF сборка и доступ к крепежу",
+            "ru": "Параметрическая сборка с тремя степенями свободы и доступом к крепежу",
             "en": "Parametric 3-DOF assembly and fastener access"
           },
           "learn": 12,
@@ -8078,7 +8078,7 @@
         },
         {
           "title": {
-            "ru": "Машинные элементы, посадки, чертёж и допуски",
+            "ru": "Детали машин, посадки, чертежи и допуски",
             "en": "Machine elements, fits, drawing and tolerances"
           },
           "learn": 12,
@@ -8184,7 +8184,7 @@
         },
         {
           "title": {
-            "ru": "Образцы FDM, простая FEA и статическая проверка",
+            "ru": "Образцы FDM-печати, базовый конечно-элементный расчёт и статические испытания",
             "en": "FDM coupons, simple FEA and static validation"
           },
           "learn": 10,
@@ -8462,7 +8462,7 @@
       "tasks": [
         {
           "title": {
-            "ru": "MCU/инструменты и электрические ограничения",
+            "ru": "Микроконтроллер, средства разработки и допустимые электрические параметры",
             "en": "MCU/toolchain and electrical limits"
           },
           "learn": 8,
@@ -8601,7 +8601,7 @@
         },
         {
           "title": {
-            "ru": "RTOS, временные характеристики и watchdog",
+            "ru": "Операционная система реального времени (RTOS), временные характеристики и сторожевой таймер",
             "en": "RTOS, timing and watchdog"
           },
           "learn": 8,
@@ -8642,7 +8642,7 @@
         },
         {
           "title": {
-            "ru": "Состояния, независимый stop и проверки для G1",
+            "ru": "Состояния системы, независимая остановка и проверки для G1",
             "en": "States, independent stop and evidence for G1"
           },
           "learn": 4,
@@ -8974,7 +8974,7 @@
         },
         {
           "title": {
-            "ru": "Позиционная петля и ограниченные профили",
+            "ru": "Контур управления положением и профили движения с ограничениями",
             "en": "Position loop and bounded profiles"
           },
           "learn": 8,
@@ -9023,7 +9023,7 @@
         },
         {
           "title": {
-            "ru": "Трение, задержка, нагрев и независимая валидация",
+            "ru": "Трение, задержки, нагрев и независимая проверка модели",
             "en": "Friction, delay, heating and independent validation"
           },
           "learn": 10,
@@ -9407,7 +9407,7 @@
         },
         {
           "title": {
-            "ru": "Жгуты, питание, stop и последовательный запуск",
+            "ru": "Кабельные жгуты, питание, остановка и последовательный ввод узлов в работу",
             "en": "Harnesses, power, stop and staged startup"
           },
           "learn": 4,
@@ -9809,7 +9809,7 @@
     "M23": {
       "id": "M23",
       "title": {
-        "ru": "Расширение до hexapod и измеренный рабочий диапазон",
+        "ru": "Расширение до гексапода и измеренный рабочий диапазон",
         "en": "Hexapod expansion and measured operating envelope"
       },
       "tasks": [
@@ -9913,7 +9913,7 @@
         },
         {
           "title": {
-            "ru": "Wave/ripple, переходы и контакты",
+            "ru": "Волновая и бегущая походки (wave/ripple), переходы между режимами и контакты с поверхностью",
             "en": "Wave/ripple, transitions and contacts"
           },
           "learn": 7,
@@ -10317,7 +10317,7 @@
       "tasks": [
         {
           "title": {
-            "ru": "Требования, constant-curvature и нагрузки",
+            "ru": "Требования, модель постоянной кривизны и нагрузки",
             "en": "Requirements, constant-curvature and loads"
           },
           "learn": 10,
@@ -10475,13 +10475,13 @@
     "L1": {
       "id": "L1",
       "title": {
-        "ru": "Первая физическая 3-DOF нога",
+        "ru": "Первая физическая нога с тремя степенями свободы",
         "en": "First physical 3-DOF leg"
       },
       "tasks": [
         {
           "title": {
-            "ru": "Квалификация выбранного смарт-привода",
+            "ru": "Проверка пригодности выбранного сервопривода с обратной связью",
             "en": "Qualify the selected smart actuator"
           },
           "learn": 2,
@@ -10547,7 +10547,7 @@
         },
         {
           "title": {
-            "ru": "Сборка трёх приводов, проводка и stop",
+            "ru": "Сборка трёх приводов, проводка и система остановки",
             "en": "Assemble three drives, wiring and stop"
           },
           "learn": 1,
@@ -10629,7 +10629,7 @@
         },
         {
           "title": {
-            "ru": "Измеренная FK/IK и нагруженная проверка",
+            "ru": "Проверка прямой и обратной кинематики по измерениям и испытание под нагрузкой",
             "en": "Measured FK/IK and loaded leg validation"
           },
           "learn": 2,
@@ -10820,13 +10820,13 @@
     "ARM": {
       "id": "ARM",
       "title": {
-        "ru": "Рука-манипулятор с собственной механикой",
+        "ru": "Манипулятор с собственной механикой",
         "en": "Robotic arm with custom mechanics"
       },
       "tasks": [
         {
           "title": {
-            "ru": "Требования, reach/payload и выбор приводов",
+            "ru": "Требования, рабочий радиус, грузоподъёмность и выбор приводов",
             "en": "Requirements, reach/payload and actuator selection"
           },
           "learn": 13,
@@ -10891,7 +10891,7 @@
         },
         {
           "title": {
-            "ru": "Питание, жгуты, stop и границы движения",
+            "ru": "Питание, кабельные жгуты, система остановки и ограничения движения",
             "en": "Power, harnesses, stop and motion boundaries"
           },
           "learn": 3,
@@ -10904,7 +10904,7 @@
         },
         {
           "title": {
-            "ru": "Калибровки, жёсткость и модель реальной руки",
+            "ru": "Калибровки, жёсткость и модель реального манипулятора",
             "en": "Calibration, stiffness and physical-arm model"
           },
           "learn": 8,
@@ -10917,7 +10917,7 @@
         },
         {
           "title": {
-            "ru": "Реальное исполнение MoveIt/ros2_control",
+            "ru": "Выполнение движений на реальном оборудовании через MoveIt/ros2_control",
             "en": "Physical execution with MoveIt/ros2_control"
           },
           "learn": 3,
@@ -10964,7 +10964,7 @@
       "track": "arm",
       "assumptions": [
         {
-          "ru": "Шесть управляемых вращательных суставов и отдельный простой хват: 6 DOF руки +1 канал захвата. DOF хвата не выдаётся за ещё одну координату позы инструмента.",
+          "ru": "Шесть управляемых вращательных суставов и отдельный простой хват: 6 DOF манипулятора +1 канал захвата. DOF хвата не выдаётся за ещё одну координату позы инструмента.",
           "en": "Six controlled rotary joints and a separate simple gripper: six arm DOF plus one gripping channel. Gripper DOF is not another tool-pose coordinate."
         },
         {
@@ -11002,7 +11002,7 @@
       "tasks": [
         {
           "title": {
-            "ru": "Требования, constant-curvature и нагрузки",
+            "ru": "Требования, модель постоянной кривизны и нагрузки",
             "en": "Requirements, constant-curvature and loads"
           },
           "learn": 10,
@@ -11951,13 +11951,13 @@
     "A1": {
       "id": "A1",
       "title": {
-        "ru": "Нагруженный сустав, CAD всей руки и хват",
+        "ru": "Нагруженный сустав, CAD всей манипулятора и хват",
         "en": "Loaded joint, full-arm CAD and gripper"
       },
       "tasks": [
         {
           "title": {
-            "ru": "Требования, reach/payload и выбор приводов",
+            "ru": "Требования, рабочий радиус, грузоподъёмность и выбор приводов",
             "en": "Requirements, reach/payload and actuator selection"
           },
           "learn": 13,
@@ -12483,7 +12483,7 @@
         },
         {
           "title": {
-            "ru": "Питание, жгуты, stop и границы движения",
+            "ru": "Питание, кабельные жгуты, система остановки и ограничения движения",
             "en": "Power, harnesses, stop and motion boundaries"
           },
           "learn": 3,
@@ -12532,7 +12532,7 @@
         },
         {
           "title": {
-            "ru": "Калибровки, жёсткость и модель реальной руки",
+            "ru": "Калибровки, жёсткость и модель реального манипулятора",
             "en": "Calibration, stiffness and physical-arm model"
           },
           "learn": 8,
@@ -12750,7 +12750,7 @@
       "tasks": [
         {
           "title": {
-            "ru": "Реальное исполнение MoveIt/ros2_control",
+            "ru": "Выполнение движений на реальном оборудовании через MoveIt/ros2_control",
             "en": "Physical execution with MoveIt/ros2_control"
           },
           "learn": 3,

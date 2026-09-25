@@ -123,7 +123,7 @@
         {
           "id": "M01.1",
           "title": {
-            "ru": "Диагностика, среда и ранний ROS/Gazebo preflight",
+            "ru": "Диагностика, среда и ранняя проверка ROS/Gazebo",
             "en": "Diagnostic, environment and early ROS/Gazebo preflight"
           },
           "learn": 1,
@@ -136,7 +136,7 @@
             "M13 p14 installation"
           ],
           "result": {
-            "ru": "Зафиксированы Ubuntu 24.04 ARM64, компилятор, RMW и версии Jazzy/Harmonic; готовые talker/listener, RViz, cart и sensor scene имеют PASS/HOLD. В эти 14 ч входят прежние 8 ч среды и перенесённые 6 ч preflight.",
+            "ru": "Зафиксированы Ubuntu 24.04 ARM64, компилятор, RMW и версии Jazzy/Harmonic; готовые talker/listener, RViz, сцена тележки и сцена датчика имеют результат PASS/HOLD. Эти 14 ч включают прежние 8 ч на среду и перенесённые 6 ч предварительной проверки.",
             "en": "Record Ubuntu 24.04 ARM64, compiler, RMW and Jazzy/Harmonic versions; supplied talker/listener, RViz, cart and sensor scenes have PASS/HOLD. These 14 h contain the former 8 h environment task and transferred 6 h preflight."
           },
           "refs": [
@@ -168,7 +168,7 @@
         {
           "id": "M01.2",
           "title": {
-            "ru": "C++ в настоящем репозитории: владение, CMake и диагностика",
+            "ru": "C++ в рабочем репозитории: владение, CMake и диагностика",
             "en": "C++ in the actual repository: ownership, CMake and diagnostics"
           },
           "learn": 6,
@@ -180,7 +180,7 @@
             "M01 D1–D2"
           ],
           "result": {
-            "ru": "Одна C++-библиотека и небольшой host-инструмент: RAII, ограниченные буферы, обработка ошибок, сборка и подходящие sanitizer-проверки. Полный второй проект-парсер не создаётся.",
+            "ru": "Одна библиотека C++ и небольшой инструмент для компьютера: RAII, ограниченные буферы, обработка ошибок, сборка и подходящие проверки санитайзерами. Второй полноценный проект парсера не требуется.",
             "en": "One C++ library and small host tool: RAII, bounded buffers, errors, build and appropriate sanitizer checks. Do not create a second full parser project."
           },
           "refs": [
@@ -231,7 +231,7 @@
             "M01 p13 motion definitions"
           ],
           "result": {
-            "ru": "Один существующий формат данных читается и строится в Python: единицы, знак, command/measurement, время, пропуски. Знакомая обработка файлов подтверждается, а не изучается заново.",
+            "ru": "Python читает общий формат данных и строит графики: единицы, знак, команда и измерение, время и пропуски. Знакомая обработка файлов подтверждается на практике, а не изучается заново.",
             "en": "Read and plot one shared data format in Python: units, sign, command/measurement, time and gaps. Demonstrate familiar file handling rather than relearning it."
           },
           "refs": [
@@ -254,7 +254,7 @@
         {
           "id": "M01.4",
           "title": {
-            "ru": "Минимальный replay и контракт потока",
+            "ru": "Минимальное воспроизведение записей и контракт потока",
             "en": "Minimal replay and stream contract"
           },
           "learn": 2,
@@ -268,7 +268,7 @@
             "M01 T1–T3"
           ],
           "result": {
-            "ru": "Фиксированный журнал воспроизводит свежую/старую/невалидную запись и reset с понятным результатом; реальная очередь, watchdog и измерения MCU выполняются один раз в M06.",
+            "ru": "Фиксированный журнал воспроизводит актуальную, устаревшую и некорректную запись и сброс с однозначным результатом. Реальная очередь, сторожевой таймер и измерение времени на микроконтроллере реализуются один раз в M06.",
             "en": "A fixed log replays fresh/stale/invalid records and reset with an explicit result; physical queues, watchdogs and MCU timing are implemented once in M06."
           },
           "refs": [
@@ -312,16 +312,16 @@
         }
       ],
       "rationale": {
-        "ru": "40 ч получены отбором работ: знакомый Python применяется сразу; новые C++-границы, физические единицы и среда остаются. Потоковые механизмы продолжаются в реальной firmware, а не завершаются вторым учебным продуктом. 14 ч вводной C++-задачи не означают владение языком: практика продолжается в MCU, адаптере S2 и общем HIL-коде; при выявленных пробелах использовать резерв и обновить прогноз.",
+        "ru": "40 ч получены отбором работ: знакомый Python применяется сразу, а владение ресурсами в C++, физические единицы и настройка среды изучаются отдельно. Обработка потоков данных продолжается в рабочей прошивке. Вводная задача на 14 ч не означает освоения C++: практика продолжается в коде микроконтроллера, адаптере S2 и общем HIL-коде. При выявлении пробелов нужно использовать резерв и пересчитать прогноз.",
         "en": "The 40 h follow selected work: familiar Python is used directly; new C++ boundaries, physical units and environment work remain. Streaming mechanisms continue in real firmware instead of forming a second teaching product. The 14 h introductory C++ task does not establish language proficiency: practice continues in the MCU, S2 adapter and shared HIL code; use contingency and reforecast if gaps appear."
       },
       "core_reading": {
-        "ru": "M01: C++/владение/CMake, формат измерений и сценарии ошибок; M12 p14 и M13 p14 — только установка и готовые smoke tests. Чтение включено в часы.",
+        "ru": "M01: C++/владение/CMake, формат измерений и сценарии ошибок; M12 p14 и M13 p14 — только установка и готовые проверки работоспособности. Чтение включено в часы.",
         "en": "M01: C++/ownership/CMake, measurement format and failure scenarios; M12 p14 and M13 p14 only for setup and supplied smoke tests. Reading is included."
       },
       "gates": [
         {
-          "ru": "ROS поддерживает Noble ARM64; Gazebo ARM — best-effort. GUI, plugin и настоящий sensor output проверяются отдельно. Неисправленная среда — HOLD, а не скрытый бесконечный setup.",
+          "ru": "ROS поддерживает Noble ARM64; поддержка Gazebo на ARM предоставляется без гарантии полной работоспособности. Графический интерфейс, плагины и реальные данные датчиков проверяются отдельно. Нерешённая проблема среды означает HOLD и требует пересмотра плана настройки.",
           "en": "ROS supports Noble ARM64; Gazebo ARM is best-effort. Check GUI, plugin and actual sensor output separately. An unresolved environment is HOLD, not hidden unlimited setup."
         },
         {
@@ -403,7 +403,7 @@
     {
       "id": "S1",
       "title": {
-        "ru": "Ранний ROS на простом mock-суставе",
+        "ru": "Раннее знакомство с ROS на простой имитации сустава",
         "en": "Early ROS with a simple mock joint"
       },
       "tasks": [
@@ -421,7 +421,7 @@
             "M12 Task1"
           ],
           "result": {
-            "ru": "Источник q/IMU, один потребитель и монитор; JointState/Imu, именованные суставы, SI-единицы, frame_id и timestamp. Достаточен mock-источник.",
+            "ru": "Источник q/IMU, один потребитель и монитор; JointState/Imu, именованные суставы, SI-единицы, frame_id и временная метка. Достаточен имитатор источника.",
             "en": "A q/IMU source, one consumer and monitor; JointState/Imu, named joints, SI units, frame_id and timestamp. A mock source is sufficient."
           },
           "refs": [
@@ -462,7 +462,7 @@
             "M12 Task2"
           ],
           "result": {
-            "ru": "Воспроизводимый запуск из другого каталога, проверка конфигурации и раздельные namespaces для replay и реального устройства.",
+            "ru": "Воспроизводимый запуск из другого каталога, проверка конфигурации и раздельные пространства имён для воспроизведения записей и реального устройства.",
             "en": "Reproducible launch from another directory, configuration validation and separate replay/hardware namespaces."
           },
           "refs": [
@@ -484,7 +484,7 @@
         {
           "id": "M12A.3",
           "title": {
-            "ru": "QoS, bag и первый причинный журнал",
+            "ru": "QoS, rosbag и первый журнал событий с временными связями",
             "en": "QoS, bag and the first causal log"
           },
           "learn": 5,
@@ -497,7 +497,7 @@
             "M12 p7 timing"
           ],
           "result": {
-            "ru": "Один подходящий sensor QoS, один отрицательный случай несовместимости, запись/replay со счётчиками полноты и dashboard; старое измерение отличается от неподвижного сустава.",
+            "ru": "Один подходящий профиль QoS для датчика, один отрицательный сценарий несовместимости, запись и воспроизведение со счётчиками полноты и диагностической панелью; устаревшее измерение отличается от неподвижного сустава.",
             "en": "One appropriate sensor QoS, one incompatible negative case, recording/replay with completeness counters and a dashboard; stale measurement differs from a stationary joint."
           },
           "refs": [
@@ -540,16 +540,16 @@
       "parent": "M12",
       "gates": [
         {
-          "ru": "На датчиках известны acquisition/receipt time и источник часов; reliable delivery не считается гарантией свежести.",
+          "ru": "Для данных датчиков известны время измерения, время получения и источник часов; надёжная доставка сама по себе не гарантирует актуальности данных.",
           "en": "Sensor acquisition/receipt time and clock source are known; reliable delivery is not a freshness guarantee."
         },
         {
-          "ru": "Replay не имеет доступа к actuator enable; запуск ОС или ROS сам по себе не включает движение.",
+          "ru": "Воспроизведение журнала не может включать привод; запуск ОС или ROS сам по себе не разрешает движение.",
           "en": "Replay cannot enable actuators; OS or ROS startup does not itself enable motion."
         }
       ],
       "core_reading": {
-        "ru": "M12 pp3–4,6–7: граф, стандартные интерфейсы, QoS, bag, единицы и время. Полные лаборатории сравнения executors пока не нужны.",
+        "ru": "M12 pp3–4, 6–7: граф, стандартные интерфейсы, QoS, rosbag, единицы и время. Полные лаборатории сравнения исполнителей ROS пока не нужны.",
         "en": "M12 pp3–4,6–7: graph, standard interfaces, QoS, bag, units and time. Full executor-comparison labs are deferred."
       },
       "kept": {
@@ -623,7 +623,7 @@
         {
           "id": "M02-A",
           "title": {
-            "ru": "Диагностика и адресное восстановление",
+            "ru": "Диагностика и целенаправленное повторение",
             "en": "Diagnostic and targeted refresh"
           },
           "learn": 2,
@@ -718,7 +718,7 @@
             "M02 pp4–5,9"
           ],
           "result": {
-            "ru": "Одна калибровка по МНК, отдельные проверочные точки и намеренно вырожденный набор; использован готовый QR/SVD solver, проверены rank и residual.",
+            "ru": "Одна калибровка методом наименьших квадратов, независимые проверочные точки и намеренно вырожденный набор данных; готовый решатель на основе QR/SVD, проверка ранга и невязки.",
             "en": "One least-squares calibration, held-out points and a deliberately degenerate dataset; an existing QR/SVD solver is used with rank/residual checks."
           },
           "refs": [
@@ -767,7 +767,7 @@
             "M02 pp6,10,15"
           ],
           "result": {
-            "ru": "Аналитическая производная простого звена согласуется с finite differences; продемонстрированы скорость и распространение малой ошибки.",
+            "ru": "Аналитическая производная простого звена согласуется с результатом метода конечных разностей; продемонстрированы скорость и распространение малой ошибки.",
             "en": "A simple link derivative agrees with finite differences; velocity and small-error propagation are demonstrated."
           },
           "refs": [
@@ -817,7 +817,7 @@
             "M09 pp3–4"
           ],
           "result": {
-            "ru": "Одна модель сустава или маятника: библиотечный reference и простой интегратор, сравнение двух шагов, энергия и физические единицы; заготовка переходит в M09.",
+            "ru": "Одна модель сустава или маятника: библиотечный эталон и простой интегратор, сравнение двух шагов, энергия и физические единицы; заготовка переходит в M09.",
             "en": "One joint/pendulum model uses a library reference and simple integrator; two timesteps, energy and units are checked, then reused in M09."
           },
           "refs": [
@@ -859,7 +859,7 @@
             "M02 pp8,11–14"
           ],
           "result": {
-            "ru": "Общий notebook/модуль с проверками знака, rad/deg, размеров матриц и вырожденности; отдельные четыре notebook и повторная защита не обязательны.",
+            "ru": "Общий блокнот Jupyter или модуль с проверками знака, радиан и градусов, размеров матриц и вырожденности. Четыре отдельных блокнота и повторная защита не обязательны.",
             "en": "One shared notebook/module checks sign, rad/deg, matrix shape and degeneracy; four separate notebooks and a repeated oral defence are not required."
           },
           "refs": [
@@ -1240,7 +1240,7 @@
             "M04.E4"
           ],
           "result": {
-            "ru": "Aliasing/ADC/timestamps; один причинный фильтр на синтетическом или готовом журнале с осмысленной настройкой и проверкой NaN/разрыва. Базовый FFT показывает aliasing; complementary tilt — только короткая иллюстрация. Реальный IMU приходит в M06, его калибровка — M03, рабочий AHRS и физический roll/pitch PASS — M11.",
+            "ru": "Наложение спектров, АЦП и временные метки; один причинный фильтр на синтетическом или готовом журнале с обоснованной настройкой и проверками NaN и пропусков. Базовое FFT показывает наложение спектров; комплементарная оценка наклона — только краткая иллюстрация. Реальный IMU появляется в M06, его калибровка — в M03, рабочий AHRS и физическая проверка крена и тангажа — в M11.",
             "en": "Aliasing/ADC/timestamps; one causal filter on synthetic or supplied logs with justified tuning and NaN/gap recovery. Basic FFT illustrates aliasing; complementary tilt is only a brief illustration. M06 introduces the actual IMU, M03 calibrates it, and M11 owns operational AHRS and physical roll/pitch PASS."
           },
           "required_prerequisites": [
@@ -1294,12 +1294,12 @@
       },
       "deferred": [
         {
-          "ru": "10 ч: расширенное исследование окон/утечки/PSD Welch, freqz и notch, полная трёхвариантная частотная лабораторная. Пример aliasing и основная задержка фильтра остаются в core.",
+          "ru": "10 ч: расширенное исследование окон, спектральной утечки и плотности мощности методом Уэлча, freqz и режекторные фильтры; полная лабораторная работа с тремя вариантами. Пример наложения спектров и оценка задержки фильтра остаются в основной программе.",
           "en": "10 h: extended window/leakage/Welch PSD, freqz/notch study and the full three-variant frequency laboratory. The aliasing example and basic filter delay remain core."
         }
       ],
       "rationale": {
-        "ru": "Опыт Python позволяет быстро строить графики, но электроника остаётся новой. Убирается одна расширенная DSP-лабораторная; расчёт схем, приборы, соединения, aliasing, причинность и защитные измерения сохранены.",
+        "ru": "Опыт Python позволяет быстро строить графики, но электроника остаётся новой. Убирается одна расширенная DSP-лабораторная; расчёт схем, приборы, соединения, наложение спектров, причинность и защитные измерения сохранены.",
         "en": "Python experience accelerates plotting, but electronics is new. Defer one extended DSP laboratory; retain circuit calculations, instruments, connections, aliasing, causality and protective measurements."
       },
       "prerequisites": [
@@ -1317,7 +1317,7 @@
         }
       ],
       "core_reading": {
-        "ru": "Исходный M04, страницы 3–7; на странице 8 — временная цепочка и короткая проверка усиления/задержки. Паспорт выбранных низковольтных компонентов. Углублённые PSD/Welch/notch отложены. Чтение входит в 51 учебный час.",
+        "ru": "Исходный M04, страницы 3–7; на странице 8 — временная цепочка и короткая проверка усиления/задержки. Паспорт выбранных низковольтных компонентов. Углублённые PSD/Welch/режекторный фильтр отложены. Чтение входит в 51 учебный час.",
         "en": "Original M04, pages 3–7; page 8 timing chain and a short gain/lag check. Datasheets for selected low-voltage components. Extended PSD/Welch/notch is deferred. Reading is inside 51 learning hours."
       },
       "base": 110,
@@ -1547,7 +1547,7 @@
         {
           "id": "C2",
           "title": {
-            "ru": "Параметрическая 3-DOF сборка и доступ к крепежу",
+            "ru": "Параметрическая трёхкоординатная сборка и доступ к крепежу",
             "en": "Parametric 3-DOF assembly and fastener access"
           },
           "learn": 12,
@@ -1815,7 +1815,7 @@
       },
       "deferred": [
         {
-          "ru": "15 ч: самостоятельная FEA балки и реального звена с тремя сетками, сравнением граничных условий и сходимости. Ручная прочность, посадки и физические испытания остаются.",
+          "ru": "15 ч: самостоятельная FEA балки и реального звена с тремя сетками, сравнением граничных условий и сходимости. Ручные расчёты прочности, посадки и физические испытания остаются.",
           "en": "15 h: standalone beam/actual-link FEA with three meshes, boundary-condition comparison and convergence. Hand strength calculations, fits and physical tests remain."
         }
       ],
@@ -2050,7 +2050,7 @@
             "M06.U1"
           ],
           "result": {
-            "ru": "Один рабочий firmware toolchain и контроллер с известными электрическими пределами; загрузка не разрешает движение.",
+            "ru": "Один рабочий набор инструментов разработки прошивки и контроллер с известными электрическими пределами; загрузка не разрешает движение.",
             "en": "One working firmware toolchain/controller with known electrical limits; boot does not enable motion."
           },
           "required_prerequisites": [
@@ -2102,7 +2102,7 @@
             "M06.U2"
           ],
           "result": {
-            "ru": "Измеренные GPIO/PWM/ADC/encoder и реальный IMU; один выбранный интерфейс датчика и основной транспорт с проверенными единицами/таймаутами.",
+            "ru": "Измеренные GPIO/PWM/ADC/энкодер и реальный IMU; один выбранный интерфейс датчика и основной транспорт с проверенными единицами/таймаутами.",
             "en": "Measured GPIO/PWM/ADC/encoder and a real IMU; one sensor interface and primary transport with verified units/timeouts."
           },
           "required_prerequisites": [
@@ -2162,7 +2162,7 @@
             "M06.U3"
           ],
           "result": {
-            "ru": "Атомарный снимок измерений, ограниченный кадр с seq/time/CRC, восстановление после повреждения и bounded queue без блокировки защитной логики.",
+            "ru": "Атомарный снимок измерений, кадр ограниченной длины с номером последовательности, временем и CRC, восстановление после повреждения и очередь ограниченного размера без блокировки защитной логики.",
             "en": "Atomic measurement snapshot, bounded seq/time/CRC framing, recovery from corruption and a bounded queue that cannot block protective logic."
           },
           "required_prerequisites": [
@@ -2203,7 +2203,7 @@
         {
           "id": "U4",
           "title": {
-            "ru": "RTOS, временные характеристики и watchdog",
+            "ru": "RTOS, временные характеристики и сторожевой таймер",
             "en": "RTOS, timing and watchdog"
           },
           "learn": 8,
@@ -2214,7 +2214,7 @@
             "M06.U4"
           ],
           "result": {
-            "ru": "Минимальная RTOS-структура, измеренные jitter/deadline под нагрузкой, обработка переполнения и физическая проверка watchdog до/после reboot.",
+            "ru": "Минимальная структура RTOS, измеренные разброс задержек и соблюдение сроков под нагрузкой, обработка переполнения и физическая проверка сторожевого таймера до и после перезагрузки.",
             "en": "Minimal RTOS structure, measured jitter/deadlines under load, overflow handling and physical watchdog checks before/after reboot."
           },
           "required_prerequisites": [
@@ -2255,7 +2255,7 @@
         {
           "id": "U5",
           "title": {
-            "ru": "Состояния, независимый stop и проверки для G1",
+            "ru": "Состояния, независимая остановка и проверки для G1",
             "en": "States, independent stop and evidence for G1"
           },
           "learn": 4,
@@ -2266,7 +2266,7 @@
             "M06.U5"
           ],
           "result": {
-            "ru": "BOOT/DISARMED/ARMED/FAULT, явный re-arm, проверенные F1–F10, независимый stop и физически измеренный выход при зависании.",
+            "ru": "Состояния BOOT/DISARMED/ARMED/FAULT, явное повторное разрешение привода, пройденные проверки F1–F10, независимая остановка и физическое измерение состояния выхода при зависании.",
             "en": "BOOT/DISARMED/ARMED/FAULT, explicit re-arming, F1–F10 evidence, independent stopping and measured physical output during a hang."
           },
           "required_prerequisites": [
@@ -2314,12 +2314,12 @@
         }
       ],
       "kept": {
-        "ru": "Один рабочий firmware toolchain и контроллер с известными электрическими пределами; загрузка не разрешает движение. Все аппаратные пределы, измерения и критерии допуска исходника сохранены, кроме явно отложенных теоретико-модельных результатов.",
+        "ru": "Один рабочий набор инструментов разработки прошивки и контроллер с известными электрическими пределами; загрузка не разрешает движение. Все аппаратные пределы, измерения и критерии допуска исходника сохранены, кроме явно отложенных теоретико-модельных результатов.",
         "en": "One working firmware toolchain/controller with known electrical limits; boot does not enable motion. All source hardware limits, measurements and progression criteria remain except explicitly deferred theory/model outputs."
       },
       "deferred": [],
       "rationale": {
-        "ru": "Сокращение не обосновано: исходник уже реализует только один основной транспорт и один сенсорный интерфейс. Минимальные RTOS/ISR, очередь, тайминги, watchdog и независимый stop нужны всем трём устройствам;110 ч сохранены.",
+        "ru": "Сокращение не обосновано: исходник уже реализует только один основной транспорт и один сенсорный интерфейс. Минимальные RTOS/ISR, очередь, временные характеристики, сторожевой таймер и независимая остановка нужны всем трём устройствам; 110 ч сохранены.",
         "en": "No reduction is justified: the source already implements only one primary transport and one sensor interface. Minimal RTOS/ISR, queues, timing, watchdog and independent stopping serve all three devices; retain 110 h."
       },
       "prerequisites": [
@@ -2331,12 +2331,12 @@
           "en": "Measure the output during hangs and boot; a terminal FAULT message does not establish physical stopping."
         },
         {
-          "ru": "Безопасное восстановление, отсутствие автоматического enable и stale-данные обязательны перед M07.",
+          "ru": "Безопасное восстановление, отсутствие автоматического разрешения привода и устаревшие данные обязательны перед M07.",
           "en": "Safe recovery, no automatic enable and stale-data handling are mandatory before M07."
         }
       ],
       "core_reading": {
-        "ru": "Исходный M06, все 12 задач и F1–F10. Только выбранные GPIO/PWM/ADC, transport/sensor APIs, базовые ISR/FreeRTOS/watchdog и параметры реального IMU. Не изучать пять шин как пять проектов. Чтение входит в 33 учебных часа.",
+        "ru": "Исходный M06: все 12 задач и F1–F10. Только выбранные GPIO/PWM/ADC, API транспорта и датчика, основы прерываний, FreeRTOS и сторожевого таймера, параметры реального IMU. Не изучать пять шин как пять проектов. Чтение входит в 33 учебных часа.",
         "en": "Original M06, all 12 tasks and F1–F10. Selected GPIO/PWM/ADC, transport/sensor APIs, basic ISR/FreeRTOS/watchdog and the actual IMU settings. Do not treat five buses as five projects. Reading is inside 33 learning hours."
       },
       "base": 110,
@@ -2630,7 +2630,7 @@
         {
           "id": "A3",
           "title": {
-            "ru": "Позиционная петля и ограниченные профили",
+            "ru": "Позиционный контур и ограниченные профили",
             "en": "Position loop and bounded profiles"
           },
           "learn": 8,
@@ -2641,7 +2641,7 @@
             "M07.A3"
           ],
           "result": {
-            "ru": "Повторяемое ограниченное позиционное движение, изменение одного gain, saturation/anti-windup в simulation, штатная остановка/связь/restart с физическими журналами.",
+            "ru": "Повторяемое позиционное движение в заданных пределах, изменение одного коэффициента, насыщение и защита от интегрального насыщения в симуляции; штатная остановка, связь и перезапуск с журналами физических испытаний.",
             "en": "Repeatable bounded position motion, one-gain tuning, simulated saturation/anti-windup, normal stopping/link loss/restart with physical logs."
           },
           "required_prerequisites": [
@@ -2752,12 +2752,12 @@
       },
       "deferred": [
         {
-          "ru": "20 ч: подробная параметрическая идентификация трения/инерции/задержки, chirp, подгонка модели и отдельные F9/F10 проверки её прогноза/экстраполяции. Физические реверсы, задержка, ток, тепловой цикл и проверка нагрузок остаются.",
+          "ru": "20 ч: подробная параметрическая идентификация трения/инерции/задержки, частотная развёртка, подгонка модели и отдельные F9/F10 проверки её прогноза/экстраполяции. Физические реверсы, задержка, ток, тепловой цикл и проверка нагрузок остаются.",
           "en": "20 h: detailed friction/inertia/delay identification, chirp, model fitting and separate F9/F10 prediction/extrapolation tests. Physical reversals, latency, current, thermal duty and load checks remain."
         }
       ],
       "rationale": {
-        "ru": "Настольный привод нужен как первый замкнутый контур и основа DC-приводов tail. Для core достаточно измеренного поведения и ограниченного рабочего диапазона; исследовательское восстановление всей модели переносится. Квалификация L1 остаётся отдельной: другой привод и нагруженная 3 DOF нога.",
+        "ru": "Настольный привод нужен как первый замкнутый контур и основа DC-приводов хвоста. Для основной программы достаточно измеренного поведения и ограниченного рабочего диапазона; исследовательское восстановление всей модели переносится. Проверка пригодности L1 остаётся отдельной: другой привод и нагруженная нога с тремя степенями свободы.",
         "en": "The tabletop drive is the first closed loop and foundation for tail DC drives. Core needs measured behavior and a bounded envelope; research-style model recovery is deferred. L1 qualification remains separate: a different actuator and a loaded 3 DOF leg."
       },
       "prerequisites": [
@@ -2768,16 +2768,16 @@
       ],
       "gates": [
         {
-          "ru": "Неверный знак, насыщение датчика, неопределённый stop или возрастающий нагрев блокируют нагруженную ногу.",
+          "ru": "Неверный знак, насыщение датчика, неопределённое поведение при остановке или возрастающий нагрев блокируют нагруженную ногу.",
           "en": "Incorrect sign, sensor saturation, undefined stopping or rising heat block a loaded leg."
         },
         {
-          "ru": "Не покупать весь комплект по stall torque; сохранить измеренный рабочий диапазон и незакрытые измерения.",
+          "ru": "Не покупать весь комплект по моменту при заблокированном валу; сохранить измеренный рабочий диапазон и незавершённые измерения.",
           "en": "Do not commit to the complete set based on stall torque; preserve the measured operating envelope and open measurements."
         }
       ],
       "core_reading": {
-        "ru": "Исходный M07: требования/сравнение, оснастка/калибровки, ограниченное управление, люфт и тепловой опыт; реальные datasheets привода/драйвера/питания. Chirp, полный fit и модельные F9/F10 отложены. Чтение входит в 32 учебных часа.",
+        "ru": "Исходный M07: требования и сравнение, оснастка и калибровки, ограниченное управление, люфт и тепловой опыт; паспорта реальных привода, драйвера и питания. Частотная развёртка, полная подгонка модели и модельные F9/F10 отложены. Чтение входит в 32 учебных часа.",
         "en": "Original M07: requirements/comparison, fixture/calibration, bounded control, backlash and thermal trial; actual drive/driver/supply datasheets. Chirp, full fitting and model F9/F10 are deferred. Reading is inside 32 learning hours."
       },
       "base": 100,
@@ -2936,7 +2936,7 @@
             "M08 pp3–4,9"
           ],
           "result": {
-            "ru": "Единое дерево frame/axis/unit для будущей ноги, базовых звеньев arm и body; преобразования проверены на известных положениях.",
+            "ru": "Единое дерево систем координат с осями и единицами для будущей ноги, звеньев манипулятора и корпуса; преобразования проверены на известных положениях.",
             "en": "One frame/axis/unit tree covers the future leg, basic arm links and body, with transforms checked at known poses."
           },
           "refs": [
@@ -2985,7 +2985,7 @@
             "M08 pp4–5,9,15"
           ],
           "result": {
-            "ru": "FK соответствует реальным осям/смещениям CAD; независимые контрольные позы и зеркальная нога ловят знак и порядок rotations.",
+            "ru": "FK соответствует реальным осям и смещениям CAD; независимые контрольные позы и зеркальная нога выявляют ошибки знака и порядка вращений.",
             "en": "FK matches actual CAD axes/offsets; independent reference poses and a mirrored leg expose sign and rotation-order errors."
           },
           "refs": [
@@ -3034,7 +3034,7 @@
             "M08 pp6,10"
           ],
           "result": {
-            "ru": "Ветви IK, joint limits и недостижимые цели имеют явный статус; вся swing-дуга, а не только её конец, проходит FK/IK и проверки пределов.",
+            "ru": "Ветви IK, ограничения суставов и недостижимые цели имеют явный статус; вся траектория переноса ноги, а не только её конец, проходит FK/IK и проверки пределов.",
             "en": "IK branches, joint limits and unreachable targets have explicit status; the complete swing path passes FK/IK and limit checks."
           },
           "refs": [
@@ -3083,7 +3083,7 @@
             "M08 pp7–8,10–12"
           ],
           "result": {
-            "ru": "J проверен finite differences, Jq̇ — движением стопы, Jᵀf — виртуальной работой; знаки силы/гравитации и опасные сингулярности объяснены.",
+            "ru": "Матрица J проверена конечными разностями, Jq̇ — движением стопы, Jᵀf — принципом виртуальных работ; объяснены знаки силы и гравитации и опасные сингулярности.",
             "en": "Finite differences verify J, foot motion verifies Jq̇ and virtual work verifies Jᵀf; force/gravity signs and hazardous singularities are explained."
           },
           "refs": [
@@ -3129,7 +3129,7 @@
         {
           "id": "M08-E",
           "title": {
-            "ru": "Одна численная IK на простом arm-примере",
+            "ru": "Одна численное решение IK на простом примере манипулятора",
             "en": "One numerical IK on a simple arm example"
           },
           "learn": 5,
@@ -3140,7 +3140,7 @@
             "M08 p7,task9"
           ],
           "result": {
-            "ru": "Damped least squares на имеющейся короткой цепи: начальное приближение, предел итераций, residual и отказ. Финальная геометрия arm закрывается его проектом.",
+            "ru": "Метод демпфированных наименьших квадратов на существующей короткой цепи: начальное приближение, ограничение числа итераций, невязка и отказ решения. Окончательная геометрия манипулятора проверяется в его проекте.",
             "en": "Damped least squares on an existing short chain demonstrates seeds, iteration limit, residual and failure; final arm geometry is handled by the arm project."
           },
           "refs": [
@@ -3189,7 +3189,7 @@
             "M08 pp8,11–14"
           ],
           "result": {
-            "ru": "При смене позы корпуса FK сохраняет неподвижные локальные world-anchors стоп; общий контракт сообщает единицы, пределы и invalid result.",
+            "ru": "При изменении позы корпуса FK сохраняет неподвижность опорных точек стоп в мировой системе координат; общий интерфейс сообщает единицы, ограничения и признак некорректного результата.",
             "en": "When body pose changes, FK preserves stationary local-world foot anchors; the shared contract exposes units, limits and invalid results."
           },
           "refs": [
@@ -3223,7 +3223,7 @@
       ],
       "hours": 108,
       "kept": {
-        "ru": "FK/IK/Jacobian, реальные CAD-оси, сингулярности, пределы, зеркальность и перенос из body в leg frames.",
+        "ru": "FK/IK/Якобиан, реальные CAD-оси, сингулярности, пределы, зеркальность и перенос из системы корпуса в системы координат ног.",
         "en": "FK/IK/Jacobian, actual CAD axes, singularities, limits, mirroring and body-to-leg transforms."
       },
       "deferred": [
@@ -3237,11 +3237,11 @@
         "en": "108 hours are largely retained: kinematics is new and directly useful across the projects. Cuts mainly remove presentation and duplicate teaching chains, not geometric verification."
       },
       "gate": {
-        "ru": "Нога достигает допустимых точек и отклоняет невозможные; независимая проверка FK/J и фиксированного world-point проходит. Это не сертификат точности ещё не собранного arm.",
+        "ru": "Нога достигает допустимых точек и отклоняет невозможные; независимая проверка FK/J и фиксированной точки в мировой системе координат проходит. Это не сертификат точности ещё не собранного манипулятора.",
         "en": "The leg reaches valid points and rejects impossible ones; independent FK/J and fixed-world-point checks pass. This does not certify the accuracy of an arm not yet assembled."
       },
       "core_reading": {
-        "ru": "Исходный M08, pp3–8: frames/rotations, FK реальных осей, ветви IK, численная damped IK, Jacobian/virtual work; pp11–14 — относящиеся к ноге ошибки. DH/PoE читать до понимания различий, не как вторую обязательную реализацию.",
+        "ru": "Исходный M08, с. 3–8: системы координат и вращения, FK реальных осей, ветви решения IK, численное решение IK с демпфированием, Якобиан и виртуальная работа; с. 11–14 — ошибки, относящиеся к ноге. DH/PoE читать для понимания различий; вторая обязательная реализация не требуется.",
         "en": "Original M08 pp3–8: frames/rotations, actual-axis FK, IK branches, numerical damped IK and Jacobian/virtual work; pp11–14 supply leg-relevant faults. Read DH/PoE for awareness, without assigning a second implementation."
       },
       "base": 108,
@@ -3417,7 +3417,7 @@
             "M05 load cases"
           ],
           "result": {
-            "ru": "Из CAD/измерений M05 построены реальные load cases с массой крепежа/проводов, статическими и ускорительными моментами, рабочими пределами приводов и uncertainty.",
+            "ru": "На основе CAD и измерений M05 составлены реальные расчётные случаи нагрузок: масса крепежа и проводов, статические моменты и моменты при ускорении, рабочие ограничения приводов и неопределённость.",
             "en": "M05 CAD/measurements provide load cases including fasteners/cables, static and acceleration torques, operating actuator limits and uncertainty."
           },
           "phase": "load_before_leg",
@@ -3470,7 +3470,7 @@
             "M23 p15"
           ],
           "result": {
-            "ru": "Для реальной геометрии рассчитаны COM/support margin, нагрузки групп опор и friction limits; трёх контактов недостаточно без невырожденности и допустимых реакций. Простой динамический контрпример отделён от гарантии.",
+            "ru": "Для реальной геометрии рассчитаны COM/запас статической устойчивости, нагрузки групп опор и ограничения по трению; трёх контактов недостаточно без невырожденности и допустимых реакций. Простой динамический контрпример отделён от гарантии.",
             "en": "Actual geometry supplies COM/support margins, support-group loads and friction limits; three contacts require nondegenerate geometry and feasible reactions. A simple dynamic counterexample is distinguished from a guarantee."
           },
           "phase": "load_before_leg",
@@ -3521,7 +3521,7 @@
       "track": "core",
       "parent": "M09",
       "gate": {
-        "ru": "До L1 зафиксированы масса, позы, опорная нагрузка и расчётные моменты; проверены геометрия опор, трение и запас. Физическая нагрузочная проверка выполняется далее в L1, динамические residual — в D2.",
+        "ru": "До L1 зафиксированы масса, позы, опорная нагрузка и расчётные моменты; проверены геометрия опор, трение и запас. Физическая нагрузочная проверка выполняется далее в L1, динамические невязки — в D2.",
         "en": "Before L1, record mass, poses, support loading and calculated torques; check support geometry, friction and margin. Physical load qualification follows in L1; dynamic residuals are checked in D2."
       },
       "segments": [
@@ -3589,13 +3589,13 @@
     {
       "id": "L1",
       "title": {
-        "ru": "Первая физическая 3-DOF нога",
+        "ru": "Первая физическая трёхкоординатная нога",
         "en": "First physical 3-DOF leg"
       },
       "tasks": [
         {
           "title": {
-            "ru": "Квалификация выбранного смарт-привода",
+            "ru": "Проверка пригодности выбранного интеллектуального сервопривода",
             "en": "Qualify the selected smart actuator"
           },
           "learn": 2,
@@ -3606,7 +3606,7 @@
             "L1a"
           ],
           "result": {
-            "ru": "Фактический смарт-привод ноги квалифицирован отдельно от DC-стенда: крепления, интерфейсы, нагрузка, нагрев, пределы.",
+            "ru": "Фактический интеллектуальный сервопривод ноги проверен отдельно от DC-стенда: крепления, интерфейсы, нагрузка, нагрев, пределы.",
             "en": "Actual leg smart actuator qualified separately from the DC rig: mounts, interfaces, loading, heat and limits."
           },
           "segments": [
@@ -3669,7 +3669,7 @@
         },
         {
           "title": {
-            "ru": "Сборка трёх приводов, проводка и stop",
+            "ru": "Сборка трёх приводов, проводка и остановка",
             "en": "Assemble three drives, wiring and stop"
           },
           "learn": 1,
@@ -3680,7 +3680,7 @@
             "L1c"
           ],
           "result": {
-            "ru": "Три привода, жгут и stop работают на защищённой оснастке; энергия и команды имеют отдельные проверенные пути.",
+            "ru": "Три привода, жгут и остановка работают на защищённой оснастке; энергия и команды имеют отдельные проверенные пути.",
             "en": "Three drives, harness and stop operate on a protected fixture; energy and commands have separately verified paths."
           },
           "segments": [
@@ -3803,7 +3803,7 @@
       },
       "scope": null,
       "assumptions": {
-        "ru": "Три готовых совместимых привода; CAD из M05 адаптируется, оснастка/датчики/инструменты переиспользуются. Один вариант привода и одно исправление механики.",
+        "ru": "Три готовых совместимых привода; CAD из M05 адаптируется, оснастка/датчики/инструменты используются повторно. Один вариант привода и одно исправление механики.",
         "en": "Three stock compatible actuators; adapt M05 CAD and reuse rig/sensors/tools. One main actuator candidate and one mechanical correction."
       },
       "gates": [
@@ -3820,11 +3820,11 @@
           "en": "The leg sustains the predefined support load in bounded poses and the specified duty cycle. Current, voltage, temperature and duration are recorded; there are no justified-limit violations, unexplained heating, mount slipping or permanent deformation. Repeat after cooling."
         },
         {
-          "ru": "Низкоамплитудные траектории, штатная остановка, потеря связи и невалидная команда проверены на стенде; независимое аварийное снятие энергии проверено вместе с конечным положением механики и страховкой. После восстановления движение не возобновляется без явного разрешения и свежего состояния.",
+          "ru": "Низкоамплитудные траектории, штатная остановка, потеря связи и некорректная команда проверены на стенде; независимое аварийное снятие энергии проверено вместе с конечным положением механики и страховкой. После восстановления движение не возобновляется без явного разрешения и свежего состояния.",
           "en": "Low-amplitude trajectories, normal stopping, communication loss and invalid commands are verified on the rig; independent emergency energy removal is checked together with the mechanism’s final state and backup support. Motion cannot resume after recovery without explicit re-arming and fresh state."
         },
         {
-          "ru": "Рабочий диапазон выбранного привода и реально доступные command/state interfaces записаны; момент не подменяется позиционной командой, а сила по току не объявляется ground truth. PASS включает калибровки и сырые журналы. До этого допуска тиражирование на четыре ноги закрыто.",
+          "ru": "Зафиксированы рабочий диапазон привода и доступные интерфейсы команд и состояния. Момент не подменяется командой положения; сила, оценённая по току, не считается эталонным измерением. PASS включает калибровки и исходные журналы; до него расширение до четырёх ног запрещено.",
           "en": "Record the chosen actuator’s operating envelope and actual command/state interfaces; torque is not substituted for a position command, and current-based force is not declared ground truth. PASS includes calibrations and raw logs. Replication to four legs remains blocked until this gate passes."
         }
       ],
@@ -4180,7 +4180,7 @@
             "M03 pp3–4,9"
           ],
           "result": {
-            "ru": "На M06 IMU-логе различены bias, разброс, квантование и корреляция; строки одного лога не названы независимыми опытами.",
+            "ru": "В журнале IMU из M06 различены систематическое смещение, разброс, квантование и корреляция; строки одного журнала не считаются независимыми опытами.",
             "en": "M06 IMU logs distinguish bias, scatter, quantisation and correlation; rows from one log are not labelled independent experiments."
           },
           "refs": [
@@ -4222,7 +4222,7 @@
             "M02 calibration"
           ],
           "result": {
-            "ru": "Заранее выбранные положения, отдельные повторные установки и проверочная серия; сохранены raw data, температура/условия, train/test по опытам и число независимых повторов.",
+            "ru": "Заранее выбранные положения, независимые повторные установки и проверочная серия; сохранены исходные данные, температура и условия, разделение по опытам на обучающую и тестовую выборки и число независимых повторов.",
             "en": "Predefined poses, repeated physical placements and held-out runs retain raw data, temperature/conditions, run-level splits and the independent repetition count."
           },
           "refs": [
@@ -4272,7 +4272,7 @@
             "M03 pp7–8,10,15"
           ],
           "result": {
-            "ru": "Одна пригодная оценка неопределённости для выбранной калибровки; сравнение с реальной проверочной ошибкой, sensitivity и обусловленностью. Метод и размер выборки объяснены.",
+            "ru": "Одна пригодная оценка неопределённости для выбранной калибровки; сравнение с реальной проверочной ошибкой, чувствительностьюю и обусловленностью. Метод и размер выборки объяснены.",
             "en": "One suitable calibration-uncertainty estimate is compared with held-out physical error, sensitivity and conditioning; method and sample size are justified."
           },
           "refs": [
@@ -4321,7 +4321,7 @@
             "M03 pp6,10–13"
           ],
           "result": {
-            "ru": "Готовый SciPy solver с физическими bounds решает одну нужную калибровку; проверены выброс, неверный масштаб, утечка и overfit. Свой optimiser не пишется.",
+            "ru": "Готовый решатель SciPy с физически обоснованными ограничениями выполняет одну нужную калибровку. Проверены выбросы, неверный масштаб, утечка данных и переобучение. Собственный оптимизатор не требуется.",
             "en": "An existing SciPy solver with physical bounds fits one required calibration; outlier, scale, leakage and overfit cases are checked without writing an optimiser."
           },
           "refs": [
@@ -4363,12 +4363,12 @@
       ],
       "hours": 56,
       "kept": {
-        "ru": "Реальные повторы, независимая проверка, bias/covariance, bounds, conditioning и честная единица эксперимента.",
+        "ru": "Физические повторы, независимая проверка, смещение и ковариация, ограничения, обусловленность и корректная единица эксперимента.",
         "en": "Physical repeats, independent validation, bias/covariance, bounds, conditioning and an honest experimental unit."
       },
       "deferred": [
         {
-          "ru": "Сравнение всех Monte Carlo/bootstrap/аналитических методов, собственный line search, расширенный Bayes и regularisation — D_STATS.",
+          "ru": "Сравнение всех Монте-Карло/бутстреп/аналитических методов, собственный одномерный поиск, расширенные байесовские методы и регуляризация — D_STATS.",
           "en": "Comparison of all Monte Carlo/bootstrap/analytic methods, custom line search, extended Bayes and regularisation move to D_STATS."
         }
       ],
@@ -4377,11 +4377,11 @@
         "en": "56 hours cover one sound measurement study rather than a compulsory sequence of standalone statistics labs. Repetition count is chosen before collection; the original thirty-placement exercise remains an extended protocol."
       },
       "gate": {
-        "ru": "Проверочная физическая серия не использована для подгонки; неопределённость не скрывает bias, контактные/температурные условия и число независимых повторов.",
+        "ru": "Проверочная физическая серия не использована для подгонки; неопределённость не скрывает систематическое смещение, контактные/температурные условия и число независимых повторов.",
         "en": "The physical validation series is excluded from fitting; uncertainty reporting retains bias, contact/temperature conditions and the independent repetition count."
       },
       "core_reading": {
-        "ru": "Исходный M03, pp3–8: bias/noise/covariance, независимые повторы и проверочная выборка, bounded calibration, обусловленность и один метод неопределённости; pp11–14 — ошибки достоверности по своей работе. Остальные сравнения методов — справочно.",
+        "ru": "Исходный M03, pp3–8: систематическое смещение/шум/ковариация, независимые повторы и проверочная выборка, калибровка с ограничениями, обусловленность и один метод неопределённости; pp11–14 — ошибки достоверности по своей работе. Остальные сравнения методов — справочно.",
         "en": "Original M03 pp3–8: bias/noise/covariance, independent repeats/held-out runs, bounded calibration, conditioning and one uncertainty method; pp11–14 supply validity faults relevant to the project. Other method comparisons are reference material."
       },
       "base": 56,
@@ -4501,7 +4501,7 @@
             "M12 p15 URDF inertia"
           ],
           "result": {
-            "ru": "Модель использует измеренную геометрию; foot/IMU transform на времени измерения сравнивается с FK. Ошибочные frame/time дают отказ, а не нулевую координату.",
+            "ru": "Модель использует измеренную геометрию; преобразование стопы и IMU на момент измерения сравнивается с FK. Неверная система координат или время вызывают отказ, а не нулевую координату.",
             "en": "The model uses measured geometry; measurement-time foot/IMU transforms agree with FK. Wrong frame/time causes failure rather than a zero coordinate."
           },
           "refs": [
@@ -4532,7 +4532,7 @@
         {
           "id": "M12B.2",
           "title": {
-            "ru": "Адаптер существующей MCU-шины и ros2_control lifecycle",
+            "ru": "Адаптер существующей шины микроконтроллера и жизненный цикл ros2_control",
             "en": "Existing MCU-bus adapter and ros2_control lifecycle"
           },
           "learn": 4,
@@ -4543,7 +4543,7 @@
             "M12 Task6"
           ],
           "result": {
-            "ru": "Адаптер read/write поверх протокола M06 и драйвера L1; только реальные command/state interfaces, один владелец команды, проверенные configure/activate/deactivate. Реализовать этот адаптер на C++, переиспользуя M01/M06/L1; показать владение ресурсами, обработку ошибок и отсутствие неограниченного ожидания в read/write. Это тот же компонент, не параллельная реализация на втором языке.",
+            "ru": "Адаптер read/write поверх протокола M06 и драйвера L1; только реальные интерфейсы команд и состояния, один владелец команды, проверенные configure/activate/deactivate. Реализовать этот адаптер на C++, повторно используя M01/M06/L1; показать владение ресурсами, обработку ошибок и отсутствие неограниченного ожидания в read/write. Это тот же компонент, не параллельная реализация на втором языке.",
             "en": "A read/write adapter over the M06 protocol and L1 driver; only actual command/state interfaces, one command owner and verified configure/activate/deactivate. Implement this adapter in C++, reusing M01/M06/L1; demonstrate resource ownership, error handling and bounded read/write behavior. This is the same component, not a parallel implementation in a second language."
           },
           "refs": [
@@ -4581,7 +4581,7 @@
         {
           "id": "M12B.3",
           "title": {
-            "ru": "Отмена, stale-data и автоматический replay отказа",
+            "ru": "Отмена, устаревшие данные и автоматическое воспроизведение сценария отказа",
             "en": "Cancellation, stale data and automated fault replay"
           },
           "learn": 3,
@@ -4593,7 +4593,7 @@
             "M12 F1–F6"
           ],
           "result": {
-            "ru": "Одна исполнительная архитектура с ограниченными callbacks; cancel, потеря данных и перезапуск дают ожидаемые переходы. launch test ограничен timeout; причина и свежесть видны в журнале.",
+            "ru": "Одна схема исполнения с ограниченным временем обратных вызовов; отмена, потеря данных и перезапуск вызывают ожидаемые переходы. Тест запуска имеет предельное время; журнал показывает причину события и актуальность данных.",
             "en": "One executor architecture with bounded callbacks; cancel, data loss and restart produce expected transitions. The launch test has a timeout; logs expose cause and freshness."
           },
           "refs": [
@@ -4627,20 +4627,20 @@
       "parent": "M12",
       "gates": [
         {
-          "ru": "Позиционному приводу не приписывается effort-control; неизвестные измерения не заменяются командой или нулём.",
+          "ru": "Позиционному приводу не приписывается управление усилием; неизвестные измерения не заменяются командой или нулём.",
           "en": "A position actuator is not assigned effort control; commands or zero never replace unknown measurements."
         },
         {
-          "ru": "Монотонный watchdog не зависит от /clock; reconnect требует свежего состояния и явного re-arm.",
+          "ru": "Сторожевой таймер использует монотонные часы и не зависит от /clock; восстановление связи требует актуального состояния и явного повторного разрешения привода.",
           "en": "A monotonic watchdog is independent of /clock; reconnect requires fresh state and explicit re-arming."
         }
       ],
       "core_reading": {
-        "ru": "M12 pp5–8: TF, URDF, реальные state/command interfaces, lifecycle, время, диагностика и отрицательные сценарии.",
+        "ru": "M12 pp5–8: TF, URDF, реальные интерфейсы состояния и команд, жизненный цикл, время, диагностика и отрицательные сценарии.",
         "en": "M12 pp5–8: TF, URDF, actual state/command interfaces, lifecycle, time, diagnostics and negative scenarios."
       },
       "kept": {
-        "ru": "TF/URDF, реальные feedback и hardware lifecycle, ограниченное исполнение и важные отказы.",
+        "ru": "TF/URDF, реальная обратная связь и жизненный цикл аппаратного интерфейса, выполнение в заданных пределах и важные отказы.",
         "en": "TF/URDF, actual feedback and hardware lifecycle, bounded execution and essential faults."
       },
       "prerequisites": [
@@ -4733,7 +4733,7 @@
             "M02 dynamic model"
           ],
           "result": {
-            "ru": "Одна модель реального стендового сустава объясняет инерцию, gravity, damping/friction и отклик; один вывод уравнения проверен по энергии и единицам.",
+            "ru": "Одна модель реального стендового сустава объясняет инерцию, силу тяжести, демпфирование, трение и отклик; вывод уравнения проверен по энергии и единицам.",
             "en": "One model of the actual bench joint explains inertia, gravity, damping/friction and response; one equation derivation is checked through energy and units."
           },
           "phase": "dynamics_after_leg",
@@ -4792,7 +4792,7 @@
             "M09 pp5–6,10"
           ],
           "result": {
-            "ru": "Готовая независимая dynamics library для короткой цепи сравнивает статическую и ускоренную траекторию; показано, когда медленное приближение перестаёт быть пригодным.",
+            "ru": "Готовая независимая библиотека динамики короткой цепи позволяет сравнить статический режим и траекторию с ускорением; показано, когда квазистатическое приближение перестаёт быть применимым.",
             "en": "An existing independent dynamics library compares static and accelerated short-chain trajectories, showing where the slow-motion approximation fails."
           },
           "phase": "dynamics_after_leg",
@@ -4835,7 +4835,7 @@
             "M07 actuator rig"
           ],
           "result": {
-            "ru": "На M07 стенде выполнена отдельная проверочная серия; ошибка модели, диапазон массы/скорости, heat/current limits и residual зафиксированы. Нет нового стенда и повторного освоения logging.",
+            "ru": "На стенде M07 выполнена отдельная проверочная серия. Зафиксированы ошибка модели, диапазоны массы и скорости, температурные и токовые ограничения, невязка. Новый стенд и повторное освоение журналирования не нужны.",
             "en": "A held-out M07 bench series records model error, mass/speed envelope, heat/current limits and residuals without a new rig or repeated logging training."
           },
           "phase": "dynamics_after_leg",
@@ -4877,7 +4877,7 @@
       "track": "core",
       "parent": "M09",
       "gate": {
-        "ru": "Проверенная на отдельных измерениях динамическая модель объясняет нагрузку и допустимое ускорение; residual, ограничения и область применимости записаны.",
+        "ru": "Проверенная на отдельных измерениях динамическая модель объясняет нагрузку и допустимое ускорение; невязка, ограничения и область применимости записаны.",
         "en": "A dynamics model validated on separate measurements explains loading and permissible acceleration; record residuals, limits and applicability."
       },
       "segments": [
@@ -4980,7 +4980,7 @@
             "M03 calibration"
           ],
           "result": {
-            "ru": "Установлены frame, timestamp и units: gyro rad/s, accelerometer specific force; сохранённая M03 калибровка применена, а не выполнена заново.",
+            "ru": "Заданы система координат, временная метка и единицы: угловая скорость гироскопа в рад/с, удельная сила акселерометра. Сохранённая калибровка M03 применена, а не выполнена заново.",
             "en": "Frame, timestamp and units identify gyro rad/s and accelerometer specific force; the existing M03 calibration is applied rather than repeated."
           },
           "refs": [
@@ -5019,7 +5019,7 @@
         {
           "id": "M11-B",
           "title": {
-            "ru": "Один пригодный фильтр roll/pitch",
+            "ru": "Один пригодный фильтр крена и тангажа",
             "en": "One suitable roll/pitch filter"
           },
           "learn": 7,
@@ -5031,7 +5031,7 @@
             "M19 pp3–4"
           ],
           "result": {
-            "ru": "Complementary/AHRS решение на существующей реализации объединяет gyro/accelerometer; понятны bias, drift, gain и ограничение при линейном ускорении. Самописный EKF не является условием.",
+            "ru": "Готовый комплементарный фильтр или AHRS объединяет показания гироскопа и акселерометра. Понятны смещение, дрейф, коэффициент усиления и ограничения при линейном ускорении. Собственный EKF не обязателен.",
             "en": "A complementary/AHRS solution using an existing implementation fuses gyro/accelerometer; bias, drift, gain and linear-acceleration limits are understood. A custom EKF is not required."
           },
           "refs": [
@@ -5082,7 +5082,7 @@
             "M19 pp3–4,7"
           ],
           "result": {
-            "ru": "Независимый статический эталон и ограниченное движение проверяют orientation error, drift, выброс, data gap и ускорение; плохие данные дают invalid/limited state.",
+            "ru": "Независимый статический эталон и движение в заданных пределах проверяют ошибку ориентации, дрейф, выбросы, пропуски данных и ускорение. Некачественные данные приводят к признаку недостоверности или ограниченному режиму.",
             "en": "An independent static reference and bounded motion test orientation error, drift, outliers, gaps and acceleration; poor data produce an invalid/limited state."
           },
           "refs": [
@@ -5133,7 +5133,7 @@
             "M19 pp7,11"
           ],
           "result": {
-            "ru": "Единый estimate+timestamp+quality интерфейс подаёт данные в M10/M19. IMU+суставы/контакты не обещают абсолютный position/yaw; reference отделён от estimator input.",
+            "ru": "Общий интерфейс «оценка + временная метка + качество» передаёт данные в M10/M19. IMU, суставы и контакты не гарантируют наблюдаемость абсолютного положения и курса; эталонные данные отделены от входа алгоритма оценивания.",
             "en": "One estimate+timestamp+quality interface feeds M10/M19. IMU+joints/contacts do not promise absolute position/yaw; references remain separate from estimator inputs."
           },
           "refs": [
@@ -5170,29 +5170,29 @@
       ],
       "hours": 60,
       "kept": {
-        "ru": "Практическая ориентация, bias, time alignment, quality, отказ и наблюдаемость сохранены.",
+        "ru": "Практическая оценка ориентации, смещение, временное согласование, качество данных, отказы и наблюдаемость сохранены.",
         "en": "Practical orientation, bias, time alignment, quality, failure and observability are retained."
       },
       "deferred": [
         {
-          "ru": "Собственный 2D KF и 1-axis EKF, полный state-space/controllability/LQR/LQG benchmark — D_STATE.",
+          "ru": "Собственные двумерный KF и одноосевой EKF, полное сравнительное исследование пространства состояний, управляемости и LQR/LQG — D_STATE.",
           "en": "Custom 2D KF and one-axis EKF plus the full state-space/controllability/LQR/LQG benchmark move to D_STATE."
         },
         {
-          "ru": "Two-support QP переходит в D_FORCE вместе с M20.",
+          "ru": "Квадратичная задача для двух опор переходит в D_FORCE вместе с M20.",
           "en": "Two-support QP moves to D_FORCE together with M20."
         }
       ],
       "rationale": {
-        "ru": "60 ч дают необходимую для медленного робота проверенную IMU-оценку. Разница с прежними 150 ч — выбор метода и отсутствие обязательной сравнительной академической программы, а не повторное сокращение математики. Вводные causal-filter понятия M04 используются повторно; здесь оценивается физический IMU и рабочее объединение его каналов.",
+        "ru": "60 ч на проверенную оценку ориентации по IMU, достаточную для медленного робота. Отличие от прежних 150 ч связано с выбором одного метода и отказом от обязательного академического сравнения. Основы причинной фильтрации из M04 используются повторно; здесь проверяются реальный IMU и объединение данных его датчиков.",
         "en": "60 hours provide validated IMU estimates needed by a slow robot. The reduction from 150 hours comes from method selection and removing compulsory academic comparisons, not another blanket maths cut. Reuse M04 introductory causal-filter concepts; this block evaluates the actual IMU and operational fusion of its channels."
       },
       "gate": {
-        "ru": "Фильтр проходит заранее заданный физический тест roll/pitch, корректно сигнализирует невалидность и не использует скрытый ground truth.",
+        "ru": "Фильтр проходит заранее заданный физический тест крена и тангажа, корректно сообщает о недостоверных данных и не использует скрытые эталонные данные.",
         "en": "The filter passes a predefined physical roll/pitch test, flags invalidity correctly and does not consume hidden ground truth."
       },
       "core_reading": {
-        "ru": "Исходный M11, pp3–5: state/measurement, наблюдаемость, noise/bias и ограничения tilt estimation; pp11–13 — acceleration/outlier/gap проверки. Использовать эти требования для выбранного AHRS/complementary фильтра; derivation KF/EKF/Riccati/QP не назначать как ядро.",
+        "ru": "Исходный M11, с. 3–5: состояние и измерение, наблюдаемость, шум, смещение и ограничения оценки наклона; с. 11–13 — проверки ускорения, выбросов и пропусков. Использовать эти требования для выбранного AHRS или комплементарного фильтра; выводы KF/EKF, уравнения Риккати и QP не включать в обязательную программу.",
         "en": "Original M11 pp3–5: state/measurement, observability, noise/bias and tilt-estimation limits; pp11–13 cover acceleration/outlier/gap checks. Apply these requirements to the chosen AHRS/complementary filter; KF/EKF/Riccati/QP derivations are not core reading."
       },
       "base": 60,
@@ -5311,7 +5311,7 @@
             "M10 pp3–4,9"
           ],
           "result": {
-            "ru": "Baseline PID/PD с feedforward при необходимости, saturation, anti-windup и измеримыми критериями качества; собственный моторный firmware не обязателен для smart servo.",
+            "ru": "Базовый PID/PD, при необходимости с упреждающим воздействием; насыщение, защита от интегрального насыщения и измеримые критерии качества. Для интеллектуального сервопривода собственная низкоуровневая прошивка двигателя не обязательна.",
             "en": "A baseline PID/PD uses feedforward if justified, saturation, anti-windup and measurable quality criteria; a smart servo does not require custom motor firmware."
           },
           "refs": [
@@ -5360,7 +5360,7 @@
             "M10 pp5–6,10"
           ],
           "result": {
-            "ru": "Выбран Ts с запасом, измерены update/data-age/jitter, проверены задержка и пропуск; timeout переводит в заранее определённое безопасное состояние.",
+            "ru": "Период Ts выбран с запасом; измерены время обновления, возраст данных и разброс задержек. Проверены задержка и пропуск; превышение времени ожидания переводит систему в заранее определённое безопасное состояние.",
             "en": "Ts is selected with margin; update rate/data age/jitter are measured, delay/dropout tested, and timeout enters a predefined safe state."
           },
           "refs": [
@@ -5402,7 +5402,7 @@
             "M07 rig"
           ],
           "result": {
-            "ru": "Настройка по ступени/ограниченной траектории на M07; отдельные подтверждающие повторы показывают overshoot/settling/tracking, пределы и температуру.",
+            "ru": "Настройка по ступени/ограниченной траектории на M07; отдельные подтверждающие повторы показывают перерегулирование, время установления и ошибку слежения, пределы и температуру.",
             "en": "Step/bounded-trajectory tuning on M07 is confirmed by separate repeats reporting overshoot/settling/tracking, limits and temperature."
           },
           "refs": [
@@ -5441,7 +5441,7 @@
         {
           "id": "M10-D",
           "title": {
-            "ru": "Внешний контур roll/pitch через pose и IK",
+            "ru": "Внешний контур крена и тангажа через заданную позу и IK",
             "en": "Outer roll/pitch control through pose and IK"
           },
           "learn": 6,
@@ -5454,7 +5454,7 @@
             "M11 IMU filter"
           ],
           "result": {
-            "ru": "Проверенный IMU estimate → ограниченная желаемая поза корпуса → неподвижные опорные точки → IK → position command; углы, скорость, высота и сингулярности ограничены.",
+            "ru": "Проверенная оценка по IMU → ограниченная заданная поза корпуса → неподвижные точки опоры → IK → команды положения. Углы, скорость, высота и приближение к сингулярностям ограничены.",
             "en": "Validated IMU estimate → bounded desired body pose → fixed stance points → IK → position commands, with angle/rate/height/singularity limits."
           },
           "refs": [
@@ -5505,7 +5505,7 @@
             "M10 pp8,11–14"
           ],
           "result": {
-            "ru": "До эксперимента выбраны RMSE/peak/settling и окно оценки; regression replay проверяет stale data, saturations и recovery. Физическое выравнивание остаётся M22/M23.",
+            "ru": "До эксперимента выбрать среднеквадратическую и максимальную ошибки, время установления и окно оценки. Регрессионное воспроизведение проверяет устаревшие данные, насыщение и восстановление. Физическое выравнивание проверяется в M22/M23.",
             "en": "RMSE/peak/settling criteria and evaluation windows are fixed before testing; regression replay checks stale data, saturation and recovery. Physical body levelling remains in M22/M23."
           },
           "refs": [
@@ -5546,20 +5546,20 @@
       },
       "deferred": [
         {
-          "ru": "Полный Bode/margins benchmark по 5–8 частотам, сравнение ZOH/Tustin и многих Ts, gain-scheduling study — D_FREQ.",
+          "ru": "Полное сравнительное исследование диаграмм Боде и запасов устойчивости на 5–8 частотах, сравнение ZOH/Тастина и разных периодов Ts, настройка коэффициентов регулятора — D_FREQ.",
           "en": "Full five-to-eight-frequency Bode/margins benchmarks, ZOH/Tustin/multiple-Ts comparisons and gain-scheduling study move to D_FREQ."
         }
       ],
       "rationale": {
-        "ru": "80 ч используют готовые M07/M09 стенд и модель. Внутренний proprietary PID сервопривода не выдаётся за собственный torque loop; физический roll/pitch тест не считается повторно здесь.",
+        "ru": "80 ч используют готовые стенд M07 и модель M09. Встроенный PID сервопривода с закрытой реализацией не считается собственным контуром управления моментом; физическая проверка крена и тангажа здесь повторно не учитывается.",
         "en": "80 hours reuse the M07/M09 rig and model. A proprietary servo PID is not presented as a custom torque loop, and physical roll/pitch testing is not counted twice."
       },
       "gate": {
-        "ru": "Измеренный контур выполняет заранее выбранные требования и предсказуемо обрабатывает stale data/пределы; оценка до физических body-тестов остаётся модельной.",
+        "ru": "Измеренный контур выполняет заранее выбранные требования и предсказуемо обрабатывает устаревшие данные/пределы; оценка до физических испытаний корпуса остаётся модельной.",
         "en": "The measured loop meets predefined criteria and handles stale data/limits predictably; evidence before physical body testing remains model-based."
       },
       "core_reading": {
-        "ru": "Исходный M10, pp3–7: PID/feedforward, saturation/anti-windup, Ts/задержки и внешний контур roll/pitch; pp11–14 — stale-data, saturation и recovery. Частотную терминологию понять; полный Bode/margins эксперимент читать при выборе D_FREQ.",
+        "ru": "Исходный M10, pp3–7: PID/упреждающее воздействие, насыщение/защита от интегрального насыщения, Ts/задержки и внешний контур крена и тангажа; pp11–14 — устаревшие данные, насыщение и восстановление. Частотную терминологию понять; полный эксперимент по диаграммам Боде и запасам устойчивости читать при выборе D_FREQ.",
         "en": "Original M10 pp3–7: PID/feedforward, saturation/anti-windup, Ts/delay and outer roll/pitch control; pp11–14 cover stale data, saturation and recovery. Understand frequency terminology; assign the full Bode/margins experiment only with D_FREQ."
       },
       "base": 80,
@@ -5695,7 +5695,7 @@
             "M13 p7"
           ],
           "result": {
-            "ru": "URDF/SDF, масса/инерция, коллизии, оси и реальные ограничения; один аналитический reference и шаг dt/dt2. Модель расширяется параметрами, а не вторым симулятором.",
+            "ru": "URDF/SDF, масса/инерция, коллизии, оси и реальные ограничения; один аналитический эталон и шаг dt/dt2. Модель расширяется параметрами, а не вторым симулятором.",
             "en": "URDF/SDF, mass/inertia, collisions, axes and real limits; one analytical reference and dt/dt2 check. Extend by parameters rather than a second simulator."
           },
           "refs": [
@@ -5746,7 +5746,7 @@
             "M13 F1–F3"
           ],
           "result": {
-            "ru": "Проверены контакт/скольжение, sensor rate/noise/stale; ground truth отделён от наблюдений. hold_joints и отключение усилия заданы явно; положение в симуляции не выдаётся за измеренный привод.",
+            "ru": "Проверены контакт, скольжение, частота датчика, шум и устаревание данных; точное состояние симулятора отделено от наблюдений. Режим hold_joints и снятие усилия заданы явно; модельное положение не считается измерением реального привода.",
             "en": "Verify contact/slip and sensor rate/noise/staleness; separate ground truth from observations. Set hold_joints and torque-removal behaviour explicitly; simulated position is not a measured actuator."
           },
           "refs": [
@@ -5777,7 +5777,7 @@
         {
           "id": "M13.3",
           "title": {
-            "ru": "Общее C++-ядро, target check и замкнутый HIL",
+            "ru": "Общее ядро C++, проверка на целевом устройстве и замкнутый HIL",
             "en": "Shared C++ core, target check and closed-loop HIL"
           },
           "learn": 6,
@@ -5789,7 +5789,7 @@
             "M13 F4–F6"
           ],
           "result": {
-            "ru": "Те же вычисления выполняются на host и MCU; небольшой фиксированный набор проверяет совпадение. MCU реально вычисляет управление для модели; записаны clock mapping/RTT, data age, p99/max и deadline misses.",
+            "ru": "Одинаковые вычисления выполняются на компьютере и микроконтроллере; небольшой фиксированный набор проверяет совпадение. Микроконтроллер действительно рассчитывает управление для модели. Записаны согласование часов, время кругового обмена RTT, возраст данных, p99, максимум и пропуски сроков выполнения.",
             "en": "The same computations run on host and MCU; a small fixed set checks agreement. The MCU computes model control; retain clock mapping/RTT, data age, p99/max and missed deadlines."
           },
           "refs": [
@@ -5884,7 +5884,7 @@
         "M10"
       ],
       "kept": {
-        "ru": "Один физический контроллер, канал связи и нога; доказательства model/SIL/target/HIL/physical rig явно разделены.",
+        "ru": "Один физический контроллер, канал связи и нога; результаты модели, SIL, целевого устройства, HIL и физического стенда представлены раздельно.",
         "en": "One physical controller, communication channel and leg; clearly distinguish model/SIL/target/HIL/physical-rig evidence."
       },
       "deferred": [
@@ -5902,16 +5902,16 @@
         "en": "The 70 h retain the real hardware boundary and physics checks. M01 owns installation; L1 owns the leg and driver; the four-leg model and gait generator are not counted again here."
       },
       "core_reading": {
-        "ru": "M13 pp3–8,14–15: reference physics, contact, SIL/PIL/HIL distinctions, clock limits и Task8. Использовать одну обязательную reference-сцену вместо коллекции миров.",
+        "ru": "Исходный M13, с. 3–8, 14–15: эталонные физические задачи, контакт, различия SIL/PIL/HIL, ограничения часов и задача 8. Использовать одну обязательную эталонную сцену вместо набора миров.",
         "en": "M13 pp3–8,14–15: reference physics, contact, SIL/PIL/HIL distinctions, clock limits and Task8. Use one required reference scene instead of a world collection."
       },
       "gates": [
         {
-          "ru": "MCU echo не считается HIL; при просрочках временной критерий остаётся HOLD. Полный GUI и headless sensor rendering проверяются отдельно.",
+          "ru": "Пересылка данных микроконтроллером без вычисления управления не считается HIL. При нарушении сроков выполнения критерий времени остаётся HOLD. Графический интерфейс и формирование данных датчиков без графического интерфейса проверяются отдельно.",
           "en": "MCU echo is not HIL; missed timing requirements remain HOLD. GUI and headless sensor rendering are qualified separately."
         },
         {
-          "ru": "Stop при отключении энергии проверяется на реальной поддержанной механике; успешная анимация не закрывает этот критерий.",
+          "ru": "Остановка при отключении энергии проверяется на реальной поддержанной механике; успешная анимация не закрывает этот критерий.",
           "en": "Validate power-off stopping on the real supported mechanism; successful animation does not close this criterion."
         }
       ],
@@ -6013,13 +6013,13 @@
     {
       "id": "A1",
       "title": {
-        "ru": "Нагруженный сустав, CAD всей руки и хват",
+        "ru": "Нагруженный сустав, CAD всего манипулятора и хват",
         "en": "Loaded joint, full-arm CAD and gripper"
       },
       "tasks": [
         {
           "title": {
-            "ru": "Требования, reach/payload и выбор приводов",
+            "ru": "Требования, вылет и полезная нагрузка и выбор приводов",
             "en": "Requirements, reach/payload and actuator selection"
           },
           "learn": 13,
@@ -6030,7 +6030,7 @@
             "A01"
           ],
           "result": {
-            "ru": "Согласованы 6 вращательных осей+хват,400 мм, до 500 г; расчёт всех масс/моментов и кандидат семейства приводов.",
+            "ru": "Согласованы шесть вращательных осей и захват, вылет 400 мм и груз до 500 г; рассчитаны все массы и моменты, выбран кандидат семейства приводов.",
             "en": "Six rotary axes plus gripper,400 mm and up to 500 g defined; all mass/torque cases calculated and an actuator-family candidate chosen."
           },
           "segments": [
@@ -6160,7 +6160,7 @@
             "A03"
           ],
           "result": {
-            "ru": "Собственные звенья/опоры/CAD45 ч, URDF/SRDF/collision/mass/limits 12 ч, настройка готового numerical 6 DOF IK и reachability/singularity 8 ч.",
+            "ru": "Собственные звенья, опоры и CAD — 45 ч; URDF/SRDF, столкновения, массы и ограничения — 12 ч; настройка готового численного IK для шести степеней свободы, достижимость и сингулярности — 8 ч.",
             "en": "Custom links/supports/CAD45 h; URDF/SRDF/collision/mass/limits 12 h; existing numerical 6 DOF IK setup and reachability/singularity checks 8 h."
           },
           "segments": [
@@ -6499,13 +6499,13 @@
     {
       "id": "T1",
       "title": {
-        "ru": "Tail: пассивная механика и передача",
+        "ru": "Хвост: пассивная механика и передача",
         "en": "Tail: passive mechanics and transmission"
       },
       "tasks": [
         {
           "title": {
-            "ru": "Требования, constant-curvature и нагрузки",
+            "ru": "Требования, постоянная кривизна и нагрузки",
             "en": "Requirements, constant-curvature and loads"
           },
           "learn": 10,
@@ -6516,7 +6516,7 @@
             "T01"
           ],
           "result": {
-            "ru": "Трёхсекционная геометрия 70–90 см,9–12 позвонков,2 изгиба/секцию; простая continuum-модель и нагрузки.",
+            "ru": "Трёхсекционная геометрия 70–90 см,9–12 позвонков,2 изгиба/секцию; простая континуальная модель и нагрузки.",
             "en": "Three-section 70–90 cm geometry,9–12 vertebrae, two bends/section; simple continuum model and loads."
           },
           "segments": [
@@ -6856,7 +6856,7 @@
             "M22/M23 interfaces"
           ],
           "result": {
-            "ru": "В той же среде M13 параметрически добавлены 4/6 ног, реальные hip transforms/axes/mass/inertia и свободный корпус; проверены контактные и зеркальные ошибки.",
+            "ru": "В существующей среде M13 параметрически добавлены четыре или шесть ног, реальные преобразования тазобедренных суставов, оси, массы и моменты инерции, свободный корпус; проверены ошибки контакта и зеркального отражения.",
             "en": "The same M13 environment gains parameterised four/six-leg layouts, actual hip transforms/axes/mass/inertia and a floating body, with contact/mirroring checks."
           },
           "refs": [
@@ -6907,7 +6907,7 @@
             "M19 pp3–4,7,9"
           ],
           "result": {
-            "ru": "M11 orientation и временные метки интегрированы с проверенным contact channel; hysteresis, неожиданный unload/slip и пропуски блокируют следующий LIFT. Сложный contact-aided EKF не обязателен.",
+            "ru": "Оценка ориентации M11 и временные метки согласованы с проверенным каналом контакта. Гистерезис, неожиданная разгрузка, проскальзывание и пропуски данных блокируют следующий подъём ноги (LIFT). Сложный EKF с учётом контактов не обязателен.",
             "en": "M11 orientation/timestamps combine with a validated contact channel; hysteresis, unexpected unload/slip and gaps block the next LIFT. A complex contact-aided EKF is not required."
           },
           "refs": [
@@ -6945,7 +6945,7 @@
         {
           "id": "M19-C",
           "title": {
-            "ru": "Crawl FSM и перенос веса",
+            "ru": "Автомат состояний медленной походки crawl и перенос веса",
             "en": "Crawl FSM and weight transfer"
           },
           "learn": 7,
@@ -6956,7 +6956,7 @@
             "M19 pp5,9–10,15"
           ],
           "result": {
-            "ru": "Одна swing-нога; до LIFT COM с запасом внутри невырожденного треугольника оставшихся опор, допустимы реакции/сцепление. Start/stop и смена команды проверены по фазам.",
+            "ru": "Одна переносимая нога; до LIFT COM с запасом внутри невырожденного треугольника оставшихся опор, допустимы реакции/сцепление. Запуск/остановка и смена команды проверены по фазам.",
             "en": "One leg swings; before LIFT the COM has margin inside the remaining nondegenerate support triangle with feasible reactions/traction. Start/stop and command changes are checked by phase."
           },
           "refs": [
@@ -7010,7 +7010,7 @@
         {
           "id": "M19-D",
           "title": {
-            "ru": "Swing и пригодность места постановки",
+            "ru": "Перенос ноги и пригодность точки опоры",
             "en": "Swing and feasible footholds"
           },
           "learn": 6,
@@ -7021,7 +7021,7 @@
             "M19 pp5–6,10"
           ],
           "result": {
-            "ru": "IK/collision/clearance проверяют всю дугу и ограниченную сетку на известной поверхности; недостижимая или неизвестная цель вызывает ограничение/остановку.",
+            "ru": "IK, проверки столкновений и зазора охватывают всю дугу переноса ноги и ограниченную сетку точек на известной поверхности; недостижимая или неизвестная цель вызывает ограничение либо остановку.",
             "en": "IK/collision/clearance checks cover the entire path and a bounded grid on known terrain; unreachable or unknown targets trigger restriction/stopping."
           },
           "refs": [
@@ -7071,7 +7071,7 @@
             "M10 outer pose controller"
           ],
           "result": {
-            "ru": "Без фиксации корпуса выполнены 60 с simulated stand, перенос веса и малое возмущение с bounded pose/IK. Surface angle и body target разделены; world foot anchors не двигаются с корпусом.",
+            "ru": "Модель стоит 60 с без фиксации корпуса, переносит вес и выдерживает малое возмущение при ограничениях позы и IK. Наклон поверхности отделён от заданной ориентации корпуса; точки опоры в мировой системе координат не движутся вместе с корпусом.",
             "en": "Without body fixation, sixty-second simulated standing, weight transfer and small disturbances use bounded pose/IK. Surface angle and body target are distinct; world foot anchors do not move with the body."
           },
           "refs": [
@@ -7130,7 +7130,7 @@
             "M22/M23 acceptance"
           ],
           "result": {
-            "ru": "Повторяемый набор nominal, slip/unload, missed touchdown, stale data, unreachable goal и stop-by-phase сценариев; thresholds заданы заранее. Физические stand/crawl/wave/ripple/leveling закрываются только в M22/M23.",
+            "ru": "Воспроизводимый набор штатных сценариев и проверок проскальзывания, разгрузки, отсутствия ожидаемого контакта, устаревших данных, недостижимой цели и остановки в каждой фазе. Пороги заданы заранее. Физические стояние, походки crawl/wave/ripple и выравнивание принимаются только в M22/M23.",
             "en": "A repeatable suite covers nominal operation, slip/unload, missed touchdown, stale data, unreachable goals and phase-specific stopping, with thresholds set beforehand. Physical stand/crawl/wave/ripple/levelling close only in M22/M23."
           },
           "refs": [
@@ -7177,25 +7177,25 @@
       ],
       "hours": 136,
       "kept": {
-        "ru": "Свободный корпус, реальные контакты, support geometry/loads, crawl, swing clearance, stop и позиционное выравнивание сохранены.",
+        "ru": "Свободный корпус, реальные контакты, геометрия опор и нагрузки, crawl, зазор при переносе ноги, остановка и позиционное выравнивание сохранены.",
         "en": "Floating body, actual contact, support geometry/loads, crawl, swing clearance, stopping and position-based levelling are retained."
       },
       "deferred": [
         {
-          "ru": "Сравнение нескольких contact-aided estimators и оценка velocity по stationary foot — D_STATE; force-QP/MPC — D_FORCE/D_MPC; learned gait — D_RL.",
+          "ru": "Сравнение нескольких алгоритмов оценивания с учётом контактов и оценка скорости по неподвижной стопе — D_STATE; силовое управление QP/MPC — D_FORCE/D_MPC; обученная походка — D_RL.",
           "en": "Multiple contact-aided estimators and stationary-foot velocity estimation move to D_STATE; force-QP/MPC to D_FORCE/D_MPC; learned gait to D_RL."
         }
       ],
       "rationale": {
-        "ru": "136 ч = 120 ч нового gait/contact/control integration + 16 ч расширения модели, согласованных с M13, где остаётся одна нога. Здесь нет повторного курса PID/ковариаций и нет физических испытаний, уже учтённых в M22/M23.",
+        "ru": "136 ч = 120 ч на интеграцию походки, контактов и управления + 16 ч на расширение модели. Это согласовано с M13, где моделируется одна нога. Повторный курс PID и ковариаций и физические испытания из M22/M23 сюда не входят.",
         "en": "136 hours comprise 120 hours of gait/contact/control integration plus sixteen hours of model extension coordinated with the one-leg M13 scope. PID/covariance study and M22/M23 physical tests are not repeated."
       },
       "gate": {
-        "ru": "Модель без скрытой фиксации проходит nominal и отказные сценарии; контроллер использует только доступные датчики, а ground truth — только независимая оценка. Это допуск к физическим испытаниям, не их замена.",
+        "ru": "Модель без скрытой фиксации проходит штатные и отказные сценарии. Контроллер использует только доступные датчики, а точное состояние симулятора применяется лишь для независимой оценки. Это допуск к физическим испытаниям, а не их замена.",
         "en": "The unconstrained-body model passes nominal/failure cases using only available controller sensors; ground truth is independent evaluation only. This permits hardware testing but does not replace it."
       },
       "core_reading": {
-        "ru": "Исходный M19, pp3–8: contact quality и time alignment, crawl FSM/weight transfer, swing/clearance, свободное стояние и bounds; p15 — проверка опор/реакций. M22/M23 — только интерфейс передачи на физический проект; полноту физических испытаний закрывают сами проекты.",
+        "ru": "Исходный M19, с. 3–8: качество контакта и временное согласование, автомат походки crawl и перенос веса, перенос ноги и зазор над поверхностью, свободное стояние и ограничения; с. 15 — проверка опор и реакций. M22/M23 определяют интерфейс передачи в физический проект; сами проекты отвечают за полноту физических испытаний.",
         "en": "Original M19 pp3–8: contact quality/time alignment, crawl FSM/weight transfer, swing/clearance, free standing and bounds; p15 covers support/reaction checks. Read M22/M23 here for hardware handoff interfaces; those projects own physical acceptance."
       },
       "base": 136,
@@ -7446,7 +7446,7 @@
             "Q2"
           ],
           "result": {
-            "ru": "Ещё три проверенные ноги и единый расширяемый корпус; первая нога L1 переиспользуется.",
+            "ru": "Ещё три проверенные ноги и единый расширяемый корпус; первая нога L1 используется повторно.",
             "en": "Three additional verified legs and one expandable frame; reuse the original L1 leg."
           },
           "segments": [
@@ -7504,7 +7504,7 @@
         },
         {
           "title": {
-            "ru": "Жгуты, питание, stop и последовательный запуск",
+            "ru": "Жгуты, питание, остановка и последовательный запуск",
             "en": "Harnesses, power, stop and staged startup"
           },
           "learn": 4,
@@ -7515,7 +7515,7 @@
             "Q3"
           ],
           "result": {
-            "ru": "12-осевая силовая разводка, защита, независимый stop и последовательный запуск на страховке.",
+            "ru": "12-осевая силовая разводка, защита, независимая остановка и последовательный запуск на страховке.",
             "en": "Twelve-axis power harness, protection, independent stopping and staged supported startup."
           },
           "segments": [
@@ -7568,7 +7568,7 @@
             "Q4"
           ],
           "result": {
-            "ru": "12 физических калибровок, измеренная шина/просадки/нагрев, IMU/contact и актуальная модель.",
+            "ru": "12 физических калибровок, измеренная шина/просадки/нагрев, IMU/контакт и актуальная модель.",
             "en": "Twelve physical calibrations, measured bus/sag/heat, IMU/contact and updated model."
           },
           "segments": [
@@ -7629,7 +7629,7 @@
             "Q5"
           ],
           "result": {
-            "ru": "HIL/fault checks, ≥ 60 с самостоятельного стояния, медленный crawl/остановка и отдельная серия 30–50+ попыток либо заранее обоснованный N; PASS/HOLD.",
+            "ru": "HIL/проверки отказов, ≥ 60 с самостоятельного стояния, медленный crawl/остановка и отдельная серия 30–50+ попыток либо заранее обоснованный N; PASS/HOLD.",
             "en": "HIL/fault checks, ≥ 60 s unsupported standing, slow crawl/stopping and a separate 30–50+ trial series or prejustified N; PASS/HOLD."
           },
           "segments": [
@@ -7673,11 +7673,11 @@
       "low": 120,
       "high": 210,
       "rationale": {
-        "ru": "На входе есть реально работающая 3-DOF нога и контроллер. Увеличение до 155 ч оплачивает повторение механики/проводки, 12 калибровок и физическую интеграцию. Теория ROS, IK и управления здесь заново не изучается.",
+        "ru": "На входе есть реально работающая трёхкоординатная нога и контроллер. Увеличение до 155 ч включает повторение механики/проводки, 12 калибровок и физическую интеграцию. Теория ROS, IK и управления здесь заново не изучается.",
         "en": "Entry requires a physically functioning 3-DOF leg and controller. The 155 hours pay for replicated mechanics/wiring, twelve calibrations and physical integration. ROS, IK and control theory are not relearned."
       },
       "scope": {
-        "ru": "Физический четырёхногий этап сохраняется: ≥60 с независимого стояния, медленная походка, stop, HIL/IMU/contact и повторные испытания. Используется корпус, заранее рассчитанный на расширение до шести ног; это не отдельный второй робот.",
+        "ru": "Физический четырёхногий этап сохраняется: ≥60 с самостоятельного стояния, медленная походка, остановка, HIL/IMU/контакт и повторные испытания. Используется корпус, заранее рассчитанный на расширение до шести ног; это не отдельный второй робот.",
         "en": "Retain the physical four-leg stage: ≥60 s unsupported standing, slow gait, stop, HIL/IMU/contact and repeat tests. Use a body designed for six-leg expansion; this is not a separate second robot."
       },
       "assumptions": [
@@ -7690,17 +7690,17 @@
           "en": "One batch of repeated legs and one local mount/harness revision are planned; no full body redesign from scratch."
         },
         {
-          "ru": "Запланировать 30–50 попыток либо заранее обоснованный меньший N из общего roadmap. Данные M22 не считать независимыми от испытаний той же ревизии только из-за нового файла.",
+          "ru": "Запланировать 30–50 попыток либо заранее обоснованный меньший N из общего плана. Данные M22 не считать независимыми от испытаний той же ревизии только из-за нового файла.",
           "en": "Plan 30–50 attempts or a justified smaller N from the full roadmap. M22 data do not become independent of same-revision tests simply because they use new files."
         }
       ],
       "gates": [
         {
-          "ru": "Сначала карта всех осей и независимый stop на подвесе, затем перенос веса, затем стояние, затем шаг.",
+          "ru": "Сначала карта всех осей и независимая остановка на подвесе, затем перенос веса, затем стояние, затем шаг.",
           "en": "First verify all joint mappings and independent stop on support, then transfer weight, stand and step."
         },
         {
-          "ru": "HOLD по stop, питанию, идентификаторам или потере управления блокирует физическое 4→6.",
+          "ru": "HOLD по остановке, питанию, идентификаторам или потере управления блокирует расширение физической платформы с четырёх до шести ног.",
           "en": "HOLD on stop, power, identification or loss of control blocks physical 4→6 scaling."
         }
       ],
@@ -8142,7 +8142,7 @@
     {
       "id": "T2",
       "title": {
-        "ru": "Tail: три активные секции и калибровка",
+        "ru": "Хвост: три активные секции и калибровка",
         "en": "Tail: three active sections and calibration"
       },
       "tasks": [
@@ -8159,7 +8159,7 @@
             "T04"
           ],
           "result": {
-            "ru": "Одна активная секция с двумя приводами, ограниченными траекториями и измеренными током/нагревом/stop.",
+            "ru": "Одна активная секция с двумя приводами, ограниченными траекториями и измерениями тока, нагрева и поведения при остановке.",
             "en": "One active section with two drives, bounded motion and measured current/heating/stopping."
           },
           "segments": [
@@ -8559,7 +8559,7 @@
     {
       "id": "M23",
       "title": {
-        "ru": "Расширение до hexapod и измеренный рабочий диапазон",
+        "ru": "Расширение до гексапода и измеренный рабочий диапазон",
         "en": "Hexapod expansion and measured operating envelope"
       },
       "tasks": [
@@ -8743,7 +8743,7 @@
             "X4"
           ],
           "result": {
-            "ru": "Плоскость/conditioning, измеренное выравнивание, ≥ 120 с стояния и operating_envelope; ±10–15° остаётся проверяемой целью.",
+            "ru": "Плоскость/обусловленность, измеренное выравнивание, ≥ 120 с стояния и operating_envelope; ±10–15° остаётся проверяемой целью.",
             "en": "Support plane/conditioning, measured leveling, ≥ 120 s standing and operating_envelope; ±10–15° remains a testable target."
           },
           "segments": [
@@ -8804,7 +8804,7 @@
             "X5"
           ],
           "result": {
-            "ru": "Отдельная серия: 40 попыток — по 10 wave, ripple, выравнивания и запусков/остановок/переходов; fault/restart, энергия, тепловые данные, обслуживание и полный выпуск. Depth/camera-fallback сохраняются для развития.",
+            "ru": "Отдельная серия: 40 попыток — по 10 wave, ripple, выравнивания и запусков/остановок/переходов; отказ/перезапуск, энергия, тепловые данные, обслуживание и полный выпуск. Глубина/резервный режим при отказе камеры сохраняются для развития.",
             "en": "Separate series: forty trials — ten each for wave, ripple, leveling and starts/stops/transitions; faults/restart, energy, thermal data, maintenance and complete release. Depth/camera fallback remains further development."
           },
           "segments": [
@@ -8860,7 +8860,7 @@
         "en": "The 155 hours continue work on the same validated machine: two added legs, new contact modes and testing. Driver creation, all CAD and telemetry are not repeated."
       },
       "scope": {
-        "ru": "18 DOF, ≥120 с стояния, wave/ripple, повороты и боковое движение в измеренном диапазоне, выравнивание на заранее проверенных поверхностях, отказы, энергия и обслуживание. Камера не требуется. Depth-карта, выбор опор по зрению, tripod и движение на пяти ногах — развитие. ±10–15° — цель проверки, а не гарантированный результат.",
+        "ru": "18 степеней свободы, ≥120 с стояния, wave/ripple, повороты и боковое движение в измеренном диапазоне, выравнивание на заранее проверенных поверхностях, отказы, энергия и обслуживание. Камера не требуется. карта глубины, выбор опор по зрению, походка с переносом трёх ног и движение на пяти ногах — развитие. ±10–15° — цель проверки, а не гарантированный результат.",
         "en": "18 DOF, ≥120 s standing, wave/ripple, turning and sideways movement within the measured envelope, leveling on pre-verified surfaces, faults, energy and service. No camera is required. Depth maps, visual foothold selection, tripod and five-leg walking are further development. ±10–15° is a validation target, not a guaranteed result."
       },
       "assumptions": [
@@ -8879,7 +8879,7 @@
           "en": "Current/temperature/support boundary failures cannot be offset by faster gait or an attractive video."
         },
         {
-          "ru": "При неустойчивой геометрии опоры, потере контакта, невалидном состоянии или пропуске управляющего deadline — проверенный ограниченный режим либо stop. QP и camera-dependent fallback не входят в основную приёмку.",
+          "ru": "При неустойчивой геометрии опоры, потере контакта, некорректном состоянии или пропуске срока выполнения управления — проверенный ограниченный режим либо остановка. QP и резервный режим с использованием камеры не входят в основную приёмку.",
           "en": "Ill-conditioned support geometry, contact loss, invalid state or a missed control deadline requires a validated restricted mode or stop. QP and camera-dependent fallback are outside core acceptance."
         }
       ],
@@ -9082,14 +9082,14 @@
     {
       "id": "M16",
       "title": {
-        "ru": "MoveIt и ограниченные траектории собственной arm",
+        "ru": "MoveIt и ограниченные траектории собственного манипулятора",
         "en": "MoveIt and bounded trajectories for the custom arm"
       },
       "tasks": [
         {
           "id": "M16.1",
           "title": {
-            "ru": "Подключить готовую модель arm к MoveIt",
+            "ru": "Подключить готовую модель манипулятора к MoveIt",
             "en": "Connect the existing arm model to MoveIt"
           },
           "learn": 3,
@@ -9100,7 +9100,7 @@
             "M16 C-space/MoveIt task"
           ],
           "result": {
-            "ru": "Используются готовые A1 URDF/SRDF/IK, tool frame и реальные joint limits; модель не создаётся второй раз.",
+            "ru": "Используются готовые URDF/SRDF/IK из A1, система координат инструмента и реальные ограничения суставов; модель повторно не создаётся.",
             "en": "Use A1 URDF/SRDF/IK, tool frame and actual joint limits; do not create the model again."
           },
           "refs": [
@@ -9141,7 +9141,7 @@
             "M16 sampling/planning task"
           ],
           "result": {
-            "ru": "Готовый planner решает ограниченную сцену; коллизии, недостижимые цели и неудачный план завершаются отказом. Один выбранный planner, не каталог сравнений.",
+            "ru": "Готовый планировщик решает ограниченную сцену; коллизии, недостижимые цели и неудачный план завершаются отказом. Один выбранный планировщик, не каталог сравнений.",
             "en": "A ready-made planner solves a bounded scene; collisions, unreachable goals and failed plans return failure. Use one selected planner rather than a comparison catalogue."
           },
           "refs": [
@@ -9182,7 +9182,7 @@
             "M16 trajectory profiles task"
           ],
           "result": {
-            "ru": "Готовая time parameterization проверяется по всем суставам и промежуточным состояниям; пределы взяты из проекта, не из красивой анимации.",
+            "ru": "Готовая временная параметризация проверяется по всем суставам и промежуточным состояниям; пределы взяты из проекта, не из красивой анимации.",
             "en": "Check supplied time parameterization across all joints and intermediate states; use project limits rather than visually smooth animation."
           },
           "refs": [
@@ -9223,7 +9223,7 @@
             "M16 FSM/BT/recovery task"
           ],
           "result": {
-            "ru": "Одна простая FSM связывает request/plan/validate/execute/cancel; stale model/scene, invalid goal и timeout не обходят проверку.",
+            "ru": "Один простой автомат состояний связывает запрос, планирование, проверку, выполнение и отмену. Устаревшая модель или сцена, некорректная цель и превышение времени ожидания не обходят проверку.",
             "en": "One simple FSM connects request/plan/validate/execute/cancel; stale model/scene, invalid goal and timeout never bypass validation."
           },
           "refs": [
@@ -9259,26 +9259,26 @@
         "A1"
       ],
       "kept": {
-        "ru": "Готовые библиотеки планирования и контролируемое применение к своей 6-DOF модели.",
+        "ru": "Готовые библиотеки планирования и контролируемое применение к своей шестикоординатной модели.",
         "en": "Ready-made planning libraries applied under explicit constraints to the custom six-DOF model."
       },
       "deferred": [
         {
-          "ru": "Dijkstra/A* отдельным проектом, полный Nav2, costmap, сложное BT и широкий OMPL benchmark.",
+          "ru": "Отдельный проект Дейкстра/A*, полный Nav2, карта стоимости, сложное дерево поведения и расширенное сравнение OMPL.",
           "en": "Standalone Dijkstra/A*, full Nav2, costmaps, elaborate BT and broad OMPL benchmarking."
         }
       ],
       "rationale": {
-        "ru": "40 ч — интеграция и понимание одной planning-цепочки после уже изученной кинематики. Это не повторное написание IK, URDF и собственного motion planner.",
+        "ru": "40 ч на интеграцию и понимание одной цепочки планирования движений после изучения кинематики. Повторная реализация IK, URDF и собственного планировщика не требуется.",
         "en": "The 40 h integrate and explain one planning chain after kinematics. Do not rewrite IK, URDF or a motion planner."
       },
       "core_reading": {
-        "ru": "M16: configuration/collision space, MoveIt/OMPL integration, trajectory limits и failure/cancel semantics. Mobile-navigation главы — в развитие.",
+        "ru": "M16: конфигурационное пространство и области столкновений, интеграция MoveIt/OMPL, ограничения траектории, обработка отказа и отмены. Главы о мобильной навигации оставлены для дальнейшего изучения.",
         "en": "M16: configuration/collision space, MoveIt/OMPL integration, trajectory limits and failure/cancel semantics. Mobile-navigation chapters are development material."
       },
       "gates": [
         {
-          "ru": "Успешный plan не равен допустимому физическому execute; проверка hardware readiness происходит непосредственно перед запуском.",
+          "ru": "Успешный план не гарантирует допустимость физического выполнения; готовность оборудования проверяется непосредственно перед запуском.",
           "en": "A successful plan is not authorization for physical execution; check hardware readiness immediately before launch."
         }
       ],
@@ -9373,7 +9373,7 @@
             "A05"
           ],
           "result": {
-            "ru": "Полная собственная 6 DOF механика изготовлена и собрана с проверенным диапазоном и доступом к обслуживанию.",
+            "ru": "Полная собственная механика с шестью степенями свободы изготовлена и собрана; диапазон движения и доступ для обслуживания проверены.",
             "en": "Complete custom 6 DOF mechanics manufactured and assembled with checked range and maintenance access."
           },
           "segments": [
@@ -9439,7 +9439,7 @@
         },
         {
           "title": {
-            "ru": "Питание, жгуты, stop и границы движения",
+            "ru": "Питание, жгуты, остановка и границы движения",
             "en": "Power, harnesses, stop and motion boundaries"
           },
           "learn": 3,
@@ -9450,7 +9450,7 @@
             "A06"
           ],
           "result": {
-            "ru": "Питание/жгуты/ограничения/stop и поддержка вертикальных звеньев проверены до нагрузки.",
+            "ru": "Питание/жгуты/ограничения и остановку и поддержка вертикальных звеньев проверены до нагрузки.",
             "en": "Power/harness/limits/stop and gravity-link support verified before loaded trials."
           },
           "segments": [
@@ -9500,7 +9500,7 @@
         },
         {
           "title": {
-            "ru": "Калибровки, жёсткость и модель реальной руки",
+            "ru": "Калибровки, жёсткость и модель реального манипулятора",
             "en": "Calibration, stiffness and physical-arm model"
           },
           "learn": 8,
@@ -9511,7 +9511,7 @@
             "A07"
           ],
           "result": {
-            "ru": "Нули/оси/TCP, геометрия, люфт, прогиб и loaded/unloaded ошибки измерены; модель обновлена.",
+            "ru": "Нули/оси/TCP, геометрия, люфт, прогиб и ошибки под нагрузкой и без нагрузки измерены; модель обновлена.",
             "en": "Zeros/axes/TCP, geometry, backlash, deflection and loaded/unloaded error measured; model updated."
           },
           "segments": [
@@ -9732,7 +9732,7 @@
         {
           "id": "M17.1",
           "title": {
-            "ru": "Один pick/transfer state machine",
+            "ru": "Один автомат состояний захвата и переноса",
             "en": "One pick/transfer state machine"
           },
           "learn": 2,
@@ -9743,7 +9743,7 @@
             "M17 grasp/transfer task"
           ],
           "result": {
-            "ru": "Подход, раскрытие/закрытие, lift, перенос и отпускание описаны состояниями с pre/postconditions; attach в симуляции явно отличается от настоящего удержания.",
+            "ru": "Подход, раскрытие и закрытие захвата, подъём, перенос и отпускание описаны состояниями с предусловиями и постусловиями. Прикрепление объекта в симуляции явно отличается от физического удержания.",
             "en": "Approach, open/close, lift, transfer and release have state pre/postconditions; simulation attachment is distinguished from actual retention."
           },
           "refs": [
@@ -9785,7 +9785,7 @@
             "M12 action/cancel reused"
           ],
           "result": {
-            "ru": "План, measured start state, gripper state, feedback/result/cancel и причины отказа согласованы; A3 получает готовый контракт, а не вторую реализацию ROS.",
+            "ru": "План, измеренное начальное состояние, состояние захвата, обратная связь, результат, отмена и причины отказа согласованы. A3 получает готовый интерфейс, а не вторую реализацию ROS.",
             "en": "Plan, measured start state, gripper state, feedback/result/cancel and fault causes agree; A3 receives a ready contract rather than a second ROS implementation."
           },
           "refs": [
@@ -9808,7 +9808,7 @@
         {
           "id": "M17.3",
           "title": {
-            "ru": "Preview, разрешение и понятный отказ",
+            "ru": "Предварительный просмотр, разрешение и понятный отказ",
             "en": "Preview, authorization and clear failure"
           },
           "learn": 1,
@@ -9819,7 +9819,7 @@
             "M17 operator modes/HRI task"
           ],
           "result": {
-            "ru": "Оператор видит цель/режим, отдельно разрешает исполнение и может отменить. Неподтверждённый объект, unknown/reject и восстановленная старая команда не запускают движение.",
+            "ru": "Оператор видит цель/режим, отдельно разрешает исполнение и может отменить. Неподтверждённый объект, неизвестный объект/отклонение и восстановленная старая команда не запускают движение.",
             "en": "The operator sees target/mode, separately authorizes execution and can cancel. Unconfirmed objects, unknown/reject and recovered old commands do not initiate motion."
           },
           "refs": [
@@ -9846,26 +9846,26 @@
         "A1"
       ],
       "kept": {
-        "ru": "Реальные понятия манипуляции, интерфейсы, preview/cancel и передача в физические A3 испытания.",
+        "ru": "Реальные понятия манипуляции, интерфейсы, предварительный просмотр/отмена и передача в физические A3 испытания.",
         "en": "Actual manipulation concepts, interfaces, preview/cancel and handoff to physical A3 trials."
       },
       "deferred": [
         {
-          "ru": "Самостоятельное HRI-исследование, широкий threat model/SROS2, PLC handshake и отдельный этический/командный отчёт.",
+          "ru": "Самостоятельное исследование взаимодействия человека и робота, широкая модель угроз и SROS2, согласование обмена с PLC и отдельный отчёт по этике и командной работе.",
           "en": "Standalone HRI study, broad threat model/SROS2, PLC handshake and a separate ethics/team report."
         }
       ],
       "rationale": {
-        "ru": "25 ч относятся к новой манипуляционной семантике. Физические driver, калибровки, удержание, 30 положительных переносов и отказы уже оплачены A2/A3 внутри 425 ч arm.",
+        "ru": "25 ч отведены на новые правила выполнения манипуляций. Драйвер, физические калибровки, удержание, 30 успешных переносов и проверки отказов уже учтены в A2/A3 в составе 425 ч проекта манипулятора.",
         "en": "The 25 h cover new manipulation semantics. Physical driver, calibration, retention, 30 positive transfers and faults are already budgeted in A2/A3 within the 425 h arm project."
       },
       "core_reading": {
-        "ru": "M17: позы, подход, контакт, хват/перенос, режимы оператора и cancel. Аппаратный результат проверяется по спецификации arm.",
+        "ru": "M17: позы, подход, контакт, хват/перенос, режимы оператора и отмена. Аппаратный результат проверяется по спецификации манипулятора.",
         "en": "M17: poses, approach, contact, grasp/transfer, operator modes and cancellation. Physical outcomes are checked against the arm specification."
       },
       "gates": [
         {
-          "ru": "Симуляционный attach не закрывает физический grip. Все физические тесты относятся к A3; здесь не оплачивается вторая серия.",
+          "ru": "Прикрепление объекта в симуляции не подтверждает физический захват. Все физические испытания относятся к A3; вторая серия здесь не учитывается.",
           "en": "Simulation attachment does not validate physical grip. Physical tests belong to A3; do not charge a second series here."
         }
       ],
@@ -9911,7 +9911,7 @@
     {
       "id": "M14",
       "title": {
-        "ru": "Зрение для arm: измеримая геометрия и классическая база",
+        "ru": "Зрение для манипулятора: измеримая геометрия и классическая база",
         "en": "Arm vision: measurable geometry and a classical baseline"
       },
       "tasks": [
@@ -9929,7 +9929,7 @@
             "M14 Tasks1–2"
           ],
           "result": {
-            "ru": "Калиброванная камера, известная плоскость стола и transform к arm base; пиксельная и пространственная ошибка проверены на отложенных позах. RGB-D используется только при наличии квалифицированного сенсора; для известной плоскости достаточно RGB.",
+            "ru": "Камера откалибрована, плоскость стола известна, преобразование к основанию манипулятора задано. Пиксельная и пространственная ошибки проверены на независимых позах. RGB-D используется только после проверки датчика; для известной плоскости достаточно RGB.",
             "en": "A calibrated camera, known table plane and transform to the arm base; verify pixel and spatial error on held-out placements. Use RGB-D only with a qualified sensor; RGB suffices for a known plane."
           },
           "refs": [
@@ -9975,7 +9975,7 @@
         {
           "id": "M14.2",
           "title": {
-            "ru": "Один классический target/reject baseline",
+            "ru": "Один классический базовый метод: определить целевой объект или отклонить результат",
             "en": "One classical target/reject baseline"
           },
           "learn": 3,
@@ -10016,7 +10016,7 @@
         {
           "id": "M14.3",
           "title": {
-            "ru": "Согласование с arm и независимые границы",
+            "ru": "Согласование с манипулятором и независимые границы",
             "en": "Arm alignment and independent bounds"
           },
           "learn": 3,
@@ -10028,7 +10028,7 @@
             "M14 ROS adapter"
           ],
           "result": {
-            "ru": "Поза преобразуется в arm frame; проверены ROI/workspace/reachability, единицы и свежесть. Цель с неизвестной геометрией или за пределами области отклоняется до планирования.",
+            "ru": "Поза преобразуется в систему координат манипулятора; проверяются область интереса, рабочая область, достижимость, единицы и актуальность данных. Цель с неизвестной геометрией или вне рабочей области отклоняется до планирования.",
             "en": "Transform pose into the arm frame; verify ROI/workspace/reachability, units and freshness. Unknown geometry or an out-of-bounds target is rejected before planning."
           },
           "refs": [
@@ -10059,7 +10059,7 @@
         {
           "id": "M14.4",
           "title": {
-            "ru": "Один perception-node, запись и негативные сцены",
+            "ru": "Один узел восприятия, запись данных и отрицательные сценарии",
             "en": "One perception node, recording and negative scenes"
           },
           "learn": 2,
@@ -10070,7 +10070,7 @@
             "M14 fault/replay task"
           ],
           "result": {
-            "ru": "ROS-результат содержит измерение, качество, timestamp и версию калибровки; stale/пустой кадр/плохая калибровка/нет объекта не создают движение. Эти же ROI и журналы использует M18.",
+            "ru": "Результат ROS содержит измерение, оценку качества, временную метку и версию калибровки. Устаревшие данные, пустой кадр, плохая калибровка или отсутствие объекта не вызывают движения. M18 использует те же области интереса и журналы.",
             "en": "ROS output carries measurement, quality, timestamp and calibration version; stale/empty frames, bad calibration or no object never create motion. M18 reuses the same ROIs and logs."
           },
           "refs": [
@@ -10111,21 +10111,21 @@
       },
       "deferred": [
         {
-          "ru": "Полный ICP/3D-feature pipeline, несколько trackers, CNN/transfer-learning vision и отдельный набор тестовых миров.",
+          "ru": "Полная цепочка ICP и пространственных признаков, несколько алгоритмов отслеживания, CNN с переносом обучения для зрения и отдельный набор тестовых миров.",
           "en": "Full ICP/3D-feature pipeline, multiple trackers, CNN/transfer-learning vision and a separate test-world collection."
         }
       ],
       "rationale": {
-        "ru": "55 ч создают одну работающую задачу зрения для arm. Не обещаются произвольные предметы, неизвестная высота стола или автономная работа в незнакомой среде. Классика и последующий ML сравниваются на одной задаче.",
+        "ru": "55 ч создают одну работающую задачу зрения для манипулятора. Не обещаются произвольные предметы, неизвестная высота стола или автономная работа в незнакомой среде. Классика и последующий ML сравниваются на одной задаче.",
         "en": "The 55 h produce one working arm-vision task. Do not promise arbitrary objects, unknown table height or autonomy in unfamiliar scenes. Classical and later ML methods are compared on the same task."
       },
       "core_reading": {
-        "ru": "M14: camera geometry/calibration, простая сегментация, frame/time и отказы. Разделы ICP/CNN сохранены для развития; книги читаются по выбранной задаче.",
+        "ru": "M14: геометрия и калибровка камеры, простая сегментация, системы координат, время и отказы. ICP/CNN сохранены для дальнейшего изучения; главы книг выбираются под конкретную задачу.",
         "en": "M14: camera geometry/calibration, simple segmentation, frame/time and faults. ICP/CNN sections remain for development; read book sections relevant to the selected task."
       },
       "gates": [
         {
-          "ru": "До эксперимента задать допустимую ошибку по зазору захвата и размеру объекта; показать holdout-error, а не только reprojection на обучающей калибровке.",
+          "ru": "До эксперимента задать допустимую ошибку по зазору захвата и размеру объекта; показать ошибку на независимых проверочных данных, а не только ошибку репроекции на данных калибровки.",
           "en": "Predefine allowed error from gripper clearance and object size; show holdout error rather than calibration-fit reprojection alone."
         },
         {
@@ -10223,7 +10223,7 @@
     {
       "id": "M18",
       "title": {
-        "ru": "Один полезный ML-эксперимент для arm",
+        "ru": "Один полезный эксперимент машинного обучения для манипулятора",
         "en": "One useful ML experiment for the arm"
       },
       "tasks": [
@@ -10242,7 +10242,7 @@
             "M14 annotation task"
           ],
           "result": {
-            "ru": "На тех же M14 ROI сформирован target/reject dataset. Разделение по съёмочным сессиям/постановкам задано до обучения; соседние кадры не пересекают train/validation/test. Отдельно удержан набор unseen distractors.",
+            "ru": "На тех же областях интереса M14 собран набор данных «целевой объект / отклонить». Разделение по сеансам съёмки и постановкам задано до обучения; соседние кадры не попадают в разные обучающую, валидационную и тестовую выборки. Отдельно сохранены ранее не встречавшиеся посторонние объекты.",
             "en": "Build a target/reject dataset from the same M14 ROIs. Predefine session/placement splits before training; adjacent frames never cross train/validation/test. Hold out a separate unseen-distractor set."
           },
           "refs": [
@@ -10281,7 +10281,7 @@
         {
           "id": "M18.2",
           "title": {
-            "ru": "Одна модель и понятный PyTorch training loop",
+            "ru": "Одна модель и понятный цикл обучения PyTorch",
             "en": "One model and an explainable PyTorch training loop"
           },
           "learn": 8,
@@ -10292,7 +10292,7 @@
             "M18 autograd/logistic/MLP task"
           ],
           "result": {
-            "ru": "Одна небольшая модель: logistic/MLP на фиксированных признаках; понятны loss, gradients, normalization, validation stopping и seed. Одна модель, без дополнительной CNN/contact/RL кампании.",
+            "ru": "Одна небольшая модель — логистическая регрессия или MLP на фиксированных признаках. Понятны функция потерь, градиенты, нормализация, остановка по валидационной выборке и начальное состояние генератора случайных чисел. Дополнительные эксперименты с CNN, классификацией контакта и RL не требуются.",
             "en": "One small model: logistic/MLP on fixed features; explain loss, gradients, normalization, validation stopping and seed. One model, without additional CNN/contact/RL campaigns."
           },
           "refs": [
@@ -10330,7 +10330,7 @@
         {
           "id": "M18.3",
           "title": {
-            "ru": "Holdout, классическая база и отказ от решения",
+            "ru": "Независимая тестовая выборка, классический базовый метод и отказ от решения",
             "en": "Holdout, classical baseline and abstention"
           },
           "learn": 6,
@@ -10341,7 +10341,7 @@
             "M18 metrics/calibration/OOD task"
           ],
           "result": {
-            "ru": "Одна замороженная модель сравнивается с M14 правилом на том же test: confusion matrix, precision/recall, false accept/reject, coverage при abstention и результаты по условиям. Порог выбирается на validation, не на test.",
+            "ru": "Одна модель с зафиксированными параметрами сравнивается с правилом M14 на той же тестовой выборке: матрица ошибок, точность и полнота, ложные допуски и отказы, доля выданных решений и результаты по условиям. Порог выбирается по валидационной, а не тестовой выборке.",
             "en": "Compare one frozen model with the M14 rule on the same test: confusion matrix, precision/recall, false accept/reject, abstention coverage and per-condition results. Select threshold on validation, never test."
           },
           "refs": [
@@ -10379,7 +10379,7 @@
         {
           "id": "M18.4",
           "title": {
-            "ru": "CPU inference и контролируемая связь с arm",
+            "ru": "Выполнение модели на CPU и контролируемая интеграция с манипулятором",
             "en": "CPU inference and bounded connection to the arm"
           },
           "learn": 2,
@@ -10391,7 +10391,7 @@
             "M17 execution contract"
           ],
           "result": {
-            "ru": "Сохранены dataset/model/config/version и CPU latency/data-age. ML выдаёт рекомендацию target/reject; геометрические ограничения и stop независимы. Включение проверяется в уже запланированных A3 попытках.",
+            "ru": "Сохранены набор данных, модель, конфигурация, версии, задержка выполнения на CPU и возраст данных. Модель рекомендует «целевой объект / отклонить»; геометрические ограничения и остановка независимы от неё. Включение проверяется в уже запланированных попытках A3.",
             "en": "Retain dataset/model/config/version and CPU latency/data age. ML outputs a target/reject recommendation; geometric limits and stop remain independent. Integration is checked in already-planned A3 attempts."
           },
           "refs": [
@@ -10428,34 +10428,34 @@
         "M17"
       ],
       "kept": {
-        "ru": "ML остаётся обязательным: настоящие данные устройства, обучение, независимый holdout, сравнение с классикой и интеграционный результат.",
+        "ru": "ML остаётся обязательным: настоящие данные устройства, обучение, независимая тестовая выборка, сравнение с классикой и интеграционный результат.",
         "en": "ML remains mandatory: real device data, training, independent holdout, comparison with a classical method and an integration outcome."
       },
       "deferred": [
         {
-          "ru": "Отдельный contact classifier для hexapod, CNN/transfer learning, большой hyperparameter sweep, несколько задач/моделей и RL.",
+          "ru": "Отдельный классификатор контакта гексапода, CNN с переносом обучения, большой перебор гиперпараметров, несколько задач и моделей, обучение с подкреплением.",
           "en": "Separate hexapod contact classifier, CNN/transfer learning, large hyperparameter sweeps, multiple tasks/models and RL."
         }
       ],
       "rationale": {
-        "ru": "70 ч используют готовую камеру, ROI, ROS и измерения M14. Новыми остаются постановка ML, dataset discipline, обучение и оценка. Отсутствие улучшения над классикой — допустимый научно корректный результат, а не повод выдавать слабую модель за готовый controller.",
+        "ru": "70 ч используют готовую камеру, область интереса, ROS и измерения M14. Новые задачи — постановка задачи машинного обучения, подготовка данных, обучение и оценка. Отсутствие улучшения относительно классического метода — допустимый научно корректный результат; слабую модель нельзя считать готовой системой управления.",
         "en": "The 70 h reuse M14 camera, ROIs, ROS and measurements. New work is ML formulation, dataset discipline, training and evaluation. Failure to beat the classical method is a valid result, not a reason to present a weak model as a qualified controller."
       },
       "core_reading": {
-        "ru": "M18: данные/утечки, logistic/MLP/autograd, validation, confusion/precision/recall, calibration/abstention, CPU deployment. M14 даёт единственную общую vision-задачу.",
+        "ru": "M18: данные и утечки, логистическая регрессия, MLP, autograd, валидация, матрица ошибок, точность и полнота, калибровка вероятностей, отказ от решения и запуск на CPU. M14 предоставляет единую задачу зрения.",
         "en": "M18: data/leakage, logistic/MLP/autograd, validation, confusion/precision/recall, calibration/abstention and CPU deployment. M14 supplies the single shared vision task."
       },
       "gates": [
         {
-          "ru": "До обучения зафиксировать единицу независимого наблюдения и минимум 30 test-постановок: ≥10 target, ≥10 известных distractors и ≥10 unseen distractors, в ≥2 условиях. Это учебный минимум, не доказательство редкого уровня ошибок.",
+          "ru": "До обучения определить единицу независимого наблюдения и минимум 30 тестовых постановок: ≥10 с целевым объектом, ≥10 с известными посторонними объектами и ≥10 с ранее не встречавшимися посторонними объектами, в ≥2 условиях. Это учебный минимум, а не доказательство малой вероятности ошибки.",
           "en": "Before training define the independent observation unit and at least 30 test placements: ≥10 target, ≥10 known distractors and ≥10 unseen distractors, under ≥2 conditions. This is an educational minimum, not proof of a rare error rate."
         },
         {
-          "ru": "Unknown/reject/stale вне допуска не разрешают движение. Если модель ложно принимает неизвестные предметы или хуже baseline, сохранить её в advisory/replay; физически использовать классический подтверждённый путь с операторским разрешением. Не заявлять универсальный OOD detector.",
+          "ru": "Неизвестный объект, отказ классификатора или устаревшие данные не разрешают движение. Если модель ложно принимает неизвестные предметы или уступает базовому методу, оставить её для рекомендаций и воспроизведения записей; физическое движение выполнять по проверенному классическому методу с разрешением оператора. Универсальное обнаружение данных вне распределения не заявляется.",
           "en": "Unknown/reject/stale outside the envelope never authorizes motion. If the model falsely accepts unseen objects or underperforms baseline, keep it advisory/replay-only; physically use the validated classical path with operator authorization. Do not claim a universal OOD detector."
         },
         {
-          "ru": "Все 30 положительных физических переносов A3 сохраняются. Reject/unknown проверяются отдельно в уже оплаченных сценариях отказов A3; их N и результаты учитываются отдельно от переносов. Часть положительных попыток использует vision/ML, без второго бюджета transfer/endurance.",
+          "ru": "Все 30 положительных физических переносов A3 сохраняются. Отклонённые и неизвестные объекты проверяются отдельно в уже учтённых сценариях отказов A3; их число N и результаты учитываются отдельно от переносов. Часть положительных попыток использует зрение и машинное обучение; второй бюджет переносов и ресурсных испытаний не добавляется.",
           "en": "Retain all 30 positive physical A3 transfers. Test reject/unknown separately within already-budgeted A3 fault scenarios; record their N and results separately from transfers. Some positive trials use vision/ML, without a second transfer/endurance budget."
         }
       ],
@@ -10574,7 +10574,7 @@
             "A08"
           ],
           "result": {
-            "ru": "Физический драйвер привязан к MoveIt/ros 2_control, проверены реальные пределы/тайминги/cancel/recovery.",
+            "ru": "Физический драйвер привязан к MoveIt/ros2_control, проверены реальные пределы/временные характеристики/отмена/восстановление.",
             "en": "Physical driver bound to MoveIt/ros 2_control; actual limits/timing/cancel/recovery verified."
           },
           "segments": [
@@ -10696,7 +10696,7 @@
             "A10"
           ],
           "result": {
-            "ru": "100 циклов, осмотр каждые 25,20-минутный заданный duty, охлаждение, faults/stop/restart и документация; цели точности измерены.",
+            "ru": "100 циклов с осмотром каждые 25, 20 минут работы в заданном режиме, охлаждение, проверки отказов, остановки и перезапуска; документация и измеренное соответствие целям точности.",
             "en": "One hundred cycles, inspection every 25,20-minute defined duty, cooling, faults/stopping/restart and documentation; accuracy targets measured."
           },
           "segments": [
@@ -10910,7 +10910,7 @@
     {
       "id": "G3",
       "title": {
-        "ru": "Рука и AI: физическая приёмка",
+        "ru": "Манипулятор и ИИ: физическая приёмка",
         "en": "Arm and AI: physical acceptance"
       },
       "track": "gate",
@@ -10918,7 +10918,7 @@
       "tasks": [
         {
           "title": {
-            "ru": "Сверить ручной и автоматизированный перенос, reject/unknown, измерения под нагрузкой и границы применения ML. Использовать серию A3; не повторять её целиком.",
+            "ru": "Сверить ручной и автоматизированный перенос, отклонённые/неизвестные объекты, измерения под нагрузкой и границы применения ML. Использовать серию A3; не повторять её целиком.",
             "en": "Review manual/automated transfers, reject/unknown, loaded measurements and ML limitations. Reuse the A3 series rather than repeating it."
           },
           "learn": 0,
@@ -10973,7 +10973,7 @@
     {
       "id": "R3",
       "title": {
-        "ru": "Резерв: рука, калибровка и интеграция AI",
+        "ru": "Резерв: манипулятор, калибровка и интеграция ИИ",
         "en": "Allowance: arm, calibration and AI integration"
       },
       "track": "reserve",
@@ -10981,7 +10981,7 @@
       "tasks": [
         {
           "title": {
-            "ru": "Резерв: рука, калибровка и интеграция AI",
+            "ru": "Резерв: манипулятор, калибровка и интеграция ИИ",
             "en": "Allowance: arm, calibration and AI integration"
           },
           "learn": 0,
@@ -11197,7 +11197,7 @@
     {
       "id": "T3",
       "title": {
-        "ru": "Tail: движения, ресурс и выпуск",
+        "ru": "Хвост: движения, ресурс и выпуск",
         "en": "Tail: motions, endurance and release"
       },
       "tasks": [
@@ -11214,7 +11214,7 @@
             "T07"
           ],
           "result": {
-            "ru": "Пять основных движений, gamepad/редактор/ROS, ограничения и сохранение траекторий на одном повторно используемом firmware-стеке.",
+            "ru": "Пять основных движений, геймпад, редактор, ROS, ограничения и сохранение траекторий в одной повторно используемой прошивке.",
             "en": "Five main motions, gamepad/editor/ROS, limits and saved trajectories using one reused firmware stack."
           },
           "segments": [
@@ -11275,7 +11275,7 @@
             "T08"
           ],
           "result": {
-            "ru": "100 циклов, fault/stop, износ и крепление; после стенда — манекен/нагрузка и короткая стационарная примерка с release.",
+            "ru": "100 циклов, проверки отказов и остановки, износа и крепления; после стенда — испытание на манекене с нагрузкой и короткая стационарная примерка с проверкой быстрого снятия.",
             "en": "One hundred cycles, faults/stopping, wear and mounting; bench then dummy/load, followed by a brief stationary wearable trial with release."
           },
           "segments": [
@@ -11417,7 +11417,7 @@
     {
       "id": "R4",
       "title": {
-        "ru": "Резерв: tail и итоговые исправления",
+        "ru": "Резерв: хвост и итоговые исправления",
         "en": "Allowance: tail and final corrections"
       },
       "track": "reserve",
@@ -11425,7 +11425,7 @@
       "tasks": [
         {
           "title": {
-            "ru": "Резерв: tail и итоговые исправления",
+            "ru": "Резерв: хвост и итоговые исправления",
             "en": "Allowance: tail and final corrections"
           },
           "learn": 0,
@@ -11676,7 +11676,7 @@
             "M24 manifest/archive task"
           ],
           "result": {
-            "ru": "Объединены готовые project releases, окружения, CAD/BOM, firmware, калибровки, интерфейсы и инструкция запуска; чистая сборка не зависит от случайного пути. Один CI workflow собирает host/ROS-код и запускает уже написанные unit/integration/replay проверки без подключённого робота; аппаратные испытания остаются отдельными.",
+            "ru": "Объединены готовые выпуски проектов, окружения, CAD и спецификации комплектующих, прошивки, калибровки, интерфейсы и инструкция запуска. Чистая сборка не зависит от случайных путей. Один процесс CI собирает код компьютера и ROS и запускает существующие модульные и интеграционные тесты и воспроизведение журналов без робота; аппаратные испытания выполняются отдельно.",
             "en": "Combine existing project releases, environments, CAD/BOM, firmware, calibrations, interfaces and startup instructions; clean builds do not depend on an accidental path. One CI workflow builds host/ROS code and runs existing unit/integration/replay checks without attached hardware; physical tests remain separate."
           },
           "refs": [
@@ -11717,7 +11717,7 @@
             "M24 targeted evidence/stop task"
           ],
           "result": {
-            "ru": "Воспроизвести по одному ключевому сохранённому сценарию каждого устройства и проверить соответствие итоговым версиям; повторять физическую приёмку лишь при изменении влияющей ревизии или найденном пробеле.",
+            "ru": "Воспроизвести по одному ключевому сохранённому сценарию каждого устройства и проверить соответствие итоговым версиям; повторять физическую приёмку лишь при изменении значимых для результата компонентов или найденном пробеле.",
             "en": "Reproduce one key saved scenario per device and match final versions; repeat physical acceptance only after a relevant revision change or identified gap."
           },
           "refs": [
@@ -11799,16 +11799,16 @@
       },
       "deferred": [
         {
-          "ru": "Новая полная endurance-кампания, повторная сборка всей документации, отдельный большой академический отчёт и несколько внешних review циклов.",
+          "ru": "Новая полная серия ресурсных испытаний, повторная сборка всей документации, отдельный большой академический отчёт и несколько циклов внешней проверки.",
           "en": "A new full endurance campaign, rebuilding all documentation, a separate large academic report and multiple external review cycles."
         }
       ],
       "rationale": {
-        "ru": "30 ч интегрируют готовые выпуски. Физическая безопасность, ресурс и повторные испытания принадлежат проектам; независимый G4 проверяет готовность, а не создаёт ещё один release pipeline.",
+        "ru": "30 ч на объединение готовых результатов проектов. Физическая безопасность, ресурс и повторные испытания проверяются внутри проектов; независимая проверка G4 оценивает готовность, не создавая ещё один процесс подготовки выпуска.",
         "en": "The 30 h integrate completed releases. Physical safety, endurance and repeated trials belong to projects; independent G4 checks readiness rather than creating another release pipeline."
       },
       "core_reading": {
-        "ru": "M24: traceability, конфигурации, воспроизводимость, ограничения и техническая защита. Протоколы физических испытаний берутся из уже закрытых проектов.",
+        "ru": "M24: прослеживаемость требований, конфигурации, воспроизводимость, ограничения и техническая защита. Протоколы физических испытаний берутся из уже закрытых проектов.",
         "en": "M24: traceability, configuration, reproducibility, limitations and design defence. Use physical-test protocols from already-accepted projects."
       },
       "gates": [
@@ -11891,7 +11891,7 @@
       "tasks": [
         {
           "title": {
-            "ru": "Проверить требования обязательного ядра, воспроизводимость и комплектность трёх устройств. Незакрытый критерий означает HOLD и новый прогноз; темы дальнейшего развития не являются блокерами.",
+            "ru": "Проверить требования обязательного ядра, воспроизводимость и комплектность трёх устройств. Невыполненный критерий означает HOLD и новый прогноз; темы дальнейшего развития не являются блокерами.",
             "en": "Review core requirements, reproducibility and completeness of all three devices. An unmet criterion means HOLD and reforecast; further-development topics are not blockers."
           },
           "learn": 0,

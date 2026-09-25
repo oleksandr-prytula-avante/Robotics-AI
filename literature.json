@@ -10,7 +10,7 @@
       },
       "authors": "Bjarne Stroustrup, Herb Sutter and contributors",
       "edition": {
-        "ru": "Living guidelines; use the project’s C++17 subset",
+        "ru": "Обновляемые рекомендации; использовать подмножество C++17, принятое в проекте",
         "en": "Living guidelines; use the project’s C++17 subset"
       },
       "access": {
@@ -19,7 +19,7 @@
       },
       "url": "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines",
       "selection": {
-        "ru": "M01: R.1 (RAII), правила владения ресурсами, lifetime и передача параметров; применить к одному драйверу/тесту. M06: повторно использовать эти решения, не начинать новый курс C++.",
+        "ru": "M01: R.1 (RAII), правила владения ресурсами, время жизни и передача параметров; применить к одному драйверу/тесту. M06: повторно использовать эти решения, не начинать новый курс C++.",
         "en": "M01: R.1 (RAII), ownership, lifetime and parameter-passing rules; apply to one driver/test. M06: reuse these decisions rather than start another C++ course."
       },
       "stages": [
@@ -43,7 +43,7 @@
       },
       "authors": "Bjarne Stroustrup",
       "edition": {
-        "ru": "Addison-Wesley, September 2022; C++20 with some C++23",
+        "ru": "Addison-Wesley, сентябрь 2022; C++20 и отдельные возможности C++23",
         "en": "Addison-Wesley, September 2022; C++20 with some C++23"
       },
       "access": {
@@ -86,7 +86,7 @@
       },
       "authors": "Scott Chacon, Ben Straub",
       "edition": {
-        "ru": "Apress, 2014; maintained online second edition",
+        "ru": "Apress, 2014; поддерживаемая онлайн-версия второго издания",
         "en": "Apress, 2014; maintained online second edition"
       },
       "access": {
@@ -124,7 +124,7 @@
       },
       "authors": "Kitware, GoogleTest contributors",
       "edition": {
-        "ru": "CMake 3.28 documentation family; GoogleTest living primer",
+        "ru": "Документация ветки CMake 3.28; обновляемое вводное руководство GoogleTest",
         "en": "CMake 3.28 documentation family; GoogleTest living primer"
       },
       "access": {
@@ -133,7 +133,7 @@
       },
       "url": "https://cmake.org/cmake/help/v3.28/guide/tutorial/index.html",
       "selection": {
-        "ru": "CMake: сборка небольшого executable + library и проверка CTest. GoogleTest: один тест единиц/кадров или отказа датчика. Версию CMake сверить с установленной; /latest сейчас описывает другую ветку.",
+        "ru": "CMake: собрать небольшой исполняемый файл и библиотеку, проверить их через CTest. GoogleTest: один тест единиц измерения, систем координат или отказа датчика. Версию документации CMake сверить с установленной; ссылка /latest сейчас описывает другую ветку.",
         "en": "CMake: one executable plus library and CTest check. GoogleTest: one units/frames or sensor-failure test. Match documentation to installed CMake; /latest describes a different branch."
       },
       "stages": [
@@ -162,7 +162,7 @@
       },
       "authors": "NASA",
       "edition": {
-        "ru": "NASA/SP-2016-6105 Rev 2; online chapters updated 2024",
+        "ru": "NASA/SP-2016-6105, редакция 2; онлайн-главы обновлены в 2024 году",
         "en": "NASA/SP-2016-6105 Rev 2; online chapters updated 2024"
       },
       "access": {
@@ -171,7 +171,7 @@
       },
       "url": "https://www.nasa.gov/reference/systems-engineering-handbook/",
       "selection": {
-        "ru": "Только §4.2 Technical Requirements Definition и §5.3 Product Verification: сверить матрицу требование → испытание → фактический результат. В M24 всего 2 ч изучения; весь handbook не задан. Использовать уже собранные данные трёх проектов.",
+        "ru": "Только §4.2 Technical Requirements Definition и §5.3 Product Verification: сверить матрицу требование → испытание → фактический результат. В M24 всего 2 ч изучения; весь справочник не задан. Использовать уже собранные данные трёх проектов.",
         "en": "Only §4.2 Technical Requirements Definition and §5.3 Product Verification: check requirement → test → actual-result traceability. M24 has only 2 learning hours; the full handbook is not assigned. Reuse evidence from all three projects."
       },
       "stages": [
@@ -205,7 +205,7 @@
       },
       "authors": "Google",
       "edition": {
-        "ru": "Living engineering-practices documentation",
+        "ru": "Обновляемая документация по инженерной практике",
         "en": "Living engineering-practices documentation"
       },
       "access": {
@@ -214,7 +214,7 @@
       },
       "url": "https://google.github.io/eng-practices/review/",
       "selection": {
-        "ru": "Необязательный справочник для финального code review; не повторять базовые инженерные процессы, которыми уже владеете.",
+        "ru": "Необязательный справочник для финальной проверки кода; не повторять базовые инженерные процессы, которыми уже владеете.",
         "en": "Optional final code-review reference; do not relearn engineering practices already mastered."
       },
       "stages": [
@@ -241,12 +241,12 @@
         "en": "ISO 12100:2010; ISO 13849-1:2023; ISO 10218-1:2025; IEC 60204-1:2016 + AMD1:2021"
       },
       "access": {
-        "ru": "Каталог/область применения и доступные preview бесплатны; полные стандарты платные. Покупка всего комплекта не требуется для учебного ядра.",
+        "ru": "Каталог/область применения и доступные ознакомительные фрагменты бесплатны; полные стандарты платные. Покупка всего комплекта не требуется для основной учебной программы.",
         "en": "Catalog/scope and available previews are free; complete standards are paid. The learning core does not require buying the full set."
       },
       "url": "https://www.iso.org/standard/51528.html",
       "selection": {
-        "ru": "M17: только область применения и термины риска/защитных мер; проектную оценку рисков связать со своими тестами остановки. ISO 13849-1:2015 заменён редакцией 2023. ISO 10218-1 относится к промышленным роботам; обзор не означает сертификацию самодельной руки или tail.",
+        "ru": "M17: только область применения и термины риска/защитных мер; проектную оценку рисков связать со своими тестами остановки. ISO 13849-1:2015 заменён редакцией 2023. ISO 10218-1 относится к промышленным роботам; обзор не означает сертификацию самодельного манипулятора или хвоста.",
         "en": "M17: scope and risk/protective-measure terminology only; connect the project risk assessment to its stop tests. ISO 13849-1:2015 is superseded by the 2023 edition. ISO 10218-1 covers industrial robots; overview reading does not certify a custom arm or tail."
       },
       "stages": [
@@ -290,7 +290,7 @@
       },
       "authors": "Gilbert Strang",
       "edition": {
-        "ru": "MIT OCW Spring 2010 course; lecture recordings Fall 1999",
+        "ru": "Курс MIT OCW, весна 2010; записи лекций — осень 1999",
         "en": "MIT OCW Spring 2010 course; lecture recordings Fall 1999"
       },
       "access": {
@@ -299,7 +299,7 @@
       },
       "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/",
       "selection": {
-        "ru": "После диагностики: лекции 1–2 только при пробелах; 16 — проекции и МНК; 21 — собственные значения. Лекцию 29 SVD открывать только для rank/conditioning. Один ручной пример 2×2 и одна калибровка; не весь курс.",
+        "ru": "После диагностики: лекции 1–2 только при пробелах; 16 — проекции и МНК; 21 — собственные значения. Лекцию 29 SVD открывать только для ранга/обусловленности. Один ручной пример 2×2 и одна калибровка; не весь курс.",
         "en": "After diagnostics: lectures 1–2 only for gaps; 16 for projections/least squares; 21 for eigenvalues. Use lecture 29 SVD only for rank/conditioning. One hand-worked 2×2 example and one calibration, not the whole course."
       },
       "stages": [
@@ -323,12 +323,12 @@
     {
       "id": "math-openstax",
       "title": {
-        "ru": "Calculus Volume 1 — адресное повторение",
+        "ru": "Calculus Volume 1 — выборочное повторение",
         "en": "Calculus Volume 1 — targeted refresh"
       },
       "authors": "Gilbert Strang, Edwin 'Jed' Herman",
       "edition": {
-        "ru": "OpenStax Calculus Volume 1, web edition observed 2026-09-19; not a numbered second edition",
+        "ru": "OpenStax Calculus Volume 1, веб-версия проверена 19.09.2026; это не нумерованное второе издание",
         "en": "OpenStax Calculus Volume 1, web edition observed 2026-09-19; not a numbered second edition"
       },
       "access": {
@@ -371,11 +371,11 @@
       },
       "authors": "Allen B. Downey",
       "edition": {
-        "ru": "Third online edition; author preface copyright 2024; rolling web/notebooks",
+        "ru": "Третья онлайн-редакция; в авторском предисловии указан ©2024; веб-текст и блокноты обновляются",
         "en": "Third online edition; author preface copyright 2024; rolling web/notebooks"
       },
       "access": {
-        "ru": "Бесплатная авторская веб-версия и notebooks; печать платная.",
+        "ru": "Бесплатная авторская веб-версия и блокноты Jupyter; печать платная.",
         "en": "Free author web text and notebooks; print paid."
       },
       "url": "https://allendowney.github.io/ThinkStats/",
@@ -424,7 +424,7 @@
       },
       "authors": "NIST/SEMATECH",
       "edition": {
-        "ru": "Online handbook, selected sections checked 2026-09-19; no commercial edition number",
+        "ru": "Онлайн-справочник; выбранные разделы проверены 19.09.2026; номера коммерческого издания нет",
         "en": "Online handbook, selected sections checked 2026-09-19; no commercial edition number"
       },
       "access": {
@@ -433,7 +433,7 @@
       },
       "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm",
       "selection": {
-        "ru": "§1.3.5.2: интервал среднего и его частотная интерпретация; §1.3.5.11 только при необычной форме шума. Различать разброс измерений, ошибку среднего, bias и зависимые samples. 30 запусков — проектный протокол, не гарантия корректного интервала.",
+        "ru": "§1.3.5.2: интервал среднего и его частотная интерпретация; §1.3.5.11 только при необычной форме шума. Различать разброс измерений, ошибку среднего, смещение и зависимые отсчёты. 30 запусков — проектный протокол, не гарантия корректного интервала.",
         "en": "§1.3.5.2: mean confidence interval and repeated-sampling interpretation; §1.3.5.11 only for unusual noise shape. Distinguish measurement spread, mean uncertainty, bias and dependent samples. Thirty runs are a project protocol, not a guarantee of interval validity."
       },
       "stages": [
@@ -462,16 +462,16 @@
       },
       "authors": "Kevin M. Lynch, Frank C. Park",
       "edition": {
-        "ru": "2017 first edition; updated first edition/version 2, author preprint December 2019 (not a second edition)",
+        "ru": "Первое издание 2017 года; обновлённое первое издание / версия 2, авторский препринт декабря 2019 года; это не второе издание",
         "en": "2017 first edition; updated first edition/version 2, author preprint December 2019 (not a second edition)"
       },
       "access": {
-        "ru": "Бесплатный авторский preprint, видео и дополнительные задачи; официальная печать платная.",
+        "ru": "Бесплатный авторский препринт, видео и дополнительные задачи; официальная печать платная.",
         "en": "Free author preprint, videos and practice exercises; official print paid."
       },
       "url": "https://hades.mech.northwestern.edu/index.php/Modern_Robotics",
       "selection": {
-        "ru": "M08: §3.2.1, §3.3.1, §4.1.1, §5.1–5.3, §6.2 на одной ноге и простом arm-примере. D1: §3.4, §5.2, §8.2 и §12.2.1 для сил, COM и трения. D2: §8.1 и §8.9 на готовом стенде; §8.3/8.5 как справочник библиотечного расчёта. M10: §11.1–11.3 выборочно. ARM/TAIL: §9.1–9.2 по траекториям.",
+        "ru": "M08: §3.2.1, §3.3.1, §4.1.1, §5.1–5.3, §6.2 на одной ноге и простом примере манипулятора. D1: §3.4, §5.2, §8.2 и §12.2.1 для сил, COM и трения. D2: §8.1 и §8.9 на готовом стенде; §8.3/8.5 как справочник библиотечного расчёта. M10: §11.1–11.3 выборочно. ARM/TAIL: §9.1–9.2 по траекториям.",
         "en": "M08: §§3.2.1, 3.3.1, 4.1.1, 5.1–5.3 and 6.2 on one leg and a simple arm example. D1: §§3.4, 5.2, 8.2 and 12.2.1 for loads, COM and friction. D2: §§8.1/8.9 on the existing rig; §§8.3/8.5 as library references. M10: selected §§11.1–11.3. ARM/TAIL: §§9.1–9.2 for trajectories."
       },
       "stages": [
@@ -509,7 +509,7 @@
       },
       "authors": "Karl J. Åström, Richard M. Murray",
       "edition": {
-        "ru": "Second edition; author-hosted copyedited PDF dated 2020-07-24",
+        "ru": "Второе издание; отредактированный авторский PDF от 24.07.2020",
         "en": "Second edition; author-hosted copyedited PDF dated 2020-07-24"
       },
       "access": {
@@ -518,7 +518,7 @@
       },
       "url": "https://fbswiki.org/wiki/index.php/FBS",
       "selection": {
-        "ru": "Гл. 3: state-space на одном моторе; гл. 9: передаточная функция и Bode; гл. 10: только смысл запаса устойчивости и задержки; гл. 11: Basic Control Functions, PID Tuning, Integrator Windup, Implementation. M11: Observability из гл. 8. Один контур и те же записи стенда.",
+        "ru": "Гл. 3: пространство состояний на одном моторе; гл. 9: передаточная функция и Bode; гл. 10: только смысл запаса устойчивости и задержки; гл. 11: Basic Control Functions, PID Tuning, Integrator Windup, Implementation. M11: Observability из гл. 8. Один контур и те же записи стенда.",
         "en": "Chapter 3: one motor state-space model; chapter 9: transfer function and Bode; chapter 10: meaning of margins/delay only; chapter 11: Basic Control Functions, PID Tuning, Integrator Windup, Implementation. M11: chapter 8 Observability. Use one loop and the same rig recordings."
       },
       "stages": [
@@ -556,7 +556,7 @@
       },
       "authors": "Stephen Boyd, Lieven Vandenberghe",
       "edition": {
-        "ru": "First published 2004; author PDF and 2023 updated slides are not new book editions",
+        "ru": "Впервые опубликовано в 2004 году; авторский PDF и обновлённые слайды 2023 года не являются новыми изданиями книги",
         "en": "First published 2004; author PDF and 2023 updated slides are not new book editions"
       },
       "access": {
@@ -565,7 +565,7 @@
       },
       "url": "https://web.stanford.edu/~boyd/cvxbook/",
       "selection": {
-        "ru": "M03-D: §4.1 для variables/objective/constraints и короткий пример §6.1 на bounded fit. Не назначать §6.3 и гл. 9 как обязательное чтение для одного вызова least_squares.",
+        "ru": "M03-D: §4.1 — переменные, целевая функция и ограничения; короткий пример §6.1 — подбор параметров с ограничениями. Для одного вызова least_squares не назначать §6.3 и главу 9 как обязательное чтение.",
         "en": "M03-D: §4.1 for variables/objective/constraints and one §6.1 bounded-fit example. Do not require §6.3/chapter 9 merely to use least_squares."
       },
       "stages": [
@@ -602,16 +602,16 @@
       },
       "authors": "Roger R. Labbe Jr.",
       "edition": {
-        "ru": "Author's rolling Jupyter book, repository master observed 2026-09-19; pin commit when used",
+        "ru": "Обновляемая авторская книга Jupyter; ветка master проверена 19.09.2026; при использовании фиксировать версию коммита",
         "en": "Author's rolling Jupyter book, repository master observed 2026-09-19; pin commit when used"
       },
       "access": {
-        "ru": "Бесплатные авторские notebooks/PDF.",
+        "ru": "Бесплатные авторские блокноты Jupyter/PDF.",
         "en": "Free author notebooks/PDF."
       },
       "url": "https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python",
       "selection": {
-        "ru": "M11: гл. 04 — один ручной predict/update; из гл. 08 лишь выбор шума и проверка остатка, если выбран Kalman-вариант. Для достаточного complementary-фильтра не добавлять вторую обязательную реализацию.",
+        "ru": "M11: глава 04 — один ручной шаг прогноза и коррекции; из главы 08 — только выбор шума и проверка невязки, если выбран фильтр Калмана. Если комплементарный фильтр выполняет требования, вторая реализация не обязательна.",
         "en": "M11: chapter 04 for one manual predict/update; only noise choice and residual validation from chapter 08 if a Kalman variant is selected. A sufficient complementary filter does not require a second implementation."
       },
       "stages": [
@@ -635,7 +635,7 @@
       },
       "authors": "Russ Tedrake",
       "edition": {
-        "ru": "Rolling MIT notes; opened main page shows 2024 course text; pin URL/date or repository revision, no numbered edition",
+        "ru": "Обновляемые конспекты MIT; открытая главная страница содержит текст курса 2024 года; фиксировать URL и дату либо версию репозитория; нумерованного издания нет",
         "en": "Rolling MIT notes; opened main page shows 2024 course text; pin URL/date or repository revision, no numbered edition"
       },
       "access": {
@@ -644,7 +644,7 @@
       },
       "url": "https://underactuated.mit.edu/",
       "selection": {
-        "ru": "D2: Simple Pendulum — уравнение движения; системная идентификация — один least-squares пример с отдельной записью проверки. M19: только смысл stance/swing и смены режима. Динамическая ходьба не является требованием медленного hexapod.",
+        "ru": "D2: Simple Pendulum — уравнение движения; системная идентификация — один пример метода наименьших квадратов с отдельной проверочной записью. M19: только смысл опорной фазы, фазы переноса и смены режима. Динамическая ходьба не является требованием медленного гексапода.",
         "en": "D2: Simple Pendulum equation of motion; one least-squares identification example with held-out recording. M19: stance/swing and mode transitions only. Dynamic walking is not a slow-hexapod requirement."
       },
       "stages": [
@@ -683,7 +683,7 @@
       },
       "authors": "Sebastian Thrun, Wolfram Burgard, Dieter Fox",
       "edition": {
-        "ru": "2005 book; companion PPT directory dated December 2005",
+        "ru": "Книга 2005 года; каталог сопроводительных PPT датирован декабрём 2005 года",
         "en": "2005 book; companion PPT directory dated December 2005"
       },
       "access": {
@@ -692,7 +692,7 @@
       },
       "url": "https://robots.stanford.edu/probabilistic-robotics/",
       "selection": {
-        "ru": "M15: только kalman.ppt, mapping-occupancy.ppt и slam.ppt для state/observation, occupancy update и map/trajectory. Использовать один worked example, не писать второй SLAM. M11 не требует заранее читать эту книгу.",
+        "ru": "M15: только kalman.ppt, mapping-occupancy.ppt и slam.ppt — состояние и наблюдение, обновление карты занятости, карта и траектория. Разобрать один пример с решением; писать второй SLAM не нужно. Для M11 предварительное чтение этой книги не требуется.",
         "en": "M15: only kalman.ppt, mapping-occupancy.ppt and slam.ppt for state/observation, occupancy update and map/trajectory concepts. One worked example, not a second SLAM system. M11 does not require this book beforehand."
       },
       "stages": [
@@ -727,7 +727,7 @@
       },
       "authors": "Tony R. Kuphaldt",
       "edition": {
-        "ru": "5th edition series; DC index revision 2021-11-06; copyright 2000–2023",
+        "ru": "Серия пятого издания; оглавление тома DC обновлено 06.11.2021; ©2000–2023",
         "en": "5th edition series; DC index revision 2021-11-06; copyright 2000–2023"
       },
       "access": {
@@ -762,7 +762,7 @@
       },
       "authors": "Paul Scherz; Simon Monk",
       "edition": {
-        "ru": "4th edition, McGraw-Hill, 2016; ISBN 9781259587542",
+        "ru": "Четвёртое издание, McGraw-Hill, 2016; ISBN 9781259587542",
         "en": "4th edition, McGraw-Hill, 2016; ISBN 9781259587542"
       },
       "access": {
@@ -782,7 +782,7 @@
       "role": "optional_reference",
       "links": [],
       "limitations": {
-        "ru": "Дополняет бесплатный Kuphaldt, не обязательная вторая книга. Издание 2016 года остаётся полезным по основам; его платы, библиотеки и советы по MCU не задают текущую ESP32-S3 среду.",
+        "ru": "Дополняет бесплатный Kuphaldt, не обязательная вторая книга. Издание 2016 года остаётся полезным по основам; его платы, библиотеки и советы по МК не задают текущую ESP32-S3 среду.",
         "en": "Complements free Kuphaldt; not a second mandatory book. The 2016 fundamentals remain useful, but its boards, libraries and MCU examples do not define the current ESP32-S3 setup."
       },
       "status": {
@@ -798,7 +798,7 @@
       },
       "authors": "David Roylance, MIT",
       "edition": {
-        "ru": "MIT web modules, 1999–2001 era; retain individual PDF date",
+        "ru": "Учебные веб-модули MIT периода 1999–2001 годов; сохранять дату каждого PDF",
         "en": "MIT web modules, 1999–2001 era; retain individual PDF date"
       },
       "access": {
@@ -836,7 +836,7 @@
       },
       "authors": "Alexander H. Slocum, MIT",
       "edition": {
-        "ru": "2008 online chapters; index updated 2008-02-01",
+        "ru": "Онлайн-главы 2008 года; оглавление обновлено 01.02.2008",
         "en": "2008 online chapters; index updated 2008-02-01"
       },
       "access": {
@@ -871,12 +871,12 @@
     {
       "id": "H-FREECAD",
       "title": {
-        "ru": "A FreeCAD Manual and FreeCAD workbench documentation",
+        "ru": "A FreeCAD Manual и документация рабочих сред FreeCAD",
         "en": "A FreeCAD Manual and FreeCAD workbench documentation"
       },
       "authors": "Yorik van Havre; FreeCAD contributors",
       "edition": {
-        "ru": "Manual: older introductory edition; verified modern release: FreeCAD 1.1.1 (2026-04-15)",
+        "ru": "Руководство: прежняя вводная редакция; проверенный современный выпуск — FreeCAD 1.1.1 от 15.04.2026",
         "en": "Manual: older introductory edition; verified modern release: FreeCAD 1.1.1 (2026-04-15)"
       },
       "access": {
@@ -915,23 +915,23 @@
         "en": "Do not add parallel mandatory Fusion/SimScale courses. GitHub FreeCAD-documentation was archived on 2026-04-01; it is a snapshot, not the live wiki. The old manual is not a step-by-step guide to all 1.1.1 menus."
       },
       "status": {
-        "ru": "Старый авторский manual открыт; текущая wiki ограничила доступ. GitHub-зеркало — архив, не текущая документация.",
+        "ru": "Старое авторское руководство открыто; текущая wiki ограничила доступ. GitHub-зеркало — архив, не текущая документация.",
         "en": "Older official manual opened; current wiki restricted access. The GitHub mirror is archival, not current documentation."
       },
       "version_note": {
-        "ru": "Manual — вводный; меню и команды сверять со справкой установленной версии FreeCAD.",
+        "ru": "Руководство — вводное; меню и команды сверять со справкой установленной версии FreeCAD.",
         "en": "The manual is introductory; match menus/commands to help for the installed FreeCAD version."
       }
     },
     {
       "id": "H-IDF",
       "title": {
-        "ru": "ESP-IDF Programming Guide for ESP32-S3, with FreeRTOS kernel book",
+        "ru": "Руководство ESP-IDF для ESP32-S3 и книга о ядре FreeRTOS",
         "en": "ESP-IDF Programming Guide for ESP32-S3, with FreeRTOS kernel book"
       },
       "authors": "Espressif Systems; Richard Barry / FreeRTOS contributors",
       "edition": {
-        "ru": "Course reproducibility reference: v5.3.2; not latest. Official v6.1 release and docs verified; migration requires a new bench check.",
+        "ru": "Документационная база для воспроизводимости курса — v5.3.2, не последняя версия. Официальный выпуск v6.1 и документация проверены; переход требует новой проверки на стенде.",
         "en": "Course reproducibility reference: v5.3.2; not latest. Official v6.1 release and docs verified; migration requires a new bench check."
       },
       "access": {
@@ -940,7 +940,7 @@
       },
       "url": "https://docs.espressif.com/projects/esp-idf/en/v5.3.2/esp32s3/index.html",
       "selection": {
-        "ru": "M06: Get Started до первого flash/monitor; FreeRTOS-книга — выборочно главы 4/5/7 о задачах, очередях и ISR, затем IDF Tasks/SMP/Critical Sections. M07/T2: PCNT channel actions, glitch filter и overflow; MCPWM timers/comparators/generators и fault/brake. T3: IWDT/TWDT и поведение при потере host. Чтение порциями 15–30 минут перед опытом.",
+        "ru": "M06: Get Started до первой прошивки и мониторинга; из книги FreeRTOS выборочно главы 4/5/7 о задачах, очередях и обработчиках прерываний, затем разделы IDF Tasks/SMP/Critical Sections. M07/T2: действия канала PCNT, фильтр импульсных помех и переполнение; таймеры, компараторы и генераторы MCPWM, обработка отказов и торможение. T3: IWDT/TWDT и потеря связи с компьютером. Читать по 15–30 минут перед опытом.",
         "en": "M06: Get Started through first flash/monitor; selections from FreeRTOS book chapters 4/5/7 on tasks, queues and ISR, then IDF Tasks/SMP/Critical Sections. M07/T2: PCNT channel actions, glitch filter and overflow; MCPWM timers/comparators/generators and fault/brake. T3: IWDT/TWDT and host-loss behavior. Read in 15–30 minute blocks before experiments."
       },
       "stages": [
@@ -972,7 +972,7 @@
         }
       ],
       "limitations": {
-        "ru": "v5.3.2 — точная документальная база, не заявление о поддержке/последней версии. Совместимость firmware этой проверкой литературы не испытана. В репозитории курса зафиксировать реально проверенный тег и переключить ВСЕ API-ссылки вместе. Vanilla FreeRTOS отличается от IDF; ARM Cortex-M примеры и обязательный Rust-порт здесь не нужны.",
+        "ru": "v5.3.2 — точная документальная база, не заявление о поддержке/последней версии. Совместимость прошивки этой проверкой литературы не испытана. В репозитории курса зафиксировать реально проверенный тег и переключить ВСЕ API-ссылки вместе. Vanilla FreeRTOS отличается от IDF; ARM Cortex-M примеры и обязательный Rust-порт здесь не нужны.",
         "en": "v5.3.2 is an exact documentation baseline, not a support/latest claim. Firmware compatibility was not tested in this literature audit. Pin the actually tested course tag and switch ALL API links together. Vanilla FreeRTOS differs from IDF; ARM Cortex-M examples and a mandatory Rust port are unnecessary here."
       },
       "status": {
@@ -980,19 +980,19 @@
         "en": "Primary-source page checked; access terms shown above."
       },
       "version_note": {
-        "ru": "Ссылки закреплены на 5.3.2 как документальная база; это не последний выпуск и не уже испытанная firmware. После smoke-test закрепить рабочий тег и сменить ссылки согласованно.",
+        "ru": "Ссылки закреплены на версии 5.3.2 как документационной базе; это не последний выпуск и не уже проверенная прошивка. После базовой проверки зафиксировать рабочий тег и согласованно обновить ссылки.",
         "en": "Links pin 5.3.2 as a documentation baseline; this is neither the latest release nor already validated firmware. After a smoke test pin the working tag and update links together."
       }
     },
     {
       "id": "H-DRIVES",
       "title": {
-        "ru": "Selected brushed-motor driver and sensor manuals",
+        "ru": "Руководства выбранных драйверов коллекторных двигателей и датчиков",
         "en": "Selected brushed-motor driver and sensor manuals"
       },
       "authors": "Texas Instruments; Cytron Technologies; Pololu",
       "edition": {
-        "ru": "DRV8833 SLVSAR1E, July 2015; MDD10A Rev2.0; Pololu 4755 and 4043 current product documentation",
+        "ru": "DRV8833 SLVSAR1E, июль 2015; MDD10A Rev2.0; текущая документация изделий Pololu 4755 и 4043",
         "en": "DRV8833 SLVSAR1E, July 2015; MDD10A Rev2.0; Pololu 4755 and 4043 current product documentation"
       },
       "access": {
@@ -1001,7 +1001,7 @@
       },
       "url": "https://www.ti.com/lit/ds/symlink/drv8833.pdf",
       "selection": {
-        "ru": "M07: DRV8833 — распиновка, рекомендуемые режимы, таблица управления мостом, sense-резистор, sleep/fault и тепловые условия. T2: MDD10A Rev2 — PWM/DIR, торможение, питание и ограничения; Pololu 4755 — выводы энкодера/передача/нагрузка; 4043 — ноль/масштаб ACS724. По 15–25 минут на реальный компонент.",
+        "ru": "M07: DRV8833 — распиновка, рекомендуемые режимы, таблица управления мостом, измерительный резистор тока, сигналы sleep/fault и тепловые условия. T2: MDD10A Rev2 — PWM/DIR, торможение, питание и ограничения; Pololu 4755 — выводы энкодера, передаточное отношение и нагрузка; 4043 — ноль и масштаб ACS724. По 15–25 минут на реальный компонент.",
         "en": "M07: DRV8833 pinout, recommended operation, bridge truth table, sense resistor, sleep/fault and thermal conditions. T2: MDD10A Rev2 PWM/DIR, braking, supply and limits; Pololu 4755 encoder wires/gearing/loading; 4043 ACS724 zero and scale. Spend 15–25 minutes per actual component."
       },
       "stages": [
@@ -1025,7 +1025,7 @@
         }
       ],
       "limitations": {
-        "ru": "IC datasheet не гарантирует ток безымянной платы; MDD10A не равен Jrk G2 или ODrive. Нормальный предел мотора ниже stall; 5-В энкодер/датчик согласуются с ESP32-S3. HBS57 из закупок пока без точного производителя: чужой паспорт Leadshine назначать нельзя.",
+        "ru": "Паспорт микросхемы не гарантирует допустимый ток безымянной платы; MDD10A не эквивалентен Jrk G2 или ODrive. Рабочий ток мотора ниже тока при заблокированном валу; сигналы 5-В энкодера и датчика нужно согласовать с ESP32-S3. Точный изготовитель HBS57 из списка закупок пока не указан: паспорт Leadshine другого изделия использовать нельзя.",
         "en": "An IC datasheet does not guarantee an unnamed carrier’s current rating; MDD10A is neither Jrk G2 nor ODrive. Normal motor limits are below stall; 5 V encoder/sensor interfaces need conversion for ESP32-S3. Procurement HBS57 has no confirmed manufacturer yet: do not assign an unrelated Leadshine manual."
       },
       "status": {
@@ -1036,12 +1036,12 @@
     {
       "id": "H-SERVO",
       "title": {
-        "ru": "ST3215 Servo User Manual; selected DYNAMIXEL e-Manual",
+        "ru": "Руководство ST3215 и выбранные разделы DYNAMIXEL e-Manual",
         "en": "ST3215 Servo User Manual; selected DYNAMIXEL e-Manual"
       },
       "authors": "Waveshare; ROBOTIS",
       "edition": {
-        "ru": "ST3215 standard 12 V SKU22414, 26-page manual (revision not stated); DYNAMIXEL Protocol 2.0 / XM-R docs",
+        "ru": "Стандартный ST3215 на 12 В, SKU22414; руководство на 26 страниц, редакция не указана; документация DYNAMIXEL Protocol 2.0 / XM-R",
         "en": "ST3215 standard 12 V SKU22414, 26-page manual (revision not stated); DYNAMIXEL Protocol 2.0 / XM-R docs"
       },
       "access": {
@@ -1050,7 +1050,7 @@
       },
       "url": "https://files.waveshare.com/upload/f/f4/ST3215_Servo_User_Manual.pdf",
       "selection": {
-        "ru": "L1: ST-питание, разъём, ID, режим/ноль, таблица регистров, единицы обратной связи и ошибки. M22/M23: формат пакета, доступные групповые операции, таймауты и бюджет 12/18 устройств. A1 только при выборе XM-R: его control table, current limit/shutdown/watchdog и график нагрузки; отдельно Protocol 2.0 Sync Read/Write.",
+        "ru": "L1: питание ST, разъём, ID, режим, ноль, таблица регистров, единицы обратной связи и ошибки. M22/M23: формат пакетов, доступные групповые операции, таймауты и расчёт цикла для 12/18 устройств. A1 — только при выборе XM-R: его таблица регистров, предел тока, отключение, сторожевой таймер и нагрузочная характеристика; отдельно — Sync Read/Write протокола 2.0.",
         "en": "L1: ST power, connector, ID, mode/zero, register table, feedback units and errors. M22/M23: packet format, supported group operations, timeouts and 12/18-device budget. A1 only if selecting XM-R: its control table, current limit/shutdown/watchdog and performance graph; separately Protocol 2.0 Sync Read/Write."
       },
       "stages": [
@@ -1101,7 +1101,7 @@
       },
       "url": "https://journals.sagepub.com/doi/abs/10.1177/0278364910368147",
       "selection": {
-        "ru": "Необязательно после простого tutorial: введение и разложение отображения на robot-specific и robot-independent; затем один сегмент и соединение сегментов. Ограничить 30–45 минутами; дифференциальную кинематику оставить до необходимости.",
+        "ru": "Необязательно, после простого учебного примера: введение и разложение отображения на часть, зависящую от конструкции робота, и общую геометрическую часть; затем одна секция и соединение секций. Ограничить чтение 30–45 минутами; дифференциальную кинематику оставить до появления необходимости.",
         "en": "Optional after the simple tutorial: introduction and split into robot-specific/robot-independent mappings, then one segment and composition. Limit to 30–45 minutes; defer differential kinematics until needed."
       },
       "stages": [
@@ -1116,7 +1116,7 @@
         }
       ],
       "limitations": {
-        "ru": "Полезная классическая работа, а не устаревший API. Модель постоянной кривизны — допущение; она не доказывает удержание массы и безопасность носимого хвоста. Не маркировать статью «open source».",
+        "ru": "Полезная классическая работа, а не устаревший API. Модель постоянной кривизны — допущение; она не доказывает удержание массы и безопасность носимого хвоста. Не маркировать статью «открытые исходники».",
         "en": "Useful foundational work, not an obsolete API. Constant curvature is an assumption; it does not establish load holding or wearable-tail safety. Do not label the article “open source”."
       },
       "status": {
@@ -1171,7 +1171,7 @@
       },
       "authors": "Jessica Burgner-Kahrs, Open Continuum Robotics",
       "edition": {
-        "ru": "Tutorial, 2022-12-09",
+        "ru": "Учебный материал от 09.12.2022",
         "en": "Tutorial, 2022-12-09"
       },
       "access": {
@@ -1191,7 +1191,7 @@
       "role": "core_selected",
       "links": [],
       "limitations": {
-        "ru": "Tutorial исключает гравитацию, внешние силы и трение и предполагает чистый изгиб. Его три пространственных троса не совпадают автоматически с собственной схемой четырёх тросов/двух моторов; вывести отображение своей схемы.",
+        "ru": "Учебный пример исключает гравитацию, внешние силы и трение и предполагает чистый изгиб. Его три пространственных троса не совпадают автоматически с собственной схемой четырёх тросов/двух моторов; вывести отображение своей схемы.",
         "en": "Tutorial neglects gravity, external forces and friction and assumes pure bending. Its three spatial tendons do not automatically match a custom four-tendon/two-motor layout; derive the actual mapping."
       },
       "status": {
@@ -1207,7 +1207,7 @@
       },
       "authors": "Priyanka Rao; Quentin Peyron; Sven Lilge; Jessica Burgner-Kahrs",
       "edition": {
-        "ru": "Published 2021-02-02; Frontiers in Robotics and AI 7:630245 (volume year 2020); DOI 10.3389/frobt.2020.630245",
+        "ru": "Опубликовано 02.02.2021; Frontiers in Robotics and AI 7:630245, год тома — 2020; DOI 10.3389/frobt.2020.630245",
         "en": "Published 2021-02-02; Frontiers in Robotics and AI 7:630245 (volume year 2020); DOI 10.3389/frobt.2020.630245"
       },
       "access": {
@@ -1216,7 +1216,7 @@
       },
       "url": "https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2020.630245/full",
       "selection": {
-        "ru": "T1: §§2–4 — конструкция и выбор параметризации; T2: только вступление §5 и §6 — что меняется при нагрузке; при анализе ошибок — выводы §§8–9. По 20–30 минут; реализации всех моделей и численные benchmark не обязательны.",
+        "ru": "T1: §§2–4 — конструкция и выбор параметризации; T2: только вступление §5 и §6 — что меняется при нагрузке; при анализе ошибок — выводы §§8–9. По 20–30 минут; реализации всех моделей и численные сравнительные испытания не обязательны.",
         "en": "T1: sections 2–4 for structure and parameterization; T2: only section 5 introduction and section 6 for load effects; when assessing errors read conclusions in sections 8–9. Use 20–30 minute blocks; implementing every model and benchmark is optional."
       },
       "stages": [
@@ -1253,7 +1253,7 @@
       },
       "url": "https://docs.ros.org/en/jazzy/Tutorials.html",
       "selection": {
-        "ru": "M01: установка и короткий smoke-test. S1: nodes/topics/services/actions, launch/parameters, QoS, rosbag. S2: URDF/Xacro, tf2 и временные метки; применять к ранее собранному стенду.",
+        "ru": "M01: установка и короткая проверка работоспособности. S1: узлы, топики, сервисы, действия, запуск, параметры, QoS и rosbag. S2: URDF/Xacro, tf2 и временные метки; применять к уже собранному стенду.",
         "en": "M01: installation and brief smoke test. S1: nodes/topics/services/actions, launch/parameters, QoS and rosbag. S2: URDF/Xacro, tf2 and timestamps; apply to the existing rig."
       },
       "stages": [
@@ -1306,7 +1306,7 @@
       },
       "url": "https://control.ros.org/jazzy/doc/ros2_control/doc/index.html",
       "selection": {
-        "ru": "Hardware components; state/command interfaces; lifecycle; read/write/update; controller manager; один adapter существующего приводного узла.",
+        "ru": "Аппаратные компоненты, интерфейсы состояния и команд, жизненный цикл, операции read/write/update, диспетчер контроллеров; один адаптер существующего приводного узла.",
         "en": "Hardware components; state/command interfaces; lifecycle; read/write/update; controller manager; one adapter for the existing actuator node."
       },
       "stages": [
@@ -1323,7 +1323,7 @@
         }
       ],
       "limitations": {
-        "ru": "Не реализовывать весь framework или несколько драйверов ради чтения.",
+        "ru": "Не реализовывать всю программную платформу или несколько драйверов ради чтения.",
         "en": "Do not reimplement the framework or several drivers merely to complete the reading."
       },
       "status": {
@@ -1348,7 +1348,7 @@
       },
       "url": "https://gazebosim.org/docs/harmonic/ros_installation/",
       "selection": {
-        "ru": "Совместимая установка; SDF/URDF inertial и collision; шаг физики; контакт/трение; шум и частота одного датчика; ros_gz bridge; gz_ros2_control.",
+        "ru": "Совместимая установка; инерциальные параметры и геометрия столкновений SDF/URDF; шаг расчёта физики; контакт и трение; шум и частота одного датчика; мост ros_gz; gz_ros2_control.",
         "en": "Compatible installation; SDF/URDF inertial and collision properties; physics step; contact/friction; one sensor's noise and rate; ros_gz bridge; gz_ros2_control."
       },
       "stages": [
@@ -1395,7 +1395,7 @@
       },
       "url": "https://github.com/moveit/moveit2/tree/jazzy",
       "selection": {
-        "ru": "Использовать существующий URDF/SRDF руки: planning groups, joint limits, collision scene, один planner, time parameterization, execution/cancel. Launch и MTC из main читать с проверкой API установленной Jazzy-версии.",
+        "ru": "Использовать существующий URDF/SRDF манипулятора: группы планирования, ограничения суставов, сцену столкновений, один планировщик, временну́ю параметризацию, исполнение и отмену. Материалы о запуске и MTC из main читать с проверкой API установленной версии Jazzy.",
         "en": "Use the existing arm URDF/SRDF: planning groups, joint limits, collision scene, one planner, time parameterization and execution/cancel. Read main launch/MTC material only while checking the installed Jazzy API."
       },
       "stages": [
@@ -1442,7 +1442,7 @@
       },
       "authors": "OpenCV contributors",
       "edition": {
-        "ru": "4.6.0 для Noble baseline; текущая ссылка 4.x ведёт на 4.13.0",
+        "ru": "4.6.0 для базового окружения Noble; текущая ссылка 4.x ведёт на 4.13.0",
         "en": "4.6.0 for the Noble baseline; the current 4.x link resolves to 4.13.0"
       },
       "access": {
@@ -1451,7 +1451,7 @@
       },
       "url": "https://docs.opencv.org/4.6.0/dc/dbb/tutorial_py_calibration.html",
       "selection": {
-        "ru": "Модель pinhole, distortion, chessboard/corners, calibrateCamera, reprojection error, undistort; затем минимальная классическая процедура обнаружения цели и отказа.",
+        "ru": "Модель камеры-обскуры, дисторсия, шахматная мишень и её углы, calibrateCamera, ошибка репроекции, undistort; затем минимальная классическая процедура обнаружения цели и отказа от движения.",
         "en": "Pinhole model, distortion, chessboard/corners, calibrateCamera, reprojection error and undistort; then a minimal classical target detection and rejection pipeline."
       },
       "stages": [
@@ -1472,7 +1472,7 @@
         }
       ],
       "limitations": {
-        "ru": "Stereo, SLAM, optical flow и 3D-реконструкция — только при появлении соответствующего требования.",
+        "ru": "Стереозрение, SLAM, оптический поток и 3D-реконструкция — только при появлении соответствующего требования.",
         "en": "Stereo, SLAM, optical flow and 3D reconstruction require a specific later need."
       },
       "status": {
@@ -1501,7 +1501,7 @@
       },
       "url": "https://szeliski.org/Book/",
       "selection": {
-        "ru": "Глава 2: геометрическая модель камеры, перспектива и образование изображения. Остальные разделы открывать по конкретной проблеме калибровки/сегментации. Главы 7 и 9 — лишь если нужны matching/motion.",
+        "ru": "Глава 2: геометрическая модель камеры, перспектива и образование изображения. Остальные разделы открывать по конкретной проблеме калибровки/сегментации. Главы 7 и 9 — лишь если нужны сопоставление признаков и оценка движения.",
         "en": "Chapter 2: geometric camera model, perspective and image formation. Consult other sections for a specific calibration/segmentation problem. Chapters 7 and 9 only if matching/motion is required."
       },
       "stages": [
@@ -1527,7 +1527,7 @@
         }
       ],
       "limitations": {
-        "ru": "Не читать все 1000+ страниц; deep learning, motion, stereo и reconstruction не становятся обязательными.",
+        "ru": "Не читать все 1000+ страниц; глубокое обучение, оценка движения, стереозрение и реконструкция не становятся обязательными.",
         "en": "Do not read the whole 1,000-plus-page book; deep learning, motion, stereo and reconstruction are not thereby mandatory."
       },
       "status": {
@@ -1552,7 +1552,7 @@
       },
       "url": "https://lavalle.pl/planning/",
       "selection": {
-        "ru": "Глава 4: configuration space, obstacles и collision. Глава 5: sampling-based planning, интуиция PRM/RRT и ограничения. Главу 2 повторять только при пробеле в поиске по графам.",
+        "ru": "Глава 4: пространство конфигураций, препятствия и столкновения. Глава 5: планирование методом выборки, принципы PRM/RRT и ограничения. Главу 2 повторять только при пробелах в поиске по графам.",
         "en": "Chapter 4: configuration space, obstacles and collision. Chapter 5: sampling-based planning, PRM/RRT intuition and limitations. Revisit Chapter 2 only if graph search is a gap."
       },
       "stages": [
@@ -1578,7 +1578,7 @@
       },
       "authors": "Russ Tedrake / MIT",
       "edition": {
-        "ru": "Живые конспекты MIT; глава Basic Pick and Place, снимок проверки 19.09.2026",
+        "ru": "Обновляемые конспекты MIT; глава Basic Pick and Place, снимок проверки 19.09.2026",
         "en": "Living MIT notes; Basic Pick and Place chapter, checked 2026-09-19"
       },
       "access": {
@@ -1587,7 +1587,7 @@
       },
       "url": "https://manipulation.csail.mit.edu/pick.html",
       "selection": {
-        "ru": "Monogram notation, системы координат и преобразования, pregrasp/approach/grasp/retreat. Перенести рассуждение в уже выбранные ROS/MoveIt-инструменты.",
+        "ru": "Обозначения Monogram, системы координат и преобразования, исходная поза перед захватом, подход, захват и отвод. Применить рассуждение в уже выбранных инструментах ROS/MoveIt.",
         "en": "Monogram notation, coordinate frames/transforms and pregrasp/approach/grasp/retreat. Apply the reasoning in the already selected ROS/MoveIt tools."
       },
       "stages": [
@@ -1597,7 +1597,7 @@
       "role": "reference",
       "links": [],
       "limitations": {
-        "ru": "Не вводить Drake как второй обязательный framework; не читать весь курс manipulation.",
+        "ru": "Не вводить Drake как вторую обязательную программную платформу; не читать весь курс манипулирования.",
         "en": "Do not add Drake as a second required framework or complete the entire manipulation course."
       },
       "status": {
@@ -1613,7 +1613,7 @@
       },
       "authors": "PyTorch contributors",
       "edition": {
-        "ru": "Снимок учебника 2.14.0+cu130; точная CPU-runtime версия закрепляется после проверки окружения",
+        "ru": "Снимок учебника 2.14.0+cu130; точная версия среды выполнения на CPU фиксируется после проверки окружения",
         "en": "Tutorial snapshot 2.14.0+cu130; exact CPU runtime version is pinned after environment validation"
       },
       "access": {
@@ -1622,7 +1622,7 @@
       },
       "url": "https://docs.pytorch.org/tutorials/beginner/basics/intro.html",
       "selection": {
-        "ru": "Tensors, Dataset/DataLoader, autograd, маленькая модель, loss/optimizer, train/eval, save/load. Один logistic/MLP baseline на той же задаче зрения M14; затем воспроизводимость и CPU latency.",
+        "ru": "Тензоры, Dataset/DataLoader, автоматическое дифференцирование, небольшая модель, функция потерь и оптимизатор, обучение и оценка, сохранение и загрузка. Один базовый метод — логистическая регрессия или MLP — для той же задачи зрения M14; затем воспроизводимость и задержка выполнения на CPU.",
         "en": "Tensors, Dataset/DataLoader, autograd, a small model, loss/optimizer, train/eval and save/load. One logistic/MLP baseline on the same M14 vision task; then reproducibility and CPU latency."
       },
       "stages": [
@@ -1638,7 +1638,7 @@
         }
       ],
       "limitations": {
-        "ru": "Не нужны CUDA, большой CNN, обучение foundation models и вся линейка tutorials.",
+        "ru": "Не нужны CUDA, большая CNN, обучение фундаментальных моделей и вся серия учебных материалов.",
         "en": "CUDA, a large CNN, foundation-model training and the entire tutorials catalogue are not required."
       },
       "status": {
@@ -1646,7 +1646,7 @@
         "en": "Opened; current install pages display inconsistent versions—see SW-F06"
       },
       "version_note": {
-        "ru": "Версия страницы не фиксирует runtime: при настройке проверить CPU-пакет, одну эпоху и save/load; сохранить lock.",
+        "ru": "Версия страницы не фиксирует среду выполнения. При настройке проверить пакет для CPU, одну эпоху, сохранение и загрузку; сохранить файл фиксации зависимостей.",
         "en": "The page version does not pin the runtime: validate a CPU package, one epoch and save/load at setup; retain a lock file."
       }
     },
@@ -1667,7 +1667,7 @@
       },
       "url": "https://scikit-learn.org/1.9/common_pitfalls.html",
       "selection": {
-        "ru": "Train/test separation, preprocessing только на train, Pipeline, random_state; метрики классификации и выбор threshold по validation. Для видео/серий измерений делить по эпизодам, не случайным соседним кадрам.",
+        "ru": "Разделение обучающей и тестовой выборок; настройка предобработки только на обучающих данных; Pipeline и random_state; метрики классификации и выбор порога по проверочной выборке. Видео и серии измерений делить по эпизодам, а не по случайным соседним кадрам.",
         "en": "Train/test separation, train-only preprocessing, Pipeline and random_state; classification metrics and threshold selection on validation data. Split video/measurement series by episode, not randomly among adjacent frames."
       },
       "stages": [
@@ -1677,7 +1677,7 @@
       "role": "core",
       "links": [],
       "limitations": {
-        "ru": "Каталог всех алгоритмов, широкие grid searches и отдельный ML-сервис не требуются.",
+        "ru": "Каталог всех алгоритмов, широкий перебор гиперпараметров по сетке и отдельный ML-сервис не требуются.",
         "en": "The full algorithm catalogue, broad grid searches and a separate ML service are not required."
       },
       "status": {
@@ -1692,7 +1692,7 @@
     {
       "id": "SW11",
       "title": {
-        "ru": "JupyterLab — отдельное окружение и воспроизводимый notebook",
+        "ru": "JupyterLab — отдельное окружение и воспроизводимый блокнот Jupyter",
         "en": "JupyterLab — isolated environment and reproducible notebook"
       },
       "authors": "Project Jupyter",
@@ -1706,7 +1706,7 @@
       },
       "url": "https://jupyterlab.readthedocs.io/en/4.6.x/getting_started/installation.html",
       "selection": {
-        "ru": "Установка в отдельное venv, выбор kernel, относительные пути к данным, restart + run all, экспорт графиков. Для опытного Python-разработчика — короткий setup, не курс Python.",
+        "ru": "Установка в отдельное виртуальное окружение, выбор ядра, относительные пути к данным, перезапуск и выполнение всех ячеек, экспорт графиков. Для опытного Python-разработчика это краткая настройка, а не курс Python.",
         "en": "Install in a separate venv, select the kernel, use portable data paths, restart/run all and export plots. For an experienced Python developer this is a short setup, not a Python course."
       },
       "stages": [
@@ -1719,7 +1719,7 @@
       "role": "optional_reference",
       "links": [],
       "limitations": {
-        "ru": "Расширения, JupyterHub и разработка notebook-платформы не входят в core.",
+        "ru": "Расширения, JupyterHub и разработка платформы блокнотов Jupyter не входят в основную программу.",
         "en": "Extensions, JupyterHub and notebook-platform development are outside the core."
       },
       "status": {
@@ -1735,16 +1735,16 @@
       },
       "authors": "Gareth James; Daniela Witten; Trevor Hastie; Robert Tibshirani; Jonathan Taylor",
       "edition": {
-        "ru": "Python edition, 2023",
+        "ru": "Издание с Python, 2023",
         "en": "Python edition, 2023"
       },
       "access": {
-        "ru": "Авторский PDF бесплатно; печатная книга платная; Python labs доступны у авторов",
+        "ru": "Авторский PDF бесплатно; печатная книга платная; практические работы на Python доступны у авторов",
         "en": "Free author PDF; printed book is paid; Python labs available from the authors"
       },
       "url": "https://www.statlearning.com/",
       "selection": {
-        "ru": "Выборочно главы 2 Statistical Learning, 4 Classification и 5 Resampling: generalization, logistic regression, train/validation/test, bias/variance. Делать только примеры, помогающие оценить собственную задачу.",
+        "ru": "Выборочно главы 2 Statistical Learning, 4 Classification и 5 Resampling: обобщающая способность, логистическая регрессия, обучающая/проверочная/тестовая выборки, смещение и дисперсия. Выполнять только примеры, которые помогают оценить собственную задачу.",
         "en": "Selections from Chapters 2 Statistical Learning, 4 Classification and 5 Resampling: generalization, logistic regression, train/validation/test and bias/variance. Do only examples that help evaluate the actual project task."
       },
       "stages": [
@@ -1777,7 +1777,7 @@
         "en": "Updated standards editions and access labels"
       },
       "issue": {
-        "ru": "Ссылка ISO 13849-1:2015 в старых материалах ведёт к отменённой редакции; активный каталог указывает 2023. ISO 10218-1 — 2025. ISO 13482:2014 — personal care robots; не подменять ею промышленную норму или обещание безопасности носимого tail. Платные полные стандарты больше не описаны как открытые книги.",
+        "ru": "Ссылка ISO 13849-1:2015 в старых материалах ведёт к отменённой редакции; текущий каталог указывает 2023. ISO 10218-1 — редакция 2025. ISO 13482:2014 относится к роботам персонального ухода; ею нельзя заменять промышленный стандарт или обосновывать безопасность носимого хвоста. Полные платные стандарты больше не описываются как открытые книги.",
         "en": "The old ISO 13849-1:2015 link identifies a withdrawn edition; active references use 2023. ISO 10218-1 is 2025. ISO 13482:2014 concerns personal care robots; it is not a substitute industrial standard or a safety guarantee for a wearable tail. Paid standards are no longer described as open books."
       },
       "action": null,
@@ -1814,7 +1814,7 @@
         "en": "Think Stats edition mismatch"
       },
       "issue": {
-        "ru": "Каталог исходника называет 2nd edition и ведёт на think-stats-2e; подробное чтение правильно перечисляет главы 2,4,7,8 третьей онлайн-редакции. Обновить название и URL одновременно; не смешивать notebooks двух изданий.",
+        "ru": "Каталог исходника называет 2nd edition и ведёт на think-stats-2e; подробный план чтения правильно перечисляет главы 2, 4, 7 и 8 третьей онлайн-редакции. Обновить название и URL одновременно; не смешивать блокноты двух изданий.",
         "en": "Original catalog names/links the 2nd edition, whereas detailed reading correctly uses chapters 2,4,7,8 of the third online edition. Update title and URL together; do not mix editions' notebooks."
       },
       "action": null,
@@ -1827,11 +1827,11 @@
     {
       "id": "math-F02",
       "title": {
-        "ru": "Книга ошибочно названа notes",
+        "ru": "Книга ошибочно названа конспектом",
         "en": "Book mislabeled as notes"
       },
       "issue": {
-        "ru": "Oxford URL — страница Numerical Linear Algebra, Lloyd N. Trefethen и David Bau III, SIAM1997, с бесплатными лекциями1–5 и notes. Это не бесплатная полная книга. Оставить в D_NUM как необязательный справочник; ядру достаточно выбранного MIT18.06.",
+        "ru": "Ссылка Oxford ведёт на страницу книги Numerical Linear Algebra, Lloyd N. Trefethen и David Bau III, SIAM, 1997, с бесплатными лекциями 1–5 и конспектами. Полная книга не бесплатна. Оставить её в D_NUM как необязательный справочник; для основной программы достаточно выбранных разделов MIT 18.06.",
         "en": "Oxford URL identifies Numerical Linear Algebra by Lloyd N. Trefethen and David Bau III, SIAM1997, with free lectures1–5 and notes. It is not a free full book. Keep as an optional D_NUM reference; selected MIT18.06 suffices for core."
       },
       "action": null,
@@ -1847,7 +1847,7 @@
         "en": "Modern Robotics version 2 is not a second edition"
       },
       "issue": {
-        "ru": "Автор указывает обновлённое первое издание и preprint December2019. Структура разделов совпадает с печатью, пагинация различается. Ссылаться на разделы, а не переносить номера страниц между версиями.",
+        "ru": "Автор указывает обновлённое первое издание и препринт декабря 2019 года. Структура разделов совпадает с печатью, пагинация различается. Ссылаться на разделы, а не переносить номера страниц между версиями.",
         "en": "Author identifies updated first edition and December2019 preprint. Sections match print, pagination differs. Cite sections rather than moving page numbers between versions."
       },
       "action": null,
@@ -1876,11 +1876,11 @@
     {
       "id": "math-F05",
       "title": {
-        "ru": "Старое обязательное чтение M11 шире нового ядра",
+        "ru": "Старое обязательное чтение M11 шире новой основной программы",
         "en": "Old compulsory M11 reading exceeds revised core"
       },
       "issue": {
-        "ru": "Исходный M11 требует LQR, EKF и QP. Новое ядро60ч требует один пригодный IMU-фильтр и наблюдаемость, а углублённые методы вынесены в развитие. Перенести Lall18/LQR, полный Labbé11/EKF и Boyd4.4/5.5 в D_STATE/D_FORCE; не оставлять их скрытыми prerequisites.",
+        "ru": "Исходный M11 требует LQR, EKF и QP. Новая основная программа на 60 ч требует один подходящий фильтр IMU и понимание наблюдаемости; углублённые методы вынесены в дальнейшее развитие. Перенести Lall 18/LQR, полный Labbé 11/EKF и Boyd 4.4/5.5 в D_STATE/D_FORCE; не оставлять их скрытыми предварительными требованиями.",
         "en": "Original M11 requires LQR, EKF and QP. Revised60h core requires one suitable IMU filter and observability, deferring advanced methods. Move Lall18/LQR, full Labbé11/EKF and Boyd4.4/5.5 to D_STATE/D_FORCE rather than retaining hidden prerequisites."
       },
       "action": null,
@@ -1893,11 +1893,11 @@
     {
       "id": "math-F06",
       "title": {
-        "ru": "Чтение входит в существующие learn-часы и следует разделённым этапам",
+        "ru": "Чтение входит в существующие часы изучения и следует разделённым этапам",
         "en": "Reading fits existing learn hours and split stages"
       },
       "issue": {
-        "ru": "610ч включает180ч learn,294ч build,136ч verify. D1=40ч, из них12ч learn; D2=58ч, из них19ч learn. Силы/COM/опоры читать до L1; динамику по стенду — D2. S1 не требует полного курса кинематики; S2 использует ранее проверенные frame/FK/inertia. Не начислять повторное чтение в S2, ARM и TAIL.",
+        "ru": "610 ч включают 180 ч изучения, 294 ч реализации и 136 ч проверки. D1 = 40 ч, из них 12 ч изучения; D2 = 58 ч, из них 19 ч изучения. Силы, центр масс и опоры изучаются до L1; динамика по данным стенда — в D2. S1 не требует полного курса кинематики; S2 использует ранее проверенные системы координат, прямую кинематику и инерции. Повторное чтение в S2, ARM и TAIL не учитывается.",
         "en": "610h includes180h learn,294h build,136h verify. D1=40h with12h learn; D2=58h with19h learn. Read forces/COM/supports before L1; rig-based dynamics belongs to D2. S1 does not require a full kinematics course; S2 reuses verified frames/FK/inertia. Do not count rereading again in S2, ARM and TAIL."
       },
       "action": null,
@@ -1907,11 +1907,11 @@
     {
       "id": "math-F07",
       "title": {
-        "ru": "Thrun: бесплатные slides, платная книга",
+        "ru": "Thrun: бесплатные слайды, платная книга",
         "en": "Thrun: free slides, paid book"
       },
       "issue": {
-        "ru": "MITPress подтверждает2005 и трёх авторов. Stanford companion действительно предоставляет PPT; ссылка Open относится к companion, не к полному тексту. Покупка книги необязательна для ограниченного M15.",
+        "ru": "MIT Press подтверждает 2005 год и трёх авторов. Сопроводительный сайт Stanford действительно предоставляет PPT; ссылка Open относится к материалам сопровождения, а не к полному тексту. Покупка книги для ограниченного M15 необязательна.",
         "en": "MITPress verifies2005 and all three authors. Stanford companion provides PPT; Open describes companion materials, not the complete book. Book purchase is optional for bounded M15."
       },
       "action": null,
@@ -1928,7 +1928,7 @@
         "en": "Särkkä: preserve edition-specific section numbers"
       },
       "issue": {
-        "ru": "Исходная ссылка на1-е издание2013, автор Simo Särkkä, не становится неверной из-за2-го2023. Во2-м авторы Särkkä и Lennart Svensson; нельзя переносить §4.3/5.2 автоматически. Автор предоставляет обе версии для личного использования. Для D_STATE допустимо второе по названиям Kalman/extended Kalman; PDF2023 не прочитан целиком: инструмент отклонил размер11.36MB.",
+        "ru": "Исходная ссылка ведёт на первое издание 2013 года, автор — Simo Särkkä; выход второго издания в 2023 году не делает её неверной. Во втором издании авторы — Särkkä и Lennart Svensson; номера §4.3/5.2 нельзя переносить автоматически. Автор предоставляет обе версии для личного использования. Для D_STATE допустимо второе издание с поиском по названиям разделов о фильтре Калмана и расширенном фильтре Калмана. PDF 2023 года не прочитан целиком: инструмент отклонил файл размером 11,36 МБ.",
         "en": "Original first-edition2013 citation to Simo Särkkä is not invalidated by the2023 second edition. Second-edition authors are Särkkä and Lennart Svensson; do not copy §§4.3/5.2 automatically. Author offers both for personal use. D_STATE may use named Kalman/extended-Kalman sections in the second edition;2023 PDF was not fully parsed because the tool rejected its11.36MB size."
       },
       "action": null,
@@ -1945,7 +1945,7 @@
         "en": "Featherstone DOI is correct"
       },
       "issue": {
-        "ru": "10.1007/978-1-4899-7560-7 — именно Roy Featherstone, Rigid Body Dynamics Algorithms, edition1, ©2008.2014 — дата eBook, не новое издание. Полная книга платная/по доступу; авторские spatial_v2 и учебные материалы отдельны. Оставить D_DYN, а не обязательной полной книгой D1/D2.",
+        "ru": "10.1007/978-1-4899-7560-7 — DOI книги Roy Featherstone, Rigid Body Dynamics Algorithms, первое издание, ©2008. 2014 — год электронной публикации, а не нового издания. Полная книга платная или доступна по подписке; авторские spatial_v2 и учебные материалы опубликованы отдельно. Оставить её в D_DYN, не назначать обязательное полное чтение в D1/D2.",
         "en": "10.1007/978-1-4899-7560-7 is Roy Featherstone's Rigid Body Dynamics Algorithms, edition1, ©2008.2014 is eBook release, not a new edition. Full book is paid/access-controlled; author's spatial_v2 and teaching resources are separate. Retain for D_DYN, not as a complete D1/D2 requirement."
       },
       "action": null,
@@ -1962,7 +1962,7 @@
         "en": "Checked section numbering is correct"
       },
       "issue": {
-        "ru": "MIT18.06:1,2,16,21 совпадают с названиями. MIT18.03: notes2 numerical methods,11 modes,12 damping верны. StanfordEE363 Spring2026 — SanjayLall; slides9,11–12,18,22 соответствуют тексту. Boyd§6.3 regularization,§5.5.1 stopping criteria,§5.5.3 KKT корректны; не исправлять их по предположению.",
+        "ru": "MIT 18.06: лекции 1, 2, 16 и 21 соответствуют названиям. MIT 18.03: конспект 2 — численные методы, 11 — моды, 12 — затухание. Stanford EE363, весна 2026 — Sanjay Lall; слайды 9, 11–12, 18 и 22 соответствуют тексту. Boyd: §6.3 — регуляризация, §5.5.1 — критерии остановки, §5.5.3 — условия KKT; эти номера корректны, исправлять их по предположению не нужно.",
         "en": "MIT18.06 lectures1,2,16,21 match their titles. MIT18.03 notes2 numerical methods,11 modes,12 damping are correct. StanfordEE363 Spring2026 is SanjayLall; slides9,11–12,18,22 match the text. Boyd§6.3 regularization,§5.5.1 stopping criteria and§5.5.3 KKT are correct; do not change them based on suspicion."
       },
       "action": null,
@@ -2039,11 +2039,11 @@
         "en": "CAD-AGE"
       },
       "issue": {
-        "ru": "Старый FreeCAD manual реален и бесплатен, но не описывает все меню 1.1.1. Официальный GitHub-зеркальный репозиторий документации архивирован 01.04.2026.",
+        "ru": "Старое руководство FreeCAD существует и доступно бесплатно, но не описывает все меню 1.1.1. Официальный GitHub-зеркальный репозиторий документации архивирован 01.04.2026.",
         "en": "Old FreeCAD manual is real and free but does not cover all 1.1.1 menus. Official GitHub documentation mirror was archived 2026-04-01."
       },
       "action": {
-        "ru": "Маркировать manual как вводный и зеркало как архив; текущие команды сверять со встроенной справкой/wiki своей версии.",
+        "ru": "Маркировать руководство как вводное и зеркало как архив; текущие команды сверять со встроенной справкой/wiki своей версии.",
         "en": "Label manual introductory and mirror archived; check commands in installed-version help/wiki."
       },
       "urls": [
@@ -2063,7 +2063,7 @@
         "en": "ESP-IDF latest/stable are moving links; stable currently renders v6.1. v5.3.2 exists but is not the newest release."
       },
       "action": {
-        "ru": "Зафиксировать проверенный firmware тег и сохранить согласованный набор справки; не объявлять новую версию испытанной лишь по доступности документации.",
+        "ru": "Зафиксировать проверенный тег прошивки и сохранить согласованный набор справки; не объявлять новую версию испытанной лишь по доступности документации.",
         "en": "Pin a firmware-tested tag and matching docs; do not call a new version validated merely because its docs exist."
       },
       "urls": [
@@ -2083,7 +2083,7 @@
         "en": "Current online FreeRTOS book chapters 4/5/7 cover tasks/queues/interrupts; older PDF numbering differs."
       },
       "action": {
-        "ru": "Сохранять названия разделов и дату/commit; рядом читать IDF SMP и размер стека в байтах.",
+        "ru": "Сохранять названия разделов и дату и версию коммита; рядом читать IDF SMP и размер стека в байтах.",
         "en": "Retain section titles and date/commit; read IDF SMP and stack-size-in-bytes differences alongside."
       },
       "urls": [
@@ -2098,7 +2098,7 @@
         "en": "VALVANO"
       },
       "issue": {
-        "ru": "Valvano — реальная вводная ARM Cortex-M книга, а не руководство ESP32-S3. Текущий core выбрал C++/ESP-IDF, Rust — развитие.",
+        "ru": "Valvano — реальная вводная ARM Cortex-M книга, а не руководство ESP32-S3. Текущая основная программа использует C++/ESP-IDF, Rust — развитие.",
         "en": "Valvano is a real ARM Cortex-M introductory book, not an ESP32-S3 guide. Current core selects C++/ESP-IDF; Rust is further development."
       },
       "action": {
@@ -2121,7 +2121,7 @@
         "en": "The Art of Electronics, 3rd edition: sections 9.4 and 9.6 do cover heat/power and DC-DC. It is a reference, not a free beginner text."
       },
       "action": {
-        "ru": "Оставить 1–2 нужных примера в M22 при доступе к книге; не назначать весь том и не переносить офлайн-сетевые преобразователи в новичковый стенд.",
+        "ru": "При доступе к книге оставить 1–2 нужных примера в M22; не назначать весь том и не переносить схемы преобразователей с непосредственным питанием от сети в стенд для начинающего.",
         "en": "Keep 1–2 relevant examples in M22 if the book is available; do not assign the entire volume or mains-converter design to the beginner bench."
       },
       "urls": [
@@ -2160,7 +2160,7 @@
         "en": "CHAMP master lists Ubuntu 16.04/18.04, ROS Kinetic/Melodic and catkin. It is a quadruped architecture, not a ready ROS 2 Jazzy six-leg stack."
       },
       "action": {
-        "ru": "Только необязательное сравнение разделения gait/IK/driver; не запускать старую установку в core, не переносить динамическую походку как критерий приёмки.",
+        "ru": "Только необязательное сравнение разделения генератора походки, обратной кинематики и драйвера; не запускать старую установку в основной программе, не переносить динамическую походку как критерий приёмки.",
         "en": "Optional comparison of gait/IK/driver separation only; no legacy core installation or dynamic-gait acceptance requirement."
       },
       "urls": [
@@ -2217,7 +2217,7 @@
         "en": "The Google Scholar query “hexapod gait generation review” is not a specific verified reference."
       },
       "action": {
-        "ru": "Убрать из основного чтения; заменить конкретным разделом по опорному многоугольнику/контакту из общего теоретического ядра и собственной таблицей wave/ripple. Поиск сохранить как инструмент дальнейшего обзора.",
+        "ru": "Убрать из основного чтения; заменить конкретным разделом по опорному многоугольнику/контакту из общего теоретического раздела основной программы и собственной таблицей wave/ripple. Поиск сохранить как инструмент дальнейшего обзора.",
         "en": "Remove from core readings; use a specific support-polygon/contact section from shared theory plus the custom wave/ripple table. Keep search only as a further-review tool."
       },
       "urls": [],
@@ -2230,11 +2230,11 @@
         "en": "ISO-ACCESS"
       },
       "issue": {
-        "ru": "Исходное tail-приложение ошибочно пишет Open source у ISO/IEC; ссылка ISO 13849-1:2015 ведёт на withdrawn.",
+        "ru": "Исходное приложение к проекту хвоста ошибочно помечает ISO/IEC как Open source; ссылка ISO 13849-1:2015 ведёт к отменённой редакции.",
         "en": "Original tail appendix wrongly labels ISO/IEC Open source; linked ISO 13849-1:2015 is withdrawn."
       },
       "action": {
-        "ru": "Бесплатно читать официальную область применения/preview; полный текст платный/лицензионный. Использовать актуальные карточки стандартов от общего аудита; не объявлять соответствие по факту чтения.",
+        "ru": "Бесплатно читать официальную область применения/ознакомительные фрагменты; полный текст платный/лицензионный. Использовать актуальные карточки стандартов от общего аудита; не объявлять соответствие по факту чтения.",
         "en": "Read official scope/preview for free; full texts are paid/licensed. Use current standard entries from the shared audit; reading does not establish compliance."
       },
       "urls": [
@@ -2251,7 +2251,7 @@
         "en": "TENDON-MODEL"
       },
       "issue": {
-        "ru": "Открытый tutorial явно исключает гравитацию/трение/внешние силы; это особенно существенно для самонесущего хвоста.",
+        "ru": "Открытый учебный пример явно исключает гравитацию/трение/внешние силы; это особенно существенно для самонесущего хвоста.",
         "en": "Open tutorial explicitly neglects gravity/friction/external forces, especially relevant to a self-supporting tail."
       },
       "action": {
@@ -2295,7 +2295,7 @@
         "en": "The page opens but contains ROS 1 constructs, including ros::Duration and moveit_msgs::Grasp. The site's Rolling header does not make the example a ROS 2 Jazzy recipe."
       },
       "action": {
-        "ru": "Убрать из обязательных пошаговых инструкций M17. Основной результат — собственная короткая машина состояний pick/transfer/cancel. ROS 2 MTC читать только как дополнительный пример после проверки API установленной версии.",
+        "ru": "Убрать из обязательных пошаговых инструкций M17. Основной результат — собственная короткая конечный автомат захват/перенос/отмена. ROS 2 MTC читать только как дополнительный пример после проверки API установленной версии.",
         "en": "Remove it as a required M17 recipe. The core deliverable is a short pick/transfer/cancel state machine. Read ROS 2 MTC only as an optional example after checking the installed API."
       },
       "urls": [
@@ -2394,7 +2394,7 @@
         "en": "Retrieved official pages disagree: stable API points to 2.14, the tutorial shows 2.14.0+cu130, while installation widgets showed 2.7.0 or 1.13.0. This does not establish the exact latest available binary version."
       },
       "action": {
-        "ru": "Явно разделить снимок документации и закреплённый runtime. Выбрать совместимый CPU-пакет при настройке, проверить импорт/одну эпоху/save-load и сохранить lock. Не переносить команду CUDA с сайта в окружение Mac.",
+        "ru": "Различать снимок документации и зафиксированную среду выполнения. При настройке выбрать совместимый пакет для CPU, проверить импорт, одну эпоху, сохранение и загрузку; сохранить файл фиксации зависимостей. Команду установки CUDA с сайта не переносить в окружение Mac.",
         "en": "Distinguish the documentation snapshot from the pinned runtime. Select a compatible CPU package during setup, test import/one epoch/save-load, and preserve the lock. Do not copy a website CUDA command into the Mac environment."
       },
       "urls": [
@@ -2414,7 +2414,7 @@
         "en": "The original PDFs cover ICP, CNNs, several perception tasks and a contact classifier. The current 400-hour track retains one M14 vision task, then improves and evaluates that same task in M18."
       },
       "action": {
-        "ru": "Szeliski читать выборочно; Open3D/ICP, CS231n, большие CNN, RL, SLAM/Nav2, MPC и отдельный контактный ML — growth, а не новые обязательные курсы.",
+        "ru": "Szeliski читать выборочно; Open3D/ICP, CS231n, большие CNN, RL, SLAM/Nav2, MPC и отдельный контактный ML — дальнейшее развитие, а не новые обязательные курсы.",
         "en": "Read Szeliski selectively; Open3D/ICP, CS231n, large CNNs, RL, SLAM/Nav2, MPC and separate contact ML are growth material, not additional required courses."
       },
       "urls": [],
@@ -2431,7 +2431,7 @@
         "en": "The original Jazzy URL opens. A proposed /getting_started/index.html replacement returned 404."
       },
       "action": {
-        "ru": "Не чинить рабочую ссылку. Сохранить Nav2 только в расширении для мобильной навигации; он не нужен для базового планирования руки.",
+        "ru": "Не чинить рабочую ссылку. Сохранить Nav2 только в расширении для мобильной навигации; он не нужен для базового планирования манипулятора.",
         "en": "Do not replace a working URL. Keep Nav2 in the mobile-navigation extension; it is not required for baseline arm planning."
       },
       "urls": [],
@@ -2448,7 +2448,7 @@
         "en": "Computer Vision: Algorithms and Applications is the second edition, 2022. The free author PDF requires a form and is for personal use, not a direct public file to redistribute. Original chapter numbers 7 Feature Detection and Matching and 9 Motion Estimation are correct."
       },
       "action": {
-        "ru": "Дать страницу автора, указать условия доступа и ограничить обязательное чтение геометрией камеры/калибровкой. Главы о matching и motion — по фактической задаче.",
+        "ru": "Дать страницу автора, указать условия доступа и ограничить обязательное чтение геометрией камеры/калибровкой. Главы о сопоставлении признаков и оценке движения — по фактической задаче.",
         "en": "Link the author's page, state access conditions, and bound required reading to camera geometry/calibration. Matching and motion chapters depend on the actual task."
       },
       "urls": [
@@ -2501,21 +2501,21 @@
         {
           "ref": "dev-cpp",
           "selection": {
-            "ru": "M01: R.1 (RAII), правила владения ресурсами, lifetime и передача параметров; применить к одному драйверу/тесту. M06: повторно использовать эти решения, не начинать новый курс C++.",
+            "ru": "M01: R.1 (RAII), правила владения ресурсами, время жизни и передача параметров; применить к одному драйверу/тесту. M06: повторно использовать эти решения, не начинать новый курс C++.",
             "en": "M01: R.1 (RAII), ownership, lifetime and parameter-passing rules; apply to one driver/test. M06: reuse these decisions rather than start another C++ course."
           }
         },
         {
           "ref": "dev-build",
           "selection": {
-            "ru": "CMake: сборка небольшого executable + library и проверка CTest. GoogleTest: один тест единиц/кадров или отказа датчика. Версию CMake сверить с установленной; /latest сейчас описывает другую ветку.",
+            "ru": "CMake: собрать небольшой исполняемый файл и библиотеку, проверить их через CTest. GoogleTest: один тест единиц измерения, систем координат или отказа датчика. Версию документации CMake сверить с установленной; ссылка /latest сейчас описывает другую ветку.",
             "en": "CMake: one executable plus library and CTest check. GoogleTest: one units/frames or sensor-failure test. Match documentation to installed CMake; /latest describes a different branch."
           }
         },
         {
           "ref": "SW01",
           "selection": {
-            "ru": "Только установка Jazzy и короткий talker/listener smoke-test. Основной ROS-маршрут начинается в S1.",
+            "ru": "Только установка Jazzy и короткая проверка работоспособности talker/listener. Основной раздел ROS начинается в S1.",
             "en": "Only install Jazzy and run a short talker/listener smoke test. The main ROS route begins in S1."
           },
           "links": [
@@ -2541,7 +2541,7 @@
         {
           "ref": "SW01",
           "selection": {
-            "ru": "Nodes/topics/services/actions; launch/parameters, QoS compatibility и rosbag. Пройти по одному примеру, затем свой mock-сустав. TF/URDF и драйверы — S2.",
+            "ru": "Узлы, топики, сервисы и действия; запуск и параметры, совместимость QoS и rosbag. Пройти по одному примеру, затем создать имитацию своего сустава. TF/URDF и драйверы изучаются в S2.",
             "en": "Nodes/topics/services/actions; launch/parameters, QoS compatibility and rosbag. One example each, then the mock joint. TF/URDF and drivers belong to S2."
           },
           "links": [
@@ -2563,7 +2563,7 @@
         {
           "ref": "math-strang",
           "selection": {
-            "ru": "После диагностики: лекции 1–2 только при пробелах; 16 — проекции и МНК; 21 — собственные значения. Лекцию 29 SVD открывать только для rank/conditioning. Один ручной пример 2×2 и одна калибровка; не весь курс.",
+            "ru": "После диагностики: лекции 1–2 только при пробелах; 16 — проекции и МНК; 21 — собственные значения. Лекцию 29 SVD открывать только для ранга/обусловленности. Один ручной пример 2×2 и одна калибровка; не весь курс.",
             "en": "After diagnostics: lectures 1–2 only for gaps; 16 for projections/least squares; 21 for eigenvalues. Use lecture 29 SVD only for rank/conditioning. One hand-worked 2×2 example and one calibration, not the whole course."
           }
         },
@@ -2624,7 +2624,7 @@
         {
           "ref": "H-IDF",
           "selection": {
-            "ru": "Get Started до flash/monitor; задачи, очереди, ISR в FreeRTOS, затем отличия IDF SMP и critical sections. Один работающий узел и watchdog; не вся API-документация.",
+            "ru": "Get Started до первой прошивки и мониторинга; задачи, очереди и обработчики прерываний FreeRTOS, затем отличия IDF SMP и критические секции. Один работающий узел и сторожевой таймер; изучение всего API не требуется.",
             "en": "Get Started through flash/monitor; FreeRTOS tasks, queues and ISRs, then IDF SMP/critical-section differences. One working node and watchdog; not the entire API reference."
           }
         }
@@ -2636,14 +2636,14 @@
         {
           "ref": "H-DRIVES",
           "selection": {
-            "ru": "DRV8833: режимы, распиновка, управление мостом, sense, sleep/fault, тепловые условия. Читать паспорт именно купленной платы и датчика до подачи питания; 2 А из заголовка не равно длительному току платы.",
+            "ru": "DRV8833: режимы, распиновка, управление мостом, измерение тока, сигналы sleep/fault и тепловые условия. До подачи питания читать паспорт именно купленной платы и датчика; 2 А из заголовка не равны допустимому длительному току платы.",
             "en": "DRV8833: operating limits, pinout, bridge control, sense, sleep/fault and thermal conditions. Read the purchased board/sensor manual before powering; a 2 A headline is not its continuous current."
           }
         },
         {
           "ref": "math-feedback",
           "selection": {
-            "ru": "Глава 3: state-space и модель одного мотора. Выписать знаки, единицы, параметры и сопоставить с измерением; PID подробно будет в M10.",
+            "ru": "Глава 3: пространство состояний и модель одного мотора. Выписать знаки, единицы, параметры и сопоставить с измерением; PID подробно будет в M10.",
             "en": "Chapter 3: state-space and one motor model. Record signs, units and parameters, then compare with measurements; detailed PID follows in M10."
           }
         }
@@ -2655,7 +2655,7 @@
         {
           "ref": "math-modern-robotics",
           "selection": {
-            "ru": "§3.2.1, §3.3.1, §4.1.1, §5.1–5.3 и §6.2: преобразования, FK, Jacobian и численный IK на одной ноге/2R-примере. Формулу damped IK брать из исходного M08 и проверить небольшим собственным выводом; §6.2 сам по себе не полный DLS-рецепт.",
+            "ru": "§3.2.1, §3.3.1, §4.1.1, §5.1–5.3 и §6.2: преобразования, FK, якобиан и численный IK на одной ноге/2R-примере. Формулу демпфированной обратной кинематики брать из исходного M08 и проверить небольшим собственным выводом; §6.2 сам по себе не полный DLS-рецепт.",
             "en": "§3.2.1, §3.3.1, §4.1.1, §5.1–5.3 and §6.2: transforms, FK, Jacobian and numerical IK on a leg/2R example. Retain the original M08 damped-IK formula and check it with a short derivation; §6.2 alone is not a complete DLS recipe."
           }
         }
@@ -2667,7 +2667,7 @@
         {
           "ref": "math-modern-robotics",
           "selection": {
-            "ru": "§3.4 и §5.2: силы/моменты и статическая связь через Jacobian; §8.2 — масса/инерция; §12.2.1 — трение. Применить к собственному COM, опорному многоугольнику и усилию ноги до L1. Динамика по данным стенда — D2.",
+            "ru": "§3.4 и §5.2: силы/моменты и статическая связь через якобиан; §8.2 — масса/инерция; §12.2.1 — трение. Применить к собственному COM, опорному многоугольнику и усилию ноги до L1. Динамика по данным стенда — D2.",
             "en": "§3.4 and §5.2: forces/moments and the static Jacobian relation; §8.2 for mass/inertia; §12.2.1 for friction. Apply to own COM, support polygon and leg load before L1. Rig-based dynamics follows in D2."
           }
         },
@@ -2705,14 +2705,14 @@
         {
           "ref": "math-nist",
           "selection": {
-            "ru": "§1.3.5.2: интервал среднего и его частотная интерпретация; §1.3.5.11 только при необычной форме шума. Различать разброс измерений, ошибку среднего, bias и зависимые samples. 30 запусков — проектный протокол, не гарантия корректного интервала.",
+            "ru": "§1.3.5.2: интервал среднего и его частотная интерпретация; §1.3.5.11 только при необычной форме шума. Различать разброс измерений, ошибку среднего, смещение и зависимые отсчёты. 30 запусков — проектный протокол, не гарантия корректного интервала.",
             "en": "§1.3.5.2: mean confidence interval and repeated-sampling interpretation; §1.3.5.11 only for unusual noise shape. Distinguish measurement spread, mean uncertainty, bias and dependent samples. Thirty runs are a project protocol, not a guarantee of interval validity."
           }
         },
         {
           "ref": "math-convex",
           "selection": {
-            "ru": "M03-D: §4.1 для variables/objective/constraints и короткий пример §6.1 на bounded fit. Не назначать §6.3 и гл. 9 как обязательное чтение для одного вызова least_squares.",
+            "ru": "M03-D: §4.1 — переменные, целевая функция и ограничения; короткий пример §6.1 — подбор параметров с ограничениями. Для одного вызова least_squares не назначать §6.3 и главу 9 как обязательное чтение.",
             "en": "M03-D: §4.1 for variables/objective/constraints and one §6.1 bounded-fit example. Do not require §6.3/chapter 9 merely to use least_squares."
           }
         }
@@ -2741,7 +2741,7 @@
         {
           "ref": "SW02",
           "selection": {
-            "ru": "Hardware components; state/command interfaces; lifecycle; read/write/update; controller manager; один adapter существующего приводного узла.",
+            "ru": "Аппаратные компоненты, интерфейсы состояния и команд, жизненный цикл, операции read/write/update, диспетчер контроллеров; один адаптер существующего приводного узла.",
             "en": "Hardware components; state/command interfaces; lifecycle; read/write/update; controller manager; one adapter for the existing actuator node."
           }
         }
@@ -2753,14 +2753,14 @@
         {
           "ref": "math-modern-robotics",
           "selection": {
-            "ru": "§8.1 и §8.9: уравнение и проверка прямой динамики на готовом стенде. §8.3/8.5 — справочно для понимания библиотечного расчёта. Не требовать полного собственного вывода 6-DOF динамики руки.",
+            "ru": "§8.1 и §8.9: уравнение и проверка прямой динамики на готовом стенде. §8.3/8.5 — справочно для понимания библиотечного расчёта. Не требовать полного собственного вывода динамики манипулятора с шестью степенями свободы.",
             "en": "§8.1 and §8.9: motion equation and forward-dynamics checks on the existing rig. §8.3/8.5 are references for library calculations. No complete hand-derived six-DOF arm dynamics required."
           }
         },
         {
           "ref": "math-tedrake",
           "selection": {
-            "ru": "Simple Pendulum — один пример уравнения; system identification — один least-squares fit с отдельной проверочной записью.",
+            "ru": "Simple Pendulum — один пример уравнения движения; системная идентификация — один подбор параметров методом наименьших квадратов с отдельной проверочной записью.",
             "en": "Simple Pendulum: one equation example; system identification: one least-squares fit with an independent validation record."
           }
         }
@@ -2772,14 +2772,14 @@
         {
           "ref": "math-feedback",
           "selection": {
-            "ru": "Observability из главы 8: что IMU позволяет и не позволяет восстановить. Один выбранный complementary- или Kalman-фильтр; не новая обязательная LQR/EKF/QP-ветка.",
+            "ru": "Наблюдаемость из главы 8: что можно и что нельзя восстановить по IMU. Один выбранный комплементарный фильтр или фильтр Калмана; новой обязательной ветки LQR/EKF/QP нет.",
             "en": "Observability from chapter 8: what the IMU can and cannot recover. One chosen complementary or Kalman filter; no new compulsory LQR/EKF/QP branch."
           }
         },
         {
           "ref": "math-labbe",
           "selection": {
-            "ru": "Гл. 04: один ручной predict/update для понимания оценки. Из гл. 08 — noise/residual только при выборе Kalman. Если complementary-фильтр проходит критерии, вторую реализацию не добавлять.",
+            "ru": "Глава 04: один ручной шаг прогноза и коррекции для понимания оценивания. Из главы 08 — шум и невязка только при выборе фильтра Калмана. Если комплементарный фильтр выполняет критерии, вторую реализацию не добавлять.",
             "en": "Chapter 04: one hand-worked predict/update to understand estimation. Chapter 08 noise/residual only for a Kalman choice. If a complementary filter passes, do not add a second implementation."
           }
         }
@@ -2803,14 +2803,14 @@
         {
           "ref": "SW03",
           "selection": {
-            "ru": "Совместимая установка; SDF/URDF inertial и collision; шаг физики; контакт/трение; шум и частота одного датчика; ros_gz bridge; gz_ros2_control.",
+            "ru": "Совместимая установка; инерциальные параметры и геометрия столкновений SDF/URDF; шаг расчёта физики; контакт и трение; шум и частота одного датчика; мост ros_gz; gz_ros2_control.",
             "en": "Compatible installation; SDF/URDF inertial and collision properties; physics step; contact/friction; one sensor's noise and rate; ros_gz bridge; gz_ros2_control."
           }
         },
         {
           "ref": "SW02",
           "selection": {
-            "ru": "Hardware components; state/command interfaces; lifecycle; read/write/update; controller manager; один adapter существующего приводного узла.",
+            "ru": "Аппаратные компоненты, интерфейсы состояния и команд, жизненный цикл, операции read/write/update, диспетчер контроллеров; один адаптер существующего приводного узла.",
             "en": "Hardware components; state/command interfaces; lifecycle; read/write/update; controller manager; one adapter for the existing actuator node."
           }
         }
@@ -2829,14 +2829,14 @@
         {
           "ref": "math-modern-robotics",
           "selection": {
-            "ru": "Повторно использовать FK/Jacobian/статику из M08/D1; §8.2 для массы/инерции своей геометрии. Чтение не заменяет квалификацию плечевого образца.",
+            "ru": "Повторно использовать FK/якобиан/статику из M08/D1; §8.2 для массы/инерции своей геометрии. Чтение не заменяет квалификацию плечевого образца.",
             "en": "Reuse FK/Jacobian/statics from M08/D1; §8.2 for own geometry’s mass/inertia. Reading does not replace shoulder-prototype qualification."
           }
         },
         {
           "ref": "H-SERVO",
           "selection": {
-            "ru": "Только если выбран XM-R: control table точного артикула, shutdown, watchdog, предел тока и нагрузочная кривая. Для HBS57 нужен паспорт фактического изготовителя от продавца; чужой паспорт не подставлять.",
+            "ru": "Только при выборе XM-R: таблица регистров точного артикула, отключение при отказе, сторожевой таймер, предел тока и нагрузочная характеристика. Для HBS57 запросить у продавца паспорт фактического изготовителя; документацию другого изделия не подставлять.",
             "en": "Only if XM-R is selected: exact model control table, shutdown, watchdog, current limit and load curve. HBS57 requires the actual manufacturer manual from the seller; do not substitute another brand’s manual."
           },
           "url": "https://emanual.robotis.com/docs/en/dxl/x/xm540-w270/",
@@ -2889,14 +2889,14 @@
         {
           "ref": "math-modern-robotics",
           "selection": {
-            "ru": "Повторно использовать силы/Jacobian/трение из D1. Свою wave/ripple-последовательность проверить по COM и опорному многоугольнику в модели четырёх/шести ног.",
+            "ru": "Повторно использовать силы, якобиан и трение из D1. Свою wave/ripple-последовательность проверить по COM и опорному многоугольнику в модели четырёх/шести ног.",
             "en": "Reuse D1 forces/Jacobian/friction. Check the custom wave/ripple sequence against COM and support polygon in the four/six-leg model."
           }
         },
         {
           "ref": "math-tedrake",
           "selection": {
-            "ru": "Только смысл stance/swing и переключения контактов в Simple Legs. Динамическая ходьба и оптимальное управление не являются критериями медленного hexapod.",
+            "ru": "В разделе Simple Legs изучить только опорную фазу, фазу переноса ноги и переключение контактов. Динамическая ходьба и оптимальное управление не входят в критерии медленного гексапода.",
             "en": "Only stance/swing and contact-transition concepts from Simple Legs. Dynamic locomotion and optimal control are not criteria for the slow hexapod."
           }
         }
@@ -2908,7 +2908,7 @@
         {
           "ref": "H-SERVO",
           "selection": {
-            "ru": "Повторно: пакетный протокол ST, доступные групповые операции, таймауты и feedback; рассчитать шину для 12 приводов. По питанию — паспорта фактических БП, защиты и кабеля из закупок.",
+            "ru": "Повторно: пакетный протокол ST, доступные групповые операции, таймауты и обратная связь; рассчитать шину для 12 приводов. По питанию — паспорта фактических БП, защиты и кабеля из закупок.",
             "en": "Reuse ST packet protocol, available group operations, timeouts and feedback; budget the 12-actuator bus. For power, read purchased supply/protection/cable specifications from procurement."
           }
         }
@@ -2938,7 +2938,7 @@
         {
           "ref": "H-IDF",
           "selection": {
-            "ru": "PCNT и MCPWM: канал, фильтр, переполнение, fault/brake; два мотора на один S3-узел. Повторно использовать архитектуру M06/M07.",
+            "ru": "PCNT и MCPWM: канал, фильтр, переполнение, обработка отказов/торможение; два мотора на один S3-узел. Повторно использовать архитектуру M06/M07.",
             "en": "PCNT and MCPWM: channels, filtering, overflow and fault/brake; two motors per S3 node. Reuse the M06/M07 architecture."
           },
           "url": "https://docs.espressif.com/projects/esp-idf/en/v5.3.2/esp32s3/api-reference/peripherals/pcnt.html",
@@ -2952,7 +2952,7 @@
         {
           "ref": "H-RAO",
           "selection": {
-            "ru": "Начало §5 и §6: влияние нагрузки и границы геометрической модели. Сопоставить с собственными измерениями натяжения/ошибки формы; полный вывод continuum dynamics не нужен.",
+            "ru": "Начало §5 и §6: влияние нагрузки и границы геометрической модели. Сопоставить с собственными измерениями натяжения и ошибки формы; полный вывод динамики континуального робота не требуется.",
             "en": "Opening of §5 and §6: load effects and geometric-model limits. Compare with measured tension/shape error; a full continuum-dynamics derivation is not required."
           }
         }
@@ -2964,7 +2964,7 @@
         {
           "ref": "H-SERVO",
           "selection": {
-            "ru": "Продолжение уже выбранного ST-протокола: бюджет шины и диагностика 18 приводов. Не повторять начальный курс L1; измерить влияние расширения с четырёх до шести ног.",
+            "ru": "Продолжение уже выбранного протокола ST: бюджет шины и диагностика 18 приводов. Не повторять начальный курс L1; измерить влияние расширения с четырёх до шести ног.",
             "en": "Continue the chosen ST protocol: bus budget and diagnostics for 18 actuators. Do not repeat the L1 introduction; measure the effect of expanding from four to six legs."
           }
         }
@@ -2976,7 +2976,7 @@
         {
           "ref": "SW04",
           "selection": {
-            "ru": "Использовать существующий URDF/SRDF руки: planning groups, joint limits, collision scene, один planner, time parameterization, execution/cancel. Launch и MTC из main читать с проверкой API установленной Jazzy-версии.",
+            "ru": "Использовать существующий URDF/SRDF манипулятора: группы планирования, ограничения суставов, сцену столкновений, один планировщик, временну́ю параметризацию, исполнение и отмену. Материалы о запуске и MTC из main читать с проверкой API установленной версии Jazzy.",
             "en": "Use the existing arm URDF/SRDF: planning groups, joint limits, collision scene, one planner, time parameterization and execution/cancel. Read main launch/MTC material only while checking the installed Jazzy API."
           },
           "links": [
@@ -2989,7 +2989,7 @@
         {
           "ref": "SW07",
           "selection": {
-            "ru": "Глава 4: configuration space/collision; глава 5: интуиция PRM/RRT и ограничения. Достаточно понять и проверить один существующий planner; не писать собственный framework.",
+            "ru": "Глава 4: пространство конфигураций и столкновения; глава 5: принципы PRM/RRT и ограничения. Достаточно понять и проверить один существующий планировщик; собственная программная платформа не требуется.",
             "en": "Chapter 4: configuration space/collision; chapter 5: PRM/RRT intuition and limits. Understand and test one existing planner; do not write another framework."
           }
         }
@@ -3001,7 +3001,7 @@
         {
           "ref": "SW04",
           "selection": {
-            "ru": "Подключить уже созданный URDF/SRDF, группы, limits, collision scene и аппаратный интерфейс. Проверить пример по Jazzy; это применение M16, не повторный курс.",
+            "ru": "Подключить уже созданный URDF/SRDF, группы планирования, ограничения, сцену столкновений и аппаратный интерфейс. Проверить пример для Jazzy; это применение M16, а не повторный курс.",
             "en": "Connect the existing URDF/SRDF, groups, limits, collision scene and hardware interface. Check examples against Jazzy; apply M16 instead of repeating the course."
           },
           "links": [
@@ -3019,14 +3019,14 @@
         {
           "ref": "safety-standards",
           "selection": {
-            "ru": "M17: только область применения и термины риска/защитных мер; проектную оценку рисков связать со своими тестами остановки. ISO 13849-1:2015 заменён редакцией 2023. ISO 10218-1 относится к промышленным роботам; обзор не означает сертификацию самодельной руки или tail.",
+            "ru": "M17: только область применения и термины риска/защитных мер; проектную оценку рисков связать со своими тестами остановки. ISO 13849-1:2015 заменён редакцией 2023. ISO 10218-1 относится к промышленным роботам; обзор не означает сертификацию самодельного манипулятора или хвоста.",
             "en": "M17: scope and risk/protective-measure terminology only; connect the project risk assessment to its stop tests. ISO 13849-1:2015 is superseded by the 2023 edition. ISO 10218-1 covers industrial robots; overview reading does not certify a custom arm or tail."
           }
         },
         {
           "ref": "SW08",
           "selection": {
-            "ru": "Только pregrasp/approach/grasp/retreat и используемые frames; на их основе собственная короткая машина состояний с cancel/stop. Drake не устанавливать как новый обязательный framework.",
+            "ru": "Только исходная поза перед захватом, подход, захват, отвод и используемые системы координат. На этой основе создать небольшой конечный автомат с отменой и остановкой. Drake не устанавливать как новую обязательную платформу.",
             "en": "Only pregrasp/approach/grasp/retreat and relevant frames; use them for a short custom state machine with cancel/stop. Do not add Drake as another required framework."
           }
         }
@@ -3038,7 +3038,7 @@
         {
           "ref": "SW05",
           "selection": {
-            "ru": "Модель pinhole, distortion, chessboard/corners, calibrateCamera, reprojection error, undistort; затем минимальная классическая процедура обнаружения цели и отказа.",
+            "ru": "Модель камеры-обскуры, дисторсия, шахматная мишень и её углы, calibrateCamera, ошибка репроекции, undistort; затем минимальная классическая процедура обнаружения цели и отказа от движения.",
             "en": "Pinhole model, distortion, chessboard/corners, calibrateCamera, reprojection error and undistort; then a minimal classical target detection and rejection pipeline."
           }
         }
@@ -3054,21 +3054,21 @@
         {
           "ref": "SW09",
           "selection": {
-            "ru": "Tensors, Dataset/DataLoader, autograd, маленькая модель, loss/optimizer, train/eval, save/load. Один logistic/MLP baseline на той же задаче зрения M14; затем воспроизводимость и CPU latency.",
+            "ru": "Тензоры, Dataset/DataLoader, автоматическое дифференцирование, небольшая модель, функция потерь и оптимизатор, обучение и оценка, сохранение и загрузка. Один базовый метод — логистическая регрессия или MLP — для той же задачи зрения M14; затем воспроизводимость и задержка выполнения на CPU.",
             "en": "Tensors, Dataset/DataLoader, autograd, a small model, loss/optimizer, train/eval and save/load. One logistic/MLP baseline on the same M14 vision task; then reproducibility and CPU latency."
           }
         },
         {
           "ref": "SW10",
           "selection": {
-            "ru": "Train/test separation, preprocessing только на train, Pipeline, random_state; метрики классификации и выбор threshold по validation. Для видео/серий измерений делить по эпизодам, не случайным соседним кадрам.",
+            "ru": "Разделение обучающей и тестовой выборок; настройка предобработки только на обучающих данных; Pipeline и random_state; метрики классификации и выбор порога по проверочной выборке. Видео и серии измерений делить по эпизодам, а не по случайным соседним кадрам.",
             "en": "Train/test separation, train-only preprocessing, Pipeline and random_state; classification metrics and threshold selection on validation data. Split video/measurement series by episode, not randomly among adjacent frames."
           }
         },
         {
           "ref": "SW12",
           "selection": {
-            "ru": "Выборочно главы 2, 4 и 5: generalization, logistic regression, train/validation/test и bias/variance. Только объяснения для своей задачи; не все упражнения и не дополнительный полный курс.",
+            "ru": "Выборочно главы 2, 4 и 5: обобщающая способность, логистическая регрессия, обучающая/проверочная/тестовая выборки, смещение и дисперсия. Только объяснения для своей задачи; выполнять все упражнения и проходить дополнительный полный курс не требуется.",
             "en": "Selected chapters 2, 4 and 5: generalization, logistic regression, train/validation/test and bias/variance. Explanations for the actual task only; not all exercises or another full course."
           }
         }
@@ -3080,14 +3080,14 @@
         {
           "ref": "math-modern-robotics",
           "selection": {
-            "ru": "§9.1–9.2: path/time scaling и пределы скорости/ускорения, только для интерпретации тестов руки. Повторно использовать уже проверенную параметризацию MoveIt.",
+            "ru": "§9.1–9.2: геометрия пути, временная параметризация и пределы скорости и ускорения — только для интерпретации испытаний манипулятора. Повторно использовать уже проверенную параметризацию MoveIt.",
             "en": "§9.1–9.2: path/time scaling and speed/acceleration limits for interpreting arm trials. Reuse already checked MoveIt time parameterization."
           }
         },
         {
           "ref": "SW04",
           "selection": {
-            "ru": "Выполнение, отмена и актуальность collision scene; сверить с фактической Jazzy-версией. Новые planners/MTC не добавлять к выпуску.",
+            "ru": "Исполнение, отмена и актуальность сцены столкновений; сверить с установленной версией Jazzy. Новые планировщики и MTC к выпуску не добавлять.",
             "en": "Execution, cancellation and collision-scene freshness; match the actual Jazzy version. Do not add planners/MTC at release."
           },
           "links": [
@@ -3105,7 +3105,7 @@
         {
           "ref": "H-IDF",
           "selection": {
-            "ru": "IWDT/TWDT, потеря host и fail-safe выход в уже выбранной версии. Проверить протокол отказа всей сборки, а не переписывать RTOS.",
+            "ru": "В выбранной версии изучить IWDT/TWDT, потерю связи с компьютером и переход выходов в безопасное состояние при отказе. Проверить обработку отказа всей сборкой; переписывать RTOS не требуется.",
             "en": "IWDT/TWDT, host loss and fail-safe output in the chosen version. Validate full-assembly fault behavior rather than rewrite the RTOS."
           }
         },
@@ -3124,7 +3124,7 @@
         {
           "ref": "systems-nasa",
           "selection": {
-            "ru": "Только §4.2 Technical Requirements Definition и §5.3 Product Verification: сверить матрицу требование → испытание → фактический результат. В M24 всего 2 ч изучения; весь handbook не задан. Использовать уже собранные данные трёх проектов.",
+            "ru": "Только §4.2 Technical Requirements Definition и §5.3 Product Verification: сверить матрицу требование → испытание → фактический результат. В M24 всего 2 ч изучения; весь справочник не задан. Использовать уже собранные данные трёх проектов.",
             "en": "Only §4.2 Technical Requirements Definition and §5.3 Product Verification: check requirement → test → actual-result traceability. M24 has only 2 learning hours; the full handbook is not assigned. Reuse evidence from all three projects."
           }
         }

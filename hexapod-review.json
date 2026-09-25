@@ -34,15 +34,15 @@
     {
       "id": "HX-H02",
       "title": {
-        "ru": "Длительная нагрузка и нагрев вместо stall torque",
+        "ru": "Длительная нагрузка и нагрев вместо паспортного пикового момента",
         "en": "Use sustained loading and heat, not stall torque"
       },
       "detail": {
-        "ru": "Короткий стопорный момент не определяет допустимое стояние. Нагрузки зависят от позы и числа подтверждённых опор; деление веса на шесть неверно во многих фазах. Отдельный DC-стенд M07 не квалифицирует семейство смарт-приводов для ноги.",
+        "ru": "Кратковременный момент при заблокированном валу не определяет допустимое стояние. Нагрузки зависят от позы и числа подтверждённых опор; деление веса на шесть неверно во многих фазах. Отдельный DC-стенд M07 не квалифицирует семейство сервоприводов с цифровым интерфейсом для ноги.",
         "en": "Momentary stall torque does not qualify standing. Loading depends on pose and confirmed supports; dividing weight by six is invalid in many phases. The M07 DC rig does not qualify the leg smart-actuator family."
       },
       "action": {
-        "ru": "Сопоставить расчётные моменты с характеристиками производителя и измеренным рабочим диапазоном кандидата при выбранных скорости, питании, охлаждении и цикле. На L1 проверить опорную нагрузку, ток, нагрев, люфт и повтор после охлаждения. Если длительный рейтинг отсутствует, ограничить вывод испытанными нагрузкой и длительностью; не объявлять непрерывную работу.",
+        "ru": "Сопоставить расчётные моменты с характеристиками производителя и измеренным рабочим диапазоном кандидата при выбранных скорости, питании, охлаждении и цикле. На L1 проверить опорную нагрузку, ток, нагрев, люфт и повтор после охлаждения. Если производитель не указывает допустимый длительный режим, ограничить вывод испытанными нагрузкой и длительностью; не объявлять непрерывную работу.",
         "en": "Compare calculated torque with manufacturer data and the candidate’s measured envelope at the selected speed, supply, cooling and duty. L1 must test support loading, current, heat, backlash and a repeat after cooling. If a continuous rating is unavailable, limit the claim to tested load and duration; do not claim continuous operation."
       },
       "wbs_refs": [
@@ -72,11 +72,11 @@
         "en": "Position commands and force control"
       },
       "detail": {
-        "ru": "Проектная страница рядом описывает force-QP и реальные сервоприводы, но не фиксирует их интерфейсы. Вычисленные Jᵀf имеют размерность момента: их нельзя отправить позиционному приводу как угол. Возможность читать ток также не означает возможность задавать момент.",
+        "ru": "Проектная страница рядом описывает распределение сил через QP и реальные сервоприводы, но не фиксирует их интерфейсы. Вычисленные Jᵀf имеют размерность момента: их нельзя отправить позиционному приводу как угол. Возможность читать ток также не означает возможность задавать момент.",
         "en": "The project page describes force-QP alongside physical servos without freezing their interfaces. Computed Jᵀf has torque units and cannot be sent to a position servo as an angle. Reading current does not imply torque command capability."
       },
       "action": {
-        "ru": "До тиражирования записать command/state interfaces привода, единицы и режимы. Основной результат использует медленное позиционное IK-управление с ограниченным выравниванием. Любой отдельный QP-эксперимент, включая симуляцию/HIL, относится к дальнейшему развитию. Силовой режим или внешняя admittance-петля требуют отдельной проверки выбранного интерфейса и измерений.",
+        "ru": "До тиражирования записать интерфейсы команд и состояния привода, единицы измерения и режимы. Основной результат использует медленное позиционное управление через IK с ограниченным выравниванием. Любой отдельный QP-эксперимент, включая симуляцию и HIL, относится к дальнейшему развитию. Управление усилием или внешний контур, преобразующий измеренную силу в движение (admittance), требуют отдельной проверки выбранного интерфейса и измерений.",
         "en": "Before replication record actuator command/state interfaces, units and modes. Core uses slow position/IK control with bounded leveling. Any separate QP experiment, including simulation/HIL, belongs to further development. Force control or an external admittance loop requires separate interface and measurement qualification."
       },
       "wbs_refs": [
@@ -137,7 +137,7 @@
         "en": "An expandable frame avoids a second design, but removing an arbitrary pair of legs does not guarantee a viable quadruped. The middle pair changes mass, stiffness, workspaces, loading and wiring."
       },
       "action": {
-        "ru": "В M05/M22 предусмотреть две конфигурации одного корпуса. Для четырёх ног обосновать размещение передних/задних опор, COM и допустимую область переноса веса. В M23 добавить среднюю пару, заново измерить массу/COM, проверить взаимные коллизии, реакции, крепёж и старые калибровки. Полигон опоры считать по подтверждённым контактам.",
+        "ru": "В M05/M22 предусмотреть две конфигурации одного корпуса. Для четырёх ног обосновать размещение передних/задних опор, COM и допустимую область переноса веса. В M23 добавить среднюю пару, заново измерить массу/COM, проверить взаимные коллизии, реакции, крепёж и старые калибровки. Опорный многоугольник считать по подтверждённым контактам.",
         "en": "Plan both configurations of one frame in M05/M22. For four legs, justify front/rear support placement, COM and the allowable weight-shift region. In M23 add the middle pair, remeasure mass/COM, and recheck collisions, reactions, fasteners and previous calibrations. Construct the support polygon from confirmed contacts."
       },
       "wbs_refs": [
@@ -168,7 +168,7 @@
         "en": "Three working devices do not qualify the source, harness or bus for eighteen. Average current hides simultaneous startup and voltage sag; command rate is not fresh telemetry rate. Similar connectors do not prove compatibility."
       },
       "action": {
-        "ru": "Зафиксировать напряжения, TTL/RS-485 либо иной интерфейс, протокол, топологию и прошивку. Рассчитать цикл по реальным пакетам, ответам, return delay и USB/CPU нагрузке; измерить 1/3/12/18 устройств. Проверить общий и ветвевые токи, просадки, защиту, DC-DC и нагрев соединений при стоянии/начале шага/остановке. Частоты и таймауты выбирать по измерениям.",
+        "ru": "Зафиксировать напряжения, TTL/RS-485 либо иной интерфейс, протокол, топологию и прошивку. Рассчитать цикл по реальным пакетам, ответам, задержкам ответа и USB/CPU нагрузке; измерить 1/3/12/18 устройств. Проверить общий и ветвевые токи, просадки, защиту, DC-DC и нагрев соединений при стоянии/начале шага/остановке. Частоты и таймауты выбирать по измерениям.",
         "en": "Freeze voltages, TTL/RS-485 or other interface, protocol, topology and firmware. Calculate cycles from actual packets, responses, return delay and USB/CPU load; measure 1/3/12/18 devices. Check supply and branch currents, sag, protection, DC-DC and connector heating during standing, step initiation and stopping. Choose rates and timeouts from measurements."
       },
       "wbs_refs": [
@@ -200,7 +200,7 @@
         "en": "Actuator current estimates, battery current and foot force are different quantities. Gearing, friction, backlash and geometry affect conversion; force inference becomes sensitive near singularities. A contact sensor indicates touch, not absence of slip."
       },
       "action": {
-        "ru": "Для каждого сигнала описать источник, единицы, диапазон, задержку и неопределённость. Если нужна сила по току, откалибровать на известных нагрузках и проверить на отдельных позах/повторах. Без такой проверки использовать ток для ограничений и диагностики, не как ground truth. Контакт и скольжение проверять раздельно.",
+        "ru": "Для каждого сигнала описать источник, единицы, диапазон, задержку и неопределённость. Если нужна сила по току, откалибровать на известных нагрузках и проверить на отдельных позах/повторах. Без такой проверки использовать ток для ограничений и диагностики, не как эталонные данные. Контакт и скольжение проверять раздельно.",
         "en": "Document each signal’s source, units, range, latency and uncertainty. If current-based force is needed, calibrate with known loads and validate on separate poses/repeats. Without that validation use current for limits and diagnostics, not ground truth. Test contact and slipping separately."
       },
       "wbs_refs": [
@@ -233,7 +233,7 @@
         "en": "Reduced simulated error or agreement with the same IMU is not independent body validation. Body orientation, surface inclination and commanded orientation are different quantities. The source ±10–15° is a design target, not an achieved range."
       },
       "action": {
-        "ru": "Сначала проверить IMU в известных ориентациях и преобразование imu_link→base_link. Затем сравнить корпус с внешним угловым ориентиром, заранее определить RMSE, пик, установление и погрешность измерения. Увеличивать уклон от проверенного малого значения с контролем контакта, тяги, тока, достижимости и насыщения; сохранять tested/untested/forbidden.",
+        "ru": "Сначала проверить IMU в известных ориентациях и преобразование imu_link→base_link. Затем сравнить ориентацию корпуса с внешним угловым ориентиром; заранее определить RMSE, пиковую ошибку, время установления и погрешность измерения. Увеличивать уклон от проверенного малого значения с контролем контакта, сцепления, тока, достижимости и насыщения. Отмечать режимы как испытанные, неисследованные или запрещённые.",
         "en": "First test the IMU in reference orientations and verify imu_link→base_link. Then compare the body against an external angular reference; predeclare RMSE, peak error, settling and measurement uncertainty. Increase inclination from a verified small value while checking contact, traction, current, reachability and saturation; retain tested/untested/forbidden regions."
       },
       "wbs_refs": [
@@ -254,11 +254,11 @@
     {
       "id": "HX-H09",
       "title": {
-        "ru": "Критерии quad и hex нельзя объединять",
+        "ru": "Критерии четырёхногой и шестиногой конфигураций нельзя объединять",
         "en": "Keep quadruped and hexapod acceptance separate"
       },
       "detail": {
-        "ru": "На странице один пункт объединяет 60/120 с стояния, а 30–50+ попыток стоят только напротив wave/ripple. Это может быть прочитано как отсутствие серии испытаний quadruped. Исходный roadmap требует повторяемости обоих этапов; один удачный ролик недостаточен.",
+        "ru": "На странице один пункт объединяет 60/120 с стояния, а 30–50+ попыток стоят только напротив wave/ripple. Это может быть прочитано как отсутствие серии испытаний четырёхногой конфигурации. Исходная дорожная карта требует повторяемости обоих этапов; один удачный ролик недостаточен.",
         "en": "The page combines 60/120 s standing in one row and places 30–50+ trials only beside wave/ripple. This could imply that the quadruped needs no trial series. The original roadmap requires repeats at both stages; one successful video is insufficient."
       },
       "action": {
@@ -285,11 +285,11 @@
         "en": "Bounded stopping and verified restart"
       },
       "detail": {
-        "ru": "Мгновенное снятие момента может уронить корпус, а удержание последней позы может перегреть привод. Универсальное слово stop не определяет физическое поведение. Камера и IMU не делают неизвестную поверхность проходимой.",
+        "ru": "Мгновенное снятие момента может уронить корпус, а удержание последней позы может перегреть привод. Универсальное слово остановка не определяет физическое поведение. Камера и IMU не делают неизвестную поверхность проходимой.",
         "en": "Immediate torque removal may drop the body, while indefinitely holding the last pose may overheat an actuator. The word stop alone does not define physical behavior. Camera loss and an IMU do not make unknown terrain traversable."
       },
       "action": {
-        "ru": "Нормальная остановка, ограниченный hold и независимое аварийное отключение — разные переходы. Потерю связи/узла/контакта проверить сначала в simulation/HIL, физически — со страховкой. Hold ограничить временем и нагрузкой; отключение проверить вместе с конечным положением корпуса. Восстановление требует явного re-arm и свежего состояния. Весь core работает на заранее проверенной поверхности без зависимости от камеры.",
+        "ru": "Штатная остановка, ограниченное удержание и независимое аварийное отключение — разные переходы. Потерю связи, узла или контакта сначала проверить в симуляции/HIL, затем физически со страховкой. Удержание ограничить временем и нагрузкой; отключение проверить вместе с конечным положением корпуса. Восстановление требует явного повторного разрешения запуска и свежих данных состояния. Вся основная программа выполняется на заранее проверенной поверхности без зависимости от камеры.",
         "en": "Normal stopping, bounded hold and independent emergency energy removal are distinct transitions. Test link/node/contact loss in simulation/HIL first, then physically with backup support. Bound hold by time/load; validate power removal with the resulting body position. Recovery requires explicit re-arming and fresh state. All core operation uses pre-verified surfaces without camera dependence."
       },
       "wbs_refs": [
@@ -319,7 +319,7 @@
         "en": "The short project section mentions crawl and contact but does not expose leg-lift conditions. This is the main stability misunderstanding risk for the intermediate quadruped."
       },
       "proposed_text": {
-        "ru": "Перед подъёмом ноги пересчитать центр масс всей сборки и область оставшихся подтверждённых опор. В медленном quadruped-crawl оставшиеся три опоры должны быть неколлинеарны; проекция COM должна иметь заранее выбранный положительный запас до границы их треугольника. Проверить допустимость реакций, трения, приводных нагрузок и всей траектории. Присутствие трёх контактов само по себе не разрешает шаг. При запаздывающем касании, скольжении или устаревших данных следующий подъём запрещён.",
+        "ru": "Перед подъёмом ноги пересчитать центр масс всей сборки и область оставшихся подтверждённых опор. При медленной ползущей походке четырёхногого робота три оставшиеся опоры не должны лежать на одной прямой; проекция центра масс должна иметь заранее выбранный положительный запас до границы их треугольника. Проверить допустимость реакций, трения, нагрузок приводов и всей траектории. Трёх контактов самих по себе недостаточно для разрешения шага. При запоздалом касании, скольжении или устаревших данных следующий подъём запрещён.",
         "en": "Before lifting a leg, recompute the complete assembly COM and the remaining confirmed support region. In slow quadruped crawl the remaining three supports must be non-collinear; COM projection must retain a predefined positive margin inside their triangle. Check reaction, friction, actuator-load and full-trajectory feasibility. Three contacts alone do not authorise a step. Delayed touchdown, slip or stale data blocks the next lift."
       },
       "existing_wbs_mapping": [
@@ -333,7 +333,7 @@
           "en": "Reproduce positive reactions and the negative-reaction counterexample in M19 p15; the latter must prohibit LIFT."
         },
         {
-          "ru": "Повторить stop в начале, середине и конце swing; никакой второй ноги в swing до подтверждённой опоры.",
+          "ru": "Повторить остановку в начале, середине и конце переноса ноги; до подтверждения опоры не начинать перенос второй ноги.",
           "en": "Repeat stopping at the beginning, middle and end of swing; no second leg may swing before support is confirmed."
         }
       ],
@@ -357,7 +357,7 @@
         "en": "Ripple has multiple conventions. The project card needs allowed overlapping swings, verified support combinations and switching rules."
       },
       "proposed_text": {
-        "ru": "Wave: последовательный перенос одной ноги, максимум одна нога в swing. Ripple: отдельная явно сохранённая таблица фаз и допустимых сочетаний ног; для первой версии можно выбрать максимум две одновременно переносимые ноги, если каждое сочетание оставшихся опор проходит расчёт. Это проектное ограничение, а не универсальное определение ripple. Проверить движение вперёд, поворот и боковое перемещение отдельно. Wave↔ripple переключать через согласованную фазу или остановку. Tripod и ходьба на пяти ногах остаются расширениями.",
+        "ru": "Wave — последовательный перенос ног, при котором одновременно переносится не более одной ноги. Ripple задаётся отдельной сохранённой таблицей фаз и допустимых сочетаний ног; для первой версии можно выбрать не более двух одновременно переносимых ног, если каждое сочетание оставшихся опор проходит расчёт. Это проектное ограничение, а не универсальное определение ripple. Отдельно проверить движение вперёд, поворот и боковое перемещение. Переключать wave↔ripple через согласованную фазу или остановку. Походка «трипод» и ходьба на пяти ногах остаются расширениями.",
         "en": "Wave uses sequential single-leg transfer with at most one leg swinging. Ripple has its own saved phase table and allowed leg combinations; the first version may limit overlap to two swinging legs if every remaining-support combination passes analysis. This is a project constraint, not a universal definition of ripple. Check forward, turning and sideways motion separately. Switch wave↔ripple through an aligned phase or stopping. Tripod and five-leg walking remain extensions."
       },
       "existing_wbs_mapping": [
@@ -366,11 +366,11 @@
       ],
       "acceptance_checks": [
         {
-          "ru": "Для каждой разрешённой фазы сохранить actual contacts, запланированные swing, support margin и причину перехода. Таймер не заменяет подтверждение touchdown.",
+          "ru": "Для каждой разрешённой фазы сохранять фактические контакты, планируемые переносы ног, запас устойчивости относительно границы опоры и причину перехода. Таймер не заменяет подтверждение касания.",
           "en": "For every permitted phase save actual contacts, planned swings, support margin and transition reason. A timer does not replace touchdown confirmation."
         },
         {
-          "ru": "Проверить недопустимый overlap и переключение походки в середине swing: отложить переход или пройти через stop.",
+          "ru": "Проверить недопустимое перекрытие фаз переноса и переключение походки в середине переноса ноги: отложить переход или выполнить его через остановку.",
           "en": "Test disallowed overlap and a mid-swing gait change: defer switching or pass through stop."
         }
       ],
@@ -388,11 +388,11 @@
         "en": "Explicit position-based levelling route"
       },
       "finding": {
-        "ru": "Фраза «измеренное выравнивание» корректна, но не определяет, как оно достижимо без force-controlled приводов. Это может создать ложное требование перенести QP прямо на позиционные сервоприводы.",
+        "ru": "Фраза «измеренное выравнивание» корректна, но не определяет, как оно достижимо без приводов с управлением по усилию. Это может создать ложное требование перенести QP прямо на позиционные сервоприводы.",
         "en": "Measured levelling is correct but does not specify how it works without force-controlled actuators. This can imply that QP must be sent directly to position servos."
       },
       "proposed_text": {
-        "ru": "Основной физический путь: IMU оценивает roll/pitch → ограниченный внешний регулятор корректирует желаемую позу корпуса → преобразование подтверждённых опорных точек в системы ног → проверенная IK → позиционные команды приводам. Пока стопа считается неподвижной опорой, её локальный мировой якорь не перемещать вместе с корпусом. Ограничивать угол, высоту, скорость изменения позы, joint range и близость к сингулярности. Контакт и скольжение проверять отдельно; это выравнивание положения, а не измеренное управление силами стоп.",
+        "ru": "Основная физическая схема: IMU оценивает крен и тангаж → внешний регулятор с ограничениями корректирует заданную позу корпуса → подтверждённые опорные точки преобразуются в системы координат ног → проверенный решатель IK → позиционные команды приводам. Пока стопа служит неподвижной опорой, её точку фиксации в мировой системе координат нельзя перемещать вместе с корпусом. Ограничивать угол, высоту, скорость изменения позы, диапазоны суставов и близость к сингулярности. Контакт и скольжение проверять отдельно: это выравнивание положения, а не измеренное управление силами стоп.",
         "en": "The baseline hardware route is IMU roll/pitch estimation → bounded outer body-pose correction → confirmed stance-point transforms into leg frames → validated IK → actuator position commands. While a foot is trusted as stationary support, its local world anchor must not move with the body. Limit angle, height, pose rate, joint range and singularity proximity. Check contact and slip separately; this is pose levelling, not measured foot-force control."
       },
       "existing_wbs_mapping": [
@@ -403,11 +403,11 @@
       ],
       "acceptance_checks": [
         {
-          "ru": "При фиксированных опорных world-points восстановленные world FK стоп остаются постоянными при небольшой смене желаемой позы корпуса.",
+          "ru": "При фиксированных опорных точках в мировой системе координат положения стоп, восстановленные прямой кинематикой в той же системе, остаются постоянными при небольшом изменении заданной позы корпуса.",
           "en": "With fixed stance world points, recovered world foot FK stays constant during a small desired body-pose change."
         },
         {
-          "ru": "До физических испытаний зафиксировать допустимые RMSE, peak error, settling time, окно измерения и условия насыщения. Сравнить target и measured roll/pitch с независимым статическим эталоном. Это план будущей проверки, а не утверждение о полученных результатах.",
+          "ru": "До физических испытаний зафиксировать допустимые RMSE, пиковую ошибку, время установления, окно измерения и условия насыщения. Сравнить заданные и измеренные крен и тангаж с независимым статическим эталоном. Это план будущей проверки, а не сообщение о полученных результатах.",
           "en": "Before physical testing, freeze acceptable RMSE, peak error, settling time, measurement window and saturation conditions. Compare target/measured roll/pitch with an independent static reference. These are planned checks, not claims of achieved results."
         }
       ],
@@ -428,11 +428,11 @@
         "en": "Current and Jᵀf are not ready-to-send commands"
       },
       "finding": {
-        "ru": "Текущее предупреждение о калибровке силы по току полезно, но лучше уточнить физическую величину и знак. Формулировка M23 p6 сокращает выражение до Jᵀf; без M09 это можно прочитать как полный holding torque.",
+        "ru": "Текущее предупреждение о калибровке силы по току полезно, но лучше уточнить физическую величину и знак. Формулировка M23 p6 сокращает выражение до Jᵀf; без M09 это можно прочитать как полный момент удержания.",
         "en": "The current warning about current-to-force calibration is useful but should specify the quantity and sign. M23 p6 abbreviates the expression to Jᵀf, which can be misread as complete holding torque without M09."
       },
       "proposed_text": {
-        "ru": "Если f — сила земли на стопу, Jᵀf — её внешнее обобщённое действие. Для принятой модели неподвижной ноги статический момент привода включает вес звеньев и противоположное действие опоры: τ_act≈g_leg(q)−J_leg(q)ᵀf. Формула используется для расчёта нагрузки; позиционный сервопривод не принимает её как угол. Телеметрию тока использовать для контроля нагрузки/ограничений; оценку joint torque или foot force подписывать как модельную, с калибровкой и неопределённостью. Supply current, winding current и внутренний current register не взаимозаменяемы.",
+        "ru": "Если f — сила земли на стопу, Jᵀf — соответствующее внешнее обобщённое усилие. В принятой модели неподвижной ноги статический момент привода учитывает вес звеньев и противоположное действие опоры: τ_act≈g_leg(q)−J_leg(q)ᵀf. Формула используется для расчёта нагрузки; позиционный сервопривод не принимает её результат как угол. Телеметрию тока использовать для контроля нагрузки и ограничений. Оценку момента в суставе или силы на стопе обозначать как модельную, с калибровкой и неопределённостью. Ток питания, ток обмотки и значение внутреннего регистра тока не взаимозаменяемы.",
         "en": "When f is the ground force on the foot, Jᵀf is its external generalised action. In the selected fixed-leg static model, actuator torque includes link weight and the opposite support contribution: τ_act≈g_leg(q)−J_leg(q)ᵀf. This is a load calculation, not an angle command to a position servo. Use current telemetry for load/limit monitoring; label inferred joint torque or foot force as model-based, with calibration and uncertainty. Supply current, winding current and an internal current register are not interchangeable."
       },
       "existing_wbs_mapping": [
@@ -448,7 +448,7 @@
           "en": "For one joint, compare r×f, Jᵀf and holding sign, then add link weight separately."
         },
         {
-          "ru": "Зафиксировать измеряемую величину и единицы каждого current channel; не заявлять измерение силы стопы по наличию регистра тока.",
+          "ru": "Зафиксировать измеряемую величину и единицы каждого канала измерения тока; не заявлять измерение силы стопы по наличию регистра тока.",
           "en": "Record each current channel’s physical quantity and units; a current register alone does not establish foot-force measurement."
         }
       ],
@@ -470,11 +470,11 @@
         "en": "QP/MPC/RL belong to further development"
       },
       "finding": {
-        "ru": "Общие карточки M20/M21 верны. В gate M23 фраза «timeout QP → fallback» без среды может выглядеть обязательным физическим force controller. Нужно явно сохранить исходные software/HIL проверки и исходный scope.",
+        "ru": "Общие карточки M20/M21 корректны. В контрольной проверке M23 фраза «таймаут QP → резервный режим» без указания среды может выглядеть требованием физического силового управления. Нужно явно сохранить исходные программные проверки и HIL, а также исходные границы работ.",
         "en": "M20/M21 cards are sound. The M23 gate “QP timeout → fallback” lacks an evidence level and can imply a mandatory hardware force controller. Preserve source software/HIL checks and scope explicitly."
       },
       "proposed_text": {
-        "ru": "В основной срок не входят даже отдельные учебные QP/MPC/RL-кампании. Они сохранены в ветках D_FORCE, D_MPC, D_IL и D_RL. Основной физический результат — классический position/IK-контроль с выравниванием. При выборе расширения сначала проверить алгоритм в симуляции, infeasible/timeout и смену контактов — в software/HIL. Перенос силового или обучаемого управления требует отдельной квалификации привода, модели, частот и ограничений.",
+        "ru": "В основной срок не входят даже отдельные учебные эксперименты QP/MPC/RL. Они сохранены в ветках D_FORCE, D_MPC, D_IL и D_RL. Основной физический результат — классическое позиционное управление через IK с выравниванием. Для расширения сначала проверить алгоритм в симуляции, затем отсутствие допустимого решения, истечение времени ожидания и смену контактов — программно и через HIL. Перенос силового или обучаемого управления требует отдельной проверки привода, модели, частот и ограничений.",
         "en": "Core timing excludes even separate educational QP/MPC/RL campaigns. They are retained in D_FORCE, D_MPC, D_IL and D_RL. The core hardware outcome is classical position/IK control with leveling. When selecting an extension, validate algorithms in simulation first, and infeasibility/timeout/contact changes in software/HIL. Force or learned control transfer requires separate actuator, model, rate and limit qualification."
       },
       "existing_wbs_mapping": [
@@ -483,11 +483,11 @@
       ],
       "acceptance_checks": [
         {
-          "ru": "В таблице evidence явно пометить simulation, replay, HIL, supported rig и floor trial; виртуальный PASS не закрывает физическое стояние.",
+          "ru": "В таблице подтверждающих результатов различать симуляцию, воспроизведение записей, HIL, испытание на стенде со страховкой и испытание на полу. Успех виртуальной проверки не подтверждает физическое стояние.",
           "en": "Label simulation, replay, HIL, supported rig and floor trials in the evidence table; a virtual PASS does not close physical standing."
         },
         {
-          "ru": "Смена набора контактов во время solve отклоняет старый результат даже при свежем timestamp; fallback повторно валиден для текущих опор.",
+          "ru": "Если во время вычисления решения набор контактов изменился, старый результат отклоняется даже при свежей временной метке; резервное решение заново проверяется для текущих опор.",
           "en": "A contact-set change during solving rejects the old result even with a fresh timestamp; fallback must be valid for current supports."
         }
       ],
@@ -509,11 +509,11 @@
         "en": "Model and loads when expanding 12→18"
       },
       "finding": {
-        "ru": "Карточка обновляет приводы и шину. Полезно явно перенести математическое масштабирование floating base и проверки полной геометрии, уже предусмотренные исходником.",
+        "ru": "Карточка обновляет приводы и шину. Полезно явно включить математическое расширение модели с плавающим основанием и проверки полной геометрии, уже предусмотренные исходником.",
         "en": "The card updates actuators and the bus. Explicitly include floating-base model scaling and full-geometry checks already required by the source."
       },
       "proposed_text": {
-        "ru": "Основная версия: пересчитать массу, COM, инерции, hip transforms, зеркальные оси, коллизии и нагрузки при расширении 12→18 суставов. Равные доли веса 1/6 не предполагаются. В M19 обновляется готовая модель, новый solver не пишется. Углубление M20: при quaternion корпуса q имеет 25 координат, v — 24, для k точечных контактов Jc имеет размер 3k×24, распределение сил — 6×3k; эти отдельные force-model упражнения относятся к развитию.",
+        "ru": "Основная версия: при расширении с 12 до 18 суставов пересчитать массу, центр масс, инерции, преобразования систем координат тазобедренных суставов, зеркальные оси, столкновения и нагрузки. Равные доли веса 1/6 не предполагаются. M19 обновляет готовую модель, новый решатель не создаётся. Углубление M20: при представлении ориентации корпуса кватернионом q содержит 25 координат, v — 24; для k точечных контактов размер Jc равен 3k×24, матрицы распределения сил — 6×3k. Эти упражнения по силовой модели относятся к дальнейшему развитию.",
         "en": "Core: update mass, COM, inertias, hip transforms, mirrored axes, collisions and loads when expanding from twelve to eighteen joints. Equal one-sixth weight shares are not assumed. M19 updates an existing model rather than building a new solver. M20 extension: with a body quaternion, q has 25 coordinates, v has 24, Jc is 3k×24 for k point contacts and force allocation is 6×3k; these separate force-model exercises belong to further development."
       },
       "existing_wbs_mapping": [
@@ -523,7 +523,7 @@
       ],
       "acceptance_checks": [
         {
-          "ru": "Проверить фактическую и численную FK каждой новой и прежней ноги; сохранять независимые reference poses и non-collinear support cases.",
+          "ru": "Проверить фактическую и численную FK каждой новой и прежней ноги; сохранять независимые эталонные позы и конфигурации с неколлинеарными опорами.",
           "en": "Check actual/numerical FK for new and retained legs; preserve independent reference poses and non-collinear support cases."
         },
         {
@@ -548,11 +548,11 @@
         "en": "Support plane and body orientation are different estimates"
       },
       "finding": {
-        "ru": "Главная карточка упоминает плоскость и ±10–15°, но не раскрывает отказ при вырожденной геометрии и различие между surface slope, body target и gravity direction.",
+        "ru": "Главная карточка упоминает плоскость и ±10–15°, но не раскрывает отказ при вырожденной геометрии и различие между уклоном поверхности, заданной ориентацией корпуса и направлением силы тяжести.",
         "en": "The main card mentions the plane and ±10–15° but does not expose geometric-degeneracy rejection or the distinction between surface slope, body target and gravity."
       },
       "proposed_text": {
-        "ru": "Оценивать локальную плоскость только по достоверным опорам в одной системе координат; проверять ранг, обусловленность, остатки и выбросы. Три почти коллинеарные точки или общий ошибочный IMU-поворот не становятся хорошим эталоном из-за малого residual. Для наклонной плоскости проецировать COM по направлению тяжести, а не по нормали плоскости. Указать отдельно угол поверхности и целевой угол корпуса. ±10–15° остаётся проектным ориентиром: фактический диапазон определяется геометрией, сцеплением, нагрузкой, contact quality и испытаниями.",
+        "ru": "Оценивать локальную плоскость только по достоверным опорам в одной системе координат; проверять ранг, обусловленность, невязки и выбросы. Три почти коллинеарные точки или общая ошибка поворота IMU не становятся надёжным эталоном из-за малой невязки. На наклонной плоскости проецировать центр масс по направлению тяжести, а не по нормали. Отдельно указывать угол поверхности и заданный угол корпуса. ±10–15° остаётся проектным ориентиром: фактический диапазон определяется геометрией, сцеплением, нагрузкой, достоверностью контактов и испытаниями.",
         "en": "Estimate the local plane from trustworthy supports in one frame; check rank, conditioning, residuals and outliers. Three nearly collinear points or a shared erroneous IMU rotation do not become a reliable reference through a small residual. On a slope, project COM along gravity rather than the plane normal. State surface angle separately from desired body angle. ±10–15° remains a design guide; the achieved envelope follows geometry, traction, loading, contact quality and tests."
       },
       "existing_wbs_mapping": [
@@ -561,11 +561,11 @@
       ],
       "acceptance_checks": [
         {
-          "ru": "Плоскости с известной нормалью, шум, outlier, две точки и почти коллинеарный набор; invalid estimate должен вызвать ограничение.",
+          "ru": "Проверить плоскости с известной нормалью, шум, выбросы, две точки и почти коллинеарный набор. Недостоверная оценка должна приводить к ограничению движения.",
           "en": "Known planes, noise, an outlier, two points and nearly collinear contacts; invalid estimates must trigger restriction."
         },
         {
-          "ru": "Сохранить динамический counterexample CoP из M23 p15 как учебную проверку: формула постоянной высоты не объявляется общей гарантией для неровного рельефа.",
+          "ru": "Сохранить динамический контрпример для центра давления (CoP) из M23, стр. 15, как учебную проверку: соотношение для постоянной высоты не является общей гарантией для неровного рельефа.",
           "en": "Keep the M23 p15 dynamic CoP counterexample as an educational check; the constant-height formula is not a general guarantee for uneven terrain."
         }
       ],
@@ -580,15 +580,15 @@
       "id": "HC08",
       "priority": "medium",
       "title": {
-        "ru": "Границы IMU в ядре; depth-карта в развитии",
+        "ru": "Ограничения IMU в основной программе; карта глубины в дальнейшем развитии",
         "en": "IMU limits in core; depth mapping in development"
       },
       "finding": {
-        "ru": "В проектном summary нет явного задания с сохранённой depth map; формулировка про ровную поверхность может скрыть обязательное сравнение ограниченного режима без камеры. Исходник не требует полноценного автономного rugged-terrain planner.",
+        "ru": "В кратком описании проекта нет явного задания с сохранённой картой глубины; формулировка о ровной поверхности может скрыть обязательное сравнение ограниченного режима без камеры. Исходник не требует полноценного автономного планировщика для пересечённой местности.",
         "en": "The project summary omits the saved-depth-map exercise; the flat-surface wording can hide the required camera-free restricted-mode comparison. The source does not require a full autonomous rugged-terrain planner."
       },
       "proposed_text": {
-        "ru": "В core hexapod нет visual navigation: только заранее проверенные поверхности и подтверждённые опоры. IMU не измеряет неизвестный рельеф; абсолютные позиция/yaw без внешнего ориентира могут дрейфовать. Короткие маршруты проверять внешними маркерами/измерениями. Исходное сравнение кандидатов стоп по записанной depth map и контактам сохранено в 3D-зрении/автономности. При выборе этой ветки проверять unknown depth, возраст кадра и переход в испытанный ограниченный режим или stop.",
+        "ru": "В основной версии гексапода нет визуальной навигации: используются только заранее проверенные поверхности и подтверждённые опоры. IMU не измеряет неизвестный рельеф; абсолютные координаты и угол рыскания без внешнего ориентира могут дрейфовать. Короткие маршруты проверять внешними маркерами и измерениями. Исходное сравнение возможных опор по записанной карте глубины и контактам сохранено в разделах 3D-зрения и автономности. В этой ветке проверять неизвестную глубину, возраст кадра и переход в испытанный ограниченный режим либо остановку.",
         "en": "Core hexapod has no visual navigation: use pre-verified surfaces and confirmed supports. An IMU does not measure unknown terrain; absolute position/yaw can drift without an external reference. Verify short routes using external markers/measurements. The original recorded-depth-map versus contact foothold comparison is retained in 3D vision/autonomy. When choosing that branch, test unknown depth, image age and transition to a validated restricted mode or stop."
       },
       "existing_wbs_mapping": [
@@ -603,7 +603,7 @@
           "en": "Development only: compare one scene with and without camera; unknown depth never becomes zero height, nor old imagery fresh."
         },
         {
-          "ru": "Разделить estimator input и independent reference; ground truth остаётся только оценкой качества.",
+          "ru": "Разделять входные данные оценивателя и независимый эталон. Эталонные данные используются только для оценки качества.",
           "en": "Separate estimator inputs and independent reference; ground truth remains evaluation-only."
         }
       ],
@@ -623,11 +623,11 @@
         "en": "Trial criteria by configuration and conditions"
       },
       "finding": {
-        "ru": "Число 30–50+ в summary может читаться как требование к каждой строке или каждому модулю. M23 прямо задаёт рабочую цель 40 попыток разных классов, а не 40 повторов каждого класса; уже протокольные попытки можно включать без повторного счёта.",
+        "ru": "Число 30–50+ в кратком описании может читаться как требование к каждой строке или каждому модулю. M23 прямо задаёт рабочую цель 40 попыток разных классов, а не 40 повторов каждого класса; уже протокольные попытки можно включать без повторного счёта.",
         "en": "The summary’s 30–50+ count can be read as applying to every row/module. M23 explicitly targets forty attempts across classes, not forty per class; already-protocolled trials may be included without double counting."
       },
       "proposed_text": {
-        "ru": "M22 отдельно подтверждает ≥60 с физического стояния, crawl и остановку; M23 — ≥120 с, wave/ripple и выравнивание на проверенных поверхностях. Для M23 40 попыток: 10 wave, 10 ripple, 10 leveling и 10 start/stop/transition с контролируемыми отказами. Указать независимую попытку, ревизии, пределы, N и отказы; меньшее N допускается при заранее суженном выводе. Эта серия не устанавливает ресурс или промышленную надёжность.",
+        "ru": "M22 отдельно подтверждает ≥60 с физического стояния, походку crawl и остановку; M23 — ≥120 с, wave/ripple и выравнивание на проверенных поверхностях. Серия M23 содержит 40 попыток: 10 wave, 10 ripple, 10 выравниваний и 10 запусков, остановок и переходов с контролируемыми отказами. Определить независимую попытку, ревизии, пределы, N и отказы; меньшее N допускается при заранее ограниченных выводах. Эта серия не подтверждает ресурс или промышленную надёжность.",
         "en": "M22 independently demonstrates ≥60 s physical standing, crawl and stop; M23 demonstrates ≥120 s, wave/ripple and leveling on validated surfaces. M23 uses forty trials: ten wave, ten ripple, ten leveling and ten start/stop/transition with controlled faults. Define independent attempts, revisions, limits, N and failures; a smaller N requires a prospectively narrower conclusion. This series does not establish service life or industrial reliability."
       },
       "existing_wbs_mapping": [
@@ -637,7 +637,7 @@
       ],
       "acceptance_checks": [
         {
-          "ru": "Четырёхногие и шестиногие результаты не объединяются в одну вероятность успеха; sample rows и шаги не объявляются независимыми попытками.",
+          "ru": "Результаты четырёхногой и шестиногой конфигураций не объединяются в одну вероятность успеха; строки измерений и отдельные шаги не считаются независимыми попытками.",
           "en": "Four-leg and six-leg results are not pooled into one success probability; rows and steps are not independent trials."
         },
         {
@@ -663,7 +663,7 @@
         "en": "Jazzy supplies official Ubuntu 24.04 ARM64 packages and is supported through May 2029. Gazebo's current official table also lists Harmonic through May 2029; Jazzy/Harmonic is the recommended pairing. Planned June 2028 completion falls within both lifecycles. A newer release alone does not require migration."
       },
       "action": {
-        "ru": "Зафиксировать версии ОС, RMW, ROS-пакетов, Gazebo, gz_ros2_control, MCU SDK и драйвера. Использовать Jazzy-ветки документации и пакеты согласованной пары; проверять обновления на сохранённом replay/одной ноге перед всей платформой. Не смешивать Gazebo Classic и Harmonic.",
+        "ru": "Зафиксировать версии ОС, RMW, ROS-пакетов, Gazebo, gz_ros2_control, SDK микроконтроллера и драйвера. Использовать Jazzy-ветки документации и пакеты согласованной пары; проверять обновления воспроизведением сохранённых записей и на одной ноге перед всей платформой. Не смешивать Gazebo Classic и Harmonic.",
         "en": "Record OS, RMW, ROS packages, Gazebo, gz_ros2_control, MCU SDK and driver versions. Use Jazzy documentation branches and matched packages; validate updates on saved replay/one leg before the full platform. Do not mix Gazebo Classic with Harmonic."
       },
       "wbs_refs": [
@@ -688,11 +688,11 @@
         "en": "ARM64 VM is a configuration to qualify"
       },
       "detail": {
-        "ru": "В отличие от ROS, Gazebo Harmonic перечисляет Ubuntu amd64 как официальную платформу, а ARM — как best-effort. Гостевая графика и плагины M4/UTM требуют фактической проверки. Работа процесса без окна не доказывает наличие depth images; изменение renderer не гарантирует прежний набор сенсоров.",
+        "ru": "В отличие от ROS, Gazebo Harmonic указывает Ubuntu amd64 как официальную платформу, а ARM — как платформу с ограниченной поддержкой (best effort). Гостевая графика и плагины M4/UTM требуют фактической проверки. Работа процесса без окна не подтверждает наличие кадров глубины; смена средства визуализации не гарантирует сохранение набора датчиков.",
         "en": "Unlike ROS, Gazebo Harmonic lists Ubuntu amd64 as an official platform and ARM as best-effort. M4/UTM guest graphics and plugins need a practical check. A windowless process does not establish available depth images; changing renderer does not guarantee the same sensor features."
       },
       "action": {
-        "ru": "В M01 выполнить 6-часовой smoke-test. Проверить не только старт приложения, но /clock, изменяющиеся joint states и непустые валидные кадры тестового сенсора. При провале зафиксировать HOLD и доступный путь решения; не заменять отсутствующий сенсор идеальными данными без маркировки.",
+        "ru": "В M01 выполнить 6-часовую базовую проверку. Проверить не только запуск приложения, но и /clock, изменение состояний суставов и непустые корректные кадры тестового датчика. При неуспехе зафиксировать HOLD и доступный способ решения; отсутствующие данные датчика нельзя подменять идеальными данными без явной маркировки.",
         "en": "Run the transferred six-hour smoke test in M01. Check /clock, changing joint states and nonempty valid test-sensor frames, not just process startup. On failure record HOLD and an accessible resolution path; never silently replace a missing sensor with ideal data."
       },
       "wbs_refs": [
@@ -715,11 +715,11 @@
         "en": "Three control levels and actual actuator capabilities"
       },
       "detail": {
-        "ru": "У smart-servo уже есть внутренний регулятор. ROS выдаёт ограниченную целевую траекторию, MCU/драйвер контролирует свежесть и пределы, а привод исполняет поддерживаемый режим. Наличие effort-интерфейса в симуляции не создаёт управление моментом на физическом позиционном приводе; ток питания не равен моменту отдельного сустава.",
+        "ru": "Сервопривод с цифровым интерфейсом уже имеет внутренний регулятор. ROS задаёт ограниченную целевую траекторию, микроконтроллер или драйвер проверяет актуальность команд и пределы, а привод исполняет поддерживаемый режим. Наличие интерфейса effort в симуляции не создаёт управление моментом у реального позиционного привода; ток питания не равен моменту отдельного сустава.",
         "en": "A smart servo already contains an internal controller. ROS supplies a bounded reference, the MCU/driver enforces freshness and limits, and the actuator executes its supported mode. A simulated effort interface does not create physical torque control in a position actuator; supply current is not individual joint torque."
       },
       "action": {
-        "ru": "До L1 и закупки набора записать command/state interfaces кандидата. Для position-only версии использовать ограниченные q-цели и измеренную q; не публиковать выдуманный measured effort. Force-QP — отдельное направление развития с подтверждённым силовым интерфейсом перед аппаратным переносом. Измеренный current proxy маркировать как калиброванную оценку, а не ground truth.",
+        "ru": "До L1 и закупки комплекта записать интерфейсы команд и состояния кандидата. Для позиционной версии использовать ограниченные целевые координаты q и измеренные q; не публиковать вымышленные измеренные усилия. Распределение сил через QP — отдельное направление развития; перед переносом на оборудование нужен подтверждённый интерфейс силового управления. Величины, косвенно оценённые по току, обозначать как калиброванные оценки, а не эталонные измерения.",
         "en": "Before L1 and bulk procurement record the candidate command/state interfaces. Position-only core uses bounded q targets and measured q; never publish invented measured effort. Force-QP is a separate development direction, requiring a qualified force interface before hardware transfer. Label current proxies as calibrated estimates rather than ground truth."
       },
       "wbs_refs": [
@@ -747,7 +747,7 @@
         "en": "gz_ros2_control can hold unclaimed joints by default through hold_joints. Its position interface also uses simplified dynamics. This helps interface experiments but can hide passive collapse, internal delay, saturation and actual torque loss."
       },
       "action": {
-        "ru": "Явно записать hold_joints и режим управления. Для опыта снятия момента отключить искусственное удержание и проверить пассивную модель/реальный тормоз. Сравнить модель привода с физическими логами L1/M13; измеренное поведение после disable/power-off отдельно подтвердить на поддержанной конструкции в M22/M23.",
+        "ru": "Явно указать hold_joints и режим управления. Для опыта со снятием момента отключить искусственное удержание и проверить пассивную модель или реальный тормоз. Сравнить модель привода с физическими журналами L1/M13; поведение после отключения привода или питания отдельно проверить на конструкции со страховкой в M22/M23.",
         "en": "Record hold_joints and control mode explicitly. Disable artificial holding for torque-removal experiments and check the passive model/actual brake. Compare the actuator model with L1/M13 physical logs; independently verify disable/power-off behaviour on the supported structure in M22/M23."
       },
       "wbs_refs": [
@@ -768,11 +768,11 @@
         "en": "Qualify HIL and VM by measured delays"
       },
       "detail": {
-        "ru": "Параметр update_rate или средний real-time factor около единицы не доказывают выполнение каждого дедлайна. USB passthrough, гипервизор, запись bag, сеть и камера способны менять очередь и возраст измерений. Простой возврат пакета MCU не является HIL с вычислением управления.",
+        "ru": "Параметр update_rate и средний коэффициент реального времени около единицы не доказывают соблюдение каждого предельного срока. Проброс USB, гипервизор, запись rosbag, сеть и камера могут менять очередь и возраст измерений. Простое возвращение пакета микроконтроллером не является HIL с вычислением управления.",
         "en": "An update_rate parameter or mean real-time factor near one does not establish every deadline. USB passthrough, hypervisor, bag recording, networking and camera load affect queues and sample age. MCU packet echo is not closed-loop HIL computation."
       },
       "action": {
-        "ru": "M06 измеряет локальный цикл, M12 — callbacks/QoS, M13 — замкнутый HIL с MCU. Для каждого объявить период, допустимый возраст данных и ответ при опоздании; сохранить p50/p95/p99/max, пропуски и длительность прогона. Повторить при CPU/USB-нагрузке и записи логов. Общий ПК/VM не назначать единственным слоем защиты; при непрохождении временного критерия оставить HIL на HOLD.",
+        "ru": "M06 измеряет локальный цикл, M12 — обратные вызовы и QoS, M13 — замкнутый HIL с микроконтроллером. Для каждого задать период, допустимый возраст данных и реакцию на опоздание; сохранять p50/p95/p99, максимум, пропуски и длительность запуска. Повторить под нагрузкой CPU/USB и при записи журналов. Обычный ПК или виртуальная машина не должны быть единственным уровнем защиты; при невыполнении временных требований оставить HIL в состоянии HOLD.",
         "en": "M06 measures the local loop, M12 callbacks/QoS, and M13 closed-loop MCU HIL. Specify period, allowed sample age and late-data response; retain p50/p95/p99/max, misses and run duration. Repeat under CPU/USB and logging load. The general-purpose host/VM must not be the sole protection layer; leave HIL on HOLD when timing fails."
       },
       "wbs_refs": [
@@ -794,11 +794,11 @@
         "en": "Separate acquisition time from delivery time"
       },
       "detail": {
-        "ru": "header.stamp, MCU ticks, ROS time и монотонное время разных машин не взаимозаменяемы. При последовательном опросе 18 приводов один JointState может скрывать разброс времени каналов. Вычитание несинхронизированных часов не даёт одностороннюю задержку.",
+        "ru": "header.stamp, отсчёты таймера микроконтроллера, время ROS и монотонные часы разных машин не взаимозаменяемы. При последовательном опросе 18 приводов одно сообщение JointState может скрывать разницу во времени измерений каналов. Вычитание показаний несинхронизированных часов не даёт одностороннюю задержку.",
         "en": "header.stamp, MCU ticks, ROS time and different machines' monotonic clocks are not interchangeable. Sequential polling of 18 actuators can hide channel-time skew inside one JointState. Subtracting unsynchronized clocks does not yield one-way latency."
       },
       "action": {
-        "ru": "Сохранять acquisition timestamp, host receipt, seq и session/boot ID; описать преобразование часов и его ошибку либо сообщать только RTT/локальные интервалы. Для TF и оценки состояния использовать время измерения; учитывать разброс возрастов суставов. Аппаратная свежесть проверяется монотонными часами, не останавливающимся /clock. При reset/jump очистить невалидные буферы; replay запускается в отдельном режиме без выхода на реальные приводы.",
+        "ru": "Сохранять время измерения, время получения на компьютере, порядковый номер и идентификатор сеанса или загрузки. Описать преобразование между часами и его ошибку либо сообщать только RTT и локальные интервалы. Для TF и оценки состояния использовать время измерения; учитывать разный возраст данных суставов. Актуальность аппаратных данных проверять монотонными часами, которые не останавливаются вместе с /clock. После сброса или скачка времени очистить недействительные буферы; воспроизведение записей запускать отдельно, без команд реальным приводам.",
         "en": "Retain acquisition timestamp, host receipt, sequence and session/boot ID; document clock mapping and uncertainty or report only RTT/local intervals. Use measurement time for TF and state estimation and account for joint-age skew. Hardware freshness uses monotonic time, not a pausable /clock. On reset/jump invalidate affected buffers; replay runs in a separate mode without physical actuator output."
       },
       "wbs_refs": [
@@ -821,11 +821,11 @@
         "en": "QoS does not replace motion authorization"
       },
       "detail": {
-        "ru": "Reliable относится к доставке, а не к свежести команды. Transient-local способен передавать сохранённые данные позднему подписчику; deadline/liveliness дают события, но сами не определяют физическую остановку. Несовместимый профиль recorder может дать неполный bag без очевидного сбоя процесса.",
+        "ru": "Политика Reliable относится к доставке, а не к актуальности команды. Transient-local может передавать сохранённые данные позднему подписчику; deadline/liveliness создают события, но сами по себе не определяют физическую остановку. Несовместимый профиль узла записи может дать неполный rosbag без очевидного сбоя процесса.",
         "en": "Reliable delivery does not establish command freshness. Transient-local can deliver stored data to a late subscriber; deadline/liveliness provide events but do not define physical stopping. Incompatible recorder QoS can produce an incomplete bag without an obvious process crash."
       },
       "action": {
-        "ru": "Для каждой темы фиксировать профиль, частоту, deadline и обработку stale. Движение принимать только с текущей session, новым seq, валидным сроком и допуском состояния; восстановление связи не запускает старую команду. Проверить поздний подписчик, несовместимый QoS, медленный callback, дубликат и пропуски. TF/static TF допускают собственные профили, не копировать их на команды движения.",
+        "ru": "Для каждого топика фиксировать профиль QoS, частоту, предельный интервал deadline и обработку устаревших данных. Команды движения принимать только для текущего сеанса, с новым порядковым номером, действующим сроком и разрешающим состоянием. Восстановление связи не запускает старую команду. Проверить позднего подписчика, несовместимый QoS, медленный обратный вызов, дубликаты и пропуски. Для TF и статических TF допустимы отдельные профили; не копировать их на команды движения.",
         "en": "For each topic record profile, frequency, deadline and stale handling. Accept motion only with the current session, a new sequence, valid expiry and allowed state; reconnecting must not execute an old command. Test late subscription, incompatible QoS, slow callbacks, duplicates and loss. TF/static TF use their own profiles; do not copy them blindly to motion commands."
       },
       "wbs_refs": [
@@ -850,7 +850,7 @@
         "en": "RS-485, CAN and USB do not provide interchangeable rate guarantees. The actual cycle depends on actuator protocol, command/reply sizes, turnarounds, gaps, retries and electrical topology. ESP32-S3 requires an external TWAI transceiver; generic API FD fields do not establish FD capability of a specific chip."
       },
       "action": {
-        "ru": "Выбрать совместимый транспорт по паспорту кандидата, не реализовывать все варианты. Рассчитать и измерить полный цикл command+feedback на 12, затем 18 осях, включая повтор, fault/температуру и дополнительный USB-трафик. Записать mapping IDs/знаки/нули, максимальный возраст каждого канала, очереди и bus-off/reconnect. При перегрузке снизить частоту необязательной телеметрии или переработать топологию; не выдумывать частоту feedback из частоты ROS публикации.",
+        "ru": "Выбрать совместимый транспорт по паспорту кандидата; реализовывать все варианты не нужно. Рассчитать и измерить полный цикл команд и обратной связи на 12, затем на 18 осях, включая повторные передачи, отказы, температуру и дополнительный трафик USB. Записать соответствие ID суставам, знаки, нули, максимальный возраст каждого канала, очереди, отключение от шины и восстановление. При перегрузке снизить частоту необязательной телеметрии или изменить топологию; частота публикации ROS не подтверждает частоту реальных измерений.",
         "en": "Select a compatible transport from the candidate's specification; do not implement every option. Calculate and measure the full command/feedback cycle for 12 then 18 axes, including retries, faults/temperature and extra USB traffic. Record IDs/signs/zeros, per-channel maximum age, queues and bus-off/reconnect behaviour. On overload reduce optional telemetry or redesign topology; ROS publication frequency must not masquerade as physical feedback rate."
       },
       "wbs_refs": [
@@ -867,15 +867,15 @@
     {
       "id": "HEX-S09",
       "title": {
-        "ru": "Watchdog проверяется без отладчика",
+        "ru": "Сторожевой таймер проверяется без отладчика",
         "en": "Validate watchdogs without the debugger"
       },
       "detail": {
-        "ru": "ESP-IDF различает interrupt и task watchdog. OpenOCD/JTAG способен отключать их аппаратные таймеры; успешный тест под отладчиком не подтверждает автономное поведение. Пропавший host и зависший MCU — разные отказы.",
+        "ru": "ESP-IDF различает сторожевые таймеры прерываний и задач. OpenOCD/JTAG может отключать их аппаратные таймеры; успешная проверка под отладчиком не подтверждает автономную работу. Потеря связи с компьютером и зависание микроконтроллера — разные отказы.",
         "en": "ESP-IDF distinguishes interrupt and task watchdogs. OpenOCD/JTAG can disable their hardware timers; a debugger-attached test does not validate autonomous behaviour. A missing host and a hung MCU are different faults."
       },
       "action": {
-        "ru": "Повторить watchdog/перезапуск в автономной проверочной сборке без OpenOCD, сохранить конфигурацию, причину reset и независимую запись enable/выхода до и после загрузки. Watchdog обслуживается по здоровью критического цикла, не безусловным таймером. Host loss отдельно запускает локальный timeout; после boot/reconnect нет автоматического torque enable.",
+        "ru": "Повторить проверку сторожевого таймера и перезапуска в автономной сборке без OpenOCD. Сохранить конфигурацию, причину сброса и независимую запись сигнала разрешения и выходов до и после загрузки. Обслуживать сторожевой таймер только при исправном критическом цикле, а не безусловно по таймеру. Потеря связи с компьютером отдельно вызывает локальный таймаут; после загрузки или восстановления связи привод автоматически не включается.",
         "en": "Repeat watchdog/reset tests in a standalone test build without OpenOCD; retain configuration, reset cause and an independent enable/output trace across reboot. Service the watchdog from critical-loop health rather than an unconditional timer. Host loss separately triggers a local timeout; boot/reconnect never automatically enables torque."
       },
       "wbs_refs": [
@@ -892,7 +892,7 @@
     {
       "id": "HEX-S10",
       "title": {
-        "ru": "Hold, normal stop и снятие энергии — разные состояния",
+        "ru": "Удержание, штатная остановка и снятие питания — разные состояния",
         "en": "Hold, normal stop and power removal are distinct"
       },
       "detail": {
@@ -900,7 +900,7 @@
         "en": "Holding a pose needs torque, power and a permitted thermal condition. Torque removal may collapse a standing robot; deactivating a ROS controller alone does not specify driver or mechanical behaviour. Loss of support cannot justify a blanket promise to preserve every stance."
       },
       "action": {
-        "ru": "Задать отдельные переходы: normal stop прекращает новые swing и возвращает в проверенную опору; допустимый hold ограничен током/температурой/временем; отказ или E-stop выполняет измеренный выход с учётом опускания корпуса. Стенд и опоры принимают возможное падение. Проверить процесс kill, USB disconnect, MCU reset, stale channel, overcurrent и power-off; новый запуск требует текущего измеренного состояния и явного разрешения.",
+        "ru": "Задать отдельные переходы: штатная остановка запрещает новые переносы ног и возвращает робот в проверенную опорную конфигурацию; удержание ограничивается током, температурой и временем; отказ или E-stop вызывает проверенное отключение с учётом опускания корпуса. Стенд и опоры должны принять возможное падение. Проверить завершение процесса, отсоединение USB, сброс микроконтроллера, устаревший канал данных, превышение тока и отключение питания. Новый запуск требует актуального измеренного состояния и явного разрешения.",
         "en": "Define separate transitions: normal stop prevents new swing and returns to validated support; permitted hold is bounded by current/temperature/time; fault or E-stop executes a measured response accounting for body descent. The rig/supports accommodate possible collapse. Test process kill, USB disconnect, MCU reset, stale channels, overcurrent and power-off; restarting requires current measured state and explicit authorization."
       },
       "wbs_refs": [
@@ -920,11 +920,11 @@
         "en": "State, contact and terrain estimates carry quality"
       },
       "detail": {
-        "ru": "M11 фильтры проверяются на небольших постановках; они не превращаются автоматически в полный estimator hexapod. M22/M23 должны отличать измерение от команды, контакт от несущей опоры, наклон от линейного ускорения и независимые данные от общей ошибки IMU.",
+        "ru": "M11 фильтры проверяются на небольших постановках; они не превращаются автоматически в полный модуль оценки состояния гексапода. M22/M23 должны отличать измерение от команды, контакт от несущей опоры, наклон от линейного ускорения и независимые данные от общей ошибки IMU.",
         "en": "M11 filters are verified on small problems; they do not automatically become a complete hexapod estimator. M22/M23 must distinguish measurement from command, contact from load-bearing support, tilt from linear acceleration and independent data from a shared IMU error."
       },
       "action": {
-        "ru": "Публиковать вместе со state свежесть, источник и валидность; неизвестное значение не заменять нулём. Проверить sensor-frame/sign, ковариации и отсутствие симуляционного ground truth в рабочем estimator. При stale/contact-loss/плохой обусловленности плоскости перейти к проверенному ограниченному режиму или stop. Roll/pitch сверять с внешним ориентиром, а не с той же IMU.",
+        "ru": "Вместе с состоянием публиковать возраст данных, источник и признак достоверности; неизвестное значение не заменять нулём. Проверить системы координат и направления датчиков, ковариации и отсутствие эталонных данных симуляции в рабочем оценивателе. При устаревших данных, потере контакта или плохой обусловленности плоскости переходить в проверенный ограниченный режим либо останавливаться. Крен и тангаж сверять с внешним ориентиром, а не с той же IMU.",
         "en": "Publish freshness, source and validity with state; do not replace unknown values with zero. Check sensor frame/sign, covariances and absence of simulation ground truth in the operational estimator. On stale data, contact loss or ill-conditioned plane fitting, use a validated restricted mode or stop. Compare roll/pitch against an external reference rather than the same IMU."
       },
       "wbs_refs": [
@@ -948,7 +948,7 @@
         "en": "M4/VM is the development environment. Original M22 considers Pi 5 or a compatible Ubuntu x86 host after measuring load. A board name, package build and previous laptop HIL do not validate camera, driver, power, cooling or communication on the new host."
       },
       "action": {
-        "ru": "В M22 повторить bring-up без движения, replay и stop-chain на выбранном хосте, затем проверить CPU/RAM/USB/запись под нагрузкой. Сохранить образ/манифест и udev/права устройств. Применить staged enable; OS auto-start может запускать диагностику, но не движение. Оборудование выбирается после измерений; новая покупка не предполагается автоматически.",
+        "ru": "В M22 повторить первичный запуск без движения, воспроизведение записей и цепь остановки на выбранном хосте, затем проверить CPU/RAM/USB/запись под нагрузкой. Сохранить образ/манифест и udev/права устройств. Применить поэтапное включение; автозапуск ОС может запускать диагностику, но не движение. Оборудование выбирается после измерений; новая покупка не предполагается автоматически.",
         "en": "In M22 repeat motion-disabled bring-up, replay and the stop chain on the selected host, then stress CPU/RAM/USB/recording. Retain an image/manifest and device permissions/rules. Use staged enable; OS auto-start may launch diagnostics but not motion. Select equipment after measurements; no new purchase is assumed automatically."
       },
       "wbs_refs": [
@@ -965,7 +965,7 @@
       "review_date": "2026-09-19",
       "review_kind": "hardware_physical_acceptance_read_only",
       "scope": {
-        "ru": "Учебный hexapod: шесть ног по три управляемые оси, собственный CAD, готовые актуаторы/драйверы, единая развиваемая платформа 1→4→6 ног. Профиль: опытный программист, начинающий в CAD/электронике/механике.",
+        "ru": "Учебный гексапод: шесть ног по три управляемые оси, собственный CAD, готовые актуаторы/драйверы, единая развиваемая платформа 1→4→6 ног. Профиль: опытный программист, начинающий в CAD/электронике/механике.",
         "en": "Educational hexapod: six legs with three actuated axes each, own CAD, stock actuators/drivers, one evolving 1→4→6-leg platform. Profile: experienced programmer, beginner in CAD/electronics/mechanics."
       },
       "verdict": {
@@ -984,7 +984,7 @@
         "reviewed_hardware_block_sum": 660,
         "not_a_project_total": true,
         "detail": {
-          "ru": "660 ч — сумма только пяти проверенных hardware-блоков, не общая стоимость hexapod. Общие математика, электроника, MCU, кинематика, управление, ROS и simulation уже оплачены в программе. Дополнительных активных часов ревью не добавляет; неизвестные переделки используют центральный резерв, а существенное изменение объёма требует нового расчёта.",
+          "ru": "660 ч — сумма только пяти проверенных аппаратных разделов, а не все трудозатраты на гексапод. Общие математика, электроника, микроконтроллеры, кинематика, управление, ROS и симуляция уже учтены в программе. Технический разбор не добавляет активных часов; непредвиденные переделки используют центральный резерв, а существенное изменение объёма требует нового расчёта.",
           "en": "The 660 h sum only the five reviewed hardware blocks, not the entire hexapod project. Shared mathematics, electronics, MCU, kinematics, control, ROS and simulation are already budgeted in the programme. This review adds no active hours; unknown rework uses the central reserve, while substantial scope changes need a new estimate."
         }
       },
@@ -1021,15 +1021,15 @@
         {
           "id": "HX-H02",
           "title": {
-            "ru": "Длительная нагрузка и нагрев вместо stall torque",
+            "ru": "Длительная нагрузка и нагрев вместо паспортного пикового момента",
             "en": "Use sustained loading and heat, not stall torque"
           },
           "detail": {
-            "ru": "Короткий стопорный момент не определяет допустимое стояние. Нагрузки зависят от позы и числа подтверждённых опор; деление веса на шесть неверно во многих фазах. Отдельный DC-стенд M07 не квалифицирует семейство смарт-приводов для ноги.",
+            "ru": "Кратковременный момент при заблокированном валу не определяет допустимое стояние. Нагрузки зависят от позы и числа подтверждённых опор; деление веса на шесть неверно во многих фазах. Отдельный DC-стенд M07 не квалифицирует семейство сервоприводов с цифровым интерфейсом для ноги.",
             "en": "Momentary stall torque does not qualify standing. Loading depends on pose and confirmed supports; dividing weight by six is invalid in many phases. The M07 DC rig does not qualify the leg smart-actuator family."
           },
           "action": {
-            "ru": "Сопоставить расчётные моменты с характеристиками производителя и измеренным рабочим диапазоном кандидата при выбранных скорости, питании, охлаждении и цикле. На L1 проверить опорную нагрузку, ток, нагрев, люфт и повтор после охлаждения. Если длительный рейтинг отсутствует, ограничить вывод испытанными нагрузкой и длительностью; не объявлять непрерывную работу.",
+            "ru": "Сопоставить расчётные моменты с характеристиками производителя и измеренным рабочим диапазоном кандидата при выбранных скорости, питании, охлаждении и цикле. На L1 проверить опорную нагрузку, ток, нагрев, люфт и повтор после охлаждения. Если производитель не указывает допустимый длительный режим, ограничить вывод испытанными нагрузкой и длительностью; не объявлять непрерывную работу.",
             "en": "Compare calculated torque with manufacturer data and the candidate’s measured envelope at the selected speed, supply, cooling and duty. L1 must test support loading, current, heat, backlash and a repeat after cooling. If a continuous rating is unavailable, limit the claim to tested load and duration; do not claim continuous operation."
           },
           "wbs_refs": [
@@ -1059,11 +1059,11 @@
             "en": "Position commands and force control"
           },
           "detail": {
-            "ru": "Проектная страница рядом описывает force-QP и реальные сервоприводы, но не фиксирует их интерфейсы. Вычисленные Jᵀf имеют размерность момента: их нельзя отправить позиционному приводу как угол. Возможность читать ток также не означает возможность задавать момент.",
+            "ru": "Проектная страница рядом описывает распределение сил через QP и реальные сервоприводы, но не фиксирует их интерфейсы. Вычисленные Jᵀf имеют размерность момента: их нельзя отправить позиционному приводу как угол. Возможность читать ток также не означает возможность задавать момент.",
             "en": "The project page describes force-QP alongside physical servos without freezing their interfaces. Computed Jᵀf has torque units and cannot be sent to a position servo as an angle. Reading current does not imply torque command capability."
           },
           "action": {
-            "ru": "До тиражирования записать command/state interfaces привода, единицы и режимы. Основной результат использует медленное позиционное IK-управление с ограниченным выравниванием. Любой отдельный QP-эксперимент, включая симуляцию/HIL, относится к дальнейшему развитию. Силовой режим или внешняя admittance-петля требуют отдельной проверки выбранного интерфейса и измерений.",
+            "ru": "До тиражирования записать интерфейсы команд и состояния привода, единицы измерения и режимы. Основной результат использует медленное позиционное управление через IK с ограниченным выравниванием. Любой отдельный QP-эксперимент, включая симуляцию и HIL, относится к дальнейшему развитию. Управление усилием или внешний контур, преобразующий измеренную силу в движение (admittance), требуют отдельной проверки выбранного интерфейса и измерений.",
             "en": "Before replication record actuator command/state interfaces, units and modes. Core uses slow position/IK control with bounded leveling. Any separate QP experiment, including simulation/HIL, belongs to further development. Force control or an external admittance loop requires separate interface and measurement qualification."
           },
           "wbs_refs": [
@@ -1124,7 +1124,7 @@
             "en": "An expandable frame avoids a second design, but removing an arbitrary pair of legs does not guarantee a viable quadruped. The middle pair changes mass, stiffness, workspaces, loading and wiring."
           },
           "action": {
-            "ru": "В M05/M22 предусмотреть две конфигурации одного корпуса. Для четырёх ног обосновать размещение передних/задних опор, COM и допустимую область переноса веса. В M23 добавить среднюю пару, заново измерить массу/COM, проверить взаимные коллизии, реакции, крепёж и старые калибровки. Полигон опоры считать по подтверждённым контактам.",
+            "ru": "В M05/M22 предусмотреть две конфигурации одного корпуса. Для четырёх ног обосновать размещение передних/задних опор, COM и допустимую область переноса веса. В M23 добавить среднюю пару, заново измерить массу/COM, проверить взаимные коллизии, реакции, крепёж и старые калибровки. Опорный многоугольник считать по подтверждённым контактам.",
             "en": "Plan both configurations of one frame in M05/M22. For four legs, justify front/rear support placement, COM and the allowable weight-shift region. In M23 add the middle pair, remeasure mass/COM, and recheck collisions, reactions, fasteners and previous calibrations. Construct the support polygon from confirmed contacts."
           },
           "wbs_refs": [
@@ -1155,7 +1155,7 @@
             "en": "Three working devices do not qualify the source, harness or bus for eighteen. Average current hides simultaneous startup and voltage sag; command rate is not fresh telemetry rate. Similar connectors do not prove compatibility."
           },
           "action": {
-            "ru": "Зафиксировать напряжения, TTL/RS-485 либо иной интерфейс, протокол, топологию и прошивку. Рассчитать цикл по реальным пакетам, ответам, return delay и USB/CPU нагрузке; измерить 1/3/12/18 устройств. Проверить общий и ветвевые токи, просадки, защиту, DC-DC и нагрев соединений при стоянии/начале шага/остановке. Частоты и таймауты выбирать по измерениям.",
+            "ru": "Зафиксировать напряжения, TTL/RS-485 либо иной интерфейс, протокол, топологию и прошивку. Рассчитать цикл по реальным пакетам, ответам, задержкам ответа и USB/CPU нагрузке; измерить 1/3/12/18 устройств. Проверить общий и ветвевые токи, просадки, защиту, DC-DC и нагрев соединений при стоянии/начале шага/остановке. Частоты и таймауты выбирать по измерениям.",
             "en": "Freeze voltages, TTL/RS-485 or other interface, protocol, topology and firmware. Calculate cycles from actual packets, responses, return delay and USB/CPU load; measure 1/3/12/18 devices. Check supply and branch currents, sag, protection, DC-DC and connector heating during standing, step initiation and stopping. Choose rates and timeouts from measurements."
           },
           "wbs_refs": [
@@ -1187,7 +1187,7 @@
             "en": "Actuator current estimates, battery current and foot force are different quantities. Gearing, friction, backlash and geometry affect conversion; force inference becomes sensitive near singularities. A contact sensor indicates touch, not absence of slip."
           },
           "action": {
-            "ru": "Для каждого сигнала описать источник, единицы, диапазон, задержку и неопределённость. Если нужна сила по току, откалибровать на известных нагрузках и проверить на отдельных позах/повторах. Без такой проверки использовать ток для ограничений и диагностики, не как ground truth. Контакт и скольжение проверять раздельно.",
+            "ru": "Для каждого сигнала описать источник, единицы, диапазон, задержку и неопределённость. Если нужна сила по току, откалибровать на известных нагрузках и проверить на отдельных позах/повторах. Без такой проверки использовать ток для ограничений и диагностики, не как эталонные данные. Контакт и скольжение проверять раздельно.",
             "en": "Document each signal’s source, units, range, latency and uncertainty. If current-based force is needed, calibrate with known loads and validate on separate poses/repeats. Without that validation use current for limits and diagnostics, not ground truth. Test contact and slipping separately."
           },
           "wbs_refs": [
@@ -1220,7 +1220,7 @@
             "en": "Reduced simulated error or agreement with the same IMU is not independent body validation. Body orientation, surface inclination and commanded orientation are different quantities. The source ±10–15° is a design target, not an achieved range."
           },
           "action": {
-            "ru": "Сначала проверить IMU в известных ориентациях и преобразование imu_link→base_link. Затем сравнить корпус с внешним угловым ориентиром, заранее определить RMSE, пик, установление и погрешность измерения. Увеличивать уклон от проверенного малого значения с контролем контакта, тяги, тока, достижимости и насыщения; сохранять tested/untested/forbidden.",
+            "ru": "Сначала проверить IMU в известных ориентациях и преобразование imu_link→base_link. Затем сравнить ориентацию корпуса с внешним угловым ориентиром; заранее определить RMSE, пиковую ошибку, время установления и погрешность измерения. Увеличивать уклон от проверенного малого значения с контролем контакта, сцепления, тока, достижимости и насыщения. Отмечать режимы как испытанные, неисследованные или запрещённые.",
             "en": "First test the IMU in reference orientations and verify imu_link→base_link. Then compare the body against an external angular reference; predeclare RMSE, peak error, settling and measurement uncertainty. Increase inclination from a verified small value while checking contact, traction, current, reachability and saturation; retain tested/untested/forbidden regions."
           },
           "wbs_refs": [
@@ -1241,11 +1241,11 @@
         {
           "id": "HX-H09",
           "title": {
-            "ru": "Критерии quad и hex нельзя объединять",
+            "ru": "Критерии четырёхногой и шестиногой конфигураций нельзя объединять",
             "en": "Keep quadruped and hexapod acceptance separate"
           },
           "detail": {
-            "ru": "На странице один пункт объединяет 60/120 с стояния, а 30–50+ попыток стоят только напротив wave/ripple. Это может быть прочитано как отсутствие серии испытаний quadruped. Исходный roadmap требует повторяемости обоих этапов; один удачный ролик недостаточен.",
+            "ru": "На странице один пункт объединяет 60/120 с стояния, а 30–50+ попыток стоят только напротив wave/ripple. Это может быть прочитано как отсутствие серии испытаний четырёхногой конфигурации. Исходная дорожная карта требует повторяемости обоих этапов; один удачный ролик недостаточен.",
             "en": "The page combines 60/120 s standing in one row and places 30–50+ trials only beside wave/ripple. This could imply that the quadruped needs no trial series. The original roadmap requires repeats at both stages; one successful video is insufficient."
           },
           "action": {
@@ -1272,11 +1272,11 @@
             "en": "Bounded stopping and verified restart"
           },
           "detail": {
-            "ru": "Мгновенное снятие момента может уронить корпус, а удержание последней позы может перегреть привод. Универсальное слово stop не определяет физическое поведение. Камера и IMU не делают неизвестную поверхность проходимой.",
+            "ru": "Мгновенное снятие момента может уронить корпус, а удержание последней позы может перегреть привод. Универсальное слово остановка не определяет физическое поведение. Камера и IMU не делают неизвестную поверхность проходимой.",
             "en": "Immediate torque removal may drop the body, while indefinitely holding the last pose may overheat an actuator. The word stop alone does not define physical behavior. Camera loss and an IMU do not make unknown terrain traversable."
           },
           "action": {
-            "ru": "Нормальная остановка, ограниченный hold и независимое аварийное отключение — разные переходы. Потерю связи/узла/контакта проверить сначала в simulation/HIL, физически — со страховкой. Hold ограничить временем и нагрузкой; отключение проверить вместе с конечным положением корпуса. Восстановление требует явного re-arm и свежего состояния. Весь core работает на заранее проверенной поверхности без зависимости от камеры.",
+            "ru": "Штатная остановка, ограниченное удержание и независимое аварийное отключение — разные переходы. Потерю связи, узла или контакта сначала проверить в симуляции/HIL, затем физически со страховкой. Удержание ограничить временем и нагрузкой; отключение проверить вместе с конечным положением корпуса. Восстановление требует явного повторного разрешения запуска и свежих данных состояния. Вся основная программа выполняется на заранее проверенной поверхности без зависимости от камеры.",
             "en": "Normal stopping, bounded hold and independent emergency energy removal are distinct transitions. Test link/node/contact loss in simulation/HIL first, then physically with backup support. Bound hold by time/load; validate power removal with the resulting body position. Recovery requires explicit re-arming and fresh state. All core operation uses pre-verified surfaces without camera dependence."
           },
           "wbs_refs": [
@@ -1378,7 +1378,7 @@
             "en": "Power and timing record"
           },
           "detail": {
-            "ru": "Для 1/3/12/18 устройств сохранить цикл команд и телеметрии, худшую наблюдённую задержку/потери под нагрузкой компьютера, запас до deadline и реакцию при его превышении. Электрический паспорт включает общие/ветвевые токи, провода/разъёмы/защиту, просадку, DC-DC и раздельный путь остановки. Если выбранный привод возвращает энергию, проверить допустимость этого режима для источника.",
+            "ru": "Для 1/3/12/18 устройств сохранить цикл команд и телеметрии, худшую наблюдённую задержку/потери под нагрузкой компьютера, запас до предельного срока и реакцию при его превышении. Электрический паспорт включает общие/ветвевые токи, провода/разъёмы/защиту, просадку, DC-DC и раздельный путь остановки. Если выбранный привод возвращает энергию, проверить допустимость этого режима для источника.",
             "en": "For 1/3/12/18 devices retain command/telemetry cycles, worst observed latency/loss under computer load, deadline margin and overrun response. The electrical record covers supply/branch currents, wiring/connectors/protection, sag, DC-DC and an independent stopping path. If the selected drive regenerates, verify that the supply supports it."
           },
           "wbs_refs": [
@@ -1398,7 +1398,7 @@
             "en": "Physical leveling protocol"
           },
           "detail": {
-            "ru": "Записать отдельно угол поверхности, заданный угол корпуса и внешне измеренный угол корпуса. Установить до теста допустимые roll/pitch RMSE/пик/время установления и погрешность прибора. Ошибка, достигнутая с насыщением, скольжением или потерей опоры, не является PASS; ±10–15° подтверждаются только испытанием.",
+            "ru": "Записать отдельно угол поверхности, заданный угол корпуса и внешне измеренный угол корпуса. Установить до теста допустимые крен/тангаж RMSE/пик/время установления и погрешность прибора. Ошибка, достигнутая с насыщением, скольжением или потерей опоры, не является PASS; ±10–15° подтверждаются только испытанием.",
             "en": "Record surface angle, requested body angle and externally measured body angle separately. Predeclare roll/pitch RMSE/peak/settling limits and instrument uncertainty. Error reduced through saturation, slipping or support loss is not PASS; ±10–15° is established only by testing."
           },
           "wbs_refs": [
@@ -1430,7 +1430,7 @@
             "en": "Evidence-based stage completion"
           },
           "detail": {
-            "ru": "Передать CAD/BOM/URDF, осевую карту, параметры привода, схемы, firmware/config revisions, калибровки, operating_envelope и сырые логи с PASS/FAIL/INCOMPLETE. Фото и видео дополняют измерения. Шесть дополнительных приводов — только после M22 PASS; ожидание поставки увеличивает календарный срок, но не активные часы.",
+            "ru": "Передать CAD/BOM/URDF, карту осей, параметры привода, схемы, версии прошивки и конфигурации, калибровки, описание рабочего диапазона operating_envelope и исходные журналы с результатами PASS/FAIL/INCOMPLETE. Фото и видео дополняют измерения. Шесть дополнительных приводов заказывать только после успешного прохождения M22; ожидание поставки увеличивает календарный срок, но не активные часы.",
             "en": "Hand off CAD/BOM/URDF, joint maps, actuator settings, schematics, firmware/config revisions, calibrations, operating_envelope and raw PASS/FAIL/INCOMPLETE logs. Photos/video supplement measurement. Obtain the six added actuators only after M22 PASS; delivery can extend calendar duration without adding active hours."
           },
           "wbs_refs": [
@@ -1488,7 +1488,7 @@
           "id": "H3",
           "stage": "M23 mechanical/electrical expansion",
           "criterion": {
-            "ru": "После двух новых ног повторно измерены масса/COM, доступность пространства и нагрузки; проверены все 18 осей, питание и шина. Старый M22 PASS не закрывает новую конфигурацию автоматически.",
+            "ru": "После двух новых ног повторно измерены масса/COM, доступность пространства и нагрузки; проверены все 18 осей, питание и шина. Прежний успешный результат M22 не закрывает новую конфигурацию автоматически.",
             "en": "After adding two legs, remeasure mass/COM, workspace and loads; verify all eighteen axes, power and bus. The previous M22 PASS does not automatically qualify the new configuration."
           },
           "owner": [
@@ -1500,7 +1500,7 @@
           "id": "H4",
           "stage": "M23 final physical PASS",
           "criterion": {
-            "ru": "≥120 с самостоятельного стояния; wave/ripple с допустимыми переходами, поворот/боковое движение в испытанном диапазоне; внешне измеренное выравнивание; ограниченный camera-fallback; серия попыток, энергия, тепловые данные и сервис. Непройденный ±10–15° ориентир честно отражён в operating_envelope и требует решения о пересмотре цели, а не скрытого PASS.",
+            "ru": "≥120 с самостоятельного стояния; wave/ripple с допустимыми переходами, поворот и боковое движение в испытанном диапазоне; внешне измеренное выравнивание; ограниченный режим при отказе камеры; серия попыток, измерение энергии, тепловые данные и обслуживание. Недостижение ориентира ±10–15° явно отражается в operating_envelope и требует решения о пересмотре цели; скрыто присваивать PASS нельзя.",
             "en": "≥120 s unsupported standing; wave/ripple with admissible transitions, turning/sideways motion within the tested envelope; externally measured leveling; bounded camera fallback; trial series, energy, thermal data and service. A missed ±10–15° target is recorded in operating_envelope and requires an explicit target review rather than an unsupported PASS."
           },
           "owner": [
@@ -1516,7 +1516,7 @@
           "title": "ROBOTIS e-Manual: stall torque and real performance",
           "url": "https://emanual.robotis.com/docs/en/dxl/x/xh540-v270/",
           "claim": {
-            "ru": "Производитель явно различает кратковременный stall torque и длительный выходной момент. Страница конкретного изделия используется только как подтверждение терминов, не как выбранная модель привода.",
+            "ru": "Производитель явно различает кратковременный момент при заблокированном валу и длительный выходной момент. Страница конкретного изделия используется только как подтверждение терминов, не как выбранная модель привода.",
             "en": "The manufacturer distinguishes momentary stall torque from continuous output. This product page illustrates terminology only; its actuator is not selected for the project."
           },
           "verified_on": "2026-09-19",
@@ -1528,7 +1528,7 @@
           "title": "ROBOTIS DYNAMIXEL Protocol 2.0",
           "url": "https://docs.robotis.com/docs/dxl/protocol/protocol2/",
           "claim": {
-            "ru": "Sync Read возвращает ответы устройств; Fast Sync Read зависит от модели и версии прошивки. Пакеты, задержки и направление half-duplex учитываются в расчёте цикла.",
+            "ru": "Sync Read получает ответы устройств; поддержка Fast Sync Read зависит от модели и версии прошивки. При расчёте цикла учитывать пакеты, задержки и смену направления полудуплексного обмена.",
             "en": "Sync Read returns device responses; Fast Sync Read support depends on model and firmware. Packets, delays and half-duplex direction changes belong in the cycle budget."
           },
           "verified_on": "2026-09-19",
@@ -1540,7 +1540,7 @@
           "title": "ros2_control Jazzy: joint_trajectory_controller interfaces",
           "url": "https://control.ros.org/jazzy/doc/ros2_controllers/joint_trajectory_controller/doc/userdoc.html",
           "claim": {
-            "ru": "Position и effort — разные командные интерфейсы. Документация поддерживает разделение режимов, но сама не доказывает пригодность сервопривода для управления силами ног.",
+            "ru": "position и effort — разные командные интерфейсы: для положения и усилия. Документация подтверждает различие режимов, но сама по себе не доказывает пригодность сервопривода для управления силами ног.",
             "en": "Position and effort are distinct command interfaces. The documentation supports separating these modes; it does not itself qualify a servo for leg-force control."
           },
           "verified_on": "2026-09-19",
@@ -1552,7 +1552,7 @@
           "title": "ROS REP-145: IMU conventions, official repository",
           "url": "https://github.com/ros-infrastructure/rep/blob/master/rep-0145.rst",
           "claim": {
-            "ru": "IMU требует согласованных осей/единиц; акселерометр измеряет specific force и в покое при z вверх показывает +g. Использована доступная официальная копия, поскольку сайт ros.org вернул access denied.",
+            "ru": "IMU требует согласованных осей/единиц; акселерометр измеряет удельную негравитационную силу и в покое при z вверх показывает +g. Использована доступная официальная копия, поскольку сайт ros.org вернул отказ в доступе.",
             "en": "IMU data needs consistent frames/units; an accelerometer reports specific force and reads +g at rest with z upward. The accessible official repository was used because ros.org returned access denied."
           },
           "verified_on": "2026-09-19",
@@ -1564,7 +1564,7 @@
           "title": "Modern Robotics §5.2: Statics of Open Chains",
           "url": "https://modernrobotics.northwestern.edu/nu-gm-book-resource/5-2-statics-of-open-chains/",
           "claim": {
-            "ru": "Связь внешнего wrench и суставного момента задаётся транспонированным Якобианом при согласованных координатах. Использована для проверки силового расчёта, а не как паспорт привода.",
+            "ru": "Связь внешнего силового воздействия — силы и момента — с суставными моментами задаётся транспонированным якобианом при согласованных системах координат. Источник использован для проверки силового расчёта, а не как паспорт привода.",
             "en": "External wrench and joint torque are related through the Jacobian transpose in consistent frames. Used to check load calculations, not as an actuator rating."
           },
           "verified_on": "2026-09-19",
@@ -1616,7 +1616,7 @@
           "en": "L1’s 70 h assume one main actuator candidate and one local mechanical correction. Changing actuator families after replication is not a free substitution."
         },
         {
-          "ru": "M22 155 ч предполагают пригодную ногу L1 и доступные девять дополнительных совместимых приводов. M23 155 ч предполагают M22 PASS и шесть дополнительных приводов после этого допуска. Доставка, автономная печать и охлаждение могут идти параллельно независимым задачам; последовательную зависимость нельзя обнулить.",
+          "ru": "M22 155 ч предполагают пригодную ногу L1 и доступные девять дополнительных совместимых приводов. M23 155 ч предполагают успешное прохождение M22 и шесть дополнительных приводов после этого допуска. Доставка, автономная печать и охлаждение могут идти параллельно независимым задачам; последовательную зависимость нельзя обнулить.",
           "en": "M22’s 155 h assume an accepted L1 leg and nine available compatible additional actuators. M23’s 155 h assume M22 PASS and six further actuators after that gate. Delivery, unattended printing and cooling may overlap independent work; sequential dependencies cannot be erased."
         },
         {
@@ -1625,16 +1625,16 @@
         }
       ],
       "excluded_scope": {
-        "ru": "Не добавлять в обязательный результат динамический бег, полную NMPC/WBC, физическое RL, собственные BLDC/FOC/редукторы/PCB, прыжки, перенос человека, промышленную надёжность, автоматическую ходьбу на пяти ногах или обход неизвестной местности без камеры. Tripod и пять ног остаются исходными расширениями.",
+        "ru": "Не добавлять в обязательный результат динамический бег, полную NMPC/WBC, физическое RL, собственные BLDC/FOC/редукторы/печатные платы, прыжки, перенос человека, промышленную надёжность, автоматическую ходьбу на пяти ногах или обход неизвестной местности без камеры. Tripod и пять ног остаются исходными расширениями.",
         "en": "Do not add dynamic running, full NMPC/WBC, physical RL, custom BLDC/FOC/gearboxes/PCBs, jumping, carrying a person, industrial reliability, automatic five-leg walking or unseen-terrain traversal without a camera to required completion. Tripod and five-leg walking remain source extensions."
       },
       "editorial_notes": [
         {
-          "ru": "Слово «готовые» относится к приводным модулям, а не к полностью готовому набору hexapod: собственные CAD, расчёты, сборка, проводка, калибровка и измерения сохраняются.",
+          "ru": "Слово «готовые» относится к приводным модулям, а не к полностью готовому набору гексапода: собственные CAD, расчёты, сборка, проводка, калибровка и измерения сохраняются.",
           "en": "Stock refers to actuator modules, not a complete hexapod kit: own CAD, calculations, assembly, wiring, calibration and measurement remain."
         },
         {
-          "ru": "Все численные критерии являются будущими целями/порогами испытания. Ревью не сообщает о реально изготовленном роботе или выполненных физических тестах.",
+          "ru": "Все численные критерии являются будущими целями/порогами испытания. Технический разбор не сообщает о реально изготовленном роботе или выполненных физических тестах.",
           "en": "All numerical criteria are future test targets/thresholds. This review reports neither a fabricated robot nor completed physical tests."
         }
       ],
@@ -1652,11 +1652,11 @@
           "en": "The leg sustains the predefined support load in bounded poses and the specified duty cycle. Current, voltage, temperature and duration are recorded; there are no justified-limit violations, unexplained heating, mount slipping or permanent deformation. Repeat after cooling."
         },
         {
-          "ru": "Низкоамплитудные траектории, штатная остановка, потеря связи и невалидная команда проверены на стенде; независимое аварийное снятие энергии проверено вместе с конечным положением механики и страховкой. После восстановления движение не возобновляется без явного разрешения и свежего состояния.",
+          "ru": "Низкоамплитудные траектории, штатная остановка, потеря связи и недопустимая команда проверены на стенде; независимое аварийное снятие энергии проверено вместе с конечным положением механики и страховкой. После восстановления движение не возобновляется без явного разрешения и свежего состояния.",
           "en": "Low-amplitude trajectories, normal stopping, communication loss and invalid commands are verified on the rig; independent emergency energy removal is checked together with the mechanism’s final state and backup support. Motion cannot resume after recovery without explicit re-arming and fresh state."
         },
         {
-          "ru": "Рабочий диапазон выбранного привода и реально доступные command/state interfaces записаны; момент не подменяется позиционной командой, а сила по току не объявляется ground truth. PASS включает калибровки и сырые журналы. До этого допуска тиражирование на четыре ноги закрыто.",
+          "ru": "Рабочий диапазон выбранного привода и реально доступные интерфейсы команд и состояния записаны; момент не подменяется позиционной командой, а сила по току не объявляется эталонным измерением. PASS включает калибровки и сырые журналы. До этого допуска тиражирование на четыре ноги закрыто.",
           "en": "Record the chosen actuator’s operating envelope and actual command/state interfaces; torque is not substituted for a position command, and current-based force is not declared ground truth. PASS includes calibrations and raw logs. Replication to four legs remains blocked until this gate passes."
         }
       ]
@@ -1665,19 +1665,19 @@
       "version": 1,
       "reviewed_on": "2026-09-19",
       "scope": {
-        "ru": "Независимая проверка математики, управления и объёма hexapod; пользовательские deliverables не изменялись.",
+        "ru": "Независимая проверка математики, управления и объёма проекта гексапода; согласованные с пользователем результаты не изменялись.",
         "en": "Independent hexapod mathematics/control/scope review; user deliverables were not edited."
       },
       "coverage": {
-        "ru": "M08–M10/M19–M21 ранее полностью прочитаны при переоценке; здесь повторно сверены управляющие предпосылки и normalized WBS. M22/M23 прочитаны полностью, включая p15, испытания и оборудование. Проверены current normalized.json, build_projects.py, L1, G1–G4 и порядок этапов.",
+        "ru": "M08–M10/M19–M21 ранее полностью прочитаны при переоценке; здесь повторно сверены предпосылки управления и нормализованная структура работ (WBS). M22/M23 прочитаны полностью, включая стр. 15, испытания и оборудование. Проверены текущие normalized.json, build_projects.py, L1, G1–G4 и порядок этапов.",
         "en": "M08–M10/M19–M21 were read in full during re-estimation; control prerequisites and normalized WBS were rechecked here. M22/M23 were read in full, including p15, tests and equipment. Current normalized.json, build_projects.py, L1, G1–G4 and stage order were checked."
       },
       "verdict": {
-        "ru": "Математическая основа и классический путь управления актуальны и подходят для учебного медленного hexapod. Дополнительная работа нужна прежде всего в явности спецификации и трассировке уже включённых проверок. Оснований увеличивать часы этих модулей по результатам этого ревью нет.",
+        "ru": "Математическая основа и классический путь управления актуальны и подходят для учебного медленного hexapod. Дополнительная работа нужна прежде всего в явности спецификации и трассировке уже включённых проверок. Оснований увеличивать часы этих модулей по результатам этого технический разбор нет.",
         "en": "The mathematics and classical control route remain sound for an educational slow hexapod. The main work is explicit specification and traceability of already-budgeted checks. This review does not justify increasing these module hours."
       },
       "source_preservation": {
-        "ru": "Сохраняются исходные wave/ripple, физический 4→6 этап, motion fundamentals, torque/CoP примеры, depth exercise, restricted camera-free mode и проверки отказов. Tripod, пять ног, физический RL и полный WBC/NMPC остаются расширениями. Архивные PDF не переписываются.",
+        "ru": "Сохраняются исходные походки wave/ripple, физический переход 4→6, основы движения, примеры моментов и центра давления, упражнение с картой глубины, ограниченный режим без камеры и проверки отказов. Походка «трипод», пять ног, физическое RL и полные WBC/NMPC остаются расширениями. Архивные PDF не переписываются.",
         "en": "Retain source wave/ripple, physical 4→6 progression, motion fundamentals, torque/CoP examples, depth exercise, restricted camera-free operation and fault checks. Tripod, five-leg walking, hardware RL and full WBC/NMPC remain extensions. Archival PDFs are unchanged."
       },
       "findings": [
@@ -1693,7 +1693,7 @@
             "en": "The short project section mentions crawl and contact but does not expose leg-lift conditions. This is the main stability misunderstanding risk for the intermediate quadruped."
           },
           "proposed_text": {
-            "ru": "Перед подъёмом ноги пересчитать центр масс всей сборки и область оставшихся подтверждённых опор. В медленном quadruped-crawl оставшиеся три опоры должны быть неколлинеарны; проекция COM должна иметь заранее выбранный положительный запас до границы их треугольника. Проверить допустимость реакций, трения, приводных нагрузок и всей траектории. Присутствие трёх контактов само по себе не разрешает шаг. При запаздывающем касании, скольжении или устаревших данных следующий подъём запрещён.",
+            "ru": "Перед подъёмом ноги пересчитать центр масс всей сборки и область оставшихся подтверждённых опор. При медленной ползущей походке четырёхногого робота три оставшиеся опоры не должны лежать на одной прямой; проекция центра масс должна иметь заранее выбранный положительный запас до границы их треугольника. Проверить допустимость реакций, трения, нагрузок приводов и всей траектории. Трёх контактов самих по себе недостаточно для разрешения шага. При запоздалом касании, скольжении или устаревших данных следующий подъём запрещён.",
             "en": "Before lifting a leg, recompute the complete assembly COM and the remaining confirmed support region. In slow quadruped crawl the remaining three supports must be non-collinear; COM projection must retain a predefined positive margin inside their triangle. Check reaction, friction, actuator-load and full-trajectory feasibility. Three contacts alone do not authorise a step. Delayed touchdown, slip or stale data blocks the next lift."
           },
           "existing_wbs_mapping": [
@@ -1707,7 +1707,7 @@
               "en": "Reproduce positive reactions and the negative-reaction counterexample in M19 p15; the latter must prohibit LIFT."
             },
             {
-              "ru": "Повторить stop в начале, середине и конце swing; никакой второй ноги в swing до подтверждённой опоры.",
+              "ru": "Повторить остановку в начале, середине и конце переноса ноги; до подтверждения опоры не начинать перенос второй ноги.",
               "en": "Repeat stopping at the beginning, middle and end of swing; no second leg may swing before support is confirmed."
             }
           ],
@@ -1731,7 +1731,7 @@
             "en": "Ripple has multiple conventions. The project card needs allowed overlapping swings, verified support combinations and switching rules."
           },
           "proposed_text": {
-            "ru": "Wave: последовательный перенос одной ноги, максимум одна нога в swing. Ripple: отдельная явно сохранённая таблица фаз и допустимых сочетаний ног; для первой версии можно выбрать максимум две одновременно переносимые ноги, если каждое сочетание оставшихся опор проходит расчёт. Это проектное ограничение, а не универсальное определение ripple. Проверить движение вперёд, поворот и боковое перемещение отдельно. Wave↔ripple переключать через согласованную фазу или остановку. Tripod и ходьба на пяти ногах остаются расширениями.",
+            "ru": "Wave — последовательный перенос ног, при котором одновременно переносится не более одной ноги. Ripple задаётся отдельной сохранённой таблицей фаз и допустимых сочетаний ног; для первой версии можно выбрать не более двух одновременно переносимых ног, если каждое сочетание оставшихся опор проходит расчёт. Это проектное ограничение, а не универсальное определение ripple. Отдельно проверить движение вперёд, поворот и боковое перемещение. Переключать wave↔ripple через согласованную фазу или остановку. Походка «трипод» и ходьба на пяти ногах остаются расширениями.",
             "en": "Wave uses sequential single-leg transfer with at most one leg swinging. Ripple has its own saved phase table and allowed leg combinations; the first version may limit overlap to two swinging legs if every remaining-support combination passes analysis. This is a project constraint, not a universal definition of ripple. Check forward, turning and sideways motion separately. Switch wave↔ripple through an aligned phase or stopping. Tripod and five-leg walking remain extensions."
           },
           "existing_wbs_mapping": [
@@ -1740,11 +1740,11 @@
           ],
           "acceptance_checks": [
             {
-              "ru": "Для каждой разрешённой фазы сохранить actual contacts, запланированные swing, support margin и причину перехода. Таймер не заменяет подтверждение touchdown.",
+              "ru": "Для каждой разрешённой фазы сохранять фактические контакты, планируемые переносы ног, запас устойчивости относительно границы опоры и причину перехода. Таймер не заменяет подтверждение касания.",
               "en": "For every permitted phase save actual contacts, planned swings, support margin and transition reason. A timer does not replace touchdown confirmation."
             },
             {
-              "ru": "Проверить недопустимый overlap и переключение походки в середине swing: отложить переход или пройти через stop.",
+              "ru": "Проверить недопустимое перекрытие фаз переноса и переключение походки в середине переноса ноги: отложить переход или выполнить его через остановку.",
               "en": "Test disallowed overlap and a mid-swing gait change: defer switching or pass through stop."
             }
           ],
@@ -1762,11 +1762,11 @@
             "en": "Explicit position-based levelling route"
           },
           "finding": {
-            "ru": "Фраза «измеренное выравнивание» корректна, но не определяет, как оно достижимо без force-controlled приводов. Это может создать ложное требование перенести QP прямо на позиционные сервоприводы.",
+            "ru": "Фраза «измеренное выравнивание» корректна, но не определяет, как оно достижимо без приводов с управлением по усилию. Это может создать ложное требование перенести QP прямо на позиционные сервоприводы.",
             "en": "Measured levelling is correct but does not specify how it works without force-controlled actuators. This can imply that QP must be sent directly to position servos."
           },
           "proposed_text": {
-            "ru": "Основной физический путь: IMU оценивает roll/pitch → ограниченный внешний регулятор корректирует желаемую позу корпуса → преобразование подтверждённых опорных точек в системы ног → проверенная IK → позиционные команды приводам. Пока стопа считается неподвижной опорой, её локальный мировой якорь не перемещать вместе с корпусом. Ограничивать угол, высоту, скорость изменения позы, joint range и близость к сингулярности. Контакт и скольжение проверять отдельно; это выравнивание положения, а не измеренное управление силами стоп.",
+            "ru": "Основная физическая схема: IMU оценивает крен и тангаж → внешний регулятор с ограничениями корректирует заданную позу корпуса → подтверждённые опорные точки преобразуются в системы координат ног → проверенный решатель IK → позиционные команды приводам. Пока стопа служит неподвижной опорой, её точку фиксации в мировой системе координат нельзя перемещать вместе с корпусом. Ограничивать угол, высоту, скорость изменения позы, диапазоны суставов и близость к сингулярности. Контакт и скольжение проверять отдельно: это выравнивание положения, а не измеренное управление силами стоп.",
             "en": "The baseline hardware route is IMU roll/pitch estimation → bounded outer body-pose correction → confirmed stance-point transforms into leg frames → validated IK → actuator position commands. While a foot is trusted as stationary support, its local world anchor must not move with the body. Limit angle, height, pose rate, joint range and singularity proximity. Check contact and slip separately; this is pose levelling, not measured foot-force control."
           },
           "existing_wbs_mapping": [
@@ -1777,11 +1777,11 @@
           ],
           "acceptance_checks": [
             {
-              "ru": "При фиксированных опорных world-points восстановленные world FK стоп остаются постоянными при небольшой смене желаемой позы корпуса.",
+              "ru": "При фиксированных опорных точках в мировой системе координат положения стоп, восстановленные прямой кинематикой в той же системе, остаются постоянными при небольшом изменении заданной позы корпуса.",
               "en": "With fixed stance world points, recovered world foot FK stays constant during a small desired body-pose change."
             },
             {
-              "ru": "До физических испытаний зафиксировать допустимые RMSE, peak error, settling time, окно измерения и условия насыщения. Сравнить target и measured roll/pitch с независимым статическим эталоном. Это план будущей проверки, а не утверждение о полученных результатах.",
+              "ru": "До физических испытаний зафиксировать допустимые RMSE, пиковую ошибку, время установления, окно измерения и условия насыщения. Сравнить заданные и измеренные крен и тангаж с независимым статическим эталоном. Это план будущей проверки, а не сообщение о полученных результатах.",
               "en": "Before physical testing, freeze acceptable RMSE, peak error, settling time, measurement window and saturation conditions. Compare target/measured roll/pitch with an independent static reference. These are planned checks, not claims of achieved results."
             }
           ],
@@ -1802,11 +1802,11 @@
             "en": "Current and Jᵀf are not ready-to-send commands"
           },
           "finding": {
-            "ru": "Текущее предупреждение о калибровке силы по току полезно, но лучше уточнить физическую величину и знак. Формулировка M23 p6 сокращает выражение до Jᵀf; без M09 это можно прочитать как полный holding torque.",
+            "ru": "Текущее предупреждение о калибровке силы по току полезно, но лучше уточнить физическую величину и знак. Формулировка M23 p6 сокращает выражение до Jᵀf; без M09 это можно прочитать как полный момент удержания.",
             "en": "The current warning about current-to-force calibration is useful but should specify the quantity and sign. M23 p6 abbreviates the expression to Jᵀf, which can be misread as complete holding torque without M09."
           },
           "proposed_text": {
-            "ru": "Если f — сила земли на стопу, Jᵀf — её внешнее обобщённое действие. Для принятой модели неподвижной ноги статический момент привода включает вес звеньев и противоположное действие опоры: τ_act≈g_leg(q)−J_leg(q)ᵀf. Формула используется для расчёта нагрузки; позиционный сервопривод не принимает её как угол. Телеметрию тока использовать для контроля нагрузки/ограничений; оценку joint torque или foot force подписывать как модельную, с калибровкой и неопределённостью. Supply current, winding current и внутренний current register не взаимозаменяемы.",
+            "ru": "Если f — сила земли на стопу, Jᵀf — соответствующее внешнее обобщённое усилие. В принятой модели неподвижной ноги статический момент привода учитывает вес звеньев и противоположное действие опоры: τ_act≈g_leg(q)−J_leg(q)ᵀf. Формула используется для расчёта нагрузки; позиционный сервопривод не принимает её результат как угол. Телеметрию тока использовать для контроля нагрузки и ограничений. Оценку момента в суставе или силы на стопе обозначать как модельную, с калибровкой и неопределённостью. Ток питания, ток обмотки и значение внутреннего регистра тока не взаимозаменяемы.",
             "en": "When f is the ground force on the foot, Jᵀf is its external generalised action. In the selected fixed-leg static model, actuator torque includes link weight and the opposite support contribution: τ_act≈g_leg(q)−J_leg(q)ᵀf. This is a load calculation, not an angle command to a position servo. Use current telemetry for load/limit monitoring; label inferred joint torque or foot force as model-based, with calibration and uncertainty. Supply current, winding current and an internal current register are not interchangeable."
           },
           "existing_wbs_mapping": [
@@ -1822,7 +1822,7 @@
               "en": "For one joint, compare r×f, Jᵀf and holding sign, then add link weight separately."
             },
             {
-              "ru": "Зафиксировать измеряемую величину и единицы каждого current channel; не заявлять измерение силы стопы по наличию регистра тока.",
+              "ru": "Зафиксировать измеряемую величину и единицы каждого канала измерения тока; не заявлять измерение силы стопы по наличию регистра тока.",
               "en": "Record each current channel’s physical quantity and units; a current register alone does not establish foot-force measurement."
             }
           ],
@@ -1844,11 +1844,11 @@
             "en": "QP/MPC/RL belong to further development"
           },
           "finding": {
-            "ru": "Общие карточки M20/M21 верны. В gate M23 фраза «timeout QP → fallback» без среды может выглядеть обязательным физическим force controller. Нужно явно сохранить исходные software/HIL проверки и исходный scope.",
+            "ru": "Общие карточки M20/M21 корректны. В контрольной проверке M23 фраза «таймаут QP → резервный режим» без указания среды может выглядеть требованием физического силового управления. Нужно явно сохранить исходные программные проверки и HIL, а также исходные границы работ.",
             "en": "M20/M21 cards are sound. The M23 gate “QP timeout → fallback” lacks an evidence level and can imply a mandatory hardware force controller. Preserve source software/HIL checks and scope explicitly."
           },
           "proposed_text": {
-            "ru": "В основной срок не входят даже отдельные учебные QP/MPC/RL-кампании. Они сохранены в ветках D_FORCE, D_MPC, D_IL и D_RL. Основной физический результат — классический position/IK-контроль с выравниванием. При выборе расширения сначала проверить алгоритм в симуляции, infeasible/timeout и смену контактов — в software/HIL. Перенос силового или обучаемого управления требует отдельной квалификации привода, модели, частот и ограничений.",
+            "ru": "В основной срок не входят даже отдельные учебные эксперименты QP/MPC/RL. Они сохранены в ветках D_FORCE, D_MPC, D_IL и D_RL. Основной физический результат — классическое позиционное управление через IK с выравниванием. Для расширения сначала проверить алгоритм в симуляции, затем отсутствие допустимого решения, истечение времени ожидания и смену контактов — программно и через HIL. Перенос силового или обучаемого управления требует отдельной проверки привода, модели, частот и ограничений.",
             "en": "Core timing excludes even separate educational QP/MPC/RL campaigns. They are retained in D_FORCE, D_MPC, D_IL and D_RL. The core hardware outcome is classical position/IK control with leveling. When selecting an extension, validate algorithms in simulation first, and infeasibility/timeout/contact changes in software/HIL. Force or learned control transfer requires separate actuator, model, rate and limit qualification."
           },
           "existing_wbs_mapping": [
@@ -1857,11 +1857,11 @@
           ],
           "acceptance_checks": [
             {
-              "ru": "В таблице evidence явно пометить simulation, replay, HIL, supported rig и floor trial; виртуальный PASS не закрывает физическое стояние.",
+              "ru": "В таблице подтверждающих результатов различать симуляцию, воспроизведение записей, HIL, испытание на стенде со страховкой и испытание на полу. Успех виртуальной проверки не подтверждает физическое стояние.",
               "en": "Label simulation, replay, HIL, supported rig and floor trials in the evidence table; a virtual PASS does not close physical standing."
             },
             {
-              "ru": "Смена набора контактов во время solve отклоняет старый результат даже при свежем timestamp; fallback повторно валиден для текущих опор.",
+              "ru": "Если во время вычисления решения набор контактов изменился, старый результат отклоняется даже при свежей временной метке; резервное решение заново проверяется для текущих опор.",
               "en": "A contact-set change during solving rejects the old result even with a fresh timestamp; fallback must be valid for current supports."
             }
           ],
@@ -1883,11 +1883,11 @@
             "en": "Model and loads when expanding 12→18"
           },
           "finding": {
-            "ru": "Карточка обновляет приводы и шину. Полезно явно перенести математическое масштабирование floating base и проверки полной геометрии, уже предусмотренные исходником.",
+            "ru": "Карточка обновляет приводы и шину. Полезно явно включить математическое расширение модели с плавающим основанием и проверки полной геометрии, уже предусмотренные исходником.",
             "en": "The card updates actuators and the bus. Explicitly include floating-base model scaling and full-geometry checks already required by the source."
           },
           "proposed_text": {
-            "ru": "Основная версия: пересчитать массу, COM, инерции, hip transforms, зеркальные оси, коллизии и нагрузки при расширении 12→18 суставов. Равные доли веса 1/6 не предполагаются. В M19 обновляется готовая модель, новый solver не пишется. Углубление M20: при quaternion корпуса q имеет 25 координат, v — 24, для k точечных контактов Jc имеет размер 3k×24, распределение сил — 6×3k; эти отдельные force-model упражнения относятся к развитию.",
+            "ru": "Основная версия: при расширении с 12 до 18 суставов пересчитать массу, центр масс, инерции, преобразования систем координат тазобедренных суставов, зеркальные оси, столкновения и нагрузки. Равные доли веса 1/6 не предполагаются. M19 обновляет готовую модель, новый решатель не создаётся. Углубление M20: при представлении ориентации корпуса кватернионом q содержит 25 координат, v — 24; для k точечных контактов размер Jc равен 3k×24, матрицы распределения сил — 6×3k. Эти упражнения по силовой модели относятся к дальнейшему развитию.",
             "en": "Core: update mass, COM, inertias, hip transforms, mirrored axes, collisions and loads when expanding from twelve to eighteen joints. Equal one-sixth weight shares are not assumed. M19 updates an existing model rather than building a new solver. M20 extension: with a body quaternion, q has 25 coordinates, v has 24, Jc is 3k×24 for k point contacts and force allocation is 6×3k; these separate force-model exercises belong to further development."
           },
           "existing_wbs_mapping": [
@@ -1897,7 +1897,7 @@
           ],
           "acceptance_checks": [
             {
-              "ru": "Проверить фактическую и численную FK каждой новой и прежней ноги; сохранять независимые reference poses и non-collinear support cases.",
+              "ru": "Проверить фактическую и численную FK каждой новой и прежней ноги; сохранять независимые эталонные позы и конфигурации с неколлинеарными опорами.",
               "en": "Check actual/numerical FK for new and retained legs; preserve independent reference poses and non-collinear support cases."
             },
             {
@@ -1922,11 +1922,11 @@
             "en": "Support plane and body orientation are different estimates"
           },
           "finding": {
-            "ru": "Главная карточка упоминает плоскость и ±10–15°, но не раскрывает отказ при вырожденной геометрии и различие между surface slope, body target и gravity direction.",
+            "ru": "Главная карточка упоминает плоскость и ±10–15°, но не раскрывает отказ при вырожденной геометрии и различие между уклоном поверхности, заданной ориентацией корпуса и направлением силы тяжести.",
             "en": "The main card mentions the plane and ±10–15° but does not expose geometric-degeneracy rejection or the distinction between surface slope, body target and gravity."
           },
           "proposed_text": {
-            "ru": "Оценивать локальную плоскость только по достоверным опорам в одной системе координат; проверять ранг, обусловленность, остатки и выбросы. Три почти коллинеарные точки или общий ошибочный IMU-поворот не становятся хорошим эталоном из-за малого residual. Для наклонной плоскости проецировать COM по направлению тяжести, а не по нормали плоскости. Указать отдельно угол поверхности и целевой угол корпуса. ±10–15° остаётся проектным ориентиром: фактический диапазон определяется геометрией, сцеплением, нагрузкой, contact quality и испытаниями.",
+            "ru": "Оценивать локальную плоскость только по достоверным опорам в одной системе координат; проверять ранг, обусловленность, невязки и выбросы. Три почти коллинеарные точки или общая ошибка поворота IMU не становятся надёжным эталоном из-за малой невязки. На наклонной плоскости проецировать центр масс по направлению тяжести, а не по нормали. Отдельно указывать угол поверхности и заданный угол корпуса. ±10–15° остаётся проектным ориентиром: фактический диапазон определяется геометрией, сцеплением, нагрузкой, достоверностью контактов и испытаниями.",
             "en": "Estimate the local plane from trustworthy supports in one frame; check rank, conditioning, residuals and outliers. Three nearly collinear points or a shared erroneous IMU rotation do not become a reliable reference through a small residual. On a slope, project COM along gravity rather than the plane normal. State surface angle separately from desired body angle. ±10–15° remains a design guide; the achieved envelope follows geometry, traction, loading, contact quality and tests."
           },
           "existing_wbs_mapping": [
@@ -1935,11 +1935,11 @@
           ],
           "acceptance_checks": [
             {
-              "ru": "Плоскости с известной нормалью, шум, outlier, две точки и почти коллинеарный набор; invalid estimate должен вызвать ограничение.",
+              "ru": "Проверить плоскости с известной нормалью, шум, выбросы, две точки и почти коллинеарный набор. Недостоверная оценка должна приводить к ограничению движения.",
               "en": "Known planes, noise, an outlier, two points and nearly collinear contacts; invalid estimates must trigger restriction."
             },
             {
-              "ru": "Сохранить динамический counterexample CoP из M23 p15 как учебную проверку: формула постоянной высоты не объявляется общей гарантией для неровного рельефа.",
+              "ru": "Сохранить динамический контрпример для центра давления (CoP) из M23, стр. 15, как учебную проверку: соотношение для постоянной высоты не является общей гарантией для неровного рельефа.",
               "en": "Keep the M23 p15 dynamic CoP counterexample as an educational check; the constant-height formula is not a general guarantee for uneven terrain."
             }
           ],
@@ -1954,15 +1954,15 @@
           "id": "HC08",
           "priority": "medium",
           "title": {
-            "ru": "Границы IMU в ядре; depth-карта в развитии",
+            "ru": "Ограничения IMU в основной программе; карта глубины в дальнейшем развитии",
             "en": "IMU limits in core; depth mapping in development"
           },
           "finding": {
-            "ru": "В проектном summary нет явного задания с сохранённой depth map; формулировка про ровную поверхность может скрыть обязательное сравнение ограниченного режима без камеры. Исходник не требует полноценного автономного rugged-terrain planner.",
+            "ru": "В кратком описании проекта нет явного задания с сохранённой картой глубины; формулировка о ровной поверхности может скрыть обязательное сравнение ограниченного режима без камеры. Исходник не требует полноценного автономного планировщика для пересечённой местности.",
             "en": "The project summary omits the saved-depth-map exercise; the flat-surface wording can hide the required camera-free restricted-mode comparison. The source does not require a full autonomous rugged-terrain planner."
           },
           "proposed_text": {
-            "ru": "В core hexapod нет visual navigation: только заранее проверенные поверхности и подтверждённые опоры. IMU не измеряет неизвестный рельеф; абсолютные позиция/yaw без внешнего ориентира могут дрейфовать. Короткие маршруты проверять внешними маркерами/измерениями. Исходное сравнение кандидатов стоп по записанной depth map и контактам сохранено в 3D-зрении/автономности. При выборе этой ветки проверять unknown depth, возраст кадра и переход в испытанный ограниченный режим или stop.",
+            "ru": "В основной версии гексапода нет визуальной навигации: используются только заранее проверенные поверхности и подтверждённые опоры. IMU не измеряет неизвестный рельеф; абсолютные координаты и угол рыскания без внешнего ориентира могут дрейфовать. Короткие маршруты проверять внешними маркерами и измерениями. Исходное сравнение возможных опор по записанной карте глубины и контактам сохранено в разделах 3D-зрения и автономности. В этой ветке проверять неизвестную глубину, возраст кадра и переход в испытанный ограниченный режим либо остановку.",
             "en": "Core hexapod has no visual navigation: use pre-verified surfaces and confirmed supports. An IMU does not measure unknown terrain; absolute position/yaw can drift without an external reference. Verify short routes using external markers/measurements. The original recorded-depth-map versus contact foothold comparison is retained in 3D vision/autonomy. When choosing that branch, test unknown depth, image age and transition to a validated restricted mode or stop."
           },
           "existing_wbs_mapping": [
@@ -1977,7 +1977,7 @@
               "en": "Development only: compare one scene with and without camera; unknown depth never becomes zero height, nor old imagery fresh."
             },
             {
-              "ru": "Разделить estimator input и independent reference; ground truth остаётся только оценкой качества.",
+              "ru": "Разделять входные данные оценивателя и независимый эталон. Эталонные данные используются только для оценки качества.",
               "en": "Separate estimator inputs and independent reference; ground truth remains evaluation-only."
             }
           ],
@@ -1997,11 +1997,11 @@
             "en": "Trial criteria by configuration and conditions"
           },
           "finding": {
-            "ru": "Число 30–50+ в summary может читаться как требование к каждой строке или каждому модулю. M23 прямо задаёт рабочую цель 40 попыток разных классов, а не 40 повторов каждого класса; уже протокольные попытки можно включать без повторного счёта.",
+            "ru": "Число 30–50+ в кратком описании может читаться как требование к каждой строке или каждому модулю. M23 прямо задаёт рабочую цель 40 попыток разных классов, а не 40 повторов каждого класса; уже протокольные попытки можно включать без повторного счёта.",
             "en": "The summary’s 30–50+ count can be read as applying to every row/module. M23 explicitly targets forty attempts across classes, not forty per class; already-protocolled trials may be included without double counting."
           },
           "proposed_text": {
-            "ru": "M22 отдельно подтверждает ≥60 с физического стояния, crawl и остановку; M23 — ≥120 с, wave/ripple и выравнивание на проверенных поверхностях. Для M23 40 попыток: 10 wave, 10 ripple, 10 leveling и 10 start/stop/transition с контролируемыми отказами. Указать независимую попытку, ревизии, пределы, N и отказы; меньшее N допускается при заранее суженном выводе. Эта серия не устанавливает ресурс или промышленную надёжность.",
+            "ru": "M22 отдельно подтверждает ≥60 с физического стояния, походку crawl и остановку; M23 — ≥120 с, wave/ripple и выравнивание на проверенных поверхностях. Серия M23 содержит 40 попыток: 10 wave, 10 ripple, 10 выравниваний и 10 запусков, остановок и переходов с контролируемыми отказами. Определить независимую попытку, ревизии, пределы, N и отказы; меньшее N допускается при заранее ограниченных выводах. Эта серия не подтверждает ресурс или промышленную надёжность.",
             "en": "M22 independently demonstrates ≥60 s physical standing, crawl and stop; M23 demonstrates ≥120 s, wave/ripple and leveling on validated surfaces. M23 uses forty trials: ten wave, ten ripple, ten leveling and ten start/stop/transition with controlled faults. Define independent attempts, revisions, limits, N and failures; a smaller N requires a prospectively narrower conclusion. This series does not establish service life or industrial reliability."
           },
           "existing_wbs_mapping": [
@@ -2011,7 +2011,7 @@
           ],
           "acceptance_checks": [
             {
-              "ru": "Четырёхногие и шестиногие результаты не объединяются в одну вероятность успеха; sample rows и шаги не объявляются независимыми попытками.",
+              "ru": "Результаты четырёхногой и шестиногой конфигураций не объединяются в одну вероятность успеха; строки измерений и отдельные шаги не считаются независимыми попытками.",
               "en": "Four-leg and six-leg results are not pooled into one success probability; rows and steps are not independent trials."
             },
             {
@@ -2029,7 +2029,7 @@
       ],
       "total_incremental_hours": 0,
       "hours_policy": {
-        "ru": "Все исправления сопоставлены существующим пакетам. Если при реализации обнаружится новая механическая переделка или необходимость нового датчика, это отдельный reforecast из общего резерва, а не автоматическое расширение по слову «актуальность».",
+        "ru": "Все исправления сопоставлены существующим пакетам. Если при реализации обнаружится новая механическая переделка или необходимость нового датчика, это отдельный пересчёт прогноза с использованием общего резерва, а не автоматическое расширение по слову «актуальность».",
         "en": "Every correction maps to existing packages. A discovered mechanical redesign or new sensor requirement triggers a separate contingency reforecast, not automatic expansion for “currency”."
       },
       "references": [
@@ -2040,7 +2040,7 @@
           "checked_on": "2026-09-19",
           "status": "verified",
           "supports": {
-            "ru": "Согласование wrench/Jacobian и знака действия/противодействия через равенство мощности.",
+            "ru": "Согласование внешних сил и моментов, якобиана и знаков действия и противодействия через равенство мощности.",
             "en": "Consistent wrench/Jacobian frames and action/reaction signs through power equality."
           }
         },
@@ -2051,7 +2051,7 @@
           "checked_on": "2026-09-19",
           "status": "verified",
           "supports": {
-            "ru": "Контактные режимы, события, guards/reset и floating-base представление; фазовый таймер не является физическим контактом.",
+            "ru": "Контактные режимы, события, условия переходов, сброс и представление системы с плавающим основанием; фазовый таймер не заменяет физический контакт.",
             "en": "Contact modes, events, guards/resets and floating-base representation; a phase timer is not physical contact."
           }
         },
@@ -2062,7 +2062,7 @@
           "checked_on": "2026-09-19",
           "status": "verified",
           "supports": {
-            "ru": "Различие COM и CoP, ограничения контактов и трения, предпосылки упрощённого constant-height соотношения.",
+            "ru": "Различие центра масс (COM) и центра давления (CoP), ограничения контактов и трения, предпосылки упрощённого соотношения для постоянной высоты.",
             "en": "COM/CoP distinction, contact/friction constraints and assumptions of the simplified constant-height relation."
           }
         },
@@ -2086,7 +2086,7 @@
           "checked_on": "2026-09-19",
           "status": "verified_official_source",
           "supports": {
-            "ru": "IMU specific force, rad/s, sensor frame и отсутствие абсолютного yaw без соответствующего внешнего ориентира.",
+            "ru": "Удельная негравитационная сила, измеряемая IMU; угловая скорость в рад/с; система координат датчика; отсутствие абсолютного угла рыскания без соответствующего внешнего ориентира.",
             "en": "IMU specific force, rad/s, sensor frame and lack of absolute yaw without a suitable reference."
           }
         }
@@ -2097,15 +2097,15 @@
           "en": "Include HC01–HC05 in the visible project specification; HC06–HC09 can be expandable technical sections and test-table refinements."
         },
         {
-          "ru": "В M23 gate уточнить среду QP timeout: software/HIL. Основной hardware controller — position/IK; не превращать force feedback в скрытую обязательную покупку.",
+          "ru": "В контрольной проверке M23 уточнить среду таймаута QP: программная проверка и HIL. Основной аппаратный контроллер использует позиционное управление через IK; обратная связь по силе не должна превращаться в скрытую обязательную покупку.",
           "en": "Clarify the M23 QP-timeout gate as software/HIL. The baseline hardware controller is position/IK; do not turn force feedback into a hidden mandatory purchase."
         },
         {
-          "ru": "Выбор contact channel закрепить на L1: выбранный датчик или обоснованная косвенная оценка с измеренными false-positive/false-negative. Не требовать шести force-torque датчиков, которых исходник не требует.",
+          "ru": "На L1 зафиксировать способ определения контакта: выбранный датчик либо обоснованная косвенная оценка с измеренными долями ложных срабатываний и пропусков. Не требовать шести датчиков сил и моментов, которых нет в исходных требованиях.",
           "en": "Freeze the contact channel at L1: selected sensor or justified indirect estimate with measured false-positive/false-negative behaviour. Do not mandate six force-torque sensors absent from the source."
         },
         {
-          "ru": "Ссылка на MIT Highly-articulated Legged Robots — humanoids.html; предположенный адрес legged.html недоступен. ROS REP web-pages могут возвращать защиту; официальные исходники доступны.",
+          "ru": "Ссылка на MIT Highly-articulated Legged Robots — humanoids.html; предположенный адрес legged.html недоступен. Веб-страницы ROS REP могут возвращать защиту; официальные исходники доступны.",
           "en": "The MIT Highly-articulated Legged Robots URL is humanoids.html; the guessed legged.html URL is unavailable. ROS REP web pages may return protection; official sources are available."
         }
       ]
@@ -2113,11 +2113,11 @@
     "software": {
       "review_date": "2026-09-19",
       "scope": {
-        "ru": "Практический стек hexapod: ROS, симуляция, MCU, шины, время, качество данных и реальные интерфейсы приводов. Проверены соответствующие задания и условия исходников M06/M11/M12/M13/M22/M23 и действующие пакеты работ; это ревью документа, не испытание компьютера или робота.",
+        "ru": "Практический стек гексапода: ROS, симуляция, МК, шины, время, качество данных и реальные интерфейсы приводов. Проверены соответствующие задания и условия исходников M06/M11/M12/M13/M22/M23 и действующие пакеты работ; это технический разбор документа, не испытание компьютера или робота.",
         "en": "Practical hexapod stack: ROS, simulation, MCU, buses, time, data quality and actual actuator interfaces. Relevant tasks and requirements in original M06/M11/M12/M13/M22/M23 were checked against current work packages. This is a document review, not a test of the computer or robot."
       },
       "summary": {
-        "ru": "Сохранить Ubuntu 24.04 / ROS 2 Jazzy / Gazebo Harmonic. Существенная поправка: поддержка ROS на ARM64 не гарантирует работу всей графики Gazebo в M4/UTM. Добавить раннюю проверку готовой сцены, явные физические интерфейсы и критерии тайминга/отказов. Дополнительной разработки поверх уже оплаченных работ не требуется; 6 ч установки и первичной проверки переносятся в M01 из M12/M13.",
+        "ru": "Сохранить Ubuntu 24.04 / ROS 2 Jazzy / Gazebo Harmonic. Существенная поправка: поддержка ROS на ARM64 не гарантирует работу всей графики Gazebo в M4/UTM. Добавить раннюю проверку готовой сцены, явные физические интерфейсы и критерии временных характеристик/отказов. Дополнительной разработки поверх уже учтённых работ не требуется; 6 ч установки и первичной проверки переносятся в M01 из M12/M13.",
         "en": "Retain Ubuntu 24.04 / ROS 2 Jazzy / Gazebo Harmonic. Main correction: ROS support on ARM64 does not establish full Gazebo graphics support in M4/UTM. Add an early supplied-scene readiness check, explicit physical interfaces and timing/fault criteria. No additional development beyond existing work is required; move six installation and initial-check hours from M12/M13 into M01."
       },
       "hour_delta": 0,
@@ -2125,7 +2125,7 @@
         "status": "accepted_by_root",
         "total_delta": 0,
         "reason": {
-          "ru": "Исходные M12 p14 и M13 p14 уже включали установку и начальную проверку в оплаченные модули. Выделяем эту часть явно и выполняем раньше; не сокращаем последующее изучение ROS, физики, датчиков, PIL/HIL или собственные эксперименты.",
+          "ru": "Исходные M12 p14 и M13 p14 уже включали установку и начальную проверку в учтённые модули. Выделяем эту часть явно и выполняем раньше; не сокращаем последующее изучение ROS, физики, датчиков, PIL/HIL или собственные эксперименты.",
           "en": "Original M12 p14 and M13 p14 already placed installation and initial checks inside their module budgets. Make this work explicit and execute it earlier; do not remove later ROS/physics/sensor/PIL/HIL study or custom experiments."
         },
         "moves": [
@@ -2167,7 +2167,7 @@
             },
             "moved_hours": 3,
             "moved_work": {
-              "ru": "Установка Harmonic/ros_gz/gz_ros2_control и первичная проверка готового cart-demo и реального наличия кадров глубины в тестовой сцене.",
+              "ru": "Установка Harmonic/ros_gz/gz_ros2_control и первичная проверка готового демонстрационного примера тележки и реального наличия кадров глубины в тестовой сцене.",
               "en": "Install Harmonic/ros_gz/gz_ros2_control and initially check a supplied cart demo plus actual depth frames in a test scene."
             }
           }
@@ -2188,7 +2188,7 @@
               "M13 p14 installation checks — moved earlier"
             ],
             "result": {
-              "ru": "Запись версий/архитектуры/VM/GPU, запуск готового talker/listener, RViz, cart-controller и sensor scene; PASS/HOLD по фактическим результатам. Это проверка установки по готовым инструкциям, а не зачёт ROS/физики/управления. Наличие USB-устройства проверяется, если оно уже доступно; физический MCU и измерения задержек остаются M06/M13.",
+              "ru": "Записать версии, архитектуру, виртуальную машину и GPU; запустить готовые talker/listener, RViz, контроллер тележки и сцену с датчиком; назначить PASS/HOLD по фактическим результатам. Это проверка установки по готовым инструкциям, а не зачёт ROS, физики или управления. Наличие USB-устройства проверяется, если оно уже доступно; физический микроконтроллер и измерения задержек остаются в M06/M13.",
               "en": "Record versions/architecture/VM/GPU and run supplied talker/listener, RViz, cart-controller and sensor scenes; record PASS/HOLD from evidence. This is an installation check using supplied instructions, not credit for ROS/physics/control competence. Check USB device visibility if a device is already available; physical MCU work and latency measurements remain in M06/M13."
             }
           }
@@ -2204,7 +2204,7 @@
           "M13": -3
         },
         "failure_policy": {
-          "ru": "Шесть часов — бюджет первичной проверки и решения, не обещание устранить любую несовместимость. При HOLD использовать дополнительное время из R1 только по найденной причине. Графически облегчённый/headless путь принимается лишь при наличии требуемых данных. Поддерживаемый Ubuntu amd64-хост — альтернатива при доступе к нему; иначе оборудование и изменение календаря планируются отдельно, без подразумеваемой покупки.",
+          "ru": "Шесть часов — бюджет первичной проверки и решения, не обещание устранить любую несовместимость. При HOLD использовать дополнительное время из R1 только по найденной причине. Графически облегчённый/без графического интерфейса путь принимается лишь при наличии требуемых данных. Поддерживаемый Ubuntu amd64-хост — альтернатива при доступе к нему; иначе оборудование и изменение календаря планируются отдельно, без подразумеваемой покупки.",
           "en": "Six hours budget an initial check and decision, not resolution of every incompatibility. On HOLD, use R1 only against a diagnosed cause. A lighter-renderer/headless path is accepted only if required data exist. A supported Ubuntu amd64 host is an alternative when accessible; otherwise plan equipment and calendar changes separately, without assuming a purchase."
         }
       },
@@ -2220,7 +2220,7 @@
             "en": "Jazzy supplies official Ubuntu 24.04 ARM64 packages and is supported through May 2029. Gazebo's current official table also lists Harmonic through May 2029; Jazzy/Harmonic is the recommended pairing. Planned June 2028 completion falls within both lifecycles. A newer release alone does not require migration."
           },
           "action": {
-            "ru": "Зафиксировать версии ОС, RMW, ROS-пакетов, Gazebo, gz_ros2_control, MCU SDK и драйвера. Использовать Jazzy-ветки документации и пакеты согласованной пары; проверять обновления на сохранённом replay/одной ноге перед всей платформой. Не смешивать Gazebo Classic и Harmonic.",
+            "ru": "Зафиксировать версии ОС, RMW, ROS-пакетов, Gazebo, gz_ros2_control, SDK микроконтроллера и драйвера. Использовать Jazzy-ветки документации и пакеты согласованной пары; проверять обновления воспроизведением сохранённых записей и на одной ноге перед всей платформой. Не смешивать Gazebo Classic и Harmonic.",
             "en": "Record OS, RMW, ROS packages, Gazebo, gz_ros2_control, MCU SDK and driver versions. Use Jazzy documentation branches and matched packages; validate updates on saved replay/one leg before the full platform. Do not mix Gazebo Classic with Harmonic."
           },
           "wbs_refs": [
@@ -2245,11 +2245,11 @@
             "en": "ARM64 VM is a configuration to qualify"
           },
           "detail": {
-            "ru": "В отличие от ROS, Gazebo Harmonic перечисляет Ubuntu amd64 как официальную платформу, а ARM — как best-effort. Гостевая графика и плагины M4/UTM требуют фактической проверки. Работа процесса без окна не доказывает наличие depth images; изменение renderer не гарантирует прежний набор сенсоров.",
+            "ru": "В отличие от ROS, Gazebo Harmonic указывает Ubuntu amd64 как официальную платформу, а ARM — как платформу с ограниченной поддержкой (best effort). Гостевая графика и плагины M4/UTM требуют фактической проверки. Работа процесса без окна не подтверждает наличие кадров глубины; смена средства визуализации не гарантирует сохранение набора датчиков.",
             "en": "Unlike ROS, Gazebo Harmonic lists Ubuntu amd64 as an official platform and ARM as best-effort. M4/UTM guest graphics and plugins need a practical check. A windowless process does not establish available depth images; changing renderer does not guarantee the same sensor features."
           },
           "action": {
-            "ru": "В M01 выполнить 6-часовой smoke-test. Проверить не только старт приложения, но /clock, изменяющиеся joint states и непустые валидные кадры тестового сенсора. При провале зафиксировать HOLD и доступный путь решения; не заменять отсутствующий сенсор идеальными данными без маркировки.",
+            "ru": "В M01 выполнить 6-часовую базовую проверку. Проверить не только запуск приложения, но и /clock, изменение состояний суставов и непустые корректные кадры тестового датчика. При неуспехе зафиксировать HOLD и доступный способ решения; отсутствующие данные датчика нельзя подменять идеальными данными без явной маркировки.",
             "en": "Run the transferred six-hour smoke test in M01. Check /clock, changing joint states and nonempty valid test-sensor frames, not just process startup. On failure record HOLD and an accessible resolution path; never silently replace a missing sensor with ideal data."
           },
           "wbs_refs": [
@@ -2272,11 +2272,11 @@
             "en": "Three control levels and actual actuator capabilities"
           },
           "detail": {
-            "ru": "У smart-servo уже есть внутренний регулятор. ROS выдаёт ограниченную целевую траекторию, MCU/драйвер контролирует свежесть и пределы, а привод исполняет поддерживаемый режим. Наличие effort-интерфейса в симуляции не создаёт управление моментом на физическом позиционном приводе; ток питания не равен моменту отдельного сустава.",
+            "ru": "Сервопривод с цифровым интерфейсом уже имеет внутренний регулятор. ROS задаёт ограниченную целевую траекторию, микроконтроллер или драйвер проверяет актуальность команд и пределы, а привод исполняет поддерживаемый режим. Наличие интерфейса effort в симуляции не создаёт управление моментом у реального позиционного привода; ток питания не равен моменту отдельного сустава.",
             "en": "A smart servo already contains an internal controller. ROS supplies a bounded reference, the MCU/driver enforces freshness and limits, and the actuator executes its supported mode. A simulated effort interface does not create physical torque control in a position actuator; supply current is not individual joint torque."
           },
           "action": {
-            "ru": "До L1 и закупки набора записать command/state interfaces кандидата. Для position-only версии использовать ограниченные q-цели и измеренную q; не публиковать выдуманный measured effort. Force-QP — отдельное направление развития с подтверждённым силовым интерфейсом перед аппаратным переносом. Измеренный current proxy маркировать как калиброванную оценку, а не ground truth.",
+            "ru": "До L1 и закупки комплекта записать интерфейсы команд и состояния кандидата. Для позиционной версии использовать ограниченные целевые координаты q и измеренные q; не публиковать вымышленные измеренные усилия. Распределение сил через QP — отдельное направление развития; перед переносом на оборудование нужен подтверждённый интерфейс силового управления. Величины, косвенно оценённые по току, обозначать как калиброванные оценки, а не эталонные измерения.",
             "en": "Before L1 and bulk procurement record the candidate command/state interfaces. Position-only core uses bounded q targets and measured q; never publish invented measured effort. Force-QP is a separate development direction, requiring a qualified force interface before hardware transfer. Label current proxies as calibrated estimates rather than ground truth."
           },
           "wbs_refs": [
@@ -2304,7 +2304,7 @@
             "en": "gz_ros2_control can hold unclaimed joints by default through hold_joints. Its position interface also uses simplified dynamics. This helps interface experiments but can hide passive collapse, internal delay, saturation and actual torque loss."
           },
           "action": {
-            "ru": "Явно записать hold_joints и режим управления. Для опыта снятия момента отключить искусственное удержание и проверить пассивную модель/реальный тормоз. Сравнить модель привода с физическими логами L1/M13; измеренное поведение после disable/power-off отдельно подтвердить на поддержанной конструкции в M22/M23.",
+            "ru": "Явно указать hold_joints и режим управления. Для опыта со снятием момента отключить искусственное удержание и проверить пассивную модель или реальный тормоз. Сравнить модель привода с физическими журналами L1/M13; поведение после отключения привода или питания отдельно проверить на конструкции со страховкой в M22/M23.",
             "en": "Record hold_joints and control mode explicitly. Disable artificial holding for torque-removal experiments and check the passive model/actual brake. Compare the actuator model with L1/M13 physical logs; independently verify disable/power-off behaviour on the supported structure in M22/M23."
           },
           "wbs_refs": [
@@ -2325,11 +2325,11 @@
             "en": "Qualify HIL and VM by measured delays"
           },
           "detail": {
-            "ru": "Параметр update_rate или средний real-time factor около единицы не доказывают выполнение каждого дедлайна. USB passthrough, гипервизор, запись bag, сеть и камера способны менять очередь и возраст измерений. Простой возврат пакета MCU не является HIL с вычислением управления.",
+            "ru": "Параметр update_rate и средний коэффициент реального времени около единицы не доказывают соблюдение каждого предельного срока. Проброс USB, гипервизор, запись rosbag, сеть и камера могут менять очередь и возраст измерений. Простое возвращение пакета микроконтроллером не является HIL с вычислением управления.",
             "en": "An update_rate parameter or mean real-time factor near one does not establish every deadline. USB passthrough, hypervisor, bag recording, networking and camera load affect queues and sample age. MCU packet echo is not closed-loop HIL computation."
           },
           "action": {
-            "ru": "M06 измеряет локальный цикл, M12 — callbacks/QoS, M13 — замкнутый HIL с MCU. Для каждого объявить период, допустимый возраст данных и ответ при опоздании; сохранить p50/p95/p99/max, пропуски и длительность прогона. Повторить при CPU/USB-нагрузке и записи логов. Общий ПК/VM не назначать единственным слоем защиты; при непрохождении временного критерия оставить HIL на HOLD.",
+            "ru": "M06 измеряет локальный цикл, M12 — обратные вызовы и QoS, M13 — замкнутый HIL с микроконтроллером. Для каждого задать период, допустимый возраст данных и реакцию на опоздание; сохранять p50/p95/p99, максимум, пропуски и длительность запуска. Повторить под нагрузкой CPU/USB и при записи журналов. Обычный ПК или виртуальная машина не должны быть единственным уровнем защиты; при невыполнении временных требований оставить HIL в состоянии HOLD.",
             "en": "M06 measures the local loop, M12 callbacks/QoS, and M13 closed-loop MCU HIL. Specify period, allowed sample age and late-data response; retain p50/p95/p99/max, misses and run duration. Repeat under CPU/USB and logging load. The general-purpose host/VM must not be the sole protection layer; leave HIL on HOLD when timing fails."
           },
           "wbs_refs": [
@@ -2351,11 +2351,11 @@
             "en": "Separate acquisition time from delivery time"
           },
           "detail": {
-            "ru": "header.stamp, MCU ticks, ROS time и монотонное время разных машин не взаимозаменяемы. При последовательном опросе 18 приводов один JointState может скрывать разброс времени каналов. Вычитание несинхронизированных часов не даёт одностороннюю задержку.",
+            "ru": "header.stamp, отсчёты таймера микроконтроллера, время ROS и монотонные часы разных машин не взаимозаменяемы. При последовательном опросе 18 приводов одно сообщение JointState может скрывать разницу во времени измерений каналов. Вычитание показаний несинхронизированных часов не даёт одностороннюю задержку.",
             "en": "header.stamp, MCU ticks, ROS time and different machines' monotonic clocks are not interchangeable. Sequential polling of 18 actuators can hide channel-time skew inside one JointState. Subtracting unsynchronized clocks does not yield one-way latency."
           },
           "action": {
-            "ru": "Сохранять acquisition timestamp, host receipt, seq и session/boot ID; описать преобразование часов и его ошибку либо сообщать только RTT/локальные интервалы. Для TF и оценки состояния использовать время измерения; учитывать разброс возрастов суставов. Аппаратная свежесть проверяется монотонными часами, не останавливающимся /clock. При reset/jump очистить невалидные буферы; replay запускается в отдельном режиме без выхода на реальные приводы.",
+            "ru": "Сохранять время измерения, время получения на компьютере, порядковый номер и идентификатор сеанса или загрузки. Описать преобразование между часами и его ошибку либо сообщать только RTT и локальные интервалы. Для TF и оценки состояния использовать время измерения; учитывать разный возраст данных суставов. Актуальность аппаратных данных проверять монотонными часами, которые не останавливаются вместе с /clock. После сброса или скачка времени очистить недействительные буферы; воспроизведение записей запускать отдельно, без команд реальным приводам.",
             "en": "Retain acquisition timestamp, host receipt, sequence and session/boot ID; document clock mapping and uncertainty or report only RTT/local intervals. Use measurement time for TF and state estimation and account for joint-age skew. Hardware freshness uses monotonic time, not a pausable /clock. On reset/jump invalidate affected buffers; replay runs in a separate mode without physical actuator output."
           },
           "wbs_refs": [
@@ -2378,11 +2378,11 @@
             "en": "QoS does not replace motion authorization"
           },
           "detail": {
-            "ru": "Reliable относится к доставке, а не к свежести команды. Transient-local способен передавать сохранённые данные позднему подписчику; deadline/liveliness дают события, но сами не определяют физическую остановку. Несовместимый профиль recorder может дать неполный bag без очевидного сбоя процесса.",
+            "ru": "Политика Reliable относится к доставке, а не к актуальности команды. Transient-local может передавать сохранённые данные позднему подписчику; deadline/liveliness создают события, но сами по себе не определяют физическую остановку. Несовместимый профиль узла записи может дать неполный rosbag без очевидного сбоя процесса.",
             "en": "Reliable delivery does not establish command freshness. Transient-local can deliver stored data to a late subscriber; deadline/liveliness provide events but do not define physical stopping. Incompatible recorder QoS can produce an incomplete bag without an obvious process crash."
           },
           "action": {
-            "ru": "Для каждой темы фиксировать профиль, частоту, deadline и обработку stale. Движение принимать только с текущей session, новым seq, валидным сроком и допуском состояния; восстановление связи не запускает старую команду. Проверить поздний подписчик, несовместимый QoS, медленный callback, дубликат и пропуски. TF/static TF допускают собственные профили, не копировать их на команды движения.",
+            "ru": "Для каждого топика фиксировать профиль QoS, частоту, предельный интервал deadline и обработку устаревших данных. Команды движения принимать только для текущего сеанса, с новым порядковым номером, действующим сроком и разрешающим состоянием. Восстановление связи не запускает старую команду. Проверить позднего подписчика, несовместимый QoS, медленный обратный вызов, дубликаты и пропуски. Для TF и статических TF допустимы отдельные профили; не копировать их на команды движения.",
             "en": "For each topic record profile, frequency, deadline and stale handling. Accept motion only with the current session, a new sequence, valid expiry and allowed state; reconnecting must not execute an old command. Test late subscription, incompatible QoS, slow callbacks, duplicates and loss. TF/static TF use their own profiles; do not copy them blindly to motion commands."
           },
           "wbs_refs": [
@@ -2407,7 +2407,7 @@
             "en": "RS-485, CAN and USB do not provide interchangeable rate guarantees. The actual cycle depends on actuator protocol, command/reply sizes, turnarounds, gaps, retries and electrical topology. ESP32-S3 requires an external TWAI transceiver; generic API FD fields do not establish FD capability of a specific chip."
           },
           "action": {
-            "ru": "Выбрать совместимый транспорт по паспорту кандидата, не реализовывать все варианты. Рассчитать и измерить полный цикл command+feedback на 12, затем 18 осях, включая повтор, fault/температуру и дополнительный USB-трафик. Записать mapping IDs/знаки/нули, максимальный возраст каждого канала, очереди и bus-off/reconnect. При перегрузке снизить частоту необязательной телеметрии или переработать топологию; не выдумывать частоту feedback из частоты ROS публикации.",
+            "ru": "Выбрать совместимый транспорт по паспорту кандидата; реализовывать все варианты не нужно. Рассчитать и измерить полный цикл команд и обратной связи на 12, затем на 18 осях, включая повторные передачи, отказы, температуру и дополнительный трафик USB. Записать соответствие ID суставам, знаки, нули, максимальный возраст каждого канала, очереди, отключение от шины и восстановление. При перегрузке снизить частоту необязательной телеметрии или изменить топологию; частота публикации ROS не подтверждает частоту реальных измерений.",
             "en": "Select a compatible transport from the candidate's specification; do not implement every option. Calculate and measure the full command/feedback cycle for 12 then 18 axes, including retries, faults/temperature and extra USB traffic. Record IDs/signs/zeros, per-channel maximum age, queues and bus-off/reconnect behaviour. On overload reduce optional telemetry or redesign topology; ROS publication frequency must not masquerade as physical feedback rate."
           },
           "wbs_refs": [
@@ -2424,15 +2424,15 @@
         {
           "id": "HEX-S09",
           "title": {
-            "ru": "Watchdog проверяется без отладчика",
+            "ru": "Сторожевой таймер проверяется без отладчика",
             "en": "Validate watchdogs without the debugger"
           },
           "detail": {
-            "ru": "ESP-IDF различает interrupt и task watchdog. OpenOCD/JTAG способен отключать их аппаратные таймеры; успешный тест под отладчиком не подтверждает автономное поведение. Пропавший host и зависший MCU — разные отказы.",
+            "ru": "ESP-IDF различает сторожевые таймеры прерываний и задач. OpenOCD/JTAG может отключать их аппаратные таймеры; успешная проверка под отладчиком не подтверждает автономную работу. Потеря связи с компьютером и зависание микроконтроллера — разные отказы.",
             "en": "ESP-IDF distinguishes interrupt and task watchdogs. OpenOCD/JTAG can disable their hardware timers; a debugger-attached test does not validate autonomous behaviour. A missing host and a hung MCU are different faults."
           },
           "action": {
-            "ru": "Повторить watchdog/перезапуск в автономной проверочной сборке без OpenOCD, сохранить конфигурацию, причину reset и независимую запись enable/выхода до и после загрузки. Watchdog обслуживается по здоровью критического цикла, не безусловным таймером. Host loss отдельно запускает локальный timeout; после boot/reconnect нет автоматического torque enable.",
+            "ru": "Повторить проверку сторожевого таймера и перезапуска в автономной сборке без OpenOCD. Сохранить конфигурацию, причину сброса и независимую запись сигнала разрешения и выходов до и после загрузки. Обслуживать сторожевой таймер только при исправном критическом цикле, а не безусловно по таймеру. Потеря связи с компьютером отдельно вызывает локальный таймаут; после загрузки или восстановления связи привод автоматически не включается.",
             "en": "Repeat watchdog/reset tests in a standalone test build without OpenOCD; retain configuration, reset cause and an independent enable/output trace across reboot. Service the watchdog from critical-loop health rather than an unconditional timer. Host loss separately triggers a local timeout; boot/reconnect never automatically enables torque."
           },
           "wbs_refs": [
@@ -2449,7 +2449,7 @@
         {
           "id": "HEX-S10",
           "title": {
-            "ru": "Hold, normal stop и снятие энергии — разные состояния",
+            "ru": "Удержание, штатная остановка и снятие питания — разные состояния",
             "en": "Hold, normal stop and power removal are distinct"
           },
           "detail": {
@@ -2457,7 +2457,7 @@
             "en": "Holding a pose needs torque, power and a permitted thermal condition. Torque removal may collapse a standing robot; deactivating a ROS controller alone does not specify driver or mechanical behaviour. Loss of support cannot justify a blanket promise to preserve every stance."
           },
           "action": {
-            "ru": "Задать отдельные переходы: normal stop прекращает новые swing и возвращает в проверенную опору; допустимый hold ограничен током/температурой/временем; отказ или E-stop выполняет измеренный выход с учётом опускания корпуса. Стенд и опоры принимают возможное падение. Проверить процесс kill, USB disconnect, MCU reset, stale channel, overcurrent и power-off; новый запуск требует текущего измеренного состояния и явного разрешения.",
+            "ru": "Задать отдельные переходы: штатная остановка запрещает новые переносы ног и возвращает робот в проверенную опорную конфигурацию; удержание ограничивается током, температурой и временем; отказ или E-stop вызывает проверенное отключение с учётом опускания корпуса. Стенд и опоры должны принять возможное падение. Проверить завершение процесса, отсоединение USB, сброс микроконтроллера, устаревший канал данных, превышение тока и отключение питания. Новый запуск требует актуального измеренного состояния и явного разрешения.",
             "en": "Define separate transitions: normal stop prevents new swing and returns to validated support; permitted hold is bounded by current/temperature/time; fault or E-stop executes a measured response accounting for body descent. The rig/supports accommodate possible collapse. Test process kill, USB disconnect, MCU reset, stale channels, overcurrent and power-off; restarting requires current measured state and explicit authorization."
           },
           "wbs_refs": [
@@ -2477,11 +2477,11 @@
             "en": "State, contact and terrain estimates carry quality"
           },
           "detail": {
-            "ru": "M11 фильтры проверяются на небольших постановках; они не превращаются автоматически в полный estimator hexapod. M22/M23 должны отличать измерение от команды, контакт от несущей опоры, наклон от линейного ускорения и независимые данные от общей ошибки IMU.",
+            "ru": "M11 фильтры проверяются на небольших постановках; они не превращаются автоматически в полный модуль оценки состояния гексапода. M22/M23 должны отличать измерение от команды, контакт от несущей опоры, наклон от линейного ускорения и независимые данные от общей ошибки IMU.",
             "en": "M11 filters are verified on small problems; they do not automatically become a complete hexapod estimator. M22/M23 must distinguish measurement from command, contact from load-bearing support, tilt from linear acceleration and independent data from a shared IMU error."
           },
           "action": {
-            "ru": "Публиковать вместе со state свежесть, источник и валидность; неизвестное значение не заменять нулём. Проверить sensor-frame/sign, ковариации и отсутствие симуляционного ground truth в рабочем estimator. При stale/contact-loss/плохой обусловленности плоскости перейти к проверенному ограниченному режиму или stop. Roll/pitch сверять с внешним ориентиром, а не с той же IMU.",
+            "ru": "Вместе с состоянием публиковать возраст данных, источник и признак достоверности; неизвестное значение не заменять нулём. Проверить системы координат и направления датчиков, ковариации и отсутствие эталонных данных симуляции в рабочем оценивателе. При устаревших данных, потере контакта или плохой обусловленности плоскости переходить в проверенный ограниченный режим либо останавливаться. Крен и тангаж сверять с внешним ориентиром, а не с той же IMU.",
             "en": "Publish freshness, source and validity with state; do not replace unknown values with zero. Check sensor frame/sign, covariances and absence of simulation ground truth in the operational estimator. On stale data, contact loss or ill-conditioned plane fitting, use a validated restricted mode or stop. Compare roll/pitch against an external reference rather than the same IMU."
           },
           "wbs_refs": [
@@ -2505,7 +2505,7 @@
             "en": "M4/VM is the development environment. Original M22 considers Pi 5 or a compatible Ubuntu x86 host after measuring load. A board name, package build and previous laptop HIL do not validate camera, driver, power, cooling or communication on the new host."
           },
           "action": {
-            "ru": "В M22 повторить bring-up без движения, replay и stop-chain на выбранном хосте, затем проверить CPU/RAM/USB/запись под нагрузкой. Сохранить образ/манифест и udev/права устройств. Применить staged enable; OS auto-start может запускать диагностику, но не движение. Оборудование выбирается после измерений; новая покупка не предполагается автоматически.",
+            "ru": "В M22 повторить первичный запуск без движения, воспроизведение записей и цепь остановки на выбранном хосте, затем проверить CPU/RAM/USB/запись под нагрузкой. Сохранить образ/манифест и udev/права устройств. Применить поэтапное включение; автозапуск ОС может запускать диагностику, но не движение. Оборудование выбирается после измерений; новая покупка не предполагается автоматически.",
             "en": "In M22 repeat motion-disabled bring-up, replay and the stop chain on the selected host, then stress CPU/RAM/USB/recording. Retain an image/manifest and device permissions/rules. Use staged enable; OS auto-start may launch diagnostics but not motion. Select equipment after measurements; no new purchase is assumed automatically."
           },
           "wbs_refs": [
@@ -2544,7 +2544,7 @@
           "title": "ROS 2 Jazzy — official Ubuntu installation source",
           "url": "https://raw.githubusercontent.com/ros2/ros2_documentation/jazzy/source/Installation/Ubuntu-Install-Debs.rst",
           "claim": {
-            "ru": "Официальная Jazzy-инструкция перечисляет пакеты Ubuntu Noble для amd64 и arm64. Использован официальный GitHub-исходник: публичная HTML-страница вернула anti-bot challenge.",
+            "ru": "Официальная Jazzy-инструкция перечисляет пакеты Ubuntu Noble для amd64 и arm64. Использован официальный GitHub-исходник: публичная HTML-страница вернула проверку защиты от ботов.",
             "en": "The official Jazzy guide lists Ubuntu Noble packages for amd64 and arm64. The official GitHub source was read because the public HTML page returned an anti-bot challenge."
           }
         },
@@ -2571,7 +2571,7 @@
           "title": "Gazebo Harmonic — supported platforms",
           "url": "https://gazebosim.org/docs/harmonic/install/",
           "claim": {
-            "ru": "Официально поддерживаются Ubuntu Jammy/Noble amd64; ARM, macOS и Windows отмечены best-effort.",
+            "ru": "Официально поддерживаются Ubuntu Jammy/Noble amd64; ARM, macOS и Windows отмечены с ограниченной поддержкой (best effort).",
             "en": "Official platforms are Ubuntu Jammy/Noble amd64; ARM, macOS and Windows are best-effort."
           }
         },
@@ -2580,7 +2580,7 @@
           "title": "Gazebo Harmonic — rendering troubleshooting",
           "url": "https://gazebosim.org/docs/harmonic/troubleshooting/",
           "claim": {
-            "ru": "Требования Ogre2/OpenGL и ограничения VM могут мешать rendering; документация перечисляет программный рендер и другие диагностические варианты, без гарантии производительности.",
+            "ru": "Требования Ogre2/OpenGL и ограничения VM могут мешать визуализации; документация перечисляет программный рендер и другие диагностические варианты, без гарантии производительности.",
             "en": "Ogre2/OpenGL requirements and VM limitations can block rendering; documentation lists software rendering and other diagnostic options without a performance guarantee."
           }
         },
@@ -2589,7 +2589,7 @@
           "title": "ros2_control Jazzy — gz_ros2_control",
           "url": "https://control.ros.org/jazzy/doc/gz_ros2_control/doc/index.html",
           "claim": {
-            "ru": "Пакет ros-jazzy-gz-ros2-control, связанные версии Gazebo, command/state interfaces, поведение effort/position и hold_joints описаны отдельно.",
+            "ru": "Пакет ros-jazzy-gz-ros2-control, связанные версии Gazebo, интерфейсы команд и состояния, поведение effort/position и hold_joints описаны отдельно.",
             "en": "Documents ros-jazzy-gz-ros2-control, matched Gazebo versions, command/state interfaces, effort/position behaviour and hold_joints."
           }
         },
@@ -2598,7 +2598,7 @@
           "title": "ros2_control Jazzy — Controller Manager",
           "url": "https://control.ros.org/jazzy/doc/ros2_control/controller_manager/doc/userdoc.html",
           "claim": {
-            "ru": "Главный цикл стремится минимизировать jitter и запрашивает real-time scheduling; эта конфигурация не является измерением конкретного стенда.",
+            "ru": "Главный цикл стремится минимизировать неравномерность периода цикла и запрашивает планирование в реальном времени; эта конфигурация не является измерением конкретного стенда.",
             "en": "The main loop aims to minimize jitter and requests real-time scheduling; configuration is not a measurement of a specific rig."
           }
         },
@@ -2607,7 +2607,7 @@
           "title": "ROS 2 design — Clock and Time",
           "url": "https://design.ros2.org/articles/clock_and_time.html",
           "claim": {
-            "ru": "Различаются SystemTime/SteadyTime/ROSTime; hardware timeouts используют устойчивое время, внешние ROS-интерфейсы требуют корректного преобразования.",
+            "ru": "Различать SystemTime, SteadyTime и ROSTime. Аппаратные таймауты используют монотонное время; внешние интерфейсы ROS требуют корректного преобразования.",
             "en": "Distinguishes SystemTime/SteadyTime/ROSTime; hardware timeouts use steady time and external ROS interfaces require appropriate conversion."
           }
         },
@@ -2616,7 +2616,7 @@
           "title": "ROS 2 Jazzy — official QoS documentation source",
           "url": "https://raw.githubusercontent.com/ros2/ros2_documentation/jazzy/source/Concepts/Intermediate/About-Quality-of-Service-Settings.rst",
           "claim": {
-            "ru": "Определения reliability/durability/deadline/lifespan, совместимость профилей и события; sensor profile предпочитает свежие данные полной доставке.",
+            "ru": "Определения reliability/durability/deadline/lifespan, совместимость профилей и события; профиль данных датчиков предпочитает свежие данные полной доставке.",
             "en": "Defines reliability/durability/deadline/lifespan, profile compatibility and events; the sensor profile favors timely samples over complete delivery."
           }
         },
@@ -2625,7 +2625,7 @@
           "title": "Espressif ESP32-S3 — Watchdogs",
           "url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/system/wdts.html",
           "claim": {
-            "ru": "OpenOCD отключает interrupt/task watchdog timers при отладке. При реализации выбрать и зафиксировать поддерживаемую версию SDK; ссылка stable не фиксирует API навсегда.",
+            "ru": "При отладке OpenOCD отключает сторожевые таймеры прерываний и задач. При реализации выбрать и зафиксировать поддерживаемую версию SDK; ссылка stable не закрепляет API навсегда.",
             "en": "OpenOCD disables interrupt/task watchdog timers during debugging. Select and pin a supported SDK version during implementation; a stable URL does not freeze its API."
           }
         },
@@ -2634,13 +2634,13 @@
           "title": "Espressif ESP32-S3 — TWAI hardware and driver",
           "url": "https://docs.espressif.com/projects/esp-idf/en/v5.5/esp32s3/api-reference/peripherals/twai.html",
           "claim": {
-            "ru": "Для ESP32-S3 нужен внешний TWAI-трансивер; driver описывает очереди, ошибки и bus-off/recovery. Наличие общих API-полей не заменяет проверку возможностей конкретного контроллера.",
+            "ru": "Для ESP32-S3 нужен внешний трансивер TWAI; документация драйвера описывает очереди, ошибки, отключение от шины и восстановление. Наличие общих полей API не заменяет проверки возможностей конкретного контроллера.",
             "en": "ESP32-S3 needs an external TWAI transceiver; the driver documents queues, errors and bus-off/recovery. Generic API fields do not replace checking the actual controller's capabilities."
           }
         }
       ],
       "accounting": {
-        "ru": "Все перечисленные физические/временные проверки уже принадлежат M06, M12, M13, L1, M22 или M23. Уточнения не требуют второй прошивки, второго ROS-стека, обязательного torque control, новой архитектуры автобуса или отдельного quadruped. Единственное изменение календарного владения — явный перенос 6 ч в M01. Дополнительная платформа при неподтверждённой VM, серьёзная смена привода/шины либо новый torque-control проект потребуют отдельного пересчёта по найденной работе.",
+        "ru": "Все перечисленные физические и временные проверки уже относятся к M06, M12, M13, L1, M22 или M23. Уточнения не требуют второй прошивки, второго стека ROS, обязательного управления моментом, новой архитектуры шины или отдельного четырёхногого робота. Единственное изменение распределения времени — явный перенос 6 ч в M01. Дополнительная платформа при неподтверждённой виртуальной машине, серьёзная смена привода или шины либо новый проект управления моментом потребуют отдельного пересчёта фактических работ.",
         "en": "All listed physical/timing checks belong to M06, M12, M13, L1, M22 or M23. Clarifications do not require a second firmware, second ROS stack, mandatory torque control, new bus architecture or a separate quadruped. The only schedule-ownership change is the explicit six-hour move into M01. An additional platform after VM failure, substantial actuator/bus change or a new torque-control project requires a separate reforecast based on identified work."
       }
     }
