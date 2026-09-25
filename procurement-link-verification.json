@@ -1,0 +1,1427 @@
+{
+  "checked_on": "2026-09-25",
+  "method": "Public product-page GET plus seller/manufacturer search-index review; no login, checkout or order.",
+  "scope": "Product URLs used in procurement.json, including alternatives. Technical documentation is outside this HTTP audit.",
+  "counts": {
+    "restricted": 37,
+    "ok": 121,
+    "unavailable": 1
+  },
+  "limitations": {
+    "ru": "HTTP 200 не подтверждает наличие или цену. Ограниченные автоматические ответы не признаны успешной проверкой; источники цен и наличие раскрыты в карточках.",
+    "en": "HTTP 200 does not verify price or inventory. Restricted automated responses are not counted as successful checks; cards disclose price evidence and availability."
+  },
+  "links": [
+    {
+      "url": "https://3dparts.com.ua/nabir-3-shchitky-shchetyna-z-latuni-stali-ta-neilonu-2-skrebka-priamyi-ta-vyhnutyi/",
+      "product": "3 brushes and 2 printer maintenance scrapers",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 200,
+      "final_url": "https://3dparts.com.ua/nabir-3-shchitky-shchetyna-z-latuni-stali-ta-neilonu-2-skrebka-priamyi-ta-vyhnutyi/",
+      "title": ""
+    },
+    {
+      "url": "https://3dparts.com.ua/nabir-holok-dlia-chyshchennia-sopel-v-futliari-015-mm-5-holok/",
+      "product": "Nozzle cleaning needles, Ø0.15 mm, 5-pack",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 200,
+      "final_url": "https://3dparts.com.ua/nabir-holok-dlia-chyshchennia-sopel-v-futliari-015-mm-5-holok/",
+      "title": ""
+    },
+    {
+      "url": "https://3dparts.com.ua/soplo-mk8-do-creality-cr10-ta-ender-3-mellow-nf-mk8-175-mm-otvir-04-mm-latun/",
+      "product": "Conditional option: Mellow NF-MK8 brass, 0.4 mm / 1.75 mm",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 200,
+      "final_url": "https://3dparts.com.ua/soplo-mk8-do-creality-cr10-ta-ender-3-mellow-nf-mk8-175-mm-otvir-04-mm-latun/",
+      "title": ""
+    },
+    {
+      "url": "https://3dparts.com.ua/vakuumni-pakety-dlia-zberihannia-3d-filamentu-30-od.-mekhanichnyi-nasos/",
+      "product": "30 filament vacuum bags and manual pump",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 200,
+      "final_url": "https://3dparts.com.ua/vakuumni-pakety-dlia-zberihannia-3d-filamentu-30-od.-mekhanichnyi-nasos/",
+      "title": ""
+    },
+    {
+      "url": "https://apro.ua/catalog/nabor-boltov-i-gaek-m6-m10-tsb-12-5-320kh260kh60mm-apro/",
+      "product": "APRO M6–M10 bolts, nuts and washers, set 087049",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://apro.ua/catalog/nabor-boltov-i-gaek-m6-m10-tsb-12-5-320kh260kh60mm-apro/",
+      "title": "Набір болтів і гайок M6–M10 ЦБ 12,5'' 320х260х60мм APRO купити в Україні"
+    },
+    {
+      "url": "https://arduino.ua/prod1596-komplekt-peremichek-arduino-120sht",
+      "product": "MM/MF/FF jumpers, 120 pack",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/prod1596-komplekt-peremichek-arduino-120sht",
+      "title": "Комплект перемичок мама-мама, тато-тато, мама-тато 120шт. 20см купити в Києві та Україні"
+    },
+    {
+      "url": "https://arduino.ua/prod1735-derjatel-s-lypoi-i-dvymya-krokodilami-mg16126-a",
+      "product": "MG16126-A / ZD-126-2 helping hands with two clips",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/prod1735-derjatel-s-lypoi-i-dvymya-krokodilami-mg16126-a",
+      "title": "Тримач з лупою і двома крокодилами MG16126-A (ZD-126-2, TE-801) купити в Києві та Україні"
+    },
+    {
+      "url": "https://arduino.ua/prod1845-plata-razrabotchika-nucleo-f446re",
+      "product": "STM32 NUCLEO-F446RE — alternative",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/prod1845-plata-razrabotchika-nucleo-f446re",
+      "title": "Плата розробника NUCLEO-F446RE купити в Києві та Україні"
+    },
+    {
+      "url": "https://arduino.ua/prod1979-datchik-vesa-tenzodatchik-1-kg-visokotochnii",
+      "product": "1 kg load cell + HX711",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/prod1979-datchik-vesa-tenzodatchik-1-kg-visokotochnii",
+      "title": "Датчик ваги (тензодатчик) 1 кг високоточний купити в Києві та Україні"
+    },
+    {
+      "url": "https://arduino.ua/prod2205-kabel-pitaniya-atcom-1-8m",
+      "product": "ATCom EC53 C13 mains cord, 1.8 m",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/prod2205-kabel-pitaniya-atcom-1-8m",
+      "title": "Кабель живлення 1.8м IEC C13 купити в Києві та Україні"
+    },
+    {
+      "url": "https://arduino.ua/prod3167-radialnii-podshipnik-626zz-6h19h6mm",
+      "product": "626ZZ bearing, 6 × 19 × 6 mm, gripper pivots",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/prod3167-radialnii-podshipnik-626zz-6h19h6mm",
+      "title": "Радіальний підшипник 626ZZ 6х19х6мм купити в Києві та Україні"
+    },
+    {
+      "url": "https://arduino.ua/prod3383-mikromotor-s-redyktorom-6v-50-rpm",
+      "product": "Learning gearmotor, 6 V, 50 rpm",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/prod3383-mikromotor-s-redyktorom-6v-50-rpm",
+      "title": "Мікродвигун з редуктором 6V 50 RPM (вал 10 мм) купити в Києві та Україні"
+    },
+    {
+      "url": "https://arduino.ua/prod361-maketnaya-plata-mb-102-830-otverstii",
+      "product": "MB-102 830-point breadboard",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/prod361-maketnaya-plata-mb-102-830-otverstii",
+      "title": "Макетна плата MB-102 830 отворів купити в Києві та Україні"
+    },
+    {
+      "url": "https://arduino.ua/prod3697-draiver-dvigatelei-dvyhkanalnii-drv8833",
+      "product": "DRV8833 dual H-bridge module",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/prod3697-draiver-dvigatelei-dvyhkanalnii-drv8833",
+      "title": "Драйвер двигунів двоканальний на DRV8833 (DC10V) купити в Києві та Україні"
+    },
+    {
+      "url": "https://arduino.ua/prod3938-cifrovaya-portativnaya-payalnaya-stanciya-t12-mini",
+      "product": "Handskit T12 MINI",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/prod3938-cifrovaya-portativnaya-payalnaya-stanciya-t12-mini",
+      "title": "Цифрова портативна паяльна станція Handskit Т12 МІНІ купити в Києві та Україні"
+    },
+    {
+      "url": "https://arduino.ua/prod409-nabor-rezistorov-0-25w-600-sht",
+      "product": "M04 resistors and capacitors",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/prod409-nabor-rezistorov-0-25w-600-sht",
+      "title": "Набір резисторів 0.25W 600шт купити в Києві та Україні"
+    },
+    {
+      "url": "https://arduino.ua/prod4221-sandisk-ultra-microsdxc-128gb-100mbs-class-10-uhs-i",
+      "product": "SanDisk Ultra microSDXC 128 GB, ZKE112",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/prod4221-sandisk-ultra-microsdxc-128gb-100mbs-class-10-uhs-i",
+      "title": "SanDisk Ultra microSDXC 128GB 100MB/s Class 10 UHS-I купити в Києві та Україні"
+    },
+    {
+      "url": "https://arduino.ua/prod4683-ventilyator-mx-8025-80x80x25mm-12v-0-2a-2pin",
+      "product": "MX8025 fan, 80 × 80 × 25 mm, 12 V",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/prod4683-ventilyator-mx-8025-80x80x25mm-12v-0-2a-2pin",
+      "title": "Вентилятор MX-8025 80x80x25мм 12В 0.2A 2pin купити в Києві та Україні"
+    },
+    {
+      "url": "https://arduino.ua/prod512-akselerometr-i-giroskop-mpu-6050-modyl-6dof",
+      "product": "GY-521 / MPU-6050 IMU",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/prod512-akselerometr-i-giroskop-mpu-6050-modyl-6dof",
+      "title": "Акселерометр і гіроскоп MPU-6050 GY-521 модуль 6DOF купити в Києві та Україні"
+    },
+    {
+      "url": "https://arduino.ua/prod6134-kondensator-elektrolitichnii-jccon-1000mkf-25v-lowesr",
+      "product": "JCCON 1000 µF / 25 V low-ESR capacitor",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/prod6134-kondensator-elektrolitichnii-jccon-1000mkf-25v-lowesr",
+      "title": "Конденсатор електролітичний JCCON 1000мкФ 25В LowESR купити в Києві та Україні"
+    },
+    {
+      "url": "https://arduino.ua/prod6957-blok-pitaniya-type-c-5v-5a-27vt-s-fynkciei-power-delivery",
+      "product": "HT-PD27W-EU, USB-C 5.1 V / 5 A, 27 W",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/prod6957-blok-pitaniya-type-c-5v-5a-27vt-s-fynkciei-power-delivery",
+      "title": "Блок живлення Type-C 5В 5А 27Вт з функцією Power Delivery купити в Києві та Україні"
+    },
+    {
+      "url": "https://arduino.ua/prod7047-reshitka-dlya-ventilyatora-80x80mm-metaleva-nikelovana",
+      "product": "80 mm metal fan guard",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/prod7047-reshitka-dlya-ventilyatora-80x80mm-metaleva-nikelovana",
+      "title": "Решітка для вентилятора 80x80мм, металева, нікельована купити в Києві та Україні"
+    },
+    {
+      "url": "https://arduino.ua/prod7279-nabir-montajnih-provodiv-22awg-10m",
+      "product": "22AWG wire, six colours × 10 m",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/prod7279-nabir-montajnih-provodiv-22awg-10m",
+      "title": "Набір монтажних проводів 22AWG 10м купити в Києві та Україні"
+    },
+    {
+      "url": "https://arduino.ua/prod7389-usb-logichnii-analizator-weact-dla-mini-24mhz-8-kanaliv",
+      "product": "WeAct DLA Mini, 8 channels / 24 MHz",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/prod7389-usb-logichnii-analizator-weact-dla-mini-24mhz-8-kanaliv",
+      "title": "USB логічний аналізатор WeAct DLA Mini 24Mhz 8-каналів купити в Києві та Україні"
+    },
+    {
+      "url": "https://arduino.ua/prod7744-nabir-nakonechnikiv-kilcevih-102sht",
+      "product": "102-piece insulated ring-terminal assortment",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/prod7744-nabir-nakonechnikiv-kilcevih-102sht",
+      "title": "Набір наконечників кільцевих 102шт купити в Києві та Україні"
+    },
+    {
+      "url": "https://arduino.ua/prod8092-modyl-dcdc-peretvoruvacha-hx1314-step-down-5-5-32v5v-1a",
+      "product": "HX1314 AOC450: 12-to-5 V buck for encoder supply",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/prod8092-modyl-dcdc-peretvoruvacha-hx1314-step-down-5-5-32v5v-1a",
+      "title": "Модуль DC/DC перетворювача HX1314 STEP-DOWN 5.5-32В/5В 1A купити в Києві та Україні"
+    },
+    {
+      "url": "https://arduino.ua/prod8303-rozm-xt60-s-provodami-16awg-para",
+      "product": "XT60 pair, 16AWG pigtails",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/prod8303-rozm-xt60-s-provodami-16awg-para",
+      "title": "Роз'єм XT60 с проводами 16AWG (пара) купити в Києві та Україні"
+    },
+    {
+      "url": "https://arduino.ua/ru/prod1016-remeshok-lipychka-15h1sm",
+      "product": "Hook-and-loop cable tie, 15 × 1 cm",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/ru/prod1016-remeshok-lipychka-15h1sm",
+      "title": "Ремешок-липучка 15х1см купить в Киеве и Украине"
+    },
+    {
+      "url": "https://arduino.ua/ru/prod1957-usb-uart-perehodnik-na-cp2102",
+      "product": "CP2102 mini USB–UART",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/ru/prod1957-usb-uart-perehodnik-na-cp2102",
+      "title": "USB-UART мини-переходник на CP2102 купить в Киеве и Украине"
+    },
+    {
+      "url": "https://arduino.ua/ru/prod3990-wi-fi-modyl-devkit-v1-s-esp-32",
+      "product": "ESP32 DevKit V1, ESP-WROOM-32, 30-pin",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/ru/prod3990-wi-fi-modyl-devkit-v1-s-esp-32",
+      "title": "Wi-Fi модуль DevKit V1 с ESP-32 (30-pin) купить в Киеве и Украине"
+    },
+    {
+      "url": "https://arduino.ua/ru/prod5765-zapobijnik-keramichnii-0-5a-5x20-1sht",
+      "product": "0.5 A 5×20 fuse",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/ru/prod5765-zapobijnik-keramichnii-0-5a-5x20-1sht",
+      "title": "Предохранитель керамический 0.5А 5x20 1шт купить в Киеве и Украине"
+    },
+    {
+      "url": "https://arduino.ua/ru/prod6396-korpys-zapobijnika-10a-5x20-iz-provodami-18awg-1sht",
+      "product": "5×20 fuse holder with 18AWG leads",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/ru/prod6396-korpys-zapobijnika-10a-5x20-iz-provodami-18awg-1sht",
+      "title": "Корпус предохранителя (10A) 5x20 с проводами 18AWG 1шт купить в Киеве и Украине"
+    },
+    {
+      "url": "https://arduino.ua/ru/prod8198-aktivnii-radiator-dlya-raspberry-pi-5-oficiinii-sc1148",
+      "product": "Raspberry Pi Active Cooler SC1148",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/ru/prod8198-aktivnii-radiator-dlya-raspberry-pi-5-oficiinii-sc1148",
+      "title": "Активный радиатор  для Raspberry Pi 5 официальный (SC1148) купить в Киеве и Украине"
+    },
+    {
+      "url": "https://arduino.ua/ru/prod8200-spirt-izopropilovii-100ml-z-rospiluvachem",
+      "product": "Isopropyl alcohol, 100 ml spray",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/ru/prod8200-spirt-izopropilovii-100ml-z-rospiluvachem",
+      "title": "Спирт изопропиловый 100мл с распылителем купить в Киеве и Украине"
+    },
+    {
+      "url": "https://arduino.ua/ru/prod978-koncevoi-vikluchatel-mehanicheskii",
+      "product": "Mechanical endstop with cable",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://arduino.ua/ru/prod978-koncevoi-vikluchatel-mehanicheskii",
+      "title": "Концевой выключатель механический на плате купить в Киеве и Украине"
+    },
+    {
+      "url": "https://artline.ua/product/coplo-unicorn-dlya-3d-printera-creality-k2-plus-04mm-4008030074",
+      "product": "Conditional option: Creality Unicorn K2 Plus 0.4 mm, 4008030074",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://artline.ua/product/coplo-unicorn-dlya-3d-printera-creality-k2-plus-04mm-4008030074",
+      "title": "Cопло Unicorn для 3D принтера CREALITY K2 Plus (0.4мм) (4008030074) - купить в Киеве ☑️  цена в Украине"
+    },
+    {
+      "url": "https://b-pro.com.ua/katalog/fizika/mehanika/mehanikademonstratsiyneobladnannya/nabir-vazhkiv-dlya-tehnichnih-demonstracij-na-500-g",
+      "product": "Demonstration mass set, 500 g total",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://b-pro.com.ua/katalog/fizika/mehanika/mehanikademonstratsiyneobladnannya/nabir-vazhkiv-dlya-tehnichnih-demonstracij-na-500-g",
+      "title": "Набір важків для технічних демонстрацій на 500 г - купити в B-Pro"
+    },
+    {
+      "url": "https://bigl.ua/p1033621162-godinnikova-batarejka-357",
+      "product": "RENATA 357 / SR44W, 1.55 V",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://bigl.ua/p1033621162-godinnikova-batarejka-357",
+      "title": "Годинникова Батарейка 357 / SR1154W / SR44W / AG13 Renata Silver Oxide (1.55v) 1шт. 192 ₴ (RNT-SR1154W) — Купить на Bigl.ua | Цена и Доставка"
+    },
+    {
+      "url": "https://bt.rozetka.com.ua/ua/124465218/p124465218/",
+      "product": "SF-400 scale, 10 kg capacity, 1 g resolution",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://build.rozetka.com.ua/422134290/p422134290/",
+      "product": "POLICAM solid polycarbonate, 2 mm, 500 × 500 mm",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://build.rozetka.com.ua/ua/535435364/p535435364/",
+      "product": "SPEC SP-1693A420: M3 heat-set inserts and screws, 420 pieces",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://comtrade.ua/ua/proskit-pd-151/",
+      "product": "Pro’sKit PD-151 caliper, 150 mm",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 200,
+      "final_url": "https://comtrade.ua/ua/proskit-pd-151/",
+      "title": ""
+    },
+    {
+      "url": "https://divedrive.in.ua/lin-salvimar-acidyne-dyneema-13-mm-yarko-zelenyy-metr/",
+      "product": "Salvimar ACIDYNE Dyneema 1.3 mm, sold per metre",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 200,
+      "final_url": "https://divedrive.in.ua/lin-salvimar-acidyne-dyneema-13-mm-yarko-zelenyy-metr/",
+      "title": ""
+    },
+    {
+      "url": "https://diyshop.com.ua/ua/linejnye-napravlyayuschie/val-dlya-chpu-cnc-3d-printera-sf06-wcs6-wv06-d-6mm-300mm",
+      "product": "WV06 hardened 6 mm shaft, 300 mm length",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://diyshop.com.ua/ua/linejnye-napravlyayuschie/val-dlya-chpu-cnc-3d-printera-sf06-wcs6-wv06-d-6mm-300mm",
+      "title": "Вал для ЧПУ, CNC, 3D принтера SF06, WCS6 (WV06) D 6мм, 300мм"
+    },
+    {
+      "url": "https://electrocontrol.com.ua/shchmp/cp253015e-korpus-metalevii-e-next-e-mbox-industrial-p-30-25-15z-ip66-z-montazhnou-panellu-300h250h150",
+      "product": "E.NEXT CP253015E steel cabinet, 300 × 250 × 150 mm, mounting plate",
+      "checked_on": "2026-09-25",
+      "result": "unavailable",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "url": "https://electronoff.ua/ua/good/podstavka-dlya-payalnika-sh-1025.php",
+      "product": "Pro’sKit SH-1025 soldering stand and tip cleaner",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "error": "Automated GET returned HTTP 403; earlier Python TLS error superseded.",
+      "http_status": 403
+    },
+    {
+      "url": "https://elek.com.ua/ru/catalog/knopka/knopka-xb5aa31",
+      "product": "Schneider XB5AA31 manual start/reset button, 1NO",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://elek.com.ua/ru/catalog/knopka/knopka-xb5aa31",
+      "title": "Купить Кнопка (XB5AA31) по цене 315.56 в Харькове с доставкой по Украине - цена, отзывы, фото."
+    },
+    {
+      "url": "https://eleksun.com.ua/uk/xb5as8442-gribovidnaya-knopka-avariynogo-ostanova-v-sbore-tipa-razblokirovanie-povorotom-krasnaya-1",
+      "product": "Schneider Electric Harmony XB5AS8442, 1NC, twist release",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://eleksun.com.ua/uk/xb5as8442-gribovidnaya-knopka-avariynogo-ostanova-v-sbore-tipa-razblokirovanie-povorotom-krasnaya-1",
+      "title": "XB5AS8442, Грибоподібна кнопка аварійного зупину в зборі типу, розблокування поворотом, червона, 1 NC, IP66, серія Harmony XB5, Schneider Electric в інтернет-магазині Eleksun: Київ, Харків, Дніпро"
+    },
+    {
+      "url": "https://elmir.ua/ua/pliers_tongs_scissors_for_metal/crimping_pliers_pro_skit_cp-3006fd45.html",
+      "product": "Pro’sKit CP-3006FD45 open-barrel crimper",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 214,
+      "final_url": "https://elmir.ua/ua/pliers_tongs_scissors_for_metal/crimping_pliers_pro_skit_cp-3006fd45.html",
+      "title": "Elmir.ua"
+    },
+    {
+      "url": "https://epicentrk.ua/ua/shop/nabor-sverl-bosch-hss-pointteq-mm-2-6-mm-5-sht-2608577345.html",
+      "product": "Bosch HSS PointTeQ 2/3/4/5/6 mm bits, 2608577345",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://epicentrk.ua/ua/shop/nabor-sverl-bosch-hss-pointteq-mm-2-6-mm-5-sht-2608577345.html",
+      "title": "ᐉ Набір свердел Bosch HSS PointTeQ 2-6 мм 5 шт. 2608577345 • Краща ціна в Києві, Україні • Купити в Епіцентр"
+    },
+    {
+      "url": "https://evaplast-pazl.com.ua/kylymok-pazl-start-50kh50sm.-siryi/",
+      "product": "EVA START foam tile, 500 × 500 × 10 mm",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 200,
+      "final_url": "https://evaplast-pazl.com.ua/kylymok-pazl-start-50kh50sm.-siryi/",
+      "title": ""
+    },
+    {
+      "url": "https://evo.net.ua/bus-servo-adapter-a/",
+      "product": "Waveshare Bus Servo Adapter (A), SKU 25514",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 200,
+      "final_url": "https://evo.net.ua/bus-servo-adapter-a/",
+      "title": ""
+    },
+    {
+      "url": "https://evo.net.ua/mikrokompiuter-raspberry-pi-5-board-8gb/",
+      "product": "Raspberry Pi 5, 8 GB — only if needed",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 200,
+      "final_url": "https://evo.net.ua/mikrokompiuter-raspberry-pi-5-board-8gb/",
+      "title": ""
+    },
+    {
+      "url": "https://evo.net.ua/servoprivid-st3215-servo-22414/",
+      "product": "ST3215 gripper actuator, separate from leg servos",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 200,
+      "final_url": "https://evo.net.ua/servoprivid-st3215-servo-22414/",
+      "title": ""
+    },
+    {
+      "url": "https://exist.ua/uk/topex-brand/strubcyna-topex-typ-f-50-x-150-mm-12a100-43112071/",
+      "product": "Topex F clamp, 50 × 150 mm, 12A100",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://flymod.net/item/protection_sleeve_snakeskin",
+      "product": "8 mm blue PET cable protection sleeve, sold per metre",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://flymod.net/item/protection_sleeve_snakeskin",
+      "title": "Захисне обплетення для силових проводів. 8мм. 1метр купити, ціна, доставка, замовлення"
+    },
+    {
+      "url": "https://flymod.net/item/silicone_wire_14awg",
+      "product": "14 AWG silicone wire: 1 m red + 1 m black",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://flymod.net/item/silicone_wire_14awg",
+      "title": "Силіконовий провід 14AWG 2.5мм2 купити в Україні, онлайн магазин"
+    },
+    {
+      "url": "https://grizlicnc.com.ua/tovar-planetarnyj-reduktor-nema23",
+      "product": "PX57 NEMA23 planetary gearbox, select 1:10",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://grizlicnc.com.ua/tovar-planetarnyj-reduktor-nema23",
+      "title": "PX57 Планетарный редуктор фланец 57мм для Nema23"
+    },
+    {
+      "url": "https://gurkit.ua/ua/product/29882/lineyka-stanley-300kh13kh05-mm.html",
+      "product": "Stanley 1-35-524 steel ruler, 300 mm",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://gurkit.ua/ua/product/29882/lineyka-stanley-300kh13kh05-mm.html",
+      "title": "Лінійка Stanley 300х13х0.5 мм, купити в Україні: ціна 238 грн в каталозі інтернет-магазину GURKIT"
+    },
+    {
+      "url": "https://happy-dentist.com.ua/okuliary-zakhysni-prozori-2840-3m/",
+      "product": "3M 2840 clear safety spectacles",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 200,
+      "final_url": "https://happy-dentist.com.ua/okuliary-zakhysni-prozori-2840-3m/",
+      "title": ""
+    },
+    {
+      "url": "https://imrad.com.ua/ru/0287010-pxcn",
+      "product": "Littelfuse 0287010.PXCN, ATO 10 A / 32 V",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://imrad.com.ua/ru/0287010-pxcn",
+      "title": "ᐉ 0287010.PXCN производитель LITTELFUSE купить в Киеве, в магазине радиодеталей Имрад"
+    },
+    {
+      "url": "https://imrad.com.ua/ru/0287015-pxcn",
+      "product": "Littelfuse 0287015.PXCN ATO 15 A / 32 V",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://imrad.com.ua/ru/0287015-pxcn",
+      "title": "ᐉ 0287015.PXCN производитель LITTELFUSE купить в Киеве, в магазине радиодеталей Имрад"
+    },
+    {
+      "url": "https://infostar.prom.ua/p3158399369-esp32-n16r8-44pin.html",
+      "product": "ESP32-S3 N16R8 DevKitC-1, 44-pin, dual USB-C",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://infostar.prom.ua/ua/p3158399369-esp32-n16r8-44pin.html",
+      "title": "ESP32-S3 N16R8 44pin DevKitC-1 Wi-Fi Bluetooth з IPEX, плата розробника: продаж, ціна у Рівному. Набори та компоненти для самостійного збирання електроніки від \"Тех підтримка +\" - 3158399369"
+    },
+    {
+      "url": "https://komel.com.ua/p2940847385-obrezki-fanery-fsf.html",
+      "product": "FSF plywood 18 × 310 × 1250 mm for mounting plate and torso fixture",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://komel.com.ua/ua/p2940847385-obrezki-fanery-fsf.html",
+      "title": "Обрізки фанери ФСФ вологостійкої 18 мм 310х1250 мм сорт CP/CP (ОДЕК Україна). Розпродаж!!!: продаж, ціна у Харкові. Рукоділля, загальне від \"КОМЕЛЬ\" - 2940847385"
+    },
+    {
+      "url": "https://ktc.ua/goods/kabel_ugreen_us287_3a_am__type_c_1m_black__ugr_60116.html",
+      "product": "UGREEN US287 60116, USB-A to USB-C, 1 m",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://ktc.ua/goods/kabel_ugreen_us287_3a_am__type_c_1m_black__ugr_60116.html",
+      "title": "Кабель UGREEN US287 3A AM / Type-C 1m Black (UGR-60116) купити в Україні ➦ ціни, огляди в магазині КТС у Києві, Львові"
+    },
+    {
+      "url": "https://kulibin.com.ua/ua/catalog/kleshchi/pro_skit-cp-751b/",
+      "product": "Pro’sKit CP-751B insulated ring-terminal crimper",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://kulibin.com.ua/ua/catalog/kleshchi/pro_skit-cp-751b/",
+      "title": "Кліщі обтискні Pro'sKit 190 мм (CP-751B) - купити з доставкою по Україні в интернет-магазині Kulibin.com.ua | Ціна, опис, характеристики, відгуки, продаж."
+    },
+    {
+      "url": "https://litpolmebel.uaprom.net/ua/p2357001381-stol-dlya-masterskoj.html",
+      "product": "Stw 321 workbench, 1200 × 600 × 850 mm",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://litpolmebel.uaprom.net/ua/p2357001381-stol-dlya-masterskoj.html",
+      "title": "Стіл для майстерні (верстак) Stw 321: продаж, ціна у Харкові. Станини, верстати, робочі столи від ТОВ «Литпол-Україна». тел.: 050-304-34-66"
+    },
+    {
+      "url": "https://logitech-store.com.ua/ru/logitech-webcam-c270-hd-960-001063-534677",
+      "product": "Logitech C270 HD USB RGB webcam, 960-001063",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://logitech-store.com.ua/ru/logitech-webcam-c270-hd-960-001063-534677",
+      "title": "Веб-камера Logitech Webcam C270 HD (960-001063) — купить в официальном магазине Logitech"
+    },
+    {
+      "url": "https://m-teh.com.ua/ru/mikroskhema-mcp6002-i-p/",
+      "product": "MCP6002-I/P dual op amp, DIP-8",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 200,
+      "final_url": "https://m-teh.com.ua/ru/mikroskhema-mcp6002-i-p/",
+      "title": ""
+    },
+    {
+      "url": "https://masteram.com.ua/ru/crimper-pro-skit-cp-462g/",
+      "product": "Pro’sKit CP-462G tool without ferrule assortment",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://masteram.com.ua/ru/crimper-pro-skit-cp-462g/",
+      "title": "Кримпер Pro'sKit CP-462G - Masteram"
+    },
+    {
+      "url": "https://masteram.com.ua/ru/heatproof-working-mat-jakemy-jm-z17-360-mm-260-mm/",
+      "product": "Jakemy JM-Z17 silicone work mat, 360 × 260 mm",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://masteram.com.ua/ru/heatproof-working-mat-jakemy-jm-z17-360-mm-260-mm/",
+      "title": "Монтажный коврик Jakemy JM-Z17 (360 мм × 260 мм) - Masteram"
+    },
+    {
+      "url": "https://masteram.com.ua/uk/desoldering-wick-goot-cp-1515/",
+      "product": "GOOT CP-1515 desoldering braid, 1.5 mm × 1.5 m",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://masteram.com.ua/uk/desoldering-wick-goot-cp-1515/",
+      "title": "Стрічка для випаювання Goot CP-1515 W-1,5 мм, L-1,5 м - Masteram"
+    },
+    {
+      "url": "https://masteram.com.ua/uk/digital-multimeter-uni-t-ut136cplus/",
+      "product": "UNI-T UT136C+ multimeter",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://masteram.com.ua/uk/digital-multimeter-uni-t-ut136cplus/",
+      "title": "Цифровий мультиметр UNI-T UT136C+ - Masteram"
+    },
+    {
+      "url": "https://masteram.com.ua/uk/digital-oscilloscope-rigol-dho802/",
+      "product": "RIGOL DHO802, 2 channels, 70 MHz",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://masteram.com.ua/uk/digital-oscilloscope-rigol-dho802/",
+      "title": "Цифровий осцилограф RIGOL DHO802 - Masteram"
+    },
+    {
+      "url": "https://masteram.com.ua/uk/fvs-bga-nc-10-ml/",
+      "product": "InterTechComplect FVS-BGA-NC electronics flux gel, 10 ml",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://masteram.com.ua/uk/fvs-bga-nc-10-ml/",
+      "title": "Флюс-гель ІнтерТехКомплект FVS-BGA-NC (10 мл) - Masteram"
+    },
+    {
+      "url": "https://masteram.com.ua/uk/long-nose-pliers-jakemy-ct1-1/",
+      "product": "Jakemy CT1-1 long-nose pliers, 165 mm",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://masteram.com.ua/uk/long-nose-pliers-jakemy-ct1-1/",
+      "title": "Довгогубці Jakemy CT1-1 - Masteram"
+    },
+    {
+      "url": "https://masteram.com.ua/uk/micro-cutting-pliers-pro-skit-1pk-501a/",
+      "product": "Pro’sKit 1PK-501A flush cutters",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://masteram.com.ua/uk/micro-cutting-pliers-pro-skit-1pk-501a/",
+      "title": "Мікрокусачки Pro'sKit 1PK-501A - Masteram"
+    },
+    {
+      "url": "https://masteram.com.ua/uk/mini-switching-dc-power-supply-masteram-hps305d/",
+      "product": "Masteram HPS305D supply, 0–30 V / 0–5 A",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://masteram.com.ua/uk/mini-switching-dc-power-supply-masteram-hps305d/",
+      "title": "Лабораторний блок живлення Masteram HPS305D - Masteram"
+    },
+    {
+      "url": "https://meanwell.in.ua/acdc/korpus/lrs-350-12",
+      "product": "Mean Well LRS-350-12, 12 V / 29 A",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://meanwell.in.ua/acdc/korpus/lrs-350-12",
+      "title": "LRS-350-12 Mean Well Блок живлення 348 Вт, 12 В, 29 А В корпусі"
+    },
+    {
+      "url": "https://meanwell.in.ua/acdc/korpus/lrs-350-24",
+      "product": "Mean Well LRS-350-24, 24 V / 14.6 A",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://meanwell.in.ua/acdc/korpus/lrs-350-24",
+      "title": "LRS-350-24 Mean Well Блок живлення 350,4 Вт 24 В 14,6 А В корпусі"
+    },
+    {
+      "url": "https://mtech.com.ua/product/gibkaya-mufta-1412/",
+      "product": "JC40L50 jaw coupling, 14/12 mm bores",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://mtech.com.ua/product/gibkaya-mufta-1412/",
+      "title": "Кулачковая муфта JC40L50 ⌀14х12 купить. Цена на Кулачковая муфта JC40L50 ⌀14х12 в Киеве и Украине в компании Mtech"
+    },
+    {
+      "url": "https://mtz.in.ua/187608.html",
+      "product": "Jubana 12/24 V mechanical battery isolator with bracket",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://mtz.in.ua/187608.html",
+      "title": "Выключатель массы с кронштейном 12В-24В, 300А. Цена, купить, кат-ый номер: 12/24 (300А) | Запчасти для тракторов, грузовой и спецтехники на MTZ.in.ua"
+    },
+    {
+      "url": "https://net-server.com.ua/kabel-pvs-pvkh-mnogozhilnyy-3kh1/",
+      "product": "PVS 3 × 1 mm² internal mains/PE cable",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 200,
+      "final_url": "https://net-server.com.ua/kabel-pvs-pvkh-mnogozhilnyy-3kh1/",
+      "title": ""
+    },
+    {
+      "url": "https://net-server.com.ua/kabelnyi-vvid-pg11-pid-kabel-5-10mm-chornyi/",
+      "product": "PG11 cable gland, 5–10 mm cable",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 200,
+      "final_url": "https://net-server.com.ua/kabelnyi-vvid-pg11-pid-kabel-5-10mm-chornyi/",
+      "title": ""
+    },
+    {
+      "url": "https://pishop.ua/en/korpusy/korpusy-dlia-raspberry-pi-5/pi5-case-f",
+      "product": "Waveshare PI5-CASE-F, enclosure with standoffs and screws",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://pishop.ua/en/korpusy/korpusy-dlia-raspberry-pi-5/pi5-case-f",
+      "title": "Купити Корпус для Raspberry Pi 5 PI5-CASE-F з активним охолодженням | PiShop"
+    },
+    {
+      "url": "https://podshipnik.ua/ua/product/pidshypnyk-6001-2rs-skf-00001758",
+      "product": "SKF 6001-2RS, 12 × 28 × 8 mm",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://podshipnik.ua/ua/product/pidshypnyk-6001-2rs-skf-00001758",
+      "title": "Купити підшипник  6001 2rs skf в Україні, ціна на podshipnik.ua"
+    },
+    {
+      "url": "https://print-knuba.kiev.ua/czyfrovyj-druk/",
+      "product": "A4 black-and-white laser print: target and spare",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://print-knuba.kiev.ua/czyfrovyj-druk/",
+      "title": "Цифровий друк - Копі-Центр КНУБА Київ"
+    },
+    {
+      "url": "https://prologix.ua/akumulyatorna-batareya-prologix-128v-20ah-256wh-plfp12-20-lifepo4",
+      "product": "Prologix PLFP12-20 LiFePO4, 12.8 V 20 Ah / 256 Wh",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://prologix.ua/akumulyatorna-batareya-prologix-128v-20ah-256wh-plfp12-20-lifepo4",
+      "title": "akkumulyatornaya batareya Prologix 12.8V 20AH 256Wh (PLFP12-20) LiFePO4"
+    },
+    {
+      "url": "https://prom.ua/p2473186623-shtativ-derzhatel-krepleniem.html",
+      "product": "Ulanzi VIJIM LS02 desk stand with horizontal arm",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://prom.ua/p2473186623-shtativ-derzhatel-krepleniem.html",
+      "title": "Штатив держатель с креплением к столу для вертикальной съёмки Ulanzi Vijim LS02, цена 1400 ₴: купить на Prom.ua | Украина"
+    },
+    {
+      "url": "https://prom.ua/p3207892771-nabor-nakonechnikov-no4.html",
+      "product": "TAKEL 500978: HSC8 6-4 + 1,200 ferrules",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://prom.ua/p3207892771-nabor-nakonechnikov-no4.html",
+      "title": "Набор наконечников No4 (8 размеров E, 1200шт, HSC8 6-4), цена 1110.09 ₴: купить на Prom.ua | Украина"
+    },
+    {
+      "url": "https://prom.ua/ua/m1989444884343876255-nakamernyj-rgb-svet.html",
+      "product": "Ulanzi VL49 RGB, set to 5500 K white",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://prom.ua/ua/m1989444884343876255-nakamernyj-rgb-svet.html",
+      "title": "Накамерне RGB світло Ulanzi VL49 RGB 2500K 9000K для відеозйомки та блогерів, ціна: 950 ₴, купити на Prom.ua"
+    },
+    {
+      "url": "https://prom.ua/ua/m5288073029889996056-kontsentrator-pitaniya-dynamixel.html",
+      "product": "ROBOTIS U2D2 Power Hub Board",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://prom.ua/ua/m5288073029889996056-kontsentrator-pitaniya-dynamixel.html",
+      "title": "Концентратор живлення DYNAMIXEL U2D2, ціна: 3854 ₴, купити на Prom.ua"
+    },
+    {
+      "url": "https://prom.ua/ua/p1485686098-stopornoe-koltso-dlya.html",
+      "product": "Shaft collar, Ø12 × 18 × 6 mm with setscrew",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://prom.ua/ua/p1485686098-stopornoe-koltso-dlya.html",
+      "title": "Стопорне кільце для фіксації підшипника на фрезі 12 мм, ціна 44 ₴: купити на Prom.ua | Україна, Кременчук"
+    },
+    {
+      "url": "https://prom.ua/ua/p1721938376-ugolok-krepezhnyj-ravnostoronnij.html",
+      "product": "Perforated angle bracket, 40 × 40 × 40 × 2 mm",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://prom.ua/ua/p1721938376-ugolok-krepezhnyj-ravnostoronnij.html",
+      "title": "Кутник кріпильний рівносторонній 40х40х40х2мм універсальний монтажний перфорований оцинкований, ціна 11.50 ₴: купити на Prom.ua | Україна, Київ"
+    },
+    {
+      "url": "https://prom.ua/ua/p1736030100-nazhdachnaya-bumaga-app.html",
+      "product": "APP Matador P400 abrasive sheet, 230 × 280 mm",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://prom.ua/ua/p1736030100-nazhdachnaya-bumaga-app.html",
+      "title": "Наждачний папір APP Matador P400 водостійкий 230 x 280 мм, ціна 20.86 ₴: купити на Prom.ua | Україна"
+    },
+    {
+      "url": "https://prom.ua/ua/p1786699026-as5600-i2c-beskontaktnyj.html",
+      "product": "AS5600 magnetic encoder",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://prom.ua/ua/p1786699026-as5600-i2c-beskontaktnyj.html",
+      "title": "AS5600 I2C безконтактний датчик кута енкодер магнітний magnetic encoder magnetic induction angle, ціна 199 ₴: купити на Prom.ua | Україна"
+    },
+    {
+      "url": "https://prom.ua/ua/p204295156-trubka-ptfe-24mm.html",
+      "product": "PTFE tube: 2 mm ID, 4 mm OD",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://prom.ua/ua/p204295156-trubka-ptfe-24mm.html",
+      "title": "Трубка PTFE 2*4 мм, ціна 80 ₴: купити на Prom.ua | Україна, Харків"
+    },
+    {
+      "url": "https://prom.ua/ua/p2229514706-remen-styazhnoj-zamok.html",
+      "product": "Two non-elastic cam-buckle straps, 1 m",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://prom.ua/ua/p2229514706-remen-styazhnoj-zamok.html",
+      "title": "Ремінь стяжний пружинний замок 1м, ціна 115 ₴: купити на Prom.ua | Україна"
+    },
+    {
+      "url": "https://prom.ua/ua/p3176822463-dynamixel-u2d2.html",
+      "product": "ROBOTIS U2D2",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://prom.ua/ua/p3176822463-dynamixel-u2d2.html",
+      "title": "DYNAMIXEL U2D2, ціна 5398 ₴: купити на Prom.ua | Україна"
+    },
+    {
+      "url": "https://prom.ua/ua/p3179423669-derzhatel-datchika-toka.html",
+      "product": "ACS724LLCTR-10AB: ±10 A current sensor",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://prom.ua/ua/p3179423669-derzhatel-datchika-toka.html",
+      "title": "Носій датчика струму ACS724 - модуль датчика струму ACS724 ±10A, ціна 965 ₴: купити на Prom.ua | Україна"
+    },
+    {
+      "url": "https://prom.ua/ua/p3187077527-rele-finder-405290060000.html",
+      "product": "Finder 40.52.9.006.0000, 6 V DC coil, two changeover contacts",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://prom.ua/ua/p3187077527-rele-finder-405290060000.html",
+      "title": "Реле Finder 40.52.9.006.0000 SMT 6 В/DC 8 A 2 перемикаючі контакти 1 шт., ціна 761 ₴: купити на Prom.ua | Україна"
+    },
+    {
+      "url": "https://prom.ua/ua/p3191546950-reduktornyj-dvigatel-37dx73l.html",
+      "product": "Pololu 4755: 12 V DC gearmotor, 100:1 gearbox and encoder",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://prom.ua/ua/p3191546950-reduktornyj-dvigatel-37dx73l.html",
+      "title": "Мотор-редуктор 37Dx73L 100:1 12V 100 об/хв + енкодер CPR 64 - Pololu 4755, ціна 5135 ₴: купити на Prom.ua | Україна"
+    },
+    {
+      "url": "https://prom.ua/ua/p984465311-komplekt-shagovyj-dvigatel.html",
+      "product": "NEMA23 2.2 N·m encoder motor + HBS57 kit",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://prom.ua/ua/p984465311-komplekt-shagovyj-dvigatel.html",
+      "title": "Комплект кроковий двигун NEMA23 2.2N/M з енкодером і гібридним серводрайвер HBS57, ціна 4250 ₴: купити на Prom.ua | Україна"
+    },
+    {
+      "url": "https://quantum-energy.ua/zariadnyi-prystrii-14-6-volt-5-ampera",
+      "product": "4S LiFePO4 charger, 14.6 V / 5 A",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://quantum-energy.ua/zariadnyi-prystrii-14-6-volt-5-ampera",
+      "title": "Зарядний пристрій 14,6 Вольт 5 Ампера | Купити в Україні | Квантова Енергія"
+    },
+    {
+      "url": "https://radio-shop.com.ua/uk/dymopoglynach-zd-601-kompaktnyj-20w-220v",
+      "product": "Zhongdi ZD-601 20 W 220 V extractor with intake duct and filters",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 200,
+      "error": "Direct GET returned a challenge page; seller content was reviewed through the web source."
+    },
+    {
+      "url": "https://robostore.com.ua/ua/diod-vypryamitelnyy-1n4007/",
+      "product": "1N4007 rectifier diodes",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 200,
+      "final_url": "https://robostore.com.ua/diod-vypriamnyi-1n4007/",
+      "title": ""
+    },
+    {
+      "url": "https://romb.ua/ua/nabir-kljuchiv-shestigrannih-9-sht-1-5-10-mm-vitals-master-189334.html",
+      "product": "Vitals Master 189334 hex-key set, nine pieces, 1.5–10 mm",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://romb.ua/ua/nabir-kljuchiv-shestigrannih-9-sht-1-5-10-mm-vitals-master-189334.html",
+      "title": "Набір ключів шестигранних 9 шт 1.5-10 мм Vitals Master (189334) : купити в Україні | Romb.ua"
+    },
+    {
+      "url": "https://rozetka.com.ua/207569359/p207569359/",
+      "product": "Proskit 8PK-605A needle files, 5-pack",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://rozetka.com.ua/308030433/p308030433/",
+      "product": "Proskit PD-398 craft knife, 13 blades and case",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://rozetka.com.ua/ua/106058301/p106058301/",
+      "product": "YATO YT-25861 precision screwdriver set, six pieces",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://rozetka.com.ua/ua/311900159/p311900159/",
+      "product": "1.5 mm heat-shrink tube, 1 m",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://rozetka.com.ua/ua/333901399/p333901399/",
+      "product": "BALATON P180 abrasive sheet, 230 × 280 mm",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://rozetka.com.ua/ua/396845988/p396845988/",
+      "product": "BC547 TO-92 NPN transistors, pack of five",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://rozetka.com.ua/ua/413779209/p413779209/",
+      "product": "Bodasan PC328 heat-shrink assortment, 328 pieces, 1–14 mm",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://rozetka.com.ua/ua/423367287/p423367287/",
+      "product": "Logitech F310 wired USB, 940-000135",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://rozetka.com.ua/ua/448647497/p448647497/",
+      "product": "UGREEN US248 40702: USB-C male to USB-A female",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://rozetka.com.ua/ua/462840429/p462840429/",
+      "product": "AO3400 N-channel MOSFETs, SOT-23",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://rozetka.com.ua/ua/620656577/p620656577/",
+      "product": "Connexa TPU 95A 1.75 mm, grey, 1 kg",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://runok.com.ua/mahnit-diametralno-d-5x10-dn/",
+      "product": "D5×10 DN N38 diametric magnet — for AS5600",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://runok.com.ua/mahnit-diametralno-d-5x10-dn/",
+      "title": "Магніт діаметрально D 5x10 DN ціна 12.32 грн. купити недорого на Runok.com.ua - Київ, Одеса, Дніпро, Львів, Вінниця, Тернопіль, Хмельницький, Черкаси, Ужгород, Житомир, Кривий Ріг, Івано-Франківськ, Чернівці, Черкаси, Чернігів, Рівне."
+    },
+    {
+      "url": "https://shop220.com.ua/products/9505sma-finder",
+      "product": "Finder 95.05.SMA relay socket",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://shop220.com.ua/products/9505sma-finder",
+      "title": "Купить розетку для реле серий 40.51, 40.52, 40.61, 44.52 и 44.62, 9505SMA Finder цена в Киеве. Артикул: 95.05.SMA"
+    },
+    {
+      "url": "https://source-robotics.com/products/6x2-5mm-diametrical-neodymium-magnet",
+      "product": "Diametrically magnetized neodymium magnet, Ø6 × 2.5 mm",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://source-robotics.com/products/6x2-5mm-diametrical-neodymium-magnet",
+      "title": "6x2.5mm Diametrical Neodymium Magnet\n – source robotics"
+    },
+    {
+      "url": "https://source-robotics.com/products/6x2-5mm-diametrical-neodymium-magnet?variant=47849463087452",
+      "product": "Six-pack of Ø6 × 2.5 mm diametrical magnets",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://source-robotics.com/products/6x2-5mm-diametrical-neodymium-magnet?variant=47849463087452",
+      "title": "6x2.5mm Diametrical Neodymium Magnet\n – source robotics"
+    },
+    {
+      "url": "https://tacticua.com.ua/remin-taktichniy-quick-release-belt-kombat-tactical-olive/",
+      "product": "Kombat Tactical Quick Release Belt, 50 mm × 102 cm",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 200,
+      "final_url": "https://tacticua.com.ua/remin-taktichniy-quick-release-belt-kombat-tactical-olive/",
+      "title": ""
+    },
+    {
+      "url": "https://teclight.com.ua/chs-100mkt-homut-markuvalnij-100-sht",
+      "product": "ASKO CHS-100MKT marker cable ties, pack of 100",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://teclight.com.ua/chs-100mkt-homut-markuvalnij-100-sht",
+      "title": "CHS-100MKT (хомут маркувальний) (100 шт.) | 38 грн  в інтернет-магазині Teclight – Купити в Україні"
+    },
+    {
+      "url": "https://total-energo.com.ua/ru/konvertor-victron-dc-dc-orion-tr-12-12-18a-220w-victron-energy-ori121222110/",
+      "product": "Victron Orion-Tr 12/12-18A 220W, ORI121222110",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 200,
+      "final_url": "https://total-energo.com.ua/ru/konvertor-victron-dc-dc-orion-tr-12-12-18a-220w-victron-energy-ori121222110/",
+      "title": ""
+    },
+    {
+      "url": "https://tp-link.com.ua/khab-usb-tp-link-uh700-usb-a-7xusb3.0/",
+      "product": "TP-Link UH700, seven USB 3.0 ports, PSU included",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 200,
+      "final_url": "https://tp-link.com.ua/khab-usb-tp-link-uh700-usb-a-7xusb3.0/",
+      "title": ""
+    },
+    {
+      "url": "https://tricolor.com.ua/ua/vlagopoglotitel-silikagel-tricolor-fasovanniy-200-sht-x-1-g/",
+      "product": "Tricolor silica gel, 200 × 1 g sachets",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://tricolor.com.ua/ua/vlagopoglotitel-silikagel-tricolor-fasovanniy-200-sht-x-1-g/",
+      "title": "Купити Вологопоглинач силікагель Tricolor - 200 шт. × 1 г. в інтернет-магазині Tricolor."
+    },
+    {
+      "url": "https://tvoe.ua/protiazka-dlia-kabelia-stekloplastikovaia-edrawrope384-d38-mm-l4-m-s068001",
+      "product": "E.NEXT fiberglass cable rod, 3.8 mm × 4 m",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://tvoe.ua/protiazka-dlia-kabelia-stekloplastikovaia-edrawrope384-d38-mm-l4-m-s068001",
+      "title": "Протяжка для кабелю склопластикова купити в інтернет-магазині з гарантією, доставка по Україні та Києву | ТВОЄ"
+    },
+    {
+      "url": "https://vencon.ua/products/wago-221-415",
+      "product": "WAGO 221-415 five-conductor connector",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://vencon.ua/products/wago-221-415",
+      "title": "ᐉ Клемма Wago 221-415 купить по цене 35 грн. в Киеве и Львове, Украина"
+    },
+    {
+      "url": "https://videx.ua/en/products/led-lampa-nastilna-videx-vl-tf22w-18w-3000-6000k-230v-white",
+      "product": "VIDEX VL-TF22W adjustable desk lamp, 18 W, 900 lm",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://videx.ua/en/products/led-lampa-nastilna-videx-vl-tf22w-18w-3000-6000k-230v-white",
+      "title": "LED Desk Lamp VIDEX VL-TF22W 18W 3000-6000K 230V White"
+    },
+    {
+      "url": "https://voron.ua/uk/catalog/050286--plastik-filament-petg-175mm-tsvet-prozrachnyy-1-kg-flament-kolr-prozoriy-3dun",
+      "product": "3DUN PETG 1.75 mm, transparent, 1 kg",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://voron.ua/uk/catalog/050286--plastik-filament-petg-175mm-tsvet-prozrachnyy-1-kg-flament-kolr-prozoriy-3dun",
+      "title": "Пластик філамент PETG 1,75мм колір Прозорий 1 кг Купить в интернет-магазине  - Ворон"
+    },
+    {
+      "url": "https://vseplus.com/product/derzatel-predokhranitela-19mm-01550320zxu-144534",
+      "product": "Littelfuse 01550320ZXU, 19 mm blade-fuse holder",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://vseplus.com/product/derzatel-predokhranitela-19mm-01550320zxu-144534",
+      "title": "Держатель предохранителя 19мм (01550320ZXU) – купить по цене 395 грн в Киеве и Украине | VsePlus 279555"
+    },
+    {
+      "url": "https://vseplus.com/ua/product/flanceva-opora-vala-12mm-shf12-149743",
+      "product": "SHF12 flanged shaft clamp, Ø12 mm",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://vseplus.com/ua/product/flanceva-opora-vala-12mm-shf12-149743",
+      "title": "Фланцева опора вала 12мм (SHF12) - купити за ціною 137 грн в Києві і Україні | VsePlus 283845"
+    },
+    {
+      "url": "https://vseplus.com/ua/product/pripij-drotanij-08mm-100gr-617783",
+      "product": "Sn63Pb37 solder wire, 0.8 mm, 100 g",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://vseplus.com/ua/product/pripij-drotanij-08mm-100gr-617783",
+      "title": "Припій дротяний 0.8мм-100гр - купити за ціною 476 грн в Києві і Україні | VsePlus 772392"
+    },
+    {
+      "url": "https://vseplus.com/ua/product/trimac-zapobiznika-19mm-01550320zxu-144534",
+      "product": "Littelfuse 01550320ZXU, additional holder",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://vseplus.com/ua/product/trimac-zapobiznika-19mm-01550320zxu-144534",
+      "title": "Тримач запобіжника 19мм (01550320ZXU) - купити за ціною 395 грн в Києві і Україні | VsePlus 279555"
+    },
+    {
+      "url": "https://vtochku.com.ua/fon-dlja-s-jomki-visico-pvc-1020-white-100x200sm.html",
+      "product": "Visico PVC-1020 White matte backdrop, 100 × 200 cm",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://vtochku.com.ua/fon-dlja-s-jomki-visico-pvc-1020-white-100x200sm.html",
+      "title": "Фон для съёмки Visico PVC-1020 White (100x200см): купить в Киеве и Украине. Описание, характеристики, цена, отзывы – интернет-магазин Вточку"
+    },
+    {
+      "url": "https://www.aks.ua/item/view/141709/pro-skit-1pk-066n-mikrokusachki-stripper.html",
+      "product": "Pro’sKit 1PK-066N stripper, 0.4–1.6 mm conductors",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://www.aks.ua/item/view/141709/pro-skit-1pk-066n-mikrokusachki-stripper.html",
+      "title": "⚒ Pro'sKit — купить Pro'sKit 1PK-066N в Киеве и Украине"
+    },
+    {
+      "url": "https://www.audiojack.kiev.ua/kabelnaya-produktsiya/kabel-pitaniya-dc/kabel-silikonovyj-1-zhila-22awg-1cx0-33mm2-mnogozhilnyj-1m-21-890b-2646.html",
+      "product": "22 AWG stranded silicone wire: white",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://www.audiojack.kiev.ua/kabelnaya-produktsiya/kabel-pitaniya-dc/kabel-silikonovyj-1-zhila-22awg-1cx0-33mm2-mnogozhilnyj-1m-21-890b-2646.html",
+      "title": "Кабель силиконовый 1 жила, 22AWG (1Cx0.33мм2), многожильный, 1м - купить в Киеве, Украине за выгодной ценой, продажа, скидки, магазин AudioJack! Код: 21-890B. Заказать - audiojack.kiev.ua"
+    },
+    {
+      "url": "https://www.inks.com.ua/products/kardrider-ugreen-cm185-usb-cusb-a-card-reader-ugr-50706",
+      "product": "UGREEN CM185 50706, USB-A/USB-C SD/microSD reader",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://www.inks.com.ua/products/kardrider-ugreen-cm185-usb-cusb-a-card-reader-ugr-50706",
+      "title": "Кардридер UGREEN CM185 USB-C/USB-A Card Reader (UGR-50706) (UGR-50706) купити — швидка доставка по Україні, відгуки, опт - INKS"
+    },
+    {
+      "url": "https://www.mini-tech.com.ua/3mm-led-green",
+      "product": "3 mm green LEDs",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://www.mini-tech.com.ua/3mm-led-green",
+      "title": "3 mm green"
+    },
+    {
+      "url": "https://www.mini-tech.com.ua/3mm-led-red",
+      "product": "3 mm red LEDs",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://www.mini-tech.com.ua/3mm-led-red",
+      "title": "3 mm red"
+    },
+    {
+      "url": "https://www.mini-tech.com.ua/knopka-taktovaya-6x6x5",
+      "product": "6 × 6 × 5 mm momentary pushbuttons",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://www.mini-tech.com.ua/knopka-taktovaya-6x6x5",
+      "title": "button 6x6x5"
+    },
+    {
+      "url": "https://www.mini-tech.com.ua/lineynaya-napravlyayuschaya-kruglaya-d12mm-x-300mm",
+      "product": "Hardened steel shaft, Ø12 × 300 mm",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://www.mini-tech.com.ua/lineynaya-napravlyayuschaya-kruglaya-d12mm-x-300mm",
+      "title": "Линейный вал (направляющая) D-12мм, длина-300мм"
+    },
+    {
+      "url": "https://www.mini-tech.com.ua/maketnaya-plata-pod-payku-fr4-50x70mm",
+      "product": "50 × 70 mm FR4 solderable perfboard",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://www.mini-tech.com.ua/maketnaya-plata-pod-payku-fr4-50x70mm",
+      "title": "Макетная плата FR-4 5x7 см"
+    },
+    {
+      "url": "https://www.mini-tech.com.ua/razyem-pbs-40-2_54mm-40pin-pryamoy",
+      "product": "PBS-40 female header strip, 40 pins, 2.54 mm",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://www.mini-tech.com.ua/razyem-pbs-40-2_54mm-40pin-pryamoy",
+      "title": "PBS-40"
+    },
+    {
+      "url": "https://www.mini-tech.com.ua/razyem-pls-40-2_54mm-40pin-pryamoy",
+      "product": "PLS-40 male header strip, 40 pins, 2.54 mm",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://www.mini-tech.com.ua/razyem-pls-40-2_54mm-40pin-pryamoy",
+      "title": "PLS-40 разъем штыревой (гребенка) 40 pin 2.54 мм"
+    },
+    {
+      "url": "https://www.mini-tech.com.ua/ua/diod-vyvodnoy-1n4148",
+      "product": "1N4148 through-hole diodes",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://www.mini-tech.com.ua/ua/diod-vyvodnoy-1n4148",
+      "title": "1N4148 - діод швидкодіючий"
+    },
+    {
+      "url": "https://www.mini-tech.com.ua/ua/pincet-n15",
+      "product": "Rhino RH-15 curved tweezers, 121 mm",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://www.mini-tech.com.ua/ua/pincet-n15",
+      "title": "Багатофункціональна міні-викрутка 8 в 1"
+    },
+    {
+      "url": "https://www.mini-tech.com.ua/ua/rezistor-peremennyj-10-kom-stereo",
+      "product": "WH148 B10K linear dual-gang potentiometers, 10 kΩ",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://www.mini-tech.com.ua/ua/rezistor-peremennyj-10-kom-stereo",
+      "title": "10 kOhm variable"
+    },
+    {
+      "url": "https://www.mybotshop.de/DYNAMIXEL-Pro-PM54-060-S250-R_1",
+      "product": "ROBOTIS PM54-060-S250-R, 902-0088-001",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://www.mybotshop.de/DYNAMIXEL-Pro-PM54-060-S250-R_1",
+      "title": "DYNAMIXEL Pro+ PM54-060-S250-R | MYBOTSHOP.DE, € 2.224,95"
+    },
+    {
+      "url": "https://www.nikom.biz/ua/product_A066053.html",
+      "product": "SOT-23/MSOP10 to 2.54 mm adapter boards",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://www.nikom.biz/ua/product_A066053.html",
+      "title": "Макетна плата перехідник SOT23 на SOP10"
+    },
+    {
+      "url": "https://www.pololu.com/product/3778",
+      "product": "Pololu 3778 adjustable 4–18 V shunt regulator",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://www.pololu.com/product/3778",
+      "title": "Pololu - Shunt Regulator: Fine-Adjust LV, 1.50Ω, 15W"
+    },
+    {
+      "url": "https://www.rcscomponents.kiev.ua/product/902-0118-000.html",
+      "product": "Dynamixel XM430-W350-R, additional small axes",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://www.rcscomponents.kiev.ua/product/902-0118-000.html",
+      "title": "902-0118-000 ROBOTIS - РКС Компоненти - РАДІОМАГ"
+    },
+    {
+      "url": "https://www.rcscomponents.kiev.ua/product/902-0133-000.html",
+      "product": "Dynamixel XM540-W270-R, additional large axes",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://www.rcscomponents.kiev.ua/product/902-0133-000.html",
+      "title": "902-0133-000 ROBOTIS - РКС Компоненти - РАДІОМАГ"
+    },
+    {
+      "url": "https://www.rcscomponents.kiev.ua/product/as5048a%20adapterboard.html",
+      "product": "ams OSRAM AS5048A ADAPTERBOARD, assembled board",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://www.rcscomponents.kiev.ua/product/as5048a%20adapterboard.html",
+      "title": "AS5048A ADAPTERBOARD ams OSRAM AG - РКС Компоненти - РАДІОМАГ"
+    },
+    {
+      "url": "https://www.sea.com.ua/ua/istochniki-pitaniya/kreplenia-i-konstruktivy/tbc-09/",
+      "product": "Mean Well TBC-09 terminal-block cover",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://www.sea.com.ua/ua/istochniki-pitaniya/kreplenia-i-konstruktivy/tbc-09/",
+      "title": "TBC-09 MEAN WELL Enterprises Co., Ltd ᐈ Кріплення та Конструктиви ᐈ Оптові та Роздрібні Ціни  | Компанія СЕА"
+    },
+    {
+      "url": "https://www.tme.eu/pl/details/pololu-1999/akcesoria-do-robotyki-i-rc/pololu/aluminum-mounting-hub-for-6mm-shaft-m3-h/",
+      "product": "Pololu 1999: two aluminium hubs for 6 mm shafts, M3 mounting",
+      "checked_on": "2026-09-25",
+      "result": "restricted",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://www.waveshare.com/sr-cable-5264-3pin.htm?sku=34172",
+      "product": "Waveshare 5264-3PIN, 900 mm, 6 cables",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://www.waveshare.com/sr-cable-5264-3pin.htm?sku=34172",
+      "title": "5264-3PIN Servo Cable (6PCS), options for 300mm / 900mm lengths, Compatible with ST / SC / CF series servos | SR-Cable-5264-3PIN-300mm-6PCS"
+    },
+    {
+      "url": "https://zuma.in.ua/p3087462457-mdd10a-motor-driver.html",
+      "product": "Cytron MDD10A: dual-channel H bridge",
+      "checked_on": "2026-09-25",
+      "result": "ok",
+      "http_status": 200,
+      "final_url": "https://zuma.in.ua/ua/p3087462457-mdd10a-motor-driver.html",
+      "title": "MDD10A DC Motor Driver 10A 5V-30V - 2-канальний драйвер двигуна постійного струму 612154: продаж, ціна у Києві. Набори та компоненти для самостійного збирання електроніки від \"zuma.in.ua\" - 3087462457"
+    }
+  ]
+}

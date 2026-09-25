@@ -115,6 +115,50 @@ class SiteTests(unittest.TestCase):
         self.assertEqual(schedule['calendar_capacity_hours'], 3045)
         self.assertEqual(schedule['unallocated_hours'], 85)
 
+    def test_procurement_component_costs_and_reuse(self):
+        data = json.loads((ROOT / 'procurement.json').read_text())
+        items = {item['id']: item for item in data['items']}
+        researched = [item for item in items.values() if item.get('market')]
+        self.assertEqual(len(researched), 38)
+        self.assertEqual(data['first_basket_unpriced_rows'], 0)
+        self.assertEqual(
+            Decimal(str(data['first_basket_without_workplace_uah'])),
+            Decimal(str(data['first_basket_subtotal_uah'])) - Decimal(str(items['wb-workplace']['price'])),
+        )
+        for item in researched:
+            with self.subTest(item=item['id']):
+                market = item['market']
+                amounts = {}
+                for component in market['components']:
+                    reused = component.get('reused_from') or component.get('included_in')
+                    if reused:
+                        self.assertIn(reused, items)
+                        self.assertNotEqual(reused, item['id'])
+                        self.assertIsNone(component.get('unit_price'))
+                        continue
+                    self.assertGreater(component['quantity'], 0)
+                    self.assertGreater(component['unit_price'], 0)
+                    self.assertEqual(urlsplit(component['url']).scheme, 'https')
+                    for field in ['name', 'availability', 'shipping_to_ukraine', 'evidence_note']:
+                        self.assertTrue(component[field]['ru'].strip(), field)
+                        self.assertTrue(component[field]['en'].strip(), field)
+                    currency = component['currency']
+                    amounts[currency] = amounts.get(currency, Decimal(0)) + Decimal(str(component['unit_price'])) * Decimal(str(component['quantity']))
+                self.assertEqual({k: v.quantize(Decimal('.01')) for k, v in amounts.items()},
+                                 {k: Decimal(str(v)) for k, v in market['totals'].items()})
+                if len(amounts) == 1:
+                    currency, amount = next(iter(amounts.items()))
+                    self.assertEqual(item['currency'], currency)
+                    self.assertEqual(Decimal(str(item['price'])), amount.quantize(Decimal('.01')))
+                elif not amounts:
+                    self.assertTrue(market['components'], 'Free rows must reference budgeted materials')
+                    self.assertEqual(item['price'], 0)
+                else:
+                    self.assertIsNone(item['price'], 'Do not add different currencies together')
+        page = (ROOT / 'procurement.html').read_text()
+        self.assertNotIn('Request price', page)
+        self.assertNotIn('Запросить цену', page)
+
 
 if __name__ == '__main__':
     unittest.main()
